@@ -1,0 +1,23 @@
+<div class="parallax-window" data-parallax="scroll" data-image-src="img/top_bg.jpg">
+    
+  </div><!-- /parallax-window -->
+
+
+/////////////////////////////////
+$('.parallax-window').parallax({
+    imageSrc: 'img/top_bg.jpg',
+    positionY: 'top'
+  });
+/////////////////////////////
+
+
+.parallax-window {
+	min-height: 450px;
+	background: transparent;
+}
+
+
+
+.parallax-mirror img {
+   top: 0 !important;
+}

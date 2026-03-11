@@ -1,0 +1,35 @@
+$(window).load(function () {
+	
+	var my_range = $(".js-range-slider").data("ionRangeSlider");
+     $(".js-range-slider").ionRangeSlider({
+            type: "double",
+	        min: 0,
+	        max: 10000,
+	        from: 200,
+	        to: 5000,
+	        grid: false,
+	        prefix: "&#8381;",
+	        skin: "round",
+	        onStart: function(data) {
+            $('input[name=sum_ot]').val(data.from);
+            $('input[name=sum_do]').val(data.to);
+
+             },
+            onChange: function(data) {
+            $('input[name=sum_ot]').val(data.from);
+            $('input[name=sum_do]').val(data.to);
+             }
+    });
+      ////////
+
+
+$('input[name=sum_ot],input[name=sum_do]').bind("change paste keyup", function()  { 
+	$(".js-range-slider").data("ionRangeSlider").update({
+        from: $('input[name=sum_ot]').val(),
+        to: $('input[name=sum_do]').val()
+    });
+});
+
+
+
+});

@@ -1,0 +1,26 @@
+http://ionden.com/a/plugins/ion.rangeSlider/
+===================================
+sdelati shire tam gde tykati 
+/*==========================================*/
+.irs-line {
+    position: relative;
+    z-index: 2;
+    height: 30px !important;
+    background-color: transparent !important;
+}
+.irs-line:before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: #C4C4C4;
+    top: 0px;
+    left: 0;
+}
+.irs-handle {
+    z-index: 2;
+}
+.irs--round .irs-bar {
+    z-index: 2;
+}
+/*================================*/

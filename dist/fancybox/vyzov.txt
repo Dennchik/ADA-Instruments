@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="dist/fancybox/jquery.fancybox.min.css"/>
+<script src="dist/fancybox/jquery.fancybox.min.js"></script>
+
+ <a href="img/img53.jpg" class="img_cont" data-fancybox="gallery" data-caption="Caption" style="background-image: url(img/img53.jpg);"></a>
+
+$('[data-fancybox="gallery"]').fancybox({
+});
+
+
+//////////////////////////////////////////
+$().fancybox({
+      selector : '.page_gall_slider .page_gall_slider_item_box .img_cont:not(.slick-cloned .page_gall_slider_item_box .img_cont)',
+      hash     : false,
+      backFocus : false
+});
+///////////////////////////
+
+.compensate-for-scrollbar header {
+     left: -17px;  
+}
+
+s perezapuskom
+$().fancybox({
+    beforeShow: function() {
+        $('.image_slider').slick('setPosition');
+    },
+      selector : '.slick-slide .image_slider_item .img_cont'
+
+});
