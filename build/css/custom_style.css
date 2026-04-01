@@ -1123,7 +1123,7 @@ header.smaller {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -moz-box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.91);
   -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -1205,7 +1205,7 @@ header.smaller {
 
 @media only screen and (max-width: 480px) {
   .mobile_menu_wrapp {
-    width: 290px !important;
+    width: 100% !important;
   }
 }
 @media only screen and (max-width: 350px) {
@@ -1694,6 +1694,7 @@ header .container-fluid {
 
 .font14 {
   font-size: 14px;
+  font-weight: 400;
 }
 
 .grey_bg {
@@ -2299,15 +2300,15 @@ footer .grey_button {
 
 .footer_menu_desk a {
   color: #a4a4a4;
-  font-size: 10px;
+  font-size: 13px;
   text-decoration: underline;
-  padding: 5px 50px;
   font-weight: 300;
   text-transform: uppercase;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   display: block;
   white-space: nowrap;
+  padding: 5px 0;
 }
 
 .footer_menu_desk a:hover,
@@ -2334,10 +2335,7 @@ ul.footer_menu_desk {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  margin-left: -50px;
-  margin-right: -50px;
+  gap: 100px;
 }
 
 .footer_menu .has_child {
@@ -2345,7 +2343,7 @@ ul.footer_menu_desk {
 }
 
 footer .has_child ul a {
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 300;
   text-transform: none;
   text-decoration: none;
@@ -2366,6 +2364,17 @@ footer .has_child ul a {
 
 .light_grey_color {
   color: #a4a4a4;
+}
+
+.desk-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
 
 ul.footer_menu_mob {
@@ -2396,7 +2405,7 @@ ul.footer_menu_mob > li {
 
 .footer_menu_mob a {
   color: #a4a4a4;
-  font-size: 10px;
+  font-size: 13px;
   text-decoration: underline;
   padding: 5px 20px;
   font-weight: 300;
@@ -2424,7 +2433,7 @@ ul.footer_menu_mob > li {
 }
 
 .footer_menu_mob_submenu li a {
-  font-size: 9px;
+  font-size: 13px;
   padding-top: 5px;
   padding-bottom: 5px;
   display: block;
@@ -2583,6 +2592,28 @@ header .sub_menu a:hover:after {
   position: relative;
   padding-right: 15px !important;
 }
+.open_menu_child span {
+  margin-right: 0.5rem;
+}
+
+.col_icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: start;
+  gap: 30px;
+}
+
+.icon_col {
+  cursor: pointer;
+}
+.icon_col svg {
+  width: 28px;
+  fill: #d2d2d2;
+}
 
 .open_menu_child:after {
   content: "\ea67";
@@ -2606,6 +2637,9 @@ header .sub_menu a:hover:after {
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
+.open_menu_child:after:hover {
+  display: block;
+}
 
 /*=================*/
 .breadcrumb {
@@ -2613,7 +2647,7 @@ header .sub_menu a:hover:after {
   list-style: none;
   background-color: transparent;
   border-radius: 0px;
-  font-size: 8px;
+  font-size: 12px;
   text-transform: uppercase;
   background-size: 8px;
   font-weight: 700;
@@ -2726,6 +2760,9 @@ header .sub_menu a:hover:after {
   margin-right: -15px;
   padding-top: 30px;
 }
+.contacts_list.bg-accent {
+  background: rgb(239, 239, 239);
+}
 
 .contacts_list > li {
   width: 33.33%;
@@ -2736,7 +2773,7 @@ header .sub_menu a:hover:after {
   margin-left: 15px;
   margin-right: 15px;
   padding-left: 35px;
-  font-size: 9px;
+  font-size: 13px;
   position: relative;
 }
 

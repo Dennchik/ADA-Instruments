@@ -517,7 +517,7 @@ pre code {
 	.container-lg,
 	.container-md,
 	.container-sm {
-		max-width: 960px;
+		max-width: 1024px;
 	}
 }
 @media (min-width: 1200px) {
