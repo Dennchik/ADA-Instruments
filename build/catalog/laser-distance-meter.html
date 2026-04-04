@@ -1,0 +1,468 @@
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ADA | Сервис</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../dist/rangeslider/ion.rangeslider.min.css">
+	<link rel="stylesheet" type="text/css" href="../dist/fancybox/jquery.fancybox.min.css">
+	<link rel="stylesheet" type="text/css" href="../dist/icofont/icofont.min.css">
+	<link rel="stylesheet" type="text/css" href="../dist/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../dist/slick/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="../dist/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="../css/custom_style.css">
+	<link rel="stylesheet" type="text/css" href="../css/media.css">
+</head>
+
+<body class="">
+	<!-- ==================================================== -->
+	<div class="mobile_menu_wrapp">
+		<div class="menu_close"><i class="icofont-close"></i></div>
+		<div class="mobile_menu">
+			<div class="row h-100 no-gutters">
+				<div class="col">
+					<ul>
+						<li><a class="open_menu_child" href="/catalog/"><span>Продукция</span></a>
+							<ul class="sub_menu">
+								<li><a href="/catalog/laser-distance-meter/">Лазерные дальномеры</a></li>
+								<li><a href="/catalog/automatic-levels/">Оптические нивелиры</a></li>
+								<li><a href="/catalog/theodolites/">Теодолиты</a></li>
+								<li><a href="/catalog/pyrometers/">Пирометры и тепловизоры</a></li>
+								<li><a href="/catalog/detectors/">Детекторы </a></li>
+								<li><a href="/catalog/angle-meters-levels/">Угломеры и уровни</a></li>
+								<li><a href="/catalog/measuring-tapes/">Рулетки</a></li>
+								<li><a href="/catalog/accessories/">Аксессуары</a></li>
+								<li><a href="/catalog/tripods/">Штативы</a></li>
+								<li><a href="/catalog/staffs-poles/">Рейки</a></li>
+								<li><a href="/catalog/measuring-wheels/">Измерительные колеса</a></li>
+								<li><a href="/catalog/line-lasers/">Лазерные уровни</a></li>
+								<li><a href="/catalog/rotary-lasers/">Ротационные нивелиры</a></li>
+								<li><a href="/catalog/earth-augers/">Мотобуры</a></li>
+								<li><a href="/catalog/earth-augers-accessories/">Аксессуары для мотобуров</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/service/"><span>Сервис</span></a>
+						</li>
+						<li><a href="/about/"><span>О компании</span></a></li>
+						<li><a href="/contacts/"><span>Контакты</span></a></li>
+					</ul>
+					<div class="mbm_sel_lang_wrapper">
+						<div class="custom_select">
+							<select id="lang-mob" onchange="location.href='/ajax/lng.php?id='+$('#lang-mob').val()">
+								<option value="ru">рус</option>
+								<option value="en">eng</option>
+							</select>
+							<div class="select-selected">рус</div>
+							<div class="select-items select-hide">
+								<div>eng</div>
+							</div>
+						</div>
+					</div><!-- /mbm_sel_lang_wrapper -->
+				</div><!-- /col -->
+			</div><!-- /row -->
+		</div>
+		<!-- /.mobile_menu -->
+	</div>
+	<!-- /.mobile_menu_wrapp -->
+	<!-- ==================================================== -->
+	<div id="main" style="min-height: 251.5px;">
+		<header>
+			<div class="container h-100">
+				<!-- ==================================================== -->
+				<div class="d-lg-none d-block">
+					<button class="menu_button menu_show">
+						<span class='toggle'><i></i> <i></i> <i></i></span>
+					</button><!-- /menu_button -->
+					<div class="top_search_wrap">
+						<div class="open_search"></div>
+						<div class="top_search_body">
+							<form action="#">
+								<input type="text" placeholder="Поиск по сайту" required>
+								<button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
+							</form>
+						</div><!-- /top_search_body -->
+					</div><!-- /top_search_wrap -->
+				</div>
+				<!-- ==================================================== -->
+				<div class="top_panel  h-100">
+					<div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
+						<div class="col-auto">
+							<div class="left_TP">
+								<div class="row  align-items-center">
+									<!-- =================== -->
+									<div class="col-auto">
+										<a href="../index.html" class="logo"></a>
+									</div><!-- /col -->
+									<!-- =================== -->
+									<div class="col-auto d-none d-lg-block">
+										<ul class="top_menu ml-lg-3">
+											<li class="has_child">
+												<a href="../productia.html"><span>Продукция</span></a>
+												<ul class="sub_menu">
+													<li><a href="/catalog/laser-distance-meter/">Лазерные дальномеры</a></li>
+													<li><a href="/catalog/automatic-levels/">Оптические нивелиры</a></li>
+													<li><a href="/catalog/theodolites/">Теодолиты</a></li>
+													<li><a href="/catalog/pyrometers/">Пирометры и тепловизоры</a></li>
+													<li><a href="/catalog/detectors/">Детекторы </a></li>
+													<li><a href="/catalog/angle-meters-levels/">Угломеры и уровни</a></li>
+													<li><a href="/catalog/measuring-tapes/">Рулетки</a></li>
+													<li><a href="/catalog/accessories/">Аксессуары</a></li>
+													<li><a href="/catalog/tripods/">Штативы</a></li>
+													<li><a href="/catalog/staffs-poles/">Рейки</a></li>
+													<li><a href="/catalog/measuring-wheels/">Измерительные колеса</a></li>
+													<li><a href="/catalog/line-lasers/">Лазерные уровни</a></li>
+													<li><a href="/catalog/rotary-lasers/">Ротационные нивелиры</a></li>
+													<li><a href="/catalog/earth-augers/">Мотобуры</a></li>
+													<li><a href="/catalog/earth-augers-accessories/">Аксессуары для мотобуров</a></li>
+												</ul>
+											</li>
+											<li><a href="services.html"><span>Сервис</span></a></li>
+											<li><a href="about.html"><span>О компании</span></a></li>
+											<li><a href="contact.html"><span>Контакты</span></a></li>
+										</ul>
+									</div><!-- /col -->
+									<!-- =================== -->
+								</div><!-- /row -->
+							</div><!-- /left_TP -->
+						</div><!-- /col -->
+						<!-- ================== -->
+						<div class="col-auto d-none d-lg-block">
+							<div class="right_TP">
+								<div class="row  align-items-center  justify-content-end">
+									<!-- =================== -->
+									<div class="col-auto">
+										<div class="search_flexbox">
+											<div class="search_wrap">
+												<div>
+													<input type="text" placeholder="Поиск по сайту" required>
+												</div>
+											</div>
+										</div>
+									</div><!-- /col -->
+									<!-- =================== -->
+									<div class="col-auto">
+										<div class="col_icons">
+											<a href="" class="col_cart icon_col">
+												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
+													viewBox="0 0 512 512">
+													<g id="icomoon-ignore">
+													</g>
+													<path
+														d="M0 48c0-8.837 7.163-16 16-16h48c7.342 0 13.742 4.997 15.523 12.12l12.97 51.88h371.506c4.795 0 9.337 2.149 12.375 5.856s4.255 8.582 3.316 13.282l-32 160c-1.437 7.185-7.572 12.475-14.887 12.842l-300.7 15.082 9.176 48.938h274.721c8.837 0 16.002 7.162 16.002 16.002 0 8.837-7.165 15.998-16.002 15.998h-288c-7.7 0-14.307-5.485-15.726-13.050l-47.912-255.532-12.855-51.418h-35.508c-8.836 0-16-7.163-16-16zM99.279 128l26.873 143.32 292.604-14.676 25.726-128.644h-345.204zM160 384c-35.346 0-64 28.654-64 64s28.654 64 64 64c35.346 0 64-28.654 64-64s-28.654-64-64-64zM384 384c-35.346 0-64 28.654-64 64s28.654 64 64 64c35.346 0 64-28.654 64-64s-28.654-64-64-64zM160 416c17.673 0 32 14.327 32 32s-14.327 32-32 32c-17.673 0-32-14.327-32-32s14.327-32 32-32zM384 416c17.673 0 32 14.327 32 32s-14.327 32-32 32c-17.673 0-32-14.327-32-32s14.327-32 32-32z">
+													</path>
+												</svg>
+											</a>
+											<a href="" class="col_login icon_col">
+												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
+													viewBox="0 0 448 448">
+													<g id="icomoon-ignore">
+													</g>
+													<path
+														d="M213.721-0.106c-16.331 1.892-29.652 5.368-42.177 11.005-39.895 17.953-67.603 54.093-75.165 98.041-1.691 9.832-1.449 33.77 0.438 43.353 3.646 18.501 11.588 37.212 21.963 51.741 6.605 9.248 18.191 21.358 26.373 27.563l5.789 4.391-2.512 0.956c-29.469 11.215-53.891 26.018-74.776 45.323-44.701 41.325-69.687 94.302-73.046 154.88v0c-0.331 5.962 4.415 10.979 10.386 10.979h20.025c2.336 0 4.229-1.893 4.229-4.229v0c0-11.988 3.301-33.837 7.107-47.043 9.956-34.542 29.769-66.132 56.368-89.88 39.367-35.143 91.522-52.308 143.494-47.226 23.782 2.326 44.11 8.235 66.424 19.307 46.747 23.198 82.696 66.658 97.437 117.799 3.805 13.206 7.108 35.056 7.108 47.043v0c0 2.336 1.894 4.229 4.229 4.229h20.025c5.97 0 10.718-5.016 10.385-10.979v0c-2.98-53.729-23.402-102.448-59.108-140.999-24.919-26.906-52.891-45.574-88.713-59.204l-2.511-0.956 5.789-4.391c24.171-18.331 42.125-47.791 48.335-79.304 1.887-9.582 2.13-33.521 0.438-43.353-9.515-55.295-51.063-97.591-105.53-107.431-7.079-1.279-27.175-2.268-32.807-1.615zM239.018 35.788c51.501 8.368 86.642 56.872 78.344 108.137-8.353 51.595-56.77 86.798-107.941 78.486-51.502-8.368-86.642-56.872-78.344-108.138 8.352-51.594 56.77-86.799 107.94-78.485z">
+													</path>
+												</svg>
+											</a>
+										</div>
+										<!-- ============================select_menu==================================== -->
+									</div>
+									<!-- =================== -->
+								</div><!-- /row -->
+							</div><!-- /right_TP -->
+						</div><!-- /col -->
+					</div><!-- /row -->
+				</div><!-- /top_panel -->
+			</div><!-- /container -->
+		</header>
+		<!-- =======================breadcrumb========================= -->
+		<div class="breadcrumb_wrapper mb-5">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><a href="../index.html">главная</a></li>
+					<li class="active">каталог</li>
+				</ol>
+			</div><!-- /container -->
+		</div><!-- /breadcrumb_wrapper -->
+		<!-- =======================/breadcrumb========================= -->
+		<div class="page_header mb-5">
+			<div class="container">
+				<h1 class="font_60 lh1 fw700">Лазерные дальномеры</h1>
+			</div><!-- /container -->
+		</div><!-- /page_header -->
+		<div id="categoria_page" class="wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+			<div class="productia_wrapp">
+				<div class="productia_desk catalog_list">
+					<!-- ===================1111111111===================== -->
+					<div class="items_greed">
+						<ul class="items_greed_list mb-3">
+							<li>
+								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-micro-25/" class="items_greed_box">
+									<span class="img_cont"
+										style="background-image: url(/upload/iblock/cec/zq4t3mqc744gfxoogszp6tfb1gzysl1b.jpg);"></span>
+									<span class="items_greed_box_title"> Лазерный дальномер ADA COSMO MICRO 25</span>
+								</a><!-- /items_greed_box -->
+							</li>
+
+							<li>
+								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-120-video/" class="items_greed_box">
+									<span class="img_cont"
+										style="background-image: url(/upload/iblock/6ac/ubunszsn5q0zjodpl9sk0wbqa0obg978.png);"></span>
+									<span class="items_greed_box_title"> Лазерный дальномер ADA COSMO 120 Video</span>
+								</a><!-- /items_greed_box -->
+							</li>
+
+							<li>
+								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-50/" class="items_greed_box">
+									<span class="img_cont"
+										style="background-image: url(/upload/iblock/a4b/ntnqb8r22k0mq4ks16fcfmojt7jxab75.jpg);"></span>
+									<span class="items_greed_box_title"> Лазерный дальномер ADA COSMO 50</span>
+								</a><!-- /items_greed_box -->
+							</li>
+
+							<li>
+								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-mini-40/" class="items_greed_box">
+									<span class="img_cont"
+										style="background-image: url(/upload/iblock/e9a/6k8uuub5uap64usl6urz88bi69gd26es.jpg);"></span>
+									<span class="items_greed_box_title"> Лазерный дальномер ADA COSMO MINI 40</span>
+								</a><!-- /items_greed_box -->
+							</li>
+
+							<li>
+								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-150-video/" class="items_greed_box">
+									<span class="img_cont"
+										style="background-image: url(/upload/iblock/273/mwhx3tw36cuv178wt9qm0xhiuvfxalew.jpg);"></span>
+									<span class="items_greed_box_title"> Лазерный дальномер ADA COSMO 150 Video</span>
+								</a><!-- /items_greed_box -->
+							</li>
+
+							<li>
+								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-mini/" class="items_greed_box">
+									<span class="img_cont"
+										style="background-image: url(/upload/iblock/7e9/nwyen3nox5833i5c0s2ifam3yrtlpj0r.jpg);"></span>
+									<span class="items_greed_box_title"> Лазерный дальномер ADA COSMO MINI</span>
+								</a><!-- /items_greed_box -->
+							</li>
+
+							<li>
+								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-100/" class="items_greed_box">
+									<span class="img_cont"
+										style="background-image: url(/upload/iblock/04f/3jkw04xx7rkmmenizaqn0pcntfzrxcow.jpg);"></span>
+									<span class="items_greed_box_title"> Лазерный дальномер ADA COSMO 100</span>
+								</a><!-- /items_greed_box -->
+							</li>
+
+							<li>
+								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-70/" class="items_greed_box">
+									<span class="img_cont"
+										style="background-image: url(/upload/iblock/1ea/q867sazgppbngatcfzlbwud3m53qp3ax.jpg);"></span>
+									<span class="items_greed_box_title"> Лазерный дальномер ADA COSMO 70</span>
+								</a><!-- /items_greed_box -->
+							</li>
+
+							<li>
+								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-60-green/" class="items_greed_box">
+									<span class="img_cont"
+										style="background-image: url(/upload/iblock/922/la3em0mnv75akww1bsoaqq9z77dova1k.jpg);"></span>
+									<span class="items_greed_box_title"> Лазерный дальномер ADA COSMO 60 GREEN</span>
+								</a><!-- /items_greed_box -->
+							</li>
+
+						</ul>
+					</div>
+					<!--/items_greed-->
+				</div><!-- /productia_desk -->
+
+				<!-- ========================================================== -->
+			</div><!-- /categoria_page -->
+		</div><!-- /#main -->
+		<footer id="footer">
+			<div class="container">
+				<div class="footer_header pt-5 pb-4">
+					<div class="row flex-nowrap align-items-center">
+						<!--===========-->
+						<div class="col-lg-auto col-5 mr-lg-4">
+							<a href="/catalog/" class="grey_button">в каталог </a>
+						</div>
+						<!--/col-->
+						<!--===========-->
+						<div class="col-lg-auto col-7">
+							<div class="footer_search">
+								<form action="#">
+									<input type="text" placeholder="Поиск по сайту">
+									<button type="submit" class="footer_sb"><i class="icofont-search-1"></i></button>
+								</form>
+							</div>
+						</div>
+						<!--/col-->
+						<!--===========-->
+					</div>
+					<!--/row-->
+				</div><!-- /footer_header -->
+				<div class="footer_menu pb-5">
+					<!-- =============footer_menu_desk==================== -->
+					<div class="d-none d-lg-block">
+						<ul class="footer_menu_desk">
+							<li>
+								<a href="/service/">ПОДДЕРЖКА</a>
+							</li>
+							<li>
+								<a href="/about/">о компании</a>
+							</li>
+							<li>
+								<a href="/contacts/">Контакты</a>
+							</li>
+							<li class="has_child">
+								<a href="/catalog/">Продукция</a>
+								<div class="row flex-nowrap pt-3">
+									<!--===========-->
+									<div class="col-4">
+										<ul>
+											<li><a href="/catalog/laser-distance-meter/">Лазерные дальномеры</a></li>
+											<li><a href="/catalog/automatic-levels/">Оптические нивелиры</a></li>
+											<li><a href="/catalog/theodolites/">Теодолиты</a></li>
+											<li><a href="/catalog/pyrometers/">Пирометры и тепловизоры</a></li>
+											<li><a href="/catalog/detectors/">Детекторы </a></li>
+										</ul>
+									</div>
+									<!--/col-->
+									<!--===========-->
+									<div class="col-4">
+										<ul>
+											<li><a href="/catalog/angle-meters-levels/">Угломеры и уровни</a></li>
+											<li><a href="/catalog/measuring-tapes/">Рулетки</a></li>
+											<li><a href="/catalog/accessories/">Аксессуары</a></li>
+											<li><a href="/catalog/tripods/">Штативы</a></li>
+											<li><a href="/catalog/staffs-poles/">Рейки</a></li>
+										</ul>
+									</div>
+									<!--/col-->
+									<!--===========-->
+									<div class="col-4">
+										<ul>
+											<li><a href="/catalog/measuring-wheels/">Измерительные колеса</a></li>
+											<li><a href="/catalog/line-lasers/">Лазерные уровни</a></li>
+											<li><a href="/catalog/rotary-lasers/">Ротационные нивелиры</a></li>
+											<li><a href="/catalog/earth-augers/">Мотобуры</a></li>
+											<li><a href="/catalog/earth-augers-accessories/">Аксессуары для мотобуров</a></li>
+										</ul>
+									</div>
+									<!--/col-->
+									<!--===========-->
+									<div class="col-4">
+										<ul>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div><!-- /footer_menu_desk -->
+					<!-- ===============/footer_menu_desk================== -->
+					<!-- =================footer_menu_mob================ -->
+					<div class="d-block d-lg-none">
+						<ul class="footer_menu_mob">
+							<li>
+								<a href="/service/">ПОДДЕРЖКА</a>
+							</li>
+							<li>
+								<a href="/about/">о компании</a>
+							</li>
+							<li class="has_child">
+								<a id="open_child_list">Продукция</a>
+							</li>
+							<li>
+								<a href="/contacts/">Контакты</a>
+							</li>
+						</ul>
+						<div class="footer_menu_mob_submenu">
+							<div class="row flex-nowrap pt-3">
+								<!--===========-->
+								<div class="col-4">
+									<ul class="fmb_list">
+										<li><a href="/catalog/laser-distance-meter/">Лазерные дальномеры</a></li>
+										<li><a href="/catalog/automatic-levels/">Оптические нивелиры</a></li>
+										<li><a href="/catalog/theodolites/">Теодолиты</a></li>
+										<li><a href="/catalog/pyrometers/">Пирометры и тепловизоры</a></li>
+										<li><a href="/catalog/detectors/">Детекторы </a></li>
+									</ul>
+								</div>
+								<!--/col-->
+								<!--===========-->
+								<div class="col-4">
+									<ul>
+										<li><a href="/catalog/angle-meters-levels/">Угломеры и уровни</a></li>
+										<li><a href="/catalog/measuring-tapes/">Рулетки</a></li>
+										<li><a href="/catalog/accessories/">Аксессуары</a></li>
+										<li><a href="/catalog/tripods/">Штативы</a></li>
+										<li><a href="/catalog/staffs-poles/">Рейки</a></li>
+									</ul>
+								</div>
+								<!--/col-->
+								<!--===========-->
+								<div class="col-4">
+									<ul>
+										<li><a href="/catalog/measuring-wheels/">Измерительные колеса</a></li>
+										<li><a href="/catalog/line-lasers/">Лазерные уровни</a></li>
+										<li><a href="/catalog/rotary-lasers/">Ротационные нивелиры</a></li>
+										<li><a href="/catalog/earth-augers/">Мотобуры</a></li>
+										<li><a href="/catalog/earth-augers-accessories/">Аксессуары для мотобуров</a></li>
+									</ul>
+								</div>
+								<!--/col-->
+								<!--===========-->
+								<div class="col-4">
+									<ul>
+									</ul>
+								</div>
+							</div>
+						</div><!-- /footer_menu_mob_submenu -->
+					</div><!-- /d-block d-lg-none -->
+					<div class="footer_contact">
+						<div class="form-row flex-nowrap lh1 align-items-end mb-3">
+							<!--===========-->
+							<div class="col-auto">
+								<a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
+							</div>
+							<!--/col-->
+							<!--===========-->
+							<div class="col-auto">
+								<span class="fw300 font9">Единая горячая линия</span>
+							</div>
+							<!--/col-->
+							<!--===========-->
+						</div>
+						<!--/row-->
+						<div class="grafic_raboty light_grey_color font9">
+							09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
+							Суббота, воскресенье - выходной. Звонок по России бесплатный
+						</div>
+					</div><!-- /footer_contact -->
+					<!-- ============================== -->
+				</div><!-- /footer_menu -->
+				<div class="footer_footer pt-4 pb-5">
+					<div class="font9 text-center">Copyright © 2008-2025 ADA Instruments</div>
+				</div><!-- /footer_footer -->
+			</div><!-- /container -->
+		</footer>
+		<div id="toTop"><i class="icofont-rounded-up"></i></div>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery.scrollTo.js"></script>
+		<script src="../dist/rangeslider/ion.rangeslider.min.js"></script>
+		<script src="../dist/parallax.js-1.5.0/parallax.min.js"></script>
+		<script src="../dist/fancybox/jquery.fancybox.min.js"></script>
+		<script src="../dist/animate/wow.min.js"></script>
+		<script src="../js/classie.js"></script>
+		<script src="../dist/slick/slick.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/popover.js"></script>
+		<script src="../js/script.js"></script>
+
+
+	</div>
+</body>
+
+</html>

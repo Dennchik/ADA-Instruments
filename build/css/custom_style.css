@@ -684,9 +684,16 @@ header.smaller {
   margin-left: -15px;
   margin-right: -15px;
 }
+.top_menu li > a > span {
+  -webkit-transition: text-shadow 0.3s ease;
+  transition: text-shadow 0.3s ease;
+}
+.top_menu li:hover a > span {
+  text-shadow: 0 0 3px #fff;
+}
 
 .home_page .top_menu > li > a {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .top_menu > li > a {
@@ -1692,6 +1699,16 @@ header .container-fluid {
   font-size: 20px;
 }
 
+.font18 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.font16 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .font14 {
   font-size: 14px;
   font-weight: 400;
@@ -2175,7 +2192,16 @@ header .container-fluid {
 /*==========footer=============*/
 footer {
   background-color: #fff;
-  border-bottom: 7px solid rgb(255, 51, 51);
+}
+
+.footer_footer {
+  border-top: 7px solid rgb(255, 51, 51);
+  background-color: rgb(66, 66, 66);
+  padding: 1.5rem 0;
+  color: #fff;
+}
+.footer_footer .text-right {
+  text-align: right;
 }
 
 .grey_button {
@@ -2313,10 +2339,10 @@ footer .grey_button {
 
 .footer_menu_desk a:hover,
 .footer_menu_desk a:focus {
-  color: #222;
+  color: #000000;
   text-decoration: none;
   outline: none;
-  font-weight: 500;
+  text-shadow: 0 0 1px #000;
 }
 
 ul.footer_menu_desk {
@@ -2329,9 +2355,9 @@ ul.footer_menu_desk {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -2414,14 +2440,6 @@ ul.footer_menu_mob > li {
   transition: all 0.5s ease-out;
   display: block;
   white-space: nowrap;
-}
-
-.footer_menu_desk a:hover,
-.footer_menu_desk a:focus {
-  color: #222;
-  text-decoration: none;
-  outline: none;
-  font-weight: 500;
 }
 
 #open_child_list {
@@ -2647,7 +2665,7 @@ header .sub_menu a:hover:after {
   list-style: none;
   background-color: transparent;
   border-radius: 0px;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   background-size: 8px;
   font-weight: 700;
@@ -2759,9 +2777,6 @@ header .sub_menu a:hover:after {
   margin-left: -15px;
   margin-right: -15px;
   padding-top: 30px;
-}
-.contacts_list.bg-accent {
-  background: rgb(239, 239, 239);
 }
 
 .contacts_list > li {
@@ -4660,4 +4675,8 @@ header .sub_menu a:hover:after {
 
 .tab_accesories_wpar {
   overflow: hidden;
+}
+
+.bg-accent {
+  background: rgb(239, 239, 239);
 }/*# sourceMappingURL=custom_style.css.map */
