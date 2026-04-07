@@ -500,13 +500,13 @@ pre code {
 	margin-left: auto;
 }
 @media (min-width: 576px) {
-	.container,
+	/* .container, */
 	.container-sm {
 		max-width: 540px;
 	}
 }
 @media (min-width: 768px) {
-	.container,
+	/* .container, */
 	.container-md,
 	.container-sm {
 		max-width: 720px;
