@@ -20,7 +20,11 @@ input[type='submit'] {
   background: transparent none;
   box-shadow: none;
 }
-
+ul,
+ol,
+li {
+  list-style: none;
+}
 input,
 textarea,
 button,
@@ -2187,7 +2191,7 @@ footer {
 }
 
 footer .grey_button {
-  font-size: 7px;
+  font-size: 10px;
 }
 
 .footer_search form,
@@ -2370,7 +2374,7 @@ ul.footer_menu_mob > li {
 }
 
 .footer_menu_mob_submenu li a {
-  font-size: 9px;
+  font-size: 12px;
   padding-top: 5px;
   padding-bottom: 5px;
   display: block;
@@ -2594,7 +2598,7 @@ header .sub_menu a:hover:after {
 
 /*=================*/
 .breadcrumb {
-  padding: 8px 0px;
+  padding: 12px 0px;
   list-style: none;
   background-color: transparent;
   border-radius: 0px;
@@ -4484,7 +4488,7 @@ header .sub_menu a:hover:after {
 }
 
 .section_form {
-  padding-block: 50px;
+  padding-block: 50px 0;
 
   .suport_feedback_form {
     flex-direction: column;
@@ -4511,6 +4515,7 @@ header .sub_menu a:hover:after {
   font-weight: 700;
 }
 .section_form_title {
+  margin-bottom: 10px;
   span {
     line-height: 130%;
     display: block;
@@ -4518,3 +4523,6 @@ header .sub_menu a:hover:after {
   }
 }
 //* ----------------------------------------------------------------------------
+.tovar_slider_nav_item_box {
+  border: 4px solid #d8d8d844;
+}
