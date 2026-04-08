@@ -537,7 +537,7 @@ jQuery('document').ready(function () {
         breakpoint: 1200,
         settings: {
           touchThreshold: 100,
-          slidesToShow: 4,
+          slidesToShow: 3,
           dots: true,
           touchThreshold: 100,
           arrows: false,
