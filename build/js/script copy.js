@@ -567,32 +567,57 @@ jQuery('document').ready(function () {
     $vid_quantity.parents('.video_greed_wrapper').addClass('no_more');
   }
 });
-//* ----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.querySelector('.submit_button'); // или точнее селектор
+  const tabLinks = document.querySelectorAll('.tabs-buttons__item');
+  const tabContents = document.querySelectorAll('.tab-content__items');
+  const tabsItem = document.querySelector('.tabs-buttons');
+  // const buttonItems = document.querySelectorAll('.burger-button');
+  console.log(tabContents);
 
-  const tabForm = document.querySelector('.feedback_wrap');
-  console.log(btn);
+  tabLinks.forEach((tabLink, i) => {
+    tabLink.addEventListener('click', () => {
+      const tabContent = tabContents[i];
+      console.log('yes');
 
-  const successMessage = document.querySelector('.succes_message');
-  console.log(successMessage);
+      // Удаляем класс active у всех табов и контентов
+      tabLinks.forEach((link) => link.classList.remove('active'));
+      tabContents.forEach((content) => content.classList.remove('active'));
 
-  if (!btn || !successMessage) return;
+      // Добавляем класс active к текущей кнопке и контенту
+      tabLink.classList.add('active');
+      tabContent.classList.add('active');
+      tabsItem.classList.remove('_responsive');
+      // buttonItems.forEach((buttonItem) => {
+      //   if (buttonItem.classList.contains('_open-menu')) {
+      //     buttonItem.classList.remove('_open-menu');
+      //   }
+      // });
 
-  btn.addEventListener('click', () => {
-    tabForm.style.display = 'none';
-    successMessage.style.display = 'flex';
-
-    setTimeout(() => {
-      successMessage.classList.add('_show');
-    }, 100);
-
-    setTimeout(() => {
-      successMessage.classList.remove('_show');
-    }, 2000);
-    setTimeout(() => {
-      tabForm.style.display = 'block';
-      successMessage.style.display = 'none';
-    }, 2200);
+      // Применяем анимацию только к активному контенту
+      timeLineHeaderItem(tabContent);
+    });
   });
 });
+//* ----------------------------------------------------------------------------
+function timeLineHeaderItem(element) {
+  let timeline = anime.timeline({
+    duration: 750,
+  });
+
+  timeline.add(
+    {
+      targets: element,
+      opacity: [0, 1],
+      translateY: [10, 0],
+      // rotate: [-90, 0],
+      duration: 500,
+      easing: 'easeInOutSine',
+      begin: function (anim) {
+        anim.animatables.forEach(function (animatable) {
+          animatable.target.style.transition = 'opacity 0.9s ease-out';
+        });
+      },
+    },
+    50
+  );
+}

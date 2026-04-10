@@ -849,7 +849,16 @@
   .au_bootom_txt .font12 {
     font-size: 10px;
   }
-
+  .pl-ptr-30-40 {
+    padding: 20px 10px;
+  }
+  .narrow_mtitle {
+    padding: 0;
+    width: 250px;
+  }
+  .mob-pl {
+    padding-left: 0;
+  }
   .au_footer {
     position: relative;
   }
@@ -1181,7 +1190,7 @@
     position: relative;
   }
 
-  .whith_grey_band:after {
+  /* .whith_grey_band:after {
     content: ' ';
     position: absolute;
     width: 50%;
@@ -1201,7 +1210,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-  }
+  } */
 
   .whith_grey_band header.smaller:after {
     display: none;
@@ -1222,9 +1231,12 @@
       z-index: 99;
     }
   }
+  .mb-5 {
+    margin-bottom: 0 !important;
+  }
 
   .narrow_mtitle {
-    min-width: 305px;
+    min-width: 300px;
   }
 }
 /*=================================================*/

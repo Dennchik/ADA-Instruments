@@ -12,12 +12,13 @@ button,
 textarea {
   border: none;
 }
-
+textarea {
+  resize: none;
+}
 button,
 input[type='submit'] {
   cursor: pointer;
   display: inline-block;
-  background: transparent none;
   box-shadow: none;
 }
 ul,
@@ -724,11 +725,13 @@ header.smaller {
 .slick-dots li button:focus {
   opacity: 0;
 }
+
 .slick-dots {
   display: flex;
   justify-content: space-between;
   gap: 3px;
 }
+
 .slick-dots li {
   overflow: hidden;
   width: 10px;
@@ -980,7 +983,7 @@ header.smaller {
 
 .search_wrap > div > input::-webkit-input-placeholder {
   color: #d2d2d2;
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0;
   transition: opacity 150ms ease-out;
 }
@@ -1090,8 +1093,6 @@ header.smaller {
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
@@ -1812,31 +1813,32 @@ header .container-fluid {
   width: 100%;
   padding: 6px 0px;
   border-bottom: 1px solid #ccc;
+  font-size: 22px;
 }
 
 .mp_feedback ::-webkit-input-placeholder {
   color: inherit;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
 }
 
 .mp_feedback ::-moz-placeholder {
   color: inherit;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
 }
 
 /* Firefox 19+ */
 .mp_feedback :-moz-placeholder {
   color: inherit;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
 }
 
 /* Firefox 18- */
 .mp_feedback :-ms-input-placeholder {
   color: inherit;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
 }
 
@@ -2602,14 +2604,20 @@ header .sub_menu a:hover:after {
 
 /*=================*/
 .breadcrumb {
-  padding: 12px 0px;
   list-style: none;
   background-color: transparent;
   border-radius: 0px;
   font-size: 12px;
   text-transform: uppercase;
-  background-size: 8px;
   font-weight: 700;
+  margin-bottom: 0;
+}
+.pl-40 {
+  padding-left: 40px;
+}
+
+.pl-ptr-30-40 {
+  padding: 20px 20px 20px 40px;
 }
 
 .breadcrumb > li {
@@ -2659,12 +2667,15 @@ header .sub_menu a:hover:after {
     padding-left: 20px;
     position: relative;
   }
-
+  .breadcrumb {
+    padding-left: 0;
+  }
   .breadcrumb > li:before {
     position: absolute;
+    padding: 0 !important;
     left: 0;
     top: 0px;
-    content: '\ea5c';
+    content: '\ea5c' !important;
     font-size: 14px;
     font-family: IcoFont !important;
     speak: none;
@@ -3794,8 +3805,41 @@ header .sub_menu a:hover:after {
   justify-content: space-between;
   align-items: stretch;
   align-content: stretch;
+  textarea {
+    padding-top: 15px !important;
+  }
+}
+//* ----------------------------------------------------------------------------
+
+.cart_feedback > .succes_message {
+  background-color: #00000000;
+  backdrop-filter: blure(60px);
+  display: flex;
+  align-items: center;
+  color: #fff;
 }
 
+.succes_message {
+  transition: all 0.9s ease 0s;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.succes_message._show {
+  opacity: 1;
+}
+
+.p-relstive {
+  position: relative;
+}
+
+.feedback_wrap {
+  padding-top: 48px;
+}
+.succes_message._show {
+  opacity: 1;
+}
+//* ----------------------------------------------------------------------------
 .suport_feedback_form > li {
   width: 50%;
 }
@@ -3808,7 +3852,11 @@ header .sub_menu a:hover:after {
 
 .suport_feedback_form input[type='text'],
 .suport_feedback_form input[type='email'],
-.suport_feedback_form input[type='tel'] {
+.suport_feedback_form input[type='tel'],
+.suport_feedback_form textarea {
+  display: flex;
+  align-items: center;
+
   border: 0px;
   outline: none;
   color: #fff;
@@ -3906,10 +3954,24 @@ header .sub_menu a:hover:after {
 }
 
 .tovar_bock_mini_description {
-  font-size: 11px;
+  font-size: 12px;
   max-width: 350px;
+  p {
+    line-height: 128%;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
 }
 
+.grey_back {
+  background-color: gray;
+}
+.col-md-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .tovar_sliders {
   height: 605px;
   position: absolute;
@@ -3918,7 +3980,6 @@ header .sub_menu a:hover:after {
   width: 800px;
   position: static;
   height: auto;
-
   width: auto;
 }
 
@@ -3942,10 +4003,11 @@ header .sub_menu a:hover:after {
 
 .tovar_slider_nav_item_box .img_cont {
   display: block;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   height: 130px;
+  cursor: pointer;
 }
 
 .tovar_slider_nav_wrapper .prev,
@@ -4065,8 +4127,11 @@ header .sub_menu a:hover:after {
 
 .tovar_parameters {
   overflow: auto;
-  height: 380px;
-  font-size: 14px;
+  max-height: 380px;
+  font-size: 13px;
+}
+
+.specifications {
 }
 
 .tovar_parameters_list {
@@ -4089,7 +4154,7 @@ header .sub_menu a:hover:after {
   padding: 10px 30px 10px 0;
   position: relative;
   // vertical-align: top;
-  font-size: 8px;
+  font-size: 12px;
   text-transform: uppercase;
   line-height: 1;
   cursor: pointer;
@@ -4196,7 +4261,7 @@ header .sub_menu a:hover:after {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.479);
   top: 0;
   left: 0;
 }
@@ -4519,21 +4584,13 @@ header .sub_menu a:hover:after {
     max-width: 100%;
   }
 }
-
+//*  Form ====================================
 .section_form_body {
   padding: 40px;
   background: url('../img/fon_form.png') center center / cover no-repeat;
   object-fit: cover;
 }
 
-.items_greed_box_old-price {
-  text-decoration: line-through;
-  color: red;
-  font-weight: 700;
-}
-.items_greed_box_price {
-  font-weight: 700;
-}
 .section_form_title {
   margin-bottom: 10px;
   span {
@@ -4542,10 +4599,44 @@ header .sub_menu a:hover:after {
     color: white;
   }
 }
+.suport_feedback_form > .section_form_line {
+  width: 45%;
+}
+
+//*  Form ====================================
+.items_greed_box_old-price {
+  text-decoration: line-through;
+  color: red;
+  font-weight: 700;
+}
+.items_greed_box_price {
+  font-weight: 700;
+}
 //* ----------------------------------------------------------------------------
 .tovar_slider_nav_item_box {
   border: 4px solid #d8d8d844;
 }
 .col-md-6 {
   flex: 0 1 50%;
+}
+//* ----------------------------------------------------------------------------
+
+.tabs-buttons {
+  display: flex;
+  gap: 40px;
+  border-bottom: 4px solid red;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  // .tabs-button__item
+
+  &__item {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 10px;
+    text-transform: uppercase;
+    transition: color 0.3s ease 0s;
+    &.active {
+      color: red;
+    }
+  }
 }

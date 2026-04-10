@@ -343,35 +343,47 @@
 					<span>Возникли вопросы?</span>
 					<span>Напишите нам!</span>
 				</div>
-
-				<form action="#" method="" class="suport_feedback_form">
-					<li>
-						<div class="suport_feedback_form_box">
-							<div class="mb-3">
-								<input type="text" placeholder="Ваше имя" required="">
-							</div>
-						</div><!-- /suport_feedback_form_box -->
-					</li>
-					<li>
-						<div class="suport_feedback_form_box">
-							<div class="mb-t">
-								<input type="text" placeholder="Ваш e-mail" required="">
-							</div>
-						</div><!-- /suport_feedback_form_box -->
-					</li>
-					<li>
-						<div class="suport_feedback_form_box">
-							<div class="mt-4">
-								<input type="text" placeholder="Ваш вопрос" required="">
-							</div>
-						</div><!-- /suport_feedback_form_box -->
-					</li>
-					<li>
-						<div class="suport_feedback_form_box">
-							<button class="red_button" type="submit">ОТПРАВИТЬ </button>
-						</div><!-- /suport_feedback_form_box -->
-					</li>
-				</form>
+				<div class="mp_feedback_body">
+					<form action="#" method="POST" class="suport_feedback_form feedback_form">
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportName" class="sr-only">Ваше имя</label>
+									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required>
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
+									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required
+										autocomplete="off">
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-4">
+									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
+									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required
+										rows="1"></textarea>
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<button class="red_button" type="submit">ОТПРАВИТЬ </button>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+					</form>
+					<div class="succes_message" style="display: none;">
+						<div class="succes_message_caption">
+							Спасибо за обращение ! <br>
+							мы ответим Вам в ближайшее время!
+						</div><!-- /succes_message_caption -->
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="toTop"><i class="icofont-rounded-up"></i></div>
