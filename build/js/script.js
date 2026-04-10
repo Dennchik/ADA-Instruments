@@ -13,7 +13,7 @@ jQuery('document').ready(function () {
   jQuery(window).resize(function () {
     footerToBottom();
   });
-  ////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.navbar-nav li a.nav-link').click(function () {
     var selected = jQuery(this).attr('href');
     jQuery.scrollTo(selected, 700, {
@@ -27,9 +27,7 @@ jQuery('document').ready(function () {
     jQuery(this).parents('.navbar-nav li').addClass('active');
     return false;
   });
-  ////////////////////////
-
-  /////////////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.product_slider').slick({
     prevArrow: '<div class="prev"><i class="icofont-thin-left"></i></div>',
     nextArrow: '<div class="next"><i class="icofont-thin-right"></i></div>',
@@ -57,7 +55,7 @@ jQuery('document').ready(function () {
     ],
   });
 
-  //////////////////////////////////////////
+  //* --------------------------------------------------------------------------
   function init() {
     window.addEventListener('scroll', function (e) {
       var distanceY = window.pageYOffset || document.documentElement.scrollTop,
@@ -85,12 +83,11 @@ jQuery('document').ready(function () {
     });
   }
   window.onload = init();
-  ////////////////////////////
+  //* --------------------------------------------------------------------------
   //jQuery('input[name="phone"]').mask("+7 (999) 999-99-99");
-  ////////////////////////////
+  //* --------------------------------------------------------------------------
   //jQuery('.item_title').matchHeight();
-  /////////////////////////////
-
+  //* --------------------------------------------------------------------------
   jQuery(window).scroll(function () {
     if (jQuery(this).scrollTop() != 0) {
       jQuery('#toTop').fadeIn();
@@ -108,30 +105,28 @@ jQuery('document').ready(function () {
     );
   });
 
-  //////////////////////////////////
+  //* --------------------------------------------------------------------------
   var x, i, j, l, ll, selElmnt, a, b, c;
-  /* Look for any elements with the class "custom_select": */
+  /* Ищите любые элементы с классом "custom_select": */
   x = document.getElementsByClassName('custom_select');
   l = x.length;
   for (i = 0; i < l; i++) {
     selElmnt = x[i].getElementsByTagName('select')[0];
     ll = selElmnt.length;
-    /* For each element, create a new DIV that will act as the selected item: */
+    /* Для каждого элемента создайте новый DIV, который будет действовать как выбранный элемент: */
     a = document.createElement('DIV');
     a.setAttribute('class', 'select-selected');
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
     x[i].appendChild(a);
-    /* For each element, create a new DIV that will contain the option list: */
+    /* Для каждого элемента создайте новый DIV, который будет содержать список опций: */
     b = document.createElement('DIV');
     b.setAttribute('class', 'select-items select-hide');
     for (j = 1; j < ll; j++) {
-      /* For each option in the original select element,
-      create a new DIV that will act as an option item: */
+      /* Для каждого параметра в исходном элементе select создайте новый DIV, который будет действовать как элемент option: */
       c = document.createElement('DIV');
       c.innerHTML = selElmnt.options[j].innerHTML;
       c.addEventListener('click', function (e) {
-        /* When an item is clicked, update the original select box,
-        and the selected item: */
+        /* При нажатии на элемент обновите исходное поле выбора и выбранный элемент: */
         var y, i, k, s, h, sl, yl;
         s = this.parentNode.parentNode.getElementsByTagName('select')[0];
         sl = s.length;
@@ -155,8 +150,7 @@ jQuery('document').ready(function () {
     }
     x[i].appendChild(b);
     a.addEventListener('click', function (e) {
-      /* When the select box is clicked, close any other select boxes,
-      and open/close the current select box: */
+      /* При нажатии на поле выбора закройте все другие поля выбора и откройте/закройте текущее поле выбора: */
       e.stopPropagation();
       closeAllSelect(this);
       this.nextSibling.classList.toggle('select-hide');
@@ -165,8 +159,7 @@ jQuery('document').ready(function () {
   }
 
   function closeAllSelect(elmnt) {
-    /* A function that will close all select boxes in the document,
-    except the current select box: */
+    /* Функция, которая закроет все поля выбора в документе, за исключением текущего поля выбора: */
     var x,
       y,
       i,
@@ -191,12 +184,10 @@ jQuery('document').ready(function () {
     }
   }
 
-  /* If the user clicks anywhere outside the select box,
-  then close all select boxes: */
+  /* Если пользователь щелкнет в любом месте за пределами поля выбора, закройте все поля выбора: */
   document.addEventListener('click', closeAllSelect);
 
-  //////////////////////////////
-  /////////////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.main_slider_desk').on('init', function (e, slick) {
     var jQueryfirstAnimatingElements = jQuery(
       'div.main_slider_desk_item:first-child'
@@ -233,7 +224,7 @@ jQuery('document').ready(function () {
     ],
   });
 
-  ////////////////////////////////////////
+  //* --------------------------------------------------------------------------
 
   function doAnimations(elements) {
     var animationEndEvents =
@@ -253,10 +244,9 @@ jQuery('document').ready(function () {
         });
     });
   }
-  ///////////////////////////
+  //* --------------------------------------------------------------------------
   new WOW().init();
-  ////////////////////
-  ///////////////////////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.menu_show,.menu_close').click(function () {
     if (jQuery('.mobile_menu_wrapp').css('right') == '-700px') {
       jQuery('.mobile_menu_wrapp').animate({ right: '0px' }, 500);
@@ -268,7 +258,7 @@ jQuery('document').ready(function () {
       return false;
     }
   });
-  ///////////////////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.mobile_menu .has_child a').click(function () {
     jQuery(this)
       .parents('.has_child')
@@ -277,7 +267,7 @@ jQuery('document').ready(function () {
         // Animation complete.
       });
   });
-  ////////////////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery(document).click(function (e) {
     if (jQuery(e.target).closest('.menu_show,.mobile_menu_wrapp').length)
       return;
@@ -286,11 +276,11 @@ jQuery('document').ready(function () {
     jQuery('.menu_button').removeClass('active');
     e.stopPropagation();
   });
-  /////////////////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.toggle').on('click', function () {
     jQuery('.menu_button').toggleClass('active');
   });
-  /////////////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.cat_mp_slider').slick({
     nextArrow: '<div class="next"><i class="icofont-thin-right"></i></div>',
     dots: true,
@@ -304,28 +294,7 @@ jQuery('document').ready(function () {
     variableWidth: true,
   });
 
-  //////////////////////////////////////////
-
-  $('#open_mp_feedback').on('click', function () {
-    $('.mp_feedback_body').slideToggle('slow', function () {
-      // Animation complete.
-    });
-  });
-
-  ////////////////////////
-
-  $('.feedback_form').on('submit', function (event) {
-    $(this)
-      .parents('.mp_feedback_body')
-      .find('.succes_message')
-      .fadeIn(400)
-      .delay(2000)
-      .fadeOut(400);
-    event.preventDefault();
-  });
-  ////////////////////////
-
-  ///////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.open_search').click(function () {
     jQuery(this)
       .parents('.top_search_wrap')
@@ -334,13 +303,13 @@ jQuery('document').ready(function () {
         // Animation complete.
       });
   });
-  //////////////////
+  //* --------------------------------------------------------------------------
   jQuery(document).click(function (e) {
     if (jQuery(e.target).closest('.top_search_wrap').length) return;
     jQuery('.top_search_body').hide(700);
     e.stopPropagation();
   });
-  ///////////////////
+  //* --------------------------------------------------------------------------
   jQuery('#open_child_list').click(function () {
     jQuery(this)
       .parents('.footer_menu')
@@ -349,8 +318,7 @@ jQuery('document').ready(function () {
         // Animation complete.
       });
   });
-  ////////////////
-
+  //* --------------------------------------------------------------------------
   jQuery('.open_menu_child').click(function () {
     jQuery(this)
       .parents('li')
@@ -359,9 +327,7 @@ jQuery('document').ready(function () {
         // Animation complete.
       });
   });
-
-  ////////////////
-
+  //* --------------------------------------------------------------------------
   jQuery('.open_contacts_list').click(function () {
     jQuery(this)
       .parents('.contact_page_body_box')
@@ -371,12 +337,12 @@ jQuery('document').ready(function () {
         // Animation complete.
       });
   });
-  ////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.show_more_contacts_list_box').click(function () {
     jQuery(this).parents('.contacts_list_wpapper').toggleClass('open_more');
     jQuery(this).hide();
   });
-  //////////////////////
+  //* --------------------------------------------------------------------------
 
   var custom_values_001 = [0, 30, 60, 90, 120, 150];
   // be careful! FROM and TO should be index of values array
@@ -401,7 +367,7 @@ jQuery('document').ready(function () {
     to: my_to_002,
     values: custom_values_002,
   });
-  ////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.filters_open').click(function () {
     jQuery(this)
       .parents('.filters_wrapper')
@@ -411,22 +377,22 @@ jQuery('document').ready(function () {
         // Animation complete.
       });
   });
-  //////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.show_moreitems').click(function () {
     jQuery(this).parents('.items_greed').toggleClass('open_more');
     jQuery(this).hide();
   });
-  //////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.open_more_pdf').click(function () {
     jQuery(this).parents('.instr_right_list').toggleClass('open_more');
     jQuery(this).hide();
   });
-  //////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.open_more_videos').click(function () {
     jQuery(this).parents('.video_greed_wrapper').toggleClass('open_more');
     jQuery(this).hide();
   });
-  ////////////////////////
+  //* --------------------------------------------------------------------------
   $(document).on('click', '.button_play_video', function () {
     var $video = $('.video_iframe'),
       src = $video.attr('src');
@@ -434,9 +400,7 @@ jQuery('document').ready(function () {
     $video.attr('src', src + '&autoplay=1');
     $('.button_play_video').fadeOut();
   });
-
-  ///////////////////
-
+  //* --------------------------------------------------------------------------
   $(document).on('click', '.button_play_video_2', function () {
     var $video_2 = $(this).parent('.video_inner').find('.video_iframe'),
       src = $video_2.attr('src');
@@ -444,13 +408,14 @@ jQuery('document').ready(function () {
     $video_2.attr('src', src + '&autoplay=1');
     $(this).fadeOut();
   });
-  /////////////////
-  // jQuery(".open_instr").click(function() {
-  //   jQuery(".mob_instruction_wrapper").hide();
-  //     jQuery(this).parents("li").find(".mob_instruction_wrapper").slideToggle('400', function() {
-
-  //     })
-  //   });
+  //* --------------------------------------------------------------------------
+  jQuery('.open_instr').click(function () {
+    jQuery('.mob_instruction_wrapper').hide();
+    jQuery(this)
+      .parents('li')
+      .find('.mob_instruction_wrapper')
+      .slideToggle('400', function () {});
+  });
   jQuery('.open_instr').click(function () {
     jQuery(this)
       .parents('.instr_items_greed')
@@ -516,7 +481,7 @@ jQuery('document').ready(function () {
       .fadeOut(400);
     event.preventDefault();
   });
-  ////////////////////////////////
+  //* --------------------------------------------------------------------------
   $('.tovar_slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -546,7 +511,7 @@ jQuery('document').ready(function () {
       },
     ],
   });
-  ////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.open_item').click(function () {
     jQuery(this)
       .parents('.open_item_parent')
@@ -555,27 +520,98 @@ jQuery('document').ready(function () {
       .slideToggle('400', function () {});
     return false;
   });
-  /////////////////////////////
+  //* --------------------------------------------------------------------------
   jQuery('.open_more_par').click(function () {
     jQuery(this).parents('.tovar_parameters_mobile').toggleClass('open_more');
     jQuery(this).hide();
   });
-  ////////////////////////
+  //* --------------------------------------------------------------------------
   var $vid_quantity = $('.video_greed_wrapper .form-row>div');
 
   if ($vid_quantity.length < 3) {
     $vid_quantity.parents('.video_greed_wrapper').addClass('no_more');
   }
+  //* --------------------------------------------------------------------------
+  $('#open_mp_feedback').on('click', function () {
+    $('.mp_feedback_body').slideToggle('slow', function () {
+      // Animation complete.
+    });
+  });
+
+  //todo -------- [Гл. стр] - Показ сообщения после отправки формы -------------
+  $('.feedback_form').on('submit', function (event) {
+    event.preventDefault();
+
+    var $form = $(this);
+    var $successMessage = $form
+      .parents('.mp_feedback_body')
+      .find('.succes_message');
+
+    // Имитация отправки (задержка 500ms для наглядности)
+    setTimeout(function () {
+      // ПОКАЗЫВАЕМ СООБЩЕНИЕ ОБ УСПЕХЕ
+      $successMessage.fadeIn(400).delay(2000).fadeOut(400);
+
+      // ОЧИЩАЕМ ФОРМУ ТОЛЬКО ПОСЛЕ УСПЕШНОЙ ОТПРАВКИ
+      $form[0].reset();
+
+      // === ЗАКОММЕНТИРОВАННЫЙ ЗАПРОС К СЕРВЕРУ ===
+      /*
+        $.ajax({
+            url: '/ваш-обработчик.php',
+            type: 'POST',
+            data: $form.serialize(),
+            success: function(response) {
+                $successMessage.fadeIn(400).delay(2000).fadeOut(400);
+                $form[0].reset();
+            },
+            error: function() {
+                alert('Ошибка при отправке');
+            }
+        });
+        */
+    }, 500); // Небольшая задержка для имитации работы сервера
+  });
 });
-//* ----------------------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
+
+//todo ----- [Категории товара] - Показ сообщения после отправки формы -------
+$('.suport_feedback_form').on('submit', function (event) {
+  event.preventDefault();
+
+  var $form = $(this);
+
+  var $feedbackBody = $form.closest('.section_form_body');
+  var $successMessage = $feedbackBody.find('.succes_message');
+
+  // 🔥 фиксируем реальную высоту
+  var height = $feedbackBody[0].getBoundingClientRect().height;
+  $feedbackBody.css('min-height', height);
+
+  // Скрываем форму
+  $form.fadeOut(400, function () {
+    // 🔥 очищаем форму (правильный способ)
+    $form[0].reset();
+
+    // Показываем сообщение
+    $successMessage
+      .fadeIn(400)
+      .delay(2000)
+      .fadeOut(400, function () {
+        // Возвращаем форму
+        $form.fadeIn(400, function () {
+          // убираем фиксацию высоты
+          $feedbackBody.css('min-height', '');
+        });
+      });
+  });
+});
+//todo ------ [Карточка товара] - Показ сообщения после отправки формы ---------
+$(document).ready(function () {
   const btn = document.querySelector('.submit_button'); // или точнее селектор
 
   const tabForm = document.querySelector('.feedback_wrap');
-  console.log(btn);
 
   const successMessage = document.querySelector('.succes_message');
-  console.log(successMessage);
 
   if (!btn || !successMessage) return;
 

@@ -332,17 +332,12 @@
     display: none;
   }
 
-  .items_greed_list {
-    margin-left: -10px;
-    margin-right: -10px;
-  }
-
-  .items_greed_box {
+  /* .items_greed_box {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-  }
+  } */
 
   .items_greed_box .img_cont {
     height: 160px;
@@ -352,10 +347,18 @@
     font-size: 12px;
   }
 
-  .items_greed_list {
+  .catalog_menu {
+    display: none;
+  }
+
+  .items_greed_box_info {
+    font-size: 11px;
+  }
+
+  /* .items_greed_list {
     margin-left: -15px;
     margin-right: -15px;
-  }
+  } */
 
   .items_greed_box {
     margin-left: 15px;
@@ -555,9 +558,7 @@
   }
 }
 
-/*=================================================================================================*/
-
-/* Small Devices, Tablets */
+/** Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   h1 {
     font-size: 30px;
@@ -657,8 +658,8 @@
     padding-left: 15px;
   }
 
-  .tovar_slider_wrapper {
-    /* padding-left: 40%; */
+  .items_greed_list {
+    grid-template-columns: repeat(2, auto);
   }
 
   .tovar_slider_nav_item_box .img_cont {
@@ -674,6 +675,48 @@
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .breadcrumb > li {
+    display: none;
+  }
+
+  .breadcrumb > li:nth-last-child(2) {
+    display: block;
+    padding-left: 20px;
+    position: relative;
+  }
+  .breadcrumb {
+    padding-left: 0;
+  }
+
+  .breadcrumb > li:before {
+    position: absolute;
+    padding: 0 !important;
+    left: 0;
+    top: 0px;
+    content: '\ea5c' !important;
+    font-size: 14px;
+    font-family: IcoFont !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    line-height: 1;
+    font-feature-settings: 'liga';
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    color: #a4a4a4;
+    transform: translateY(3px);
+  }
+
+  .home_page .breadcrumb > li:before {
+    color: #000;
+  }
+}
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 576px) {
   .product_slider_wrapper .prev,
@@ -755,9 +798,9 @@
     width: 100px;
   }
 
-  .items_greed_list > li {
+  /* .items_greed_list > li {
     width: 33.333%;
-  }
+  } */
 
   .video_greed_wrapper .form-row > div:nth-child(n + 3) {
     display: none;
@@ -868,7 +911,9 @@
     right: 0;
     top: 20px;
   }
-
+  .items_greed_list li {
+    padding: 5px;
+  }
   .au_bootom_txt > .row > div {
     position: static;
   }
@@ -1053,6 +1098,9 @@
     height: 80px;
   }
 
+  .items_greed_list {
+    grid-template-columns: 1fr;
+  }
   .product_slider_box {
     font-size: 10px;
   }
@@ -1258,3 +1306,4 @@
     height: 915px;
   }
 }
+/** =================================================*/
