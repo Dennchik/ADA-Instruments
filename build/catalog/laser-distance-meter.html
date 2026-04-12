@@ -67,7 +67,9 @@
 						<span class='toggle'><i></i> <i></i> <i></i></span>
 					</button><!-- /menu_button -->
 					<div class="top_search_wrap">
-						<div class="open_search"></div>
+						<div class="open_search">
+							<i class="icofont-search"></i>
+						</div>
 						<div class="top_search_body">
 							<form action="#">
 								<input type="text" placeholder="Поиск по сайту" required>
@@ -77,11 +79,11 @@
 					</div><!-- /top_search_wrap -->
 				</div>
 				<!-- ==================================================== -->
-				<div class="top_panel  h-100">
+				<div class="top_panel h-100">
 					<div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
 						<div class="col-auto">
 							<div class="left_TP">
-								<div class="row  align-items-center">
+								<div class="row align-items-center">
 									<!-- =================== -->
 									<div class="col-auto">
 										<a href="../index.html" class="logo"></a>
@@ -120,11 +122,11 @@
 							</div><!-- /left_TP -->
 						</div><!-- /col -->
 						<!-- ================== -->
-						<div class="col-auto d-none d-lg-block">
+						<div class="col-auto">
 							<div class="right_TP">
 								<div class="row  align-items-center  justify-content-end">
 									<!-- =================== -->
-									<div class="col-auto">
+									<div class="col-auto  d-none d-lg-block">
 										<div class="search_flexbox">
 											<div class="search_wrap">
 												<div>
@@ -136,8 +138,9 @@
 									<!-- =================== -->
 									<div class="col-auto">
 										<div class="col_icons">
-											<a href="../cart.html" class="col_cart icon_col">
-												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
+											<a href="../cart.html" class="col_cart icon_col cart-user">
+												<div class="cart-user__quantity"></div>
+												<svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
 													viewBox="0 0 512 512">
 													<g id="icomoon-ignore">
 													</g>
@@ -147,7 +150,7 @@
 												</svg>
 											</a>
 											<a href="" class="col_login icon_col">
-												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
+												<svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
 													viewBox="0 0 448 448">
 													<g id="icomoon-ignore">
 													</g>
@@ -157,15 +160,13 @@
 												</svg>
 											</a>
 										</div>
-										<!-- ============================select_menu==================================== -->
 									</div>
-									<!-- =================== -->
-								</div><!-- /row -->
-							</div><!-- /right_TP -->
-						</div><!-- /col -->
-					</div><!-- /row -->
-				</div><!-- /top_panel -->
-			</div><!-- /container -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</header>
 		<!--* =======================breadcrumb========================= -->
 		<div class="breadcrumb_wrapper mb-5">
@@ -212,12 +213,22 @@
 									<span class="items_greed_box_info">Диапазон работы 30 м, точность ± 3,0 мм</span>
 									<span class="items_greed_box_price">3 750 руб</span>
 								</a>
-								<span>
-									<a href="./productia.html" class="red_button">в корзину</a>
+								<span class="items_greed_wrapper">
+									<button class="add-to-cart red_button">в корзину</button>
+									<div class="quantity product-card__quantity red_button">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
 								</span>
-								<!-- /items_greed_box -->
 							</li>
-
 							<li>
 								<a href="/catalog/laser-distance-meter/lazernyy-dalnomer-ada-cosmo-120-video/" class="items_greed_box">
 									<span class="img_cont"
@@ -227,9 +238,21 @@
 									<span class="items_greed_box_old-price">3 750 руб</span>
 									<span class="items_greed_box_price">3 750 руб</span>
 								</a>
-								<span>
-									<sapn class="red_button">в корзину</s>
-								</span><!-- /items_greed_box -->
+								<span class="items_greed_wrapper">
+									<button class="add-to-cart red_button">в корзину</button>
+									<div class="quantity product-card__quantity red_button">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
+								</span>
 							</li>
 
 							<li>
@@ -240,9 +263,21 @@
 									<span class="items_greed_box_info">Диапазон работы 30 м, точность ± 3,0 мм</span>
 									<span class="items_greed_box_price">3 750 руб</span>
 								</a>
-								<span>
-									<a href="./productia.html" class="red_button">в корзину</a>
-								</span><!-- /items_greed_box -->
+								<span class="items_greed_wrapper">
+									<button class="add-to-cart red_button">в корзину</button>
+									<div class="quantity product-card__quantity red_button">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
+								</span>
 							</li>
 
 							<li>
@@ -253,9 +288,21 @@
 									<span class="items_greed_box_info">Диапазон работы 30 м, точность ± 3,0 мм</span>
 									<span class="items_greed_box_price">3 750 руб</span>
 								</a>
-								<span>
-									<a href="./productia.html" class="red_button">в корзину</a>
-								</span><!-- /items_greed_box -->
+								<span class="items_greed_wrapper">
+									<button class="add-to-cart red_button">в корзину</button>
+									<div class="quantity product-card__quantity red_button">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
+								</span>
 							</li>
 
 							<li>
@@ -266,9 +313,21 @@
 									<span class="items_greed_box_info">Диапазон работы 30 м, точность ± 3,0 мм</span>
 									<span class="items_greed_box_price">3 750 руб</span>
 								</a>
-								<span>
-									<a href="./productia.html" class="red_button">в корзину</a>
-								</span><!-- /items_greed_box -->
+								<span class="items_greed_wrapper">
+									<button class="add-to-cart red_button">в корзину</button>
+									<div class="quantity product-card__quantity red_button">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
+								</span>
 							</li>
 
 							<li>
@@ -279,9 +338,21 @@
 									<span class="items_greed_box_info">Диапазон работы 30 м, точность ± 3,0 мм</span>
 									<span class="items_greed_box_price">3 750 руб</span>
 								</a>
-								<span>
-									<a href="./productia.html" class="red_button">в корзину</a>
-								</span><!-- /items_greed_box -->
+								<span class="items_greed_wrapper">
+									<button class="add-to-cart red_button">в корзину</button>
+									<div class="quantity product-card__quantity red_button">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
+								</span>
 							</li>
 
 							<li>
@@ -292,8 +363,20 @@
 									<span class="items_greed_box_info">Диапазон работы 30 м, точность ± 3,0 мм</span>
 									<span class="items_greed_box_price">3 750 руб</span>
 								</a>
-								<span>
-									<a href="./productia.html" class="red_button">в корзину</a>
+								<span class="items_greed_wrapper">
+									<button class="add-to-cart red_button">в корзину</button>
+									<div class="quantity product-card__quantity red_button">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
 								</span>
 							</li>
 
@@ -307,8 +390,20 @@
 									<span class="items_greed_box_price">3 750 руб</span>
 								</a>
 
-								<span>
-									<a href="./productia.html" class="red_button">в корзину</a>
+								<span class="items_greed_wrapper">
+									<button class="add-to-cart red_button">в корзину</button>
+									<div class="quantity product-card__quantity red_button">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
 								</span>
 							</li>
 							<li>
@@ -319,8 +414,20 @@
 									<span class="items_greed_box_info">Диапазон работы 30 м, точность ± 3,0 мм</span>
 									<span class="items_greed_box_price">3 750 руб</span>
 								</a>
-								<span>
-									<a href="./productia.html" class="red_button">в корзину</a>
+								<span class="items_greed_wrapper">
+									<button class="add-to-cart red_button">в корзину</button>
+									<div class="quantity product-card__quantity red_button">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
 								</span>
 							</li>
 
@@ -380,11 +487,10 @@
 			</div>
 		</div>
 		<div id="toTop"><i class="icofont-rounded-up"></i></div>
-		<!-- </main> -->
-	</div><!-- /#main -->
+	</div>
 
 	<footer>
-		<div class=" container">
+		<div class="container">
 			<div class="footer_header pt-5 pb-4">
 				<div class="row flex-nowrap align-items-center">
 					<!--===========-->
@@ -396,7 +502,7 @@
 					<div class="col-lg-auto col-7">
 						<div class="footer_search">
 							<form action="#">
-								<input type="text" placeholder="поиск">
+								<input type="text" placeholder="поиск" name="search">
 								<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
 							</form>
 						</div>

@@ -84,7 +84,7 @@ jQuery('document').ready(function () {
   }
   window.onload = init();
   //* --------------------------------------------------------------------------
-  //jQuery('input[name="phone"]').mask("+7 (999) 999-99-99");
+  // jQuery('input[name="phone"]').mask('+7 (999) 999-99-99');
   //* --------------------------------------------------------------------------
   //jQuery('.item_title').matchHeight();
   //* --------------------------------------------------------------------------
@@ -539,6 +539,7 @@ jQuery('document').ready(function () {
   });
 
   //todo -------- [Гл. стр] - Показ сообщения после отправки формы -------------
+  //todo ↓↓↓ (Для Виктора) ↓↓↓ --- Проверка показа сообщения иметация
   $('.feedback_form').on('submit', function (event) {
     event.preventDefault();
 
@@ -546,35 +547,108 @@ jQuery('document').ready(function () {
     var $successMessage = $form
       .parents('.mp_feedback_body')
       .find('.succes_message');
+    var $submitButton = $form.find('button[type="submit"]');
+    var originalButtonText = $submitButton.text();
 
-    // Имитация отправки (задержка 500ms для наглядности)
+    // Блокируем кнопку
+    $submitButton.prop('disabled', true).text('Отправка...');
+
+    // Имитация отправки на сервер (для теста)
     setTimeout(function () {
-      // ПОКАЗЫВАЕМ СООБЩЕНИЕ ОБ УСПЕХЕ
+      // Показываем сообщение об успехе
       $successMessage.fadeIn(400).delay(2000).fadeOut(400);
 
-      // ОЧИЩАЕМ ФОРМУ ТОЛЬКО ПОСЛЕ УСПЕШНОЙ ОТПРАВКИ
+      // Очищаем форму
       $form[0].reset();
 
-      // === ЗАКОММЕНТИРОВАННЫЙ ЗАПРОС К СЕРВЕРУ ===
+      // Разблокируем кнопку
+      $submitButton.prop('disabled', false).text(originalButtonText);
+
+      // Для отладки — выводим данные в консоль
+      console.log('📝 Отправленные данные:', {
+        name: $form.find('[name="name"]').val(),
+        email: $form.find('[name="email"]').val(),
+        question: $form.find('[name="question"]').val(),
+      });
+
+      // === ЗАКОММЕНТИРОВАННЫЙ ЗАПРОС К СЕРВЕРУ (для реальной работы) ===
       /*
         $.ajax({
             url: '/ваш-обработчик.php',
             type: 'POST',
             data: $form.serialize(),
+            dataType: 'json',
             success: function(response) {
-                $successMessage.fadeIn(400).delay(2000).fadeOut(400);
-                $form[0].reset();
+                if (response.success) {
+                    $successMessage.fadeIn(400).delay(2000).fadeOut(400);
+                    $form[0].reset();
+                    $submitButton.prop('disabled', false).text(originalButtonText);
+                } else {
+                    alert(response.message || 'Ошибка при отправке');
+                    $submitButton.prop('disabled', false).text(originalButtonText);
+                }
             },
             error: function() {
-                alert('Ошибка при отправке');
+                alert('Ошибка соединения с сервером');
+                $submitButton.prop('disabled', false).text(originalButtonText);
             }
         });
         */
-    }, 500); // Небольшая задержка для имитации работы сервера
+    }, 500);
   });
 });
+//todo ↓↓↓ [Гл. стр] код для реальной работы с отправкой на сервер: ------------
+//todo ↓↓↓ (Для Виктора) ↓↓↓
+// $('.feedback_form').on('submit', function (event) {
+//   event.preventDefault();
 
-//todo ----- [Категории товара] - Показ сообщения после отправки формы -------
+//   var $form = $(this);
+//   var $successMessage = $form
+//     .parents('.mp_feedback_body')
+//     .find('.succes_message');
+//   var $submitButton = $form.find('button[type="submit"]');
+//   var originalButtonText = $submitButton.text();
+
+//   // Блокируем кнопку, чтобы избежать двойной отправки
+//   $submitButton.prop('disabled', true).text('Отправка...');
+
+//   // Отправка данных на сервер
+//   $.ajax({
+//     url: '/ваш-обработчик.php', // замените на реальный URL
+//     type: 'POST',
+//     data: $form.serialize(),
+//     dataType: 'json',
+//     success: function (response) {
+//       // Проверяем ответ от сервера
+//       if (response.success) {
+//         // Показываем сообщение об успехе
+//         $successMessage.fadeIn(400).delay(2000).fadeOut(400);
+
+//         // Очищаем форму ТОЛЬКО после успешной отправки
+//         $form[0].reset();
+
+//         // Разблокируем кнопку
+//         $submitButton.prop('disabled', false).text(originalButtonText);
+//       } else {
+//         // Если сервер вернул ошибку
+//         alert(response.message || 'Ошибка при отправке. Попробуйте позже.');
+//         $submitButton.prop('disabled', false).text(originalButtonText);
+//       }
+//     },
+//     error: function (xhr, status, error) {
+//       // Ошибка соединения или сервера
+//       console.error('Ошибка:', error);
+//       alert(
+//         'Произошла ошибка при отправке. Проверьте соединение с интернетом.'
+//       );
+//       $submitButton.prop('disabled', false).text(originalButtonText);
+//     },
+//   });
+// });
+
+//* ----------------------------------------------------------------------------
+//todo ↓↓↓ ---- [Категории товара] - Показ сообщения после отправки формы ------
+//todo ↓↓↓ (Для Виктора) ↓↓↓ --- Проверка показа сообщения
 $('.suport_feedback_form').on('submit', function (event) {
   event.preventDefault();
 
@@ -605,7 +679,72 @@ $('.suport_feedback_form').on('submit', function (event) {
       });
   });
 });
-//todo ------ [Карточка товара] - Показ сообщения после отправки формы ---------
+//todo ↓↓↓ [Категории товара]  код для реальной работы с отправкой на сервер: --
+//todo ↓↓↓ (Для Виктора) ↓↓↓
+// $('.suport_feedback_form').on('submit', function (event) {
+//   event.preventDefault();
+
+//   var $form = $(this);
+//   var $feedbackBody = $form.closest('.section_form_body');
+//   var $successMessage = $feedbackBody.find('.succes_message');
+//   var $submitButton = $form.find('button[type="submit"]');
+//   var originalButtonText = $submitButton.text();
+
+//   // Блокируем кнопку, чтобы избежать двойной отправки
+//   $submitButton.prop('disabled', true).text('Отправка...');
+
+//   // Отправка данных на сервер
+//   $.ajax({
+//     url: '/ваш-обработчик.php', // замените на реальный URL
+//     type: 'POST',
+//     data: $form.serialize(),
+//     dataType: 'json',
+//     success: function (response) {
+//       // Проверяем ответ от сервера
+//       if (response.success) {
+//         // Фиксируем высоту перед анимацией
+//         var height = $feedbackBody[0].getBoundingClientRect().height;
+//         $feedbackBody.css('min-height', height);
+
+//         // Скрываем форму
+//         $form.fadeOut(400, function () {
+//           // Очищаем форму ТОЛЬКО после успешной отправки
+//           $form[0].reset();
+
+//           // Показываем сообщение об успехе
+//           $successMessage
+//             .fadeIn(400)
+//             .delay(2000)
+//             .fadeOut(400, function () {
+//               // Возвращаем форму
+//               $form.fadeIn(400, function () {
+//                 // Убираем фиксацию высоты
+//                 $feedbackBody.css('min-height', '');
+//                 // Разблокируем кнопку (на случай если форма будет отправляться снова)
+//                 $submitButton.prop('disabled', false).text(originalButtonText);
+//               });
+//             });
+//         });
+//       } else {
+//         // Если сервер вернул ошибку
+//         alert(response.message || 'Ошибка при отправке. Попробуйте позже.');
+//         $submitButton.prop('disabled', false).text(originalButtonText);
+//       }
+//     },
+//     error: function (xhr, status, error) {
+//       // Ошибка соединения или сервера
+//       console.error('Ошибка:', error);
+//       alert(
+//         'Произошла ошибка при отправке. Проверьте соединение с интернетом.'
+//       );
+//       $submitButton.prop('disabled', false).text(originalButtonText);
+//     },
+//   });
+// });
+//* ----------------------------------------------------------------------------
+
+//todo ↓↓↓ ---- [Карточка товара] - Показ сообщения после отправки формы -------
+//todo ↓↓↓ (Для Виктора)
 $(document).ready(function () {
   const btn = document.querySelector('.submit_button'); // или точнее селектор
 
@@ -631,4 +770,117 @@ $(document).ready(function () {
       successMessage.style.display = 'none';
     }, 2200);
   });
+});
+//todo ---------- счетчик (добавить в корзину) ---------------------------------
+//todo ↓↓↓ (Для Виктора)
+document.addEventListener('DOMContentLoaded', function () {
+  // Функция для обновления общего счетчика корзины
+  function updateTotalCartQuantity() {
+    let totalQuantity = 0;
+
+    // Собираем все значения количества со всех товаров
+    document
+      .querySelectorAll('.items_greed_wrapper .input')
+      .forEach((input) => {
+        let val = parseInt(input.value) || 0;
+        totalQuantity += val;
+      });
+
+    const cartQuantity = document.querySelector('.cart-user__quantity');
+
+    if (cartQuantity) {
+      if (totalQuantity > 0) {
+        cartQuantity.textContent = totalQuantity;
+        cartQuantity.style.display = 'flex'; // или 'inline-flex', смотрите ваш CSS
+      } else {
+        cartQuantity.style.display = 'none';
+      }
+    }
+
+    console.log('Общее количество:', totalQuantity); // Для отладки
+  }
+
+  // Обработка каждого товара
+  document.querySelectorAll('.items_greed_wrapper').forEach((wrapper) => {
+    const addToCartBtn = wrapper.querySelector('.add-to-cart');
+    const quantityBlock = wrapper.querySelector('.quantity');
+
+    if (!addToCartBtn || !quantityBlock) return;
+
+    const input = quantityBlock.querySelector('.input');
+    const minusBtn = quantityBlock.querySelector('.quantity-remove');
+    const plusBtn = quantityBlock.querySelector('.quantity-add');
+
+    // Функция обновления видимости кнопки/счетчика для конкретного товара
+    function updateItemVisibility() {
+      let currentValue = parseInt(input.value) || 0;
+
+      if (currentValue > 0) {
+        addToCartBtn.style.display = 'none';
+        quantityBlock.style.display = 'flex';
+      } else {
+        addToCartBtn.style.display = 'block';
+        quantityBlock.style.display = 'none';
+      }
+
+      // Обновляем общий счетчик корзины
+      updateTotalCartQuantity();
+    }
+
+    // Функция изменения количества
+    function updateValue(change) {
+      let currentValue = parseInt(input.value) || 0;
+      let newValue = currentValue + change;
+
+      if (newValue < 0) newValue = 0;
+      input.value = newValue;
+      updateItemVisibility();
+    }
+
+    // Обработчик на кнопку "в корзину"
+    addToCartBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      updateValue(1);
+    });
+
+    // Обработчик на кнопку "+"
+    if (plusBtn) {
+      plusBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateValue(1);
+      });
+    }
+
+    // Обработчик на кнопку "-"
+    if (minusBtn) {
+      minusBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateValue(-1);
+      });
+    }
+
+    // Обработчик ручного ввода
+    if (input) {
+      input.addEventListener('input', (e) => {
+        let value = parseInt(e.target.value);
+        if (isNaN(value) || value < 0) {
+          input.value = 0;
+        }
+        updateItemVisibility();
+      });
+
+      // Запрещаем ввод букв
+      input.addEventListener('keydown', (e) => {
+        if (e.key === '-' || e.key === 'e' || e.key === '.' || e.key === ',') {
+          e.preventDefault();
+        }
+      });
+    }
+
+    // Инициализация видимости
+    updateItemVisibility();
+  });
+
+  // Первоначальное обновление счетчика
+  updateTotalCartQuantity();
 });

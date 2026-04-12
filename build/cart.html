@@ -54,11 +54,9 @@
 				</div><!-- /col -->
 			</div><!-- /row -->
 		</div>
-		<!-- /.mobile_menu -->
 	</div>
-	<!-- /.mobile_menu_wrapp -->
 	<!-- ==================================================== -->
-	<div id="main" style="min-height: 251.5px;">
+	<div id="main">
 		<header>
 			<div class="container h-100">
 				<!-- ==================================================== -->
@@ -67,7 +65,9 @@
 						<span class='toggle'><i></i> <i></i> <i></i></span>
 					</button><!-- /menu_button -->
 					<div class="top_search_wrap">
-						<div class="open_search"></div>
+						<div class="open_search">
+							<i class="icofont-search"></i>
+						</div>
 						<div class="top_search_body">
 							<form action="#">
 								<input type="text" placeholder="Поиск по сайту" required>
@@ -77,11 +77,11 @@
 					</div><!-- /top_search_wrap -->
 				</div>
 				<!-- ==================================================== -->
-				<div class="top_panel  h-100">
+				<div class="top_panel h-100">
 					<div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
 						<div class="col-auto">
 							<div class="left_TP">
-								<div class="row  align-items-center">
+								<div class="row align-items-center">
 									<!-- =================== -->
 									<div class="col-auto">
 										<a href="../index.html" class="logo"></a>
@@ -120,11 +120,11 @@
 							</div><!-- /left_TP -->
 						</div><!-- /col -->
 						<!-- ================== -->
-						<div class="col-auto d-none d-lg-block">
+						<div class="col-auto">
 							<div class="right_TP">
 								<div class="row  align-items-center  justify-content-end">
 									<!-- =================== -->
-									<div class="col-auto">
+									<div class="col-auto  d-none d-lg-block">
 										<div class="search_flexbox">
 											<div class="search_wrap">
 												<div>
@@ -136,8 +136,9 @@
 									<!-- =================== -->
 									<div class="col-auto">
 										<div class="col_icons">
-											<a href="./cart.html" class="col_cart icon_col">
-												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
+											<a href="../cart.html" class="col_cart icon_col cart-user">
+												<div class="cart-user__quantity"></div>
+												<svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
 													viewBox="0 0 512 512">
 													<g id="icomoon-ignore">
 													</g>
@@ -147,7 +148,7 @@
 												</svg>
 											</a>
 											<a href="" class="col_login icon_col">
-												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
+												<svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
 													viewBox="0 0 448 448">
 													<g id="icomoon-ignore">
 													</g>
@@ -157,166 +158,122 @@
 												</svg>
 											</a>
 										</div>
-										<!-- ============================select_menu==================================== -->
 									</div>
-									<!-- =================== -->
-								</div><!-- /row -->
-							</div><!-- /right_TP -->
-						</div><!-- /col -->
-					</div><!-- /row -->
-				</div><!-- /top_panel -->
-			</div><!-- /container -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</header>
 		<!-- =======================breadcrumb========================= -->
 		<div class="breadcrumb_wrapper mb-5">
 			<div class="container">
 				<ol class="breadcrumb">
 					<li><a href="../index.html">главная</a></li>
-					<li><a href="../productia.html">каталог</a></li>
 					<li class="active">Лазерные дальномеры</li>
 				</ol>
 			</div><!-- /container -->
-		</div><!-- /breadcrumb_wrapper -->
+		</div>
 		<!-- =======================/breadcrumb========================= -->
 		<div id="categoria_page" class="wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
-			<!-- /categoria_page -->
-		</div><!-- /#main -->
+
+			<div data-include="./html/partials/loading.html"></div>
+		</div>
 		<div class="section_form container">
 			<div class="section_form_body">
 				<div class="section_form_title">
 					<span>Возникли вопросы?</span>
 					<span>Напишите нам!</span>
 				</div>
-
-				<form action="#" method="" class="suport_feedback_form">
-					<li>
-						<div class="suport_feedback_form_box">
-							<div class="mb-3">
-								<input type="text" placeholder="Ваше имя" required="">
-							</div>
-						</div><!-- /suport_feedback_form_box -->
-					</li>
-					<li>
-						<div class="suport_feedback_form_box">
-							<div class="mb-t">
-								<input type="text" placeholder="Ваш e-mail" required="">
-							</div>
-						</div><!-- /suport_feedback_form_box -->
-					</li>
-					<li>
-						<div class="suport_feedback_form_box">
-							<div class="mt-4">
-								<input type="text" placeholder="Ваш вопрос" required="">
-							</div>
-						</div><!-- /suport_feedback_form_box -->
-					</li>
-					<li>
-						<div class="suport_feedback_form_box">
-							<button class="red_button" type="submit">ОТПРАВИТЬ </button>
-						</div><!-- /suport_feedback_form_box -->
-					</li>
-					</а>
+				<div class="form_feedback_body">
+					<form action="#" method="POST" class="suport_feedback_form feedback_form">
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportName" class="sr-only">Ваше имя</label>
+									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required>
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
+									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required
+										autocomplete="off">
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-4">
+									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
+									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required
+										rows="1"></textarea>
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<button class="red_button" type="submit">ОТПРАВИТЬ </button>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+					</form>
+					<div class="succes_message bg_transparent" style="display: none;">
+						<div class="succes_message_caption">
+							Спасибо за обращение ! <br>
+							мы ответим Вам в ближайшее время!
+						</div><!-- /succes_message_caption -->
+					</div>
+				</div>
 			</div>
 		</div>
-		<footer>
-			<div class="container">
-				<div class="footer_header pt-5 pb-4">
-					<div class="row flex-nowrap align-items-center">
-						<!--===========-->
-						<div class="col-lg-auto col-5 mr-lg-4">
-							<a href="./productia.html" class="grey_button">в каталог</a>
-						</div>
-						<!--/col-->
-						<!--===========-->
-						<div class="col-lg-auto col-7">
-							<div class="footer_search">
-								<form action="#">
-									<input type="text" placeholder="поиск">
-									<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
-								</form>
-							</div>
-						</div>
-						<!--/col-->
-						<!--===========-->
+		<div id="toTop"><i class="icofont-rounded-up"></i></div>
+	</div>
+
+	<footer>
+		<div class=" container">
+			<div class="footer_header pt-5 pb-4">
+				<div class="row flex-nowrap align-items-center">
+					<!--===========-->
+					<div class="col-lg-auto col-5 mr-lg-4">
+						<a href="./productia.html" class="grey_button">в каталог</a>
 					</div>
-					<!--/row-->
-				</div><!-- /footer_header -->
-				<div class="footer_menu pb-5">
-					<!-- =============footer_menu_desk==================== -->
-					<div class="d-none d-lg-block">
-						<ul class="footer_menu_desk">
-							<li>
-								<a href="#">ПОДДЕРЖКА</a>
-							</li>
-							<li>
-								<a href="#">о компании</a>
-							</li>
-							<li>
-								<a href="#">контакты</a>
-							</li>
-							<li class="has_child">
-								<a href="#">продукция</a>
-								<div class="row flex-nowrap pt-3 desk-menu">
-									<!--===========-->
-									<div class="col-4">
-										<ul>
-											<li><a href="#">Лазерные дальномеры</a></li>
-											<li><a href="#">Лазерные уровни</a></li>
-											<li><a href="#">Ротационные нивелиры</a></li>
-											<li><a href="#">Оптические нивелиры</a></li>
-											<li><a href="#">Теодолиты</a></li>
-										</ul>
-									</div>
-									<!--/col-->
-									<!--===========-->
-									<div class="col-4">
-										<ul>
-											<li><a href="#">Пирометры и тепловизоры</a></li>
-											<li><a href="#">Детекторы</a></li>
-											<li><a href="#">Угломеры и уровни</a></li>
-											<li><a href="#">Рулетки</a></li>
-											<li><a href="#">Аксессуары</a></li>
-										</ul>
-									</div>
-									<!--/col-->
-									<!--===========-->
-									<div class="col-4">
-										<ul>
-											<li><a href="#">Штативы</a></li>
-											<li><a href="#">Рейки</a></li>
-											<li><a href="#">Измерительные колеса</a></li>
-											<li><a href="#">Мотобуры</a></li>
-										</ul>
-									</div>
-									<!--/col-->
-									<!--===========-->
-								</div>
-								<!--/row-->
-							</li>
-						</ul>
-					</div><!-- /footer_menu_desk -->
-					<!-- ===============/footer_menu_desk================== -->
-					<!-- =================footer_menu_mob================ -->
-					<div class="d-block d-lg-none">
-						<ul class="footer_menu_mob">
-							<li>
-								<a href="#">ПОДДЕРЖКА</a>
-							</li>
-							<li>
-								<a href="#">о компании</a>
-							</li>
-							<li class="has_child">
-								<a id="open_child_list">продукция</a>
-							</li>
-							<li>
-								<a href="#">контакты</a>
-							</li>
-						</ul>
-						<div class="footer_menu_mob_submenu">
-							<div class="row flex-nowrap pt-3">
+					<!--/col-->
+					<!--===========-->
+					<div class="col-lg-auto col-7">
+						<div class="footer_search">
+							<form action="#">
+								<input type="text" placeholder="поиск">
+								<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
+							</form>
+						</div>
+					</div>
+					<!--/col-->
+					<!--===========-->
+				</div>
+				<!--/row-->
+			</div><!-- /footer_header -->
+			<div class="footer_menu pb-5">
+				<!-- =============footer_menu_desk==================== -->
+				<div class="d-none d-lg-block">
+					<ul class="footer_menu_desk">
+						<li>
+							<a href="#">ПОДДЕРЖКА</a>
+						</li>
+						<li>
+							<a href="#">о компании</a>
+						</li>
+						<li>
+							<a href="#">контакты</a>
+						</li>
+						<li class="has_child">
+							<a href="#">продукция</a>
+							<div class="row flex-nowrap pt-3 desk-menu">
 								<!--===========-->
 								<div class="col-4">
-									<ul class="fmb_list">
+									<ul>
 										<li><a href="#">Лазерные дальномеры</a></li>
 										<li><a href="#">Лазерные уровни</a></li>
 										<li><a href="#">Ротационные нивелиры</a></li>
@@ -327,7 +284,7 @@
 								<!--/col-->
 								<!--===========-->
 								<div class="col-4">
-									<ul class="fmb_list">
+									<ul>
 										<li><a href="#">Пирометры и тепловизоры</a></li>
 										<li><a href="#">Детекторы</a></li>
 										<li><a href="#">Угломеры и уровни</a></li>
@@ -338,7 +295,7 @@
 								<!--/col-->
 								<!--===========-->
 								<div class="col-4">
-									<ul class="fmb_list mr-0">
+									<ul>
 										<li><a href="#">Штативы</a></li>
 										<li><a href="#">Рейки</a></li>
 										<li><a href="#">Измерительные колеса</a></li>
@@ -349,53 +306,107 @@
 								<!--===========-->
 							</div>
 							<!--/row-->
-						</div><!-- /footer_menu_mob_submenu -->
-					</div><!-- /d-block d-lg-none -->
-					<div class="footer_contact">
-						<div class="form-row flex-nowrap lh1 align-items-end mb-3">
+						</li>
+					</ul>
+				</div><!-- /footer_menu_desk -->
+				<!-- ===============/footer_menu_desk================== -->
+				<!-- =================footer_menu_mob================ -->
+				<div class="d-block d-lg-none">
+					<ul class="footer_menu_mob">
+						<li>
+							<a href="#">ПОДДЕРЖКА</a>
+						</li>
+						<li>
+							<a href="#">о компании</a>
+						</li>
+						<li class="has_child">
+							<a id="open_child_list">продукция</a>
+						</li>
+						<li>
+							<a href="#">контакты</a>
+						</li>
+					</ul>
+					<div class="footer_menu_mob_submenu">
+						<div class="row flex-nowrap pt-3">
 							<!--===========-->
-							<div class="col-auto">
-								<a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
+							<div class="col-4">
+								<ul class="fmb_list">
+									<li><a href="#">Лазерные дальномеры</a></li>
+									<li><a href="#">Лазерные уровни</a></li>
+									<li><a href="#">Ротационные нивелиры</a></li>
+									<li><a href="#">Оптические нивелиры</a></li>
+									<li><a href="#">Теодолиты</a></li>
+								</ul>
 							</div>
 							<!--/col-->
 							<!--===========-->
-							<div class="col-auto">
-								<span class="fw300 font14">Единая горячая линия</span>
+							<div class="col-4">
+								<ul class="fmb_list">
+									<li><a href="#">Пирометры и тепловизоры</a></li>
+									<li><a href="#">Детекторы</a></li>
+									<li><a href="#">Угломеры и уровни</a></li>
+									<li><a href="#">Рулетки</a></li>
+									<li><a href="#">Аксессуары</a></li>
+								</ul>
+							</div>
+							<!--/col-->
+							<!--===========-->
+							<div class="col-4">
+								<ul class="fmb_list mr-0">
+									<li><a href="#">Штативы</a></li>
+									<li><a href="#">Рейки</a></li>
+									<li><a href="#">Измерительные колеса</a></li>
+									<li><a href="#">Мотобуры</a></li>
+								</ul>
 							</div>
 							<!--/col-->
 							<!--===========-->
 						</div>
 						<!--/row-->
-						<div class="grafic_raboty light_grey_color font12">
-							09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
-							Суббота, воскресенье - выходной. Звонок по России бесплатный
+					</div><!-- /footer_menu_mob_submenu -->
+				</div><!-- /d-block d-lg-none -->
+				<div class="footer_contact">
+					<div class="form-row flex-nowrap lh1 align-items-end mb-3">
+						<!--===========-->
+						<div class="col-auto">
+							<a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
 						</div>
-					</div><!-- /footer_contact -->
-					<!-- ============================== -->
-				</div><!-- /footer_menu -->
-				<!-- /footer_footer -->
-			</div><!-- /container -->
-			<div class="footer_footer">
-				<div class="container">
-					<div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>
-				</div>
+						<!--/col-->
+						<!--===========-->
+						<div class="col-auto">
+							<span class="fw300 font14">Единая горячая линия</span>
+						</div>
+						<!--/col-->
+						<!--===========-->
+					</div>
+					<!--/row-->
+					<div class="grafic_raboty light_grey_color font12">
+						09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
+						Суббота, воскресенье - выходной. Звонок по России бесплатный
+					</div>
+				</div><!-- /footer_contact -->
+				<!-- ============================== -->
+			</div><!-- /footer_menu -->
+			<!-- /footer_footer -->
+		</div><!-- /container -->
+		<div class="footer_footer">
+			<div class="container">
+				<div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>
 			</div>
-		</footer>
-		<div id="toTop"><i class="icofont-rounded-up"></i></div>
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/jquery.scrollTo.js"></script>
-		<script src="../dist/rangeslider/ion.rangeslider.min.js"></script>
-		<script src="../dist/parallax.js-1.5.0/parallax.min.js"></script>
-		<script src="../dist/fancybox/jquery.fancybox.min.js"></script>
-		<script src="../dist/animate/wow.min.js"></script>
-		<script src="../js/classie.js"></script>
-		<script src="../dist/slick/slick.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/popover.js"></script>
-		<script src="../js/script.js"></script>
-
-
-	</div>
+		</div>
+	</footer>
+	<script src="./include.js"></script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.scrollTo.js"></script>
+	<script src="./dist/rangeslider/ion.rangeslider.min.js"></script>
+	<script src="./dist/parallax.js-1.5.0/parallax.min.js"></script>
+	<script src="./dist/fancybox/jquery.fancybox.min.js"></script>
+	<script src="./dist/animate/wow.min.js"></script>
+	<script src="./js/classie.js"></script>
+	<script src="./dist/slick/slick.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/popover.js"></script>
+	<script src="./js/script.js"></script>
 </body>
 
 </html>

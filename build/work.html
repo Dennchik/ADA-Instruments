@@ -67,7 +67,9 @@
             <span class='toggle'><i></i> <i></i> <i></i></span>
           </button><!-- /menu_button -->
           <div class="top_search_wrap">
-            <div class="open_search"></div>
+            <div class="open_search">
+              <i class="icofont-search"></i>
+            </div>
             <div class="top_search_body">
               <form action="#">
                 <input type="text" placeholder="Поиск по сайту" required>
@@ -77,41 +79,42 @@
           </div><!-- /top_search_wrap -->
         </div>
         <!-- ==================================================== -->
-        <div class="top_panel  h-100">
+        <div class="top_panel h-100">
           <div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
             <div class="col-auto">
               <div class="left_TP">
-                <div class="row  align-items-center">
+                <div class="row align-items-center">
                   <!-- =================== -->
                   <div class="col-auto">
-                    <a href="/" class="logo"></a>
+                    <a href="../index.html" class="logo"></a>
                   </div><!-- /col -->
                   <!-- =================== -->
                   <div class="col-auto d-none d-lg-block">
                     <ul class="top_menu ml-lg-3">
                       <li class="has_child">
-                        <a href="productia.html"><span>Продукция</span></a>
+                        <a href="./productia.html"><span>Продукция</span></a>
                         <ul class="sub_menu">
-                          <li><a href="/catalog/laser-distance-meter/">Лазерные дальномеры</a></li>
-                          <li><a href="/catalog/automatic-levels/">Оптические нивелиры</a></li>
-                          <li><a href="/catalog/theodolites/">Теодолиты</a></li>
-                          <li><a href="/catalog/pyrometers/">Пирометры и тепловизоры</a></li>
-                          <li><a href="/catalog/detectors/">Детекторы </a></li>
-                          <li><a href="/catalog/angle-meters-levels/">Угломеры и уровни</a></li>
-                          <li><a href="/catalog/measuring-tapes/">Рулетки</a></li>
-                          <li><a href="/catalog/accessories/">Аксессуары</a></li>
-                          <li><a href="/catalog/tripods/">Штативы</a></li>
-                          <li><a href="/catalog/staffs-poles/">Рейки</a></li>
-                          <li><a href="/catalog/measuring-wheels/">Измерительные колеса</a></li>
-                          <li><a href="/catalog/line-lasers/">Лазерные уровни</a></li>
-                          <li><a href="/catalog/rotary-lasers/">Ротационные нивелиры</a></li>
-                          <li><a href="/catalog/earth-augers/">Мотобуры</a></li>
-                          <li><a href="/catalog/earth-augers-accessories/">Аксессуары для мотобуров</a></li>
+                          <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a>
+                          </li>
+                          <li><a href="./catalog/automatic-levels/">Оптические нивелиры</a></li>
+                          <li><a href="./catalog/theodolites/">Теодолиты</a></li>
+                          <li><a href="./catalog/pyrometers/">Пирометры и тепловизоры</a></li>
+                          <li><a href="./catalog/detectors/">Детекторы </a></li>
+                          <li><a href="./catalog/angle-meters-levels/">Угломеры и уровни</a></li>
+                          <li><a href="./catalog/measuring-tapes/">Рулетки</a></li>
+                          <li><a href="./catalog/accessories/">Аксессуары</a></li>
+                          <li><a href="./catalog/tripods/">Штативы</a></li>
+                          <li><a href="./catalog/staffs-poles/">Рейки</a></li>
+                          <li><a href="./catalog/measuring-wheels/">Измерительные колеса</a></li>
+                          <li><a href="./catalog/line-lasers/">Лазерные уровни</a></li>
+                          <li><a href="./catalog/rotary-lasers/">Ротационные нивелиры</a></li>
+                          <li><a href="./catalog/earth-augers/">Мотобуры</a></li>
+                          <li><a href="./catalog/earth-augers-accessories/">Аксессуары для мотобуров</a></li>
                         </ul>
                       </li>
-                      <li><a href="services.html"><span>Сервис</span></a></li>
-                      <li><a href="about.html"><span>О компании</span></a></li>
-                      <li><a href="contact.html"><span>Контакты</span></a></li>
+                      <li><a href="./services.html"><span>Сервис</span></a></li>
+                      <li><a href="./about.html"><span>О компании</span></a></li>
+                      <li><a href="./contact.html"><span>Контакты</span></a></li>
                     </ul>
                   </div><!-- /col -->
                   <!-- =================== -->
@@ -119,11 +122,11 @@
               </div><!-- /left_TP -->
             </div><!-- /col -->
             <!-- ================== -->
-            <div class="col-auto d-none d-lg-block">
+            <div class="col-auto">
               <div class="right_TP">
                 <div class="row  align-items-center  justify-content-end">
                   <!-- =================== -->
-                  <div class="col-auto">
+                  <div class="col-auto  d-none d-lg-block">
                     <div class="search_flexbox">
                       <div class="search_wrap">
                         <div>
@@ -135,8 +138,9 @@
                   <!-- =================== -->
                   <div class="col-auto">
                     <div class="col_icons">
-                      <a href="" class="col_cart icon_col">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
+                      <a href="../cart.html" class="col_cart icon_col cart-user">
+                        <div class="cart-user__quantity"></div>
+                        <svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
                           viewBox="0 0 512 512">
                           <g id="icomoon-ignore">
                           </g>
@@ -146,7 +150,7 @@
                         </svg>
                       </a>
                       <a href="" class="col_login icon_col">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
+                        <svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
                           viewBox="0 0 448 448">
                           <g id="icomoon-ignore">
                           </g>
@@ -156,15 +160,13 @@
                         </svg>
                       </a>
                     </div>
-                    <!-- ============================select_menu==================================== -->
                   </div>
-                  <!-- =================== -->
-                </div><!-- /row -->
-              </div><!-- /right_TP -->
-            </div><!-- /col -->
-          </div><!-- /row -->
-        </div><!-- /top_panel -->
-      </div><!-- /container -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <!-- =======================/breadcrumb========================= -->
     <div class="page_header mb-5">

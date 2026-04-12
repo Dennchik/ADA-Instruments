@@ -187,7 +187,22 @@
   .desk_hidden {
     display: block !important;
   }
+  /* icofont-search */
+  .col_icons {
+    position: absolute;
+    right: 115px;
+    top: -15px;
+    gap: 15px;
+  }
+  .col_icons .icon-cart {
+    width: 27px;
+    height: 27px;
+  }
 
+  .col_icons .icon-user {
+    width: 23px;
+    height: 23px;
+  }
   .home_page header {
     background-color: rgba(0, 0, 0, 0.8);
     height: 70px;
@@ -673,9 +688,28 @@
   .tovar_info_tabs .nav-tabs .nav-link {
     white-space: nowrap;
   }
+  .col-md-6 {
+    flex: 0 1 100% !important;
+    &:nth-child(1) {
+      z-index: 99;
+    }
+  }
+  .mb-5 {
+    margin-bottom: 0 !important;
+  }
+
+  .narrow_mtitle {
+    min-width: 300px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
+  .quantity {
+    gap: 20px;
+  }
+  .product-card__quantity {
+    padding: 0 26px;
+  }
   .breadcrumb > li {
     display: none;
   }
@@ -892,13 +926,13 @@
   .au_bootom_txt .font12 {
     font-size: 10px;
   }
+  .product-cart-info {
+    padding: 15px 10px;
+  }
   .pl-ptr-30-40 {
     padding: 20px 10px;
   }
-  .narrow_mtitle {
-    padding: 0;
-    width: 250px;
-  }
+
   .mob-pl {
     padding-left: 0;
   }
@@ -1094,6 +1128,10 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 350px) {
+  .narrow_mtitle {
+    padding: 0;
+    min-width: 280px;
+  }
   .product_slider_box .img_cont {
     height: 80px;
   }
@@ -1172,7 +1210,10 @@
 }
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width: 310px) {
+@media only screen and (max-width: 320px) {
+  .product-cart-info {
+    padding: 30px 1px;
+  }
 }
 
 /*==========  Mobile First Method  ==========*/
@@ -1272,21 +1313,7 @@
     margin-left: -40px;
   }
 }
-@media only screen and (max-width: 768px) {
-  .col-md-6 {
-    flex: 0 1 100% !important;
-    &:nth-child(1) {
-      z-index: 99;
-    }
-  }
-  .mb-5 {
-    margin-bottom: 0 !important;
-  }
 
-  .narrow_mtitle {
-    min-width: 300px;
-  }
-}
 /*=================================================*/
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1376px) {

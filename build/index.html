@@ -21,7 +21,7 @@
 </head>
 
 <body class="home_page">
-  <!-- ==================================================== -->
+  <!--* ================ * mobile_menu ==================== -->
   <div class="mobile_menu_wrapp">
     <div class="menu_close"><i class="icofont-close"></i></div>
     <div class="mobile_menu">
@@ -50,14 +50,12 @@
             <li><a href="services.html"><span>Сервис</span></a></li>
             <li><a href="about.html"><span>О компании</span></a></li>
             <li><a href="contact.html"><span>Контакты</span></a></li>
-          </ul> <!-- /mbm_sel_lang_wrapper -->
-        </div><!-- /col -->
-      </div><!-- /row -->
+          </ul>
+        </div>
+      </div>
     </div>
-    <!-- /.mobile_menu -->
   </div>
-  <!-- /.mobile_menu_wrapp -->
-  <!-- ==================================================== -->
+  <!--* ================ * mobile_menu ==================== -->
   <div id="main">
     <header>
       <div class="container h-100">
@@ -67,7 +65,9 @@
             <span class='toggle'><i></i> <i></i> <i></i></span>
           </button><!-- /menu_button -->
           <div class="top_search_wrap">
-            <div class="open_search"></div>
+            <div class="open_search">
+              <i class="icofont-search"></i>
+            </div>
             <div class="top_search_body">
               <form action="#">
                 <input type="text" placeholder="Поиск по сайту" required>
@@ -81,18 +81,19 @@
           <div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
             <div class="col-auto">
               <div class="left_TP">
-                <div class="row  align-items-center">
+                <div class="row align-items-center">
                   <!-- =================== -->
                   <div class="col-auto">
-                    <a href="index.html" class="logo"></a>
+                    <a href="../index.html" class="logo"></a>
                   </div><!-- /col -->
                   <!-- =================== -->
                   <div class="col-auto d-none d-lg-block">
                     <ul class="top_menu ml-lg-3">
                       <li class="has_child">
-                        <a href="productia.html"><span>Продукция</span></a>
+                        <a href="./productia.html"><span>Продукция</span></a>
                         <ul class="sub_menu">
-                          <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
+                          <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a>
+                          </li>
                           <li><a href="./catalog/automatic-levels/">Оптические нивелиры</a></li>
                           <li><a href="./catalog/theodolites/">Теодолиты</a></li>
                           <li><a href="./catalog/pyrometers/">Пирометры и тепловизоры</a></li>
@@ -109,9 +110,9 @@
                           <li><a href="./catalog/earth-augers-accessories/">Аксессуары для мотобуров</a></li>
                         </ul>
                       </li>
-                      <li><a href="services.html"><span>Сервис</span></a></li>
-                      <li><a href="about.html"><span>О компании</span></a></li>
-                      <li><a href="contact.html"><span>Контакты</span></a></li>
+                      <li><a href="./services.html"><span>Сервис</span></a></li>
+                      <li><a href="./about.html"><span>О компании</span></a></li>
+                      <li><a href="./contact.html"><span>Контакты</span></a></li>
                     </ul>
                   </div><!-- /col -->
                   <!-- =================== -->
@@ -119,11 +120,11 @@
               </div><!-- /left_TP -->
             </div><!-- /col -->
             <!-- ================== -->
-            <div class="col-auto d-none d-lg-block">
+            <div class="col-auto">
               <div class="right_TP">
                 <div class="row  align-items-center  justify-content-end">
                   <!-- =================== -->
-                  <div class="col-auto">
+                  <div class="col-auto  d-none d-lg-block">
                     <div class="search_flexbox">
                       <div class="search_wrap">
                         <div>
@@ -135,8 +136,9 @@
                   <!-- =================== -->
                   <div class="col-auto">
                     <div class="col_icons">
-                      <a href="./cart.html" class="col_cart icon_col">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
+                      <a href="../cart.html" class="col_cart icon_col cart-user">
+                        <div class="cart-user__quantity"></div>
+                        <svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
                           viewBox="0 0 512 512">
                           <g id="icomoon-ignore">
                           </g>
@@ -146,7 +148,7 @@
                         </svg>
                       </a>
                       <a href="" class="col_login icon_col">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
+                        <svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
                           viewBox="0 0 448 448">
                           <g id="icomoon-ignore">
                           </g>
@@ -156,15 +158,13 @@
                         </svg>
                       </a>
                     </div>
-                    <!-- ============================select_menu==================================== -->
                   </div>
-                  <!-- =================== -->
-                </div><!-- /row -->
-              </div><!-- /right_TP -->
-            </div><!-- /col -->
-          </div><!-- /row -->
-        </div><!-- /top_panel -->
-      </div><!-- /container -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
       <div class="main_slider_wrapper">
@@ -281,13 +281,13 @@
           </div><!-- /main_slider_item -->
           <!-- =========================== -->
         </div><!-- /main_slider -->
-      </div><!-- /main_slider_wrapper -->
+      </div>
       <div class="product_slider_block pt-lg-5 pb-5 wow fadeInDown">
         <div class="block_header mb-4">
           <div class="container">
             <h2 class="font20 grey_color_1 text-uppercase">НОВИНКИ</h2>
-          </div><!-- /container -->
-        </div><!-- /block_header -->
+          </div>
+        </div>
         <div class="container">
           <div class="product_slider_wrapper">
             <div class="product_slider">
@@ -296,53 +296,48 @@
                   <span class="img_cont" style="background-image: url(img/ps/1.jpg);"></span>
                   <span class="product_price">3 000 руб</span>
                   <span class="psb_title">ADA Cosmo Micro 25</span>
-                </a><!-- /product_slider_box -->
-              </div><!-- /product_slider_item -->
-              <!-- ===================== -->
+                </a>
+              </div>
               <div class="product_slider_item">
                 <a href="#" class="product_slider_box">
                   <span class="img_cont" style="background-image: url(img/ps/2.jpg);"></span>
                   <span class="product_price">3 000 руб</span>
                   <span class="psb_title">ADA TemPro Vision 120</span>
-                </a><!-- /product_slider_box -->
-              </div><!-- /product_slider_item -->
-              <!-- ===================== -->
+                </a>
+              </div>
               <div class="product_slider_item">
                 <a href="#" class="product_slider_box">
                   <span class="img_cont" style="background-image: url(img/ps/3.jpg);"></span>
                   <span class="product_price">3 000 руб</span>
                   <span class="psb_title">ADA Armo Mini</span>
-                </a><!-- /product_slider_box -->
-              </div><!-- /product_slider_item -->
+                </a>
+              </div>
               <!-- ===================== -->
               <div class="product_slider_item">
                 <a href="#" class="product_slider_box">
                   <span class="img_cont" style="background-image: url(img/ps/4.jpg);"></span>
                   <span class="product_price">3 000 руб</span>
                   <span class="psb_title">ADA Rotary 400 HV Servo</span>
-                </a><!-- /product_slider_box -->
-              </div><!-- /product_slider_item -->
-              <!-- ===================== -->
+                </a>
+              </div>
               <div class="product_slider_item">
                 <a href="#" class="product_slider_box">
                   <span class="img_cont" style="background-image: url(img/ps/2.jpg);"></span>
                   <span class="product_price">3 000 руб</span>
                   <span class="psb_title">ADA TemPro Vision 120</span>
-                </a><!-- /product_slider_box -->
-              </div><!-- /product_slider_item -->
-              <!-- ===================== -->
+                </a>
+              </div>
               <div class="product_slider_item">
                 <a href="#" class="product_slider_box">
                   <span class="img_cont" style="background-image: url(img/ps/3.jpg);"></span>
                   <span class="product_price">3 000 руб</span>
                   <span class="psb_title">ADA Armo Mini</span>
-                </a><!-- /product_slider_box -->
-              </div><!-- /product_slider_item -->
-              <!-- ===================== -->
-            </div><!-- /product_slider -->
-          </div><!-- /product_slider_wrapper -->
+                </a>
+              </div>
+            </div>
+          </div>
         </div><!-- /container -->
-      </div><!-- /product_slider_block -->
+      </div>
       <div class="catalog_block pt-lg-5 pb-lg-5  wow fadeInDown">
         <div class="block_header mb-4">
           <div class="container">
@@ -456,8 +451,8 @@
           </div><!-- /d-block d-md-none -->
           <!-- ========================/Mob========================== -->
         </div><!-- /catalog_mp_wrap -->
-      </div><!-- /catalog_block -->
-      <!-- ==================support_block===================== -->
+      </div>
+      <!--* ================== support_block ===================== -->
       <div class="support_block grey_bg pt-lg-5 pt-4 pb-5">
         <div class="container">
           <div class="support_section pt-4">
@@ -465,12 +460,10 @@
               поддержки</div>
             <div class="support_section_body">
               <div class="row">
-                <!--===========-->
                 <div class="col-xl-7 col-lg-7">
                   <div class="support_section_body_toleft pr-xl-5">
                     <div class="support_section_body_toleft_header">
                       <div class="row justify-content-between">
-                        <!--===========-->
                         <div class="col-xl-8 col-sm-7 col-7">
                           <div class="mb-4">
                             <a href="tel:88001004170" class="fw700 mr-3 mb-sm-0 mb-3 font20 text-nowrap">8 (800)
@@ -478,33 +471,22 @@
                             <span class="d-inline-block"> Единая горячая линия</span>
                           </div>
                         </div>
-                        <!--/col-->
-                        <!--===========-->
                         <div class="col-xl-4 col-sm-5 col-5">
                           <div class="text-right">
                             <a href="#" class="thin_grey_button">подробнее</a>
                           </div>
                         </div>
-                        <!--/col-->
-                        <!--===========-->
                       </div>
-                      <!--/row-->
-                    </div><!-- /support_section_body_toleft_header -->
+                    </div>
                     <div class="row">
-                      <!--===========-->
                       <div class="col-xl-9">
                         <p class="fw200 mb-xl-5">09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
                           Суббота, воскресенье - выходной. Звонок по России бесплатный</p>
                       </div>
-                      <!--/col-->
-                      <!--===========-->
                     </div>
-                    <!--/row-->
                     <div class="img_cont row" style="background-image: url(img/shp.png);"></div>
-                  </div><!-- /support_section_body_toleft -->
+                  </div>
                 </div>
-                <!--/col-->
-                <!--===========-->
                 <div class="col-xl-5 col-lg-5">
                   <div class="pl-xl-5 support_section_body_toright pt-5 pt-lg-0">
                     <div class="mp_feedback">
@@ -513,14 +495,14 @@
                           <div class="col-sm-12 col-7">
                             Возникли вопросы?
                             Напишите нам!
-                          </div><!-- /col-auto -->
+                          </div>
                           <div class="col-5 d-block d-sm-none">
                             <div class="red_button pl-0 pr-0 w-100" id="open_mp_feedback">
                               задать вопрос
                             </div>
-                          </div><!-- /col-auto -->
-                        </div><!-- /form-row -->
-                      </div><!-- /mp_feedback_title -->
+                          </div>
+                        </div>
+                      </div>
                       <div class="mp_feedback_body main_feedback_form">
                         <form class="feedback_form">
                           <input type="text" placeholder="Ваше имя" required="required">
@@ -532,21 +514,18 @@
                           <div class="succes_message_caption">
                             Спасибо за обращение ! <br>
                             мы ответим Вам в ближайшее время!
-                          </div><!-- /succes_message_caption -->
-                        </div><!-- /succes_message -->
-                      </div><!-- /mp_feedback_body -->
-                    </div><!-- /mp_feedback -->
-                  </div><!-- /support_section_body_toright -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <!--/col-->
-                <!--===========-->
               </div>
-              <!--/row-->
-            </div><!-- /support_section_body -->
-          </div><!-- /support_section -->
-        </div><!-- /container -->
-      </div><!-- /support_block -->
-      <!-- ==================/support_block===================== -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--* ==================/support_block===================== -->
       <div class="wow fadeInDown video_block">
         <div class="video_wrap">
           <div class="video_inner">
@@ -556,22 +535,17 @@
               src="https://www.youtube.com/embed/DC5GkcEUb9U?rel=0&showinfo=0" allow="accelerometer; autoplay;">
             </iframe>
           </div>
-          <!-- /video_inner -->
         </div>
-        <!-- /video_wrap -->
-      </div><!-- /video_block -->
+      </div>
     </main>
-  </div><!-- /#main -->
+  </div>
   <footer>
     <div class="container">
       <div class="footer_header pt-5 pb-4">
         <div class="row flex-nowrap align-items-center">
-          <!--===========-->
           <div class="col-lg-auto col-5 mr-lg-4">
             <a href="./productia.html" class="grey_button">в каталог</a>
           </div>
-          <!--/col-->
-          <!--===========-->
           <div class="col-lg-auto col-7">
             <div class="footer_search">
               <form action="#">
@@ -580,13 +554,10 @@
               </form>
             </div>
           </div>
-          <!--/col-->
-          <!--===========-->
         </div>
-        <!--/row-->
-      </div><!-- /footer_header -->
+      </div>
       <div class="footer_menu pb-5">
-        <!-- =============footer_menu_desk==================== -->
+        <!--* =============footer_menu_desk==================== -->
         <div class="d-none d-lg-block">
           <ul class="footer_menu_desk">
             <li>
@@ -601,7 +572,6 @@
             <li class="has_child">
               <a href="#">продукция</a>
               <div class="row flex-nowrap pt-3 desk-menu">
-                <!--===========-->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Лазерные дальномеры</a></li>
@@ -611,8 +581,6 @@
                     <li><a href="#">Теодолиты</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Пирометры и тепловизоры</a></li>
@@ -622,8 +590,6 @@
                     <li><a href="#">Аксессуары</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Штативы</a></li>
@@ -632,15 +598,12 @@
                     <li><a href="#">Мотобуры</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
               </div>
-              <!--/row-->
             </li>
           </ul>
-        </div><!-- /footer_menu_desk -->
-        <!-- ===============/footer_menu_desk================== -->
-        <!-- =================footer_menu_mob================ -->
+        </div>
+        <!--* ===============/footer_menu_desk================== -->
+        <!--* =================footer_menu_mob================ -->
         <div class="d-block d-lg-none">
           <ul class="footer_menu_mob">
             <li>
@@ -658,7 +621,6 @@
           </ul>
           <div class="footer_menu_mob_submenu">
             <div class="row flex-nowrap pt-3">
-              <!--===========-->
               <div class="col-4">
                 <ul class="fmb_list">
                   <li><a href="#">Лазерные дальномеры</a></li>
@@ -668,8 +630,6 @@
                   <li><a href="#">Теодолиты</a></li>
                 </ul>
               </div>
-              <!--/col-->
-              <!--===========-->
               <div class="col-4">
                 <ul class="fmb_list">
                   <li><a href="#">Пирометры и тепловизоры</a></li>
@@ -679,8 +639,6 @@
                   <li><a href="#">Аксессуары</a></li>
                 </ul>
               </div>
-              <!--/col-->
-              <!--===========-->
               <div class="col-4">
                 <ul class="fmb_list mr-0">
                   <li><a href="#">Штативы</a></li>
@@ -689,36 +647,26 @@
                   <li><a href="#">Мотобуры</a></li>
                 </ul>
               </div>
-              <!--/col-->
-              <!--===========-->
             </div>
-            <!--/row-->
-          </div><!-- /footer_menu_mob_submenu -->
-        </div><!-- /d-block d-lg-none -->
+          </div>
+        </div>
         <div class="footer_contact">
           <div class="form-row flex-nowrap lh1 align-items-end mb-3">
-            <!--===========-->
             <div class="col-auto">
               <a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
             </div>
-            <!--/col-->
-            <!--===========-->
             <div class="col-auto">
               <span class="fw300 font14">Единая горячая линия</span>
             </div>
-            <!--/col-->
-            <!--===========-->
           </div>
           <!--/row-->
           <div class="grafic_raboty light_grey_color font12">
             09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
             Суббота, воскресенье - выходной. Звонок по России бесплатный
           </div>
-        </div><!-- /footer_contact -->
-        <!-- ============================== -->
-      </div><!-- /footer_menu -->
-      <!-- /footer_footer -->
-    </div><!-- /container -->
+        </div>
+      </div>
+    </div>
     <div class="footer_footer">
       <div class="container">
         <div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>
