@@ -130,7 +130,7 @@ h3 {
 }
 
 .red {
-  outline: 1px solid red;
+  outline: 1px solid var(--red);
 }
 
 .clearfix:before,
@@ -3223,11 +3223,11 @@ header .sub_menu a:hover:after {
     white-space: nowrap;
 
     &:hover {
-      color: red;
+      color: var(--red);
     }
 
     &.selected-link {
-      color: red;
+      color: var(--red);
     }
   }
 
@@ -4591,12 +4591,14 @@ header .sub_menu a:hover:after {
 
 .section_form_title {
   margin-bottom: 10px;
+
   span {
     line-height: 130%;
     display: block;
     color: white;
   }
 }
+
 .suport_feedback_form > .section_form_line {
   width: 45%;
 }
@@ -4604,7 +4606,7 @@ header .sub_menu a:hover:after {
 //*  Form ====================================
 .items_greed_box_old-price {
   text-decoration: line-through;
-  color: red;
+  color: var(--red);
   font-weight: 700;
 }
 .items_greed_box_price {
@@ -4622,7 +4624,7 @@ header .sub_menu a:hover:after {
 .tabs-buttons {
   display: flex;
   gap: 40px;
-  border-bottom: 4px solid red;
+  border-bottom: 4px solid var(--red);
   margin-bottom: 20px;
   padding: 20px 0;
   // .tabs-button__item
@@ -4634,7 +4636,7 @@ header .sub_menu a:hover:after {
     text-transform: uppercase;
     transition: color 0.3s ease 0s;
     &.active {
-      color: red;
+      color: var(--red);
     }
   }
 }
@@ -4689,13 +4691,13 @@ header .sub_menu a:hover:after {
   // .product-card__quantity
 
   &__quantity {
-    border: 1px solid red;
+    border: 1px solid var(--red);
     padding: 0 37px;
 
     &.red_button {
       background-color: transparent !important;
 
-      color: red;
+      color: var(--red);
       font-weight: 500;
     }
 
@@ -4726,7 +4728,7 @@ header .sub_menu a:hover:after {
     height: 20px;
     transform: translate(10px, -5px);
     padding: 5px;
-    background-color: red;
+    background-color: var(--red);
     border-radius: 50%;
     color: white;
     font-size: 12px;
@@ -4739,7 +4741,8 @@ header .sub_menu a:hover:after {
   // .cart-section__content
   &__content {
     display: grid;
-    grid-template-columns: 1fr minmax(300px, max-content);
+    grid-template-columns: 1fr minmax(300px, 428px);
+    grid-template-columns: 69% 31%;
   }
 
   // .cart-section__col
@@ -4770,26 +4773,30 @@ header .sub_menu a:hover:after {
   &__header-col {
     line-height: 100%;
     display: flex;
-    align-items: start;
-    justify-content: start;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   // .cart-section__icon
   &__icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 7px;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+
+    &.icon-gray {
+    }
 
     .icofont-check,
     .icofont-close {
       cursor: pointer;
+      color: #5c5c5c;
       &::before {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 22px;
         height: 22px;
-        font-size: 26px;
+        font-size: 22px;
       }
     }
   }
@@ -4809,8 +4816,12 @@ header .sub_menu a:hover:after {
     color: #080808;
     transition: all 0.3s ease;
     font-weight: 500;
+
+    &.selection-button {
+      min-width: 131px;
+    }
     &:hover {
-      color: red;
+      color: var(--red);
     }
   }
 
@@ -4848,7 +4859,7 @@ header .sub_menu a:hover:after {
     font-size: 13px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
 
   // .product-cart__article
@@ -4866,6 +4877,7 @@ header .sub_menu a:hover:after {
     font-size: 21px;
 
     span {
+      font-weight: 600;
       display: block;
     }
   }
@@ -4885,6 +4897,9 @@ header .sub_menu a:hover:after {
 
   // .product-cart__price
   &__price {
+    .product-cart__old-price {
+      padding-bottom: 5px;
+    }
   }
 
   // .product-cart__counter
@@ -4893,7 +4908,7 @@ header .sub_menu a:hover:after {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      gap: 20px;
+      gap: 25px;
       width: 210px;
       justify-self: flex-end;
     }
@@ -4905,7 +4920,7 @@ header .sub_menu a:hover:after {
     font-size: 21px;
     font-weight: 600;
     text-decoration: line-through;
-    color: #f00;
+    color: var(--red);
     line-height: 100%;
   }
 
@@ -4952,14 +4967,14 @@ header .sub_menu a:hover:after {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 1px solid red;
+    border: 1px solid var(--red);
     display: flex;
     align-items: center;
     justify-content: center;
 
     span {
       line-height: 100%;
-      color: red;
+      color: var(--red);
       font-size: 14px;
     }
   }
@@ -5038,7 +5053,7 @@ header .sub_menu a:hover:after {
 
     &._selected {
       background-color: rgb(255 0 0 / 18%);
-      color: red;
+      color: var(--red);
     }
 
     &:hover {
@@ -5054,7 +5069,7 @@ header .sub_menu a:hover:after {
 
   // .select__button
   &__button {
-    color: red;
+    color: var(--red);
     font-size: 13px;
     font-weight: 500;
     text-transform: lowercase;
@@ -5095,5 +5110,76 @@ header .sub_menu a:hover:after {
 
   &__sum {
     font-size: 14px;
+  }
+}
+
+//* ----------------------------------------------------------------------------
+.check-box {
+  &._error {
+    .checkbox__label::before {
+      box-shadow: 0 0 14px 3px #ff0000;
+    }
+  }
+
+  // .checkbox__input
+  &__input {
+    display: none;
+
+    &:checked + .check-box__icon .icofont-check {
+      opacity: 1;
+      color: var(--red);
+    }
+    &:checked + .icon-gray .icofont-check {
+      opacity: 1;
+      color: #5c5c5c !important;
+    }
+  }
+
+  // .checkbox__label
+  &__label {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    min-width: 22px;
+    display: flex;
+    align-items: center;
+    line-height: 120%;
+    overflow: hidden;
+    border-radius: 1px;
+    border: 1px solid rgba(92, 92, 92, 0.15);
+
+    &::before {
+      content: '';
+      position: relative;
+      z-index: 9;
+      flex: 1 0 22px;
+      height: 22px;
+      width: 22px;
+      align-self: center;
+      cursor: pointer;
+    }
+
+    .icofont-check {
+      display: inline-block;
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  // .checkbox__icon
+  &__icon {
+    position: absolute;
+    height: 22px;
+    width: 22px;
+
+    .icofont-check {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0.3;
+      color: rgb(92, 92, 92);
+    }
   }
 }
