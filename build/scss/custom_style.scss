@@ -4775,6 +4775,17 @@ header .sub_menu a:hover:after {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    .icofont-close {
+      transition: all 0.4s ease 0s;
+    }
+
+    &.del-button {
+      &:hover {
+        .icofont-close {
+          color: var(--red);
+        }
+      }
+    }
   }
 
   // .cart-section__icon
@@ -4782,9 +4793,6 @@ header .sub_menu a:hover:after {
     width: 20px;
     height: 20px;
     margin-right: 3px;
-
-    &.icon-gray {
-    }
 
     .icofont-check,
     .icofont-close {
@@ -4794,9 +4802,9 @@ header .sub_menu a:hover:after {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 22px;
-        height: 22px;
-        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -5138,10 +5146,10 @@ header .sub_menu a:hover:after {
   // .checkbox__label
   &__label {
     position: relative;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     margin: 0;
-    min-width: 22px;
+    min-width: 20px;
     display: flex;
     align-items: center;
     line-height: 120%;
@@ -5153,9 +5161,9 @@ header .sub_menu a:hover:after {
       content: '';
       position: relative;
       z-index: 9;
-      flex: 1 0 22px;
-      height: 22px;
-      width: 22px;
+      flex: 1 0 20px;
+      height: 20px;
+      width: 20px;
       align-self: center;
       cursor: pointer;
     }
@@ -5173,8 +5181,8 @@ header .sub_menu a:hover:after {
   // .checkbox__icon
   &__icon {
     position: absolute;
-    height: 22px;
-    width: 22px;
+    height: 20px;
+    width: 20px;
 
     .icofont-check {
       transition: opacity 0.3s ease-in-out;
