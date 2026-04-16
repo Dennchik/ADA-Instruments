@@ -18,6 +18,9 @@
 	<link rel="stylesheet" type="text/css" href="./dist/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="./css/custom_style.css">
 	<link rel="stylesheet" type="text/css" href="./css/media.css">
+	<!-- <link href="css/style.css" rel="stylesheet" type="text/css" /> -->
+	<script defer type="text/javascript" src="js/collapse.js"></script>
+	<script defer type="text/javascript" src="js/itsSelect.js"></script>
 </head>
 
 <body class="">
@@ -63,7 +66,7 @@
 				<div class="d-lg-none d-block">
 					<button class="menu_button menu_show">
 						<span class='toggle'><i></i> <i></i> <i></i></span>
-					</button><!-- /menu_button -->
+					</button>
 					<div class="top_search_wrap">
 						<div class="open_search">
 							<i class="icofont-search"></i>
@@ -73,8 +76,8 @@
 								<input type="text" placeholder="Поиск по сайту" required>
 								<button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
 							</form>
-						</div><!-- /top_search_body -->
-					</div><!-- /top_search_wrap -->
+						</div>
+					</div>
 				</div>
 				<!-- ==================================================== -->
 				<div class="top_panel h-100">
@@ -84,8 +87,8 @@
 								<div class="row align-items-center">
 									<!-- =================== -->
 									<div class="col-auto">
-										<a href="../index.html" class="logo"></a>
-									</div><!-- /col -->
+										<a href="./index.html" class="logo"></a>
+									</div>
 									<!-- =================== -->
 									<div class="col-auto d-none d-lg-block">
 										<ul class="top_menu ml-lg-3">
@@ -136,7 +139,7 @@
 									<!-- =================== -->
 									<div class="col-auto">
 										<div class="col_icons">
-											<a href="../cart.html" class="col_cart icon_col cart-user">
+											<a href="./cart.html" class="col_cart icon_col cart-user">
 												<div class="cart-user__quantity"></div>
 												<svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
 													viewBox="0 0 512 512">
@@ -166,70 +169,392 @@
 				</div>
 			</div>
 		</header>
-		<!-- =======================breadcrumb========================= -->
-		<div class="breadcrumb_wrapper mb-5">
+		<!--** ======================= breadcrumb ========================= -->
+		<div class="breadcrumb_wrapper mb-2">
 			<div class="container">
 				<ol class="breadcrumb">
-					<li><a href="../index.html">главная</a></li>
-					<li class="active">Лазерные дальномеры</li>
+					<li><a href="./index.html">главная</a></li>
+					<li class="active">
+						<span>Корзина</span>
+					</li>
 				</ol>
-			</div><!-- /container -->
+			</div>
 		</div>
-		<!-- =======================/breadcrumb========================= -->
-		<div id="categoria_page" class="wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+		<!--* ======================= /breadcrumb========================== -->
+		<!--* ====================== cart-section ========================= -->
 
-			<div data-include="./html/partials/loading.html"></div>
-		</div>
-		<div class="section_form container">
-			<div class="section_form_body">
-				<div class="section_form_title">
-					<span>Возникли вопросы?</span>
-					<span>Напишите нам!</span>
+		<div class="cart-section container">
+
+			<div class="cart-section__content">
+
+				<div class="cart-section__col">
+					<div class="page_header mb-5">
+						<div class="container">
+							<h1 class="font_clamp_60  lh1 fw700">Корзина</h1>
+						</div>
+					</div>
+					<div class="cart-section__title">
+						<div class="cart-section__header-col">
+							<div class="cart-section__icon">
+								<i class="icofont-check"></i>
+							</div>
+							<button class="cart-section__button">Выделить всё</button>
+						</div>
+						<div class="cart-section__header-col">
+							<div class="cart-section__icon">
+								<i class="icofont-close"></i>
+							</div>
+							<button class="cart-section__button">Удалить выбранные</button>
+						</div>
+					</div>
+					<div class="product-cart cart-section__product">
+						<div class="product-cart__item">
+							<div class="cart-section__icon">
+								<i class="icofont-check"></i>
+							</div>
+							<div class="product-cart__image">
+								<img src="./img/cart_img/product-1.png" alt="картинка">
+							</div>
+							<div class="product-cart__info">
+								<div class="product-cart__article">Артикул 000541</div>
+								<div class="product-cart__title">
+									<span>Лазерный дальномер</span>
+									<span>ADA COSMO MICRO 25</span>
+								</div>
+								<div class="product-cart__description">
+									Диапазон работы 30 м, точность ± 3,0 мм
+								</div>
+							</div>
+
+							<div class="product-cart__counter">
+								<div class="counter-wrapper">
+									<div class="product-cart__price">
+										<div class="product-cart__old-price">4 334 руб</div>
+										<div class="product-cart__new-price">3 750 руб</div>
+									</div>
+
+									<div class="quantity product-card__quantity red_button" style="display: flex;">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="product-cart__item">
+							<div class="cart-section__icon">
+								<i class="icofont-check"></i>
+							</div>
+							<div class="product-cart__image">
+								<img src="./img/cart_img/product-2.png" alt="картинка">
+							</div>
+							<div class="product-cart__info">
+								<div class="product-cart__article">Артикул 000541</div>
+								<div class="product-cart__title">
+									<span>Лазерный дальномер</span>
+									<span>ADA COSMO MICRO 25</span>
+								</div>
+								<div class="product-cart__description">
+									Диапазон работы 30 м, точность ± 3,0 мм
+								</div>
+							</div>
+
+							<div class="product-cart__counter">
+								<div class="counter-wrapper">
+									<div class="product-cart__price">
+										<div class="product-cart__old-price">4 334 руб</div>
+										<div class="product-cart__new-price">3 750 руб</div>
+									</div>
+
+									<div class="quantity product-card__quantity red_button" style="display: flex;">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="product-cart__item">
+							<div class="cart-section__icon">
+								<i class="icofont-check"></i>
+							</div>
+							<div class="product-cart__image">
+								<img src="./img/cart_img/product-3.png" alt="картинка">
+							</div>
+							<div class="product-cart__info">
+								<div class="product-cart__article">Артикул 000541</div>
+								<div class="product-cart__title">
+									<span>Лазерный дальномер</span>
+									<span>ADA COSMO MICRO 25</span>
+								</div>
+								<div class="product-cart__description">
+									Диапазон работы 30 м, точность ± 3,0 мм
+								</div>
+							</div>
+
+							<div class="product-cart__counter">
+								<div class="counter-wrapper">
+									<div class="product-cart__price">
+										<div class="product-cart__old-price">4 334 руб</div>
+										<div class="product-cart__new-price">3 750 руб</div>
+									</div>
+
+									<div class="quantity product-card__quantity red_button" style="display: flex;">
+										<div class="quantity__button quantity-remove">
+											<i class="icon-minus icon">&minus;</i>
+										</div>
+										<div class="quantity__input">
+											<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+												autocomplete="off">
+										</div>
+										<div class="quantity__button quantity-add">
+											<i class="icon-plus icon">+</i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
 				</div>
-				<div class="form_feedback_body">
-					<form action="#" method="POST" class="suport_feedback_form feedback_form">
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-3">
-									<label for="suportName" class="sr-only">Ваше имя</label>
-									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required>
+
+				<div class="cart-section__col">
+					<div class="delivery cart-section__delivery">
+						<!-- <div class="delivery"> -->
+						<div class="delivery__content">
+							<div class="delivery__item">
+								<div class=" delivery__label">
+									<span>Способ доставки</span>
+									<div class="delivery__help-info">
+										<span>i</span>
+									</div>
 								</div>
-							</div><!-- /suport_feedback_form_box -->
-						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-3">
-									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
-									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required
-										autocomplete="off">
+								<!--* ==========================  Select ================================= -->
+								<div class="select-group" data-select>
+									<div class="select-group__dropdown">
+										<div class="select">
+
+											<input class="select__input" type="button" value="СДЭК">
+											<button type="button" class="select__button">
+												изменить
+											</button>
+											<!-- Выпадающий список -->
+											<div class="select__drop-down _collapse">
+												<div class="select__d-title">
+													<span></span>
+													<div class="close-button">
+														<i class="icofont-close"></i>
+													</div>
+												</div>
+												<ul class="select__list">
+													<li class="select__list-item _selected" value="">СДЭК</li>
+													<li class="select__list-item" value="">ПВЗ</li>
+													<li class="select__list-item" value="">Яндекс доставка</li>
+													<li class="select__list-item" value="">Почта России</li>
+												</ul>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div><!-- /suport_feedback_form_box -->
-						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-4">
-									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
-									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required
-										rows="1"></textarea>
+							</div>
+
+							<div class="delivery__item">
+								<div class="delivery__label">
+									<span>Дата доставки</span>
 								</div>
-							</div><!-- /suport_feedback_form_box -->
+								<!--* ==========================  Select ================================= -->
+								<div class="select-group" data-select>
+									<div class="select-group__dropdown">
+										<div class="select">
+
+											<input class="select__input" type="data" value="">
+											<button type="button" class="select__button">
+												изменить
+											</button>
+											<!-- Выпадающий список -->
+
+											<div class="select__drop-down _collapse">
+												<div class="select__d-title">
+													<span>выбрать дату и время</span>
+													<div class="close-button">
+														<i class="icofont-close"></i>
+													</div>
+												</div>
+
+												<ul class="select__list">
+													<li class="select__list-item _selected" value="">
+														<input type="date" class="delivery-date-picker" id="deliveryDate">
+														<input type="time" class="delivery-time-picker" id="deliveryTime" step="60">
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="delivery__item">
+								<div class=" delivery__label">
+									<span>Покупатель</span>
+								</div>
+								<!--* ==========================  Select ================================= -->
+								<div class="select-group" data-select>
+									<div class="select-group__dropdown">
+										<div class="select">
+
+											<input class="select__input" type="button" value="Иванов Иван">
+											<button type="button" class="select__button">
+												изменить
+											</button>
+											<!-- Выпадающий список -->
+											<div class="select__drop-down _collapse">
+												<div class="select__d-title">
+													<span></span>
+													<div class="close-button">
+														<i class="icofont-close"></i>
+													</div>
+												</div>
+												<ul class="select__list">
+													<li class="select__list-item _selected" value="">Иванов Иван</li>
+													<li class="select__list-item" value="">ИП Семенов</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="delivery__item">
+								<div class=" delivery__label">
+									<span>Оплата</span>
+								</div>
+								<!--* ==========================  Select ================================= -->
+								<div class="select-group" data-select>
+									<div class="select-group__dropdown">
+										<div class="select">
+
+											<input class="select__input" type="button" value="СДЭК">
+											<button type="button" class="select__button">
+												изменить
+											</button>
+											<!-- Выпадающий список -->
+											<div class="select__drop-down _collapse">
+												<div class="select__d-title">
+													<span>Банковский перевод</span>
+													<div class="close-button">
+														<i class="icofont-close"></i>
+													</div>
+												</div>
+												<ul class="select__list">
+													<li class="select__list-item _selected" value="">СПБ</li>
+													<li class="select__list-item" value="">ПВЗ</li>
+													<li class="select__list-item" value="">Почта России</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="delivery__result">
+								<div class="purchase-result">
+									<div class="purchase-result__quantity">3 товара - 3.99 кг</div>
+									<div class="purchase-result__sum"> 13 002 руб</div>
+								</div>
+								<div class="discount-product">
+									<div class="discount-product__title">
+										Скидка
+									</div>
+									<div class="discount-product__price">1 752 руб</div>
+								</div>
+								<div class="delivery__button">
+									<button class="red_button" type="submit">Оформить заказ</button>
+								</div>
+
+
+
+							</div>
+
+
 						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<button class="red_button" type="submit">ОТПРАВИТЬ </button>
-							</div><!-- /suport_feedback_form_box -->
-						</div>
-					</form>
-					<div class="succes_message bg_transparent" style="display: none;">
-						<div class="succes_message_caption">
-							Спасибо за обращение ! <br>
-							мы ответим Вам в ближайшее время!
-						</div><!-- /succes_message_caption -->
+
+
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="toTop"><i class="icofont-rounded-up"></i></div>
+	</div>
+	<!--* ======================= /cart-section ========================= -->
+	<div id="categoria_page" class="wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+		<div data-include="./html/partials/loading.html"></div>
+	</div>
+	<div class="section_form container">
+		<div class="section_form_body">
+			<div class="section_form_title">
+				<span>Возникли вопросы?</span>
+				<span>Напишите нам!</span>
+			</div>
+			<div class="form_feedback_body">
+				<form action="#" method="POST" class="suport_feedback_form feedback_form">
+					<div class="section_form_line">
+						<div class="suport_feedback_form_box">
+							<div class="mb-3">
+								<label for="suportName" class="sr-only">Ваше имя</label>
+								<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required>
+							</div>
+						</div><!-- /suport_feedback_form_box -->
+					</div>
+					<div class="section_form_line">
+						<div class="suport_feedback_form_box">
+							<div class="mb-3">
+								<label for="suportEmail" class="sr-only">Ваш e-mail</label>
+								<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required
+									autocomplete="off">
+							</div>
+						</div><!-- /suport_feedback_form_box -->
+					</div>
+					<div class="section_form_line">
+						<div class="suport_feedback_form_box">
+							<div class="mb-4">
+								<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
+								<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required
+									rows="1"></textarea>
+							</div>
+						</div><!-- /suport_feedback_form_box -->
+					</div>
+					<div class="section_form_line">
+						<div class="suport_feedback_form_box">
+							<button class="red_button" type="submit">ОТПРАВИТЬ </button>
+						</div><!-- /suport_feedback_form_box -->
+					</div>
+				</form>
+				<div class="succes_message bg_transparent" style="display: none;">
+					<div class="succes_message_caption">
+						Спасибо за обращение ! <br>
+						мы ответим Вам в ближайшее время!
+					</div><!-- /succes_message_caption -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 	</div>
 
 	<footer>
@@ -395,7 +720,6 @@
 			</div>
 		</div>
 	</footer>
-	<script src="./include.js"></script>
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/jquery.scrollTo.js"></script>
 	<script src="./dist/rangeslider/ion.rangeslider.min.js"></script>

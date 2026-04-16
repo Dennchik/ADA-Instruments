@@ -1,0 +1,36 @@
+/* stylelint-disable at-rule-descriptor-value-no-unknown */
+:root {
+  --width: calc(0px + (260 - 0) * ((100vw - 320px) / (1024 - 320)));
+  --font-color-default: rgb(0 0 0);
+  --font-color-second: rgb(77 91 206);
+  --font-color-title: rgb(136 192 255);
+  --font-color-active: rgb(119 150 243);
+  --font-color-not-active: rgb(139 176 255 / 42.4%);
+  --background-color: rgb(210 242 255);
+  --background-second: rgb(2 10 16);
+  --background-selected: rgb(43 45 65 / 33.7%);
+  --background-transparent: rgb(14 14 19 / 85.5%);
+  --selected-color: rgb(94 77 168);
+  --thumb-color: rgb(149 186 224);
+  --background-hover: rgb(94 77 168 / 24%);
+  --scrollbar-thumb-color: rgb(36 52 68);
+  --border-color: rgb(255 184 181);
+  --pos: center center;
+  --size: 0;
+  --inset-top: 0;
+  --inset-right: 100%;
+  --inset-bottom: 100%;
+  --inset-left: 0;
+  --stripe-width: 10px;
+  --nav-marker-border: rgb(59 134 134);
+  --sidebar-width: 28.5rem;
+  --duration: 0.3s;
+  --button-size: 4rem;
+  --mob-expanded-width: 320px;
+  --mob-collapsed-width: 4rem;
+}
+
+/* stylelint-disable annotation-no-unknown */
+:root {
+  --mq-header-size: normal;
+}/*# sourceMappingURL=mixins.css.map */

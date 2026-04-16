@@ -884,3 +884,149 @@ document.addEventListener('DOMContentLoaded', function () {
   // Первоначальное обновление счетчика
   updateTotalCartQuantity();
 });
+document.addEventListener('DOMContentLoaded', function () {
+  function updateTotalCartQuantity() {
+    let totalQuantity = 0;
+    document.querySelectorAll('.counter-wrapper .input').forEach((input) => {
+      totalQuantity += parseInt(input.value) || 0;
+    });
+    const cartQuantity = document.querySelector('.cart-user__quantity');
+    if (cartQuantity) {
+      cartQuantity.textContent = totalQuantity;
+      if (totalQuantity > 0) {
+        cartQuantity.style.display = 'flex';
+      } else {
+        cartQuantity.style.display = 'none';
+      }
+    }
+  }
+
+  document.querySelectorAll('.counter-wrapper').forEach((wrapper) => {
+    const input = wrapper.querySelector('.input');
+    const minusBtn = wrapper.querySelector('.quantity-remove');
+    const plusBtn = wrapper.querySelector('.quantity-add');
+
+    if (!input) return;
+
+    function updateValue(change) {
+      let currentValue = parseInt(input.value) || 0;
+      let newValue = currentValue + change;
+      if (newValue < 0) newValue = 0;
+      input.value = newValue;
+      updateTotalCartQuantity();
+    }
+
+    if (plusBtn) {
+      plusBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateValue(1);
+      });
+    }
+
+    if (minusBtn) {
+      minusBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateValue(-1);
+      });
+    }
+
+    if (input) {
+      input.addEventListener('input', (e) => {
+        let value = parseInt(e.target.value);
+        if (isNaN(value) || value < 0) {
+          input.value = 0;
+        }
+        updateTotalCartQuantity();
+      });
+    }
+  });
+
+  updateTotalCartQuantity();
+});
+//todo ------ Date and time ------------
+document.addEventListener('DOMContentLoaded', function () {
+  const datePicker = document.getElementById('deliveryDate');
+  const timePicker = document.getElementById('deliveryTime');
+
+  if (datePicker && timePicker) {
+    // Минимальная дата - сегодня
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    datePicker.min = `${yyyy}-${mm}-${dd}`;
+
+    // Устанавливаем начальное время
+    timePicker.value = '12:00';
+
+    // Функция объединения даты и времени в одну строку
+    function getCombinedDateTime() {
+      const selectedDate = datePicker.value;
+      const selectedTime = timePicker.value;
+
+      if (!selectedDate) return '';
+
+      const date = new Date(selectedDate);
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      let formattedDate = date.toLocaleDateString('ru-RU', options);
+
+      if (selectedTime) {
+        formattedDate += ` ${selectedTime}`; // Убрал предлог "в"
+      }
+
+      return formattedDate;
+    }
+
+    // Функция обновления значения в select__input
+    function updateSelectInput() {
+      const formattedValue = getCombinedDateTime();
+
+      if (formattedValue) {
+        // Находим родительский блок data-select
+        const selectGroup = datePicker.closest('[data-select]');
+
+        if (selectGroup) {
+          // Находим select__input внутри этого блока
+          const selectInput = selectGroup.querySelector('.select__input');
+
+          // Меняем значение в input (дата и время вместе)
+          if (selectInput) {
+            selectInput.value = formattedValue;
+            console.log('Установлено значение:', formattedValue);
+          }
+        }
+      }
+    }
+
+    // При изменении даты
+    datePicker.addEventListener('change', function () {
+      updateSelectInput();
+
+      // Опционально: автоматически установить время, если его нет
+      if (!timePicker.value) {
+        timePicker.value = '12:00';
+      }
+    });
+
+    // При изменении времени
+    timePicker.addEventListener('change', function () {
+      updateSelectInput();
+    });
+
+    // Если нужно закрывать dropdown после выбора
+    const closeButton = document.querySelector('.close-button');
+    if (closeButton) {
+      closeButton.addEventListener('click', function () {
+        const selectGroup = datePicker.closest('[data-select]');
+        const selectDropdown = selectGroup.querySelector('.select__drop-down');
+        if (selectDropdown) {
+          selectDropdown.classList.add('_collapse');
+          const select = selectGroup.querySelector('.select');
+          if (select) {
+            select.classList.remove('_active-collapse');
+          }
+        }
+      });
+    }
+  }
+});
