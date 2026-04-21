@@ -1029,30 +1029,32 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   }
-});
-//todo
 
-const selectButton = document.querySelector('.selection-button');
+  //todo
 
-selectButton.addEventListener('click', function () {
-  const allCheckboxes = document.querySelectorAll('.check-box__input');
+  const selectButton = document.querySelector('.selection-button');
+  if (selectButton) {
+    selectButton.addEventListener('click', function () {
+      const allCheckboxes = document.querySelectorAll('.check-box__input');
 
-  // Проверяем, все ли чекбоксы уже выделены
-  const allChecked = Array.from(allCheckboxes).every(
-    (checkbox) => checkbox.checked === true
-  );
+      // Проверяем, все ли чекбоксы уже выделены
+      const allChecked = Array.from(allCheckboxes).every(
+        (checkbox) => checkbox.checked === true
+      );
 
-  if (allChecked) {
-    // Если все выделены - снимаем выделение
-    allCheckboxes.forEach((checkbox) => {
-      checkbox.checked = false;
+      if (allChecked) {
+        // Если все выделены - снимаем выделение
+        allCheckboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+        selectButton.textContent = 'Выделить всё';
+      } else {
+        // Если не все выделены - выделяем всё
+        allCheckboxes.forEach((checkbox) => {
+          checkbox.checked = true;
+        });
+        selectButton.textContent = 'Снять выделение';
+      }
     });
-    selectButton.textContent = 'Выделить всё';
-  } else {
-    // Если не все выделены - выделяем всё
-    allCheckboxes.forEach((checkbox) => {
-      checkbox.checked = true;
-    });
-    selectButton.textContent = 'Снять выделение';
   }
 });
