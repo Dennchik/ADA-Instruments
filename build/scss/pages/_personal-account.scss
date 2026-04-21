@@ -1,0 +1,240 @@
+@use '../core/mixins' as *;
+
+//*  ------------------------ acccount-section ---------------------------------
+.acccount-section {
+  margin-bottom: 75px;
+  // .acccount-section__body
+
+  &__body {
+    display: flex;
+  }
+
+  // .acccount-section__column
+  &__column {
+    &:nth-child(1) {
+      flex: 0 1 270px;
+      max-width: 270px;
+
+      .side-menu {
+        @include screen-1376 {
+          padding-left: 30px !important;
+          padding-right: 30px;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      flex: 1 1 auto;
+    }
+
+    &:nth-child(3) {
+      flex: 0 1 316px;
+      max-width: 316px;
+    }
+  }
+}
+//* ---------------------------- profile----------------------------------------
+.profile {
+  // .profile__body
+
+  &__body {
+    background: #b4b4b43b;
+    padding: 40px 40px 120px 40px;
+    display: flex;
+
+    flex-direction: column;
+    gap: 24px;
+
+    @include screen-1376 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  // .profile__line
+
+  &__line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  // .profile__item
+  &__item {
+    font-size: 18px;
+    font-weight: bold;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  // .profile__icon
+  &__icon {
+    .icon-rotate {
+      &::before {
+        transform: rotate(-45deg) !important;
+      }
+    }
+
+    .icon {
+      cursor: pointer;
+      &::before {
+        color: #b1b1b1;
+        font-size: 22px;
+        font-weight: bolder;
+        display: block;
+        transition: all 0.4s ease 0s;
+      }
+
+      &:hover {
+        &::before {
+          color: var(--red) !important;
+        }
+      }
+    }
+  }
+}
+
+//* ---------------------------- form-user -------------------------------------
+
+.form-user {
+  padding: 0 70px 70px;
+
+  @media only screen and (max-width: 1376px) {
+    padding: 0 30px 70px !important;
+  }
+
+  // .form-user__title
+  &__title {
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 50px;
+
+    @include screen-1024 {
+    }
+  }
+
+  // .form-user__wrapp-group
+  &__wrapp-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  // .form-user__line
+  &__line {
+    display: grid;
+    grid-template-columns: 1fr 215px;
+
+    gap: 20px;
+  }
+
+  // .form-user__group
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &._delivery {
+      .radio-group__item {
+        flex: 0 1 50%;
+      }
+    }
+  }
+
+  // .form-user__label
+
+  &__label {
+    object-fit: contain;
+    font-size: 21px;
+    font-weight: bold;
+    color: #c8c8c8;
+    line-height: 100%;
+    margin-bottom: 15px;
+  }
+
+  // .form-user__input
+
+  &__input {
+    font-size: 18px;
+    border: 1px solid #eee;
+    padding: 3px 10px;
+  }
+
+  // .form-user__button
+
+  &__button {
+    align-self: flex-end;
+  }
+}
+//* ------------------------- radio-group --------------------------------------
+.radio-group {
+  display: flex;
+  gap: 30px;
+
+  // .radio-group__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    flex: 0 1 25%;
+
+    span {
+      white-space: nowrap;
+    }
+
+    input[type='radio']::before {
+      content: '';
+      position: relative;
+      display: block;
+      width: 17px;
+      height: 17px;
+      border: 2px solid var(--red);
+      border-radius: 50%;
+      visibility: visible;
+      background-color: #ffffff;
+    }
+  }
+
+  // .radio-group__line
+  &__line {
+    &:not(:last-child) {
+      padding-right: 20px;
+    }
+  }
+
+  // .radio-group__input
+  &__input {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+  }
+
+  // .radio-group__label
+  &__label {
+    display: block;
+    position: relative;
+    text-align: left;
+    color: rgb(0, 0, 0);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+
+      left: -24px;
+      transform: scale(0);
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--red);
+      transition: transform 0.4s ease-in-out;
+      pointer-events: none;
+    }
+  }
+}
+
+.radio-group .radio-group__input:checked + .radio-group__label::before {
+  transform: scale(1);
+}

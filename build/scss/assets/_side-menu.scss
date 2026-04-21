@@ -1,0 +1,41 @@
+//* ---------------------------- side-menu -------------------------------------
+
+.side-menu {
+  flex: 0 1 20%;
+  height: 100%;
+  background-color: rgb(239, 239, 239);
+  padding: 40px;
+
+  // .side-menu__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    li {
+      line-height: 170%;
+    }
+
+    @media only screen and (max-width: 690px) {
+      display: none;
+    }
+  }
+
+  // .side-menu__link
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.4s ease 0s;
+    font-size: 18px;
+    white-space: nowrap;
+    font-weight: bold;
+
+    &:hover {
+      color: var(--red);
+    }
+
+    &.selected-link {
+      color: var(--red);
+    }
+  }
+}

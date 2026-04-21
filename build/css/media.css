@@ -217,6 +217,9 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
+  .acccount-section__column:nth-child(1) {
+    display: none;
+  }
   .items_greed_list {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -412,7 +415,7 @@
     font-size: 12px;
   }
 
-  .catalog_menu {
+  .side-menu {
     display: none;
   }
 
