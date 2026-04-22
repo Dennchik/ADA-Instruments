@@ -9,15 +9,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="dist/rangeslider/ion.rangeslider.min.css">
-  <link rel="stylesheet" type="text/css" href="dist/fancybox/jquery.fancybox.min.css">
-  <link rel="stylesheet" type="text/css" href="dist/icofont/icofont.min.css">
-  <link rel="stylesheet" type="text/css" href="dist/animate/animate.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="dist/slick/slick-theme.css">
-  <link rel="stylesheet" type="text/css" href="dist/slick/slick.css">
-  <link rel="stylesheet" type="text/css" href="css/custom_style.css">
-  <link rel="stylesheet" type="text/css" href="css/media.css">
+  <link rel="stylesheet" type="text/css" href="./dist/rangeslider/ion.rangeslider.min.css">
+  <link rel="stylesheet" type="text/css" href="./dist/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" type="text/css" href="./dist/icofont/icofont.min.css">
+  <link rel="stylesheet" type="text/css" href="./dist/animate/animate.css">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./dist/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="./dist/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./css/custom_style.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/media.css">
+  <script defer type="text/javascript" src="./js/jquery.min.js"></script>
+  <script defer type="text/javascript" src="./js/jquery.scrollTo.js"></script>
+  <script defer type="text/javascript" src="./dist/rangeslider/ion.rangeslider.min.js"></script>
+  <script defer type="text/javascript" src="./dist/parallax.js-1.5.0/parallax.min.js"></script>
+  <script defer type="text/javascript" src="./dist/fancybox/jquery.fancybox.min.js"></script>
+  <script defer type="text/javascript" src="./dist/animate/wow.min.js"></script>
+  <script defer type="text/javascript" src="./js/classie.js"></script>
+  <script defer type="text/javascript" src="./dist/slick/slick.min.js"></script>
+  <script defer type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script defer type="text/javascript" src="./js/popover.js"></script>
+  <script defer type="text/javascript" src="./js/script.js"></script>
 </head>
 
 <body>
@@ -181,7 +193,7 @@
     <!-- =======================/breadcrumb========================= -->
     <div class="page_header mb-5">
       <div class="container">
-        <h1 class="font_60 lh1 fw700">Лазерные дальномеры</h1>
+        <h1 class="font_60 lh1 fw700 text-uppercase">Лазерные дальномеры</h1>
       </div><!-- /container -->
     </div><!-- /page_header -->
     <div id="categoria_page" class="wow fadeInDown">
@@ -648,30 +660,24 @@
     </div><!-- /#main -->
     <footer>
       <div class="container">
-        <div class="footer_header pt-5 pb-4">
+        <div class="footer_header pb-4">
           <div class="row flex-nowrap align-items-center">
-            <!--===========-->
             <div class="col-lg-auto col-5 mr-lg-4">
-              <a href="./productia.html" class="grey_button">в каталог </a>
+              <a href="./productia.html" class="grey_button">в каталог</a>
             </div>
-            <!--/col-->
-            <!--===========-->
             <div class="col-lg-auto col-7">
               <div class="footer_search">
                 <form action="#">
-                  <input type="text" placeholder="поиск">
+                  <input type="text" placeholder="поиск" name="search">
                   <button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
                 </form>
               </div>
             </div>
-            <!--/col-->
-            <!--===========-->
           </div>
-          <!--/row-->
-        </div><!-- /footer_header -->
-        <div class="footer_menu pb-5">
-          <!-- =============footer_menu_desk==================== -->
-          <div class="d-none d-lg-block">
+        </div>
+        <div class="footer_menu">
+          <!--* =============footer_menu_desk==================== -->
+          <div class=" d-none d-lg-block">
             <ul class="footer_menu_desk">
               <li>
                 <a href="#">ПОДДЕРЖКА</a>
@@ -685,7 +691,6 @@
               <li class="has_child">
                 <a href="#">продукция</a>
                 <div class="row flex-nowrap pt-3 desk-menu">
-                  <!--===========-->
                   <div class="col-4">
                     <ul>
                       <li><a href="#">Лазерные дальномеры</a></li>
@@ -695,8 +700,6 @@
                       <li><a href="#">Теодолиты</a></li>
                     </ul>
                   </div>
-                  <!--/col-->
-                  <!--===========-->
                   <div class="col-4">
                     <ul>
                       <li><a href="#">Пирометры и тепловизоры</a></li>
@@ -706,8 +709,6 @@
                       <li><a href="#">Аксессуары</a></li>
                     </ul>
                   </div>
-                  <!--/col-->
-                  <!--===========-->
                   <div class="col-4">
                     <ul>
                       <li><a href="#">Штативы</a></li>
@@ -716,15 +717,12 @@
                       <li><a href="#">Мотобуры</a></li>
                     </ul>
                   </div>
-                  <!--/col-->
-                  <!--===========-->
                 </div>
-                <!--/row-->
               </li>
             </ul>
-          </div><!-- /footer_menu_desk -->
-          <!-- ===============/footer_menu_desk================== -->
-          <!-- =================footer_menu_mob================ -->
+          </div>
+          <!--* ===============/footer_menu_desk================== -->
+          <!--* =================footer_menu_mob================ -->
           <div class="d-block d-lg-none">
             <ul class="footer_menu_mob">
               <li>
@@ -742,7 +740,6 @@
             </ul>
             <div class="footer_menu_mob_submenu">
               <div class="row flex-nowrap pt-3">
-                <!--===========-->
                 <div class="col-4">
                   <ul class="fmb_list">
                     <li><a href="#">Лазерные дальномеры</a></li>
@@ -752,8 +749,6 @@
                     <li><a href="#">Теодолиты</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
                 <div class="col-4">
                   <ul class="fmb_list">
                     <li><a href="#">Пирометры и тепловизоры</a></li>
@@ -763,8 +758,6 @@
                     <li><a href="#">Аксессуары</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
                 <div class="col-4">
                   <ul class="fmb_list mr-0">
                     <li><a href="#">Штативы</a></li>
@@ -773,51 +766,35 @@
                     <li><a href="#">Мотобуры</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
               </div>
-              <!--/row-->
-            </div><!-- /footer_menu_mob_submenu -->
-          </div><!-- /d-block d-lg-none -->
+            </div>
+          </div>
           <div class="footer_contact">
             <div class="form-row flex-nowrap lh1 align-items-end mb-3">
-              <!--===========-->
               <div class="col-auto">
                 <a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
               </div>
-              <!--/col-->
-              <!--===========-->
               <div class="col-auto">
                 <span class="fw300 font14">Единая горячая линия</span>
               </div>
-              <!--/col-->
-              <!--===========-->
             </div>
             <!--/row-->
             <div class="grafic_raboty light_grey_color font12">
               09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
               Суббота, воскресенье - выходной. Звонок по России бесплатный
             </div>
-          </div><!-- /footer_contact -->
-          <!-- ============================== -->
-        </div><!-- /footer_menu -->
-        <div class="footer_footer pt-4 pb-5">
-          <div class="font12 text-center">Copyright &copy; 2008-2024 ADA Instruments</div>
-        </div><!-- /footer_footer -->
-      </div><!-- /container -->
+          </div>
+        </div>
+      </div>
+      <div class="footer_footer">
+        <div class="container">
+          <div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>
+        </div>
+      </div>
     </footer>
+    <!-- * --- / End --- -->
     <div id="toTop"><i class="icofont-rounded-up"></i></div>
-    <script src="js/jquery.min.js"></script>
-    <script src="dist/rangeslider/ion.rangeslider.min.js"></script>
-    <script src="js/jquery.scrollTo.js"></script>
-    <script src="dist/parallax.js-1.5.0/parallax.min.js"></script>
-    <script src="dist/fancybox/jquery.fancybox.min.js"></script>
-    <script src="dist/animate/wow.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="dist/slick/slick.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/popover.js"></script>
-    <script src="js/script.js"></script>
+
   </div>
 </body>
 

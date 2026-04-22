@@ -1058,3 +1058,56 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const openButton = document.querySelector('.acccount-section__open-button');
+  const closeButton = document.querySelector('.profile__close-button');
+  const asideMenu = document.querySelector('.aside-menu-r');
+
+  if (openButton) {
+    openButton.addEventListener('click', () => {
+      asideMenu.classList.toggle('open');
+      openButton.classList.toggle('active');
+    });
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', () => {
+      asideMenu.classList.toggle('open');
+      openButton.classList.toggle('active');
+    });
+  }
+
+  function checkScreenWidth() {
+    if (window.innerWidth > 992) {
+      asideMenu.classList.remove('open');
+      openButton.classList.remove('active');
+    }
+  }
+
+  // Событие при загрузке страницы
+  checkScreenWidth();
+
+  // Событие при изменении размера окна
+  window.addEventListener('resize', checkScreenWidth);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const openButton = document.querySelector('.acccount-section__link-button');
+  const closeButton = document.querySelector('.side-menu__close-menu');
+  const asideMenu = document.querySelector('.aside-menu-l');
+
+  if (openButton) {
+    openButton.addEventListener('click', () => {
+      asideMenu.classList.toggle('open');
+      openButton.classList.toggle('active');
+    });
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', () => {
+      asideMenu.classList.toggle('open');
+      openButton.classList.toggle('active');
+    });
+  }
+});

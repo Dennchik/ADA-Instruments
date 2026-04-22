@@ -17,9 +17,22 @@
 	<link rel="stylesheet" type="text/css" href="./dist/slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="./dist/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="./css/custom_style.css">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<link rel="stylesheet" type="text/css" href="./css/media.css">
-	<script defer type="text/javascript" src="js/collapse.js"></script>
-	<script defer type="text/javascript" src="js/itsSelect.js"></script>
+
+	<script defer src="./js/collapse.js"></script>
+	<script defer src="./js/itsSelect.js"></script>
+	<script defer src="./js/jquery.min.js"></script>
+	<script defer src="./js/jquery.scrollTo.js"></script>
+	<script defer src="./dist/rangeslider/ion.rangeslider.min.js"></script>
+	<script defer src="./dist/parallax.js-1.5.0/parallax.min.js"></script>
+	<script defer src="./dist/fancybox/jquery.fancybox.min.js"></script>
+	<script defer src="./dist/animate/wow.min.js"></script>
+	<script defer src="./js/classie.js"></script>
+	<script defer src="./dist/slick/slick.min.js"></script>
+	<script defer src="./js/bootstrap.min.js"></script>
+	<script defer src="./js/popover.js"></script>
+	<script defer src="./js/script.js"></script>
 </head>
 
 <body class="">
@@ -187,7 +200,7 @@
 			<div class="cart-section__content">
 				<div class="cart-section__col wow fadeInDown">
 					<div class="page_header mb-5">
-						<h1 class="font_clamp_60  lh1 fw700">Корзина</h1>
+						<h1 class="font_clamp_60 lh1 fw700 text-uppercase">Корзина</h1>
 					</div>
 					<div class="cart-section__title">
 						<div class="cart-section__header-col">
@@ -325,7 +338,7 @@
 								</div>
 							</div>
 							<div class="product-cart__image">
-								<img src="./img/cart_img/product-2.png" alt="картинка">
+								<img src="./img/cart_img/product-3.png" alt="картинка">
 							</div>
 							<div class="product-cart__info">
 								<div class="cart-section__icon">
@@ -535,61 +548,60 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<!--* ======================= /cart-section ========================= -->
-	<div id="categoria_page" class="wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
-		<div data-include="./html/partials/loading.html"></div>
-	</div>
-	<div class="section_form container">
-		<div class="section_form_body wow fadeInDown">
-			<div class="section_form_title">
-				<span>Возникли вопросы?</span>
-				<span>Напишите нам!</span>
-			</div>
-			<div class="form_feedback_body">
-				<form action="#" method="POST" class="suport_feedback_form feedback_form">
-					<div class="section_form_line">
-						<div class="suport_feedback_form_box">
-							<div class="mb-3">
-								<label for="suportName" class="sr-only">Ваше имя</label>
-								<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required>
-							</div>
-						</div><!-- /suport_feedback_form_box -->
+
+		<!--* ======================= /cart-section ========================= -->
+		<div id="categoria_page" class="wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+			<div data-include="./html/partials/loading.html"></div>
+		</div>
+		<div class="section_form container">
+			<div class="section_form_body wow fadeInDown">
+				<div class="section_form_title">
+					<span>Возникли вопросы?</span>
+					<span>Напишите нам!</span>
+				</div>
+				<div class="form_feedback_body">
+					<form action="#" method="POST" class="suport_feedback_form feedback_form">
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportName" class="sr-only">Ваше имя</label>
+									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required>
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
+									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required
+										autocomplete="off">
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-4">
+									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
+									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required
+										rows="1"></textarea>
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<button class="red_button" type="submit">ОТПРАВИТЬ </button>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+					</form>
+					<div class="succes_message bg_transparent" style="display: none;">
+						<div class="succes_message_caption">
+							Спасибо за обращение ! <br>
+							мы ответим Вам в ближайшее время!
+						</div><!-- /succes_message_caption -->
 					</div>
-					<div class="section_form_line">
-						<div class="suport_feedback_form_box">
-							<div class="mb-3">
-								<label for="suportEmail" class="sr-only">Ваш e-mail</label>
-								<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required
-									autocomplete="off">
-							</div>
-						</div><!-- /suport_feedback_form_box -->
-					</div>
-					<div class="section_form_line">
-						<div class="suport_feedback_form_box">
-							<div class="mb-4">
-								<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
-								<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required
-									rows="1"></textarea>
-							</div>
-						</div><!-- /suport_feedback_form_box -->
-					</div>
-					<div class="section_form_line">
-						<div class="suport_feedback_form_box">
-							<button class="red_button" type="submit">ОТПРАВИТЬ </button>
-						</div><!-- /suport_feedback_form_box -->
-					</div>
-				</form>
-				<div class="succes_message bg_transparent" style="display: none;">
-					<div class="succes_message_caption">
-						Спасибо за обращение ! <br>
-						мы ответим Вам в ближайшее время!
-					</div><!-- /succes_message_caption -->
 				</div>
 			</div>
 		</div>
-	</div>
-	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 	</div>
 	<!--*  wow fadeInDown -->
 	<footer>
@@ -744,28 +756,18 @@
 						09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
 						Суббота, воскресенье - выходной. Звонок по России бесплатный
 					</div>
-				</div><!-- /footer_contact -->
+				</div>
 				<!-- ============================== -->
-			</div><!-- /footer_menu -->
-			<!-- /footer_footer -->
-		</div><!-- /container -->
+			</div>
+		</div>
 		<div class="footer_footer">
 			<div class="container">
 				<div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>
 			</div>
 		</div>
 	</footer>
-	<script src="./js/jquery.min.js"></script>
-	<script src="./js/jquery.scrollTo.js"></script>
-	<script src="./dist/rangeslider/ion.rangeslider.min.js"></script>
-	<script src="./dist/parallax.js-1.5.0/parallax.min.js"></script>
-	<script src="./dist/fancybox/jquery.fancybox.min.js"></script>
-	<script src="./dist/animate/wow.min.js"></script>
-	<script src="./js/classie.js"></script>
-	<script src="./dist/slick/slick.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/popover.js"></script>
-	<script src="./js/script.js"></script>
+	<!-- * --- / End --- -->
+	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 </body>
 
 </html>

@@ -1,3 +1,242 @@
-.ada {
+* {
+  scrollbar-width: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+*::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  /*font-optical-sizing: auto;*/
+  font-style: normal;
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+input[type=submit] {
+  cursor: pointer;
+  display: inline-block;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+input,
+textarea,
+button,
+select {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+body {
+  font-size: 16px;
+  color: #252525;
+  min-width: 290px;
+  font-family: "Montserrat", sans-serif;
+  /*font-optical-sizing: auto;*/
+  font-style: normal;
+  padding-top: 110px;
+}
+
+body.home_page {
+  padding-top: 0px;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 100%;
+  vertical-align: middle;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  vertical-align: baseline;
+}
+a:focus {
+  text-decoration: none;
+}
+a:visited {
+  -webkit-text-emphasis-style: none;
+          text-emphasis-style: none;
+  vertical-align: middle;
+}
+
+a:hover,
+a:focus {
+  outline: none;
+  color: inherit;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+}
+
+input[type=search] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  line-height: 1;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+/* stylelint-disable at-rule-descriptor-value-no-unknown */
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-family-monospace:
+    SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+}
+
+.select > ._collapse:not(._show) {
   display: none;
+}
+
+[class*=_container] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+@media screen and (width <= 490px) {
+  [class*=_container] {
+    padding: 0 10px;
+  }
+}
+
+[class*=" _img"] {
+  display: block;
+  width: auto;
+  height: auto;
+}
+[class*=" _img"] img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+[class*=_ibg] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+[class*=_ibg] img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
+}
+[class*=_ibg] svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=main.css.map */

@@ -17,9 +17,19 @@
 	<link rel="stylesheet" type="text/css" href="./dist/slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="./dist/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="./css/custom_style.css">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<link rel="stylesheet" type="text/css" href="./css/media.css">
-	<script defer type="text/javascript" src="js/collapse.js"></script>
-	<script defer type="text/javascript" src="js/itsSelect.js"></script>
+	<script defer type="text/javascript" src="./js/jquery.min.js"></script>
+	<script defer type="text/javascript" src="./js/jquery.scrollTo.js"></script>
+	<script defer type="text/javascript" src="./dist/rangeslider/ion.rangeslider.min.js"></script>
+	<script defer type="text/javascript" src="./dist/parallax.js-1.5.0/parallax.min.js"></script>
+	<script defer type="text/javascript" src="./dist/fancybox/jquery.fancybox.min.js"></script>
+	<script defer type="text/javascript" src="./dist/animate/wow.min.js"></script>
+	<script defer type="text/javascript" src="./js/classie.js"></script>
+	<script defer type="text/javascript" src="./dist/slick/slick.min.js"></script>
+	<script defer type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script defer type="text/javascript" src="./js/popover.js"></script>
+	<script defer type="text/javascript" src="./js/script.js"></script>
 </head>
 
 <body>
@@ -182,12 +192,22 @@
 		<!--* ======================= /breadcrumb========================== -->
 		<!--* ==================== acccount-section ======================= -->
 		<section class="acccount-section container">
+			<div class="acccount-section__link-button link-button">
+				<i class="icofont-listing-box icon"></i>
+			</div>
 			<div class="acccount-section__body">
+
 				<!-- * Column-1 -->
-				<div class="acccount-section__column">
+				<div class="acccount-section__column aside-menu-l">
+
+
 					<div class="side-menu">
+						<div class="side-menu__close-menu">
+							<i class="icofont-close-squared icon"></i>
+						</div>
+
 						<ul class="side-menu__list catalog_menu_list">
-							<li><a class="side-menu__link selected-link" href="../catalog/automatic-levels/">Личный кабинет</a></li>
+							<li><a class="side-menu__link selected-link" href="./personal-account.html">Личный кабинет</a></li>
 							<li><a class="side-menu__link" href="../catalog/theodolites/">Мои заказы</a></li>
 							<li><a class="side-menu__link" href="../catalog/pyrometers/">История покупок</a></li>
 							<li><a class="side-menu__link" href="../catalog/detectors/">Профиль</a></li>
@@ -201,6 +221,10 @@
 
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
+					<div class="acccount-section__open-button">
+						<i class="icofont-listing-box icon"></i>
+					</div>
+
 					<div class="acccount-content">
 						<form class="form-user" id="orderForm">
 							<h2 class="form-user__title font_clamp_60 fw700">Личный кабинет</h2>
@@ -315,14 +339,17 @@
 				</div>
 
 				<!-- * Column-3 -->
-				<div class="acccount-section__column">
+				<div class="acccount-section__column aside-menu-r transparent-right">
 					<div class="profile">
 						<div class="profile__body">
+							<div class="profile__close-button">
+								<i class="icofont-close-squared icon"></i>
+							</div>
 
 							<div class="profile__line">
 								<div class="profile__item">Добавить телефон</div>
 								<div class="profile__icon">
-									<i class="icofont-close icon icon-rotate" id="add-button"></i>
+									<i class="icofont-close icon rotate-icon" id="add-button"></i>
 								</div>
 							</div>
 
@@ -347,8 +374,6 @@
 								</div>
 							</div>
 
-
-
 						</div>
 					</div>
 				</div>
@@ -356,7 +381,7 @@
 		</section>
 	</div>
 
-	<div id="toTop"><i class="icofont-rounded-up"></i></div>
+
 	<!--*  wow fadeInDown -->
 	<footer>
 		<div class=" container">
@@ -377,7 +402,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer_menu pb-5">
+			<div class="footer_menu">
 				<!--*  ============= footer_menu_desk ==================== -->
 				<div class="d-none d-lg-block">
 					<ul class="footer_menu_desk">
@@ -506,17 +531,8 @@
 		</div>
 	</footer>
 	<!-- * --- / End --- -->
-	<script src="./js/jquery.min.js"></script>
-	<script src="./js/jquery.scrollTo.js"></script>
-	<script src="./dist/rangeslider/ion.rangeslider.min.js"></script>
-	<script src="./dist/parallax.js-1.5.0/parallax.min.js"></script>
-	<script src="./dist/fancybox/jquery.fancybox.min.js"></script>
-	<script src="./dist/animate/wow.min.js"></script>
-	<script src="./js/classie.js"></script>
-	<script src="./dist/slick/slick.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/popover.js"></script>
-	<script src="./js/script.js"></script>
+	<div id="toTop"><i class="icofont-rounded-up"></i></div>
+
 </body>
 
 </html>
