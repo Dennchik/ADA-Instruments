@@ -82,8 +82,8 @@
               <i class="icofont-search"></i>
             </div>
             <div class="top_search_body">
-              <form action="#">
-                <input type="text" placeholder="Поиск по сайту" required>
+              <form action="#" id="searchForm1" action="#" method="get">
+                <input type="text" id="searchInput1" name="search" placeholder="Поиск по сайту" required>
                 <button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
               </form>
             </div>
@@ -138,13 +138,13 @@
                 <div class="row  align-items-center  justify-content-end">
                   <!--* =================== -->
                   <div class="col-auto  d-none d-lg-block">
-                    <div class="search_flexbox">
+                    <form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
                       <div class="search_wrap">
                         <div>
-                          <input type="text" placeholder="Поиск по сайту" required>
+                          <input type="text" id="searchInput2" name="search" placeholder="Поиск по сайту" required>
                         </div>
                       </div>
-                    </div>
+                    </form>
                   </div>
                   <!--* =================== -->
                   <div class="col-auto">
@@ -1989,36 +1989,46 @@
           </div>
           <div class="suport_feedback_form_wrapper">
             <div class="suport_feedback_form_row">
-              <form action="#" class="suport_form">
+              <form action="#" class="suport_form" id="suportForm" method="post">
                 <div class="sff_wrapper d-block d-lg-none">
                   <div class="close_suport_form"><i class="icofont-close"></i></div>
                 </div><!-- /sff_wrapper -->
+
                 <ul class="suport_feedback_form">
                   <li>
                     <div class="suport_feedback_form_box">
-                      <div class="mb-3"><input type="text" placeholder="Ваше имя" required=""></div>
+                      <div class="mb-3">
+                        <input type="text" id="supportName" name="support_name" placeholder="Ваше имя" required
+                          autocomplete="name">
+                      </div>
                     </div>
                   </li>
                   <li>
                     <div class="suport_feedback_form_box ml-lg-auto">
-                      <div class="mb-t"><input type="text" placeholder="Ваш e-mail" required=""></div>
+                      <div class="mb-t">
+                        <input type="email" id="supportEmail" name="support_email" placeholder="Ваш e-mail" required
+                          autocomplete="email">
+                      </div>
                     </div>
                   </li>
                   <li>
                     <div class="suport_feedback_form_box">
-                      <div class="mt-4"><input type="text" placeholder="Ваш вопрос" required=""></div>
+                      <div class="mt-4">
+                        <input type="text" id="supportQuestion" name="support_question" placeholder="Ваш вопрос"
+                          required>
+                      </div>
                     </div>
                   </li>
                   <li>
-                    <div class="suport_feedback_form_box mt-4 mt-lg-0  ml-lg-auto pt-3">
-                      <button class="red_button w-100" type="submit">ОТПРАВИТЬ </button>
+                    <div class="suport_feedback_form_box mt-4 mt-lg-0 ml-lg-auto pt-3">
+                      <button class="red_button w-100" type="submit" id="supportSubmitBtn">ОТПРАВИТЬ</button>
                     </div>
                   </li>
                 </ul>
+
                 <div class="d-none d-lg-block">
                   <div class="succes_message">
                     <div class="row h-100 align-items-center align-items-lg-start">
-                      <!--===========-->
                       <div class="col">
                         <div class="succes_message_caption text-white">
                           Спасибо за обращение ! <br>
@@ -2057,21 +2067,19 @@
           <div class="col-lg-auto col-5 mr-lg-4">
             <a href="./productia.html" class="grey_button">в каталог</a>
           </div>
-          <!--/col-->
           <!--===========-->
           <div class="col-lg-auto col-7">
             <div class="footer_search">
-              <form action="#">
-                <input type="text" placeholder="поиск">
+              <form action="#" id="searchForm3" action="#" method="get">
+                <input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
+                  autocomplete="off">
                 <button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
               </form>
             </div>
           </div>
-          <!--/col-->
           <!--===========-->
         </div>
-        <!--/row-->
-      </div><!-- /footer_header -->
+      </div>
       <div class="footer_menu pb-5">
         <!-- =============footer_menu_desk==================== -->
         <div class="d-none d-lg-block">

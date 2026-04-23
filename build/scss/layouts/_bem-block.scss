@@ -147,3 +147,82 @@
 }
 
 //* ------------------------[ /breadcrumbs ]--------------------------------- */
+.vertical-dots {
+  height: 28px;
+  width: 28px;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+
+  span {
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    left: calc(50% - 3px);
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: calc(50% - 3px);
+    }
+
+    &:nth-child(3) {
+      top: calc(100% - 6px);
+    }
+  }
+
+  &.horizontal {
+    height: 28px;
+    width: 28px;
+    position: relative;
+    flex-direction: row;
+    gap: 2px;
+
+    span {
+      // overflow: hidden;
+      position: absolute;
+      width: 28px;
+      height: 3px;
+      border-radius: 0;
+
+      &:nth-child(1) {
+        top: calc(50% - 3px);
+        left: 0;
+      }
+
+      &:nth-child(2) {
+        left: 0;
+      }
+
+      &:nth-child(3) {
+        top: calc(50% - 3px);
+        left: 0;
+      }
+    }
+  }
+}
+//* ----------------------------------------------------------------------------
+.invisible-button {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  border: 1px solid rgb(75 75 75 / 28%);
+  // background: transparent;
+  // border: none;
+  cursor: pointer;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.search_wrap > div {
+  position: relative;
+}

@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/custom_style.css">
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<link rel="stylesheet" type="text/css" href="./css/media.css">
+
 	<script defer type="text/javascript" src="./js/jquery.min.js"></script>
 	<script defer type="text/javascript" src="./js/jquery.scrollTo.js"></script>
 	<script defer type="text/javascript" src="./dist/rangeslider/ion.rangeslider.min.js"></script>
@@ -81,11 +82,9 @@
 							<i class="icofont-search"></i>
 						</div>
 						<div class="top_search_body">
-							<form action="#" class="search-form">
-								<input type="text" id="search-input" name="search-header" placeholder="Поиск по сайту" required>
-								<button type="submit" class="whith_button">
-									<i class="icofont-search-2"></i>
-								</button>
+							<form action="#" id="searchForm1" action="#" method="get">
+								<input type="text" id="searchInput1" name="search" placeholder="Поиск по сайту" required>
+								<button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
 							</form>
 						</div>
 					</div>
@@ -138,14 +137,14 @@
 							<div class="right_TP">
 								<div class="row  align-items-center  justify-content-end">
 									<!-- =================== -->
-									<div class="col-auto  d-none d-lg-block">
-										<div class="search_flexbox">
+									<div class="col-auto d-none d-lg-block">
+										<form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
 											<div class="search_wrap">
 												<div>
-													<input type="text" name="search" placeholder="Поиск по сайту" required>
+													<input type="text" id="searchInput2" name="search" placeholder="Поиск по сайту" required>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
 									<!-- =================== -->
 									<div class="col-auto">
@@ -202,12 +201,15 @@
 				<!-- * Column-1 -->
 				<div class="acccount-section__column aside-menu-l">
 					<div class="side-menu">
+						<div class="logo-wrapper">
+							<div class="logo"></div>
+						</div>
 						<div class="side-menu__close-menu">
 							<i class="icofont-close-squared icon"></i>
 						</div>
 
 						<ul class="side-menu__list catalog_menu_list">
-							<li><a class="side-menu__link selected-link" href="./personal-account.html">Личный кабинет</a></li>
+							<li><a class="side-menu__link active-link" href="./personal-account.html">Личный кабинет</a></li>
 							<li><a class="side-menu__link" href="../catalog/theodolites/">Мои заказы</a></li>
 							<li><a class="side-menu__link" href="../catalog/pyrometers/">История покупок</a></li>
 							<li><a class="side-menu__link" href="../catalog/detectors/">Профиль</a></li>
@@ -222,7 +224,13 @@
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
 					<div class="acccount-section__open-button">
-						<i class="icofont-listing-box icon"></i>
+						<!-- <i class="icofont-listing-box icon"></i> -->
+
+						<div class="vertical-dots" id="verticalDots">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
 					</div>
 
 					<div class="acccount-content">
@@ -432,8 +440,9 @@
 					<!--* ===========-->
 					<div class="col-lg-auto col-7">
 						<div class="footer_search">
-							<form action="#">
-								<input type="text" name="search-footer" placeholder="поиск">
+							<form action="#" id="searchForm3" action="#" method="get">
+								<input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
+									autocomplete="off">
 								<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
 							</form>
 						</div>

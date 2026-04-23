@@ -84,8 +84,8 @@
 							<i class="icofont-search"></i>
 						</div>
 						<div class="top_search_body">
-							<form action="#">
-								<input type="text" placeholder="Поиск по сайту" required>
+							<form action="#" id="searchForm1" action="#" method="get">
+								<input type="text" id="searchInput1" name="search" placeholder="Поиск по сайту" required>
 								<button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
 							</form>
 						</div>
@@ -139,14 +139,14 @@
 							<div class="right_TP">
 								<div class="row  align-items-center  justify-content-end">
 									<!-- =================== -->
-									<div class="col-auto  d-none d-lg-block">
-										<div class="search_flexbox">
+									<div class="col-auto d-none d-lg-block">
+										<form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
 											<div class="search_wrap">
 												<div>
-													<input type="text" placeholder="Поиск по сайту" required>
+													<input type="text" id="searchInput2" name="search" placeholder="Поиск по сайту" required>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
 									<!-- =================== -->
 									<div class="col-auto">
@@ -202,6 +202,8 @@
 					<div class="page_header mb-5">
 						<h1 class="font_clamp_60 lh1 fw700 text-uppercase">Корзина</h1>
 					</div>
+					<div class="cart-section__form"></div>
+
 					<div class="cart-section__title">
 						<div class="cart-section__header-col">
 							<div class="cart-section__icon">
@@ -223,12 +225,14 @@
 							<button class="cart-section__button">Удалить выбранные</button>
 						</div>
 					</div>
-					<div class="product-cart cart-section__product">
+
+					<form class="product-cart cart-section__product">
+						<!--* Товар 1 -->
 						<div class="product-cart__item">
 							<div class="cart-section__icon">
 								<div class="check-box">
 									<label class="check-box__label">
-										<input class="check-box__input" type="checkbox" name="policy" id="agreement">
+										<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
 										<span class="check-box__icon icon-gray">
 											<i class="icofont-check"></i>
 										</span>
@@ -274,12 +278,12 @@
 								</div>
 							</div>
 						</div>
-
+						<!--* Товар 2 -->
 						<div class="product-cart__item">
 							<div class="cart-section__icon">
 								<div class="check-box">
 									<label class="check-box__label">
-										<input class="check-box__input" type="checkbox" name="policy" id="agreement">
+										<input class="check-box__input" type="checkbox" name="policy" id="agreement-2">
 										<span class="check-box__icon icon-gray">
 											<i class="icofont-check"></i>
 										</span>
@@ -325,12 +329,12 @@
 								</div>
 							</div>
 						</div>
-
+						<!--* Товар 3 -->
 						<div class="product-cart__item">
 							<div class="cart-section__icon">
 								<div class="check-box">
 									<label class="check-box__label">
-										<input class="check-box__input" type="checkbox" name="policy" id="agreement">
+										<input class="check-box__input" type="checkbox" name="policy" id="agreement-3">
 										<span class="check-box__icon icon-gray">
 											<i class="icofont-check"></i>
 										</span>
@@ -377,13 +381,15 @@
 							</div>
 						</div>
 
-					</div>
+					</form>
 				</div>
 
 				<div class="cart-section__col wow fadeInDown">
-					<div class="delivery cart-section__delivery">
-						<!-- <div class="delivery"> -->
+					<form action="#" method="get" id="form-select" class="delivery cart-section__delivery">
+
 						<div class="delivery__content">
+
+							<!--* Способ доставки -->
 							<div class="delivery__item">
 								<div class=" delivery__label">
 									<span>Способ доставки</span>
@@ -396,7 +402,8 @@
 									<div class="select-group__dropdown">
 										<div class="select">
 
-											<input class="select__input" type="button" value="СДЭК">
+											<input class="select__input" type="text" id="deliveryMethod" name="delivery_method" value="СДЭК"
+												readonly>
 											<button type="button" class="select__button">
 												изменить
 											</button>
@@ -420,6 +427,7 @@
 								</div>
 							</div>
 
+							<!--* Дата доставки -->
 							<div class="delivery__item">
 								<div class="delivery__label">
 									<span>Дата доставки</span>
@@ -429,7 +437,8 @@
 									<div class="select-group__dropdown">
 										<div class="select">
 
-											<input class="select__input" type="data" value="">
+											<input class="select__input" type="text" id="deliveryDateTime" name="delivery_datetime" value=""
+												placeholder="выбрать дату и время" readonly>
 											<button type="button" class="select__button">
 												изменить
 											</button>
@@ -455,6 +464,7 @@
 								</div>
 							</div>
 
+							<!--* Покупатель -->
 							<div class="delivery__item">
 								<div class=" delivery__label">
 									<span>Покупатель</span>
@@ -464,7 +474,7 @@
 									<div class="select-group__dropdown">
 										<div class="select">
 
-											<input class="select__input" type="button" value="Иванов Иван">
+											<input class="select__input" type="text" id="customerName" name="customer_name" value="" readonly>
 											<button type="button" class="select__button">
 												изменить
 											</button>
@@ -486,6 +496,7 @@
 								</div>
 							</div>
 
+							<!--* Оплата -->
 							<div class="delivery__item">
 								<div class=" delivery__label">
 									<span>Оплата</span>
@@ -495,7 +506,8 @@
 									<div class="select-group__dropdown">
 										<div class="select">
 
-											<input class="select__input" type="button" value="СДЭК">
+											<input class="select__input" type="text" id="paymentMethod" name="payment_method"
+												value="Банковский перевод" readonly>
 											<button type="button" class="select__button">
 												изменить
 											</button>
@@ -518,7 +530,6 @@
 								</div>
 							</div>
 
-
 							<div class="delivery__result">
 								<div class="purchase-result">
 									<div class="purchase-result__quantity">3 товара - 3.99 кг</div>
@@ -535,16 +546,9 @@
 								<div class="delivery__button">
 									<button class="red_button" type="submit">Оформить заказ</button>
 								</div>
-
-
-
 							</div>
-
-
 						</div>
-
-
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -567,7 +571,7 @@
 									<label for="suportName" class="sr-only">Ваше имя</label>
 									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required>
 								</div>
-							</div><!-- /suport_feedback_form_box -->
+							</div>
 						</div>
 						<div class="section_form_line">
 							<div class="suport_feedback_form_box">
@@ -576,7 +580,7 @@
 									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required
 										autocomplete="off">
 								</div>
-							</div><!-- /suport_feedback_form_box -->
+							</div>
 						</div>
 						<div class="section_form_line">
 							<div class="suport_feedback_form_box">
@@ -585,19 +589,19 @@
 									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required
 										rows="1"></textarea>
 								</div>
-							</div><!-- /suport_feedback_form_box -->
+							</div>
 						</div>
 						<div class="section_form_line">
 							<div class="suport_feedback_form_box">
 								<button class="red_button" type="submit">ОТПРАВИТЬ </button>
-							</div><!-- /suport_feedback_form_box -->
+							</div>
 						</div>
 					</form>
 					<div class="succes_message bg_transparent" style="display: none;">
 						<div class="succes_message_caption">
 							Спасибо за обращение ! <br>
 							мы ответим Вам в ближайшее время!
-						</div><!-- /succes_message_caption -->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -606,27 +610,25 @@
 	<!--*  wow fadeInDown -->
 	<footer>
 		<div class=" container">
-			<div class="footer_header pt-5 pb-4">
+			<div class="footer_header pb-4">
 				<div class="row flex-nowrap align-items-center">
 					<!--===========-->
 					<div class="col-lg-auto col-5 mr-lg-4">
 						<a href="./productia.html" class="grey_button">в каталог</a>
 					</div>
-					<!--/col-->
 					<!--===========-->
 					<div class="col-lg-auto col-7">
 						<div class="footer_search">
-							<form action="#">
-								<input type="text" placeholder="поиск">
+							<form action="#" id="searchForm3" action="#" method="get">
+								<input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
+									autocomplete="off">
 								<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
 							</form>
 						</div>
 					</div>
-					<!--/col-->
 					<!--===========-->
 				</div>
-				<!--/row-->
-			</div><!-- /footer_header -->
+			</div>
 			<div class="footer_menu pb-5">
 				<!-- =============footer_menu_desk==================== -->
 				<div class="d-none d-lg-block">
@@ -653,7 +655,6 @@
 										<li><a href="#">Теодолиты</a></li>
 									</ul>
 								</div>
-								<!--/col-->
 								<!--===========-->
 								<div class="col-4">
 									<ul>
@@ -664,7 +665,6 @@
 										<li><a href="#">Аксессуары</a></li>
 									</ul>
 								</div>
-								<!--/col-->
 								<!--===========-->
 								<div class="col-4">
 									<ul>
@@ -674,13 +674,11 @@
 										<li><a href="#">Мотобуры</a></li>
 									</ul>
 								</div>
-								<!--/col-->
 								<!--===========-->
 							</div>
-							<!--/row-->
 						</li>
 					</ul>
-				</div><!-- /footer_menu_desk -->
+				</div>
 				<!-- ===============/footer_menu_desk================== -->
 				<!-- =================footer_menu_mob================ -->
 				<div class="d-block d-lg-none">
@@ -710,7 +708,6 @@
 									<li><a href="#">Теодолиты</a></li>
 								</ul>
 							</div>
-							<!--/col-->
 							<!--===========-->
 							<div class="col-4">
 								<ul class="fmb_list">
@@ -721,7 +718,6 @@
 									<li><a href="#">Аксессуары</a></li>
 								</ul>
 							</div>
-							<!--/col-->
 							<!--===========-->
 							<div class="col-4">
 								<ul class="fmb_list mr-0">
@@ -731,27 +727,22 @@
 									<li><a href="#">Мотобуры</a></li>
 								</ul>
 							</div>
-							<!--/col-->
 							<!--===========-->
 						</div>
-						<!--/row-->
-					</div><!-- /footer_menu_mob_submenu -->
-				</div><!-- /d-block d-lg-none -->
+					</div>
+				</div>
 				<div class="footer_contact">
 					<div class="form-row flex-nowrap lh1 align-items-end mb-3">
 						<!--===========-->
 						<div class="col-auto">
 							<a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
 						</div>
-						<!--/col-->
 						<!--===========-->
 						<div class="col-auto">
 							<span class="fw300 font14">Единая горячая линия</span>
 						</div>
-						<!--/col-->
 						<!--===========-->
 					</div>
-					<!--/row-->
 					<div class="grafic_raboty light_grey_color font12">
 						09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
 						Суббота, воскресенье - выходной. Звонок по России бесплатный

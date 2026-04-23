@@ -245,6 +245,12 @@
     top: -15px;
     gap: 15px;
   }
+  .smaller {
+    .col_icons svg {
+      fill: #fff !important;
+    }
+  }
+
   .col_icons .icon-cart {
     width: 27px;
     height: 27px;

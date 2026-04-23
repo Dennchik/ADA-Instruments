@@ -4531,9 +4531,6 @@ header .sub_menu a:hover:after {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.cart-section__col:nth-child(1) {
-  padding: 0 120px 40px 0;
-}
 .cart-section__col:nth-child(2) {
   border: 1px solid rgba(255, 255, 255, 0);
 }
@@ -4821,6 +4818,7 @@ header .sub_menu a:hover:after {
 }
 .select__drop-down {
   position: absolute;
+  width: 100%;
   z-index: 9;
   right: 0;
   top: 5px;
@@ -4865,8 +4863,13 @@ header .sub_menu a:hover:after {
           justify-content: space-between;
   font-size: 13px;
 }
+.select__list {
+  width: 100%;
+}
 .select__list-item {
   cursor: pointer;
+  white-space: nowrap;
+  width: 100%;
   font-size: 14px;
   padding: 5px 15px;
   -webkit-user-select: none;
@@ -4964,7 +4967,10 @@ header .sub_menu a:hover:after {
   color: var(--red);
 }
 .side-menu__link.selected-link {
-  color: var(--red);
+  color: var(--red) !important;
+}
+.side-menu__link.active-link {
+  color: rgb(255, 48, 48) !important;
 }
 
 .check-box._error .checkbox__label::before {
@@ -5189,7 +5195,7 @@ header .sub_menu a:hover:after {
 .acccount-section__body {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(190px, 270px) minmax(550px, 1fr) minmax(220px, 316px);
+  grid-template-columns: minmax(180px, 270px) minmax(520px, 1fr) minmax(220px, 316px);
 }
 @media screen and (width <= 992px) {
   .acccount-section__body {
@@ -5223,8 +5229,8 @@ header .sub_menu a:hover:after {
   .acccount-section__body .aside-menu-l.open {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    height: 100%;
-    min-width: 100%;
+    width: 100%;
+    max-width: 290px;
   }
 }
 @media screen and (width <= 992px) {
@@ -5246,11 +5252,17 @@ header .sub_menu a:hover:after {
 .acccount-section__column:nth-child(1) {
   z-index: 9;
 }
+.acccount-section__column:nth-child(1) .side-menu .logo {
+  display: none;
+}
 .acccount-section__column:nth-child(1) .side-menu__close-menu {
   display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: sticky;
+  top: 22px;
+  width: 30px;
+  height: 30px;
+  -webkit-transform: translate(233px, -60px);
+          transform: translate(233px, -60px);
 }
 .acccount-section__column:nth-child(1) .side-menu__close-menu .icofont-close-squared::before {
   color: #ff5656;
@@ -5281,7 +5293,7 @@ header .sub_menu a:hover:after {
 }
 @media screen and (width <= 1376px) {
   .acccount-section__column .form-user {
-    padding: 0 30px 70px;
+    padding: 0 20px 70px;
   }
 }
 @media screen and (width <= 992px) {
@@ -5331,7 +5343,7 @@ header .sub_menu a:hover:after {
   .acccount-section__open-button {
     position: absolute;
     z-index: 1;
-    top: -2px;
+    top: 0;
     right: 0;
     display: block;
   }
@@ -5587,6 +5599,9 @@ header .sub_menu a:hover:after {
 }
 
 @media screen and (width <= 1376px) {
+  .productia_wrapp {
+    max-width: 1140px !important;
+  }
   .side-menu {
     padding-left: 25px;
     padding-right: 25px;
@@ -5605,9 +5620,19 @@ header .sub_menu a:hover:after {
 @media screen and (width <= 1200px) {
   .radio-group {
     gap: 10px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  }
+}
+@media screen and (width <= 992px) {
+  .profile__body {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+  }
+  .profile__item {
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .profile__icon .icon::before {
+    color: #ffffff;
   }
 }
 @media screen and (width <= 820px) {
@@ -5619,6 +5644,42 @@ header .sub_menu a:hover:after {
   }
 }
 @media (width <= 640px) {
+  .side-menu {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-box-shadow: 2px 2px 7px rgba(143, 143, 143, 0.411);
+            box-shadow: 2px 2px 7px rgba(143, 143, 143, 0.411);
+    height: 100%;
+    overflow-x: hidden;
+  }
+  .side-menu .side-menu__link {
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .side-menu .logo-wrapper {
+    overflow: hidden;
+    display: block !important;
+    position: sticky;
+    width: 80px;
+    width: 121%;
+    top: 0;
+    -webkit-transform: translate(-25px, -40px);
+            transform: translate(-25px, -40px);
+    margin-top: -20px;
+    height: 42px;
+    background-color: #4b4b4b;
+  }
+  .side-menu .logo {
+    display: block !important;
+    width: 80px;
+    left: 5px;
+    top: 24px;
+    height: 38px;
+    background: #4b4b4b url(../img/logo_red.png) no-repeat;
+  }
+  .aside-menu-l {
+    height: calc(100vh - 125px);
+  }
   .form-user__wrapp-group {
     gap: 30px;
   }

@@ -66,7 +66,7 @@
           </ul>
           <div class="mbm_sel_lang_wrapper">
             <div class="custom_select">
-              <select>
+              <select id="select-group">
                 <option value="0">eng</option>
                 <option value="1">рус</option>
                 <option value="2">ger</option>
@@ -96,8 +96,8 @@
               <i class="icofont-search"></i>
             </div>
             <div class="top_search_body">
-              <form action="#">
-                <input type="text" placeholder="Поиск по сайту" required>
+              <form action="#" id="searchForm1" action="#" method="get">
+                <input type="text" id="searchInput1" name="search" placeholder="Поиск по сайту" required>
                 <button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
               </form>
             </div>
@@ -152,13 +152,13 @@
                 <div class="row  align-items-center  justify-content-end">
                   <!--* =================== -->
                   <div class="col-auto  d-none d-lg-block">
-                    <div class="search_flexbox">
+                    <form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
                       <div class="search_wrap">
                         <div>
-                          <input type="text" placeholder="Поиск по сайту" required>
+                          <input type="text" id="searchInput2" name="search" placeholder="Поиск по сайту" required>
                         </div>
                       </div>
-                    </div>
+                    </form>
                   </div>
                   <!--* =================== -->
                   <div class="col-auto">
@@ -270,8 +270,9 @@
           <!--===========-->
           <div class="col-lg-auto col-7">
             <div class="footer_search">
-              <form action="#">
-                <input type="text" placeholder="поиск">
+              <form action="#" id="searchForm3" action="#" method="get">
+                <input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
+                  autocomplete="off">
                 <button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
               </form>
             </div>

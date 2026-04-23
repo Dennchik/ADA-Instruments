@@ -81,8 +81,8 @@
               <i class="icofont-search"></i>
             </div>
             <div class="top_search_body">
-              <form action="#">
-                <input type="text" placeholder="Поиск по сайту" required>
+              <form action="#" id="searchForm1" action="#" method="get">
+                <input type="text" id="searchInput1" name="search" placeholder="Поиск по сайту" required>
                 <button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
               </form>
             </div><!-- /top_search_body -->
@@ -136,14 +136,14 @@
               <div class="right_TP">
                 <div class="row  align-items-center  justify-content-end">
                   <!-- =================== -->
-                  <div class="col-auto  d-none d-lg-block">
-                    <div class="search_flexbox">
+                  <div class="col-auto d-none d-lg-block">
+                    <form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
                       <div class="search_wrap">
                         <div>
-                          <input type="text" placeholder="Поиск по сайту" required>
+                          <input type="text" id="searchInput2" name="search" placeholder="Поиск по сайту" required>
                         </div>
                       </div>
-                    </div>
+                    </form>
                   </div><!-- /col -->
                   <!-- =================== -->
                   <div class="col-auto">
@@ -516,11 +516,13 @@
                         </div>
                       </div>
                       <div class="mp_feedback_body main_feedback_form">
-                        <form class="feedback_form">
-                          <input type="text" placeholder="Ваше имя" required="required">
-                          <input type="text" placeholder="Ваш e-mail" required="required">
-                          <input type="text" placeholder="Ваше вопрос" required="required">
-                          <input class="red_button mt-4 w-100" type="submit" value="ОТПРАВИТЬ">
+                        <form class="feedback_form" id="feedbackForm" action="#" method="post">
+                          <input type="text" id="userName" name="user_name" placeholder="Ваше имя" required
+                            autocomplete="name">
+                          <input type="email" id="userEmail" name="user_email" placeholder="Ваш e-mail" required
+                            autocomplete="email">
+                          <input type="text" id="userQuestion" name="user_question" placeholder="Ваш вопрос" required>
+                          <input class="red_button mt-4 w-100" type="submit" id="submitBtn" value="ОТПРАВИТЬ">
                         </form>
                         <div class="succes_message">
                           <div class="succes_message_caption">
@@ -564,8 +566,9 @@
           <!--===========-->
           <div class="col-lg-auto col-7">
             <div class="footer_search">
-              <form action="#">
-                <input type="text" placeholder="поиск">
+              <form action="#" id="searchForm3" action="#" method="get">
+                <input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
+                  autocomplete="off">
                 <button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
               </form>
             </div>

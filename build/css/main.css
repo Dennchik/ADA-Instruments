@@ -368,6 +368,79 @@ h3 {
   color: #000;
 }
 
+.vertical-dots {
+  height: 28px;
+  width: 28px;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+.vertical-dots span {
+  position: absolute;
+  margin: 0 auto;
+  top: 0;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.vertical-dots span:nth-child(1) {
+  top: 0;
+}
+.vertical-dots span:nth-child(2) {
+  top: calc(50% - 3px);
+}
+.vertical-dots span:nth-child(3) {
+  top: calc(100% - 6px);
+}
+.vertical-dots.horizontal {
+  height: 28px;
+  width: 28px;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 2px;
+}
+.vertical-dots.horizontal span {
+  position: absolute;
+  width: 28px;
+  height: 3px;
+  border-radius: 0;
+}
+.vertical-dots.horizontal span:nth-child(1) {
+  top: calc(50% - 3px);
+  left: 0;
+}
+.vertical-dots.horizontal span:nth-child(2) {
+  left: 0;
+}
+.vertical-dots.horizontal span:nth-child(3) {
+  top: calc(50% - 3px);
+  left: 0;
+}
+
+.invisible-button {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(75, 75, 75, 0.28);
+  cursor: pointer;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.search_wrap > div {
+  position: relative;
+}
+
 .select > ._collapse:not(._show) {
   display: none;
 }

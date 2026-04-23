@@ -6,7 +6,8 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
     itsSelects.forEach((itsSelect, selectIndex) => {
       const listItems = itsSelect.querySelectorAll('.select__list-item');
       const selectButton = itsSelect.querySelector('.select__button');
-      let start = listItems[0]; // Инициализация переменной `start`
+      const closeButton = itsSelect.querySelector('.close-button'); // Кнопка закрытия
+      let start = listItems[0];
 
       // Функция для переключения активного элемента
       const selectNext = (sibling) => {
@@ -51,7 +52,7 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
           start =
             target
               .closest('.select__button')
-              .nextElementSibling.querySelector('._selected') || listItems[0]; // Устанавливаем стартовый элемент
+              .nextElementSibling.querySelector('._selected') || listItems[0];
 
           if (opened_select && opened_select !== itsSelect) {
             _toggleOpen(opened_select);
@@ -63,6 +64,14 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         }
       });
 
+      // Закрытие по кнопке close-button
+      if (closeButton) {
+        closeButton.addEventListener('click', function (e) {
+          e.stopPropagation(); // Останавливаем всплытие события
+          closeBos();
+        });
+      }
+
       // Работа с клавишами
       selectGroup.addEventListener('keydown', function (e) {
         if (['ArrowUp', 'ArrowDown', 'Enter'].includes(e.key))
@@ -70,15 +79,16 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
 
         if (e.key == 'ArrowUp') {
           let sibling =
-            start.previousElementSibling || listItems[listItems.length - 1]; // Если нет предыдущего, выбираем последний элемент
+            start.previousElementSibling || listItems[listItems.length - 1];
           selectNext(sibling);
         } else if (e.key == 'ArrowDown') {
-          let sibling = start.nextElementSibling || listItems[0]; // Если нет следующего, выбираем первый элемент
+          let sibling = start.nextElementSibling || listItems[0];
           selectNext(sibling);
         } else if (e.key == 'Enter') {
           const selectedIndex = Array.from(listItems).indexOf(start);
           selectValue(selectedIndex);
-          closeBos();
+          // Убираем автоматическое закрытие при Enter
+          // closeBos(); - удаляем эту строку
         }
       });
 
@@ -94,7 +104,9 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
             } else {
               listItem.classList.add('_selected');
             }
-            selectValue(index); // Передаем индекс для синхронизации с другим списком
+            selectValue(index);
+            // Убираем автоматическое закрытие при клике на элемент списка
+            // список остается открытым
           });
         });
 
@@ -102,13 +114,11 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         function selectValue(selectedIndex) {
           let inputs = selectGroup.getElementsByClassName('select__input');
 
-          // Для текущего select
           for (let i = 0; i < inputs.length; i++) {
             inputs[i].value = start.textContent;
             selectButton.blur();
           }
 
-          // Для синхронизации с другим select
           itsSelects.forEach((otherSelect, otherSelectIndex) => {
             if (otherSelectIndex !== selectIndex) {
               const otherListItems =
@@ -120,18 +130,20 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
               }
 
               const correspondingItem = otherListItems[selectedIndex];
-              correspondingItem.classList.add('_selected');
+              if (correspondingItem) {
+                correspondingItem.classList.add('_selected');
+              }
             }
           });
         }
 
-        // Переключатель классов
+        // Переключатель классов (без автоматического закрытия)
         const _listItem = (el) => {
           const collapse = new ItcCollapse(el.closest('._collapse'));
           if (el.classList.contains('_selected')) {
             el.classList.remove('_selected');
-            collapse.toggle();
-            el.closest('.select').classList.remove('_active-collapse');
+            // Убираем collapse.toggle() и удаление класса _active-collapse
+            // чтобы список не закрывался
           } else {
             el.classList.add('_selected');
           }
@@ -146,17 +158,14 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         }
       });
 
-      // Закрыть дропдаун при клике снаружи
+      // Закрыть дропдаун при клике снаружи (опционально, можно закомментировать)
       document.addEventListener('click', function (e) {
         const classList = e.target.classList;
-        switch (true) {
-          case classList.contains('select__button'):
-            break;
-          case classList.contains('select__list-item'):
-            break;
-          default:
-            closeBos();
-            break;
+        const isInsideSelect = e.target.closest('.select');
+
+        // Если клик был вне компонента select, закрываем
+        if (!isInsideSelect) {
+          closeBos();
         }
       });
     });

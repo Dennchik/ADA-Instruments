@@ -1059,55 +1059,203 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 //todo -------------------------------------------------------------------------
+
+//todo -------------------------------------------------------------------------
+// document.addEventListener('DOMContentLoaded', () => {
+//   const openButton = document.querySelector('.acccount-section__open-button');
+//   const closeButton = document.querySelector('.profile__close-button');
+//   const asideMenu = document.querySelector('.aside-menu-r');
+//   const verticalDots = document.getElementById('verticalDots');
+
+//   if (openButton) {
+//     openButton.addEventListener('click', () => {
+//       asideMenu?.classList.toggle('open');
+//       openButton?.classList.toggle('active');
+//       // Меняем троеточие только если экран меньше или равен 992px
+//       if (window.innerWidth <= 992) {
+//         verticalDots?.classList.toggle('horizontal');
+//       }
+//     });
+//   }
+
+//   if (closeButton) {
+//     closeButton.addEventListener('click', () => {
+//       asideMenu?.classList.toggle('open');
+//       openButton?.classList.toggle('active');
+//       // Меняем троеточие только если экран меньше или равен 992px
+//       if (window.innerWidth <= 992) {
+//         verticalDots?.classList.toggle('horizontal');
+//       }
+//     });
+//   }
+
+//   function checkScreenWidth() {
+//     if (window.innerWidth > 992) {
+//       asideMenu?.classList.remove('open');
+//       openButton?.classList.remove('active');
+//       // На широком экране убираем класс horizontal
+//       verticalDots?.classList.remove('horizontal');
+//     }
+//   }
+
+//   checkScreenWidth();
+//   window.addEventListener('resize', checkScreenWidth);
+// });
+// //* ----------------------------------------------------------------------------
+// document.addEventListener('DOMContentLoaded', () => {
+//   const openButton = document.querySelector('.acccount-section__link-button');
+//   const closeButton = document.querySelector('.side-menu__close-menu');
+//   const asideMenu = document.querySelector('.aside-menu-l');
+//   // Добавляем элемент для троеточия (если есть)
+//   const verticalDotsLeft = document.getElementById('verticalDotsLeft'); // или другой ID
+
+//   if (openButton) {
+//     openButton.addEventListener('click', () => {
+//       asideMenu?.classList.toggle('open');
+//       openButton?.classList.toggle('active');
+//       // Меняем троеточие только если экран меньше или равен 992px
+//       if (window.innerWidth <= 992) {
+//         verticalDotsLeft?.classList.toggle('horizontal');
+//       }
+//     });
+//   }
+
+//   if (closeButton) {
+//     closeButton.addEventListener('click', () => {
+//       asideMenu?.classList.toggle('open');
+//       openButton?.classList.toggle('active');
+//       // Меняем троеточие только если экран меньше или равен 992px
+//       if (window.innerWidth <= 992) {
+//         verticalDotsLeft?.classList.toggle('horizontal');
+//       }
+//     });
+//   }
+
+//   function checkScreenWidth() {
+//     if (window.innerWidth > 992) {
+//       asideMenu?.classList.remove('open');
+//       openButton?.classList.remove('active');
+//       // На широком экране убираем класс horizontal
+//       verticalDotsLeft?.classList.remove('horizontal');
+//     }
+//   }
+
+//   checkScreenWidth();
+//   window.addEventListener('resize', checkScreenWidth);
+// });
 document.addEventListener('DOMContentLoaded', () => {
-  const openButton = document.querySelector('.acccount-section__open-button');
-  const closeButton = document.querySelector('.profile__close-button');
-  const asideMenu = document.querySelector('.aside-menu-r');
+  // ========== ПРАВАЯ ПАНЕЛЬ ==========
+  const openButtonRight = document.querySelector(
+    '.acccount-section__open-button'
+  );
+  const closeButtonRight = document.querySelector('.profile__close-button');
+  const asideMenuRight = document.querySelector('.aside-menu-r');
+  const verticalDotsRight = document.getElementById('verticalDots');
 
-  if (openButton) {
-    openButton.addEventListener('click', () => {
-      asideMenu.classList.toggle('open');
-      openButton.classList.toggle('active');
+  if (openButtonRight) {
+    openButtonRight.addEventListener('click', () => {
+      asideMenuRight?.classList.toggle('open');
+      openButtonRight?.classList.toggle('active');
+      if (window.innerWidth <= 992) {
+        verticalDotsRight?.classList.toggle('horizontal');
+      }
     });
   }
 
-  if (closeButton) {
-    closeButton.addEventListener('click', () => {
-      asideMenu.classList.toggle('open');
-      openButton.classList.toggle('active');
+  if (closeButtonRight) {
+    closeButtonRight.addEventListener('click', () => {
+      asideMenuRight?.classList.toggle('open');
+      openButtonRight?.classList.toggle('active');
+      if (window.innerWidth <= 992) {
+        verticalDotsRight?.classList.toggle('horizontal');
+      }
     });
   }
 
+  // ========== ЛЕВАЯ ПАНЕЛЬ ==========
+  const openButtonLeft = document.querySelector(
+    '.acccount-section__link-button'
+  );
+  const closeButtonLeft = document.querySelector('.side-menu__close-menu');
+  const asideMenuLeft = document.querySelector('.aside-menu-l');
+  const verticalDotsLeft = document.getElementById('verticalDotsLeft');
+
+  if (openButtonLeft) {
+    openButtonLeft.addEventListener('click', () => {
+      asideMenuLeft?.classList.toggle('open');
+      openButtonLeft?.classList.toggle('active');
+      if (window.innerWidth <= 992) {
+        verticalDotsLeft?.classList.toggle('horizontal');
+      }
+    });
+  }
+
+  if (closeButtonLeft) {
+    closeButtonLeft.addEventListener('click', () => {
+      asideMenuLeft?.classList.toggle('open');
+      openButtonLeft?.classList.toggle('active');
+      if (window.innerWidth <= 992) {
+        verticalDotsLeft?.classList.toggle('horizontal');
+      }
+    });
+  }
+
+  // ========== ФУНКЦИЯ ЗАКРЫТИЯ ПАНЕЛЕЙ ==========
+  function closeAllPanels() {
+    // Правая панель
+    asideMenuRight?.classList.remove('open');
+    openButtonRight?.classList.remove('active');
+    verticalDotsRight?.classList.remove('horizontal');
+
+    // Левая панель
+    asideMenuLeft?.classList.remove('open');
+    openButtonLeft?.classList.remove('active');
+    verticalDotsLeft?.classList.remove('horizontal');
+  }
+
+  // ========== ОБЩАЯ ФУНКЦИЯ ДЛЯ ШИРИНЫ ЭКРАНА ==========
   function checkScreenWidth() {
     if (window.innerWidth > 992) {
-      asideMenu.classList.remove('open');
-      openButton.classList.remove('active');
+      closeAllPanels();
     }
   }
 
-  // Событие при загрузке страницы
+  // ========== ЗАКРЫТИЕ ПРИ СКРОЛЛЕ ==========
+  let scrollTimeout;
+  function handleScroll() {
+    // Очищаем предыдущий таймер
+    clearTimeout(scrollTimeout);
+
+    // Закрываем панели при скролле
+    closeAllPanels();
+
+    // Дополнительно: можно добавить задержку, чтобы не закрывалось при каждом тике
+    scrollTimeout = setTimeout(() => {
+      closeAllPanels();
+    }, 100);
+  }
+
+  // ========== ЗАКРЫТИЕ ПРИ КЛИКЕ ВНЕ ПАНЕЛИ (опционально) ==========
+  function handleClickOutside(event) {
+    // Проверяем, был ли клик вне правой панели и не по кнопке открытия
+    const isRightPanel = asideMenuRight?.contains(event.target);
+    const isRightButton = openButtonRight?.contains(event.target);
+
+    // Проверяем, был ли клик вне левой панели и не по кнопке открытия
+    const isLeftPanel = asideMenuLeft?.contains(event.target);
+    const isLeftButton = openButtonLeft?.contains(event.target);
+
+    // Если клик был вне обеих панелей и не по кнопкам открытия
+    if (!isRightPanel && !isRightButton && !isLeftPanel && !isLeftButton) {
+      closeAllPanels();
+    }
+  }
+
+  // Запускаем проверку при загрузке
   checkScreenWidth();
 
-  // Событие при изменении размера окна
+  // События
   window.addEventListener('resize', checkScreenWidth);
-});
-//todo -------------------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-  const openButton = document.querySelector('.acccount-section__link-button');
-  const closeButton = document.querySelector('.side-menu__close-menu');
-  const asideMenu = document.querySelector('.aside-menu-l');
-
-  if (openButton) {
-    openButton.addEventListener('click', () => {
-      asideMenu.classList.toggle('open');
-      openButton.classList.toggle('active');
-    });
-  }
-
-  if (closeButton) {
-    closeButton.addEventListener('click', () => {
-      asideMenu.classList.toggle('open');
-      openButton.classList.toggle('active');
-    });
-  }
+  window.addEventListener('scroll', handleScroll);
+  document.addEventListener('click', handleClickOutside);
 });
