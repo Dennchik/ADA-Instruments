@@ -5545,10 +5545,8 @@ header .sub_menu a:hover:after {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.form-user__group._delivery .radio-group__item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
+.form-user__group .radio-group__item {
+  height: 17px;
 }
 .form-user__label {
   -o-object-fit: contain;
@@ -5556,7 +5554,7 @@ header .sub_menu a:hover:after {
   font-size: 21px;
   font-weight: bold;
   color: #c8c8c8;
-  line-height: 100%;
+  line-height: 100%; /* 17/16 */
   margin-bottom: 15px;
 }
 .form-user__input {
@@ -5584,9 +5582,6 @@ header .sub_menu a:hover:after {
           align-items: center;
   gap: 10px;
   white-space: nowrap;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 25%;
-          flex: 0 1 25%;
 }
 .radio-group__item span {
   white-space: nowrap;
@@ -5609,17 +5604,20 @@ header .sub_menu a:hover:after {
   width: 17px;
   height: 17px;
   cursor: pointer;
+  line-height: 100%;
 }
 .radio-group__label {
   display: block;
   position: relative;
   text-align: left;
   color: rgb(0, 0, 0);
+  line-height: 100%; /* 17/16 */
+  height: 17px;
 }
 .radio-group__label::before {
   content: "";
   position: absolute;
-  top: 6px;
+  top: 3px;
   left: -24px;
   -webkit-transform: scale(0);
           transform: scale(0);

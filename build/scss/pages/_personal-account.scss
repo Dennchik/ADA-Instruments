@@ -309,11 +309,8 @@
   &__group {
     display: flex;
     flex-direction: column;
-
-    &._delivery {
-      .radio-group__item {
-        flex: 0 1 50%;
-      }
+    .radio-group__item {
+      height: 17px;
     }
   }
 
@@ -324,7 +321,7 @@
     font-size: 21px;
     font-weight: bold;
     color: #c8c8c8;
-    line-height: 100%;
+    line-height: 100%; /* 17/16 */
     margin-bottom: 15px;
   }
 
@@ -353,7 +350,7 @@
     align-items: center;
     gap: 10px;
     white-space: nowrap;
-    flex: 0 1 25%;
+    // flex: 0 1 25%;
 
     span {
       white-space: nowrap;
@@ -384,6 +381,7 @@
     width: 17px;
     height: 17px;
     cursor: pointer;
+    line-height: 100%;
   }
 
   // .radio-group__label
@@ -392,11 +390,13 @@
     position: relative;
     text-align: left;
     color: rgb(0, 0, 0);
+    line-height: 100%; /* 17/16 */
+    height: 17px;
 
     &::before {
       content: '';
       position: absolute;
-      top: 6px;
+      top: 3px;
 
       left: -24px;
       transform: scale(0);
