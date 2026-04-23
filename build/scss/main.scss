@@ -3,7 +3,7 @@
 @use 'core/mixins' as *;
 @use 'core/variables' as *;
 // todo ------------------------- layouts --------------------------------------
-
+@use 'layouts/bem-block' as *;
 // todo -------------------------- Style ---------------------------------------
 .select > ._collapse:not(._show) {
   display: none;
@@ -81,72 +81,3 @@
     object-fit: cover;
   }
 }
-//* ----------------------------[ fonts ]------------------------------------ */
-
-.font_clamp_60 {
-  font-size: clamp(1.51375rem, 3vw, 3.75rem);
-}
-
-.font_11 {
-  font-size: 11px;
-}
-
-.font12 {
-  font-size: 12px;
-}
-.font13 {
-  font-size: 13px;
-}
-
-.font_60 {
-  font-size: 60px;
-}
-//* ----------------------------[ /fonts ]----------------------------------- */
-//* ------------------------[ breadcrumbs ]-----------------------------------*/
-.breadcrumb > li {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.breadcrumb > .active {
-  color: inherit;
-}
-
-.breadcrumb {
-  list-style: none;
-  background-color: transparent;
-  border-radius: 0px;
-  font-size: 13px;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 0;
-}
-.breadcrumb a {
-  color: #a4a4a4;
-}
-
-.breadcrumb > li + li:before {
-  padding: 0 10px;
-  color: inherit;
-  content: '\ef9a';
-  color: #a4a4a4;
-  font-family: IcoFont !important;
-  speak: none;
-  font-style: normal;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  line-height: 1;
-  font-feature-settings: 'liga';
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-}
-
-.home_page .breadcrumb > li + li:before {
-  color: #000;
-}
-
-//* ------------------------[ /breadcrumbs ]--------------------------------- */

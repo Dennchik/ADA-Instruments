@@ -201,8 +201,6 @@
 
 				<!-- * Column-1 -->
 				<div class="acccount-section__column aside-menu-l">
-
-
 					<div class="side-menu">
 						<div class="side-menu__close-menu">
 							<i class="icofont-close-squared icon"></i>
@@ -244,8 +242,8 @@
 
 									<!-- Дата рождения -->
 									<div class="form-user__group">
-										<label class="form-user__label" for="birthdate">Дата рождения</label>
-										<input class="form-user__input" type="date" id="birthdate" name="birthdate">
+										<label class="form-user__label text-right" for="birthdate">Дата рождения</label>
+										<input class="form-user__input text-right" type="date" id="birthdate" name="birthdate">
 									</div>
 								</div>
 
@@ -269,8 +267,9 @@
 
 									<!-- Город -->
 									<div class="form-user__group">
-										<label class="form-user__label" for="city">Город *</label>
-										<input class="form-user__input" type="text" id="city" name="city" placeholder="Москва" required>
+										<label class="form-user__label text-right" for="city">Город *</label>
+										<input class="form-user__input text-right" type="text" id="city" name="city" placeholder="Москва"
+											required>
 									</div>
 								</div>
 
@@ -284,9 +283,12 @@
 									</div>
 									<!-- Телефон -->
 									<div class="form-user__group">
-										<label class="form-user__label" for="phone">Телефон *</label>
-										<input class="form-user__input" type="tel" id="phone" name="phone" autocomplete="tel"
-											placeholder="+7 (999) 123-45-67" required="">
+
+										<label class="form-user__label text-right" for="phone">Телефон *</label>
+										<div class="form-user__group">
+											<input class="form-user__input text-right" type="tel" id="phone" name="phone" autocomplete="tel"
+												placeholder="+7 (999) 123-45-67" required="">
+										</div>
 									</div>
 								</div>
 
@@ -331,9 +333,12 @@
 											</div>
 										</div>
 									</div>
-
 									<!--* Кнопка Сохранить -->
-									<button class="form-user__button dark_button" type="submit">Сохранить</button>
+									<div class="form-user__group">
+										<button class="form-user__button dark_button" type="submit">Сохранить</button>
+									</div>
+
+
 								</div>
 							</div>
 						</form>
@@ -347,40 +352,71 @@
 							<div class="profile__close-button">
 								<i class="icofont-close-squared icon"></i>
 							</div>
-
+							<!-- * -->
 							<div class="profile__line">
-								<div class="profile__item">Добавить телефон</div>
-								<div class="profile__icon">
-									<i class="icofont-close icon rotate-icon" id="add-button"></i>
-								</div>
+								<button type="button" class="profile__link">
+									<div class="profile__item">Добавить телефон</div>
+									<div class="profile__icon" id="add-tel">
+										<i class="icofont-close icon" id="add-button"></i>
+									</div>
+								</button>
+								<!-- todo (ссылка) -->
+								<!-- <a href="#" class="profile__link">
+									<div class="profile__item">Добавить телефон</div>
+									<div class="profile__icon" id="add-tel">
+										<i class="icofont-close icon" id="add-button"></i>
+									</div>
+								</a> -->
 							</div>
-
+							<!-- * -->
 							<div class="profile__line">
-								<div class="profile__item">Изменить пароль</div>
-								<div class="profile__icon">
-									<i class="icofont-unlock icon" id="edit button"></i>
-								</div>
+								<button type="button" class="profile__link">
+									<div class="profile__item">Изменить пароль</div>
+									<div class="profile__icon">
+										<i class="icofont-unlock icon" id="edit button"></i>
+									</div>
+								</button>
+								<!-- todo (ссылка) -->
+								<!-- <a href="#" class="profile__link">
+									<div class="profile__item">Изменить пароль</div>
+									<div class="profile__icon">
+										<i class="icofont-unlock icon" id="edit button"></i>
+									</div>
+								</a> -->
 							</div>
-
+							<!-- * -->
 							<div class="profile__line">
-								<div class="profile__item">Удалить аккаунт</div>
-								<div class="profile__icon delete-button">
-									<i class="icofont-close icon"></i>
-								</div>
+								<button type="button" class="profile__link">
+									<div class="profile__item">Удалить аккаунт</div>
+									<div class="profile__icon delete-button">
+										<i class="icofont-close icon"></i>
+									</div>
+								</button>
+								<!-- todo (ссылка) -->
+								<!-- <a class="profile__link">
+									<div class="profile__item">Удалить аккаунт</div>
+									<div class="profile__icon delete-button">
+										<i class="icofont-close icon"></i>
+									</div>
+								</a> -->
 							</div>
-
+							<!-- * -->
 							<div class="profile__line">
-								<div class="profile__item">Выход</div>
-								<div class="profile__icon">
-									<i class="icofont-long-arrow-right icon"></i>
-								</div>
+								<!-- todo (только-ссылка) -->
+								<a href="#" class="profile__link">
+									<div class="profile__item">Выход</div>
+									<div class="profile__icon">
+										<i class="icofont-long-arrow-right icon"></i>
+									</div>
+								</a>
 							</div>
-
 						</div>
 					</div>
 				</div>
+				<!-- * -->
 			</div>
 		</section>
+		<!--* ================ acccount-section [end] ===================== -->
 	</div>
 
 

@@ -969,74 +969,6 @@ header.smaller {
 }
 
 /*==================*/
-.font_66 {
-  font-size: 66px;
-}
-
-.fw_800 {
-  font-weight: 800;
-}
-
-.lh1 {
-  line-height: 1;
-}
-
-.red_button {
-  display: inline-block;
-  background-color: rgb(255, 51, 51);
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center;
-  padding: 0px 50px;
-  height: 50px;
-  line-height: 50px;
-  border: 1px solid rgb(255, 51, 51);
-  outline: none;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-
-.dark_button {
-  display: inline-block;
-  background-color: rgb(68, 68, 68);
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center;
-  padding: 0px 50px;
-  height: 50px;
-  line-height: 50px;
-  border: 1px solid rgb(68, 68, 68);
-  outline: none;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.dark_button:hover {
-  background-color: transparent;
-  color: #000000;
-  font-weight: bolder;
-}
-
-@media screen and (min-width: 1024px) {
-  .red_button:hover,
-  .red_button:focus {
-    background-color: transparent;
-    color: rgb(255, 51, 51);
-    outline: none;
-    text-decoration: none;
-  }
-}
-.white_color {
-  color: white;
-}
-
 .ms_capton {
   max-width: 500px;
 }
@@ -5257,7 +5189,7 @@ header .sub_menu a:hover:after {
 .acccount-section__body {
   position: relative;
   display: grid;
-  grid-template-columns: 270px minmax(410px, 1fr) minmax(220px, 316px);
+  grid-template-columns: minmax(190px, 270px) minmax(550px, 1fr) minmax(220px, 316px);
 }
 @media screen and (width <= 992px) {
   .acccount-section__body {
@@ -5328,18 +5260,6 @@ header .sub_menu a:hover:after {
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
-@media screen and (width <= 1376px) {
-  .acccount-section__column:nth-child(1) .side-menu {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-@media (width <= 690px) {
-  .acccount-section__column:nth-child(1) .side-menu {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-}
 @media (width <= 640px) {
   .acccount-section__column:nth-child(1) {
     position: absolute;
@@ -5352,9 +5272,6 @@ header .sub_menu a:hover:after {
 }
 .acccount-section__column:nth-child(3) {
   z-index: 99;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 316px;
-          flex: 0 1 316px;
 }
 @media screen and (width <= 992px) {
   .acccount-section__column:nth-child(3).aside-menu-r .profile {
@@ -5466,13 +5383,39 @@ header .sub_menu a:hover:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+.profile__wrapp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.profile__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  text-align: left;
   gap: 20px;
+}
+.profile__link:hover .profile__icon .icon::before {
+  color: var(--red) !important;
+}
+.profile__link:hover .profile__item {
+  color: var(--red);
 }
 .profile__item {
   font-size: 16px;
@@ -5482,7 +5425,10 @@ header .sub_menu a:hover:after {
       -ms-user-select: none;
           user-select: none;
   white-space: nowrap;
+  width: 100%;
   line-height: 100%;
+  -webkit-transition: color 0.4s ease 0s;
+  transition: color 0.4s ease 0s;
 }
 .profile__icon .rotate-icon::before {
   -webkit-transform: rotate(-45deg) !important;
@@ -5498,9 +5444,6 @@ header .sub_menu a:hover:after {
   display: block;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
-}
-.profile__icon .icon:hover::before {
-  color: var(--red) !important;
 }
 
 .form-user {
@@ -5531,11 +5474,6 @@ header .sub_menu a:hover:after {
   grid-template-columns: 1fr 215px;
   gap: 20px;
 }
-@media screen and (width <= 1200px) {
-  .form-user__line {
-    grid-template-columns: 1fr;
-  }
-}
 .form-user__group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5544,6 +5482,10 @@ header .sub_menu a:hover:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 355px;
+  width: 100%;
+  -ms-flex-item-align: end;
+      align-self: end;
 }
 .form-user__group .radio-group__item {
   height: 17px;
@@ -5563,14 +5505,17 @@ header .sub_menu a:hover:after {
   padding: 3px 10px;
 }
 .form-user__button {
+  max-width: 190px;
+  width: 100%;
   -ms-flex-item-align: end;
-      align-self: flex-end;
+      align-self: end;
 }
 
 .radio-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   gap: 30px;
 }
 .radio-group__item {
@@ -5637,6 +5582,42 @@ header .sub_menu a:hover:after {
           transform: scale(1);
 }
 
+.form-user {
+  padding-bottom: 0 !important;
+}
+
+@media screen and (width <= 1376px) {
+  .side-menu {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .profile__body {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .radio-group__label {
+    font-size: 14px;
+  }
+  .form-user__button {
+    max-width: 160px;
+  }
+}
+@media screen and (width <= 1200px) {
+  .radio-group {
+    gap: 10px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media screen and (width <= 820px) {
+  .form-user__line {
+    grid-template-columns: 1fr;
+  }
+  .form-user__group {
+    max-width: 100%;
+  }
+}
 @media (width <= 640px) {
   .form-user__wrapp-group {
     gap: 30px;
@@ -5660,10 +5641,6 @@ header .sub_menu a:hover:after {
     display: block !important;
   }
 }
-.form-user {
-  padding-bottom: 0 !important;
-}
-
 @media screen and (width <= 425px) {
   .acccount-section__column.transparent-right.open {
     width: 100%;
