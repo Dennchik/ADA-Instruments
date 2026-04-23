@@ -1078,18 +1078,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function checkScreenWidth() {
-    if (window.innerWidth > 992) {
-      asideMenu.classList.remove('open');
-      openButton.classList.remove('active');
-    }
-  }
+  // function checkScreenWidth() {
+  //   if (window.innerWidth > 992) {
+  //     asideMenu.classList.remove('open');
+  //     openButton.classList.remove('active');
+  //   }
+  // }
 
-  // Событие при загрузке страницы
-  checkScreenWidth();
+  // // Событие при загрузке страницы
+  // checkScreenWidth();
 
   // Событие при изменении размера окна
-  window.addEventListener('resize', checkScreenWidth);
+  // window.addEventListener('resize', checkScreenWidth);
 });
 
 document.addEventListener('DOMContentLoaded', () => {

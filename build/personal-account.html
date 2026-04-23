@@ -81,9 +81,11 @@
 							<i class="icofont-search"></i>
 						</div>
 						<div class="top_search_body">
-							<form action="#">
-								<input type="text" placeholder="Поиск по сайту" required>
-								<button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
+							<form action="#" class="search-form">
+								<input type="text" id="search-input" name="search-header" placeholder="Поиск по сайту" required>
+								<button type="submit" class="whith_button">
+									<i class="icofont-search-2"></i>
+								</button>
 							</form>
 						</div>
 					</div>
@@ -140,7 +142,7 @@
 										<div class="search_flexbox">
 											<div class="search_wrap">
 												<div>
-													<input type="text" placeholder="Поиск по сайту" required>
+													<input type="text" name="search" placeholder="Поиск по сайту" required>
 												</div>
 											</div>
 										</div>
@@ -277,14 +279,14 @@
 									<!-- Email -->
 									<div class="form-user__group">
 										<label class="form-user__label" for="email">Email</label>
-										<input class="form-user__input" type="email" id="email" name="email" placeholder="example@mail.ru"
-											required>
+										<input class="form-user__input" type="email" id="email" name="email" autocomplete="email"
+											placeholder="example@mail.ru" required>
 									</div>
 									<!-- Телефон -->
 									<div class="form-user___group">
 										<label class="form-user__label" for="phone">Телефон *</label>
-										<input class="form-user__input" type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67"
-											required>
+										<input class="form-user__input" type="tel" id="phone" name="phone" autocomplete="phone"
+											placeholder="+7 (999) 123-45-67" required>
 									</div>
 								</div>
 
@@ -293,7 +295,7 @@
 									<!-- Адрес доставки -->
 									<div class="form-user__group">
 										<label class="form-user__label" for="address">Адрес доставки *</label>
-										<input class="form-user__input" type="text" id="address" name="address"
+										<input class="form-user__input" type="text" id="address" name="address" autocomplete="address"
 											placeholder="ул. Пушкина, д. 10, кв. 5" required>
 									</div>
 								</div>
@@ -395,7 +397,7 @@
 					<div class="col-lg-auto col-7">
 						<div class="footer_search">
 							<form action="#">
-								<input type="text" placeholder="поиск">
+								<input type="text" name="search-footer" placeholder="поиск">
 								<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
 							</form>
 						</div>

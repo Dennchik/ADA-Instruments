@@ -3,10 +3,19 @@
 @use 'core/mixins' as *;
 @use 'core/variables' as *;
 // todo ------------------------- layouts --------------------------------------
-// @use 'layouts/bem-block' as *;
+
 // todo -------------------------- Style ---------------------------------------
 .select > ._collapse:not(._show) {
   display: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
 }
 
 [class*='_container'] {
@@ -19,6 +28,12 @@
   @include screen-490 {
     padding: 0 10px;
   }
+}
+[class*='icon-'] {
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 [class*=' _img'] {
