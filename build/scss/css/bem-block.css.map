@@ -1,1 +1,0 @@
-{"version":3,"sources":["..\\layouts\\bem-block.scss","bem-block.css"],"names":[],"mappings":"AAAA;EACE,6BAAA;ACCF","file":"bem-block.css","sourcesContent":[".red {\r\n  outline: 1px solid var(--red);\r\n}\r\n",".red {\n  outline: 1px solid var(--red);\n}"]}
