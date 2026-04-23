@@ -1111,3 +1111,172 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+//* ----------------------------------------------------------------------------
+// Ждём полной загрузки DOM
+// Функция загрузки данных (вынесена отдельно)
+function loadFormData() {
+  const fullnameInput = document.getElementById('fullname');
+  const birthdateInput = document.getElementById('birthdate');
+  const cityInput = document.getElementById('city');
+  const emailInput = document.getElementById('email');
+  const phoneInput = document.getElementById('phone');
+  const addressInput = document.getElementById('address');
+  const genderRadios = document.querySelectorAll('input[name="gender"]');
+  const deliveryRadios = document.querySelectorAll('input[name="delivery"]');
+
+  const savedData = localStorage.getItem('user_profile_data');
+
+  if (!savedData) {
+    console.log('❌ Нет сохранённых данных');
+    return;
+  }
+
+  try {
+    const data = JSON.parse(savedData);
+    console.log('📦 Загружаем данные:', data);
+
+    if (fullnameInput) fullnameInput.value = data.fullname || '';
+    if (birthdateInput) birthdateInput.value = data.birthdate || '';
+    if (cityInput) cityInput.value = data.city || '';
+    if (emailInput) emailInput.value = data.email || '';
+    if (phoneInput) phoneInput.value = data.phone || '';
+    if (addressInput) addressInput.value = data.address || '';
+
+    if (data.gender) {
+      genderRadios.forEach((radio) => {
+        if (radio.value === data.gender) radio.checked = true;
+      });
+    }
+
+    if (data.delivery) {
+      deliveryRadios.forEach((radio) => {
+        if (radio.value === data.delivery) radio.checked = true;
+      });
+    }
+
+    console.log('✅ Форма заполнена');
+  } catch (error) {
+    console.error('❌ Ошибка загрузки:', error);
+  }
+}
+
+// Функция сохранения данных
+function saveFormData() {
+  const fullnameInput = document.getElementById('fullname');
+  const birthdateInput = document.getElementById('birthdate');
+  const cityInput = document.getElementById('city');
+  const emailInput = document.getElementById('email');
+  const phoneInput = document.getElementById('phone');
+  const addressInput = document.getElementById('address');
+  const genderRadios = document.querySelectorAll('input[name="gender"]');
+  const deliveryRadios = document.querySelectorAll('input[name="delivery"]');
+
+  let selectedGender = '';
+  genderRadios.forEach((radio) => {
+    if (radio.checked) selectedGender = radio.value;
+  });
+
+  let selectedDelivery = '';
+  deliveryRadios.forEach((radio) => {
+    if (radio.checked) selectedDelivery = radio.value;
+  });
+
+  const formData = {
+    fullname: fullnameInput?.value || '',
+    birthdate: birthdateInput?.value || '',
+    city: cityInput?.value || '',
+    email: emailInput?.value || '',
+    phone: phoneInput?.value || '',
+    address: addressInput?.value || '',
+    gender: selectedGender,
+    delivery: selectedDelivery,
+  };
+
+  localStorage.setItem('user_profile_data', JSON.stringify(formData));
+  console.log('✅ Данные сохранены');
+}
+
+// Настройка автосохранения
+function setupAutoSave() {
+  const fullnameInput = document.getElementById('fullname');
+  const birthdateInput = document.getElementById('birthdate');
+  const cityInput = document.getElementById('city');
+  const emailInput = document.getElementById('email');
+  const phoneInput = document.getElementById('phone');
+  const addressInput = document.getElementById('address');
+  const genderRadios = document.querySelectorAll('input[name="gender"]');
+  const deliveryRadios = document.querySelectorAll('input[name="delivery"]');
+
+  const textInputs = [
+    fullnameInput,
+    birthdateInput,
+    cityInput,
+    emailInput,
+    phoneInput,
+    addressInput,
+  ];
+  textInputs.forEach((input) => {
+    if (input) {
+      input.addEventListener('input', saveFormData);
+      input.addEventListener('change', saveFormData);
+    }
+  });
+
+  genderRadios.forEach((radio) => {
+    radio.addEventListener('change', saveFormData);
+  });
+
+  deliveryRadios.forEach((radio) => {
+    radio.addEventListener('change', saveFormData);
+  });
+}
+
+// ========== ГЛАВНОЕ: ЗАГРУЖАЕМ ДАННЫЕ ПРИ ЛЮБОМ ПОКАЗЕ СТРАНИЦЫ ==========
+
+// 1. Стандартная загрузка страницы
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('🟢 DOMContentLoaded');
+  loadFormData();
+  setupAutoSave();
+
+  // Кнопка "Сохранить"
+  const submitButton = document.querySelector('.form-user__button');
+  const form = document.getElementById('orderForm');
+
+  if (submitButton) {
+    submitButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      saveFormData();
+      alert('✅ Данные сохранены!');
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      saveFormData();
+      alert('✅ Данные сохранены!');
+    });
+  }
+});
+
+// 2. Для переходов по кнопке "Назад" / "Вперёд" (bfcache)
+window.addEventListener('pageshow', function (event) {
+  console.log('🟡 pageshow event:', event.persisted);
+  loadFormData();
+});
+
+// 3. Для динамических переходов (если страница через AJAX/SPA)
+window.addEventListener('load', function () {
+  console.log('🔵 load event');
+  loadFormData();
+});
+
+// 4. Если страница становится видимой после скрытой вкладки
+document.addEventListener('visibilitychange', function () {
+  if (!document.hidden) {
+    console.log('🟣 страница стала видимой');
+    loadFormData();
+  }
+});
