@@ -65,6 +65,12 @@
   }
 }
 //* -----------------------------[ FONT ]--------------------------------------
+.mb-75 {
+  margin-bottom: 75px;
+}
+.ptb-75 {
+  padding-block: 75px;
+}
 .font_66 {
   font-size: 66px;
 }
@@ -225,4 +231,17 @@
 }
 .search_wrap > div {
   position: relative;
+}
+
+//* ----------------------------------------------------------------------------
+.slick-slide {
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+}
+@include minmax-1376-1920 {
+  .main_slider_desk_item {
+    height: 100vh !important;
+  }
 }

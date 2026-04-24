@@ -2532,18 +2532,18 @@ header .sub_menu a:hover:after {
 /*=-=-=-=-=-=-=-=-=-=-=-=*/
 
 #about_us_page {
-  background-image: url(../img/bip1.jpg);
+  background: url(../img/bip1.jpg);
 }
 
 .back_image_page {
   display: block;
-
+  min-height: 100vh !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   padding-top: 150px;
   position: relative;
-  min-height: 940px;
+  // min-height: 940px;
 }
 
 .back_image_page > * {
@@ -3364,7 +3364,6 @@ header .sub_menu a:hover:after {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  /*height: 730px;*/
   margin-right: auto;
   margin-left: auto;
   max-width: 1376px;
@@ -4274,7 +4273,8 @@ header .sub_menu a:hover:after {
     font-size: 12px;
   }
 }
-
+//* ----------------------------------------------------------------------------
+@import './pages/about-page';
 @import './pages/cart-page';
 @import './assets/side-menu';
 @import './assets/check-box';

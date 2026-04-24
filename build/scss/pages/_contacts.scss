@@ -112,10 +112,17 @@
   padding-bottom: 20px;
 }
 
+.contact_page_body_box {
+  &:last-child {
+    .contacts_list_wpapper {
+      padding-bottom: 0;
+    }
+  }
+}
 .show_more_contacts_list_box {
   cursor: pointer;
 }
 
-.contact_page_body_box {
-  margin-bottom: 30px;
+.contact_page_body {
+  margin-bottom: 75px;
 }

@@ -285,6 +285,14 @@ h3 {
     text-decoration: none;
   }
 }
+.mb-75 {
+  margin-bottom: 75px;
+}
+
+.ptb-75 {
+  padding-block: 75px;
+}
+
 .font_66 {
   font-size: 66px;
 }
@@ -441,6 +449,20 @@ h3 {
   position: relative;
 }
 
+.slick-slide {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.slick-slide:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+@media (width >= 1376.98px) and (width <= 1920px) {
+  .main_slider_desk_item {
+    height: 100vh !important;
+  }
+}
 .select > ._collapse:not(._show) {
   display: none;
 }
