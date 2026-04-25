@@ -550,28 +550,28 @@ jQuery('document').ready(function () {
     var $submitButton = $form.find('button[type="submit"]');
     var originalButtonText = $submitButton.text();
 
-    // Блокируем кнопку
+    //* Блокируем кнопку
     $submitButton.prop('disabled', true).text('Отправка...');
 
-    // Имитация отправки на сервер (для теста)
+    //* Имитация отправки на сервер (для теста)
     setTimeout(function () {
-      // Показываем сообщение об успехе
+      //* Показываем сообщение об успехе
       $successMessage.fadeIn(400).delay(2000).fadeOut(400);
 
-      // Очищаем форму
+      //* Очищаем форму
       $form[0].reset();
 
-      // Разблокируем кнопку
+      //* Разблокируем кнопку
       $submitButton.prop('disabled', false).text(originalButtonText);
 
-      // Для отладки — выводим данные в консоль
+      //* Для отладки — выводим данные в консоль
       console.log('📝 Отправленные данные:', {
         name: $form.find('[name="name"]').val(),
         email: $form.find('[name="email"]').val(),
         question: $form.find('[name="question"]').val(),
       });
 
-      // === ЗАКОММЕНТИРОВАННЫЙ ЗАПРОС К СЕРВЕРУ (для реальной работы) ===
+      //! === ЗАКОММЕНТИРОВАННЫЙ ЗАПРОС К СЕРВЕРУ (для реальной работы) ===
       /*
         $.ajax({
             url: '/ваш-обработчик.php',
@@ -596,601 +596,182 @@ jQuery('document').ready(function () {
         */
     }, 500);
   });
+
+  //todo ↓↓↓ [Гл. стр] код для реальной работы с отправкой на сервер: ------------
+  //todo ↓↓↓ (Для Виктора) ↓↓↓
+  //! === ЗАКОММЕНТИРОВАННЫЙ ЗАПРОС К СЕРВЕРУ (для реальной работы) ===
+  // $('.feedback_form').on('submit', function (event) {
+  //   event.preventDefault();
+
+  //   var $form = $(this);
+  //   var $successMessage = $form
+  //     .parents('.mp_feedback_body')
+  //     .find('.succes_message');
+  //   var $submitButton = $form.find('button[type="submit"]');
+  //   var originalButtonText = $submitButton.text();
+
+  //   // Блокируем кнопку, чтобы избежать двойной отправки
+  //   $submitButton.prop('disabled', true).text('Отправка...');
+
+  //   // Отправка данных на сервер
+  //   $.ajax({
+  //     url: '/ваш-обработчик.php', // замените на реальный URL
+  //     type: 'POST',
+  //     data: $form.serialize(),
+  //     dataType: 'json',
+  //     success: function (response) {
+  //       // Проверяем ответ от сервера
+  //       if (response.success) {
+  //         // Показываем сообщение об успехе
+  //         $successMessage.fadeIn(400).delay(2000).fadeOut(400);
+
+  //         // Очищаем форму ТОЛЬКО после успешной отправки
+  //         $form[0].reset();
+
+  //         // Разблокируем кнопку
+  //         $submitButton.prop('disabled', false).text(originalButtonText);
+  //       } else {
+  //         // Если сервер вернул ошибку
+  //         alert(response.message || 'Ошибка при отправке. Попробуйте позже.');
+  //         $submitButton.prop('disabled', false).text(originalButtonText);
+  //       }
+  //     },
+  //     error: function (xhr, status, error) {
+  //       // Ошибка соединения или сервера
+  //       console.error('Ошибка:', error);
+  //       alert(
+  //         'Произошла ошибка при отправке. Проверьте соединение с интернетом.'
+  //       );
+  //       $submitButton.prop('disabled', false).text(originalButtonText);
+  //     },
+  //   });
+  // });
+
+  //* ----------------------------------------------------------------------------
+  //todo ↓↓↓ ---- [Категории товара] - Показ сообщения после отправки формы ------
+  //todo ↓↓↓ (Для Виктора) ↓↓↓ --- Проверка показа сообщения
+  $('.suport_feedback_form').on('submit', function (event) {
+    event.preventDefault();
+
+    var $form = $(this);
+
+    var $feedbackBody = $form.closest('.section_form_body');
+    var $successMessage = $feedbackBody.find('.succes_message');
+
+    //* 🔥 фиксируем реальную высоту
+    var height = $feedbackBody[0].getBoundingClientRect().height;
+    $feedbackBody.css('min-height', height);
+
+    // Скрываем форму
+    $form.fadeOut(400, function () {
+      //* 🔥 очищаем форму (правильный способ)
+      $form[0].reset();
+
+      //* 🔥 Показываем сообщение
+      $successMessage
+        .fadeIn(400)
+        .delay(2000)
+        .fadeOut(400, function () {
+          //* Возвращаем форму
+          $form.fadeIn(400, function () {
+            //* убираем фиксацию высоты
+            $feedbackBody.css('min-height', '');
+          });
+        });
+    });
+  });
+  //todo ↓↓↓ [Категории товара]  код для реальной работы с отправкой на сервер: --
+  //todo ↓↓↓ (Для Виктора) ↓↓↓
+  //! === ЗАКОММЕНТИРОВАННЫЙ ЗАПРОС К СЕРВЕРУ (для реальной работы) ===
+  // $('.suport_feedback_form').on('submit', function (event) {
+  //   event.preventDefault();
+
+  //   var $form = $(this);
+  //   var $feedbackBody = $form.closest('.section_form_body');
+  //   var $successMessage = $feedbackBody.find('.succes_message');
+  //   var $submitButton = $form.find('button[type="submit"]');
+  //   var originalButtonText = $submitButton.text();
+
+  //   // Блокируем кнопку, чтобы избежать двойной отправки
+  //   $submitButton.prop('disabled', true).text('Отправка...');
+
+  //   // Отправка данных на сервер
+  //   $.ajax({
+  //     url: '/ваш-обработчик.php', // замените на реальный URL
+  //     type: 'POST',
+  //     data: $form.serialize(),
+  //     dataType: 'json',
+  //     success: function (response) {
+  //       // Проверяем ответ от сервера
+  //       if (response.success) {
+  //         // Фиксируем высоту перед анимацией
+  //         var height = $feedbackBody[0].getBoundingClientRect().height;
+  //         $feedbackBody.css('min-height', height);
+
+  //         // Скрываем форму
+  //         $form.fadeOut(400, function () {
+  //           // Очищаем форму ТОЛЬКО после успешной отправки
+  //           $form[0].reset();
+
+  //           // Показываем сообщение об успехе
+  //           $successMessage
+  //             .fadeIn(400)
+  //             .delay(2000)
+  //             .fadeOut(400, function () {
+  //               // Возвращаем форму
+  //               $form.fadeIn(400, function () {
+  //                 // Убираем фиксацию высоты
+  //                 $feedbackBody.css('min-height', '');
+  //                 // Разблокируем кнопку (на случай если форма будет отправляться снова)
+  //                 $submitButton.prop('disabled', false).text(originalButtonText);
+  //               });
+  //             });
+  //         });
+  //       } else {
+  //         // Если сервер вернул ошибку
+  //         alert(response.message || 'Ошибка при отправке. Попробуйте позже.');
+  //         $submitButton.prop('disabled', false).text(originalButtonText);
+  //       }
+  //     },
+  //     error: function (xhr, status, error) {
+  //       // Ошибка соединения или сервера
+  //       console.error('Ошибка:', error);
+  //       alert(
+  //         'Произошла ошибка при отправке. Проверьте соединение с интернетом.'
+  //       );
+  //       $submitButton.prop('disabled', false).text(originalButtonText);
+  //     },
+  //   });
+  // });
+
+  //todo ↓↓↓ ---- [Карточка товара] - Показ сообщения после отправки формы -----
+  //todo ↓↓↓ (Для Виктора)
+  $(document).ready(function () {
+    const btn = document.querySelector('.submit_button'); // или точнее селектор
+
+    const tabForm = document.querySelector('.feedback_wrap');
+
+    const successMessage = document.querySelector('.succes_message');
+
+    if (!btn || !successMessage) return;
+
+    btn.addEventListener('click', () => {
+      tabForm.style.display = 'none';
+      successMessage.style.display = 'flex';
+
+      setTimeout(() => {
+        successMessage.classList.add('_show');
+      }, 100);
+
+      setTimeout(() => {
+        successMessage.classList.remove('_show');
+      }, 2000);
+      setTimeout(() => {
+        tabForm.style.display = 'block';
+        successMessage.style.display = 'none';
+      }, 2200);
+    });
+  });
 });
-//todo ↓↓↓ [Гл. стр] код для реальной работы с отправкой на сервер: ------------
-//todo ↓↓↓ (Для Виктора) ↓↓↓
-// $('.feedback_form').on('submit', function (event) {
-//   event.preventDefault();
-
-//   var $form = $(this);
-//   var $successMessage = $form
-//     .parents('.mp_feedback_body')
-//     .find('.succes_message');
-//   var $submitButton = $form.find('button[type="submit"]');
-//   var originalButtonText = $submitButton.text();
-
-//   // Блокируем кнопку, чтобы избежать двойной отправки
-//   $submitButton.prop('disabled', true).text('Отправка...');
-
-//   // Отправка данных на сервер
-//   $.ajax({
-//     url: '/ваш-обработчик.php', // замените на реальный URL
-//     type: 'POST',
-//     data: $form.serialize(),
-//     dataType: 'json',
-//     success: function (response) {
-//       // Проверяем ответ от сервера
-//       if (response.success) {
-//         // Показываем сообщение об успехе
-//         $successMessage.fadeIn(400).delay(2000).fadeOut(400);
-
-//         // Очищаем форму ТОЛЬКО после успешной отправки
-//         $form[0].reset();
-
-//         // Разблокируем кнопку
-//         $submitButton.prop('disabled', false).text(originalButtonText);
-//       } else {
-//         // Если сервер вернул ошибку
-//         alert(response.message || 'Ошибка при отправке. Попробуйте позже.');
-//         $submitButton.prop('disabled', false).text(originalButtonText);
-//       }
-//     },
-//     error: function (xhr, status, error) {
-//       // Ошибка соединения или сервера
-//       console.error('Ошибка:', error);
-//       alert(
-//         'Произошла ошибка при отправке. Проверьте соединение с интернетом.'
-//       );
-//       $submitButton.prop('disabled', false).text(originalButtonText);
-//     },
-//   });
-// });
 
 //* ----------------------------------------------------------------------------
-//todo ↓↓↓ ---- [Категории товара] - Показ сообщения после отправки формы ------
-//todo ↓↓↓ (Для Виктора) ↓↓↓ --- Проверка показа сообщения
-$('.suport_feedback_form').on('submit', function (event) {
-  event.preventDefault();
-
-  var $form = $(this);
-
-  var $feedbackBody = $form.closest('.section_form_body');
-  var $successMessage = $feedbackBody.find('.succes_message');
-
-  // 🔥 фиксируем реальную высоту
-  var height = $feedbackBody[0].getBoundingClientRect().height;
-  $feedbackBody.css('min-height', height);
-
-  // Скрываем форму
-  $form.fadeOut(400, function () {
-    // 🔥 очищаем форму (правильный способ)
-    $form[0].reset();
-
-    // Показываем сообщение
-    $successMessage
-      .fadeIn(400)
-      .delay(2000)
-      .fadeOut(400, function () {
-        // Возвращаем форму
-        $form.fadeIn(400, function () {
-          // убираем фиксацию высоты
-          $feedbackBody.css('min-height', '');
-        });
-      });
-  });
-});
-//todo ↓↓↓ [Категории товара]  код для реальной работы с отправкой на сервер: --
-//todo ↓↓↓ (Для Виктора) ↓↓↓
-// $('.suport_feedback_form').on('submit', function (event) {
-//   event.preventDefault();
-
-//   var $form = $(this);
-//   var $feedbackBody = $form.closest('.section_form_body');
-//   var $successMessage = $feedbackBody.find('.succes_message');
-//   var $submitButton = $form.find('button[type="submit"]');
-//   var originalButtonText = $submitButton.text();
-
-//   // Блокируем кнопку, чтобы избежать двойной отправки
-//   $submitButton.prop('disabled', true).text('Отправка...');
-
-//   // Отправка данных на сервер
-//   $.ajax({
-//     url: '/ваш-обработчик.php', // замените на реальный URL
-//     type: 'POST',
-//     data: $form.serialize(),
-//     dataType: 'json',
-//     success: function (response) {
-//       // Проверяем ответ от сервера
-//       if (response.success) {
-//         // Фиксируем высоту перед анимацией
-//         var height = $feedbackBody[0].getBoundingClientRect().height;
-//         $feedbackBody.css('min-height', height);
-
-//         // Скрываем форму
-//         $form.fadeOut(400, function () {
-//           // Очищаем форму ТОЛЬКО после успешной отправки
-//           $form[0].reset();
-
-//           // Показываем сообщение об успехе
-//           $successMessage
-//             .fadeIn(400)
-//             .delay(2000)
-//             .fadeOut(400, function () {
-//               // Возвращаем форму
-//               $form.fadeIn(400, function () {
-//                 // Убираем фиксацию высоты
-//                 $feedbackBody.css('min-height', '');
-//                 // Разблокируем кнопку (на случай если форма будет отправляться снова)
-//                 $submitButton.prop('disabled', false).text(originalButtonText);
-//               });
-//             });
-//         });
-//       } else {
-//         // Если сервер вернул ошибку
-//         alert(response.message || 'Ошибка при отправке. Попробуйте позже.');
-//         $submitButton.prop('disabled', false).text(originalButtonText);
-//       }
-//     },
-//     error: function (xhr, status, error) {
-//       // Ошибка соединения или сервера
-//       console.error('Ошибка:', error);
-//       alert(
-//         'Произошла ошибка при отправке. Проверьте соединение с интернетом.'
-//       );
-//       $submitButton.prop('disabled', false).text(originalButtonText);
-//     },
-//   });
-// });
-//* ----------------------------------------------------------------------------
-
-//todo ↓↓↓ ---- [Карточка товара] - Показ сообщения после отправки формы -------
-//todo ↓↓↓ (Для Виктора)
-$(document).ready(function () {
-  const btn = document.querySelector('.submit_button'); // или точнее селектор
-
-  const tabForm = document.querySelector('.feedback_wrap');
-
-  const successMessage = document.querySelector('.succes_message');
-
-  if (!btn || !successMessage) return;
-
-  btn.addEventListener('click', () => {
-    tabForm.style.display = 'none';
-    successMessage.style.display = 'flex';
-
-    setTimeout(() => {
-      successMessage.classList.add('_show');
-    }, 100);
-
-    setTimeout(() => {
-      successMessage.classList.remove('_show');
-    }, 2000);
-    setTimeout(() => {
-      tabForm.style.display = 'block';
-      successMessage.style.display = 'none';
-    }, 2200);
-  });
-});
-//todo ---------- счетчик (добавить в корзину) ---------------------------------
-//todo ↓↓↓ (Для Виктора)
-document.addEventListener('DOMContentLoaded', function () {
-  // Функция для обновления общего счетчика корзины
-  function updateTotalCartQuantity() {
-    let totalQuantity = 0;
-
-    // Собираем все значения количества со всех товаров
-    document
-      .querySelectorAll('.items_greed_wrapper .input')
-      .forEach((input) => {
-        let val = parseInt(input.value) || 0;
-        totalQuantity += val;
-      });
-
-    const cartQuantity = document.querySelector('.cart-user__quantity');
-
-    if (cartQuantity) {
-      if (totalQuantity > 0) {
-        cartQuantity.textContent = totalQuantity;
-        cartQuantity.style.display = 'flex'; // или 'inline-flex', смотрите ваш CSS
-      } else {
-        cartQuantity.style.display = 'none';
-      }
-    }
-
-    console.log('Общее количество:', totalQuantity); // Для отладки
-  }
-
-  // Обработка каждого товара
-  document.querySelectorAll('.items_greed_wrapper').forEach((wrapper) => {
-    const addToCartBtn = wrapper.querySelector('.add-to-cart');
-    const quantityBlock = wrapper.querySelector('.quantity');
-
-    if (!addToCartBtn || !quantityBlock) return;
-
-    const input = quantityBlock.querySelector('.input');
-    const minusBtn = quantityBlock.querySelector('.quantity-remove');
-    const plusBtn = quantityBlock.querySelector('.quantity-add');
-
-    // Функция обновления видимости кнопки/счетчика для конкретного товара
-    function updateItemVisibility() {
-      let currentValue = parseInt(input.value) || 0;
-
-      if (currentValue > 0) {
-        addToCartBtn.style.display = 'none';
-        quantityBlock.style.display = 'flex';
-      } else {
-        addToCartBtn.style.display = 'block';
-        quantityBlock.style.display = 'none';
-      }
-
-      // Обновляем общий счетчик корзины
-      updateTotalCartQuantity();
-    }
-
-    // Функция изменения количества
-    function updateValue(change) {
-      let currentValue = parseInt(input.value) || 0;
-      let newValue = currentValue + change;
-
-      if (newValue < 0) newValue = 0;
-      input.value = newValue;
-      updateItemVisibility();
-    }
-
-    // Обработчик на кнопку "в корзину"
-    addToCartBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      updateValue(1);
-    });
-
-    // Обработчик на кнопку "+"
-    if (plusBtn) {
-      plusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        updateValue(1);
-      });
-    }
-
-    // Обработчик на кнопку "-"
-    if (minusBtn) {
-      minusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        updateValue(-1);
-      });
-    }
-
-    // Обработчик ручного ввода
-    if (input) {
-      input.addEventListener('input', (e) => {
-        let value = parseInt(e.target.value);
-        if (isNaN(value) || value < 0) {
-          input.value = 0;
-        }
-        updateItemVisibility();
-      });
-
-      // Запрещаем ввод букв
-      input.addEventListener('keydown', (e) => {
-        if (e.key === '-' || e.key === 'e' || e.key === '.' || e.key === ',') {
-          e.preventDefault();
-        }
-      });
-    }
-
-    // Инициализация видимости
-    updateItemVisibility();
-  });
-
-  // Первоначальное обновление счетчика
-  updateTotalCartQuantity();
-});
-//todo --------- счетчик (добавить в корзину в КОРЗИНЕ) ------------------------
-//todo ↓↓↓ (Для Виктора)
-document.addEventListener('DOMContentLoaded', function () {
-  function updateTotalCartQuantity() {
-    let totalQuantity = 0;
-    document.querySelectorAll('.counter-wrapper .input').forEach((input) => {
-      totalQuantity += parseInt(input.value) || 0;
-    });
-    const cartQuantity = document.querySelector('.cart-user__quantity');
-    if (cartQuantity) {
-      cartQuantity.textContent = totalQuantity;
-      if (totalQuantity > 0) {
-        cartQuantity.style.display = 'flex';
-      } else {
-        cartQuantity.style.display = 'none';
-      }
-    }
-  }
-
-  document.querySelectorAll('.counter-wrapper').forEach((wrapper) => {
-    const input = wrapper.querySelector('.input');
-    const minusBtn = wrapper.querySelector('.quantity-remove');
-    const plusBtn = wrapper.querySelector('.quantity-add');
-
-    if (!input) return;
-
-    function updateValue(change) {
-      let currentValue = parseInt(input.value) || 0;
-      let newValue = currentValue + change;
-      if (newValue < 0) newValue = 0;
-      input.value = newValue;
-      updateTotalCartQuantity();
-    }
-
-    if (plusBtn) {
-      plusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        updateValue(1);
-      });
-    }
-
-    if (minusBtn) {
-      minusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        updateValue(-1);
-      });
-    }
-
-    if (input) {
-      input.addEventListener('input', (e) => {
-        let value = parseInt(e.target.value);
-        if (isNaN(value) || value < 0) {
-          input.value = 0;
-        }
-        updateTotalCartQuantity();
-      });
-    }
-  });
-
-  updateTotalCartQuantity();
-});
-//todo ----------------------- Date and time -----------------------------------
-document.addEventListener('DOMContentLoaded', function () {
-  const datePicker = document.getElementById('deliveryDate');
-  const timePicker = document.getElementById('deliveryTime');
-
-  if (datePicker && timePicker) {
-    // Минимальная дата - сегодня
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const dd = String(today.getDate()).padStart(2, '0');
-    datePicker.min = `${yyyy}-${mm}-${dd}`;
-
-    // Устанавливаем начальное время
-    timePicker.value = '12:00';
-
-    // Функция объединения даты и времени в одну строку
-    function getCombinedDateTime() {
-      const selectedDate = datePicker.value;
-      const selectedTime = timePicker.value;
-
-      if (!selectedDate) return '';
-
-      const date = new Date(selectedDate);
-      const options = { day: 'numeric', month: 'long', year: 'numeric' };
-      let formattedDate = date.toLocaleDateString('ru-RU', options);
-
-      if (selectedTime) {
-        formattedDate += ` ${selectedTime}`; // Убрал предлог "в"
-      }
-
-      return formattedDate;
-    }
-
-    // Функция обновления значения в select__input
-    function updateSelectInput() {
-      const formattedValue = getCombinedDateTime();
-
-      if (formattedValue) {
-        // Находим родительский блок data-select
-        const selectGroup = datePicker.closest('[data-select]');
-
-        if (selectGroup) {
-          // Находим select__input внутри этого блока
-          const selectInput = selectGroup.querySelector('.select__input');
-
-          // Меняем значение в input (дата и время вместе)
-          if (selectInput) {
-            selectInput.value = formattedValue;
-            console.log('Установлено значение:', formattedValue);
-          }
-        }
-      }
-    }
-
-    // При изменении даты
-    datePicker.addEventListener('change', function () {
-      updateSelectInput();
-
-      // Опционально: автоматически установить время, если его нет
-      if (!timePicker.value) {
-        timePicker.value = '12:00';
-      }
-    });
-
-    // При изменении времени
-    timePicker.addEventListener('change', function () {
-      updateSelectInput();
-    });
-
-    // Если нужно закрывать dropdown после выбора
-    const closeButton = document.querySelector('.close-button');
-    if (closeButton) {
-      closeButton.addEventListener('click', function () {
-        const selectGroup = datePicker.closest('[data-select]');
-        const selectDropdown = selectGroup.querySelector('.select__drop-down');
-        if (selectDropdown) {
-          selectDropdown.classList.add('_collapse');
-          const select = selectGroup.querySelector('.select');
-          if (select) {
-            select.classList.remove('_active-collapse');
-          }
-        }
-      });
-    }
-  }
-
-  //todo
-
-  const selectButton = document.querySelector('.selection-button');
-  if (selectButton) {
-    selectButton.addEventListener('click', function () {
-      const allCheckboxes = document.querySelectorAll('.check-box__input');
-
-      // Проверяем, все ли чекбоксы уже выделены
-      const allChecked = Array.from(allCheckboxes).every(
-        (checkbox) => checkbox.checked === true
-      );
-
-      if (allChecked) {
-        // Если все выделены - снимаем выделение
-        allCheckboxes.forEach((checkbox) => {
-          checkbox.checked = false;
-        });
-        selectButton.textContent = 'Выделить всё';
-      } else {
-        // Если не все выделены - выделяем всё
-        allCheckboxes.forEach((checkbox) => {
-          checkbox.checked = true;
-        });
-        selectButton.textContent = 'Снять выделение';
-      }
-    });
-  }
-});
-//todo -------------------------------------------------------------------------
-
-document.addEventListener('DOMContentLoaded', () => {
-  // ========== ПРАВАЯ ПАНЕЛЬ ==========
-  const openButtonRight = document.querySelector(
-    '.acccount-section__open-button'
-  );
-  const closeButtonRight = document.querySelector('.profile__close-button');
-  const asideMenuRight = document.querySelector('.aside-menu-r');
-  const verticalDotsRight = document.getElementById('verticalDots');
-
-  if (openButtonRight) {
-    openButtonRight.addEventListener('click', () => {
-      asideMenuRight?.classList.toggle('open');
-      openButtonRight?.classList.toggle('active');
-      if (window.innerWidth <= 992) {
-        verticalDotsRight?.classList.toggle('horizontal');
-      }
-    });
-  }
-
-  if (closeButtonRight) {
-    closeButtonRight.addEventListener('click', () => {
-      asideMenuRight?.classList.toggle('open');
-      openButtonRight?.classList.toggle('active');
-      if (window.innerWidth <= 992) {
-        verticalDotsRight?.classList.toggle('horizontal');
-      }
-    });
-  }
-
-  // ========== ЛЕВАЯ ПАНЕЛЬ ==========
-  const openButtonLeft = document.querySelector(
-    '.acccount-section__link-button'
-  );
-  const closeButtonLeft = document.querySelector('.side-menu__close-menu');
-  const asideMenuLeft = document.querySelector('.aside-menu-l');
-  const verticalDotsLeft = document.getElementById('verticalDotsLeft');
-
-  if (openButtonLeft) {
-    openButtonLeft.addEventListener('click', () => {
-      asideMenuLeft?.classList.toggle('open');
-      openButtonLeft?.classList.toggle('active');
-      if (window.innerWidth <= 992) {
-        verticalDotsLeft?.classList.toggle('horizontal');
-      }
-    });
-  }
-
-  if (closeButtonLeft) {
-    closeButtonLeft.addEventListener('click', () => {
-      asideMenuLeft?.classList.toggle('open');
-      openButtonLeft?.classList.toggle('active');
-      if (window.innerWidth <= 992) {
-        verticalDotsLeft?.classList.toggle('horizontal');
-      }
-    });
-  }
-
-  // ========== ФУНКЦИЯ ЗАКРЫТИЯ ПАНЕЛЕЙ ==========
-  function closeAllPanels() {
-    // Правая панель
-    asideMenuRight?.classList.remove('open');
-    openButtonRight?.classList.remove('active');
-    verticalDotsRight?.classList.remove('horizontal');
-
-    // Левая панель
-    asideMenuLeft?.classList.remove('open');
-    openButtonLeft?.classList.remove('active');
-    verticalDotsLeft?.classList.remove('horizontal');
-  }
-
-  // ========== ОБЩАЯ ФУНКЦИЯ ДЛЯ ШИРИНЫ ЭКРАНА ==========
-  function checkScreenWidth() {
-    if (window.innerWidth > 992) {
-      closeAllPanels();
-    }
-  }
-
-  // ========== ЗАКРЫТИЕ ПРИ СКРОЛЛЕ ==========
-  let scrollTimeout;
-  function handleScroll() {
-    // Очищаем предыдущий таймер
-    clearTimeout(scrollTimeout);
-
-    // Закрываем панели при скролле
-    closeAllPanels();
-
-    // Дополнительно: можно добавить задержку, чтобы не закрывалось при каждом тике
-    scrollTimeout = setTimeout(() => {
-      closeAllPanels();
-    }, 100);
-  }
-
-  // ========== ЗАКРЫТИЕ ПРИ КЛИКЕ ВНЕ ПАНЕЛИ (опционально) ==========
-  function handleClickOutside(event) {
-    // Проверяем, был ли клик вне правой панели и не по кнопке открытия
-    const isRightPanel = asideMenuRight?.contains(event.target);
-    const isRightButton = openButtonRight?.contains(event.target);
-
-    // Проверяем, был ли клик вне левой панели и не по кнопке открытия
-    const isLeftPanel = asideMenuLeft?.contains(event.target);
-    const isLeftButton = openButtonLeft?.contains(event.target);
-
-    // Если клик был вне обеих панелей и не по кнопкам открытия
-    if (!isRightPanel && !isRightButton && !isLeftPanel && !isLeftButton) {
-      closeAllPanels();
-    }
-  }
-
-  // Запускаем проверку при загрузке
-  checkScreenWidth();
-
-  // События
-  window.addEventListener('resize', checkScreenWidth);
-  window.addEventListener('scroll', handleScroll);
-  document.addEventListener('click', handleClickOutside);
-});
-//* ----------------------------------------------------------------------------
-function loaded(item) {
-  function removePreloader() {
-    document.querySelector(item).classList.add('preloader-remove');
-    document.documentElement.classList.add('loaded');
-  }
-
-  if (document.readyState === 'complete') {
-    // страница уже загружена — выполняем сразу
-    removePreloader();
-  } else {
-    // ждём загрузки
-    window.addEventListener('load', removePreloader);
-  }
-}
-loaded('.preloader');

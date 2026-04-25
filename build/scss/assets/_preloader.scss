@@ -1,0 +1,17 @@
+.preloader div {
+  border-top: 10px solid var(--red);
+  border-right: 10px solid var(--red);
+  border-bottom: 10px solid #0000;
+  border-left: 10px solid #0000;
+  border-radius: 100%;
+  padding: 4px;
+  animation: preloader-spin 15s linear infinite;
+}
+@keyframes preloader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

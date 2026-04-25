@@ -1,8 +1,169 @@
-//* -----------------------------[ reset ]------------------------------------*/
+@use './core/mixins' as *;
 
+//* --------------------------- [ Home-page ]-----------------------------------
+.main-slide {
+  position: relative;
+
+  &__fon {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+.cat_mp_slider_wrapper {
+  .slick-dots {
+    justify-content: space-around;
+  }
+}
+.ms-capton {
+  position: relative;
+  z-index: 2;
+  height: 100% !important;
+
+  // .ms-capton__row
+  &__row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: -15px;
+    margin-left: -15px;
+    height: 100% !important;
+  }
+
+  // .ms-capton__column
+  &__column {
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  // .ms-capton__content
+  &__content {
+    max-width: 100%;
+    transform: translateY(30%);
+
+    @include screen-768 {
+      transform: translateY(45%);
+    }
+
+    @include screen-490 {
+      transform: translateY(65%);
+    }
+  }
+
+  // .ms-capton__title
+  &__title {
+    margin-bottom: 3rem;
+
+    @include screen-768 {
+      margin-bottom: 1.6rem;
+    }
+  }
+}
+
+.ms-footer {
+  @include screen-768 {
+    margin-bottom: 1.6rem;
+  }
+
+  // .ms-footer__con-left
+  &__con-left {
+    display: grid;
+    grid-template-columns: 295px 1fr;
+    gap: 40px;
+
+    .ms-footer__col {
+      justify-self: start;
+
+      @include screen-1024 {
+        &:nth-child(1) {
+          grid-row: 2 / 3;
+        }
+        &:nth-child(2) {
+          grid-row: 1 / 2;
+        }
+      }
+    }
+
+    @include screen-1024 {
+      grid-template-columns: 1fr;
+    }
+
+    @include screen-490 {
+      grid-template-columns: auto;
+      gap: 20px;
+    }
+  }
+
+  // .ms-footer__right
+  &__con-right {
+    display: grid;
+    grid-template-columns: 1fr 295px;
+    gap: 40px;
+
+    .ms-footer__col {
+      justify-self: end;
+    }
+
+    @include screen-1024 {
+      grid-template-columns: 1fr;
+    }
+
+    @include screen-490 {
+      grid-template-columns: auto;
+      gap: 20px;
+    }
+  }
+
+  // .ms-footer__button
+  &__button {
+    width: 295px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    @include screen-490 {
+      width: 230px;
+      height: 45px !important;
+    }
+  }
+
+  // .ms-footer__text
+  &__text {
+    max-width: 400px;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px #000;
+
+    @include screen-1024 {
+      max-width: 390px;
+    }
+
+    @include screen-490 {
+      max-width: 230px;
+      font-size: 12px;
+    }
+  }
+}
+
+//* ----------------------------------------------------------------------------
 .montserrat {
   font-family: 'Montserrat', sans-serif;
-  /*font-optical-sizing: auto;*/
+  font-optical-sizing: auto;
   font-style: normal;
 }
 
@@ -908,12 +1069,12 @@ header.smaller {
 /*==================*/
 
 .ms_capton {
-  max-width: 500px;
+  transform: translateY(30%);
 }
 
 .ms_footer_descr {
-  max-width: 300px;
-  font-size: 12px;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px #000;
 }
 
 .active > a span:after {
@@ -1255,11 +1416,19 @@ header .container-fluid {
 }
 
 .catalog_mp_box {
-  display: block;
+  display: flex;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   height: 250px;
+}
+
+.catalog_mp_box {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .catalog_mp_box:hover,
@@ -1296,16 +1465,6 @@ header .container-fluid {
 
 .catalog_mp_list > li {
   width: 50%;
-}
-
-.catalog_mp_box {
-  display: block;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin-bottom: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
 }
 
 .h680 {
