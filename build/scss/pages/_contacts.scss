@@ -1,3 +1,5 @@
+@use '../core/mixins' as *;
+
 .contact_page_body_title {
   font-size: 16px;
   padding: 10px 0;
@@ -31,6 +33,18 @@
   padding-left: 35px;
   font-size: 9px;
   position: relative;
+  ul li {
+    line-height: 150%;
+    font-size: 14px;
+
+    @include screen-690 {
+      font-size: 12px;
+    }
+
+    @include screen-490 {
+      font-size: 11px;
+    }
+  }
 }
 
 .contacts_list_box_title {
@@ -124,5 +138,9 @@
 }
 
 .contact_page_body {
-  margin-bottom: 75px;
+  padding-bottom: 75px;
+
+  @include screen-490 {
+    padding-bottom: 45px;
+  }
 }

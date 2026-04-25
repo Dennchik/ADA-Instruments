@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+  <link rel="icon" type="image/icon" href="./img/icon-log.png">
   <link rel="stylesheet" type="text/css" href="dist/rangeslider/ion.rangeslider.min.css">
   <link rel="stylesheet" type="text/css" href="dist/fancybox/jquery.fancybox.min.css">
   <link rel="stylesheet" type="text/css" href="dist/icofont/icofont.min.css">
@@ -22,7 +23,13 @@
 </head>
 
 <body>
-  <!-- ==================================================== -->
+  <!--* ================ * Preloader ==================== -->
+  <div class="preloader">
+    <div class="preloader__image">
+      <img src="./dist/slick/ajax-loader.gif" alt="preloader">
+    </div>
+  </div>
+  <!--* ================ * mobile_menu ==================== -->
   <div class="mobile_menu_wrapp">
     <div class="menu_close"><i class="icofont-close"></i></div>
     <div class="mobile_menu">
@@ -170,7 +177,7 @@
       </div>
     </header>
 
-    <div class="page_header mb-5">
+    <div class="page_header">
       <div class="container">
         <p>&nbsp;</p>
         <p><strong>Dna Mihaela MANOLI</strong>&nbsp;— Ministru Consilier (aspecte politice externe și integrare
@@ -220,8 +227,10 @@
         <p><strong>Dl Oleg ELENCIUC&nbsp;</strong>— Șofer</p>
         <p>Tel: +40 21 230 04 74</p>
         <p>Email:&nbsp;<a href="mailto:oleg.elenciuc@mfa.gov.md">oleg.elenciuc@mfa.gov.md</a></p>
+        <!--  
         <p><strong>&nbsp;</strong></p>
         <p><strong>&nbsp;</strong></p>
+      
         <p class="MsoNormal"
           style="margin-bottom: 0.0001pt; line-height: 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; vertical-align: baseline;">
           &nbsp;</p>
@@ -242,17 +251,19 @@
         <p class="MsoNormal"
           style="margin-bottom: .0001pt; line-height: 12.0pt; background: white; vertical-align: baseline;">&nbsp;</p>
         <div id="simple-translate" class="simple-translate-system-theme">&nbsp;</div>
-      </div><!-- /container -->
-    </div><!-- /#main -->
+        -->
+      </div>
+    </div>
     <!--*  wow fadeInDown -->
-    <footer>
+    <footer class="footer">
       <div class=" container">
-        <div class="footer_header pt-5 pb-4">
+        <div class="footer_header pb-4">
           <div class="row flex-nowrap align-items-center">
             <!--===========-->
             <div class="col-lg-auto col-5 mr-lg-4">
               <a href="./productia.html" class="grey_button">в каталог</a>
             </div>
+            <!--/col-->
             <!--===========-->
             <div class="col-lg-auto col-7">
               <div class="footer_search">
@@ -263,10 +274,12 @@
                 </form>
               </div>
             </div>
+            <!--/col-->
             <!--===========-->
           </div>
-        </div>
-        <div class="footer_menu pb-5">
+          <!--/row-->
+        </div><!-- /footer_header -->
+        <div class="footer_menu">
           <!-- =============footer_menu_desk==================== -->
           <div class="d-none d-lg-block">
             <ul class="footer_menu_desk">
@@ -405,9 +418,8 @@
         </div>
       </div>
     </footer>
-  </div>
-  <!-- * --- / End --- -->
-  <div id="toTop"><i class="icofont-rounded-up"></i></div>
+    <!-- * --- / End --- -->
+    <div id="toTop"><i class="icofont-rounded-up"></i></div>
 </body>
 
 </html>

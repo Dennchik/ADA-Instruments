@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+  <link rel="icon" type="image/icon" href="./img/icon-log.png">
   <link rel="stylesheet" type="text/css" href="dist/rangeslider/ion.rangeslider.min.css">
   <link rel="stylesheet" type="text/css" href="dist/fancybox/jquery.fancybox.min.css">
   <link rel="stylesheet" type="text/css" href="dist/icofont/icofont.min.css">
@@ -19,6 +20,7 @@
   <link rel="stylesheet" type="text/css" href="css/custom_style.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/media.css">
+
   <script defer type="text/javascript" src="./js/jquery.min.js"></script>
   <script defer type="text/javascript" src="./js/jquery.scrollTo.js"></script>
   <script defer type="text/javascript" src="./dist/rangeslider/ion.rangeslider.min.js"></script>
@@ -33,7 +35,13 @@
 </head>
 
 <body class="home_page header_transparent">
-  <!-- ==================================================== -->
+  <!--* ================ * Preloader ==================== -->
+  <div class="preloader">
+    <div class="preloader__image">
+      <img src="./dist/slick/ajax-loader.gif" alt="preloader">
+    </div>
+  </div>
+  <!--* ================ * mobile_menu ==================== -->
   <div class="mobile_menu_wrapp">
     <div class="menu_close"><i class="icofont-close"></i></div>
     <div class="mobile_menu">
@@ -42,7 +50,7 @@
           <ul>
             <li><a class="open_menu_child" href="#"><span>Продукция</span></a>
               <ul class="sub_menu">
-                <li><a href="/catalog/laser-distance-meter/">Лазерные дальномеры</a></li>
+                <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
                 <li><a href="/catalog/automatic-levels/">Оптические нивелиры</a></li>
                 <li><a href="/catalog/theodolites/">Теодолиты</a></li>
                 <li><a href="/catalog/pyrometers/">Пирометры и тепловизоры</a></li>
@@ -1880,7 +1888,7 @@
     <!--*  ======================= / mob ========================= -->
     <div class="serv_obslujivanie ptb-75">
       <div class="container">
-        <div class="serv_obslujivanie_body   wow fadeInDown">
+        <div class="serv_obslujivanie_body wow fadeInDown">
           <div class="row">
             <!--===========-->
             <div class="col-xl-2 col-lg-3 d-none d-lg-block">
@@ -1947,7 +1955,7 @@
         </div>
       </div>
     </div>
-    <div class="suport_wrapper wow fadeInDown mb-75">
+    <div class="suport_wrapper wow fadeInDown">
       <div class="suport_wrapper_inner">
         <div class="suport_feedback wow fadeInLeft">
           <div class="suport_feedback_top">
@@ -2059,15 +2067,15 @@
     </div>
   </div>
   <!--*  wow fadeInDown -->
-  <footer>
-    <div class="container">
+  <footer class="footer">
+    <div class=" container">
       <div class="footer_header pb-4">
         <div class="row flex-nowrap align-items-center">
           <!--===========-->
           <div class="col-lg-auto col-5 mr-lg-4">
             <a href="./productia.html" class="grey_button">в каталог</a>
           </div>
-          <!--===========-->
+          <!--* ===========-->
           <div class="col-lg-auto col-7">
             <div class="footer_search">
               <form action="#" id="searchForm3" action="#" method="get">
@@ -2077,11 +2085,11 @@
               </form>
             </div>
           </div>
-          <!--===========-->
+          <!--* ===========-->
         </div>
       </div>
-      <div class="footer_menu pb-5">
-        <!-- =============footer_menu_desk==================== -->
+      <div class="footer_menu">
+        <!--* =============footer_menu_desk==================== -->
         <div class="d-none d-lg-block">
           <ul class="footer_menu_desk">
             <li>
@@ -2106,8 +2114,7 @@
                     <li><a href="#">Теодолиты</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
+                <!--* ===========-->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Пирометры и тепловизоры</a></li>
@@ -2117,8 +2124,7 @@
                     <li><a href="#">Аксессуары</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
+                <!--* ===========-->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Штативы</a></li>
@@ -2127,15 +2133,13 @@
                     <li><a href="#">Мотобуры</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
+                <!--* ===========-->
               </div>
-              <!--/row-->
             </li>
           </ul>
-        </div><!-- /footer_menu_desk -->
-        <!-- ===============/footer_menu_desk================== -->
-        <!-- =================footer_menu_mob================ -->
+        </div>
+        <!--* ===============/footer_menu_desk================== -->
+        <!--* =================footer_menu_mob================ -->
         <div class="d-block d-lg-none">
           <ul class="footer_menu_mob">
             <li>
@@ -2152,68 +2156,50 @@
             </li>
           </ul>
           <div class="footer_menu_mob_submenu">
-            <div class="row flex-nowrap pt-3">
-              <!--===========-->
-              <div class="col-4">
-                <ul class="fmb_list">
-                  <li><a href="#">Лазерные дальномеры</a></li>
-                  <li><a href="#">Лазерные уровни</a></li>
-                  <li><a href="#">Ротационные нивелиры</a></li>
-                  <li><a href="#">Оптические нивелиры</a></li>
-                  <li><a href="#">Теодолиты</a></li>
-                </ul>
-              </div>
-              <!--/col-->
-              <!--===========-->
-              <div class="col-4">
-                <ul class="fmb_list">
-                  <li><a href="#">Пирометры и тепловизоры</a></li>
-                  <li><a href="#">Детекторы</a></li>
-                  <li><a href="#">Угломеры и уровни</a></li>
-                  <li><a href="#">Рулетки</a></li>
-                  <li><a href="#">Аксессуары</a></li>
-                </ul>
-              </div>
-              <!--/col-->
-              <!--===========-->
-              <div class="col-4">
-                <ul class="fmb_list mr-0">
-                  <li><a href="#">Штативы</a></li>
-                  <li><a href="#">Рейки</a></li>
-                  <li><a href="#">Измерительные колеса</a></li>
-                  <li><a href="#">Мотобуры</a></li>
-                </ul>
-              </div>
-              <!--/col-->
-              <!--===========-->
+            <div class="footer_menu_mob_list flex-nowrap pt-3">
+              <ul class="fmb_list">
+                <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
+                <li><a href="#">Лазерные уровни</a></li>
+                <li><a href="#">Ротационные нивелиры</a></li>
+                <li><a href="#">Оптические нивелиры</a></li>
+                <li><a href="#">Теодолиты</a></li>
+
+                <li><a href="#">Пирометры и&nbsp;тепловизоры</a></li>
+                <li><a href="#">Детекторы</a></li>
+                <li><a href="#">Угломеры и&nbsp;уровни</a></li>
+                <li><a href="#">Рулетки</a></li>
+                <li><a href="#">Аксессуары</a></li>
+
+                <li><a href="#">Штативы</a></li>
+                <li><a href="#">Рейки</a></li>
+                <li><a href="#">Измерительные колеса</a></li>
+                <li><a href="#">Мотобуры</a></li>
+              </ul>
+              <!--* ===========-->
             </div>
-            <!--/row-->
-          </div><!-- /footer_menu_mob_submenu -->
-        </div><!-- /d-block d-lg-none -->
+          </div>
+        </div>
         <div class="footer_contact">
           <div class="form-row flex-nowrap lh1 align-items-end mb-3">
-            <!--===========-->
+            <!--* ===========-->
             <div class="col-auto">
               <a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
             </div>
-            <!--/col-->
-            <!--===========-->
+            <!--* ===========-->
             <div class="col-auto">
               <span class="fw300 font14">Единая горячая линия</span>
             </div>
-            <!--/col-->
-            <!--===========-->
+            <!--* ===========-->
           </div>
           <!--/row-->
           <div class="grafic_raboty light_grey_color font12">
             09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
             Суббота, воскресенье - выходной. Звонок по России бесплатный
           </div>
-        </div><!-- /footer_contact -->
-        <!-- ============================== -->
-      </div><!-- /footer_menu -->
-      <!-- /footer_footer -->
-    </div><!-- /container -->
+        </div>
+        <!--*  ============================== -->
+      </div>
+    </div>
     <div class="footer_footer">
       <div class="container">
         <div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>

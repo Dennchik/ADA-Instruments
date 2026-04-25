@@ -213,6 +213,100 @@
   }
 }
 
+@media all and (min-width: 992px) {
+  .home_page .sub_menu {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .sub_menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    width: 800px;
+    padding: 30px 20px 20px;
+    background: #fff;
+    -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    margin-top: 20px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition:
+      opacity 0.3s,
+      margin-top 0.3s,
+      visibility 0s linear 0.3s;
+    -moz-transition:
+      opacity 0.3s,
+      margin-top 0.3s,
+      visibility 0s linear 0.3s;
+    -o-transition:
+      opacity 0.3s,
+      margin-top 0.3s,
+      visibility 0s linear 0.3s;
+    transition:
+      opacity 0.3s,
+      margin-top 0.3s,
+      visibility 0s linear 0.3s;
+    pointer-events: none;
+  }
+
+  .sub_menu > li {
+    width: 33.333%;
+  }
+
+  .has_child:hover .sub_menu {
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+    pointer-events: auto;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .sub_menu,
+  .sub_menu2 {
+    width: auto;
+    max-width: 100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    position: static;
+    margin-top: 0px;
+    opacity: 1;
+    visibility: visible;
+    border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+  }
+
+  .has_child:hover .sub_menu {
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sub_menu {
+    display: none;
+  }
+
+  .has_child a:hover {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+  }
+}
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
   .productia_wrapp {
@@ -344,10 +438,6 @@
     -webkit-font-smoothing: antialiased;
     font-size: 17px;
     margin-top: 4px;
-  }
-
-  .footer_menu_mob_submenu ul.fmb_list {
-    margin-right: 20px;
   }
 
   .contacts_list > li {

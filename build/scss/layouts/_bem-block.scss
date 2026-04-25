@@ -1,6 +1,69 @@
 @use '../core/mixins' as *;
 
 //* ----------------------------[ BUTTON ]--------------------------------------
+
+.grey_button {
+  display: inline-block;
+  background-color: transparent;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgb(31, 31, 31);
+  text-align: center;
+  padding: 0px 30px;
+  height: 34px;
+  line-height: 32px;
+  border: 1px solid rgb(31, 31, 31);
+  outline: none;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.grey_button:hover,
+.grey_button:focus {
+  background-color: rgb(31, 31, 31);
+  color: rgb(255, 255, 255);
+  outline: none;
+  text-decoration: none;
+}
+.thin_grey_button {
+  display: inline-block;
+  background-color: transparent;
+  font-size: 10px;
+  color: #252525;
+  text-align: center;
+  padding: 0px 50px;
+  height: 50px;
+  line-height: 48px;
+  border: 1px solid #252525;
+  outline: none;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  font-weight: 600;
+  text-transform: uppercase;
+  min-width: 200px;
+}
+
+.thin_grey_button:hover,
+.thin_grey_button:focus {
+  background-color: #252525;
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+}
+
 .red_button {
   display: inline-block;
   background-color: rgb(255, 51, 51);
@@ -90,7 +153,9 @@
 .font_clamp_60 {
   font-size: clamp(1.51375rem, 3vw, 3.75rem);
 }
-
+.font_clamp_50 {
+  font-size: clamp(1.31375rem, 2.4vw, 3.125rem);
+}
 .font_11 {
   font-size: 11px;
 }
@@ -101,9 +166,107 @@
 .font13 {
   font-size: 13px;
 }
+.font14 {
+  font-size: 14px;
+  font-weight: 400;
+}
+.font16 {
+  font-size: 16px;
+  font-weight: 400;
+}
+.font20 {
+  font-size: 20px;
+}
 
+.font18 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.font40 {
+  font-size: 40px;
+}
+.font44 {
+  font-size: 44px;
+}
+.fw200 {
+  font-weight: 200;
+}
 .font_60 {
   font-size: 60px;
+}
+.lh12 {
+  line-height: 1.2;
+}
+.fw800 {
+  font-weight: 800;
+}
+.grey_backing {
+  display: inline-block;
+  line-height: 1;
+  background-color: rgba(241, 241, 241, 0.7);
+}
+.black_backing {
+  display: inline-block;
+  padding: 3px 6px;
+  line-height: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.grey_bg {
+  background-color: rgb(241, 241, 241);
+}
+
+.red {
+  outline: 1px solid var(--red);
+}
+.wh_txt_col {
+  display: block;
+}
+
+.wh_txt:hover,
+.wh_txt:focus {
+  opacity: 1;
+}
+.thin_white_button {
+  display: inline-block;
+  background-color: transparent;
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 0px 50px;
+  height: 50px;
+  line-height: 48px;
+  border: 1px solid #fff;
+  outline: none;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  font-weight: 600;
+  text-transform: uppercase;
+  min-width: 200px;
+}
+.wh_txt:hover .thin_white_button,
+.wh_txt:focus .thin_white_button {
+  /* background-color: #fff;
+  color: #FF2F2F;*/
+  outline: none;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+}
+.wh_txt {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
 }
 //* ------------------------[ breadcrumbs ]-----------------------------------*/
 .breadcrumb > li {
@@ -245,3 +408,4 @@
     height: 100vh !important;
   }
 }
+//* ----------------------------------------------------------------------------

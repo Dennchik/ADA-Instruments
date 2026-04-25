@@ -230,9 +230,59 @@
     color: #0b0b0b;
     line-height: 100%;
   }
-}
-//* ----------------------------------------------------------------------------
 
+  // .product-cart__quantity
+  &__quantity {
+    border: 1px solid var(--red);
+    padding: 0 28px;
+
+    &.red_button {
+      background-color: transparent !important;
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    &.red_button {
+      background-color: transparent !important;
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    .icon {
+      user-select: none;
+      text-align: center;
+      font-style: normal;
+      width: 20px;
+      height: 20px;
+      font-size: 18px !important;
+    }
+  }
+}
+
+//* ----------------------------------------------------------------------------
+.product-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // .product-price__wrapper
+  &__wrapper {
+    .old-price {
+      color: red;
+      margin-bottom: 5px;
+    }
+  }
+
+  .article {
+    float: right;
+  }
+
+  .product-cart-title {
+    font-size: clamp(1.4rem, 3vw, 3.75rem);
+  }
+}
+
+//* ----------------------------------------------------------------------------
 .delivery {
   // .delivery__content
   &__content {
@@ -434,4 +484,55 @@
   &__sum {
     font-size: 14px;
   }
+}
+//* ----------------------------------------------------------------------------
+.cart-user {
+  position: relative;
+  &__quantity {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    transform: translate(10px, -5px);
+    padding: 5px;
+    background-color: var(--red);
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+  }
+}
+//* ----------------------------------------------------------------------------
+.quantity {
+  display: none; /* по умолчанию скрыт */
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+
+  // .quantity__input
+  &__input {
+    display: flex;
+    input {
+      width: 50px;
+      height: 20px;
+      font-size: 21px;
+      text-align: center;
+      font-style: normal;
+    }
+  }
+
+  // .quantity__button
+  &__button {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.items_greed_wrapper {
+  position: relative;
+  align-self: start;
 }

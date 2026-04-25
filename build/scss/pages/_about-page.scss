@@ -1,7 +1,16 @@
+@use '../core/mixins' as *;
 .about-page {
   margin-bottom: 75px;
+
+  @include screen-490 {
+    margin-bottom: 45px;
+  }
 }
 
 .services-page {
   margin-bottom: 75px;
+
+  @include screen-490 {
+    margin-bottom: 45px;
+  }
 }

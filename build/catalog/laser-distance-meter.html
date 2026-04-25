@@ -9,6 +9,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
 		rel="stylesheet">
+	<link rel="icon" type="image/icon" href="../img/icon-log.png">
 	<link rel="stylesheet" type="text/css" href="../dist/rangeslider/ion.rangeslider.min.css">
 	<link rel="stylesheet" type="text/css" href="../dist/fancybox/jquery.fancybox.min.css">
 	<link rel="stylesheet" type="text/css" href="../dist/icofont/icofont.min.css">
@@ -33,7 +34,13 @@
 </head>
 
 <body class="">
-	<!--* ========== * mobile-menu ========================= -->
+	<!--* ================ * Preloader ==================== -->
+	<div class="preloader">
+		<div class="preloader__image">
+			<img src="../dist/slick/ajax-loader.gif" alt="preloader">
+		</div>
+	</div>
+	<!--* ================ * mobile_menu ==================== -->
 	<div class="mobile_menu_wrapp">
 		<div class="menu_close"><i class="icofont-close"></i></div>
 		<div class="mobile_menu">
@@ -69,15 +76,15 @@
 		<!-- /.mobile_menu -->
 	</div>
 	<!--* /.mobile-menu  -->
-	<!-- ==================================================== -->
+	<!--* ==================================================== -->
 	<div id="main">
 		<header>
 			<div class="container h-100">
-				<!-- ==================================================== -->
+				<!--* ==================================================== -->
 				<div class="d-lg-none d-block">
 					<button class="menu_button menu_show">
 						<span class='toggle'><i></i> <i></i> <i></i></span>
-					</button><!-- /menu_button -->
+					</button>
 					<div class="top_search_wrap">
 						<div class="open_search">
 							<i class="icofont-search"></i>
@@ -87,20 +94,20 @@
 								<input type="text" placeholder="Поиск по сайту" required>
 								<button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
 							</form>
-						</div><!-- /top_search_body -->
-					</div><!-- /top_search_wrap -->
+						</div>
+					</div>
 				</div>
-				<!-- ==================================================== -->
+				<!--* ==================================================== -->
 				<div class="top_panel h-100">
 					<div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
 						<div class="col-auto">
 							<div class="left_TP">
 								<div class="row align-items-center">
-									<!-- =================== -->
+									<!--* =================== -->
 									<div class="col-auto">
 										<a href="../index.html" class="logo"></a>
-									</div><!-- /col -->
-									<!-- =================== -->
+									</div>
+									<!--* =================== -->
 									<div class="col-auto d-none d-lg-block">
 										<ul class="top_menu ml-lg-3">
 											<li class="has_child">
@@ -128,16 +135,16 @@
 											<li><a href="../about.html"><span>О компании</span></a></li>
 											<li><a href="../contact.html"><span>Контакты</span></a></li>
 										</ul>
-									</div><!-- /col -->
-									<!-- =================== -->
-								</div><!-- /row -->
-							</div><!-- /left_TP -->
-						</div><!-- /col -->
-						<!-- ================== -->
+									</div>
+									<!--* =================== -->
+								</div>
+							</div>
+						</div>
+						<!--* ================== -->
 						<div class="col-auto">
 							<div class="right_TP">
 								<div class="row  align-items-center  justify-content-end">
-									<!-- =================== -->
+									<!--* =================== -->
 									<div class="col-auto  d-none d-lg-block">
 										<div class="search_flexbox">
 											<div class="search_wrap">
@@ -146,8 +153,8 @@
 												</div>
 											</div>
 										</div>
-									</div><!-- /col -->
-									<!-- =================== -->
+									</div>
+									<!--* =================== -->
 									<div class="col-auto">
 										<div class="col_icons">
 											<a href="../cart.html" class="col_cart icon_col cart-user">
@@ -229,7 +236,7 @@
 								</a>
 								<span class="items_greed_wrapper">
 									<button class="add-to-cart red_button">в корзину</button>
-									<div class="quantity product-card__quantity red_button">
+									<div class="quantity product-cart__quantity red_button">
 										<div class="quantity__button quantity-remove">
 											<i class="icon-minus icon">&minus;</i>
 										</div>
@@ -254,7 +261,7 @@
 								</a>
 								<span class="items_greed_wrapper">
 									<button class="add-to-cart red_button">в корзину</button>
-									<div class="quantity product-card__quantity red_button">
+									<div class="quantity product-cart__quantity red_button">
 										<div class="quantity__button quantity-remove">
 											<i class="icon-minus icon">&minus;</i>
 										</div>
@@ -279,7 +286,7 @@
 								</a>
 								<span class="items_greed_wrapper">
 									<button class="add-to-cart red_button">в корзину</button>
-									<div class="quantity product-card__quantity red_button">
+									<div class="quantity product-cart__quantity red_button">
 										<div class="quantity__button quantity-remove">
 											<i class="icon-minus icon">&minus;</i>
 										</div>
@@ -304,7 +311,7 @@
 								</a>
 								<span class="items_greed_wrapper">
 									<button class="add-to-cart red_button">в корзину</button>
-									<div class="quantity product-card__quantity red_button">
+									<div class="quantity product-cart__quantity red_button">
 										<div class="quantity__button quantity-remove">
 											<i class="icon-minus icon">&minus;</i>
 										</div>
@@ -329,7 +336,7 @@
 								</a>
 								<span class="items_greed_wrapper">
 									<button class="add-to-cart red_button">в корзину</button>
-									<div class="quantity product-card__quantity red_button">
+									<div class="quantity product-cart__quantity red_button">
 										<div class="quantity__button quantity-remove">
 											<i class="icon-minus icon">&minus;</i>
 										</div>
@@ -354,7 +361,7 @@
 								</a>
 								<span class="items_greed_wrapper">
 									<button class="add-to-cart red_button">в корзину</button>
-									<div class="quantity product-card__quantity red_button">
+									<div class="quantity product-cart__quantity red_button">
 										<div class="quantity__button quantity-remove">
 											<i class="icon-minus icon">&minus;</i>
 										</div>
@@ -379,7 +386,7 @@
 								</a>
 								<span class="items_greed_wrapper">
 									<button class="add-to-cart red_button">в корзину</button>
-									<div class="quantity product-card__quantity red_button">
+									<div class="quantity product-cart__quantity red_button">
 										<div class="quantity__button quantity-remove">
 											<i class="icon-minus icon">&minus;</i>
 										</div>
@@ -406,7 +413,7 @@
 
 								<span class="items_greed_wrapper">
 									<button class="add-to-cart red_button">в корзину</button>
-									<div class="quantity product-card__quantity red_button">
+									<div class="quantity product-cart__quantity red_button">
 										<div class="quantity__button quantity-remove">
 											<i class="icon-minus icon">&minus;</i>
 										</div>
@@ -430,7 +437,7 @@
 								</a>
 								<span class="items_greed_wrapper">
 									<button class="add-to-cart red_button">в корзину</button>
-									<div class="quantity product-card__quantity red_button">
+									<div class="quantity product-cart__quantity red_button">
 										<div class="quantity__button quantity-remove">
 											<i class="icon-minus icon">&minus;</i>
 										</div>
@@ -500,19 +507,17 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 	<!--*  wow fadeInDown -->
 	<footer>
 		<div class="container">
 			<div class="footer_header pb-4">
 				<div class="row flex-nowrap align-items-center">
-					<!--===========-->
+					<!--* ===========-->
 					<div class="col-lg-auto col-5 mr-lg-4">
 						<a href="./productia.html" class="grey_button">в каталог</a>
 					</div>
-					<!--/col-->
-					<!--===========-->
+					<!--* ===========-->
 					<div class="col-lg-auto col-7">
 						<div class="footer_search">
 							<form action="#">
@@ -521,10 +526,8 @@
 							</form>
 						</div>
 					</div>
-					<!--/col-->
-					<!--===========-->
+					<!--* ===========-->
 				</div>
-				<!--/row-->
 			</div>
 			<div class="footer_menu">
 				<!--* =============footer_menu_desk==================== -->
@@ -596,36 +599,25 @@
 						</li>
 					</ul>
 					<div class="footer_menu_mob_submenu">
-						<div class="row flex-nowrap pt-3">
-							<!--* ===========-->
-							<div class="col-4">
-								<ul class="fmb_list">
-									<li><a href="#">Лазерные дальномеры</a></li>
-									<li><a href="#">Лазерные уровни</a></li>
-									<li><a href="#">Ротационные нивелиры</a></li>
-									<li><a href="#">Оптические нивелиры</a></li>
-									<li><a href="#">Теодолиты</a></li>
-								</ul>
-							</div>
-							<!--* ===========-->
-							<div class="col-4">
-								<ul class="fmb_list">
-									<li><a href="#">Пирометры и тепловизоры</a></li>
-									<li><a href="#">Детекторы</a></li>
-									<li><a href="#">Угломеры и уровни</a></li>
-									<li><a href="#">Рулетки</a></li>
-									<li><a href="#">Аксессуары</a></li>
-								</ul>
-							</div>
-							<!--* ===========-->
-							<div class="col-4">
-								<ul class="fmb_list mr-0">
-									<li><a href="#">Штативы</a></li>
-									<li><a href="#">Рейки</a></li>
-									<li><a href="#">Измерительные колеса</a></li>
-									<li><a href="#">Мотобуры</a></li>
-								</ul>
-							</div>
+						<div class="footer_menu_mob_list flex-nowrap pt-3">
+							<ul class="fmb_list">
+								<li><a href="../catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
+								<li><a href="#">Лазерные уровни</a></li>
+								<li><a href="#">Ротационные нивелиры</a></li>
+								<li><a href="#">Оптические нивелиры</a></li>
+								<li><a href="#">Теодолиты</a></li>
+
+								<li><a href="#">Пирометры и&nbsp;тепловизоры</a></li>
+								<li><a href="#">Детекторы</a></li>
+								<li><a href="#">Угломеры и&nbsp;уровни</a></li>
+								<li><a href="#">Рулетки</a></li>
+								<li><a href="#">Аксессуары</a></li>
+
+								<li><a href="#">Штативы</a></li>
+								<li><a href="#">Рейки</a></li>
+								<li><a href="#">Измерительные колеса</a></li>
+								<li><a href="#">Мотобуры</a></li>
+							</ul>
 							<!--* ===========-->
 						</div>
 					</div>

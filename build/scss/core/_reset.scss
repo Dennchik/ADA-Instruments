@@ -1,7 +1,7 @@
 //* ----------------------------- Resset* --------------------------------------
 
 * {
-  scrollbar-width: none;
+  scrollbar-width: thin;
 
   box-sizing: border-box;
   margin: 0;
@@ -65,6 +65,7 @@ ul,
 ol,
 li {
   list-style: none;
+  line-height: 100%;
 }
 
 input,
@@ -93,6 +94,10 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   padding-top: 110px;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 body.home_page {
@@ -184,4 +189,5 @@ h2 {
 h3 {
   font-size: 20px;
 }
+
 //* ----------------------------------------------------------------------------

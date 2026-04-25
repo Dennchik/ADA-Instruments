@@ -1,0 +1,226 @@
+@use '../core/mixins' as *;
+
+footer {
+  background-color: #fff;
+}
+.footer {
+  padding-top: 75px;
+
+  @include screen-490 {
+    padding-top: 45px;
+  }
+}
+
+.footer_footer {
+  height: 156px;
+  display: flex;
+  align-items: center;
+  border-top: 7px solid rgb(255, 51, 51);
+  background-color: rgb(66, 66, 66);
+  padding: 1.5rem 0;
+  color: #fff;
+
+  .text-right {
+    text-align: right;
+  }
+}
+
+footer .grey_button {
+  font-size: 10px;
+}
+
+.footer_search form,
+.top_search_body form {
+  position: relative;
+}
+
+.footer_search input[type='text'],
+.footer_search input[type='email'],
+.footer_search input[type='tel'] {
+  border: 0px;
+  border-bottom: 1px solid #222;
+  outline: none;
+  margin-bottom: 0px;
+  color: #222;
+  background: transparent;
+  height: 20px;
+  width: 100%;
+  padding: 0px;
+  padding-right: 0px;
+  padding-bottom: 4px;
+}
+
+.footer_sb {
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  font-size: 18px;
+  border: 0;
+  line-height: 1;
+  color: #a4a4a4;
+  background: transparent;
+  font-weight: 700;
+}
+
+.footer_search form {
+  position: relative;
+  padding-left: 30px;
+}
+
+.footer_search ::-webkit-input-placeholder {
+  color: #a4a4a4;
+  font-size: 14px;
+}
+
+.footer_search ::-moz-placeholder {
+  color: #a4a4a4;
+  font-size: 14px;
+}
+
+/* Firefox 19+ */
+.footer_search :-moz-placeholder {
+  color: #a4a4a4;
+  font-size: 14px;
+}
+
+/* Firefox 18- */
+.footer_search :-ms-input-placeholder {
+  color: #a4a4a4;
+  font-size: 14px;
+}
+
+.footer_search ::placeholder {
+  color: #a4a4a4;
+  font-size: 14px;
+}
+//* ----------------------------------------------------------------------------
+
+.footer_menu {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 75px;
+
+  @include screen-490 {
+    margin-bottom: 45px;
+  }
+}
+
+.footer_menu_desk a {
+  color: #a4a4a4;
+  font-size: 13px;
+  text-decoration: underline;
+  font-weight: 300;
+  text-transform: uppercase;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  display: block;
+  white-space: nowrap;
+  padding: 5px 0;
+}
+
+.footer_menu_desk a:hover,
+.footer_menu_desk a:focus {
+  color: #000000;
+  text-decoration: none;
+  outline: none;
+  text-shadow: 0 0 1px #000;
+}
+
+ul.footer_menu_desk {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 100px;
+
+  li {
+    height: auto;
+    display: inline;
+  }
+}
+
+.footer_menu .has_child {
+  text-decoration: none;
+}
+
+footer .has_child ul a {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: none;
+  text-decoration: none;
+  color: #252525;
+}
+
+.font9 {
+  font-size: 9px;
+}
+
+.footer_contact {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-top: 80px;
+  max-width: 330px;
+  padding-bottom: 7px;
+}
+
+.light_grey_color {
+  color: #a4a4a4;
+}
+
+.desk-menu {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+ul.footer_menu_mob {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+ul.footer_menu_mob > li {
+  width: 50%;
+}
+
+.footer_menu_mob a {
+  color: #a4a4a4;
+  font-size: 12px;
+  text-decoration: underline;
+  padding: 5px 0;
+  font-weight: 300;
+  text-transform: uppercase;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  display: block;
+  white-space: nowrap;
+}
+
+#open_child_list {
+  cursor: pointer;
+}
+
+.footer_menu_mob_submenu {
+  font-size: 9px;
+  // padding: 0 20px;
+}
+
+.footer_menu_mob_submenu li a {
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: block;
+}

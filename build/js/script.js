@@ -884,6 +884,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Первоначальное обновление счетчика
   updateTotalCartQuantity();
 });
+//todo --------- счетчик (добавить в корзину в КОРЗИНЕ) ------------------------
+//todo ↓↓↓ (Для Виктора)
 document.addEventListener('DOMContentLoaded', function () {
   function updateTotalCartQuantity() {
     let totalQuantity = 0;
@@ -1060,89 +1062,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 //todo -------------------------------------------------------------------------
 
-//todo -------------------------------------------------------------------------
-// document.addEventListener('DOMContentLoaded', () => {
-//   const openButton = document.querySelector('.acccount-section__open-button');
-//   const closeButton = document.querySelector('.profile__close-button');
-//   const asideMenu = document.querySelector('.aside-menu-r');
-//   const verticalDots = document.getElementById('verticalDots');
-
-//   if (openButton) {
-//     openButton.addEventListener('click', () => {
-//       asideMenu?.classList.toggle('open');
-//       openButton?.classList.toggle('active');
-//       // Меняем троеточие только если экран меньше или равен 992px
-//       if (window.innerWidth <= 992) {
-//         verticalDots?.classList.toggle('horizontal');
-//       }
-//     });
-//   }
-
-//   if (closeButton) {
-//     closeButton.addEventListener('click', () => {
-//       asideMenu?.classList.toggle('open');
-//       openButton?.classList.toggle('active');
-//       // Меняем троеточие только если экран меньше или равен 992px
-//       if (window.innerWidth <= 992) {
-//         verticalDots?.classList.toggle('horizontal');
-//       }
-//     });
-//   }
-
-//   function checkScreenWidth() {
-//     if (window.innerWidth > 992) {
-//       asideMenu?.classList.remove('open');
-//       openButton?.classList.remove('active');
-//       // На широком экране убираем класс horizontal
-//       verticalDots?.classList.remove('horizontal');
-//     }
-//   }
-
-//   checkScreenWidth();
-//   window.addEventListener('resize', checkScreenWidth);
-// });
-// //* ----------------------------------------------------------------------------
-// document.addEventListener('DOMContentLoaded', () => {
-//   const openButton = document.querySelector('.acccount-section__link-button');
-//   const closeButton = document.querySelector('.side-menu__close-menu');
-//   const asideMenu = document.querySelector('.aside-menu-l');
-//   // Добавляем элемент для троеточия (если есть)
-//   const verticalDotsLeft = document.getElementById('verticalDotsLeft'); // или другой ID
-
-//   if (openButton) {
-//     openButton.addEventListener('click', () => {
-//       asideMenu?.classList.toggle('open');
-//       openButton?.classList.toggle('active');
-//       // Меняем троеточие только если экран меньше или равен 992px
-//       if (window.innerWidth <= 992) {
-//         verticalDotsLeft?.classList.toggle('horizontal');
-//       }
-//     });
-//   }
-
-//   if (closeButton) {
-//     closeButton.addEventListener('click', () => {
-//       asideMenu?.classList.toggle('open');
-//       openButton?.classList.toggle('active');
-//       // Меняем троеточие только если экран меньше или равен 992px
-//       if (window.innerWidth <= 992) {
-//         verticalDotsLeft?.classList.toggle('horizontal');
-//       }
-//     });
-//   }
-
-//   function checkScreenWidth() {
-//     if (window.innerWidth > 992) {
-//       asideMenu?.classList.remove('open');
-//       openButton?.classList.remove('active');
-//       // На широком экране убираем класс horizontal
-//       verticalDotsLeft?.classList.remove('horizontal');
-//     }
-//   }
-
-//   checkScreenWidth();
-//   window.addEventListener('resize', checkScreenWidth);
-// });
 document.addEventListener('DOMContentLoaded', () => {
   // ========== ПРАВАЯ ПАНЕЛЬ ==========
   const openButtonRight = document.querySelector(
@@ -1259,3 +1178,19 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll);
   document.addEventListener('click', handleClickOutside);
 });
+//* ----------------------------------------------------------------------------
+function loaded(item) {
+  function removePreloader() {
+    document.querySelector(item).classList.add('preloader-remove');
+    document.documentElement.classList.add('loaded');
+  }
+
+  if (document.readyState === 'complete') {
+    // страница уже загружена — выполняем сразу
+    removePreloader();
+  } else {
+    // ждём загрузки
+    window.addEventListener('load', removePreloader);
+  }
+}
+loaded('.preloader');

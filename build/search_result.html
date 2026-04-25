@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+  <link rel="icon" type="image/icon" href="./img/icon-log.png">
   <link rel="stylesheet" type="text/css" href="./dist/rangeslider/ion.rangeslider.min.css">
   <link rel="stylesheet" type="text/css" href="./dist/fancybox/jquery.fancybox.min.css">
   <link rel="stylesheet" type="text/css" href="./dist/icofont/icofont.min.css">
@@ -33,7 +34,13 @@
 </head>
 
 <body>
-  <!-- ==================================================== -->
+  <!--* ================ * Preloader ==================== -->
+  <div class="preloader">
+    <div class="preloader__image">
+      <img src="./dist/slick/ajax-loader.gif" alt="preloader">
+    </div>
+  </div>
+  <!--* ================ * mobile_menu ==================== -->
   <div class="mobile_menu_wrapp">
     <div class="menu_close"><i class="icofont-close"></i></div>
     <div class="mobile_menu">
@@ -66,14 +73,12 @@
         </div><!-- /col -->
       </div><!-- /row -->
     </div>
-    <!-- /.mobile_menu -->
   </div>
-  <!-- /.mobile_menu_wrapp -->
-  <!-- ==================================================== -->
+  <!--* ==================================================== -->
   <div id="main">
     <header>
       <div class="container h-100">
-        <!-- ==================================================== -->
+        <!--* ==================================================== -->
         <div class="d-lg-none d-block">
           <button class="menu_button menu_show">
             <span class='toggle'><i></i> <i></i> <i></i></span>
@@ -87,20 +92,20 @@
                 <input type="text" placeholder="Поиск по сайту" required>
                 <button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
               </form>
-            </div><!-- /top_search_body -->
-          </div><!-- /top_search_wrap -->
+            </div>
+          </div>
         </div>
-        <!-- ==================================================== -->
+        <!--* ==================================================== -->
         <div class="top_panel h-100">
           <div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
             <div class="col-auto">
               <div class="left_TP">
                 <div class="row align-items-center">
-                  <!-- =================== -->
+                  <!--* =================== -->
                   <div class="col-auto">
                     <a href="../index.html" class="logo"></a>
-                  </div><!-- /col -->
-                  <!-- =================== -->
+                  </div>
+                  <!--* =================== -->
                   <div class="col-auto d-none d-lg-block">
                     <ul class="top_menu ml-lg-3">
                       <li class="has_child">
@@ -128,12 +133,12 @@
                       <li><a href="./about.html"><span>О компании</span></a></li>
                       <li><a href="./contact.html"><span>Контакты</span></a></li>
                     </ul>
-                  </div><!-- /col -->
-                  <!-- =================== -->
-                </div><!-- /row -->
-              </div><!-- /left_TP -->
-            </div><!-- /col -->
-            <!-- ================== -->
+                  </div>
+                  <!--* =================== -->
+                </div>
+              </div>
+            </div>
+            <!--* ================== -->
             <div class="col-auto">
               <div class="right_TP">
                 <div class="row  align-items-center  justify-content-end">
@@ -146,8 +151,8 @@
                         </div>
                       </div>
                     </div>
-                  </div><!-- /col -->
-                  <!-- =================== -->
+                  </div>
+                  <!--* =================== -->
                   <div class="col-auto">
                     <div class="col_icons">
                       <a href="./cart.html" class="col_cart icon_col cart-user">
@@ -188,30 +193,27 @@
             <li><a href="#">главная</a></li>
             <li class="active">Результаты поиска</li>
           </ol>
-        </div><!-- /container -->
+        </div>
       </div>
       <!--** =======================breadcrumb========================= -->
       <div class="page_header mb-lg-5 mb-3 lh1">
         <div class="container">
           <div class="row align-items-end">
-            <!--===========-->
+            <!--* =========== -->
             <div class="col-auto">
               <h1 class="font_60 lh1 fw700 red_color mb-2">#Cube</h1>
             </div>
-            <!--/col-->
-            <!--===========-->
+            <!--* =========== -->
             <div class="col-auto">
               <div class="ml-2 font12 light_grey_color mb-3">найдено материалов: <span id="sqres">34</span></div>
             </div>
-            <!--/col-->
-            <!--===========-->
+            <!--* =========== -->
           </div>
-          <!--/row-->
-        </div><!-- /container -->
+        </div>
       </div>
       <div class="search_result_body pb-5 wow fadeInDown">
         <div class="container">
-          <!-- ============================blog_sidebar_tabs=================================== -->
+          <!--* ============================[ blog_sidebar_tabs ]================================== -->
           <div class="good_info_tabs">
             <ul class="nav nav-tabs  justify-content-between justify-content-sm-start" id="myTab" role="tablist">
               <li class="nav-item">
@@ -228,7 +230,7 @@
               </li>
             </ul>
             <div class="tab-content" id="good_info_tabs_Content">
-              <!-- ================================ -->
+              <!--* ================================ -->
               <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="nav_link1">
                 <div class="items_greed">
                   <ul class="items_greed_list mb-3">
@@ -236,103 +238,103 @@
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g1.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g2.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g3.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g1.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g2.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g3.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g2.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g3.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g1.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g2.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g3.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g1.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g2.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g3.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g2.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                     <li>
                       <a href="#" class="items_greed_box">
                         <span class="img_cont" style="background-image: url(img/goods/g3.jpg);"></span>
                         <span class="items_greed_box_title">ADA Cube mini </span>
-                      </a><!-- /items_greed_box -->
+                      </a>
                     </li>
                   </ul><!-- /items_greed_list -->
                   <div class="show_moreitems">загрузить еще</div>
-                </div><!-- /items_greed -->
+                </div>
               </div>
-              <!-- ================================ -->
+              <!--*  ================================ -->
               <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="nav_link2">
                 <div class="pdf_list_wrapper">
                   <div class="instr_right_list content-1">
@@ -343,7 +345,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -351,7 +353,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -359,7 +361,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -367,7 +369,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -375,7 +377,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -383,7 +385,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -391,7 +393,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -399,7 +401,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -407,7 +409,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -415,7 +417,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -423,7 +425,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -431,7 +433,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -439,7 +441,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -447,7 +449,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -455,7 +457,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -463,7 +465,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -471,7 +473,7 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                       <li>
                         <div class="instr_right_list_box">
@@ -479,18 +481,16 @@
                           <div><a target="_blank" class="pdf_cub ml-3"
                               href="https://adainstruments.com/instructions/manual ADA LR-500 RG.pdf"><b>PDF</b></a>
                           </div>
-                        </div><!-- /instr_right_list_box -->
+                        </div>
                       </li>
                     </ul>
                     <div class="d-block d-lg-none">
                       <div class="open_more_pdf"></div>
                     </div>
                   </div>
-                  <!-- /instr_right_list -->
                 </div>
-                <!-- / instr_right-->
-              </div><!-- /tab-pane -->
-              <!-- ================================ -->
+              </div>
+              <!--* ================================ -->
               <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="nav_link3">
                 <div class="video_greed_wrapper">
                   <div class="form-row">
@@ -510,11 +510,9 @@
                               allow="accelerometer;autoplay;">
                             </iframe>
                           </div>
-                          <!-- /video_inner -->
                         </div>
-                        <!-- /video_wrap -->
-                      </div><!-- /video_greed_box -->
-                    </div><!-- /col-lg-4 -->
+                      </div>
+                    </div>
                     <div class="col-lg-4 col-sm-6 video_sib">
                       <div class="video_greed_box">
                         <div class="video_wrap">
@@ -524,18 +522,16 @@
                                 <i class="icofont-play"></i>
                                 <div class="font24 text-white">ADA Cube Mini Grren</div>
                                 <div class="font10 text-white">Лазерный уровень</div>
-                              </div><!-- /button_play_video_inner -->
+                              </div>
                             </div>
                             <iframe class="embed-responsive-item video_iframe"
                               src="https://www.youtube.com/embed/DC5GkcEUb9U?rel=0&showinfo=0"
                               allow="accelerometer; autoplay;">
                             </iframe>
                           </div>
-                          <!-- /video_inner -->
                         </div>
-                        <!-- /video_wrap -->
-                      </div><!-- /video_greed_box -->
-                    </div><!-- /col-lg-4 -->
+                      </div>
+                    </div>
                     <div class="col-lg-4 col-sm-6 video_sib">
                       <div class="video_greed_box">
                         <div class="video_wrap">
@@ -552,11 +548,9 @@
                               allow="accelerometer; autoplay;">
                             </iframe>
                           </div>
-                          <!-- /video_inner -->
                         </div>
-                        <!-- /video_wrap -->
-                      </div><!-- /video_greed_box -->
-                    </div><!-- /col-lg-4 -->
+                      </div>
+                    </div>
                     <div class="col-lg-4 col-sm-6 video_sib">
                       <div class="video_greed_box">
                         <div class="video_wrap">
@@ -573,11 +567,9 @@
                               allow="accelerometer; autoplay;">
                             </iframe>
                           </div>
-                          <!-- /video_inner -->
                         </div>
-                        <!-- /video_wrap -->
-                      </div><!-- /video_greed_box -->
-                    </div><!-- /col-lg-4 -->
+                      </div>
+                    </div>
                     <div class="col-lg-4 col-sm-6 video_sib">
                       <div class="video_greed_box">
                         <div class="video_wrap">
@@ -587,18 +579,16 @@
                                 <i class="icofont-play"></i>
                                 <div class="font24 text-white">ADA Cube </div>
                                 <div class="font10 text-white">Лазерный уровень</div>
-                              </div><!-- /button_play_video_inner -->
+                              </div>
                             </div>
                             <iframe class="embed-responsive-item video_iframe"
                               src="https://www.youtube.com/embed/DC5GkcEUb9U?rel=0&showinfo=0"
                               allow="accelerometer; autoplay;">
                             </iframe>
                           </div>
-                          <!-- /video_inner -->
                         </div>
-                        <!-- /video_wrap -->
-                      </div><!-- /video_greed_box -->
-                    </div><!-- /col-lg-4 -->
+                      </div>
+                    </div>
                     <div class="col-lg-4 col-sm-6 video_sib">
                       <div class="video_greed_box">
                         <div class="video_wrap">
@@ -608,55 +598,52 @@
                                 <i class="icofont-play"></i>
                                 <div class="font24 text-white">ADA Cube </div>
                                 <div class="font10 text-white">Лазерный уровень</div>
-                              </div><!-- /button_play_video_inner -->
+                              </div>
                             </div>
                             <iframe class="embed-responsive-item video_iframe"
                               src="https://www.youtube.com/embed/DC5GkcEUb9U?rel=0&showinfo=0"
                               allow="accelerometer; autoplay;">
                             </iframe>
                           </div>
-                          <!-- /video_inner -->
                         </div>
-                        <!-- /video_wrap -->
-                      </div><!-- /video_greed_box -->
-                    </div><!-- /col-lg-4 -->
-                  </div><!-- /form-row -->
+                      </div>
+                    </div>
+                  </div>
                   <div class="open_more_videos"></div>
-                </div><!-- /video_greed_wrapper -->
-              </div><!-- /tab-pane -->
-              <!-- ================================ -->
-            </div> <!-- /tab-content -->
+                </div>
+              </div>
+              <!--* ================================ -->
+            </div>
           </div> <!-- /good_info_tabs -->
-          <!-- ============================/blog_sidebar_tabs=================================== -->
-        </div><!-- /container -->
-      </div><!-- /search_result_body -->
-    </div><!-- /#search_result_page -->
-  </div><!-- /#main -->
-  <footer>
+          <!--* ============================[ /blog_sidebar_tabs ]=================================== -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--*  wow fadeInDown -->
+  <footer class="footer">
     <div class=" container">
-      <div class="footer_header pt-5 pb-4">
+      <div class="footer_header pb-4">
         <div class="row flex-nowrap align-items-center">
           <!--===========-->
           <div class="col-lg-auto col-5 mr-lg-4">
             <a href="./productia.html" class="grey_button">в каталог</a>
           </div>
-          <!--/col-->
-          <!--===========-->
+          <!--* ===========-->
           <div class="col-lg-auto col-7">
             <div class="footer_search">
-              <form action="#">
-                <input type="text" placeholder="поиск">
+              <form action="#" id="searchForm3" action="#" method="get">
+                <input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
+                  autocomplete="off">
                 <button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
               </form>
             </div>
           </div>
-          <!--/col-->
-          <!--===========-->
+          <!--* ===========-->
         </div>
-        <!--/row-->
-      </div><!-- /footer_header -->
-      <div class="footer_menu pb-5">
-        <!-- =============footer_menu_desk==================== -->
+      </div>
+      <div class="footer_menu">
+        <!--* =============footer_menu_desk==================== -->
         <div class="d-none d-lg-block">
           <ul class="footer_menu_desk">
             <li>
@@ -681,8 +668,7 @@
                     <li><a href="#">Теодолиты</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
+                <!--* ===========-->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Пирометры и тепловизоры</a></li>
@@ -692,8 +678,7 @@
                     <li><a href="#">Аксессуары</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
+                <!--* ===========-->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Штативы</a></li>
@@ -702,15 +687,13 @@
                     <li><a href="#">Мотобуры</a></li>
                   </ul>
                 </div>
-                <!--/col-->
-                <!--===========-->
+                <!--* ===========-->
               </div>
-              <!--/row-->
             </li>
           </ul>
-        </div><!-- /footer_menu_desk -->
-        <!-- ===============/footer_menu_desk================== -->
-        <!-- =================footer_menu_mob================ -->
+        </div>
+        <!--* ===============/footer_menu_desk================== -->
+        <!--* =================footer_menu_mob================ -->
         <div class="d-block d-lg-none">
           <ul class="footer_menu_mob">
             <li>
@@ -727,68 +710,50 @@
             </li>
           </ul>
           <div class="footer_menu_mob_submenu">
-            <div class="row flex-nowrap pt-3">
-              <!--===========-->
-              <div class="col-4">
-                <ul class="fmb_list">
-                  <li><a href="#">Лазерные дальномеры</a></li>
-                  <li><a href="#">Лазерные уровни</a></li>
-                  <li><a href="#">Ротационные нивелиры</a></li>
-                  <li><a href="#">Оптические нивелиры</a></li>
-                  <li><a href="#">Теодолиты</a></li>
-                </ul>
-              </div>
-              <!--/col-->
-              <!--===========-->
-              <div class="col-4">
-                <ul class="fmb_list">
-                  <li><a href="#">Пирометры и тепловизоры</a></li>
-                  <li><a href="#">Детекторы</a></li>
-                  <li><a href="#">Угломеры и уровни</a></li>
-                  <li><a href="#">Рулетки</a></li>
-                  <li><a href="#">Аксессуары</a></li>
-                </ul>
-              </div>
-              <!--/col-->
-              <!--===========-->
-              <div class="col-4">
-                <ul class="fmb_list mr-0">
-                  <li><a href="#">Штативы</a></li>
-                  <li><a href="#">Рейки</a></li>
-                  <li><a href="#">Измерительные колеса</a></li>
-                  <li><a href="#">Мотобуры</a></li>
-                </ul>
-              </div>
-              <!--/col-->
-              <!--===========-->
+            <div class="footer_menu_mob_list flex-nowrap pt-3">
+              <ul class="fmb_list">
+                <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
+                <li><a href="#">Лазерные уровни</a></li>
+                <li><a href="#">Ротационные нивелиры</a></li>
+                <li><a href="#">Оптические нивелиры</a></li>
+                <li><a href="#">Теодолиты</a></li>
+
+                <li><a href="#">Пирометры и&nbsp;тепловизоры</a></li>
+                <li><a href="#">Детекторы</a></li>
+                <li><a href="#">Угломеры и&nbsp;уровни</a></li>
+                <li><a href="#">Рулетки</a></li>
+                <li><a href="#">Аксессуары</a></li>
+
+                <li><a href="#">Штативы</a></li>
+                <li><a href="#">Рейки</a></li>
+                <li><a href="#">Измерительные колеса</a></li>
+                <li><a href="#">Мотобуры</a></li>
+              </ul>
+              <!--* ===========-->
             </div>
-            <!--/row-->
-          </div><!-- /footer_menu_mob_submenu -->
-        </div><!-- /d-block d-lg-none -->
+          </div>
+        </div>
         <div class="footer_contact">
           <div class="form-row flex-nowrap lh1 align-items-end mb-3">
-            <!--===========-->
+            <!--* ===========-->
             <div class="col-auto">
               <a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
             </div>
-            <!--/col-->
-            <!--===========-->
+            <!--* ===========-->
             <div class="col-auto">
               <span class="fw300 font14">Единая горячая линия</span>
             </div>
-            <!--/col-->
-            <!--===========-->
+            <!--* ===========-->
           </div>
           <!--/row-->
           <div class="grafic_raboty light_grey_color font12">
             09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
             Суббота, воскресенье - выходной. Звонок по России бесплатный
           </div>
-        </div><!-- /footer_contact -->
-        <!-- ============================== -->
-      </div><!-- /footer_menu -->
-      <!-- /footer_footer -->
-    </div><!-- /container -->
+        </div>
+        <!--*  ============================== -->
+      </div>
+    </div>
     <div class="footer_footer">
       <div class="container">
         <div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>
