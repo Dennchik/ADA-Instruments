@@ -1,172 +1,7 @@
 @charset "UTF-8";
-/* stylelint-disable at-rule-descriptor-value-no-unknown */
-.main-slide {
-  position: relative;
-}
-.main-slide__fon {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.cat_mp_slider_wrapper .slick-dots {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.ms-capton {
-  position: relative;
-  z-index: 2;
-  height: 100% !important;
-}
-.ms-capton__row {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-right: -15px;
-  margin-left: -15px;
-  height: 100% !important;
-}
-.ms-capton__column {
-  -ms-flex-preferred-size: 0;
-      flex-basis: 0;
-  -ms-flex-positive: 1;
-  -webkit-box-flex: 1;
-          flex-grow: 1;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.ms-capton__content {
-  max-width: 100%;
-  -webkit-transform: translateY(30%);
-          transform: translateY(30%);
-}
-@media (width <= 768px) {
-  .ms-capton__content {
-    -webkit-transform: translateY(45%);
-            transform: translateY(45%);
-  }
-}
-@media screen and (width <= 490px) {
-  .ms-capton__content {
-    -webkit-transform: translateY(65%);
-            transform: translateY(65%);
-  }
-}
-.ms-capton__title {
-  margin-bottom: 3rem;
-}
-@media (width <= 768px) {
-  .ms-capton__title {
-    margin-bottom: 1.6rem;
-  }
-}
-
-@media (width <= 768px) {
-  .ms-footer {
-    margin-bottom: 1.6rem;
-  }
-}
-.ms-footer__con-left {
-  display: grid;
-  grid-template-columns: 295px 1fr;
-  gap: 40px;
-}
-.ms-footer__con-left .ms-footer__col {
-  justify-self: start;
-}
-@media screen and (width <= 1024px) {
-  .ms-footer__con-left .ms-footer__col:nth-child(1) {
-    grid-row: 2/3;
-  }
-  .ms-footer__con-left .ms-footer__col:nth-child(2) {
-    grid-row: 1/2;
-  }
-}
-@media screen and (width <= 1024px) {
-  .ms-footer__con-left {
-    grid-template-columns: 1fr;
-  }
-}
-@media screen and (width <= 490px) {
-  .ms-footer__con-left {
-    grid-template-columns: auto;
-    gap: 20px;
-  }
-}
-.ms-footer__con-right {
-  display: grid;
-  grid-template-columns: 1fr 295px;
-  gap: 40px;
-}
-.ms-footer__con-right .ms-footer__col {
-  justify-self: end;
-}
-@media screen and (width <= 1024px) {
-  .ms-footer__con-right {
-    grid-template-columns: 1fr;
-  }
-}
-@media screen and (width <= 490px) {
-  .ms-footer__con-right {
-    grid-template-columns: auto;
-    gap: 20px;
-  }
-}
-.ms-footer__button {
-  width: 295px;
-  height: 54px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-@media screen and (width <= 490px) {
-  .ms-footer__button {
-    width: 230px;
-    height: 45px !important;
-  }
-}
-.ms-footer__text {
-  max-width: 400px;
-  font-size: 14px;
-  text-shadow: 1px 1px 2px #000;
-}
-@media screen and (width <= 1024px) {
-  .ms-footer__text {
-    max-width: 390px;
-  }
-}
-@media screen and (width <= 490px) {
-  .ms-footer__text {
-    max-width: 230px;
-    font-size: 12px;
-  }
-}
-
 .montserrat {
   font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
+  /*font-optical-sizing: auto;*/
   font-style: normal;
 }
 
@@ -1079,13 +914,12 @@ header.smaller {
 
 /*==================*/
 .ms_capton {
-  -webkit-transform: translateY(30%);
-          transform: translateY(30%);
+  max-width: 500px;
 }
 
 .ms_footer_descr {
-  font-size: 14px;
-  text-shadow: 1px 1px 1px #000;
+  max-width: 300px;
+  font-size: 12px;
 }
 
 .active > a span:after {
@@ -1389,21 +1223,11 @@ header .container-fluid {
 }
 
 .catalog_mp_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   height: 250px;
-}
-
-.catalog_mp_box {
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-bottom: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
 }
 
 .catalog_mp_box:hover,
@@ -1451,6 +1275,16 @@ header .container-fluid {
 
 .catalog_mp_list > li {
   width: 50%;
+}
+
+.catalog_mp_box {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .h680 {

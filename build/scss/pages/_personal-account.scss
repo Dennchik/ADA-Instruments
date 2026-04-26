@@ -134,12 +134,26 @@
       }
     }
   }
+
+  // .acccount-section__buttons
+  &__buttons {
+    padding: 0 16px;
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
   // .acccount-section__link-button
   &__link-button {
-    position: absolute;
+    position: relative;
     z-index: 2;
+    width: 31px;
     top: 0;
-    left: 16px;
+    left: 0;
     transition:
       scale 3.9s,
       transform 0.3s ease 0s;
@@ -147,44 +161,41 @@
     &.active {
       transform: scale(0.87) translateX(170px);
     }
-
-    .icofont-listing-box {
-      &::before {
-        color: #ff5656;
-        font-size: 28px;
-        font-weight: 500;
-        display: block;
-        transition: all 0.4s ease 0s;
-      }
-    }
   }
+
   // .acccount-section__open-button
   &__open-button {
     display: none;
+    position: relative;
+
     transition:
       scale 3.9s,
       transform 0.3s ease 0s;
 
     &.active {
-      transform: scale(0.87) translateX(-200px);
+      transform: translateX(-270px);
+      .icofont-gear-alt {
+        &::before {
+          opacity: 0;
+        }
+      }
     }
 
+    .icofont-gear-alt {
+      &::before {
+        transition: all 1.4s ease;
+        color: #a5a5a5;
+        font-size: 29px;
+        font-weight: 500;
+        display: block;
+      }
+    }
     @include screen-992 {
-      position: absolute;
+      position: relative;
       z-index: 1;
       top: 0;
       right: 0;
       display: block;
-
-      .icon {
-        &::before {
-          color: #ff5656;
-          font-size: 30px;
-          font-weight: 500;
-          display: block;
-          transition: all 0.4s ease 0s;
-        }
-      }
     }
   }
 }
@@ -293,10 +304,10 @@
   }
 }
 
-//* ---------------------------- form-user -------------------------------------
-
+//* -------------------------- [ FORM USER ] -----------------------------------
 .form-user {
   padding: 0 70px;
+  padding-bottom: 0 !important;
 
   // .form-user__title
   &__title {
@@ -362,7 +373,7 @@
     align-self: end;
   }
 }
-//* ------------------------- radio-group --------------------------------------
+//* ------------------------- [ Radio-Group ] ----------------------------------
 .radio-group {
   display: flex;
   width: 100%;
@@ -437,10 +448,8 @@
 .radio-group .radio-group__input:checked + .radio-group__label::before {
   transform: scale(1);
 }
+//* ----------------------------------------------------------------------------
 
-.form-user {
-  padding-bottom: 0 !important;
-}
 //* ------------------ Small & Medium Devices, Wide Screens --------------------
 @include screen-1376 {
   .productia_wrapp {
@@ -576,21 +585,4 @@
   .profile__body {
     height: 100%;
   }
-  //   .form-user__label {
-  //     font-size: 14px;
-  //   }
-  //   .form-user__input {
-  //     font-size: 12px;
-  //   }
-
-  //   .radio-group__label {
-  //     font-size: 12px;
-  //   }
-
-  //   .side-menu__link {
-  //     font-size: 12px;
-  //   }
-  //   .profile__item {
-  //     font-size: 12px;
-  //   }
 }

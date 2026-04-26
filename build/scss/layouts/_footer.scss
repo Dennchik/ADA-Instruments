@@ -224,3 +224,20 @@ ul.footer_menu_mob > li {
   padding-bottom: 5px;
   display: block;
 }
+.copyright {
+  // .copyright__text
+  &__text {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    text-align: right;
+    margin-right: 55px;
+
+    span {
+      display: block;
+      @include screen-490 {
+        max-width: 150px;
+      }
+    }
+  }
+}

@@ -78,6 +78,21 @@ button:active {
 .custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: none !important;
 }
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: ' ';
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.align_center {
+  display: block;
+  text-align: center;
+}
+//* ----------------------------------------------------------------------------
 .red {
   outline: 1px solid red;
 }
@@ -107,7 +122,7 @@ button:active {
 }
 .montserrat {
   font-family: 'Montserrat', sans-serif;
-  /*font-optical-sizing: auto;*/
+  font-optical-sizing: auto;
   font-style: normal;
 }
 

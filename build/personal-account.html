@@ -38,25 +38,7 @@
 
 <body>
 	<!--* ================ * Preloader ==================== -->
-	<div class="preloader">
-		<div>
-			<div>
-				<div>
-					<div>
-						<div>
-							<div>
-								<div>
-									<div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!--* ================ * mobile_menu ==================== -->
 	<div class="mobile_menu_wrapp">
 		<div class="menu_close"><i class="icofont-close"></i></div>
@@ -95,7 +77,7 @@
 	<div id="main">
 		<header>
 			<div class="container h-100">
-				<!-- ==================================================== -->
+				<!--* ==================================================== -->
 				<div class="d-lg-none d-block">
 					<button class="menu_button menu_show">
 						<span class='toggle'><i></i> <i></i> <i></i></span>
@@ -112,17 +94,17 @@
 						</div>
 					</div>
 				</div>
-				<!-- ==================================================== -->
+				<!-- * ------------------- [ TOP PANEL] ------------------------ -->
 				<div class="top_panel h-100">
 					<div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
 						<div class="col-auto">
 							<div class="left_TP">
 								<div class="row align-items-center">
-									<!-- =================== -->
+									<!--* =================== -->
 									<div class="col-auto">
 										<a href="./index.html" class="logo"></a>
 									</div>
-									<!-- =================== -->
+									<!-- *=================== -->
 									<div class="col-auto d-none d-lg-block">
 										<ul class="top_menu ml-lg-3">
 											<li class="has_child">
@@ -151,15 +133,15 @@
 											<li><a href="./contact.html"><span>Контакты</span></a></li>
 										</ul>
 									</div>
-									<!-- =================== -->
+									<!--* =================== -->
 								</div>
 							</div>
 						</div>
-						<!-- ================== -->
+						<!--* ================== -->
 						<div class="col-auto">
 							<div class="right_TP">
 								<div class="row  align-items-center  justify-content-end">
-									<!-- =================== -->
+									<!-- *=================== -->
 									<div class="col-auto d-none d-lg-block">
 										<form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
 											<div class="search_wrap">
@@ -169,7 +151,7 @@
 											</div>
 										</form>
 									</div>
-									<!-- =================== -->
+									<!--* =================== -->
 									<div class="col-auto">
 										<div class="col_icons">
 											<a href="./cart.html" class="col_cart icon_col cart-user">
@@ -200,9 +182,10 @@
 						</div>
 					</div>
 				</div>
+				<!-- * -->
 			</div>
 		</header>
-		<!--** ======================= breadcrumb ========================= -->
+		<!-- * ---------------------- [ Breadcrumb ] ------------------------ -->
 		<div class="breadcrumb_wrapper mb-2">
 			<div class="container">
 				<ol class="breadcrumb">
@@ -213,14 +196,26 @@
 				</ol>
 			</div>
 		</div>
-		<!--* ======================= /breadcrumb========================== -->
-		<!--* ==================== acccount-section ======================= -->
+		<!-- * -->
+		<!-- * ------------------- [ acccount-section ] ------------------------ -->
 		<section class="acccount-section container wow fadeInDown">
-			<div class="acccount-section__link-button link-button">
-				<i class="icofont-listing-box icon"></i>
-			</div>
-			<div class="acccount-section__body">
+			<!-- * [ BUTTONS ] -->
+			<div class="acccount-section__buttons">
 
+				<div class="acccount-section__link-button link-button">
+					<div class="vertical-dots" id="verticalDots">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<!-- * -->
+				<div class="acccount-section__open-button">
+					<i class="icofont-gear-alt icon"></i>
+				</div>
+			</div>
+			<!-- * [ / BUTTONS ] -->
+			<div class="acccount-section__body">
 				<!-- * Column-1 -->
 				<div class="acccount-section__column aside-menu-l">
 					<div class="side-menu">
@@ -230,7 +225,7 @@
 						<div class="side-menu__close-menu">
 							<i class="icofont-close-squared icon"></i>
 						</div>
-
+						<!-- * [ MENU -LEFT ] -->
 						<ul class="side-menu__list catalog_menu_list">
 							<li><a class="side-menu__link active-link" href="./personal-account.html">Личный кабинет</a></li>
 							<li><a class="side-menu__link" href="../catalog/theodolites/">Мои заказы</a></li>
@@ -246,16 +241,15 @@
 
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
-					<div class="acccount-section__open-button">
-						<!-- <i class="icofont-listing-box icon"></i> -->
-
+					<!-- * -->
+					<!-- <div class="acccount-section__open-button">
 						<div class="vertical-dots" id="verticalDots">
 							<span></span>
 							<span></span>
 							<span></span>
 						</div>
-					</div>
-
+					</div> -->
+					<!-- * -->
 					<div class="acccount-content">
 						<form class="form-user" id="orderForm">
 							<h2 class="form-user__title font_clamp_60 fw700">Личный кабинет</h2>
@@ -271,17 +265,17 @@
 									</div>
 
 
-									<!-- Дата рождения -->
+									<!--* Дата рождения -->
 									<div class="form-user__group">
 										<label class="form-user__label text-right" for="birthdate">Дата рождения</label>
 										<input class="form-user__input text-right" type="date" id="birthdate" name="birthdate">
 									</div>
 								</div>
-
 								<!--* ------------------ Line ------------------------- -->
+								<!-- * [ FORM ] -->
 								<div class="form-user__line">
 
-									<!-- Пол (радиокнопки) -->
+									<!--* Пол (радиокнопки) -->
 									<div class="form-user__group">
 										<span class="form-user__label">Пол</span>
 										<div class="radio-group">
@@ -296,14 +290,14 @@
 										</div>
 									</div>
 
-									<!-- Город -->
+									<!--* Город -->
 									<div class="form-user__group">
 										<label class="form-user__label text-right" for="city">Город *</label>
 										<input class="form-user__input text-right" type="text" id="city" name="city" placeholder="Москва"
 											required>
 									</div>
 								</div>
-
+								<!-- * [ / FORM ] -->
 								<!--* ------------------ Line ------------------------- -->
 								<div class="form-user__line">
 									<!-- Email -->

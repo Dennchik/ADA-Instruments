@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
       asideMenuRight?.classList.toggle('open');
       openButtonRight?.classList.toggle('active');
       if (window.innerWidth <= 992) {
-        verticalDotsRight?.classList.toggle('horizontal');
+        // verticalDotsRight?.classList.toggle('horizontal');
       }
     });
   }
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
       asideMenuRight?.classList.toggle('open');
       openButtonRight?.classList.toggle('active');
       if (window.innerWidth <= 992) {
-        verticalDotsRight?.classList.toggle('horizontal');
+        // verticalDotsRight?.classList.toggle('horizontal');
       }
     });
   }
@@ -411,30 +411,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //todo ----------------------[ Preloader ]--------------------------------------
 //todo ↓↓↓ (Для Виктора)
-function loaded(item) {
-  let done = false;
+// function loaded(item) {
+//   let done = false;
 
-  //* Блокируем скролл сразу
+//   //* Блокируем скролл сразу
 
-  document.body.classList.add('no-scroll');
-  function removePreloader() {
-    if (done) return;
-    done = true;
-    document.querySelector(item).classList.add('preloader-remove');
-    document.documentElement.classList.add('loaded');
-    //* Разблокируем скролл после загрузки
-    document.body.classList.remove('no-scroll');
-  }
+//   // document.body.classList.add('no-scroll');
+//   function removePreloader() {
+//     if (done) return;
+//     done = true;
+//     document.querySelector(item).classList.add('preloader-remove');
+//     document.documentElement.classList.add('loaded');
+//     //* Разблокируем скролл после загрузки
+//     // document.body.classList.remove('no-scroll');
+//   }
 
-  if (document.readyState === 'complete') {
-    setTimeout(removePreloader, 500);
-  } else {
-    window.addEventListener('load', function () {
-      setTimeout(removePreloader, 500);
-    });
-  }
-}
-loaded('.preloader');
+//   if (document.readyState === 'complete') {
+//     setTimeout(removePreloader, 50);
+//   } else {
+//     window.addEventListener('load', function () {
+//       setTimeout(removePreloader, 50);
+//     });
+//   }
+// }
+// loaded('.preloader');
 //* -------------------- [ Плавны скролл стр.] ---------------------------------
 const lenis = new Lenis();
 
