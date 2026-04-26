@@ -14,3 +14,47 @@
     margin-bottom: 45px;
   }
 }
+.button_groupe {
+  .send-button__button {
+    // width: 190px !important;
+    min-width: 200px;
+
+    @include screen-768 {
+      height: 36px !important;
+    }
+
+    @include screen-375 {
+      min-width: 160px;
+    }
+  }
+}
+.about-text {
+  margin-bottom: 3rem;
+
+  @include screen-375 {
+    margin-bottom: 2rem;
+  }
+
+  // .about-text__info
+  &__info {
+    @include screen-992 {
+      max-width: 440px;
+      font-size: 14px;
+    }
+
+    @include screen-690 {
+      max-width: 290px;
+      // text-align: justify;
+    }
+
+    @include screen-490 {
+      font-size: 13px;
+      // max-width: 250px;
+    }
+
+    @include screen-425 {
+      max-width: 220px;
+      font-size: 12px;
+    }
+  }
+}

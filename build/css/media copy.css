@@ -1,7 +1,7 @@
 /**==========  Desktop First Method  ==========*/
 /* *------------------------- Desktop First Method -------------------------* */
 /* *---------------------- Large Devices, Wide Screens ---------------------* */
-@media only screen and (max-width: 1700px) {
+@media only screen and (width < 1700px) {
   .product_slider_wrapper {
     padding-left: 50px;
     padding-right: 50px;
@@ -14,9 +14,12 @@
   .product_slider_wrapper .prev {
     left: -50px;
   }
+
+  .main_slider_desk_item {
+    height: 915px;
+  }
 }
 
-/* *---------------------- Large Devices, Wide Screens ---------------------* */
 @media only screen and (width < 1376px) {
   footer .has_child ul a {
     font-size: 13px;
@@ -41,13 +44,8 @@
     width: 680px;
   }
 }
-@media only screen and (width < 1200px) {
-  .lh1 {
-    flex-direction: column;
-    align-items: start !important;
-  }
-}
-/* *---------------------- Large Devices, Wide Screens ---------------------* */
+
+/* *--------------------- Large Devices, Wide Screens ----------------------* */
 @media only screen and (width < 1376px) {
   .items_greed_list {
     grid-template-columns: repeat(2, 1fr);
@@ -174,7 +172,12 @@
     font-size: 9px;
   }
 }
+
 @media only screen and (width < 1200px) {
+  .lh1 {
+    flex-direction: column;
+    align-items: start !important;
+  }
   .catalog_list {
     gap: 45px;
   }
@@ -198,7 +201,6 @@
   }
 
   .product-cart__image {
-    /* grid-row: 1 / 3; */
     grid-column: 2 / 3;
     align-self: center;
     justify-self: center;
@@ -211,6 +213,10 @@
   }
 }
 
+@media only screen and (width < 992px) {
+}
+
+/* *---------------------- Medium Devices, Desktops ------------------------* */
 @media only screen and (width < 992px) {
   .sub_menu,
   .sub_menu2 {
@@ -243,12 +249,7 @@
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
   }
-}
-/* *---------------------- Medium Devices, Desktops ------------------------* */
-@media only screen and (width < 992px) {
-  .items_greed_list li {
-    padding: 20px;
-  }
+
   .popup {
     top: 0;
     margin-top: 20px;
@@ -418,6 +419,12 @@
 
   .header_transparent header.smaller {
     background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .au_txt {
+    max-width: 280px;
+    font-size: 14px;
+    text-align: justify;
   }
 
   .logo_150 {
@@ -668,14 +675,6 @@
 }
 
 @media only screen and (width < 860px) {
-  .items_greed {
-    width: 100%;
-  }
-  .items_greed_list {
-    grid-template-columns: repeat(2, auto);
-    justify-content: space-between;
-    width: 100%;
-  }
   .cart-section__content {
     gap: 1%;
   }
@@ -686,6 +685,10 @@
   }
   .product-cart__info {
     justify-self: end;
+  }
+
+  .items_greed_list li {
+    padding: 20px;
   }
 
   .cart-section__col:nth-child(1) {
@@ -721,11 +724,10 @@
     grid-column: 1 / 2;
   }
 }
-/* *----------------------- Small Devices, Tablets  ------------------------* */
+
+/* *----------------------- Small Devices, Tablets -------------------------* */
+
 @media only screen and (width < 768px) {
-  .font_clamp_60 {
-    margin-bottom: 20px;
-  }
   h1 {
     font-size: 30px;
   }
@@ -737,11 +739,18 @@
   h3 {
     font-size: 18px;
   }
+  .items_greed_list {
+    gap: 50px;
+  }
+  .font_clamp_60 {
+    margin-bottom: 20px;
+  }
 
   .red_button,
-  .thin_white_buttonб,
-  .dark_button {
+  .thin_white_button {
+    padding: 0px 30px;
     height: 36px;
+    line-height: 34px;
   }
 
   .main_slider_wrapper .font_66 {
@@ -819,6 +828,10 @@
     padding-left: 15px;
   }
 
+  .items_greed_list {
+    grid-template-columns: repeat(2, auto);
+  }
+
   .tovar_slider_nav_item_box .img_cont {
     height: 120px;
   }
@@ -835,6 +848,9 @@
     &:nth-child(1) {
       z-index: 99;
     }
+  }
+  .mb-5 {
+    margin-bottom: 0 !important;
   }
 
   .narrow_mtitle {
@@ -898,7 +914,7 @@
     width: 96%;
   }
 }
-/* *-------------------- Extra Small Devices, Phones  ----------------------* */
+/* *------------------- Extra Small Devices, Phones ------------------------* */
 @media only screen and (width < 576px) {
   .product_slider_wrapper .prev,
   .product_slider_wrapper .next {
@@ -929,7 +945,7 @@
     margin-right: 0px;
   }
 
-  /* .thin_white_button {
+  .thin_white_button {
     font-size: 8px;
     padding: 0px 10px;
     height: 34px;
@@ -938,7 +954,7 @@
     min-width: 0px;
     display: block;
     width: 120px;
-  } */
+  }
 
   .support_section_body_toleft_header .thin_grey_button {
     width: 100%;
@@ -1073,7 +1089,7 @@
     max-width: 250px;
   }
   .items_greed_list {
-    gap: 10px;
+    gap: 20px;
   }
   .cart-section__title {
     gap: 20px;
@@ -1090,15 +1106,13 @@
     grid-row: 2/ 3;
     justify-self: start;
   }
-  .items_greed_list li {
-    padding: 10px;
-  }
 }
 
 @media only screen and (width < 490px) {
   .product-cart__item {
     grid-template-columns: 22px 1fr;
   }
+
   .product-cart__info {
     grid-column: 2 / 3;
     justify-self: center;
@@ -1113,17 +1127,10 @@
   .cart-section__button {
     font-size: 12px;
   }
-  .items_greed_list {
-    /* grid-template-columns: 1fr; */
-  }
 }
 
-/* *-------------------- Extra Small Devices, Phones  ----------------------* */
+/* *------------------- Extra Small Devices, Phones ------------------------* */
 @media only screen and (width < 480px) {
-  .items_greed_box .img_cont {
-    height: 80px;
-    background-size: auto 100%;
-  }
   .popup {
     padding-left: 15px;
     padding-right: 15px;
@@ -1137,10 +1144,7 @@
   .pl-ptr-30-40 {
     padding: 20px 10px;
   }
-  .items_greed_box .img_cont {
-    height: 100px;
-    background-size: auto 100%;
-  }
+
   .mob-pl {
     padding-left: 0;
   }
@@ -1148,9 +1152,18 @@
     position: relative;
   }
 
+  .au_bootom_txt .logo_150 {
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
   .items_greed_list li {
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  .au_bootom_txt > .row > div {
+    position: static;
   }
 
   .full_heigh {
@@ -1173,6 +1186,11 @@
   .nav-tabs .nav-link {
     font-size: 9px;
     margin-right: 0px;
+  }
+
+  .items_greed_box .img_cont {
+    height: 130px;
+    background-size: auto 100%;
   }
 
   .services_block_list > li {
@@ -1200,31 +1218,6 @@
     height: 260px;
     width: auto;
   }
-  .items_greed_box {
-    margin: 0 10px;
-  }
-  .items_greed_list > li .red_button {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-@media only screen and (width < 460px) {
-  .au_bootom_txt > .row > div {
-    position: static;
-  }
-  .au_bootom_txt .logo_150 {
-    position: absolute;
-    right: 0;
-    top: 20px;
-  }
-}
-@media only screen and (width < 420px) {
-  .items_greed_wrapper .send-button__button {
-    width: 130px !important;
-  }
-  .items_greed_wrapper .product-cart__quantity {
-    width: 130px !important;
-  }
 }
 
 /* *---------------------- Custom, iPhone Retina ---------------------------* */
@@ -1232,7 +1225,9 @@
   .cart-section__title {
     gap: 1px;
   }
-
+  .items_greed_box {
+    margin: 0 10px;
+  }
   .items_greed_list > li .red_button {
     margin: 0 10px;
   }
@@ -1270,6 +1265,11 @@
     display: block;
   }
 
+  .au_txt {
+    max-width: 220px;
+    font-size: 12px;
+  }
+
   .button_groupe .thin_white_button,
   .button_groupe .red_button {
     width: 170px;
@@ -1285,6 +1285,11 @@
 
   .half_heigh {
     height: 118px;
+  }
+
+  .items_greed_box .img_cont {
+    height: 100px;
+    background-size: auto 100%;
   }
 
   .items_greed_box_title {
@@ -1350,7 +1355,7 @@
   }
 }
 
-/* *---------------------- Custom, iPhone Retina ---------------------------* */
+/* Custom, iPhone Retina */
 @media only screen and (width < 350px) {
   .product-cart__item {
     gap: 0;
@@ -1473,40 +1478,15 @@
     font-size: 16px;
   }
 }
-
-/* *---------------------- Custom, iPhone Retina ---------------------------* */
-@media only screen and (width < 320px) {
+/* *----------------------  Mobile First Method  ---------------------------* */
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
   .product-cart-info {
     padding: 30px 1px;
   }
 }
 
-/* !----------------------  Mobile First Method  ---------------------------! */
-/* *-------------------- Extra Small Devices, Phones  ----------------------* */
-@media only screen and (width >= 320px) {
-}
-/* *---------------------- Custom, iPhone Retina ---------------------------* */
-@media only screen and (width >= 400px) {
-  .show_more_contacts_list_box {
-    display: none !important;
-  }
-
-  .au_bootom_txt .logo_150 {
-    margin-left: 15px;
-  }
-}
-
-/* *---------------------- Small Devices, Tablets --------------------------* */
-@media only screen and (width >= 576px) {
-  .open_more_videos {
-    display: none !important;
-  }
-
-  .modal-dialog {
-    max-width: 440px;
-  }
-}
-
+/* *----------------------  Mobile First Method  ---------------------------* */
 @media all and (width >= 992px) {
   .home_page .sub_menu {
     background: rgba(0, 0, 0, 0.8);
@@ -1567,8 +1547,32 @@
     pointer-events: auto;
   }
 }
+/* *------------------- Extra Small Devices, Phones ------------------------* */
+@media only screen and (width >= 400px) {
+  .show_more_contacts_list_box {
+    display: none !important;
+  }
 
-/* Medium Devices, Desktops */
+  .au_bootom_txt .logo_150 {
+    margin-left: 15px;
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (width >= 320px) {
+}
+
+/* *-------------------- Small Devices, Tablets ----------------------------* */
+@media only screen and (width >= 576px) {
+  .open_more_videos {
+    display: none !important;
+  }
+
+  .modal-dialog {
+    max-width: 440px;
+  }
+}
+
+/* *------------------- Medium Devices, Desktops ---------------------------* */
 @media only screen and (width >= 992px) {
   .mobile_hidden {
     display: block !important;
@@ -1629,7 +1633,6 @@
     display: none;
   }
 }
-
 /* *------------------- Large Devices, Wide Screens ------------------------* */
 @media only screen and (width >= 1200px) {
   .tovar_info_visual_list {
@@ -1638,7 +1641,6 @@
   }
 }
 
-/* *------------------- Large Devices, Wide Screens ------------------------* */
 @media only screen and (width >= 1376px) {
   .container,
   .container-lg,
@@ -1649,10 +1651,4 @@
   }
 }
 
-/* *------------------- Large Devices, Wide Screens ------------------------* */
-@media only screen and (width >= 1700px) {
-  .main_slider_desk_item {
-    height: 915px;
-  }
-}
 /* * ------------------------------------------------------------------------ */

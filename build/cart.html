@@ -412,7 +412,7 @@
 											<!-- Выпадающий список -->
 											<div class="select__drop-down _collapse">
 												<div class="select__d-title">
-													<span></span>
+													<span>Условия доставки</span>
 													<div class="close-button">
 														<i class="icofont-close"></i>
 													</div>
@@ -455,7 +455,7 @@
 												</div>
 
 												<ul class="select__list">
-													<li class="select__list-item _selected" value="">
+													<li class="select__list-item" value="">
 														<input type="date" class="delivery-date-picker" id="deliveryDate">
 														<input type="time" class="delivery-time-picker" id="deliveryTime" step="60">
 													</li>
@@ -595,7 +595,11 @@
 						</div>
 						<div class="section_form_line">
 							<div class="suport_feedback_form_box">
-								<button class="red_button" type="submit">ОТПРАВИТЬ </button>
+								<div class="send-button">
+									<button class="send-button__button red_button" type="submit">
+										<span>отправить</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</form>

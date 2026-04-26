@@ -411,12 +411,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //todo ----------------------[ Preloader ]--------------------------------------
 //todo ↓↓↓ (Для Виктора)
+
 function loaded(item) {
+  //* Блокируем скролл сразу
+  // document.body.classList.add('no-scroll');
+
   let done = false;
 
-  //* Блокируем скролл сразу
-
-  // document.body.classList.add('no-scroll');
   function removePreloader() {
     if (done) return;
     done = true;
@@ -424,17 +425,26 @@ function loaded(item) {
     document.documentElement.classList.add('loaded');
     //* Разблокируем скролл после загрузки
     // document.body.classList.remove('no-scroll');
+    document.body.style.scrollbarWidth = 'thin';
   }
 
   if (document.readyState === 'complete') {
-    setTimeout(removePreloader, 50);
+    setTimeout(removePreloader, 150);
   } else {
     window.addEventListener('load', function () {
-      setTimeout(removePreloader, 50);
+      setTimeout(removePreloader, 150);
     });
   }
 }
-loaded('.preloader');
+
+if (document.querySelector('.preloader')) {
+  loaded('.preloader');
+}
+//todo -------------------- [ Открытие модалок ]--------------------------------
+//todo ↓↓↓ (Для Виктора)
+document.addEventListener('DOMContentLoaded', () => {
+  const element = document.querySelectorAll('.className');
+});
 //* -------------------- [ Плавны скролл стр.] ---------------------------------
 const lenis = new Lenis();
 

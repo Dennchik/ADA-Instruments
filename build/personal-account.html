@@ -611,10 +611,57 @@
 			</div>
 		</div>
 	</footer>
+
 	<!-- * --- / End --- -->
 	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 
+	<!-- * MODAL Login -->
+	<div class="modal-login" id="modal">
+		<div class="modal-login__body">
+			<div class="modal-login__title">
+				<div class="modal-login__logo">
+					<div class="logo"></div>
+				</div>
+				<span>Вход в личный кабинет</span>
+				<div class="modal-login__close-button" id="close-modal">
+					<i class="icofont-close icon"></i>
+				</div>
+			</div>
+			<div class="modal-login__form">
+				<form action="#" method="get" class="form-login">
+					<!-- * -->
 
+					<fieldset class="form-login__form-group">
+						<label for="user-name" class="form-login__label">Полное наименование / ФИО</label>
+						<input type="text" id="user-name" name="user-name" class="form-login__input" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="user-phone" class="form-login__label fw700">Телефон</label>
+						<input type="tel" id="user-phone" name="user-phone" class="form-login__input" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="user-inn" class="form-login__label fw700">ИНН</label>
+						<input type="text" id="user-inn" name="user-inn" class="form-login__input" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="kpp" class="form-login__label fw700">КПП</label>
+						<input id="kpp" type="text" name="kpp" class="form-login__input" required>
+					</fieldset>
+					<div class="form-login__sibmit-buttons">
+						<div class="send-button">
+							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
+							<button type="submit" class="send-button__button red_button"><span>сохранить</span></button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+	</div>
 
 </body>
 

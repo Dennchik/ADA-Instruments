@@ -1,5 +1,5 @@
 //* ----------------------------------------------------------------------------
-
+@use '../core/mixins' as *;
 .cart-section {
   // .cart-section__content
   &__content {
@@ -233,14 +233,9 @@
 
   // .product-cart__quantity
   &__quantity {
+    max-width: 190px;
     border: 1px solid var(--red);
     padding: 0 28px;
-
-    &.red_button {
-      background-color: transparent !important;
-      color: var(--red);
-      font-weight: 500;
-    }
 
     &.red_button {
       background-color: transparent !important;
@@ -361,7 +356,15 @@
   }
 }
 //* ----------------------------- [ SELECT ] -----------------------------------
+.select-group {
+  // .select-group__dropdown
+  &__dropdown {
+    position: relative;
+    margin: 0 -20px;
+  }
+}
 .select {
+  padding: 0 20px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -402,11 +405,16 @@
 
   // .select__d-title
   &__d-title {
-    padding: 5px 15px;
+    padding: 5px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 13px;
+
+    font-weight: 600;
+    span {
+      color: var(--red);
+    }
   }
 
   &__list {
@@ -418,11 +426,18 @@
     cursor: pointer;
     white-space: nowrap;
     width: 100%;
-
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
     font-size: 14px;
-    padding: 5px 15px;
+    padding: 5px 20px;
     user-select: none;
     transition: background-color 0.5s ease 0s;
+
+    .delivery-time-picker,
+    .delivery-date-picker {
+      color: #000;
+    }
 
     &._selected {
       background-color: rgb(255 0 0 / 18%);
@@ -535,5 +550,21 @@
 .items_greed_wrapper {
   position: relative;
   align-self: start;
+  .send-button__button {
+    width: 190px !important;
+  }
+
+  @include screen-768 {
+    .send-button__button {
+      height: 36px !important;
+      width: 160px !important;
+    }
+    .product-cart__quantity {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      width: 160px;
+    }
+  }
 }
 //* ----------------------------------------------------------------------------

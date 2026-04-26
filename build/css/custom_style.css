@@ -587,7 +587,7 @@ header.smaller {
   line-height: 1;
   white-space: nowrap;
   overflow: hidden;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .fw600 {
@@ -1112,6 +1112,7 @@ header .container-fluid {
 }
 .open_search .icofont-search {
   font-size: 25px;
+  color: #a5a5a5;
 }
 
 .home_page .open_search,

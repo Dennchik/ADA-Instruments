@@ -3,20 +3,54 @@
 .modal-login {
   position: fixed;
   z-index: 13;
-  top: 138px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   pointer-events: none;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+
+  backdrop-filter: blur(8px);
+  width: 100%;
+  // display: none;
+  @include screen-375 {
+    padding: 0 5px;
+  }
 
   // .modal-login__body
   &__body {
+    position: relative;
     padding: 55px;
-    margin: 0 auto;
-    border: 1px solid #000;
+    margin-block: 138px;
+    box-shadow: 0 0 35px #bdbdbd56;
     background-color: white;
-    width: 533px;
-    height: 825px;
+    width: 100%;
+    height: auto;
+    max-width: 533px;
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    @include screen-992 {
+      margin-block: 100px;
+    }
+
+    @include screen-640 {
+      max-width: 473px;
+      padding: 35px;
+    }
+
+    @include screen-490 {
+      padding: 20px;
+    }
+
+    @include screen-375 {
+      padding: 20px 16px;
+    }
   }
 
   // .modal-login__title
@@ -24,23 +58,57 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 45px;
+    gap: 10px;
+
+    @include screen-375 {
+      gap: 15px;
+    }
 
     span {
+      white-space: nowrap;
       font-size: 18px;
       color: #a5a5a5;
+
+      @include screen-992 {
+        font-size: 16px;
+      }
+
+      @include screen-490 {
+        font-size: 14px;
+      }
     }
   }
 
   // .modal-login__logo
   &__logo {
     margin-right: 40px;
+
+    @include screen-992 {
+      margin-right: 10px;
+    }
+
+    @include screen-490 {
+      margin-right: 0;
+    }
+
     .logo {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: 0;
       background-image: url(../img/logo_red.png);
+
+      @include screen-490 {
+        width: 60px;
+        height: 28px;
+      }
     }
   }
 
   // .modal-login__close-button
   &__close-button {
+    cursor: pointer;
     width: 20px;
     height: 20px;
 
@@ -52,15 +120,117 @@
         }
       }
     }
-    cursor: pointer;
+
     .icofont-close {
-      position: absolute;
+      // position: absolute;
+
       &::before {
         transition: all 0.4s ease 0s;
         display: block;
         color: #a5a5a5;
         font-size: 20px;
       }
+    }
+  }
+
+  // .modal-login__form
+
+  &__form {
+    border: 1px solid #00000000;
+  }
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+  // .form-login__form-group
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  // .form-login__label
+  &__label {
+    font-size: 18px;
+    margin-bottom: 0;
+
+    @include screen-992 {
+      font-size: 16px;
+    }
+
+    @include screen-490 {
+      font-size: 14px;
+    }
+  }
+
+  // .form-login__input
+
+  &__input {
+    width: 100%;
+    height: 28px;
+    font-size: 16px;
+    padding: 0 17px;
+    border: 1px solid #a5a5a5;
+    display: flex;
+    align-items: center;
+  }
+
+  // .form-login__sibmit-buttons
+
+  &__sibmit-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 15px;
+  }
+
+  // .form-login__button
+  &__button {
+    width: 190px !important;
+    height: 55px !important;
+    font-weight: 600;
+
+    span {
+      line-height: 100%;
+    }
+
+    @include screen-690 {
+      width: 130px !important;
+      height: 45px;
+    }
+  }
+}
+.send-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  // .send-button__button
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 190px !important;
+    height: 55px;
+    font-weight: 600;
+    // display: flex;
+    // justify-content: space-between;
+
+    span {
+      line-height: 100%;
+    }
+
+    @include screen-690 {
+      width: 130px !important;
+      height: 45px !important;
     }
   }
 }

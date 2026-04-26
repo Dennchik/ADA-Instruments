@@ -152,7 +152,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background-color: hsla(0, 0%, 0%, 1);
+  background-image:
+    radial-gradient(at 13% 16%, hsla(0, 0%, 18%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(0, 0%, 24%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(0, 0%, 28%, 1) 0px, transparent 50%),
+    radial-gradient(at 83% 78%, hsla(0, 0%, 27%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(16, 0%, 40%, 1) 0px, transparent 50%),
+    radial-gradient(at 96% 7%, hsla(0, 0%, 53%, 1) 0px, transparent 50%),
+    radial-gradient(at 22% 44%, hsla(206, 0%, 54%, 1) 0px, transparent 50%);
   transition: all 0.5s;
   opacity: 1;
 }
