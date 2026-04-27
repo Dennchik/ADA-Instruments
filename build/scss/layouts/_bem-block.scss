@@ -615,7 +615,28 @@
   width: 100%;
   margin-top: 63px;
 }
+.open_search {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 70px;
+  top: 33px;
+  margin-top: -13px;
+  color: #a5a5a5;
+  cursor: pointer;
+  line-height: 30px;
+  text-align: center;
 
+  .icofont-search {
+    font-size: 25px;
+    color: #a5a5a5;
+  }
+}
+
+.home_page .open_search,
+.smaller .open_search {
+  color: #fff;
+}
 .open_search {
   top: -43px;
   right: 155px;

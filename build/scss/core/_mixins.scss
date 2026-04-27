@@ -68,7 +68,7 @@
 }
 
 @mixin screen-992 {
-  @media screen and (width <= 992px) {
+  @media screen and (width < 992px) {
     @content;
   }
 }
@@ -114,9 +114,14 @@
     @content;
   }
 }
+@mixin screen-575 {
+  @media (width <= 575px) {
+    @content;
+  }
+}
 
 @mixin screen-490 {
-  @media screen and (width <= 490px) {
+  @media screen and (width < 490px) {
     @content;
   }
 }

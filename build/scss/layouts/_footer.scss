@@ -4,10 +4,25 @@ footer {
   background-color: #fff;
 }
 .footer {
-  padding-top: 75px;
+  // .footer__secttion
+  &__secttion {
+    @include screen-992 {
+      max-width: 720px;
+    }
 
-  @include screen-490 {
-    padding-top: 45px;
+    @include screen-768 {
+      max-width: 540px;
+    }
+  }
+
+  &__menu {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 75px;
+  }
+
+  // .footer__menu-desk
+  &__menu-desk {
   }
 }
 

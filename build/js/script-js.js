@@ -442,14 +442,14 @@ if (document.querySelector('.preloader')) {
 }
 //todo -------------------- [ Открытие модалок ]--------------------------------
 //todo ↓↓↓ (Для Виктора)
-document.addEventListener('DOMContentLoaded', () => {
-  const element = document.querySelectorAll('.className');
-});
-//* -------------------- [ Плавны скролл стр.] ---------------------------------
-const lenis = new Lenis();
+// document.addEventListener('DOMContentLoaded', () => {
+//   const element = document.querySelectorAll('.className');
+// });
+// //* -------------------- [ Плавны скролл стр.] ---------------------------------
+// const lenis = new Lenis();
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
+// requestAnimationFrame(raf);

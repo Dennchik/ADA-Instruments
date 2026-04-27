@@ -22,7 +22,7 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/media.css">
 
-  <script defer type="text/javascript" src="./js/lenis.min.js"></script>
+  <!-- <script defer type="text/javascript" src="./js/lenis.min.js"></script> -->
   <script defer type="text/javascript" src="./js/jquery.min.js"></script>
   <script defer type="text/javascript" src="./js/jquery.scrollTo.js"></script>
   <script defer type="text/javascript" src="./dist/rangeslider/ion.rangeslider.min.js"></script>
@@ -39,9 +39,9 @@
 
 <body class="home_page">
   <!--* ================ * Preloader ==================== -->
-  <div class="preloader">
+  <!-- <div class="preloader">
     <div class="preloader-5"></div>
-  </div>
+  </div> -->
   <!--* ================ * mobile_menu ==================== -->
   <div class="mobile_menu_wrapp">
     <div class="menu_close"><i class="icofont-close"></i></div>
@@ -49,7 +49,11 @@
       <div class="row h-100 no-gutters">
         <div class="col">
           <ul>
-            <li><a href="#" class="open_menu_child"><span>Продукция</span></a>
+            <li>
+              <a href="#" class="open_menu_child">
+                <span>Продукция</span>
+                <i class="icofont-caret-down"></i>
+              </a>
               <ul class="sub_menu">
                 <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
                 <li><a href="./catalog/automatic-levels.html">Оптические нивелиры</a></li>
@@ -468,7 +472,9 @@
                     </span>
                     <!--* ===========-->
                     <span class="col-auto">
-                      <span class="thin_white_button">в каталог </span>
+                      <span class="send-button">
+                        <span class="send-button__button thin_white_button">в каталог </span>
+                      </span>
                     </span>
                     <!--* ===========-->
                   </span>
@@ -483,13 +489,13 @@
       <!--* ================== support_block ===================== -->
       <section class="page__section grey_bg ">
         <div class="container">
-          <div class="support_section">
+          <div class="support-block support_section">
             <div class="support_section_header mb-lg-5 mb-4 lh12">Служба <br>
               поддержки</div>
             <div class="support_section_body">
               <div class="row">
                 <div class="col-xl-7 col-lg-7">
-                  <div class="support_section_body_toleft pr-xl-5">
+                  <div class="support_section_body_toleft">
                     <div class="support_section_body_toleft_header">
                       <div class="row justify-content-between">
                         <div class="col-xl-8 col-sm-7 col-7">
@@ -512,26 +518,28 @@
                           Суббота, воскресенье - выходной. Звонок по России бесплатный</p>
                       </div>
                     </div>
-                    <div class="img_cont row" style="background-image: url(img/shp.png);"></div>
+                    <div class="img_cont row">
+                      <img src="./img/shp.png" alt="picture">
+                    </div>
                   </div>
                 </div>
                 <div class="col-xl-5 col-lg-5">
                   <div class="pl-xl-5 support_section_body_toright pt-5 pt-lg-0">
-                    <div class="mp_feedback">
-                      <div class="mp_feedback_title">
-                        <div class="form-row flex-nowrap align-items-end">
-                          <div class="col-sm-12 col-7">
+                    <div class="mp-feedback mp_feedback">
+                      <div class="mp-feedback__title">
+                        <div class="mp-feedback__row">
+                          <div class="mp-feedback__text">
                             Возникли вопросы?
                             Напишите нам!
                           </div>
-                          <div class="col-5 d-block d-sm-none">
-                            <div class="red_button pl-0 pr-0 w-100" id="open_mp_feedback">
+                          <div class="send-button d-block d-sm-none">
+                            <span class="send-button__button red_button" id="open_mp_feedback">
                               задать вопрос
-                            </div>
+                            </span>
                           </div>
                         </div>
                       </div>
-                      <div class="mp_feedback_body main_feedback_form">
+                      <div class="mp-feedback__body mp_feedback_body main_feedback_form">
                         <form class="feedback_form" id="feedbackForm" action="#" method="post">
                           <input type="text" id="userName" name="user_name" placeholder="Ваше имя" required
                             autocomplete="name">
@@ -571,7 +579,7 @@
   </div>
   <!--*  wow fadeInDown -->
   <footer class="footer">
-    <div class=" container">
+    <div class="footer__secttion container">
       <div class="footer_header pb-4">
         <div class="row flex-nowrap align-items-center">
           <!--===========-->
@@ -591,10 +599,10 @@
           <!--* ===========-->
         </div>
       </div>
-      <div class="footer_menu">
+      <div class="footer__menu footer_menu">
         <!--* =============footer_menu_desk==================== -->
         <div class="d-none d-lg-block">
-          <ul class="footer_menu_desk">
+          <ul class="footer__menu-desk footer_menu_desk">
             <li>
               <a href="#">ПОДДЕРЖКА</a>
             </li>

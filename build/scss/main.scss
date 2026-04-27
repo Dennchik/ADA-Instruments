@@ -5,7 +5,7 @@
 // todo ------------------------- layouts --------------------------------------
 @use 'layouts/bem-block';
 @use 'layouts/footer';
-// @use 'layouts/header';
+@use 'layouts/header';
 // todo -------------------------- Assets --------------------------------------
 @use './assets/side-menu';
 @use './assets/check-box';
@@ -19,6 +19,9 @@
 @use './pages/personal-account';
 @use './pages/contacts';
 @use './pages/product-card';
+@use './pages/home-page';
+@use './pages/user-order';
+
 // todo -------------------------- Style ---------------------------------------
 .select > ._collapse:not(._show) {
   display: none;

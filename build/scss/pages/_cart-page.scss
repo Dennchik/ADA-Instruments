@@ -118,7 +118,7 @@
   &__image {
     img {
       width: 117px;
-      // max-width: 100%;
+      max-width: none;
     }
   }
 
@@ -233,7 +233,6 @@
 
   // .product-cart__quantity
   &__quantity {
-    max-width: 190px;
     border: 1px solid var(--red);
     padding: 0 28px;
 

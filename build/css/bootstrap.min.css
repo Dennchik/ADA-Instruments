@@ -6602,7 +6602,7 @@ button.bg-dark:hover {
 }
 /* (width <= 1920px)  */
 
-@media (width > 992px) {
+@media (width >= 992px) {
 	.d-lg-none {
 		display: none !important;
 	}

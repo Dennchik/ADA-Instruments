@@ -1,0 +1,72 @@
+@use '../core/mixins' as *;
+//* ----------------------------------------------------------------------------
+.mp-feedback {
+  // .mp-feedback__title
+
+  &__title {
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: 400;
+    margin-bottom: 30px;
+    @include screen-575 {
+      font-size: 20px;
+    }
+
+    @include screen-375 {
+      font-size: 16px;
+    }
+  }
+
+  // .mp-feedback__row
+
+  &__row {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+  }
+
+  // .mp-feedback__text
+
+  &__text {
+    position: relative;
+    width: 100%;
+
+    margin: 0 5px;
+
+    @include screen-575 {
+      flex: 0 1 58.333333%;
+      max-width: 58.333333%;
+    }
+  }
+  .send-button {
+    @include screen-575 {
+      flex: 0 1 41.666667%;
+      max-width: 41.666667%;
+    }
+
+    // .send-button__button
+    &__button {
+      width: 100% !important;
+      height: 36px !important;
+      font-size: 12px;
+      font-weight: 300;
+
+      @include screen-490 {
+        font-size: 10px !important;
+      }
+    }
+  }
+}
+//* ----------------------------------------------------------------------------
+.support-block {
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include screen-992 {
+    max-width: 720px;
+  }
+
+  @include screen-768 {
+    max-width: 540px;
+  }
+}

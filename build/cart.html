@@ -556,62 +556,58 @@
 		</div>
 
 		<!--* ======================= /cart-section ========================= -->
-		<div id="categoria_page" class="wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
-			<div data-include="./html/partials/loading.html"></div>
-		</div>
-		<div class="section_form container">
-			<div class="section_form_body wow fadeInDown">
+
+		<section class="section_form container">
+			<div class="section_form_body wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
 				<div class="section_form_title">
 					<span>Возникли вопросы?</span>
 					<span>Напишите нам!</span>
 				</div>
 				<div class="form_feedback_body">
-					<form action="#" method="POST" class="suport_feedback_form feedback_form">
+					<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
 						<div class="section_form_line">
 							<div class="suport_feedback_form_box">
 								<div class="mb-3">
 									<label for="suportName" class="sr-only">Ваше имя</label>
-									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required>
+									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
 								</div>
-							</div>
+							</div><!-- /suport_feedback_form_box -->
 						</div>
 						<div class="section_form_line">
 							<div class="suport_feedback_form_box">
 								<div class="mb-3">
 									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
-									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required
+									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
 										autocomplete="off">
 								</div>
-							</div>
+							</div><!-- /suport_feedback_form_box -->
 						</div>
 						<div class="section_form_line">
 							<div class="suport_feedback_form_box">
 								<div class="mb-4">
 									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
-									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required
+									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
 										rows="1"></textarea>
 								</div>
-							</div>
+							</div><!-- /suport_feedback_form_box -->
 						</div>
 						<div class="section_form_line">
 							<div class="suport_feedback_form_box">
 								<div class="send-button">
-									<button class="send-button__button red_button" type="submit">
-										<span>отправить</span>
-									</button>
+									<button class="send-button__button red_button" type="submit">отправить</button>
 								</div>
-							</div>
+							</div><!-- /suport_feedback_form_box -->
 						</div>
 					</form>
 					<div class="succes_message bg_transparent" style="display: none;">
 						<div class="succes_message_caption">
 							Спасибо за обращение ! <br>
 							мы ответим Вам в ближайшее время!
-						</div>
+						</div><!-- /succes_message_caption -->
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</div>
 	<!--*  wow fadeInDown -->
 	<footer>
