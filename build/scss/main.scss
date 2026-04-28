@@ -21,8 +21,17 @@
 @use './pages/product-card';
 @use './pages/home-page';
 @use './pages/user-order';
-
+@use './pages/service';
 // todo -------------------------- Style ---------------------------------------
+.page {
+  &__section-wow {
+    padding-bottom: 75px;
+
+    @include screen-490 {
+      padding-bottom: 45px;
+    }
+  }
+}
 .select > ._collapse:not(._show) {
   display: none;
 }

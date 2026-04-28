@@ -1,7 +1,7 @@
 //* ----------------------------- Resset* --------------------------------------
 
 * {
-  scrollbar-width: thin;
+  // scrollbar-width: thin;
 
   box-sizing: border-box;
   margin: 0;
@@ -14,9 +14,6 @@
   &::after {
     box-sizing: border-box;
   }
-}
-html {
-  // overflow: hidden;
 }
 
 body {
@@ -217,3 +214,23 @@ h3 {
 }
 
 //* ----------------------------------------------------------------------------
+/// * Изменить стиль полосы прокрутки (scrollbar)
+::-webkit-scrollbar {
+  width: 0.4rem;
+  padding: 0.031em;
+  position: fixed;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #777777;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid var(--danger);
+  border-radius: 2px;
+  background-color: var(--red);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--red);
+}

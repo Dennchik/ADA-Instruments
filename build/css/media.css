@@ -404,7 +404,6 @@
   .back_image_page {
     padding-top: 74px;
     position: relative;
-    min-height: 790px;
     background-image: url(../img/bip1_mob.jpg);
   }
 
@@ -519,19 +518,14 @@
 
   .suport_wrapper {
     background-image: url(../img/suport.jpg);
-    background-position: 0 right;
   }
 
-  .suport_feedback .thin_white_button {
+  /* .suport_feedback .thin_white_button {
     width: 140px;
-  }
+  } */
 
   .suport_feedback .font20 {
     font-size: 14px;
-  }
-
-  .orderr_csall {
-    max-width: 150px;
   }
 
   .suport_feedback_form_wrapper {
@@ -732,12 +726,6 @@
 
   h3 {
     font-size: 18px;
-  }
-
-  .red_button,
-  .thin_white_buttonб,
-  .dark_button {
-    height: 36px;
   }
 
   .main_slider_wrapper .font_66 {
@@ -1176,12 +1164,8 @@
     margin-bottom: 40px;
   }
 
-  #services_page {
-    background-image: none;
-  }
-
   .suport_feedback_top {
-    padding: 50px 25px 50px;
+    padding: 50px 15px 50px;
   }
 
   .tovar_slider_item_box .img_cont {
@@ -1293,10 +1277,6 @@
 
   .mob_suport_footer .font21 {
     font-size: 16px;
-  }
-
-  .mob_suport_footer .red_button {
-    font-size: 7px;
   }
 
   .page_header .font_60 {

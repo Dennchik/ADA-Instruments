@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ADA | Личный кабинет </title>
+	<title>ADA | Личный кабинет | Заказы</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
@@ -242,6 +242,7 @@
 				<div class="acccount-section__column">
 					<div class="acccount-content">
 						<div class="acccount-content__body">
+							<!-- * content__column - 1 -->
 							<div class="acccount-content__column">
 
 								<h2 class="acccount-content__title font_clamp_50 fw700">Мои заказы</h2>
@@ -257,10 +258,9 @@
 										</button>
 									</fieldset>
 								</form>
-								<!-- * -->
 
 							</div>
-
+							<!-- * content__column - 2 -->
 							<div class="acccount-content__column">
 								<div class="profile">
 									<div class="profile__body">
@@ -277,56 +277,58 @@
 									</div>
 								</div>
 							</div>
+
+							<!-- * content__column - 3 -->
 							<div class="acccount-content__column">
 								<div class="order-status">
+									<!-- * Grid-cont-1 -->
 									<div class="order-status__body">
 										<div class="order-status__content">
-											<!-- * column-1 -->
-											<div class="order-status__column">
-												<div class="order-status__type">
-													<span>Не оплачен</span>
-												</div>
-												<div class="order-status__info">
-													<span>Заказ от 21 сентября 2026г</span>
-												</div>
-											</div>
-											<!-- * column-2 -->
-											<div class="order-status__column">
-												<div class="order-status__type">
-													<span>В пути</span>
-												</div>
-												<div class="order-status__info">
-													<span>№2509-704-301</span>
-												</div>
-											</div>
-											<!-- * column-3 -->
 
+											<!-- * column-1 order-status -->
+											<div class="order-status__column">
+												<div class="order-status__type">
+													<div class="order-status__oplata">
+														<span>Не оплачен</span>
+														<i class="icofont-rounded-right"></i>
+													</div>
+													<div class="order-status__dostavka">
+														<span>В пути</span>
+														<i class="icofont-rounded-right"></i>
+													</div>
+												</div>
+
+												<div class="order-status__info">
+													<div class="order-status__date">Заказ от 21 сентября 2026г</div>
+													<div class="order-status__number">№2509-704-301</div>
+
+												</div>
+											</div>
+
+											<!-- * column-2 order-status -->
 											<div class="order-status__price">
 												<span class=""></span>
 												3 950 р
 											</div>
 										</div>
 
+										<div class="order-status__buttons">
+											<div class="send-button">
+												<button class="send-button__button dark_button" type="submit">
+													<span>повторить</span>
+												</button>
+											</div>
 
-
-										<div class="order-status__column">
-											<div class="order-status__buttons">
-												<div class="send-button">
-													<button class="send-button__button dark_button" type="submit">
-														<span>отправить</span>
-													</button>
-												</div>
-
-												<div class="send-button">
-													<button class="send-button__button dark_button" type="submit">
-														<span>отправить</span>
-													</button>
-												</div>
+											<div class="send-button">
+												<button class="send-button__button dark_button" type="submit">
+													<span>отменить</span>
+												</button>
 											</div>
 										</div>
 									</div>
-
 								</div>
+
+
 
 							</div>
 						</div>

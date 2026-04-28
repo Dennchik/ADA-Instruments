@@ -210,7 +210,7 @@
 }
 .red_button {
   cursor: pointer;
-  display: inline-block;
+
   background-color: rgb(255, 51, 51);
   font-size: 12px;
   text-transform: uppercase;
@@ -233,7 +233,7 @@
 }
 .dark_button {
   cursor: pointer;
-  display: inline-block;
+
   background-color: rgb(68, 68, 68);
   font-size: 12px;
   text-transform: uppercase;
@@ -253,6 +253,27 @@
     color: #000000;
     font-weight: bolder;
   }
+}
+
+.thin_white_button {
+  cursor: pointer;
+
+  background-color: transparent;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  height: 55px;
+  line-height: 100%;
+  border: 1px solid #fff;
+  outline: none;
+  text-decoration: none;
+  white-space: nowrap;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 @include screen-1024 {
   .red_button:hover,
@@ -319,7 +340,7 @@
   font-size: clamp(1.51375rem, 2.4vw, 3.125rem);
 }
 .font10 {
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .font_11 {
@@ -453,33 +474,13 @@
 .half_heigh {
   height: 238px;
 }
+
 //* ----------------------------------------------------------------------------
 .wh_txt:hover,
 .wh_txt:focus {
   opacity: 1;
 }
 
-.thin_white_button {
-  display: inline-block;
-  background-color: transparent;
-  font-size: 12px;
-  color: #fff;
-  text-align: center;
-  // padding: 0px 50px;
-  height: 55px;
-  line-height: 100%;
-  border: 1px solid #fff;
-  outline: none;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  font-weight: 600;
-  text-transform: uppercase;
-}
 .wh_txt:hover .thin_white_button,
 .wh_txt:focus .thin_white_button {
   /* background-color: #fff;

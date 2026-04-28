@@ -139,6 +139,13 @@
   &__form {
     border: 1px solid #00000000;
   }
+
+  .send-button {
+    &__button {
+      width: 190px;
+      height: 55px;
+    }
+  }
 }
 
 .form-login {
@@ -217,20 +224,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: 190px !important;
+    width: 190px;
     height: 55px;
     font-weight: 600;
-    // display: flex;
-    // justify-content: space-between;
+
+    @include screen-690 {
+      width: 130px;
+      height: 45px;
+    }
 
     span {
       line-height: 100%;
-    }
-
-    @include screen-690 {
-      width: 130px !important;
-      height: 45px !important;
     }
   }
 }
