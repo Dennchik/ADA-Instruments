@@ -102,6 +102,11 @@
     &__user {
       line-height: 100%;
       font-size: 14px;
+
+      @include screen-375 {
+        font-size: 12px;
+        line-height: 133.333333%; /* 16px/12 */
+      }
     }
   }
 }

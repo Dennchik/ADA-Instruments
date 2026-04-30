@@ -4762,6 +4762,12 @@ header.smaller {
   line-height: 100%;
   font-size: 14px;
 }
+@media screen and (width < 375px) {
+  .page-order .profile__user {
+    font-size: 12px;
+    line-height: 133.333333%; /* 16px/12 */
+  }
+}
 
 @media screen and (width < 840px) {
   .breadcrumb_wrapper {
