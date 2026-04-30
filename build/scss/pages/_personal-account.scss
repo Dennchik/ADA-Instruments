@@ -195,11 +195,28 @@
     row-gap: 25px;
 
     @include screen-992 {
-      column-gap: 10px;
+      column-gap: 50px;
       row-gap: 15px;
       display: grid;
       grid-template-columns: repeat(2, max-content);
-      justify-content: start;
+      justify-content: end;
+      justify-items: end;
+    }
+
+    @include screen-375 {
+      gap: 20px;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        &::before {
+          width: 11px;
+          height: 11px;
+          display: flex;
+          align-items: center;
+          font-size: 13px !important;
+        }
+      }
     }
   }
 
