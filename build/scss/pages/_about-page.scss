@@ -1,9 +1,11 @@
 @use '../core/mixins' as *;
 .about-page {
   padding-bottom: 75px;
+  margin-bottom: 75px;
 
   @include screen-490 {
     padding-bottom: 45px;
+    margin-bottom: 45px;
   }
 
   // .about-page__image

@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let formattedDate = date.toLocaleDateString('ru-RU', options);
 
       if (selectedTime) {
-        formattedDate += ` ${selectedTime}`; // Убрал предлог "в"
+        formattedDate += ` ${selectedTime}`;
       }
 
       return formattedDate;
@@ -453,3 +453,9 @@ if (document.querySelector('.preloader')) {
 //   requestAnimationFrame(raf);
 // }
 // requestAnimationFrame(raf);
+document.addEventListener('DOMContentLoaded', () => {
+  const maskPhone = document.querySelector('.mask-phone');
+  if (maskPhone) {
+    $('.mask-phone').mask('+7 (999) 999-99-99');
+  }
+});

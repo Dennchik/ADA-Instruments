@@ -339,6 +339,9 @@
 .font_clamp_50 {
   font-size: clamp(1.51375rem, 2.4vw, 3.125rem);
 }
+.font_clamp_30 {
+  font-size: clamp(1.51375rem, 2.4vw, 3.125rem);
+}
 .font10 {
   font-size: 10px;
 }
@@ -543,15 +546,20 @@
 }
 
 .home_page .breadcrumb > li + li:before {
-  color: #000;
+  color: #ffffff;
+}
+//* ----------------------------------------------------------------------------
+[class*=' icofont-'],
+[class^='icofont-'] {
+  display: block;
 }
 
 //* ------------------------[ /breadcrumbs ]--------------------------------- */
 .vertical-dots {
-  height: 28px;
-  width: 8px;
-  position: relative;
   cursor: pointer;
+  position: relative;
+  height: 24px;
+  width: 6px;
   text-align: center;
 
   span {
@@ -561,7 +569,7 @@
     left: calc(50% - 3px);
     width: 6px;
     height: 6px;
-    background: #a5a5a5;
+    background: var(--danger);
     border-radius: 50%;
     transition: all 0.2s ease;
 

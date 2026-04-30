@@ -5,7 +5,7 @@ footer {
 }
 .footer {
   // .footer__secttion
-  &__secttion {
+  &__section {
     @include screen-992 {
       max-width: 720px;
     }

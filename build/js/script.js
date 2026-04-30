@@ -319,14 +319,14 @@ jQuery('document').ready(function () {
       });
   });
   //* --------------------------------------------------------------------------
-  jQuery('.open_menu_child').click(function () {
-    jQuery(this)
-      .parents('li')
-      .find('.sub_menu')
-      .slideToggle('slow', function () {
-        // Animation complete.
-      });
-  });
+  // jQuery('.open_menu_child').click(function () {
+  //   jQuery(this)
+  //     .parents('li')
+  //     .find('.sub_menu')
+  //     .slideToggle('slow', function () {
+  //       // Animation complete.
+  //     });
+  // });
   //* --------------------------------------------------------------------------
   jQuery('.open_contacts_list').click(function () {
     jQuery(this)

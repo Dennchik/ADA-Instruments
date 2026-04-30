@@ -1461,9 +1461,22 @@ header .sub_menu a:hover:after {
 }
 
 .mobile_menu_wrapp .sub_menu {
-  background-color: #000;
+  position: relative;
+  background-color: rgba(8, 8, 8, 0.337254902);
   padding: 0 15px;
-  display: none;
+}
+.mobile_menu_wrapp .sub_menu::before {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 12px;
+  width: 1px;
+  height: 95.6%;
+  background-color: rgba(231, 67, 55, 0.4196078431);
+}
+.mobile_menu_wrapp .sub_menu a {
+  padding-right: 8px;
+  color: #a5a5a5;
 }
 
 .open_menu_child {
@@ -3103,4 +3116,13 @@ header .sub_menu a:hover:after {
 }
 .tabs-buttons__item.active {
   color: var(--red);
+}
+
+.service-centers {
+  margin-bottom: 75px;
+}
+@media screen and (width < 490px) {
+  .service-centers {
+    margin-bottom: 45px;
+  }
 }/*# sourceMappingURL=custom_style.css.map */

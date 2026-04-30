@@ -37,16 +37,21 @@
 </head>
 
 <body class="">
-	<!--* ================ * Preloader ==================== -->
-
-	<!--* ================ * mobile_menu ==================== -->
+	<!-- * ---------------------- * Preloader ----------------------------- -->
+	<div class="preloader">
+		<div class="preloader-5"></div>
+	</div>
+	<!-- * ---------------------- * mobile_menu --------------------------- -->
 	<div class="mobile_menu_wrapp">
 		<div class="menu_close"><i class="icofont-close"></i></div>
 		<div class="mobile_menu">
+			<div class="mobile_menu_image">
+				<img src="../img/logo_white.png" alt="logo">
+			</div>
 			<div class="row h-100 no-gutters">
 				<div class="col">
 					<ul>
-						<li><a href="#" class="open_menu_child"><span>Продукция</span></a>
+						<li><a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
 							<ul class="sub_menu">
 								<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 								<li><a href="./catalog/automatic-levels.html">Оптические нивелиры</a></li>
@@ -65,21 +70,19 @@
 								<li><a href="./catalog/earth-augers-accessories.html">Аксессуары для мотобуров</a></li>
 							</ul>
 						</li>
-						<li><a href="services.html"><span>Сервис</span></a></li>
-						<li><a href="about.html"><span>О компании</span></a></li>
-						<li><a href="contact.html"><span>Контакты</span></a></li>
+						<li><a href="./services.html"><span>Сервис</span></a></li>
+						<li><a href="./about.html"><span>О компании</span></a></li>
+						<li><a href="./contact.html"><span>Контакты</span></a></li>
 					</ul> <!-- /mbm_sel_lang_wrapper -->
 				</div><!-- /col -->
 			</div><!-- /row -->
 		</div>
-		<!-- /.mobile_menu -->
 	</div>
-	<!--* /.mobile-menu  -->
-	<!--* ==================================================== -->
+	<!-- * ------------------- * Mobile menu / end ------------------------ -->
 	<div id="main">
 		<header>
 			<div class="container h-100">
-				<!--* ==================================================== -->
+				<!-- * -->
 				<div class="d-lg-none d-block">
 					<button class="menu_button menu_show">
 						<span class='toggle'><i></i> <i></i> <i></i></span>
@@ -96,7 +99,7 @@
 						</div>
 					</div>
 				</div>
-				<!--* ==================================================== -->
+				<!-- * ------------------- [ TOP PANEL] ------------------------ -->
 				<div class="top_panel h-100">
 					<div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
 						<div class="col-auto">
@@ -186,7 +189,7 @@
 				</div>
 			</div>
 		</header>
-		<!--* =======================breadcrumb========================= -->
+		<!-- * -------------------- [ Breadcrumb ] -------------------------- -->
 		<div class="breadcrumb_wrapper">
 			<div class="container">
 				<ol class="breadcrumb">
@@ -196,11 +199,11 @@
 				</ol>
 			</div>
 		</div>
-		<!--* =======================/breadcrumb========================= -->
-		<!--! <main> -->
+		<!-- * ------------------- [ / Breadcrumb ] ------------------------- -->
+		<!-- * ------------------ [ Categoria page ] ------------------------ -->
 		<div id="categoria_page" class="wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
-			<div class="productia_wrapp">
-				<div class="productia_desk catalog_desk container">
+			<div class="productia_wrapp container">
+				<div class="productia_desk catalog_desk">
 					<div class="side-menu">
 						<ul class="side-menu__list catalog_menu_list">
 							<li><a class="side-menu__link selected-link" href="../catalog/laser-distance-meter.html">Лазерные
@@ -223,7 +226,7 @@
 						</ul>
 					</div>
 					<div class="items_greed">
-						<h1 class="items_greed_title font_clamp_60 lh1 fw700 text-uppercase">Лазерные дальномеры</h1>
+						<h1 class="items_greed_title font_clamp_50 lh1 fw700 text-uppercase">Лазерные дальномеры</h1>
 						<ul class="items_greed_list">
 							<li>
 								<a href="./laser-distance-meter/lazernyy-dalnomer-ada-cosmo-micro-25.html" class="items_greed_box">
@@ -476,6 +479,7 @@
 				<!--* ========================================================== -->
 			</div>
 		</div>
+		<!-- * ----------------- Categoria page [end] ----------------------- -->
 		<div class="section_form container">
 			<div class="section_form_body wow fadeInUp">
 				<div class="section_form_title">
@@ -663,8 +667,10 @@
 			</div>
 		</div>
 		<div class="footer_footer">
-			<div class="container">
-				<div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>
+			<div class="copyright container">
+				<div class="copyright__text">
+					<span>Copyright&copy;2008-2024 ADA&nbsp;Instruments</span>
+				</div>
 			</div>
 		</div>
 	</footer>

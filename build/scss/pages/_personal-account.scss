@@ -1,35 +1,38 @@
 @use '../core/mixins' as *;
 
-//*  ------------------------ acccount-section ---------------------------------
+//*  ---------------------- [ acccount-section ]--------------------------------
+.personal-account {
+  .acccount-section__body {
+    grid-template-columns: minmax(220px, 270px) 1fr minmax(240px, 316px);
+
+    @include screen-992 {
+      grid-template-columns: minmax(180px, 270px) 1fr;
+    }
+  }
+}
+
 .acccount-section {
   position: relative;
 
   .acccount-content {
     //.acccount-content__title
     &__title {
+      display: flex;
+      align-items: center;
       text-transform: uppercase;
       white-space: nowrap;
-      margin-top: 38px;
+      margin-top: 60px;
       margin-bottom: 50px;
       line-height: 100%;
-      line-height: 100%;
+      gap: 15px;
+
+      @include screen-840 {
+        margin-bottom: 40px;
+      }
     }
 
     // . acccount-content__body
     &__body {
-      padding: 0 70px;
-
-      @include screen-1376 {
-        padding: 0 20px;
-      }
-
-      @include screen-992 {
-        padding-right: 0;
-      }
-
-      @include screen-640 {
-        padding: 0;
-      }
     }
 
     // .acccount-content__column
@@ -37,36 +40,26 @@
     }
   }
 
-  .side-menu {
-    display: block !important;
-  }
-
   // .acccount-section__body
   &__body {
-    position: relative;
     display: grid;
-    grid-template-columns: minmax(180px, 270px) minmax(520px, 1fr) minmax(
-        220px,
-        316px
-      );
+    column-gap: 70px;
 
-    @include screen-992 {
-      overflow: hidden;
-      grid-template-columns: minmax(200px, 250px) minmax(410px, 1fr);
+    @include screen-1376 {
+      gap: 0 20px;
     }
 
-    @include screen-640 {
-      grid-template-columns: 1fr;
+    @include screen-992 {
+      column-gap: 50px;
+    }
 
-      .acccount-section__column {
-        position: absolute;
-        &:nth-child(1) {
-          transform: translateX(-110%);
-        }
-      }
+    @include screen-840 {
+      grid-template-columns: 1fr !important;
+      max-width: 720px;
+      margin: 0 auto;
 
       .acccount-content__title {
-        margin-top: 50px;
+        margin-top: 10px;
       }
 
       .form-user {
@@ -74,7 +67,12 @@
       }
 
       .aside-menu-l {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-130%);
         transition: transform 0.3s ease 0s;
+
         &.open {
           transform: translateX(0);
           width: 100%;
@@ -82,22 +80,37 @@
         }
       }
     }
+
+    @include screen-768 {
+      max-width: 540px;
+    }
   }
 
   // .acccount-section__column
   &__column {
     &.transparent-right {
       @include screen-992 {
-        position: absolute;
-        transform: translateX(110%);
-        top: 0;
-        right: 0;
-        transition: all 0.3s ease 0s;
-
         &.open {
           transform: translateX(0);
           height: 100%;
         }
+      }
+    }
+
+    &.aside-menu-l {
+      @include screen-840 {
+        &::before {
+          content: '';
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 6px;
+          background-color: var(--red);
+        }
+        border: none !important;
+        box-shadow: 2px 2px 17px rgb(37, 37, 37);
       }
     }
 
@@ -110,16 +123,17 @@
       }
 
       .side-menu__close-menu {
-        display: none;
         position: sticky;
-        top: 22px;
+        top: 42.5px;
         width: 30px;
         height: 30px;
-        transform: translate(233px, -60px);
+        transform: translate(228px, -90px);
 
         .icofont-close-squared {
+          pointer-events: none;
+
           &::before {
-            color: #ff5656;
+            color: #ffffff;
             font-size: 30px;
             font-weight: 500;
             display: block;
@@ -127,129 +141,65 @@
           }
         }
       }
-
-      @include screen-640 {
-        position: absolute;
-      }
     }
 
     &:nth-child(2) {
-      position: relative;
       z-index: 1;
-
       width: 100%;
     }
 
     &:nth-child(3) {
       z-index: 99;
-
-      &.aside-menu-r {
-        @include screen-992 {
-          .profile {
-            box-shadow: 2px 2px 7px rgba(143, 143, 143, 0.411);
-          }
-        }
-      }
     }
   }
 
   // .acccount-section__buttons
   &__buttons {
-    padding: 0 16px;
-    position: absolute;
-    z-index: 9;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: none;
+    width: auto;
+
+    @include screen-840 {
+      display: flex;
+    }
   }
 
   // .acccount-section__link-button
   &__link-button {
     position: relative;
+    display: none;
     z-index: 2;
-    width: 31px;
+    height: auto;
+    width: auto;
     top: 0;
     left: 0;
-    transition:
-      scale 3.9s,
-      transform 0.3s ease 0s;
+    transition: transform 0.3s ease 0s;
 
-    &.active {
-      transform: scale(0.87) translateX(170px);
-    }
-  }
-
-  // .acccount-section__open-button
-  &__open-button {
-    display: none;
-    position: relative;
-
-    transition:
-      scale 3.9s,
-      transform 0.3s ease 0s;
-
-    &.active {
-      transform: translateX(-270px);
-      .icofont-gear-alt {
-        &::before {
-          opacity: 0;
-        }
-      }
-    }
-
-    .icofont-gear-alt {
-      &::before {
-        transition: all 1.4s ease;
-        color: #a5a5a5;
-        font-size: 29px;
-        font-weight: 500;
-        display: block;
-      }
-    }
-    @include screen-992 {
-      position: relative;
-      z-index: 1;
-      top: 0;
-      right: 0;
+    @include screen-840 {
       display: block;
+    }
+
+    &.active {
+      transform: translateX(0);
     }
   }
 }
-//* ---------------------------- profile----------------------------------------
+//* ------------------------ [ Profile-section ]--------------------------------
 .profile {
-  position: relative;
-
   // .profile__body
   &__body {
     background-color: rgb(239, 239, 239);
-    padding: 40px 40px 120px 40px;
+    border: 4px solid rgba(235, 235, 235, 0.4784313725);
+    padding: 60px 40px 60px 40px;
     display: flex;
-
     flex-direction: column;
-    gap: 24px;
+    row-gap: 25px;
 
-    .profile__close-button {
-      position: absolute;
-      display: none;
-
-      top: 0px;
-      right: 0;
-
-      .icon {
-        &::before {
-          color: #ff5656;
-          font-size: 34px;
-          font-weight: 500;
-          display: block;
-          transition: all 0.4s ease 0s;
-        }
-      }
-
-      @include screen-992 {
-        display: block;
-      }
+    @include screen-992 {
+      column-gap: 10px;
+      row-gap: 15px;
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      justify-content: start;
     }
   }
 
@@ -272,7 +222,13 @@
     align-items: center;
     justify-content: space-between;
     text-align: left;
-    gap: 20px;
+    gap: 5px;
+
+    &.add-phone {
+      .icofont-close {
+        transform: rotate(-45deg);
+      }
+    }
 
     &:hover {
       .profile__icon {
@@ -378,7 +334,8 @@
     align-self: end;
   }
 }
-//* ------------------------- [ Radio-Group ] ----------------------------------
+
+//* ------------------------- [ Radio Group ] ----------------------------------
 .radio-group {
   display: flex;
   width: 100%;
@@ -453,9 +410,8 @@
 .radio-group .radio-group__input:checked + .radio-group__label::before {
   transform: scale(1);
 }
-//* ----------------------------------------------------------------------------
 
-//* ------------------ Small & Medium Devices, Wide Screens --------------------
+//* ------------ [ Small & Medium Devices, Wide Screens ] ----------------------
 @include screen-1376 {
   .productia_wrapp {
     max-width: 1140px !important;
@@ -466,8 +422,8 @@
   }
 
   .profile__body {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .radio-group__label {
@@ -482,43 +438,34 @@
 @include screen-1200 {
   .radio-group {
     gap: 10px;
-    // justify-content: space-between;
   }
 }
 
 @include screen-992 {
-  .profile__body {
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-  }
-
   .profile__item {
-    color: #ffffff;
     font-weight: 500;
   }
 
-  .profile__icon .icon::before {
-    color: #ffffff;
+  .profile__body {
+    padding: 0 0 20px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #a5a5a5;
   }
 }
 
-@include screen-820 {
-  .form-user__line {
-    grid-template-columns: 1fr;
-  }
-
-  .form-user__group {
-    max-width: 100%;
-  }
-}
-
-@include screen-640 {
+@include screen-840 {
   .side-menu {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(5px);
-    box-shadow: 2px 2px 7px rgba(143, 143, 143, 0.411);
     height: 100%;
     overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+      padding: 0.031em;
+      position: fixed;
+    }
 
     .side-menu__link {
       color: #ffffff;
@@ -527,26 +474,23 @@
 
     .logo-wrapper {
       overflow: hidden;
-      display: block !important;
+      left: 0;
+      display: block;
       position: sticky;
-      width: 80px;
       width: 121%;
-      top: 0;
-      transform: translate(-25px, -40px);
-      margin-top: -20px;
+      top: 5px;
+      transform: translate(-25px, -57px);
       height: 42px;
-      background-color: #4b4b4b;
     }
+
     .logo {
       display: block !important;
       // position: sticky;
       width: 80px;
       left: 5px;
       top: 24px;
-      // transform: translate(-19px, -35px);
-      // margin-top: -20px;
       height: 38px;
-      background: #4b4b4b url(../img/logo_red.png) no-repeat;
+      background: #4b4b4b url(../img/logo_white.png) no-repeat;
     }
   }
 
@@ -555,7 +499,7 @@
   }
 
   .form-user__wrapp-group {
-    gap: 30px;
+    gap: 15px;
   }
 
   .form-user__label {
@@ -575,10 +519,27 @@
   }
   .profile__item {
     font-size: 14px;
+
+    @include screen-490 {
+      font-size: 12px;
+    }
   }
 
   .side-menu__close-menu {
-    display: block !important;
+    display: block;
+  }
+  .acccount-section {
+    margin: 0 auto;
+  }
+}
+
+@include screen-820 {
+  .form-user__line {
+    grid-template-columns: 1fr;
+  }
+
+  .form-user__group {
+    max-width: 100%;
   }
 }
 

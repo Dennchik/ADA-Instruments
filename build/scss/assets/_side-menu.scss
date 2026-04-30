@@ -2,10 +2,9 @@
 //* ---------------------------- side-menu -------------------------------------
 .side-menu {
   position: relative;
-  flex: 0 1 20%;
   height: 100%;
   background-color: rgb(239, 239, 239);
-  padding: 40px;
+  padding: 60px 40px;
 
   // .side-menu__list
   &__list {
@@ -25,7 +24,7 @@
     transition: all 0.4s ease 0s;
     font-size: 16px;
     white-space: nowrap;
-    font-weight: bold;
+    font-weight: 600;
 
     &:hover {
       color: var(--red);
@@ -34,9 +33,16 @@
     &.selected-link {
       color: var(--red) !important;
     }
+
     &.active-link {
-      color: rgb(255, 48, 48) !important;
+      color: rgb(255, 111, 111) !important;
+      filter: contrast(170%);
     }
+  }
+
+  // .side-menu__close-menu
+  &__close-menu {
+    display: none;
   }
 }
 //* --------------------------- [ menu_button ] --------------------------------

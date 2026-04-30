@@ -21,7 +21,6 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<link rel="stylesheet" type="text/css" href="./css/media.css">
 
-	<script defer type="text/javascript" src="./js/lenis.min.js"></script>
 	<script defer type="text/javascript" src="./js/jquery.min.js"></script>
 	<script defer type="text/javascript" src="./js/jquery.scrollTo.js"></script>
 	<script defer type="text/javascript" src="./dist/rangeslider/ion.rangeslider.min.js"></script>
@@ -38,15 +37,20 @@
 
 <body class="page-order">
 	<!-- * ---------------------- * Preloader ----------------------------- -->
-
+	<div class="preloader">
+		<div class="preloader-5"></div>
+	</div>
 	<!-- * ---------------------- * mobile_menu --------------------------- -->
 	<div class="mobile_menu_wrapp">
 		<div class="menu_close"><i class="icofont-close"></i></div>
 		<div class="mobile_menu">
+			<div class="mobile_menu_image">
+				<img src="./img/logo_white.png" alt="logo">
+			</div>
 			<div class="row h-100 no-gutters">
 				<div class="col">
 					<ul>
-						<li><a href="#" class="open_menu_child"><span>Продукция</span></a>
+						<li><a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
 							<ul class="sub_menu">
 								<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 								<li><a href="./catalog/automatic-levels.html">Оптические нивелиры</a></li>
@@ -75,8 +79,8 @@
 	</div>
 	<!-- * ------------------- * Mobile menu / end ------------------------ -->
 	<div id="main">
-		<header>
-			<div class="container h-100">
+		<header class="header">
+			<div class="header__body container h-100">
 				<!--* ==================================================== -->
 				<div class="d-lg-none d-block">
 					<button class="menu_button menu_show">
@@ -95,9 +99,9 @@
 					</div>
 				</div>
 				<!-- * ------------------- [ TOP PANEL] ------------------------ -->
-				<div class="top_panel h-100">
-					<div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
-						<div class="col-auto">
+				<div class="top-panel top_panel h-100">
+					<div class="top-panel__row row h-100 flex-nowrap justify-content-between align-items-center">
+						<div class="top-panel__column col-auto">
 							<div class="left_TP">
 								<div class="row align-items-center">
 									<!-- * -->
@@ -200,21 +204,6 @@
 		<!-- * -->
 		<!-- * ------------------- [ acccount-section ] --------------------- -->
 		<section class="acccount-section user-order container wow fadeInDown">
-			<!-- * [ BUTTONS ] -->
-			<div class="acccount-section__buttons">
-				<div class="acccount-section__link-button link-button">
-					<div class="vertical-dots" id="verticalDots">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-				</div>
-				<!-- * -->
-				<div class="acccount-section__open-button">
-					<i class="icofont-gear-alt icon"></i>
-				</div>
-			</div>
-			<!-- * [ / BUTTONS ] -->
 			<div class="acccount-section__body">
 				<!-- * Column-1 -->
 				<div class="acccount-section__column aside-menu-l">
@@ -244,29 +233,39 @@
 						<div class="acccount-content__body">
 							<!-- * content__column - 1 -->
 							<div class="acccount-content__column">
-
-								<h2 class="acccount-content__title font_clamp_50 fw700">Мои заказы</h2>
-								<form action="3" method="#" class="form-search">
+								<div class="acccount-content__title">
+									<!-- * [ BUTTONS ] -->
+									<div class="acccount-section__buttons">
+										<div class="acccount-section__link-button link-button">
+											<div class="vertical-dots" id="verticalDots">
+												<span></span>
+												<span></span>
+												<span></span>
+											</div>
+										</div>
+									</div>
+									<!-- * [ / BUTTONS ] -->
+									<h2 class="font_clamp_50 fw700">Мои заказы</h2>
+								</div>
+								<form action="#" method="#" class="form-search">
 									<fieldset class="form-search__group">
 										<div class="form-search__input">
 											<input type="text" id="search-product" placeholder=" " name="search-product">
-											<label class="form-search__label" for="search-product">Быстрый поиск: введите наименование или код
-												товара</label>
+											<label class="form-search__label" for="search-product">
+												<span>Быстрый поиск: введите наименование или код товара</span>
+											</label>
 										</div>
 										<button class="form-search__button" type="submit">
 											<i class="icofont-search-2" value="Submit"></i>
 										</button>
 									</fieldset>
 								</form>
-
 							</div>
 							<!-- * content__column - 2 -->
 							<div class="acccount-content__column">
 								<div class="profile">
 									<div class="profile__body">
-										<div class="profile__close-button">
-											<i class="icofont-close-squared icon"></i>
-										</div>
+
 										<!-- * -->
 										<div class="profile__title">
 											<span>Покупатель</span>
@@ -277,14 +276,12 @@
 									</div>
 								</div>
 							</div>
-
 							<!-- * content__column - 3 -->
 							<div class="acccount-content__column">
 								<div class="order-status">
 									<!-- * Grid-cont-1 -->
 									<div class="order-status__body">
 										<div class="order-status__content">
-
 											<!-- * column-1 order-status -->
 											<div class="order-status__column">
 												<div class="order-status__type">
@@ -296,22 +293,19 @@
 														<span>В пути</span>
 														<i class="icofont-rounded-right"></i>
 													</div>
+
 												</div>
-
-												<div class="order-status__info">
-													<div class="order-status__date">Заказ от 21 сентября 2026г</div>
-													<div class="order-status__number">№2509-704-301</div>
-
+												<div class="order-status__type">
+													<div class="order-status__info">
+														Заказ от 21 сентября 2026г №2509-704-301
+													</div>
 												</div>
 											</div>
-
 											<!-- * column-2 order-status -->
 											<div class="order-status__price">
-												<span class=""></span>
-												3 950 р
+												<span id="order-price">3 950 р</span>
 											</div>
 										</div>
-
 										<div class="order-status__buttons">
 											<div class="send-button">
 												<button class="send-button__button dark_button" type="submit">
@@ -328,7 +322,49 @@
 									</div>
 								</div>
 
+								<div class="order-status">
+									<!-- * Grid-cont-1 -->
+									<div class="order-status__body">
+										<div class="order-status__content">
+											<!-- * column-1 order-status -->
+											<div class="order-status__column">
+												<div class="order-status__type">
+													<div class="order-status__oplata">
+														<span>Оплачен</span>
+														<i class="icofont-rounded-right"></i>
+													</div>
+													<div class="order-status__dostavka">
+														<span>Доставлен</span>
+														<i class="icofont-rounded-right"></i>
+													</div>
 
+												</div>
+												<div class="order-status__type">
+													<div class="order-status__info">
+														Заказ от 21 сентября 2026г №2509-704-301
+													</div>
+												</div>
+											</div>
+											<!-- * column-2 order-status -->
+											<div class="order-status__price">
+												<span id="order-price">3 950 р</span>
+											</div>
+										</div>
+										<div class="order-status__buttons">
+											<div class="send-button">
+												<button class="send-button__button dark_button" type="submit">
+													<span>повторить</span>
+												</button>
+											</div>
+
+											<div class="send-button">
+												<button class="send-button__button dark_button" type="submit">
+													<span>отменить</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
 
 							</div>
 						</div>
@@ -337,11 +373,8 @@
 				<!-- * -->
 
 			</div>
-			<!-- * Column-3 -->
-
 		</section>
-
-		</section>
+		<!-- * --------------------- [ section-form ] ---------------------- -->
 		<section class="section_form container">
 			<div class="section_form_body wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
 				<div class="section_form_title">
@@ -397,7 +430,7 @@
 	<!-- * ------------------------- [ Footer] -------------------------- -->
 	<!--*  wow fadeInDown -->
 	<footer class="footer">
-		<div class="footer-sectuin container">
+		<div class="footer__section container">
 			<div class="footer_header pb-4">
 				<div class="row flex-nowrap align-items-center">
 					<!--===========-->
@@ -530,8 +563,10 @@
 			</div>
 		</div>
 		<div class="footer_footer">
-			<div class="container">
-				<div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>
+			<div class="copyright container">
+				<div class="copyright__text">
+					<span>Copyright&copy;2008-2024 ADA&nbsp;Instruments</span>
+				</div>
 			</div>
 		</div>
 	</footer>

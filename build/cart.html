@@ -40,15 +40,20 @@
 
 <body class="">
 	<!-- * ---------------------- * Preloader ----------------------------- -->
-
+	<div class="preloader">
+		<div class="preloader-5"></div>
+	</div>
 	<!-- * ---------------------- * mobile_menu --------------------------- -->
 	<div class="mobile_menu_wrapp">
 		<div class="menu_close"><i class="icofont-close"></i></div>
 		<div class="mobile_menu">
+			<div class="mobile_menu_image">
+				<img src="./img/logo_white.png" alt="logo">
+			</div>
 			<div class="row h-100 no-gutters">
 				<div class="col">
 					<ul>
-						<li><a href="#" class="open_menu_child"><span>Продукция</span></a>
+						<li><a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
 							<ul class="sub_menu">
 								<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 								<li><a href="./catalog/automatic-levels.html">Оптические нивелиры</a></li>
@@ -203,187 +208,217 @@
 			<div class="cart-section__content">
 				<div class="cart-section__col wow fadeInDown">
 					<div class="page_header mb-5">
-						<h1 class="font_clamp_60 lh1 fw700 text-uppercase">Корзина</h1>
+						<h1 class="font_clamp_50 lh1 fw700 text-uppercase">Корзина</h1>
 					</div>
 
-					<div class="cart-section__title">
-						<div class="cart-section__header-col">
-							<div class="cart-section__icon">
-								<div class="check-box">
-									<label class="check-box__label">
-										<input class="check-box__input" type="checkbox" name="policy" id="agreement">
-										<span class="check-box__icon">
-											<i class="icofont-check"></i>
-										</span>
-									</label>
+					<form action="" method="get" class="product-cart cart-section__product">
+						<div class="cart-section__title">
+							<div class="cart-section__header-col">
+								<div class="cart-section__icon">
+									<div class="check-box">
+										<label class="check-box__label">
+											<input class="check-box__input" type="checkbox" name="policy" id="agreement">
+											<span class="check-box__icon">
+												<i class="icofont-check"></i>
+											</span>
+										</label>
+									</div>
 								</div>
+								<div class="cart-section__button selection-button">Выделить всё</div>
 							</div>
-							<button class="cart-section__button selection-button">Выделить всё</button>
-						</div>
-						<div class="cart-section__header-col del-button">
-							<div class="cart-section__icon">
-								<i class="icofont-close"></i>
-							</div>
-							<button class="cart-section__button">Удалить выбранные</button>
-						</div>
-					</div>
-
-					<form class="product-cart cart-section__product">
-						<!--* Товар 1 -->
-						<div class="product-cart__item">
-							<div class="cart-section__icon">
-								<div class="check-box">
-									<label class="check-box__label">
-										<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
-										<span class="check-box__icon icon-gray">
-											<i class="icofont-check"></i>
-										</span>
-									</label>
-								</div>
-							</div>
-							<div class="product-cart__image">
-								<img src="./img/cart_img/product-1.png" alt="картинка">
-							</div>
-							<div class="product-cart__info">
+							<div class="cart-section__header-col del-button">
 								<div class="cart-section__icon">
 									<i class="icofont-close"></i>
 								</div>
-								<div class="product-cart__article">Артикул 000541</div>
-								<div class="product-cart__title">
-									<span>Лазерный дальномер</span>
-									<span>ADA COSMO MICRO 25</span>
-								</div>
-								<div class="product-cart__description">
-									Диапазон работы 30 м, точность ± 3,0 мм
-								</div>
-							</div>
-
-							<div class="product-cart__counter">
-								<div class="counter-wrapper">
-									<div class="product-cart__price">
-										<div class="product-cart__old-price">4 334 руб</div>
-										<div class="product-cart__new-price">3 750 руб</div>
-									</div>
-
-									<div class="quantity product-cart__quantity red_button" style="display: flex;">
-										<div class="quantity__button quantity-remove">
-											<i class="icon-minus icon">&minus;</i>
-										</div>
-										<div class="quantity__input">
-											<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-												autocomplete="off">
-										</div>
-										<div class="quantity__button quantity-add">
-											<i class="icon-plus icon">+</i>
-										</div>
-									</div>
-								</div>
+								<button class="cart-section__button">Удалить выбранные</button>
 							</div>
 						</div>
-						<!--* Товар 2 -->
-						<div class="product-cart__item">
-							<div class="cart-section__icon">
-								<div class="check-box">
-									<label class="check-box__label">
-										<input class="check-box__input" type="checkbox" name="policy" id="agreement-2">
-										<span class="check-box__icon icon-gray">
-											<i class="icofont-check"></i>
-										</span>
-									</label>
-								</div>
-							</div>
-							<div class="product-cart__image">
-								<img src="./img/cart_img/product-2.png" alt="картинка">
-							</div>
-							<div class="product-cart__info">
+						<div class="product-cart__form">
+							<!--* Товар 1 -->
+							<div class="product-cart__item">
 								<div class="cart-section__icon">
-									<i class="icofont-close"></i>
-								</div>
-								<div class="product-cart__article">Артикул 000541</div>
-								<div class="product-cart__title">
-									<span>Лазерный дальномер</span>
-									<span>ADA COSMO MICRO 25</span>
-								</div>
-								<div class="product-cart__description">
-									Диапазон работы 30 м, точность ± 3,0 мм
-								</div>
-							</div>
-
-							<div class="product-cart__counter">
-								<div class="counter-wrapper">
-									<div class="product-cart__price">
-										<div class="product-cart__old-price">4 334 руб</div>
-										<div class="product-cart__new-price">3 750 руб</div>
-									</div>
-
-									<div class="quantity product-cart__quantity red_button" style="display: flex;">
-										<div class="quantity__button quantity-remove">
-											<i class="icon-minus icon">&minus;</i>
-										</div>
-										<div class="quantity__input">
-											<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-												autocomplete="off">
-										</div>
-										<div class="quantity__button quantity-add">
-											<i class="icon-plus icon">+</i>
-										</div>
+									<div class="check-box">
+										<label class="check-box__label">
+											<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+											<span class="check-box__icon icon-gray">
+												<i class="icofont-check"></i>
+											</span>
+										</label>
 									</div>
 								</div>
-							</div>
-						</div>
-						<!--* Товар 3 -->
-						<div class="product-cart__item">
-							<div class="cart-section__icon">
-								<div class="check-box">
-									<label class="check-box__label">
-										<input class="check-box__input" type="checkbox" name="policy" id="agreement-3">
-										<span class="check-box__icon icon-gray">
-											<i class="icofont-check"></i>
-										</span>
-									</label>
+								<div class="product-cart__image">
+									<img src="./img/cart_img/product-1.png" alt="картинка">
+								</div>
+								<div class="product-cart__info">
+									<div class="cart-section__icon">
+										<i class="icofont-close"></i>
+									</div>
+									<div class="product-cart__article">Артикул 000541</div>
+									<div class="product-cart__title">
+										<span>Лазерный дальномер</span>
+										<span>ADA COSMO MICRO 25</span>
+									</div>
+									<div class="product-cart__description">
+										Диапазон работы 30 м, точность ± 3,0 мм
+									</div>
+								</div>
+
+								<div class="product-cart__counter">
+									<div class="counter-wrapper">
+										<div class="product-cart__price">
+											<div class="product-cart__old-price">4 334 руб</div>
+											<div class="product-cart__new-price">3 750 руб</div>
+										</div>
+
+										<div class="quantity product-cart__quantity red_button" style="display: flex;">
+											<div class="quantity__button quantity-remove">
+												<i class="icon-minus icon">&minus;</i>
+											</div>
+											<div class="quantity__input">
+												<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+													autocomplete="off">
+											</div>
+											<div class="quantity__button quantity-add">
+												<i class="icon-plus icon">+</i>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="product-cart__image">
-								<img src="./img/cart_img/product-3.png" alt="картинка">
-							</div>
-							<div class="product-cart__info">
+							<!--* Товар 2 -->
+							<div class="product-cart__item">
 								<div class="cart-section__icon">
-									<i class="icofont-close"></i>
+									<div class="check-box">
+										<label class="check-box__label">
+											<input class="check-box__input" type="checkbox" name="policy" id="agreement-2">
+											<span class="check-box__icon icon-gray">
+												<i class="icofont-check"></i>
+											</span>
+										</label>
+									</div>
 								</div>
-								<div class="product-cart__article">Артикул 000541</div>
-								<div class="product-cart__title">
-									<span>Лазерный дальномер</span>
-									<span>ADA COSMO MICRO 25</span>
+								<div class="product-cart__image">
+									<img src="./img/cart_img/product-2.png" alt="картинка">
 								</div>
-								<div class="product-cart__description">
-									Диапазон работы 30 м, точность ± 3,0 мм
+								<div class="product-cart__info">
+									<div class="cart-section__icon">
+										<i class="icofont-close"></i>
+									</div>
+									<div class="product-cart__article">Артикул 000541</div>
+									<div class="product-cart__title">
+										<span>Лазерный дальномер</span>
+										<span>ADA COSMO MICRO 25</span>
+									</div>
+									<div class="product-cart__description">
+										Диапазон работы 30 м, точность ± 3,0 мм
+									</div>
+								</div>
+
+								<div class="product-cart__counter">
+									<div class="counter-wrapper">
+										<div class="product-cart__price">
+											<div class="product-cart__old-price">4 334 руб</div>
+											<div class="product-cart__new-price">3 750 руб</div>
+										</div>
+
+										<div class="quantity product-cart__quantity red_button" style="display: flex;">
+											<div class="quantity__button quantity-remove">
+												<i class="icon-minus icon">&minus;</i>
+											</div>
+											<div class="quantity__input">
+												<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+													autocomplete="off">
+											</div>
+											<div class="quantity__button quantity-add">
+												<i class="icon-plus icon">+</i>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
-
-							<div class="product-cart__counter">
-								<div class="counter-wrapper">
-									<div class="product-cart__price">
-										<div class="product-cart__old-price">4 334 руб</div>
-										<div class="product-cart__new-price">3 750 руб</div>
+							<!--* Товар 3 -->
+							<div class="product-cart__item">
+								<div class="cart-section__icon">
+									<div class="check-box">
+										<label class="check-box__label">
+											<input class="check-box__input" type="checkbox" name="policy" id="agreement-3">
+											<span class="check-box__icon icon-gray">
+												<i class="icofont-check"></i>
+											</span>
+										</label>
 									</div>
+								</div>
+								<div class="product-cart__image">
+									<img src="./img/cart_img/product-3.png" alt="картинка">
+								</div>
+								<div class="product-cart__info">
+									<div class="cart-section__icon">
+										<i class="icofont-close"></i>
+									</div>
+									<div class="product-cart__article">Артикул 000541</div>
+									<div class="product-cart__title">
+										<span>Лазерный дальномер</span>
+										<span>ADA COSMO MICRO 25</span>
+									</div>
+									<div class="product-cart__description">
+										Диапазон работы 30 м, точность ± 3,0 мм
+									</div>
+								</div>
 
-									<div class="quantity product-cart__quantity red_button" style="display: flex;">
-										<div class="quantity__button quantity-remove">
-											<i class="icon-minus icon">&minus;</i>
+								<div class="product-cart__counter">
+									<div class="counter-wrapper">
+										<div class="product-cart__price">
+											<div class="product-cart__old-price">4 334 руб</div>
+											<div class="product-cart__new-price">3 750 руб</div>
 										</div>
-										<div class="quantity__input">
-											<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-												autocomplete="off">
-										</div>
-										<div class="quantity__button quantity-add">
-											<i class="icon-plus icon">+</i>
+
+										<div class="quantity product-cart__quantity red_button" style="display: flex;">
+											<div class="quantity__button quantity-remove">
+												<i class="icon-minus icon">&minus;</i>
+											</div>
+											<div class="quantity__input">
+												<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+													autocomplete="off">
+											</div>
+											<div class="quantity__button quantity-add">
+												<i class="icon-plus icon">+</i>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
 					</form>
+
+					<div class="product-cart__cart-empty">
+						<div class="cart-empty">
+							<div class="cart-empty__title">Ваша корзина пока пуста</div>
+							<div class="cart-empty__text">
+								Акции, специальные предложения и обзоры самых интересных товаров на главной странице помогут вам
+								определиться с выбором!
+							</div>
+							<form action="#" method="#" class="form-search">
+								<fieldset class="form-search__group">
+									<div class="form-search__input">
+										<input type="text" id="search-product" placeholder=" " name="search-product">
+										<label class="form-search__label" for="search-product">
+											<span>Быстрое добавление: введите наименование или код товара</span>
+										</label>
+									</div>
+									<button class="form-search__button" type="submit">
+										<i class="icofont-search-2" value="Submit"></i>
+									</button>
+								</fieldset>
+							</form>
+							<div class="product-cart__return-button">
+								<div class="send-button">
+									<div class="send-button__button grey_button">
+										<a href="./index.html">На главную</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="cart-section__col wow fadeInDown">
@@ -609,8 +644,8 @@
 		</section>
 	</div>
 	<!--*  wow fadeInDown -->
-	<footer>
-		<div class=" container">
+	<footer class="footer">
+		<div class="footer__section container">
 			<div class="footer_header pb-4">
 				<div class="row flex-nowrap align-items-center">
 					<!--===========-->
@@ -770,8 +805,10 @@
 			</div>
 		</div>
 		<div class="footer_footer">
-			<div class="container">
-				<div class="font12 text-right">Copyright &copy; 2008-2024 ADA Instruments</div>
+			<div class="copyright container">
+				<div class="copyright__text">
+					<span>Copyright&copy;2008-2024 ADA&nbsp;Instruments</span>
+				</div>
 			</div>
 		</div>
 	</footer>

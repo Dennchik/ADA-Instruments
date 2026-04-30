@@ -1409,9 +1409,24 @@ header .sub_menu a:hover:after {
 }
 
 .mobile_menu_wrapp .sub_menu {
-  background-color: #000;
+  position: relative;
+  background-color: #08080856;
   padding: 0 15px;
-  display: none;
+  // display: none;
+  // border-right: 1px solid var(--red);
+  &::before {
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    width: 1px;
+    height: 95.6%;
+    background-color: #e743376b;
+  }
+  a {
+    padding-right: 8px;
+    color: #a5a5a5;
+  }
 }
 
 .open_menu_child {
@@ -2907,3 +2922,10 @@ header .sub_menu a:hover:after {
   }
 }
 //* ----------------------------------------------------------------------------
+.service-centers {
+  margin-bottom: 75px;
+
+  @include screen-490 {
+    margin-bottom: 45px;
+  }
+}
