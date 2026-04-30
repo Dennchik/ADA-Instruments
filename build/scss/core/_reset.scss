@@ -222,13 +222,13 @@ h3 {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #777777;
+  background-color: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 1px solid var(--danger);
+  border: 1px solid var(#e0e0e0);
   border-radius: 2px;
-  background-color: var(--red);
+  background-color: #7e7e7e;
 }
 
 ::-webkit-scrollbar-thumb:hover {
