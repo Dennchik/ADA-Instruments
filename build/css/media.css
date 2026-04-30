@@ -829,7 +829,7 @@
     position: relative;
   }
   .breadcrumb {
-    padding: 0 15px;
+    padding: 0;
   }
 
   .breadcrumb > li:before {
