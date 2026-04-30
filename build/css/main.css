@@ -2857,6 +2857,13 @@ header.smaller {
   }
 }
 
+.cart-page .send-button__button a {
+  font-size: 12px;
+}
+.cart-page .send-button__button:hover a {
+  color: #a5a5a5 !important;
+}
+
 .cart-section__content {
   display: grid;
   grid-template-columns: 1fr minmax(275px, 25%);
