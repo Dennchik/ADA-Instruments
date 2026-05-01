@@ -85,6 +85,12 @@
   }
 }
 
+@mixin screen-860 {
+  @media screen and (width < 860px) {
+    @content;
+  }
+}
+
 @mixin screen-840 {
   @media screen and (width < 840px) {
     @content;

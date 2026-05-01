@@ -2969,6 +2969,9 @@ header .top_menu > li > a {
 .cart-page .send-button__button:hover a {
   color: #a5a5a5 !important;
 }
+.cart-page .profile__body {
+  height: auto;
+}
 
 .cart-section__content {
   display: grid;
@@ -2977,9 +2980,6 @@ header .top_menu > li > a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-.cart-section__col:nth-child(2) {
-  border: 1px solid rgba(255, 255, 255, 0);
 }
 .cart-section__delivery {
   background: #eee;
@@ -3530,6 +3530,9 @@ header .top_menu > li > a {
   }
 }
 
+.product-cart__cart-empty {
+  display: none;
+}
 @media screen and (width < 840px) {
   .product-cart__cart-empty {
     max-width: 720px;
@@ -3554,6 +3557,17 @@ header .top_menu > li > a {
   font-size: 31px;
   font-weight: bold;
   margin-bottom: 15px;
+  line-height: 100%;
+}
+@media (width >= 320.98px) and (width <= 1920px) {
+  .cart-empty__title {
+    font-size: calc(20px + 11 * (100vw - 320px) / 1600);
+  }
+}
+@media screen and (width <= 320px) {
+  .cart-empty__title {
+    font-size: 20px;
+  }
 }
 .cart-empty__text {
   font-size: 16px;
@@ -3564,6 +3578,11 @@ header .top_menu > li > a {
   .cart-empty__text {
     font-size: 14px;
     margin-bottom: 25px;
+  }
+}
+@media screen and (width < 375px) {
+  .cart-empty__text {
+    font-size: 12px;
   }
 }
 
@@ -3699,6 +3718,26 @@ header .top_menu > li > a {
   text-align: left;
 }
 
+.personal-account .profile__body {
+  background-color: rgb(239, 239, 239);
+}
+@media screen and (width < 992px) {
+  .personal-account .profile__body {
+    padding: 0 0 20px 0;
+    background-color: transparent;
+    -webkit-column-gap: 50px;
+       -moz-column-gap: 50px;
+            column-gap: 50px;
+    row-gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, -webkit-max-content);
+    grid-template-columns: repeat(2, max-content);
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    justify-items: end;
+  }
+}
 .personal-account .acccount-section__body {
   grid-template-columns: minmax(220px, 270px) 1fr minmax(240px, 316px);
 }
@@ -3885,21 +3924,6 @@ header .top_menu > li > a {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 25px;
-}
-@media screen and (width < 992px) {
-  .profile__body {
-    -webkit-column-gap: 50px;
-       -moz-column-gap: 50px;
-            column-gap: 50px;
-    row-gap: 15px;
-    display: grid;
-    grid-template-columns: repeat(2, -webkit-max-content);
-    grid-template-columns: repeat(2, max-content);
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
-    justify-items: end;
-  }
 }
 @media screen and (width < 375px) {
   .profile__body {
@@ -4154,8 +4178,6 @@ header .top_menu > li > a {
     font-weight: 500;
   }
   .profile__body {
-    padding: 0 0 20px 0;
-    background-color: transparent;
     border: none;
     border-bottom: 1px solid #a5a5a5;
   }
@@ -4399,6 +4421,18 @@ header .top_menu > li > a {
 @media screen and (width < 490px) {
   .contact_page_body {
     padding-bottom: 45px;
+  }
+}
+
+.cart-page .profile {
+  display: none;
+}
+@media screen and (width < 860px) {
+  .cart-page .profile__body {
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
   }
 }
 
@@ -4923,6 +4957,14 @@ header .top_menu > li > a {
   }
 }
 
+@media screen and (width < 992px) {
+  .page-order .profile__body {
+    border-bottom: 1px solid #a5a5a5;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .page-order .acccount-section {
   position: relative;
 }
@@ -4975,28 +5017,20 @@ header .top_menu > li > a {
           flex-direction: column;
   gap: 30px;
 }
-.page-order .profile {
+.profile {
   height: 100%;
 }
-.page-order .profile__body {
+.profile__body {
   padding-bottom: 40px;
   height: 100%;
 }
 @media screen and (width <= 1376px) {
-  .page-order .profile__body {
+  .profile__body {
     border: none;
     gap: 10px;
   }
 }
-@media screen and (width < 992px) {
-  .page-order .profile__body {
-    border-bottom: 1px solid #a5a5a5;
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-.page-order .profile__title {
+.profile__title {
   font-weight: 600;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5007,17 +5041,17 @@ header .top_menu > li > a {
   line-height: 100%;
   gap: 5px;
 }
-.page-order .profile__title .icofont-rounded-right {
+.profile__title .icofont-rounded-right {
   color: var(--red);
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
 }
-.page-order .profile__user {
+.profile__user {
   line-height: 100%;
   font-size: 14px;
 }
 @media screen and (width < 375px) {
-  .page-order .profile__user {
+  .profile__user {
     font-size: 12px;
     line-height: 133.333333%; /* 16px/12 */
   }

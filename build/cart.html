@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<link rel="stylesheet" type="text/css" href="./css/media.css">
 
-	<script defer type="text/javascript" src="./js/lenis.min.js"></script>
+	<script defer src="./js/dynamic-adaptive.js"></script>
 	<script defer src="./js/collapse.js"></script>
 	<script defer src="./js/itsSelect.js"></script>
 	<script defer src="./js/jquery.min.js"></script>
@@ -250,7 +250,7 @@
 									<img src="./img/cart_img/product-1.png" alt="картинка">
 								</div>
 								<div class="product-cart__info">
-									<div class="cart-section__icon">
+									<div class="cart-section__icon" id="delete-product">
 										<i class="icofont-close"></i>
 									</div>
 									<div class="product-cart__article">Артикул 000541</div>
@@ -301,7 +301,7 @@
 									<img src="./img/cart_img/product-2.png" alt="картинка">
 								</div>
 								<div class="product-cart__info">
-									<div class="cart-section__icon">
+									<div class="cart-section__icon" id="delete-product">
 										<i class="icofont-close"></i>
 									</div>
 									<div class="product-cart__article">Артикул 000541</div>
@@ -317,8 +317,8 @@
 								<div class="product-cart__counter">
 									<div class="counter-wrapper">
 										<div class="product-cart__price">
-											<div class="product-cart__old-price">4 334 руб</div>
-											<div class="product-cart__new-price">3 750 руб</div>
+											<div class="product-cart__old-price"></div>
+											<div class="product-cart__new-price">4 334 руб</div>
 										</div>
 
 										<div class="quantity product-cart__quantity red_button" style="display: flex;">
@@ -352,7 +352,7 @@
 									<img src="./img/cart_img/product-3.png" alt="картинка">
 								</div>
 								<div class="product-cart__info">
-									<div class="cart-section__icon">
+									<div class="cart-section__icon" id="delete-product">
 										<i class="icofont-close"></i>
 									</div>
 									<div class="product-cart__article">Артикул 000541</div>
@@ -387,11 +387,63 @@
 									</div>
 								</div>
 							</div>
+							<!--* Товар 4 -->
+							<div class="product-cart__item">
+								<div class="cart-section__icon">
+									<div class="check-box">
+										<label class="check-box__label">
+											<input class="check-box__input" type="checkbox" name="policy" id="agreement-2">
+											<span class="check-box__icon icon-gray">
+												<i class="icofont-check"></i>
+											</span>
+										</label>
+									</div>
+								</div>
+								<div class="product-cart__image">
+									<img src="./img/cart_img/product-2.png" alt="картинка">
+								</div>
+								<div class="product-cart__info">
+									<div class="cart-section__icon" id="delete-product">
+										<i class="icofont-close"></i>
+									</div>
+									<div class="product-cart__article">Артикул 000541</div>
+									<div class="product-cart__title">
+										<span>Лазерный дальномер</span>
+										<span>ADA COSMO MICRO 25</span>
+									</div>
+									<div class="product-cart__description">
+										Диапазон работы 30 м, точность ± 3,0 мм
+									</div>
+								</div>
+
+								<div class="product-cart__counter">
+									<div class="counter-wrapper">
+										<div class="product-cart__price">
+											<div class="product-cart__old-price"></div>
+											<div class="product-cart__new-price">4 334 руб</div>
+										</div>
+
+										<div class="quantity product-cart__quantity red_button" style="display: flex;">
+											<div class="quantity__button quantity-remove">
+												<i class="icon-minus icon">&minus;</i>
+											</div>
+											<div class="quantity__input">
+												<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+													autocomplete="off">
+											</div>
+											<div class="quantity__button quantity-add">
+												<i class="icon-plus icon">+</i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</form>
 
 					<div class="product-cart__cart-empty">
-						<div class="cart-empty">
+						<div class="cart-empty bp-3">
 							<div class="cart-empty__title">Ваша корзина пока пуста</div>
 							<div class="cart-empty__text">
 								Акции, специальные предложения и обзоры самых интересных товаров на главной странице помогут вам
@@ -578,14 +630,27 @@
 								</div>
 								<div class="delivery__sum-product">
 									<div class="delivery__title">ИТОГО</div>
-									<div class="delivery__sum">11 500 руб</div>
+									<div class="delivery__sum"> </div>
 								</div>
 								<div class="delivery__button">
 									<button class="red_button" type="submit">Оформить заказ</button>
 								</div>
 							</div>
 						</div>
+
+
 					</form>
+					<div class="profile">
+						<div class="profile__body" data-da="bp-3" data-da-position="2" data-da-resolution="859">
+							<!-- * -->
+							<div class="profile__title">
+								<span>Покупатель</span>
+								<i class="icofont-rounded-right"></i>
+							</div>
+							<div class="profile__user">Иванов Иван Иванович</div>
+
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

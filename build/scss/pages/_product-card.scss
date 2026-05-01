@@ -1,5 +1,20 @@
 @use '../core/mixins' as *;
 
+.cart-page {
+  .profile {
+    display: none;
+  }
+
+  .profile__body {
+    @include screen-860 {
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+    }
+  }
+}
+
 .product-card {
   .tovar_info_tabs {
     padding-top: 75px;

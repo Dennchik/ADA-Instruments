@@ -2,6 +2,14 @@
 //* ----------------------------------------------------------------------------
 
 .page-order {
+  .profile__body {
+    @include screen-992 {
+      border-bottom: 1px solid #a5a5a5;
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
   .acccount-section {
     position: relative;
     // .acccount-section__body
@@ -62,55 +70,46 @@
       // left: 0;
     }
   }
+}
+.profile {
+  height: 100%;
 
-  .profile {
+  // .profile__body
+  &__body {
+    padding-bottom: 40px;
     height: 100%;
 
-    // .profile__body
-    &__body {
-      padding-bottom: 40px;
-      height: 100%;
-
-      @include screen-1376 {
-        border: none;
-        gap: 10px;
-      }
-
-      @include screen-992 {
-        border-bottom: 1px solid #a5a5a5;
-        background-color: transparent;
-        padding-left: 0;
-        padding-right: 0;
-      }
+    @include screen-1376 {
+      border: none;
+      gap: 10px;
     }
+  }
 
-    // .profile__title
-    &__title {
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      line-height: 100%;
-      gap: 5px;
+  // .profile__title
+  &__title {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    line-height: 100%;
+    gap: 5px;
 
-      .icofont-rounded-right {
-        color: var(--red);
-        transform: translateY(1px);
-      }
+    .icofont-rounded-right {
+      color: var(--red);
+      transform: translateY(1px);
     }
+  }
 
-    // .profile__user
-    &__user {
-      line-height: 100%;
-      font-size: 14px;
+  // .profile__user
+  &__user {
+    line-height: 100%;
+    font-size: 14px;
 
-      @include screen-375 {
-        font-size: 12px;
-        line-height: 133.333333%; /* 16px/12 */
-      }
+    @include screen-375 {
+      font-size: 12px;
+      line-height: 133.333333%; /* 16px/12 */
     }
   }
 }
-
 .breadcrumb_wrapper {
   @include screen-840 {
     margin: 0 auto;

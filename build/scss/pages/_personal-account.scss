@@ -2,6 +2,20 @@
 
 //*  ---------------------- [ acccount-section ]--------------------------------
 .personal-account {
+  .profile__body {
+    background-color: rgb(239, 239, 239);
+
+    @include screen-992 {
+      padding: 0 0 20px 0;
+      background-color: transparent;
+      column-gap: 50px;
+      row-gap: 15px;
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      justify-content: end;
+      justify-items: end;
+    }
+  }
   .acccount-section__body {
     grid-template-columns: minmax(220px, 270px) 1fr minmax(240px, 316px);
 
@@ -185,15 +199,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 25px;
-
-    @include screen-992 {
-      column-gap: 50px;
-      row-gap: 15px;
-      display: grid;
-      grid-template-columns: repeat(2, max-content);
-      justify-content: end;
-      justify-items: end;
-    }
 
     @include screen-375 {
       gap: 20px;
@@ -456,8 +461,6 @@
   }
 
   .profile__body {
-    padding: 0 0 20px 0;
-    background-color: transparent;
     border: none;
     border-bottom: 1px solid #a5a5a5;
   }
