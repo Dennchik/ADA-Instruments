@@ -1558,6 +1558,9 @@ header .container-fluid {
 .home_page header {
   background-color: transparent;
 }
+.home_page header.smaller {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 .home_page .sub_menu a {
   color: #a5a5a5;
