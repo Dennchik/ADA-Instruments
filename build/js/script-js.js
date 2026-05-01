@@ -472,7 +472,7 @@ if (document.querySelector('.preloader')) {
 // document.addEventListener('DOMContentLoaded', () => {
 //   const element = document.querySelectorAll('.className');
 // });
-// //* -------------------- [ Плавны скролл стр.] ---------------------------------
+//* -------------------- [ Плавны скролл стр.] ---------------------------------
 // const lenis = new Lenis();
 
 // function raf(time) {

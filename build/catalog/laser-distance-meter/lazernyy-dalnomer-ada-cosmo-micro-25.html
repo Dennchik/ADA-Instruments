@@ -21,6 +21,8 @@
 	<link rel="stylesheet" type="text/css" href="../../css/main.css">
 	<link rel="stylesheet" type="text/css" href="../../css/media.css">
 
+	<!-- <script defer src="../../js/lenis.min.js"></script> -->
+	<script defer src="../../js/dynamic-adaptive.js"></script>
 	<script defer src="../../js/jquery.min.js"></script>
 	<script defer src="../../js/jquery.maskedinput.min.js"></script>
 	<script defer src="../../js/jquery.scrollTo.js"></script>
@@ -38,9 +40,9 @@
 
 <body class="whith_grey_band">
 	<!--* ================ * Preloader ==================== -->
-	<!-- <div class="preloader"> -->
-	<!-- <div class="preloader-5"></div> -->
-	<!-- </div> -->
+	<div class="preloader">
+		<div class="preloader-5"></div>
+	</div>
 	<!--* ================ * mobile_menu ==================== -->
 	<div class="mobile_menu_wrapp">
 		<div class="menu_close"><i class="icofont-close"></i></div>
@@ -204,10 +206,9 @@
 		<div class="tovar_bock_1_wrapper">
 			<div class="tovar_bock_1">
 				<div class="container">
-
 					<div class="product-card">
 						<div class="product-card__body">
-							<div class="product-card__column grey_backing">
+							<div class="product-card__column">
 
 								<div class="product-card__info">
 									<div class="product-card__content">
@@ -218,6 +219,9 @@
 											<span class="product-card__article red_color">
 												Art А00670</span>
 										</h1>
+										<div class="product-card__slide-mob bp-2">
+
+										</div>
 										<!--* --------------------------- ***** --------------------------------->
 										<div class="product-card__price">
 											<!-- * -->
@@ -264,15 +268,12 @@
 												</div>
 											</div>
 											<div class="product-card__row">
-												<p class="product-card__text"><strong>ВНИМАНИЕ!</strong> в одном мастеркартоне 20 лазерных
-													уровней
-													<span>*</span>
+												<p class="product-card__text">
+													<strong>ВНИМАНИЕ!</strong> в одном мастеркартоне 20 лазерных уровней*
 												</p>
 											</div>
 										</div>
-
 										<!-- * -->
-
 									</div>
 
 									<div class="product-card__description tovar_bock_mini_description d-none d-md-block">
@@ -314,10 +315,9 @@
 
 								</div>
 							</div>
-
 							<!--* ===========-->
 							<div class="product-card__column tovar-slide">
-								<div class="tovar_sliders">
+								<div class="tovar_sliders" data-da="bp-2" data-da-position="0" data-da-resolution="768">
 									<!-- ================tovar_slider================= -->
 									<div class="tovar_slider_wrapper">
 										<div class="tovar_slider">
@@ -568,7 +568,7 @@
 									</div>
 									<!--* ================/tovar_slider_nav================= -->
 								</div>
-								<div class="tovar_parameters pl-lg-5">
+								<div class="tovar_parameters">
 									<ul class="tovar_parameters_list">
 										<li>
 											<div><b>Артикул</b></div>

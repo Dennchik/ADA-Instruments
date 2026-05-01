@@ -490,7 +490,7 @@ jQuery('document').ready(function () {
     asNavFor: '.tovar_slider_nav',
   });
   $('.tovar_slider_nav').slick({
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     asNavFor: '.tovar_slider',
     dots: false,
@@ -499,7 +499,7 @@ jQuery('document').ready(function () {
     focusOnSelect: true,
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1376,
         settings: {
           touchThreshold: 100,
           slidesToShow: 3,

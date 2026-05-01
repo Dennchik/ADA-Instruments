@@ -332,6 +332,14 @@
 .bg-accent {
   background: rgb(239, 239, 239);
 }
+.col-md-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.col-md-6 {
+  flex: 0 1 50%;
+}
 //* -----------------------------[ FONT ]--------------------------------------
 .font_clamp_60 {
   font-size: clamp(1.51375rem, 3vw, 3.75rem);
@@ -526,9 +534,9 @@
 }
 
 .breadcrumb > li + li:before {
-  padding: 0 10px;
-  color: inherit;
   content: '\ef9a';
+  padding: 0 1px;
+  color: inherit;
   color: #a4a4a4;
   font-family: IcoFont !important;
   speak: none;

@@ -1,7 +1,9 @@
 @use '../core/mixins' as *;
-
-header {
+//* ----------------------------------------------------------------------------
+.top_panel .bootstrap-select.form-control:not([class*='col-']) {
+  width: 86px;
 }
+//* ----------------------------------------------------------------------------
 header .sub_menu a:hover:after {
   content: '\ea69';
   position: absolute;
@@ -53,14 +55,15 @@ header .container-fluid {
 .home_page header {
   background-color: transparent;
 }
-
+.home_page .sub_menu a {
+  color: #a5a5a5;
+}
 header.smaller {
   height: 70px;
   -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+  // background-color: rgba(0, 0, 0, 0.8);
 }
 //* ----------------------------------------------------------------------------
 .header {
@@ -340,8 +343,7 @@ header .top_menu > li > a {
   position: relative;
   background-color: #08080856;
   padding: 0 15px;
-  // display: none;
-  // border-right: 1px solid var(--red);
+
   &::before {
     content: '';
     position: absolute;
@@ -385,6 +387,14 @@ header .top_menu > li > a {
     position: absolute;
     top: 18px;
     left: 11px;
+
+    img {
+      display: none;
+
+      @media screen and (width <= 375px) {
+        display: block;
+      }
+    }
   }
 }
 .open_menu_child {
@@ -401,9 +411,7 @@ header .top_menu > li > a {
 .mobile_menu .select-selected {
   padding-right: 0px;
 }
-.home_page .sub_menu a {
-  color: white;
-}
+
 .has_child {
   position: static !important;
 }

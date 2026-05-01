@@ -93,26 +93,8 @@
   text-align: left;
 }
 
-.tovar_slider_nav_wrapper {
-  position: relative;
-  left: -100px;
-  width: 110%;
-  @media only screen and (max-width: 1201.99px) {
-    left: 0;
-    width: 100%;
-  }
-}
-
 .items_greed_box_price {
   font-weight: 700;
   text-align: left;
-}
-//* ----------------------------------------------------------------------------
-.tovar_slider_nav_item_box {
-  border: 4px solid #d8d8d844;
-}
-
-.col-md-6 {
-  flex: 0 1 50%;
 }
 //* ----------------------------------------------------------------------------

@@ -1,3 +1,4 @@
+@use '../core/mixins' as *;
 //* ---------------------------[ slick-slide ]----------------------------------
 .slick-slide:focus {
   outline: none;
@@ -35,6 +36,7 @@
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border: 2px solid #fff;
+  margin: 0;
 }
 
 .slick-dots li.slick-active {
@@ -58,6 +60,101 @@
 .cat_mp_slider.slick-dotted.slick-slider {
   margin-bottom: 0px;
 }
+//* ----------------------------------------------------------------------------
+.main_slider_desk_item {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 630px;
+}
+
+.main_slider_desk_item .img_cont {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+//* ----------------------------------------------------------------------------
+.tovar_sliders {
+  height: 605px;
+  // width: 800px;
+  position: static;
+  height: auto;
+  width: auto;
+  padding: 30px 30px 40px;
+
+  @include screen-490 {
+    padding: 0 10px;
+  }
+}
+
+.tovar_slider_nav_wrapper {
+  position: relative;
+
+  @media only screen and (max-width: 1201.99px) {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.tovar_slider_wrapper {
+  overflow: hidden;
+  max-height: 605px !important;
+}
+.tovar_slider_item_box .img_cont {
+  background-position: center !important;
+  height: 405px !important;
+}
+
+.tovar_slider_item_box .img_cont {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 0;
+  height: 500px;
+}
+
+.tovar_slider_nav_item_box .img_cont {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 130px;
+  cursor: pointer;
+}
+
+.tovar_slider_nav_wrapper .prev,
+.tovar_slider_nav_wrapper .next {
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  color: #777;
+  font-size: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  z-index: 10;
+  margin-top: -10px;
+}
+
+.tovar_slider_nav_wrapper .prev:hover,
+.tovar_slider_nav_wrapper .next:hover,
+.tovar_slider_nav_wrapper .prev:focus,
+.tovar_slider_nav_wrapper .next:focus {
+  color: #c77452;
+}
+
+.tovar_slider_nav_wrapper .next {
+  right: -40px;
+}
+
+.tovar_slider_nav_wrapper .prev {
+  left: -40px;
+  z-index: 2;
+}
+
 .tovar_slider_nav_wrapper .slick-dots li.slick-active button:before,
 .tovar_slider_nav_wrapper .slick-dots li.slick-active button:hover,
 .tovar_slider_nav_wrapper .slick-dots li.slick-active button:focus {

@@ -41,12 +41,7 @@
     width: 680px;
   }
 }
-@media only screen and (width < 1200px) {
-  .lh1 {
-    flex-direction: column;
-    align-items: start !important;
-  }
-}
+
 /* *---------------------- Large Devices, Wide Screens ---------------------* */
 @media only screen and (width < 1376px) {
   .items_greed_list {
@@ -138,7 +133,6 @@
   .tovar_sliders {
     height: auto;
     position: static;
-    right: 0;
     width: auto;
   }
 
@@ -148,9 +142,6 @@
 
   .tovar_slider_item_box .img_cont {
     height: 450px;
-  }
-
-  .tovar_slider_item_box .img_cont {
     background-position: right 0;
   }
 
@@ -568,7 +559,7 @@
   }
 
   .tovar_slider_item_box .img_cont {
-    height: 330px;
+    height: 330px !important;
   }
 
   .tovar_slider_nav_item_box .img_cont {
@@ -828,9 +819,6 @@
     padding-left: 20px;
     position: relative;
   }
-  .breadcrumb {
-    padding: 0;
-  }
 
   .breadcrumb > li:before {
     position: absolute;
@@ -980,7 +968,7 @@
   }
 
   .tovar_slider_item_box .img_cont {
-    height: 240px;
+    height: 240px !important;
   }
 
   .tovar_info_visual_list > li {
@@ -1152,7 +1140,7 @@
   }
 
   .tovar_slider_item_box .img_cont {
-    height: 210px;
+    height: 210px !important;
   }
 
   .tovar_slider_nav_item_box .img_cont {
@@ -1267,7 +1255,7 @@
   }
 
   .tovar_slider_item_box .img_cont {
-    height: 365px !important;
+    height: 190px !important;
   }
 
   .tovar_slider_nav_item_box .img_cont {
