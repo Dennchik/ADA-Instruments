@@ -351,16 +351,6 @@
     font-weight: bold;
   }
 
-  // .discount-product__title
-
-  &__title {
-  }
-
-  // .discount-product__sum
-
-  &__sum {
-  }
-
   // .delivery__button
   &__button {
     margin-top: 40px;
@@ -638,22 +628,5 @@
   // .form-search__group
   @include screen-690 {
     margin-bottom: 20px;
-  }
-  &__group {
-  }
-
-  // .form-search__input
-
-  &__input {
-  }
-
-  // .form-search__label
-
-  &__label {
-  }
-
-  // .form-search__button
-
-  &__button {
   }
 }

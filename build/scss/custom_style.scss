@@ -362,10 +362,6 @@
   color: #ffffff;
 }
 
-.smaller .top_menu > li > a {
-  // color: #fff;
-}
-
 /* Style items (options): */
 .select-items {
   position: absolute;
@@ -992,6 +988,7 @@
 
   .succes_message {
     opacity: 1;
+    height: 100%;
   }
 }
 
@@ -1002,29 +999,27 @@
 }
 
 .succes_message {
-  // background-color: transparent;
-  // backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
   color: #fff;
 }
 
 .succes_message {
-  position: absolute;
+  position: absolute !important;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  background-color: rgb(241, 241, 241);
+  z-index: 9 !important;
+  background-color: rgba(83, 83, 83, 0.877);
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   transition: opacity 0.9s ease 0s;
   display: none;
-
   backdrop-filter: blur(20px);
-  background-color: transparent;
+
   &.bg_transparent {
     background-color: transparent;
     color: #fff;
@@ -1619,6 +1614,17 @@
   color: rgb(255, 51, 51);
 }
 
+.tabs_over_wrap {
+  @include screen-768 {
+    margin-bottom: 10px;
+  }
+}
+
+.nav-tabs {
+  border-bottom: 0;
+  padding: 20px 10px;
+}
+
 .nav-tabs .nav-link {
   margin-bottom: 0px;
   background-color: transparent;
@@ -1654,10 +1660,6 @@
   text-align: center;
   color: #a4a4a4;
   text-transform: uppercase;
-}
-
-.nav-tabs {
-  border-bottom: 0px;
 }
 
 /*========================*/
@@ -1954,8 +1956,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  img {
-  }
 }
 
 .orderr_csall {
@@ -2016,10 +2016,6 @@
 
 .p-relstive {
   position: relative;
-}
-
-.feedback_wrap {
-  padding-top: 48px;
 }
 
 //* ----------------------------------------------------------------------------
@@ -2214,42 +2210,23 @@
 }
 
 .open_item {
-  display: block;
+  cursor: pointer;
   padding: 10px 30px 10px 0;
   position: relative;
-  // vertical-align: top;
   font-size: 12px;
   text-transform: uppercase;
   line-height: 1;
-  cursor: pointer;
-}
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-.open_item:after {
-  content: '\ea99';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 0;
-  right: 0;
-  font-family: IcoFont !important;
-  speak: none;
-  font-style: normal;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  line-height: 1;
-  font-feature-settings: 'liga';
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-  font-size: 17px;
-  margin-top: 0px;
-  transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+  .icofont-thin-down {
+    font-size: 18px;
+
+    &::before {
+      font-weight: 900;
+    }
+  }
 }
 
 .opened .open_item:after {
@@ -2267,6 +2244,31 @@
   line-height: 1;
   text-transform: uppercase;
   font-size: 8px;
+}
+
+.good_info_inner_tabs_text {
+  font-size: 24px;
+  padding-top: 45px;
+
+  @include minmax-320-1920 {
+    font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
+  }
+
+  @include screen-490 {
+    padding-top: 25px;
+  }
+
+  @include screen-320 {
+    font-size: 14px;
+  }
+}
+
+.tab_form {
+  .send-button__button {
+    @include screen-992 {
+      font-size: 10px !important;
+    }
+  }
 }
 
 .good_info_inner_tabs .nav-tabs .nav-link {
@@ -2320,7 +2322,7 @@
   position: relative;
 
   .cart_feedback {
-    padding: 0 56px;
+    padding: 0 45px;
   }
 }
 
@@ -2332,6 +2334,13 @@
   background-color: rgba(0, 0, 0, 0.479);
   top: 0;
   left: 0;
+}
+.good_info_inner_tabs {
+  padding: 75px 0;
+
+  @include screen-490 {
+    padding: 45px 0;
+  }
 }
 
 .good_info_inner_tabs > * {
@@ -2367,12 +2376,12 @@
 .buclets_list {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
   margin-left: -15px;
   margin-right: -15px;
+  padding: 0 45px;
 }
 
 .good_info_inner_tabs .video_greed_box .video_inner {
@@ -2573,11 +2582,15 @@
   content: '\eb2a';
 }
 
+.tab_form {
+  @include screen-992 {
+    padding: 0 45px;
+  }
+}
+
 .tab_form .thin_white_button:focus,
 .tab_form .thin_white_button:hover {
   color: #fff;
-  -webkit-box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.2);
-  -moz-box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.2);
   box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.2);
 }
 
@@ -2587,6 +2600,14 @@
 
 .tabs_over_wrap {
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    height: 0.1rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--red);
+  }
 }
 
 .tab_accesories_wpar {
