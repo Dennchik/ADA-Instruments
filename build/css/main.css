@@ -1507,7 +1507,7 @@ header .sub_menu a:hover:after {
   width: 14px;
   height: 14px;
   color: rgb(255, 51, 51);
-  top: 16px;
+  top: 14px;
   left: 0;
   font-family: IcoFont !important;
   speak: none;
@@ -1540,6 +1540,14 @@ header {
 }
 header .sub_menu {
   white-space: nowrap;
+}
+header .sub_menu a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .container,
@@ -2971,6 +2979,7 @@ header .top_menu > li > a {
 }
 .cart-page .profile__body {
   height: auto;
+  padding: 40px;
 }
 
 .cart-section__content {
@@ -3474,6 +3483,10 @@ header .top_menu > li > a {
 }
 
 .quantity {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: none; /* по умолчанию скрыт */
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -3716,6 +3729,16 @@ header .top_menu > li > a {
 .items_greed_box_price {
   font-weight: 700;
   text-align: left;
+}
+
+.categories .product-cart__quantity {
+  width: 190px;
+}
+@media (width < 768px) {
+  .categories .product-cart__quantity {
+    height: 36px;
+    width: 160px;
+  }
 }
 
 .personal-account .profile__body {
@@ -5018,10 +5041,6 @@ header .top_menu > li > a {
   gap: 30px;
 }
 .profile {
-  height: 100%;
-}
-.profile__body {
-  padding-bottom: 40px;
   height: 100%;
 }
 @media screen and (width <= 1376px) {

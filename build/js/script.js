@@ -775,3 +775,36 @@ jQuery('document').ready(function () {
 });
 
 //* ----------------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const maskPhone = document.querySelector('.mask-phone');
+  if (maskPhone) {
+    $('.mask-phone').mask('+7 (999) 999-99-99');
+  }
+});
+//todo ----------------------[ Preloader ]--------------------------------------
+//todo ↓↓↓ (Для Виктора)
+function loaded(item) {
+  let done = false;
+
+  function removePreloader() {
+    if (done) return;
+    done = true;
+    document.querySelector(item).classList.add('preloader-remove');
+    document.documentElement.classList.add('loaded');
+    document.body.style.scrollbarWidth = 'thin';
+  }
+
+  // Если DOM уже загружен (даже если видео ещё нет)
+  if (document.readyState !== 'loading') {
+    setTimeout(removePreloader, 550);
+  } else {
+    // Ждём только DOMContentLoaded, не load
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(removePreloader, 150);
+    });
+  }
+}
+
+if (document.querySelector('.preloader')) {
+  loaded('.preloader');
+}

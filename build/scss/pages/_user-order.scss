@@ -76,9 +76,6 @@
 
   // .profile__body
   &__body {
-    padding-bottom: 40px;
-    height: 100%;
-
     @include screen-1376 {
       border: none;
       gap: 10px;

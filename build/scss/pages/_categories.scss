@@ -98,3 +98,12 @@
   text-align: left;
 }
 //* ----------------------------------------------------------------------------
+.categories {
+  .product-cart__quantity {
+    width: 190px;
+    @include screen-768 {
+      height: 36px;
+      width: 160px;
+    }
+  }
+}
