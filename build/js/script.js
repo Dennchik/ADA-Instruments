@@ -751,12 +751,12 @@ jQuery('document').ready(function () {
 
     const tabForm = document.querySelector('.feedback_wrap');
 
-    const successMessage = document.querySelector('.succes_message');
+    const successMessage = document.querySelector('.succes-message');
 
     if (!btn || !successMessage) return;
 
     btn.addEventListener('click', () => {
-      tabForm.style.display = 'none';
+      tabForm.style.opacity = '0';
       successMessage.style.display = 'flex';
 
       setTimeout(() => {
@@ -767,7 +767,7 @@ jQuery('document').ready(function () {
         successMessage.classList.remove('_show');
       }, 2000);
       setTimeout(() => {
-        tabForm.style.display = 'block';
+        tabForm.style.opacity = '1';
         successMessage.style.display = 'none';
       }, 2200);
     });

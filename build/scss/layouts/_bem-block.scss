@@ -342,10 +342,10 @@
 }
 //* -----------------------------[ FONT ]--------------------------------------
 .font_clamp_60 {
-  font-size: clamp(1.51375rem, 3vw, 3.75rem);
+  font-size: clamp(1.41375rem, 3vw, 3.75rem);
 }
 .font_clamp_50 {
-  font-size: clamp(1.51375rem, 2.4vw, 3.125rem);
+  font-size: clamp(1.41375rem, 2.4vw, 3.125rem);
 }
 .font_clamp_30 {
   font-size: clamp(1.51375rem, 2.4vw, 3.125rem);
@@ -355,6 +355,9 @@
 }
 
 .font_11 {
+  font-size: 11px;
+}
+.font11 {
   font-size: 11px;
 }
 .font12 {
@@ -485,7 +488,9 @@
 .half_heigh {
   height: 238px;
 }
-
+.black_color {
+  color: #000;
+}
 //* ----------------------------------------------------------------------------
 .wh_txt:hover,
 .wh_txt:focus {

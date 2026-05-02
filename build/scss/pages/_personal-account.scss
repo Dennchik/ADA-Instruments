@@ -15,6 +15,10 @@
       justify-content: end;
       justify-items: end;
     }
+
+    @include screen-490 {
+      column-gap: 30px;
+    }
   }
   .acccount-section__body {
     grid-template-columns: minmax(220px, 270px) 1fr minmax(240px, 316px);

@@ -71,6 +71,11 @@ button:focus,
 button:active {
   outline: none;
 }
+a:hover {
+  outline: none;
+  border-color: transparent !important;
+  border: none;
+}
 
 //* ----------------------------------------------------------------------------
 .custom-control-input:focus ~ .custom-control-label::before {

@@ -94,8 +94,8 @@
 							<i class="icofont-search"></i>
 						</div>
 						<div class="top_search_body">
-							<form action="#">
-								<input type="text" placeholder="Поиск по сайту" required>
+							<form action="#" id="searchForm1" action="#" method="get">
+								<input type="text" id="searchInput1" name="search" placeholder="Поиск по сайту" required>
 								<button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
 							</form>
 						</div>
@@ -150,18 +150,18 @@
 								<div class="row  align-items-center  justify-content-end">
 									<!--* =================== -->
 									<div class="col-auto  d-none d-lg-block">
-										<div class="search_flexbox">
+										<form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
 											<div class="search_wrap">
 												<div>
-													<input type="text" placeholder="Поиск по сайту" required>
+													<input type="text" id="searchInput2" name="search" placeholder="Поиск по сайту" required>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
 									<!--* =================== -->
 									<div class="col-auto">
 										<div class="col_icons">
-											<a href="../../cart.html" class="col_cart icon_col cart-user">
+											<a href="./cart.html" class="col_cart icon_col cart-user">
 												<div class="cart-user__quantity"></div>
 												<svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
 													viewBox="0 0 512 512">
@@ -172,7 +172,7 @@
 													</path>
 												</svg>
 											</a>
-											<a href="../../personal-account.html" class="col_login icon_col">
+											<a href="./personal-account.html" class="col_login icon_col">
 												<svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
 													viewBox="0 0 448 448">
 													<g id="icomoon-ignore">
@@ -716,7 +716,7 @@
 		</div>
 		<div class="tovar_bock_2">
 			<div class="tovar_info_tabs">
-				<!--* --------------- [ good_info_tabs ] ------------------------ -->
+				<!--* ----------------------------- [ good_info_tabs ] -------------------------- -->
 				<div class="tab-section container">
 					<div class="tab-section__buttons tabs_over_wrap">
 						<ul class="tab-section__list nav" id="good_info_tabs_nav" role="tablist">
@@ -737,7 +737,7 @@
 				</div>
 				<!-- * -->
 				<div class="tab-content">
-					<!--* ------------------ 1 -------------------- -->
+					<!--* ----------------- 1 -------------------- -->
 					<div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="nav_link1">
 						<div class="container">
 							<div class="complectation_wrapper">
@@ -798,157 +798,156 @@
 					<!--* -----------------  2 -------------------- -->
 					<div class="tab-pane fade show active" id="tab2" role="tabpanel" aria-labelledby="nav_link2">
 
-						<div class="good-info good_info_inner_tabs container">
-							<div class="good-info__body">
-								<div class="succes-message " style="display: none;">
-									<div class="succes-message__caption succes_message_caption">
-										Спасибо за обращение ! <br>
-										мы ответим Вам в ближайшее время!
+						<div class="good_info_inner_tabs container">
+							<div class="succes-message succes_message" style="display: none;">
+								<div class="succes-message__caption succes_message_caption">
+									Спасибо за обращение ! <br>
+									мы ответим Вам в ближайшее время!
+								</div>
+							</div>
+							<div class="row succes-message-row">
+								<!-- * -->
+								<div class="cart_feedback_col cart_feedback">
+									<div class="feedback_wrap">
+										<div class="font24 text-white fw300 mb-4">Материалы</div>
+										<ul class="nav nav-tabs" id="good_info_tabs_inner_nav" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="nav_link1_inner" data-toggle="tab" href="#tab1_inner" role="tab">
+													<span class="d-block mb-2">Инструкции</span>
+													<span class="img_cont"></span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="nav_link2_inner" data-toggle="tab" href="#tab2_inner" role="tab">
+													<span class="d-block mb-2">ADA Photolan</span>
+													<span class="img_cont"></span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="nav_link3_inner" data-toggle="tab" href="#tab3_inner" role="tab">
+													<span class="d-block mb-2">Видео</span>
+													<span class="img_cont"></span>
+												</a>
+											</li>
+										</ul>
+
+										<div class="tab_form d-none d-lg-block p-relstive">
+											<div class="font24 text-white  pt-5 fw300 mb-4">
+												Возникли вопросы? <br> Напишите нам
+											</div>
+											<div class="send-button">
+												<a href="#" data-toggle="modal" data-target="#exampleModal"
+													class="send-button__button thin_white_button">
+													задать вопрос
+												</a>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<!-- * -->
+								<div class="cart_feedback_col col-xl-6 col-lg-7">
+									<div class="tab-content" id="inner_tabs_1">
+										<!--* ------------------------------- -->
+										<div class="tab-pane fade show active" id="tab1_inner" role="tabpanel"
+											aria-labelledby="nav_link1_inner">
+											<div class="buclets_wpapper">
+												<ul class="buclets_list animated fadeInRight">
+													<li>
+														<a href="#" class="buclets_box" style="background-image: url(../../img/buclet1.jpg);"></a>
+													</li>
+													<li>
+														<a href="#" class="buclets_box" style="background-image: url(../../img/buclet2.jpg);"></a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<!--* ------------------------------- -->
+										<div class="tab-pane fade text-white" id="tab2_inner" role="tabpanel"
+											aria-labelledby="nav_link2_inner">
+											<div class=" pt-5 animated fadeInRight">
+												<div class="dld_wrapper text-center">
+													<div class="downloadarrow  text-white mb-4">Скачать <b>ADA PHOTO PLAN</b> последнюю версию
+														приложения</div>
+													<a class="red_button" title="Скачать ADA PHOTO PLAN последнюю версию приложения"
+														href="https://apkpure.com/ru/ada-photo-plan/ru.ada.adaphotoplan/download"
+														target="_blank">ADA PHOTO
+														PLAN</a>
+												</div>
+											</div>
+										</div><!-- /tab-pane -->
+										<!--* ------------------------------- -->
+										<div class="tab-pane fade" id="tab3_inner" role="tabpanel" aria-labelledby="nav_link3_inner">
+											<div class="video_greed_wrapper pt-lg-5  animated fadeInRight">
+												<div class="form-row">
+													<div class="col-lg-6 col-sm-6 video_sib">
+														<div class="video_greed_box">
+															<div class="video_wrap">
+																<div class="video_inner">
+																	<div class="button_play_video_2"
+																		style="background-image: url(../../img/video_screens/1.jpg);">
+																		<div class="button_play_video_inner">
+																			<i class="icofont-play"></i>
+																			<div class="font24 text-white">ADA Cube 2-360</div>
+																			<div class="font10 text-white">Лазерный уровень</div>
+																		</div><!-- /button_play_video_inner -->
+																	</div>
+																	<iframe class="embed-responsive-item video_iframe"
+																		src="https://www.youtube.com/embed/DC5GkcEUb9U?rel=0&amp;showinfo=0"
+																		allow="accelerometer;autoplay;">
+																	</iframe>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-6 col-sm-6 video_sib">
+														<div class="video_greed_box">
+															<div class="video_wrap">
+																<div class="video_inner">
+																	<div class="button_play_video_2"
+																		style="background-image: url(../../img/video_screens/2.jpg);">
+																		<div class="button_play_video_inner">
+																			<i class="icofont-play"></i>
+																			<div class="font24 text-white">ADA Cube Mini Grren</div>
+																			<div class="font10 text-white">Лазерный уровень</div>
+																		</div>
+																	</div>
+																	<iframe class="embed-responsive-item video_iframe"
+																		src="https://www.youtube.com/embed/DC5GkcEUb9U?rel=0&amp;showinfo=0"
+																		allow="accelerometer; autoplay;">
+																	</iframe>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="open_more_videos"></div>
+											</div>
+										</div>
+										<!--* ------------------------------- -->
 									</div>
 								</div>
-								<div class="succes-message-row">
-									<!-- * -->
-									<div class="cart_feedback_col cart_feedback">
-										<div class="feedback_wrap bp-4">
-											<div class="tab_form_text">Материалы</div>
-											<ul class="nav nav-tabs" id="good_info_tabs_inner_nav" role="tablist">
-												<li class="nav-item">
-													<a class="nav-link active" id="nav_link1_inner" data-toggle="tab" href="#tab1_inner"
-														role="tab">
-														<span class="d-block mb-2">Инструкции</span>
-														<span class="img_cont"></span>
-													</a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link" id="nav_link2_inner" data-toggle="tab" href="#tab2_inner" role="tab">
-														<span class="d-block mb-2">ADA Photolan</span>
-														<span class="img_cont"></span>
-													</a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link" id="nav_link3_inner" data-toggle="tab" href="#tab3_inner" role="tab">
-														<span class="d-block mb-2">Видео</span>
-														<span class="img_cont"></span>
-													</a>
-												</li>
-											</ul>
-
-											<div class="tab_form d-lg-block p-relstive">
-												<div class="tab_form_text">
-													Возникли вопросы? <br> Напишите нам
-												</div>
-												<div class="send-button">
-													<a href="#" data-toggle="modal" data-target="#exampleModal"
-														class="send-button__button thin_white_button">
-														задать вопрос
-													</a>
-												</div>
-											</div>
-										</div>
-
-									</div>
-									<!-- * -->
-									<div class="cart_feedback_col">
-										<div class="tab-content" id="inner_tabs_1" data-da="bp-4" data-da-position="2"
-											data-da-resolution="689">
-											<!--* -------------------------------- -->
-											<div class="tab-pane fade show active" id="tab1_inner" role="tabpanel"
-												aria-labelledby="nav_link1_inner">
-												<div class="buclets_wpapper">
-													<ul class="buclets_list animated fadeInRight">
-														<li>
-															<a href="#" class="buclets_box _img">
-																<img src="../../img/buclet1.jpg" alt="Буклет-1">
-															</a>
-														</li>
-														<li>
-															<a href="#" class="buclets_box _img">
-																<img src="../../img/buclet2.jpg" alt="Буклет-2">
-															</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<!--* -------------------------------- -->
-											<div class="tab-pane fade text-white" id="tab2_inner" role="tabpanel"
-												aria-labelledby="nav_link2_inner">
-												<div class="animated fadeInRight">
-													<div class="dld_wrapper text-center">
-														<div class="downloadarrow  text-white mb-4">Скачать <b>ADA PHOTO PLAN</b> последнюю версию
-															приложения</div>
-														<a class="red_button" title="Скачать ADA PHOTO PLAN последнюю версию приложения"
-															href="https://apkpure.com/ru/ada-photo-plan/ru.ada.adaphotoplan/download"
-															target="_blank">ADA PHOTO
-															PLAN</a>
-													</div>
-												</div>
-											</div>
-											<!--* -------------------------------- -->
-											<div class="tab-pane fade" id="tab3_inner" role="tabpanel" aria-labelledby="nav_link3_inner">
-												<div class="video_greed_wrapper animated fadeInRight">
-													<div class="form-row">
-														<div class="col-lg-6 col-sm-6 video_sib">
-															<div class="video_greed_box">
-																<div class="video_wrap">
-																	<div class="video_inner">
-																		<div class="button_play_video_2"
-																			style="background-image: url(../../img/video_screens/1.jpg);">
-																			<div class="button_play_video_inner">
-																				<i class="icofont-play"></i>
-																				<div class="font24 text-white">ADA Cube 2-360</div>
-																				<div class="font10 text-white">Лазерный уровень</div>
-																			</div>
-																		</div>
-																		<iframe class="embed-responsive-item video_iframe" id="video"
-																			src="https://www.youtube.com/embed/DC5GkcEUb9U?rel=0&amp;showinfo=0"
-																			title="YouTube video player" frameborder="0"
-																			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-																			referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-																		</iframe>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-6 col-sm-6 video_sib">
-															<div class="video_greed_box">
-																<div class="video_wrap">
-																	<div class="video_inner">
-																		<div class="button_play_video_2"
-																			style="background-image: url(../../img/video_screens/2.jpg);">
-																			<div class="button_play_video_inner">
-																				<i class="icofont-play"></i>
-																				<div class="font24 text-white">ADA Cube Mini Grren</div>
-																				<div class="font10 text-white">Лазерный уровень</div>
-																			</div>
-																		</div>
-																		<iframe class="embed-responsive-item video_iframe" id="video"
-																			src="https://www.youtube.com/embed/DC5GkcEUb9U?rel=0&amp;showinfo=0"
-																			title="YouTube video player" frameborder="0"
-																			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-																			referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-																		</iframe>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="open_more_videos"></div>
-												</div>
-											</div>
-											<!--* -------------------------------- -->
-										</div>
-									</div>
-									<!-- * -->
+								<!-- * -->
+							</div>
+							<div class="tab_form d-block d-lg-none">
+								<div class="good_info_inner_tabs_text text-white fw300 mb-4">
+									Возникли вопросы? <br> Напишите нам
+								</div>
+								<div class="send-button">
+									<a href="#" data-toggle="modal" data-target="#exampleModal"
+										class="send-button__button thin_white_button">
+										задать вопрос
+									</a>
 								</div>
 							</div>
 						</div>
-						<!--* ----------- [ end_inner_tabs_1 ] ---------------------- -->
+						<!--* ---------------------- [ end_inner_tabs_1 ] ------------------------ -->
 					</div>
 					<!--* -----------------  3 -------------------- -->
 					<div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="nav_link3">
 						<div class="container">
 							<div class="tab_accesories pt-lg-5">
-								<div class="font40 fw700 lh1 text-left">Возможно, <br>
+								<div class="font40 fw700 lh1">Возможно, <br>
 									вам пригодится:</div>
 								<div class="tab_accesories_wpar">
 									<ul class="tab_accesories_list pt-5">
@@ -956,28 +955,28 @@
 											<a href="" class="tab_accesories_box">
 												<span class="img_cont mb-2" style="background-image: url(../../img/accessuars/1.jpg);">
 												</span>
-												<span class="tab_accesories_text d-block">ADA VISOR RED Laser Glasses</span>
+												<span class="font11 fw300 text-center d-block">ADA VISOR RED Laser Glasses</span>
 											</a>
 										</li>
 										<li>
 											<a href="" class="tab_accesories_box">
 												<span class="img_cont mb-2" style="background-image: url(../../img/accessuars/2.jpg);">
 												</span>
-												<span class="tab_accesories_text d-block">ADA VISOR RED Laser Glasses</span>
+												<span class="font11 fw300 text-center d-block">ADA VISOR RED Laser Glasses</span>
 											</a>
 										</li>
 										<li>
 											<a href="" class="tab_accesories_box">
 												<span class="img_cont mb-2" style="background-image: url(../../img/accessuars/3.jpg);">
 												</span>
-												<span class="tab_accesories_text d-block">ADA VISOR RED Laser Glasses</span>
+												<span class="font11 fw300 text-center d-block">ADA VISOR RED Laser Glasses</span>
 											</a>
 										</li>
 										<li>
 											<a href="" class="tab_accesories_box">
 												<span class="img_cont mb-2" style="background-image: url(../../img/accessuars/4.jpg);">
 												</span>
-												<span class="tab_accesories_text d-block">ADA VISOR RED Laser Glasses</span>
+												<span class="font11 fw300 text-center d-block">ADA VISOR RED Laser Glasses</span>
 											</a>
 										</li>
 									</ul>
@@ -985,15 +984,15 @@
 							</div>
 						</div>
 					</div>
-					<!-- * -->
+					<!--* ------------------------------- -->
 				</div>
-				<!--* --------------- [ /good_info_tabs ] ----------------------- -->
+				<!--* ------------------------------- [ /good_info_tabs ] ------------------------------------- -->
 			</div>
 		</div>
 	</div>
 	<!--*  wow fadeInDown -->
 	<footer>
-		<div class=" container">
+		<div class="container">
 			<div class="footer_header pb-4">
 				<div class="row flex-nowrap align-items-center">
 					<!-- * -->
@@ -1136,7 +1135,7 @@
 	<!-- * --- / End --- -->
 	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 
-	<!--*-------------------------- [ Modal ] ------------------------------ -->
+	<!--*--------------------------- Modal ----------------------------------------- -->
 	<div class="modal fade" id="exampleModal" style="display: none;" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -1184,7 +1183,7 @@
 			</div>
 		</div>
 	</div>
-	<!--*------------------------ [ / Modal ]------------------------------- -->
+	<!--*--------------------------- / Modal ----------------------------------------- -->
 </body>
 
 </html>
