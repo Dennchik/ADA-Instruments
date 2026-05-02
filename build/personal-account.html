@@ -21,20 +21,21 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<link rel="stylesheet" type="text/css" href="./css/media.css">
 
-	<script defer type="text/javascript" src="./js/lenis.min.js"></script>
-	<script defer type="text/javascript" src="./js/dynamic-adaptive.js"></script>
-	<script defer type="text/javascript" src="./js/jquery.min.js"></script>
-	<script defer type="text/javascript" src="./js/jquery.scrollTo.js"></script>
-	<script defer type="text/javascript" src="./dist/rangeslider/ion.rangeslider.min.js"></script>
-	<script defer type="text/javascript" src="./dist/parallax.js-1.5.0/parallax.min.js"></script>
-	<script defer type="text/javascript" src="./dist/fancybox/jquery.fancybox.min.js"></script>
-	<script defer type="text/javascript" src="./dist/animate/wow.min.js"></script>
-	<script defer type="text/javascript" src="./js/classie.js"></script>
-	<script defer type="text/javascript" src="./dist/slick/slick.min.js"></script>
-	<script defer type="text/javascript" src="./js/bootstrap.min.js"></script>
-	<script defer type="text/javascript" src="./js/popover.js"></script>
-	<script defer type="text/javascript" src="./js/script.js"></script>
-	<script defer type="text/javascript" src="./js/script-js.js"></script>
+
+	<script defer src="./js/dynamic-adaptive.js"></script>
+	<script defer src="./js/jquery.min.js"></script>
+	<script defer src="./js/jquery.maskedinput.min.js"></script>
+	<script defer src="./js/jquery.scrollTo.js"></script>
+	<script defer src="./dist/rangeslider/ion.rangeslider.min.js"></script>
+	<script defer src="./dist/parallax.js-1.5.0/parallax.min.js"></script>
+	<script defer src="./dist/fancybox/jquery.fancybox.min.js"></script>
+	<script defer src="./dist/animate/wow.min.js"></script>
+	<script defer src="./js/classie.js"></script>
+	<script defer src="./dist/slick/slick.min.js"></script>
+	<script defer src="./js/bootstrap.min.js"></script>
+	<script defer src="./js/popover.js"></script>
+	<script defer src="./js/script.js"></script>
+	<script defer src="./js/script-js.js"></script>
 </head>
 
 <body class="personal-account">
@@ -174,7 +175,7 @@
 													</path>
 												</svg>
 											</a>
-											<a href="./personal-account.html" class="col_login icon_col">
+											<a class="col_login icon_col">
 												<svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
 													viewBox="0 0 448 448">
 													<g id="icomoon-ignore">
@@ -308,8 +309,8 @@
 
 											<label class="form-user__label text-right" for="phone">Телефон *</label>
 											<div class="form-user__group">
-												<input class="form-user__input text-right" type="tel" id="phone" name="phone" autocomplete="tel"
-													placeholder="+7 (999) 123-45-67" required="">
+												<input class="form-user__input text-right mask-phone" type="tel" id="phone" name="phone"
+													autocomplete="tel" placeholder="+7 (999) 123-45-67" required="">
 											</div>
 										</div>
 									</div>
@@ -661,10 +662,10 @@
 	<!-- * --- / End --- -->
 	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 
-	<!-- * MODAL Login -->
-	<div class="modal-login" id="modal">
+	<!-- * MODAL Login-->
+	<div class="modal-login open-modal" id="modal">
 		<div class="modal-login__body">
-			<div class="modal-login__title">
+			<div class="modal-login__header">
 				<div class="modal-login__logo">
 					<div class="logo"></div>
 				</div>
@@ -673,12 +674,13 @@
 					<i class="icofont-close icon"></i>
 				</div>
 			</div>
+
 			<div class="modal-login__form">
 				<form action="#" method="get" class="form-login">
 					<!-- * -->
 
 					<fieldset class="form-login__form-group">
-						<label for="user-name" class="form-login__label">Полное наименование / ФИО</label>
+						<label for="user-name" class="form-login__label fw700">Полное наименование / ФИО</label>
 						<input type="text" id="user-name" name="user-name" class="form-login__input" required>
 					</fieldset>
 					<!-- * -->
@@ -696,6 +698,10 @@
 						<label for="kpp" class="form-login__label fw700">КПП</label>
 						<input id="kpp" type="text" name="kpp" class="form-login__input" required>
 					</fieldset>
+					<div class="modal-login__reg">
+						<span class="reg-button">Регистрация</span>
+					</div>
+
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -706,9 +712,67 @@
 
 			</div>
 
+
 		</div>
 	</div>
 
+	<!-- * MODAL Registration -->
+	<div class="modal-registration" id="modal">
+		<div class="modal-registration__body">
+			<div class="modal-registration__header">
+				<div class="modal-registration__logo">
+					<div class="logo"></div>
+				</div>
+				<span>Вход в личный кабинет</span>
+				<div class="modal-registration__close-button" id="close-modal">
+					<i class="icofont-close icon"></i>
+				</div>
+			</div>
+			<div class="modal-registration__title">
+				Укажите вашу электронную почту и придумайте пароль
+			</div>
+
+			<div class="modal-registration__text">В пароле должно быть не меньше 6 симаволов. Можно использовать латинские
+				буквы( как прописные, так и строчные: A — Z, a — z) и цифры (0 — 9)
+			</div>
+
+			<div class="modal-registration__form">
+				<form action="#" method="get" class="form-login">
+					<!-- * -->
+
+
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label class="form-login__label fw700" for="email">Email</label>
+						<input class="form-login__input" type="email" id="email" name="email" autocomplete="email"
+							placeholder="example@mail.ru" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="user-password1" class="form-login__label fw700">Пароль</label>
+						<input type="password" id="user-password1" name="user-password1" class="form-login__input"
+							autocomplete="new-password" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="user-password1" class="form-login__label fw700">Подтвердите пароль</label>
+						<input type="password" id="user-password2" name="user-password2" class="form-login__input"
+							autocomplete="new-password" required>
+					</fieldset>
+
+					<div class="form-login__sibmit-buttons">
+						<div class="send-button">
+							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
+							<button type="submit" class="send-button__button red_button"><span>сохранить</span></button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+
+		</div>
+	</div>
 </body>
 
 </html>

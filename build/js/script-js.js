@@ -503,3 +503,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 //todo -------------------- [ Открытие модалок ]--------------------------------
 //todo ↓↓↓ (Для Виктора)
+document.addEventListener('DOMContentLoaded', () => {
+  const modalLogin = document.querySelector('.modal-login');
+  const loginButton = document.querySelector('.col_login');
+  const closeButton1 = document.querySelector('.modal-login__close-button');
+  const regButton = document.querySelector('.reg-button');
+  const modalRegistration = document.querySelector('.modal-registration');
+  const closeButton2 = document.querySelector(
+    '.modal-registration__close-button'
+  );
+
+  loginButton.addEventListener('click', () => {
+    modalLogin.classList.add('open-modal');
+  });
+
+  closeButton1.addEventListener('click', () => {
+    modalLogin.classList.remove('open-modal');
+  });
+
+  closeButton2.addEventListener('click', () => {
+    modalRegistration.classList.remove('open-modal');
+  });
+
+  regButton.addEventListener('click', () => {
+    modalLogin.classList.remove('open-modal');
+    modalRegistration.classList.add('open-modal');
+  });
+});

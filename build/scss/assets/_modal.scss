@@ -14,9 +14,20 @@
   padding: 0 15px;
   display: flex;
   justify-content: center;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(48px);
+  background-color: #4747478c;
   border: 1px solid #000;
-  display: none;
+  transform: scale(0);
+  opacity: 0;
+  transition:
+    opacity 0.4s,
+    transform 0.4s ease-in-out;
+
+  &.open-modal {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+  }
 
   @include screen-375 {
     padding: 0 5px;
@@ -54,8 +65,8 @@
     }
   }
 
-  // .modal-login__title
-  &__title {
+  // .modal-login__header
+  &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -135,15 +146,212 @@
   }
 
   // .modal-login__form
-
   &__form {
     border: 1px solid #00000000;
+  }
+
+  // .modal-login__reg
+  &__reg {
+    padding: 20px 0;
+
+    .reg-button {
+      cursor: pointer;
+      position: relative;
+      font-size: 16px;
+      user-select: none;
+      line-height: 100%;
+      font-weight: 500;
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        background-color: var(--red);
+        height: 1px;
+        width: 0%;
+        left: 0;
+        margin-top: 5px;
+        transition: all 0.3s ease-in-out;
+      }
+    }
   }
 
   .send-button {
     &__button {
       width: 190px;
       height: 55px;
+    }
+  }
+}
+//* ----------------------------------------------------------------------------
+.modal-registration {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 13;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(48px);
+  background-color: #4747478c;
+  border: 1px solid #000;
+  transform: scale(0);
+  opacity: 0;
+  transition:
+    opacity 0.4s,
+    transform 0.4s ease-in-out;
+
+  &.open-modal {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  // .modal-registration__body
+  &__body {
+    position: relative;
+    padding: 55px;
+    box-shadow: 0 0 35px #bdbdbd56;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    max-width: 533px;
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include screen-992 {
+      margin-block: 100px;
+    }
+
+    @include screen-640 {
+      max-width: 473px;
+      padding: 35px;
+    }
+
+    @include screen-490 {
+      padding: 30px;
+    }
+
+    @include screen-375 {
+      padding: 20px;
+    }
+  }
+
+  // .modal-registration__header
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+    gap: 10px;
+
+    @include screen-375 {
+      gap: 15px;
+    }
+
+    span {
+      white-space: nowrap;
+      font-size: 18px;
+      color: #a5a5a5;
+
+      @include screen-992 {
+        font-size: 16px;
+      }
+
+      @include screen-490 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // .modal-registration__logo
+  &__logo {
+    margin-right: 40px;
+
+    @include screen-992 {
+      margin-right: 10px;
+    }
+
+    @include screen-490 {
+      margin-right: 0;
+    }
+
+    .logo {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: 0;
+      background-image: url(../img/logo_red.png);
+
+      @include screen-490 {
+        width: 60px;
+        height: 28px;
+      }
+    }
+  }
+
+  // .modal-registration__close-button
+  &__close-button {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      .icofont-close {
+        &::before {
+          color: var(--red);
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    .icofont-close {
+      &::before {
+        transition: all 0.4s ease 0s;
+        display: block;
+        color: #a5a5a5;
+        font-size: 20px;
+      }
+    }
+  }
+
+  // .modal-registration__title
+  &__title {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 15px;
+  }
+
+  // .modal-registration__text
+  &__text {
+    font-size: 16px;
+    line-height: 100%;
+    margin-bottom: 25px;
+  }
+
+  // .modal-registration__form
+  &__form {
+    border: 1px solid #00000000;
+
+    .form-login__form-group {
+      &:nth-child(3) {
+        margin-bottom: 30px;
+      }
     }
   }
 }
@@ -160,7 +368,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 20px;
+    gap: 5px;
   }
 
   // .form-login__label
@@ -190,7 +398,6 @@
 
   // .form-login__sibmit-buttons
   &__sibmit-buttons {
-    margin-top: 30px;
     display: flex;
     justify-content: space-between;
 
@@ -213,6 +420,7 @@
     }
   }
 }
+
 .send-button {
   width: 100%;
   display: flex;
