@@ -375,6 +375,7 @@
   &__label {
     font-size: 18px;
     margin-bottom: 0;
+    line-height: 100%;
 
     @include screen-992 {
       font-size: 16px;

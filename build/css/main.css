@@ -2911,6 +2911,7 @@ header .top_menu > li > a {
 .form-login__label {
   font-size: 18px;
   margin-bottom: 0;
+  line-height: 100%;
 }
 @media screen and (width < 992px) {
   .form-login__label {
