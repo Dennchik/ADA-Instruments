@@ -261,10 +261,10 @@ function initCartPageSpecific() {
 
 //* ==================== ЗАПУСК ПРИ ЗАГРУЗКЕ ===================================
 document.addEventListener('DOMContentLoaded', function () {
-  initCatalogCounters(); // счётчики в каталоге с переключением кнопка/счётчик
-  initOtherCounters(); // все остальные счётчики (корзина и пр.)
+  initCatalogCounters(); //* счётчики в каталоге с переключением кнопка/счётчик
+  initOtherCounters(); //* все остальные счётчики (корзина и пр.)
   if (document.querySelector('.cart-page')) {
-    initCartPageSpecific(); // дополнительная логика для страницы корзины
+    initCartPageSpecific(); //* дополнительная логика для страницы корзины
   }
 });
 //todo ---------------------[ Date and time ]-----------------------------------
@@ -504,29 +504,79 @@ document.addEventListener('DOMContentLoaded', () => {
 //todo -------------------- [ Открытие модалок ]--------------------------------
 //todo ↓↓↓ (Для Виктора)
 document.addEventListener('DOMContentLoaded', () => {
+  //* Элементы модальных окон
   const modalLogin = document.querySelector('.modal-login');
-  const loginButton = document.querySelector('.col_login');
-  const closeButton1 = document.querySelector('.modal-login__close-button');
-  const regButton = document.querySelector('.reg-button');
   const modalRegistration = document.querySelector('.modal-registration');
+
+  //* Кнопки открытия/закрытия
+  const loginButton = document.querySelector('.col_login');
+  const regButton = document.querySelector('.reg-button');
+  const closeButton1 = document.querySelector('.modal-login__close-button');
   const closeButton2 = document.querySelector(
     '.modal-registration__close-button'
   );
 
-  loginButton.addEventListener('click', () => {
-    modalLogin.classList.add('open-modal');
-  });
+  //* Вспомогательные функции
+  const openModal = (modal) => {
+    if (modal) modal.classList.add('open-modal');
+  };
 
-  closeButton1.addEventListener('click', () => {
-    modalLogin.classList.remove('open-modal');
-  });
+  const closeModal = (modal) => {
+    if (modal) modal.classList.remove('open-modal');
+  };
 
-  closeButton2.addEventListener('click', () => {
-    modalRegistration.classList.remove('open-modal');
-  });
+  //* Закрытие при клике на оверлей (фон)
+  const handleOverlayClick = (modal, event) => {
+    if (event.target === modal) closeModal(modal);
+  };
 
-  regButton.addEventListener('click', () => {
-    modalLogin.classList.remove('open-modal');
-    modalRegistration.classList.add('open-modal');
-  });
+  //* Закрытие по клавише Escape
+  const handleEscape = (event) => {
+    if (event.key === 'Escape') {
+      closeModal(modalLogin);
+      closeModal(modalRegistration);
+    }
+  };
+
+  //* --- Назначение обработчиков (с проверкой существования элементов) ---
+
+  // Открытие окна логина
+  if (loginButton && modalLogin) {
+    loginButton.addEventListener('click', () => openModal(modalLogin));
+  }
+
+  //* Закрытие окна логина через крестик
+  if (closeButton1 && modalLogin) {
+    closeButton1.addEventListener('click', () => closeModal(modalLogin));
+  }
+
+  //* Закрытие окна регистрации через крестик
+  if (closeButton2 && modalRegistration) {
+    closeButton2.addEventListener('click', () => closeModal(modalRegistration));
+  }
+
+  //* Переключение с логина на регистрацию
+  if (regButton && modalLogin && modalRegistration) {
+    regButton.addEventListener('click', () => {
+      closeModal(modalLogin);
+      openModal(modalRegistration);
+    });
+  }
+
+  //* Закрытие логина по клику на фон
+  if (modalLogin) {
+    modalLogin.addEventListener('click', (event) =>
+      handleOverlayClick(modalLogin, event)
+    );
+  }
+
+  //* Закрытие регистрации по клику на фон
+  if (modalRegistration) {
+    modalRegistration.addEventListener('click', (event) =>
+      handleOverlayClick(modalRegistration, event)
+    );
+  }
+
+  //* Глобальное закрытие по Escape для любых открытых модалок
+  document.addEventListener('keydown', handleEscape);
 });

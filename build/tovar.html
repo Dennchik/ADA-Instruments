@@ -1124,55 +1124,109 @@
   <!-- * --- / End --- -->
   <div id="toTop"><i class="icofont-rounded-up"></i></div>
 
-  <!--*--------------------------- Modal ----------------------------------------- -->
-  <div class="modal fade" id="exampleModal" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-
-        <!--* Заголовок -->
-        <div class="modal-header text-center">
-          <div class="font18">
-            Мы перезвоним вам через 5 минут <br>
-            Работаем с <b class="fw800">8.00-20.00</b>
-          </div>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+  <!-- * MODAL Login-->
+  <div class="modal-login open-modal" id="modal">
+    <div class="modal-login__body">
+      <div class="modal-login__header">
+        <div class="modal-login__logo">
+          <div class="logo"></div>
         </div>
-        <!--* Тело с формой -->
-        <form method="get" class="modal-body" id="callbackForm">
+        <span>Вход в личный кабинет</span>
+        <div class="modal-login__close-button" id="close-modal">
+          <i class="icofont-close icon"></i>
+        </div>
+      </div>
 
-          <!--* Имя -->
-          <div class="form_box mb-4">
-            <label for="userName" class="form_user_name fw600 form_box_label">Введите Ваше имя</label>
-            <input type="text" id="userName" name="user_name" class="form-control" autocomplete="name">
+      <div class="modal-login__form">
+        <form action="#" method="get" class="form-login">
+          <!-- * -->
+
+          <fieldset class="form-login__form-group">
+            <label for="user-name" class="form-login__label fw700">Полное наименование / ФИО</label>
+            <input type="text" id="user-name" name="user-name" class="form-login__input" required>
+          </fieldset>
+          <!-- * -->
+          <fieldset class="form-login__form-group">
+            <label for="user-phone" class="form-login__label fw700">Телефон</label>
+            <input type="tel" id="user-phone" name="user-phone" class="form-login__input mask-phone" required>
+          </fieldset>
+          <!-- * -->
+          <fieldset class="form-login__form-group">
+            <label for="user-inn" class="form-login__label fw700">ИНН</label>
+            <input type="text" id="user-inn" name="user-inn" class="form-login__input" required>
+          </fieldset>
+          <!-- * -->
+          <fieldset class="form-login__form-group">
+            <label for="kpp" class="form-login__label fw700">КПП</label>
+            <input id="kpp" type="text" name="kpp" class="form-login__input" required>
+          </fieldset>
+          <div class="modal-login__reg">
+            <span class="reg-button">Регистрация</span>
           </div>
 
-          <!--* Телефон -->
-          <div class=" form_box mb-3">
-            <label for="userPhone" class="form_user_tel fw600 form_box_label">Введите Ваш номер телефона</label>
-            <input class="form-control mask-phone" type="tel" id="userPhone" name="user_phone" required>
-          </div>
-
-          <!--* Вопрос -->
-          <div class=" form_box mb-3">
-            <label for="userMessage" class="form_user_mess fw600 form_box_label">Ваш вопрос</label>
-            <textarea id="userMessage" name="user_message" class="form-control"></textarea>
-          </div>
-
-          <!--* Кнопка внутри формы -->
-          <div class="modal-footer">
+          <div class="form-login__sibmit-buttons">
             <div class="send-button">
-              <button type="submit" class="submit_button send-button__button red_button"
-                data-dismiss="modal">Отправить</button>
+              <button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
+              <button type="submit" class="send-button__button red_button"><span>сохранить</span></button>
             </div>
           </div>
         </form>
-
       </div>
     </div>
   </div>
-  <!--*--------------------------- / Modal ----------------------------------------- -->
+
+  <!-- * MODAL Registration -->
+  <div class="modal-registration" id="modal">
+    <div class="modal-registration__body">
+      <div class="modal-registration__header">
+        <div class="modal-registration__logo">
+          <div class="logo"></div>
+        </div>
+        <span>Вход в личный кабинет</span>
+        <div class="modal-registration__close-button" id="close-modal">
+          <i class="icofont-close icon"></i>
+        </div>
+      </div>
+      <div class="modal-registration__title">
+        Укажите вашу электронную почту и придумайте пароль
+      </div>
+
+      <div class="modal-registration__text">В пароле должно быть не меньше 6 симаволов. Можно использовать латинские
+        буквы( как прописные, так и строчные: A — Z, a — z) и цифры (0 — 9)
+      </div>
+
+      <div class="modal-registration__form">
+        <form action="#" method="get" class="form-login">
+          <!-- * -->
+          <fieldset class="form-login__form-group">
+            <label class="form-login__label fw700" for="email">Email</label>
+            <input class="form-login__input" type="email" id="email" name="email" autocomplete="email"
+              placeholder="example@mail.ru" required>
+          </fieldset>
+          <!-- * -->
+          <fieldset class="form-login__form-group">
+            <label for="user-password1" class="form-login__label fw700">Пароль</label>
+            <input type="password" id="user-password1" name="user-password1" class="form-login__input"
+              autocomplete="new-password" required>
+          </fieldset>
+          <!-- * -->
+          <fieldset class="form-login__form-group">
+            <label for="user-password1" class="form-login__label fw700">Подтвердите пароль</label>
+            <input type="password" id="user-password2" name="user-password2" class="form-login__input"
+              autocomplete="new-password" required>
+          </fieldset>
+
+          <div class="form-login__sibmit-buttons">
+            <div class="send-button">
+              <button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
+              <button type="submit" class="send-button__button red_button"><span>сохранить</span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

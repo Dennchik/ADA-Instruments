@@ -23,6 +23,7 @@
 
 	<script defer src="../js/lenis.min.js"></script>
 	<script defer src="../js/jquery.min.js"></script>
+	<script defer src="../js/jquery.maskedinput.min.js"></script>
 	<script defer src="../js/jquery.scrollTo.js"></script>
 	<script defer src="../dist/rangeslider/ion.rangeslider.min.js"></script>
 	<script defer src="../dist/parallax.js-1.5.0/parallax.min.js"></script>
@@ -170,7 +171,7 @@
 													</path>
 												</svg>
 											</a>
-											<a href="../personal-account.html" class="col_login icon_col">
+											<a href="#" class="col_login icon_col">
 												<svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
 													viewBox="0 0 448 448">
 													<g id="icomoon-ignore">
@@ -676,6 +677,110 @@
 	</footer>
 	<!-- * --- / End --- -->
 	<div id="toTop"><i class="icofont-rounded-up"></i></div>
+
+	<!-- * MODAL Login-->
+	<div class="modal-login" id="modal">
+		<div class="modal-login__body">
+			<div class="modal-login__header">
+				<div class="modal-login__logo">
+					<div class="logo"></div>
+				</div>
+				<span>Вход в личный кабинет</span>
+				<div class="modal-login__close-button" id="close-modal">
+					<i class="icofont-close icon"></i>
+				</div>
+			</div>
+
+			<div class="modal-login__form">
+				<form action="#" method="get" class="form-login">
+					<!-- * -->
+
+					<fieldset class="form-login__form-group">
+						<label for="user-name" class="form-login__label fw700">Полное наименование / ФИО</label>
+						<input type="text" id="user-name" name="user-name" class="form-login__input" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="user-phone" class="form-login__label fw700">Телефон</label>
+						<input type="tel" id="user-phone" name="user-phone" class="form-login__input mask-phone" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="user-inn" class="form-login__label fw700">ИНН</label>
+						<input type="text" id="user-inn" name="user-inn" class="form-login__input" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="kpp" class="form-login__label fw700">КПП</label>
+						<input id="kpp" type="text" name="kpp" class="form-login__input" required>
+					</fieldset>
+					<div class="modal-login__reg">
+						<span class="reg-button">Регистрация</span>
+					</div>
+
+					<div class="form-login__sibmit-buttons">
+						<div class="send-button">
+							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
+							<button type="submit" class="send-button__button red_button"><span>сохранить</span></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- * MODAL Registration -->
+	<div class="modal-registration" id="modal">
+		<div class="modal-registration__body">
+			<div class="modal-registration__header">
+				<div class="modal-registration__logo">
+					<div class="logo"></div>
+				</div>
+				<span>Вход в личный кабинет</span>
+				<div class="modal-registration__close-button" id="close-modal">
+					<i class="icofont-close icon"></i>
+				</div>
+			</div>
+			<div class="modal-registration__title">
+				Укажите вашу электронную почту и придумайте пароль
+			</div>
+
+			<div class="modal-registration__text">В пароле должно быть не меньше 6 симаволов. Можно использовать латинские
+				буквы( как прописные, так и строчные: A — Z, a — z) и цифры (0 — 9)
+			</div>
+
+			<div class="modal-registration__form">
+				<form action="#" method="get" class="form-login">
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label class="form-login__label fw700" for="email">Email</label>
+						<input class="form-login__input" type="email" id="email" name="email" autocomplete="email"
+							placeholder="example@mail.ru" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="user-password1" class="form-login__label fw700">Пароль</label>
+						<input type="password" id="user-password1" name="user-password1" class="form-login__input"
+							autocomplete="new-password" required>
+					</fieldset>
+					<!-- * -->
+					<fieldset class="form-login__form-group">
+						<label for="user-password1" class="form-login__label fw700">Подтвердите пароль</label>
+						<input type="password" id="user-password2" name="user-password2" class="form-login__input"
+							autocomplete="new-password" required>
+					</fieldset>
+
+					<div class="form-login__sibmit-buttons">
+						<div class="send-button">
+							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
+							<button type="submit" class="send-button__button red_button"><span>сохранить</span></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 </body>
 
 </html>
