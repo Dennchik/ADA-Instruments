@@ -1,6 +1,6 @@
-// ========== ИНИЦИАЛИЗАЦИЯ КАСТОМНЫХ СЕЛЕКТОВ ==========
+//* ========== ИНИЦИАЛИЗАЦИЯ КАСТОМНЫХ СЕЛЕКТОВ ==========
 document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
-  // ПОЛУЧАЕМ ВСЕ СЕЛЕКТЫ В ГРУППЕ
+  //* ПОЛУЧАЕМ ВСЕ СЕЛЕКТЫ В ГРУППЕ
   const itsSelects = selectGroup.querySelectorAll('.select');
 
   if (itsSelects) {
@@ -8,15 +8,17 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
       const listItems = itsSelect.querySelectorAll('.select__list-item');
       const selectButton = itsSelect.querySelector('.select__button');
       const closeButton = itsSelect.querySelector('.close-button');
+      console.log(selectButton);
+
       let start = listItems[0];
 
-      // ✅ НОВОЕ: Функция обновления значения input и атрибута value
+      //* ✅ НОВОЕ: Функция обновления значения input и атрибута value
       const updateInputValue = (inputElement, newValue) => {
         if (inputElement) {
           inputElement.value = newValue;
-          inputElement.setAttribute('value', newValue); // <- ВАЖНО: обновляем атрибут
+          inputElement.setAttribute('value', newValue); //* <- ВАЖНО: обновляем атрибут
 
-          // ✅ НОВОЕ: Обновляем скрытый input если есть
+          //* ✅ НОВОЕ: Обновляем скрытый input если есть
           const hiddenInput = inputElement
             .closest('.select')
             ?.querySelector('.select__hidden-input');
@@ -32,19 +34,19 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         }
       };
 
-      // ✅ ИЗМЕНЕНО: Функция синхронизации всех селектов
+      //* ✅ ИЗМЕНЕНО: Функция синхронизации всех селектов
       const selectValue = (selectedIndex) => {
         let inputs = selectGroup.getElementsByClassName('select__input');
         const selectedText = start.textContent;
 
-        // Обновляем все inputs в группе
+        //* Обновляем все inputs в группе
         for (let i = 0; i < inputs.length; i++) {
-          updateInputValue(inputs[i], selectedText); // <- ИСПОЛЬЗУЕМ НОВУЮ ФУНКЦИЮ
+          updateInputValue(inputs[i], selectedText); //* <- ИСПОЛЬЗУЕМ НОВУЮ ФУНКЦИЮ
         }
 
         selectButton?.blur();
 
-        // Синхронизация выбранных элементов в других селектах
+        //* Синхронизация выбранных элементов в других селектах
         itsSelects.forEach((otherSelect, otherSelectIndex) => {
           if (otherSelectIndex !== selectIndex) {
             const otherListItems =
@@ -63,21 +65,21 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         });
       };
 
-      // ✅ НОВОЕ: Функция для обработки клика по элементу списка
+      //* ✅ НОВОЕ: Функция для обработки клика по элементу списка
       const handleListItemClick = (listItem, index) => {
         const el_selected = itsSelect.querySelector('._selected');
         start = listItem;
         start.focus();
 
-        // Убираем выделение с предыдущего
+        //* Убираем выделение с предыдущего
         if (el_selected && el_selected !== listItem) {
           el_selected.classList.remove('_selected');
         }
 
-        // Выделяем текущий
+        //* Выделяем текущий
         listItem.classList.add('_selected');
 
-        // ✅ ВАЖНО: Обновляем значение во всех inputs
+        //* ✅ ВАЖНО: Обновляем значение во всех inputs
         const inputs = selectGroup.getElementsByClassName('select__input');
         for (let i = 0; i < inputs.length; i++) {
           updateInputValue(inputs[i], listItem.textContent);
@@ -86,7 +88,7 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         selectValue(index);
       };
 
-      // Переключатель классов (без изменений)
+      //* Переключатель классов (без изменений)
       const _toggleOpen = (el) => {
         const collapse = new ItcCollapse(
           el.closest('.select').querySelector('._collapse')
@@ -100,7 +102,7 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         }
       };
 
-      // Закрытие всех дропдаунов (без изменений)
+      //* Закрытие всех дропдаунов (без изменений)
       const closeBos = () => {
         const dropDown = document.querySelectorAll('.select');
         dropDown.forEach((el) => {
@@ -110,7 +112,7 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         });
       };
 
-      // Обработчик клика на селект (без изменений)
+      //* Обработчик клика на селект (без изменений)
       itsSelect.addEventListener('click', function (e) {
         let target = e.target;
 
@@ -132,7 +134,7 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         }
       });
 
-      // Закрытие по кнопке close-button (без изменений)
+      //* Закрытие по кнопке close-button (без изменений)
       if (closeButton) {
         closeButton.addEventListener('click', function (e) {
           e.stopPropagation();
@@ -140,7 +142,7 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         });
       }
 
-      // Работа с клавишами (без изменений)
+      //* Работа с клавишами (без изменений)
       selectGroup.addEventListener('keydown', function (e) {
         if (['ArrowUp', 'ArrowDown', 'Enter'].includes(e.key)) {
           e.preventDefault();
@@ -169,17 +171,17 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         }
       });
 
-      // Обработчики для элементов списка
+      //* Обработчики для элементов списка
       if (listItems.length !== 0) {
         listItems.forEach(function (listItem, index) {
-          // ✅ ИЗМЕНЕНО: используем новую функцию handleListItemClick
+          //* ✅ ИЗМЕНЕНО: используем новую функцию handleListItemClick
           listItem.addEventListener('click', function () {
             handleListItemClick(listItem, index);
           });
         });
       }
 
-      // Закрыть дропдаун при нажатии Tab или Escape (без изменений)
+      //* Закрыть дропдаун при нажатии Tab или Escape (без изменений)
       document.addEventListener('keydown', function (el) {
         if (el.key === 'Tab' || el.key === 'Escape') {
           selectButton?.blur();
@@ -187,7 +189,7 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         }
       });
 
-      // Закрыть дропдаун при клике снаружи (без изменений)
+      //* Закрыть дропдаун при клике снаружи (без изменений)
       document.addEventListener('click', function (e) {
         const isInsideSelect = e.target.closest('.select');
         if (!isInsideSelect) {

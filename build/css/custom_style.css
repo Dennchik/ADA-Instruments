@@ -2714,6 +2714,11 @@
      object-fit: cover;
   background-color: transparent;
 }
+@media (width < 690px) {
+  .section_form_body {
+    margin: 0 -15px;
+  }
+}
 
 .section_form_title {
   margin-bottom: 10px;

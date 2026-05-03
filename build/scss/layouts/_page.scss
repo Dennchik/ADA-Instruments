@@ -1,6 +1,9 @@
 @use '../core/mixins' as *;
 
 .cart-page {
+  .select-group__dropdown {
+    position: relative;
+  }
   .product-cart {
     &__item {
       grid-template-columns: 22px min-content max-content auto;
@@ -137,9 +140,58 @@
 }
 //* ----------------------------------------------------------------------------
 .page-order {
+  .select-group__dropdown {
+    margin: 0;
+  }
+
+  .select {
+    padding: 0;
+    flex-direction: column;
+
+    .select__button {
+      color: inherit;
+      font-size: inherit;
+      margin-bottom: 10px;
+    }
+
+    // .select__drop-down
+    &__drop-down {
+      top: 85px;
+      width: 100%;
+
+      @include screen-992 {
+        top: 20px;
+      }
+    }
+    // .select__drop-down
+    &__drop-down {
+      max-width: 320px;
+      left: 0;
+    }
+
+    &__input {
+      width: 100%;
+      font-size: 12px;
+      white-space: wrap;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: keep-all;
+    }
+
+    &__list-item {
+      font-size: 12px;
+      white-space: normal; /* Разрешаем перенос строк */
+      word-wrap: break-word; /* Переносим длинные слова */
+      /* Разрываем ИНН при необходимости */
+      line-height: 100%; /* Увеличиваем межстрочный интервал */
+      // padding: 10px 15px; /* Добавляем отступы для читаемости */
+    }
+  }
+
   //*.profile
   .profile {
     &__body {
+      position: relative;
       @include screen-992 {
         border-bottom: 1px solid #a5a5a5;
         background-color: transparent;

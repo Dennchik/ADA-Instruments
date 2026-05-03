@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -2169,6 +2170,9 @@ header .top_menu > li > a {
   -webkit-font-smoothing: antialiased;
 }
 
+.cart-page .select-group__dropdown {
+  position: relative;
+}
 .cart-page .product-cart__item {
   grid-template-columns: 22px -webkit-min-content -webkit-max-content auto;
   grid-template-columns: 22px min-content max-content auto;
@@ -2295,6 +2299,52 @@ header .top_menu > li > a {
   }
 }
 
+.page-order .select-group__dropdown {
+  margin: 0;
+}
+.page-order .select {
+  padding: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.page-order .select .select__button {
+  color: inherit;
+  font-size: inherit;
+  margin-bottom: 10px;
+}
+.page-order .select__drop-down {
+  top: 85px;
+  width: 100%;
+}
+@media screen and (width < 992px) {
+  .page-order .select__drop-down {
+    top: 20px;
+  }
+}
+.page-order .select__drop-down {
+  max-width: 320px;
+  left: 0;
+}
+.page-order .select__input {
+  width: 100%;
+  font-size: 12px;
+  white-space: wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+.page-order .select__list-item {
+  font-size: 12px;
+  white-space: normal; /* Разрешаем перенос строк */
+  word-wrap: break-word; /* Переносим длинные слова */
+  /* Разрываем ИНН при необходимости */
+  line-height: 100%; /* Увеличиваем межстрочный интервал */
+}
+.page-order .profile__body {
+  position: relative;
+}
 @media screen and (width < 992px) {
   .page-order .profile__body {
     border-bottom: 1px solid #a5a5a5;
@@ -3878,13 +3928,11 @@ header .top_menu > li > a {
 }
 
 .select-group__dropdown {
-  position: relative;
   margin: 0 -20px;
 }
 
 .select {
   padding: 0 20px;
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3979,7 +4027,7 @@ header .top_menu > li > a {
   background-color: rgba(255, 0, 0, 0.1);
 }
 .select__input {
-  font-size: 14px !important;
+  font-size: 14px;
   pointer-events: none;
 }
 .select__button {

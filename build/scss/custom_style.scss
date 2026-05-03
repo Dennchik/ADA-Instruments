@@ -2498,6 +2498,10 @@
     no-repeat;
   object-fit: cover;
   background-color: transparent;
+
+  @include screen-690 {
+    margin: 0 -15px;
+  }
 }
 
 .section_form_title {

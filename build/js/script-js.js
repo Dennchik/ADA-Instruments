@@ -708,3 +708,38 @@ document.addEventListener('DOMContentLoaded', () => {
   //* Глобальное закрытие по Escape для любых открытых модалок
   document.addEventListener('keydown', handleEscape);
 });
+// Функция автоматической подстройки высоты
+function autoResizeTextarea(textarea) {
+  textarea.style.height = 'auto'; // Сбрасываем высоту
+  textarea.style.height = textarea.scrollHeight + 'px'; // Устанавливаем по содержимому
+}
+
+// Применяем ко всем textarea с классом select__input
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Функция автоматической подстройки высоты
+  function autoResizeTextarea(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+  }
+
+  // Применяем ко всем textarea с классом select__input
+  document.querySelectorAll('.select__input').forEach((textarea) => {
+    // Инициализация
+    autoResizeTextarea(textarea);
+
+    // При вводе текста
+    textarea.addEventListener('input', function () {
+      autoResizeTextarea(this);
+    });
+
+    // При изменении значения программно (например, через выбор из списка)
+    const observer = new MutationObserver(function () {
+      autoResizeTextarea(textarea);
+    });
+    observer.observe(textarea, {
+      attributes: true,
+      attributeFilter: ['value'],
+    });
+  });
+});

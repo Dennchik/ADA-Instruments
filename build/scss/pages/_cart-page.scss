@@ -367,14 +367,12 @@
 .select-group {
   // .select-group__dropdown
   &__dropdown {
-    position: relative;
     margin: 0 -20px;
   }
 }
 //* ----------------------------------------------------------------------------
 .select {
   padding: 0 20px;
-  position: relative;
   display: flex;
   justify-content: space-between;
 
@@ -461,7 +459,7 @@
 
   //.select__input
   &__input {
-    font-size: 14px !important;
+    font-size: 14px;
     pointer-events: none;
   }
 
