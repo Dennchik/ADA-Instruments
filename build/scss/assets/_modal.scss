@@ -23,14 +23,14 @@
     opacity 0.4s,
     transform 0.4s ease-in-out;
 
+  @include screen-375 {
+    padding: 0 5px;
+  }
+
   &.open-modal {
     transform: scale(1);
     opacity: 1;
     pointer-events: all;
-  }
-
-  @include screen-375 {
-    padding: 0 5px;
   }
 
   // .modal-login__body
@@ -189,6 +189,9 @@
     }
   }
 }
+#show-btn {
+  display: none;
+}
 //* ----------------------------------------------------------------------------
 .modal-registration {
   position: fixed;
@@ -212,6 +215,10 @@
   transition:
     opacity 0.4s,
     transform 0.4s ease-in-out;
+
+  @include screen-375 {
+    padding: 0 5px;
+  }
 
   &.open-modal {
     transform: scale(1);
@@ -342,6 +349,14 @@
     font-size: 16px;
     line-height: 100%;
     margin-bottom: 25px;
+
+    @include screen-690 {
+      font-size: 14px;
+    }
+
+    @include screen-490 {
+      font-size: 12px;
+    }
   }
 
   // .modal-registration__form
@@ -355,7 +370,195 @@
     }
   }
 }
+//* ----------------------------------------------------------------------------
+#login-btn {
+  position: relative;
+}
 
+.modal-authorized {
+  position: absolute;
+  transform: scale(0);
+  pointer-events: none;
+  opacity: 0;
+  top: 17px;
+  right: 38px;
+  box-shadow: 0 0 10px 2px rgb(0 0 0 / 30%);
+  transition:
+    opacity 0.4s,
+    transform 0.4s ease-in-out;
+
+  @include screen-992 {
+    right: 18px;
+  }
+
+  @include screen-375 {
+    top: 26px;
+    right: -26px;
+  }
+
+  &.open-modal {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  // .modal-authorized__body
+  &__body {
+    padding: 20px 20px 20px 20px;
+    background-color: #fff;
+  }
+
+  // .modal-authorized__title
+  &__title {
+    font-size: 12px;
+    padding-left: 5px;
+    font-weight: 700;
+    line-height: 100%;
+
+    span {
+      display: block;
+    }
+  }
+
+  // .modal-authorized__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  // .modal-authorized__row
+  &__row {
+    padding: 0 0 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #a5a5a5;
+    }
+  }
+
+  // .modal-authorized__text
+  &__text {
+    font-size: 12px;
+  }
+
+  // .modal-authorized__user
+  &__user {
+    font-size: 12px;
+    line-height: 100%;
+
+    &.user-name {
+      white-space: nowrap;
+    }
+  }
+
+  // .modal-authorized__close-button
+  &__close-button {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    .icofont-close {
+      font-size: 24px;
+      color: #a5a5a5;
+    }
+
+    .icon {
+      transition: color 0.4s ease-in-out;
+    }
+
+    &:hover {
+      .icon {
+        color: var(--red);
+      }
+    }
+  }
+
+  // .modal-authorized__menu
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  // .modal-authorized__item
+  &__item {
+    padding-left: 5px;
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  // .modal-authorized__link
+  &__link {
+    cursor: pointer;
+    flex: 1 1 auto;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.3s ease-in-out;
+    filter: contrast(170%);
+    &:hover {
+      color: var(--red);
+      font-weight: 500;
+      .icofont-long-arrow-right {
+        transform: translate(10px, 2px);
+      }
+    }
+  }
+
+  // .modal-authorized__icon
+  &__icon {
+    .icofont-long-arrow-right {
+      margin-left: 30px;
+      font-size: 22px;
+      color: var(--red);
+      transform: translateY(2px);
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+
+  // .modal-authorized__add-phone
+  &__add-phone {
+    cursor: pointer;
+    padding-left: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+
+    .icofont-close {
+      font-size: 20px;
+      color: #a5a5a5;
+    }
+
+    .icofont-close {
+      transform: rotate(-45deg);
+    }
+
+    .icon {
+      transition: color 0.4s ease-in-out;
+    }
+
+    &:hover {
+      .icon {
+        color: var(--red);
+      }
+    }
+  }
+
+  // .modal-authorized__footer
+  &__footer {
+    padding-left: 5px;
+    font-size: 12px;
+  }
+}
+
+//* ----------------------------------------------------------------------------
 .form-login {
   display: flex;
   flex-direction: column;

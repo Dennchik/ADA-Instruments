@@ -126,10 +126,9 @@
   // .product-cart__item
   &__item {
     padding: 20px 0;
-    border-bottom: 1px solid #d4d4d4;
     display: grid;
-    grid-template-columns: 22px min-content max-content auto;
     gap: 20px;
+    border-bottom: 1px solid #d4d4d4;
   }
 
   // .product-cart__image
@@ -372,6 +371,7 @@
     margin: 0 -20px;
   }
 }
+//* ----------------------------------------------------------------------------
 .select {
   padding: 0 20px;
   position: relative;
@@ -492,7 +492,7 @@
     font-size: 14px;
   }
 }
-
+//* ----------------------------------------------------------------------------
 .purchase-result {
   margin-bottom: 5px;
   display: flex;
@@ -511,15 +511,19 @@
   }
 }
 //* ----------------------------------------------------------------------------
+
+//* ----------------------------------------------------------------------------
 .cart-user {
   position: relative;
+
+  // .cart-user__quantity
   &__quantity {
     display: none;
     align-items: center;
     justify-content: center;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 7px;
     width: 20px;
     height: 20px;
     transform: translate(10px, -5px);
@@ -533,7 +537,7 @@
 //* ----------------------------------------------------------------------------
 .quantity {
   user-select: none;
-  display: none; /* по умолчанию скрыт */
+  display: none;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
@@ -642,6 +646,7 @@
     }
   }
 }
+//* ----------------------------------------------------------------------------
 .form-search {
   margin-bottom: 39px;
   // .form-search__group

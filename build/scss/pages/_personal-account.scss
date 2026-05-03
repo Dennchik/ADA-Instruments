@@ -20,35 +20,10 @@
       column-gap: 30px;
     }
   }
-  .acccount-section__body {
-    grid-template-columns: minmax(220px, 270px) 1fr minmax(240px, 316px);
-
-    @include screen-992 {
-      grid-template-columns: minmax(180px, 270px) 1fr;
-    }
-  }
 }
 
 .acccount-section {
   position: relative;
-
-  .acccount-content {
-    //.acccount-content__title
-    &__title {
-      display: flex;
-      align-items: center;
-      text-transform: uppercase;
-      white-space: nowrap;
-      margin-top: 60px;
-      margin-bottom: 50px;
-      line-height: 100%;
-      gap: 15px;
-
-      @include screen-840 {
-        margin-bottom: 40px;
-      }
-    }
-  }
 
   // .acccount-section__body
   &__body {

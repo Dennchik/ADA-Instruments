@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ADA | Личный кабинет | История покупок</title>
+	<title>ADA | Личный кабинет | Возврат и ремонт</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
@@ -37,7 +37,7 @@
 	<script defer src="./js/script-js.js"></script>
 </head>
 
-<body class="page-history">
+<body class="page-order">
 	<!-- * ---------------------- * Preloader ----------------------------- -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
@@ -198,7 +198,7 @@
 					<li><a href="./index.html">главная</a></li>
 					<li><a href="./personal-account.html">Личный кабинет</a></li>
 					<li class="active">
-						<span>История покупок</span>
+						<span>Возврат и ремонт</span>
 					</li>
 				</ol>
 			</div>
@@ -220,10 +220,10 @@
 						<ul class="side-menu__list catalog_menu_list">
 							<li><a class="side-menu__link" href="./personal-account.html">Личный кабинет</a></li>
 							<li><a class="side-menu__link" href="./user-order.html">Мои заказы</a></li>
-							<li><a class="side-menu__link active-link" href="./history.html">История покупок</a></li>
+							<li><a class="side-menu__link" href="./history.html">История покупок</a></li>
 							<li><a class="side-menu__link" href="./profile.html">Профиль</a></li>
 							<li><a class="side-menu__link" href="./user-organizations.html">Мои организации</a></li>
-							<li><a class="side-menu__link" href="./repair.html">Возврат и ремонт</a></li>
+							<li><a class="side-menu__link active-link" href="./repair.html">Возврат и ремонт</a></li>
 							<li><a class="side-menu__link" href="./cart.html">Корзина</a></li>
 							</li>
 						</ul>
@@ -280,160 +280,94 @@
 							</div>
 							<!-- * content__column - 3 -->
 							<div class="acccount-content__column">
-								<form action="#" method="#" class="history-orders">
-									<div class="product-cart__item">
-										<div class="product-cart__image">
-											<img src="./img/cart_img/product-1.png" alt="картинка">
-										</div>
-										<div class="product-cart__info">
-											<div class="product-cart__article">Артикул 000541</div>
-											<div class="product-cart__title">
-												<span>Лазерный дальномер</span>
-												<span>ADA COSMO MICRO 25</span>
-											</div>
-											<div class="product-cart__description">
-												Диапазон работы 30 м, точность ± 3,0 мм
-											</div>
-										</div>
+								<div class="order-status">
+									<!-- * Grid-cont-1 -->
+									<div class="order-status__body">
+										<div class="order-status__content">
+											<!-- * column-1 order-status -->
+											<div class="order-status__column">
+												<div class="order-status__type">
+													<div class="order-status__oplata">
+														<span>Не оплачен</span>
+														<i class="icofont-rounded-right"></i>
+													</div>
+													<div class="order-status__dostavka">
+														<span>В пути</span>
+														<i class="icofont-rounded-right"></i>
+													</div>
 
-										<div class="product-cart__counter">
-											<div class="counter-wrapper">
-												<div class="product-cart__price">
-													<div class="product-cart__old-price">4 334 руб</div>
-													<div class="product-cart__new-price">3 750 руб</div>
 												</div>
-
-												<div class="quantity product-cart__quantity red_button" style="display: flex;">
-													<div class="quantity__button quantity-remove">
-														<i class="icon-minus icon">&minus;</i>
-													</div>
-													<div class="quantity__input">
-														<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-															autocomplete="off">
-													</div>
-													<div class="quantity__button quantity-add">
-														<i class="icon-plus icon">+</i>
+												<div class="order-status__type">
+													<div class="order-status__info">
+														Заказ от 21 сентября 2026г №2509-704-301
 													</div>
 												</div>
+											</div>
+											<!-- * column-2 order-status -->
+											<div class="order-status__price">
+												<span id="order-price">3 950 р</span>
+											</div>
+										</div>
+										<div class="order-status__buttons">
+											<div class="send-button">
+												<button class="send-button__button dark_button" type="submit">
+													<span>повторить</span>
+												</button>
+											</div>
+
+											<div class="send-button">
+												<button class="send-button__button dark_button" type="submit">
+													<span>отменить</span>
+												</button>
 											</div>
 										</div>
 									</div>
-									<!--* Товар 2 -->
-									<div class="product-cart__item">
-										<div class="product-cart__image">
-											<img src="./img/cart_img/product-2.png" alt="картинка">
-										</div>
-										<div class="product-cart__info">
-											<div class="product-cart__article">Артикул 000541</div>
-											<div class="product-cart__title">
-												<span>Лазерный дальномер</span>
-												<span>ADA COSMO MICRO 25</span>
-											</div>
-											<div class="product-cart__description">
-												Диапазон работы 30 м, точность ± 3,0 мм
-											</div>
-										</div>
+								</div>
 
-										<div class="product-cart__counter">
-											<div class="counter-wrapper">
-												<div class="product-cart__price">
-													<div class="product-cart__old-price"></div>
-													<div class="product-cart__new-price">4 334 руб</div>
+								<div class="order-status">
+									<!-- * Grid-cont-1 -->
+									<div class="order-status__body">
+										<div class="order-status__content">
+											<!-- * column-1 order-status -->
+											<div class="order-status__column">
+												<div class="order-status__type">
+													<div class="order-status__oplata">
+														<span>Оплачен</span>
+														<i class="icofont-rounded-right"></i>
+													</div>
+													<div class="order-status__dostavka">
+														<span>Доставлен</span>
+														<i class="icofont-rounded-right"></i>
+													</div>
+
 												</div>
-
-												<div class="quantity product-cart__quantity red_button" style="display: flex;">
-													<div class="quantity__button quantity-remove">
-														<i class="icon-minus icon">&minus;</i>
-													</div>
-													<div class="quantity__input">
-														<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-															autocomplete="off">
-													</div>
-													<div class="quantity__button quantity-add">
-														<i class="icon-plus icon">+</i>
+												<div class="order-status__type">
+													<div class="order-status__info">
+														Заказ от 21 сентября 2026г №2509-704-301
 													</div>
 												</div>
+											</div>
+											<!-- * column-2 order-status -->
+											<div class="order-status__price">
+												<span id="order-price">3 950 р</span>
+											</div>
+										</div>
+										<div class="order-status__buttons">
+											<div class="send-button">
+												<button class="send-button__button dark_button" type="submit">
+													<span>повторить</span>
+												</button>
+											</div>
+
+											<div class="send-button">
+												<button class="send-button__button dark_button" type="submit">
+													<span>отменить</span>
+												</button>
 											</div>
 										</div>
 									</div>
-									<!--* Товар 3 -->
-									<div class="product-cart__item">
-										<div class="product-cart__image">
-											<img src="./img/cart_img/product-3.png" alt="картинка">
-										</div>
-										<div class="product-cart__info">
-											<div class="product-cart__article">Артикул 000541</div>
-											<div class="product-cart__title">
-												<span>Лазерный дальномер</span>
-												<span>ADA COSMO MICRO 25</span>
-											</div>
-											<div class="product-cart__description">
-												Диапазон работы 30 м, точность ± 3,0 мм
-											</div>
-										</div>
+								</div>
 
-										<div class="product-cart__counter">
-											<div class="counter-wrapper">
-												<div class="product-cart__price">
-													<div class="product-cart__old-price">4 334 руб</div>
-													<div class="product-cart__new-price">3 750 руб</div>
-												</div>
-
-												<div class="quantity product-cart__quantity red_button" style="display: flex;">
-													<div class="quantity__button quantity-remove">
-														<i class="icon-minus icon">&minus;</i>
-													</div>
-													<div class="quantity__input">
-														<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-															autocomplete="off">
-													</div>
-													<div class="quantity__button quantity-add">
-														<i class="icon-plus icon">+</i>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!--* Товар 4 -->
-									<div class="product-cart__item">
-										<div class="product-cart__image">
-											<img src="./img/cart_img/product-2.png" alt="картинка">
-										</div>
-										<div class="product-cart__info">
-											<div class="product-cart__article">Артикул 000541</div>
-											<div class="product-cart__title">
-												<span>Лазерный дальномер</span>
-												<span>ADA COSMO MICRO 25</span>
-											</div>
-											<div class="product-cart__description">
-												Диапазон работы 30 м, точность ± 3,0 мм
-											</div>
-										</div>
-
-										<div class="product-cart__counter">
-											<div class="counter-wrapper">
-												<div class="product-cart__price">
-													<div class="product-cart__old-price"></div>
-													<div class="product-cart__new-price">4 334 руб</div>
-												</div>
-
-												<div class="quantity product-cart__quantity red_button" style="display: flex;">
-													<div class="quantity__button quantity-remove">
-														<i class="icon-minus icon">&minus;</i>
-													</div>
-													<div class="quantity__input">
-														<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-															autocomplete="off">
-													</div>
-													<div class="quantity__button quantity-add">
-														<i class="icon-plus icon">+</i>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-
-								</form>
 							</div>
 						</div>
 					</div>
@@ -657,7 +591,6 @@
 			<div class="modal-login__form">
 				<form action="#" method="get" class="form-login">
 					<!-- * -->
-
 					<fieldset class="form-login__form-group">
 						<label for="user-name" class="form-login__label fw700">Полное наименование / ФИО</label>
 						<input type="text" id="user-name" name="user-name" class="form-login__input" required>
@@ -717,9 +650,6 @@
 
 			<div class="modal-registration__form">
 				<form action="#" method="get" class="form-login">
-					<!-- * -->
-
-
 					<!-- * -->
 					<fieldset class="form-login__form-group">
 						<label class="form-login__label fw700" for="email">Email</label>

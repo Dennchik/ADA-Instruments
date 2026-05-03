@@ -175,7 +175,7 @@
 													</path>
 												</svg>
 											</a>
-											<a href="#" class="col_login icon_col">
+											<a href="#" class="col_login icon_col" id="login-btn">
 												<svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
 													viewBox="0 0 448 448">
 													<g id="icomoon-ignore">
@@ -226,8 +226,8 @@
 							<li><a class="side-menu__link" href="./user-order.html">Мои заказы</a></li>
 							<li><a class="side-menu__link" href="./history.html">История покупок</a></li>
 							<li><a class="side-menu__link active-link" href="./profile.html">Профиль</a></li>
-							<li><a class="side-menu__link" href="./">Мои организации</a></li>
-							<li><a class="side-menu__link" href="./">Возврат и ремонт</a></li>
+							<li><a class="side-menu__link" href="./user-organizations.html">Мои организации</a></li>
+							<li><a class="side-menu__link" href="./repair.html">Возврат и ремонт</a></li>
 							<li><a class="side-menu__link" href="./cart.html">Корзина</a></li>
 							</li>
 						</ul>
@@ -256,14 +256,12 @@
 								<div class="form-user__wrapp-group bp-1">
 									<!--* ------------------ Line ------------------------- -->
 									<div class="form-user__line">
-										<!-- ФИО -->
+										<!--* ФИО -->
 										<div class="form-user__group">
 											<label class="form-user__label" for="fullname">ФИО</label>
 											<input class="form-user__input" type="text" id="fullname" name="fullname"
 												placeholder="Иванов Иван Иванович" required>
 										</div>
-
-
 										<!--* Дата рождения -->
 										<div class="form-user__group">
 											<label class="form-user__label text-right" for="birthdate">Дата рождения</label>
@@ -273,7 +271,6 @@
 									<!--* ------------------ Line ------------------------- -->
 									<!-- * [ FORM ] -->
 									<div class="form-user__line">
-
 										<!--* Пол (радиокнопки) -->
 										<div class="form-user__group">
 											<span class="form-user__label">Пол</span>
@@ -632,7 +629,7 @@
 	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 
 	<!-- * MODAL Login-->
-	<div class="modal-login" id="modal">
+	<div class="modal-login" id="modal-login">
 		<div class="modal-login__body">
 			<div class="modal-login__header">
 				<div class="modal-login__logo">
@@ -686,7 +683,7 @@
 	</div>
 
 	<!-- * MODAL Registration -->
-	<div class="modal-registration" id="modal">
+	<div class="modal-registration" id="modal-registration">
 		<div class="modal-registration__body">
 			<div class="modal-registration__header">
 				<div class="modal-registration__logo">

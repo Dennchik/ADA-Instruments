@@ -503,46 +503,162 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 //todo -------------------- [ Открытие модалок ]--------------------------------
 //todo ↓↓↓ (Для Виктора)
+// document.addEventListener('DOMContentLoaded', () => {
+//   //* Элементы модальных окон
+//   const modalLogin = document.querySelector('.modal-login');
+//   const modalRegistration = document.querySelector('.modal-registration');
+
+//   //* Кнопки открытия/закрытия
+//   const loginButton = document.getElementById('login-btn');
+//   const regButton = document.querySelector('.reg-button');
+//   const closeButton1 = document.querySelector('.modal-login__close-button');
+//   const closeButton2 = document.querySelector(
+//     '.modal-registration__close-button'
+//   );
+
+//   //* Вспомогательные функции
+//   const openModal = (modal) => {
+//     if (modal) modal.classList.add('open-modal');
+//   };
+
+//   const closeModal = (modal) => {
+//     if (modal) modal.classList.remove('open-modal');
+//   };
+
+//   //* Закрытие при клике на оверлей (фон)
+//   const handleOverlayClick = (modal, event) => {
+//     if (event.target === modal) closeModal(modal);
+//   };
+
+//   //* Закрытие по клавише Escape
+//   const handleEscape = (event) => {
+//     if (event.key === 'Escape') {
+//       closeModal(modalLogin);
+//       closeModal(modalRegistration);
+//     }
+//   };
+
+//   //* --- Назначение обработчиков (с проверкой существования элементов) ---
+
+//   // Открытие окна логина
+//   if (loginButton && modalLogin) {
+//     loginButton.addEventListener('click', () => openModal(modalLogin));
+//   }
+
+//   //* Закрытие окна логина через крестик
+//   if (closeButton1 && modalLogin) {
+//     closeButton1.addEventListener('click', () => closeModal(modalLogin));
+//   }
+
+//   //* Закрытие окна регистрации через крестик
+//   if (closeButton2 && modalRegistration) {
+//     closeButton2.addEventListener('click', () => closeModal(modalRegistration));
+//   }
+
+//   //* Переключение с логина на регистрацию
+//   if (regButton && modalLogin && modalRegistration) {
+//     regButton.addEventListener('click', () => {
+//       closeModal(modalLogin);
+//       openModal(modalRegistration);
+//     });
+//   }
+
+//   //* Закрытие логина по клику на фон
+//   if (modalLogin) {
+//     modalLogin.addEventListener('click', (event) =>
+//       handleOverlayClick(modalLogin, event)
+//     );
+//   }
+
+//   //* Закрытие регистрации по клику на фон
+//   if (modalRegistration) {
+//     modalRegistration.addEventListener('click', (event) =>
+//       handleOverlayClick(modalRegistration, event)
+//     );
+//   }
+
+//   //* Глобальное закрытие по Escape для любых открытых модалок
+//   document.addEventListener('keydown', handleEscape);
+// });
 document.addEventListener('DOMContentLoaded', () => {
   //* Элементы модальных окон
   const modalLogin = document.querySelector('.modal-login');
   const modalRegistration = document.querySelector('.modal-registration');
+  const modalAuthorized = document.querySelector('.modal-authorized'); // Новая модалка для авторизованных
 
   //* Кнопки открытия/закрытия
-  const loginButton = document.querySelector('.col_login');
+  const loginButton = document.getElementById('login-btn');
   const regButton = document.querySelector('.reg-button');
   const closeButton1 = document.querySelector('.modal-login__close-button');
   const closeButton2 = document.querySelector(
     '.modal-registration__close-button'
   );
+  const closeButton3 = document.querySelector(
+    '.modal-authorized__close-button'
+  ); // Крестик для новой модалки
+
+  //* Функция проверки авторизации пользователя (настройте под свою логику)
+  const isUserAuthenticated = () => {
+    // Примеры проверки - выберите подходящий вариант:
+
+    // Вариант 1: проверка токена в localStorage
+    return localStorage.getItem('userToken') !== null;
+
+    // Вариант 2: проверка sessionStorage
+    // return sessionStorage.getItem('isLoggedIn') === 'true';
+
+    // Вариант 3: проверка cookie
+    // return document.cookie.includes('user_session=');
+
+    // Вариант 4: глобальная переменная
+    // return window.userLoggedIn || false;
+  };
 
   //* Вспомогательные функции
   const openModal = (modal) => {
     if (modal) modal.classList.add('open-modal');
   };
-
   const closeModal = (modal) => {
     if (modal) modal.classList.remove('open-modal');
   };
-
   //* Закрытие при клике на оверлей (фон)
   const handleOverlayClick = (modal, event) => {
     if (event.target === modal) closeModal(modal);
   };
-
   //* Закрытие по клавише Escape
   const handleEscape = (event) => {
     if (event.key === 'Escape') {
       closeModal(modalLogin);
       closeModal(modalRegistration);
+      closeModal(modalAuthorized);
     }
   };
 
   //* --- Назначение обработчиков (с проверкой существования элементов) ---
+  //* ГЛАВНАЯ ЛОГИКА: проверка авторизации перед открытием
+  const handleMainAction = () => {
+    if (isUserAuthenticated()) {
+      // Пользователь авторизован - открываем модалку для авторизованных
+      openModal(modalAuthorized);
+    } else {
+      // Пользователь не авторизован - открываем модалку логина
+      openModal(modalLogin);
+    }
+  };
 
-  // Открытие окна логина
+  // Открытие окна логина (старая логика - можно оставить или заменить)
   if (loginButton && modalLogin) {
+    // Если нужно, чтобы кнопка login-btn всегда открывала логин (без проверки)
     loginButton.addEventListener('click', () => openModal(modalLogin));
+
+    // ИЛИ если нужно, чтобы та же кнопка проверяла авторизацию:
+    // loginButton.addEventListener('click', handleMainAction);
+  }
+
+  //* Если у вас есть другая кнопка, которая должна проверять авторизацию
+  const actionButton = document.querySelector('.action-button'); // Замените на ваш селектор
+  if (actionButton) {
+    actionButton.addEventListener('click', handleMainAction);
   }
 
   //* Закрытие окна логина через крестик
@@ -553,6 +669,11 @@ document.addEventListener('DOMContentLoaded', () => {
   //* Закрытие окна регистрации через крестик
   if (closeButton2 && modalRegistration) {
     closeButton2.addEventListener('click', () => closeModal(modalRegistration));
+  }
+
+  //* Закрытие окна авторизованных через крестик
+  if (closeButton3 && modalAuthorized) {
+    closeButton3.addEventListener('click', () => closeModal(modalAuthorized));
   }
 
   //* Переключение с логина на регистрацию
@@ -574,6 +695,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modalRegistration) {
     modalRegistration.addEventListener('click', (event) =>
       handleOverlayClick(modalRegistration, event)
+    );
+  }
+
+  //* Закрытие модалки авторизованных по клику на фон
+  if (modalAuthorized) {
+    modalAuthorized.addEventListener('click', (event) =>
+      handleOverlayClick(modalAuthorized, event)
     );
   }
 

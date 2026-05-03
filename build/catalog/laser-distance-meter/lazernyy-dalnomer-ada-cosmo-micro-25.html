@@ -172,7 +172,7 @@
 													</path>
 												</svg>
 											</a>
-											<a href="#" class="col_login icon_col">
+											<a href="#" class="col_login icon_col" id="login-btn">
 												<svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
 													viewBox="0 0 448 448">
 													<g id="icomoon-ignore">
@@ -258,7 +258,7 @@
 																		<i class="icon-minus icon">&minus;</i>
 																	</div>
 																	<div class="quantity__input">
-																		<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																		<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
 																			autocomplete="off">
 																	</div>
 																	<div class="quantity__button quantity-add">
@@ -878,7 +878,8 @@
 															приложения</div>
 														<a class="red_button" title="Скачать ADA PHOTO PLAN последнюю версию приложения"
 															href="https://apkpure.com/ru/ada-photo-plan/ru.ada.adaphotoplan/download"
-															target="_blank">ADA PHOTO
+															target="_blank">ADA
+															PHOTO
 															PLAN</a>
 													</div>
 												</div>
@@ -1135,7 +1136,6 @@
 	</footer>
 	<!-- * --- / End --- -->
 	<div id="toTop"><i class="icofont-rounded-up"></i></div>
-
 	<!--*-------------------------- [ Modal ] ------------------------------ -->
 	<div class="modal fade" id="exampleModal" style="display: none;" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
@@ -1186,7 +1186,7 @@
 	</div>
 	<!--*------------------------ [ / Modal ]------------------------------- -->
 	<!-- * MODAL Login-->
-	<div class="modal-login" id="modal">
+	<div class="modal-login" id="modal-login">
 		<div class="modal-login__body">
 			<div class="modal-login__header">
 				<div class="modal-login__logo">
@@ -1232,15 +1232,12 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 		</div>
 	</div>
 
 	<!-- * MODAL Registration -->
-	<div class="modal-registration" id="modal">
+	<div class="modal-registration" id="modal-registration">
 		<div class="modal-registration__body">
 			<div class="modal-registration__header">
 				<div class="modal-registration__logo">
@@ -1261,9 +1258,6 @@
 
 			<div class="modal-registration__form">
 				<form action="#" method="get" class="form-login">
-					<!-- * -->
-
-
 					<!-- * -->
 					<fieldset class="form-login__form-group">
 						<label class="form-login__label fw700" for="email">Email</label>

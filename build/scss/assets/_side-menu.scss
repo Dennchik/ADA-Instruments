@@ -29,21 +29,20 @@
     &:hover {
       color: var(--red);
     }
-
-    &.selected-link {
-      color: var(--red) !important;
-    }
-
-    &.active-link {
-      color: rgb(255, 111, 111) !important;
-      filter: contrast(170%);
-    }
   }
 
   // .side-menu__close-menu
   &__close-menu {
     display: none;
   }
+}
+
+.selected-link {
+  color: var(--red) !important;
+}
+.active-link {
+  color: rgb(255, 111, 111) !important;
+  filter: contrast(170%);
 }
 //* --------------------------- [ menu_button ] --------------------------------
 .menu_button {

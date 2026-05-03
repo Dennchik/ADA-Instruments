@@ -36,7 +36,7 @@
 	<script defer src="./js/bootstrap.min.js"></script>
 	<script defer src="./js/popover.js"></script>
 	<script defer src="./js/script.js"></script>
-	<script defer type="text/javascript" src="./js/script-js.js"></script>
+	<script defer src="./js/script-js.js"></script>
 </head>
 
 <body class="cart-page">
@@ -85,7 +85,7 @@
 	<div id="main">
 		<header>
 			<div class="container h-100">
-				<!-- ==================================================== -->
+				<!-- * -->
 				<div class="d-lg-none d-block">
 					<button class="menu_button menu_show">
 						<span class='toggle'><i></i> <i></i> <i></i></span>
@@ -102,17 +102,17 @@
 						</div>
 					</div>
 				</div>
-				<!-- ==================================================== -->
+				<!-- * -->
 				<div class="top_panel h-100">
-					<div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
+					<div class="row h-100 flex-nowrap justify-content-between align-items-center">
 						<div class="col-auto">
 							<div class="left_TP">
 								<div class="row align-items-center">
-									<!-- =================== -->
+									<!-- * -->
 									<div class="col-auto">
 										<a href="./index.html" class="logo"></a>
 									</div>
-									<!-- =================== -->
+									<!-- * -->
 									<div class="col-auto d-none d-lg-block">
 										<ul class="top_menu ml-lg-3">
 											<li class="has_child">
@@ -141,15 +141,15 @@
 											<li><a href="./contact.html"><span>Контакты</span></a></li>
 										</ul>
 									</div>
-									<!-- =================== -->
+									<!-- * -->
 								</div>
 							</div>
 						</div>
-						<!-- ================== -->
+						<!-- * -->
 						<div class="col-auto">
 							<div class="right_TP">
-								<div class="row  align-items-center  justify-content-end">
-									<!-- =================== -->
+								<div class="row  align-items-center justify-content-end">
+									<!-- * -->
 									<div class="col-auto d-none d-lg-block">
 										<form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
 											<div class="search_wrap">
@@ -159,11 +159,11 @@
 											</div>
 										</form>
 									</div>
-									<!-- =================== -->
+									<!-- * -->
 									<div class="col-auto">
 										<div class="col_icons">
 											<a href="./cart.html" class="col_cart icon_col cart-user">
-												<div class="cart-user__quantity"></div>
+												<span class="cart-user__quantity"></span>
 												<svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
 													viewBox="0 0 512 512">
 													<g id="icomoon-ignore">
@@ -173,7 +173,7 @@
 													</path>
 												</svg>
 											</a>
-											<a href="#" class="col_login icon_col">
+											<a href="#" class="col_login icon_col" id="login-btn">
 												<svg class="icon-user" version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448"
 													viewBox="0 0 448 448">
 													<g id="icomoon-ignore">
@@ -183,6 +183,77 @@
 													</path>
 												</svg>
 											</a>
+
+											<!-- * MODAL login (Когда пользователь авторизирован) -->
+											<div class="modal-authorized open-modal" id="modal-authorized">
+												<div class="modal-authorized__close-button" id="close-modal">
+													<i class="icofont-close icon"></i>
+												</div>
+												<div class="modal-authorized__body">
+													<div class="modal-authorized__content">
+														<div class="modal-authorized__row">
+															<div class="modal-authorized__title">
+																<span class="modal-authorized__user">Индивидуальный предприниматель</span>
+																<span class="modal-authorized__user user-name" id="authorized-user ">Семенов Семен
+																	Семенович</span>
+															</div>
+															<ul class="modal-authorized__menu">
+																<li class="modal-authorized__item">
+																	<a href="./personal-account.html" class="modal-authorized__link">Личный
+																		кабинет</a>
+																</li>
+																<li class="modal-authorized__item">
+																	<a href="./history.html" class="modal-authorized__link">Профиль</a>
+																</li>
+																<li class="modal-authorized__item">
+																	<a href="./user-organizations.html" class="modal-authorized__link">Мои организации</a>
+																</li>
+																<li class="modal-authorized__item">
+																	<a href="./user-order.html" class="modal-authorized__link">Иои заказы</a>
+																</li>
+																<li class="modal-authorized__item">
+																	<a href="#" class="modal-authorized__link">
+																		<span>Выход</span>
+																		<span class="modal-authorized__icon">
+																			<i class="icofont-long-arrow-right icon"></i>
+																		</span>
+																	</a>
+
+																</li>
+															</ul>
+														</div>
+														<div class="modal-authorized__row">
+															<div class="modal-authorized__title">
+																<span>Мои организации</span>
+															</div>
+															<div class="modal-authorized__info">
+																<ul class="modal-authorized__menu">
+																	<li class="modal-authorized__item">
+																		<span class="modal-authorized__user">Индивидуальный предприниматель</span>
+																		<span class="modal-authorized__user user-name" id="authorized-user ">Семенов Семен
+																			Семенович</span>
+																	</li>
+																	<li class="modal-authorized__item">
+																		<span>Общество с ограниченной ответственностью "ККАРОСПОРТ"</span>
+																	</li>
+																</ul>
+															</div>
+															<div class="modal-authorized__add-phone">
+																<span>Добавить телевон</span>
+																<span class="modal-authorized__icon">
+																	<i class="icofont-close icon"></i>
+																</span>
+															</div>
+														</div>
+														<div class="modal-authorized__footer">
+															<span>
+																<strong>Иван И.</strong> (физ. лицо)
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- * ========================================================= -->
 										</div>
 									</div>
 								</div>
@@ -532,7 +603,7 @@
 											<button type="button" class="select__button">
 												изменить
 											</button>
-											<!-- Выпадающий список -->
+											<!--* Выпадающий список -->
 
 											<div class="select__drop-down _collapse">
 												<div class="select__d-title">
@@ -638,8 +709,6 @@
 								</div>
 							</div>
 						</div>
-
-
 					</form>
 					<div class="profile">
 						<div class="profile__body" data-da="bp-3" data-da-position="2" data-da-resolution="859">
@@ -649,14 +718,13 @@
 								<i class="icofont-rounded-right"></i>
 							</div>
 							<div class="profile__user">Иванов Иван Иванович</div>
-
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- * -------------------- /cart-section --------------------------- -->
+		<!-- * ------------------- [ /cart-section ]------------------------- -->
 		<section class="section_form container">
 			<div class="section_form_body" style="visibility: visible; animation-name: fadeInUp;">
 				<div class="section_form_title">
@@ -882,7 +950,7 @@
 	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 
 	<!-- * MODAL Login-->
-	<div class="modal-login" id="modal">
+	<div class="modal-login" id="modal-login">
 		<div class="modal-login__body">
 			<div class="modal-login__header">
 				<div class="modal-login__logo">
@@ -928,12 +996,15 @@
 						</div>
 					</div>
 				</form>
+
 			</div>
+
+
 		</div>
 	</div>
 
 	<!-- * MODAL Registration -->
-	<div class="modal-registration" id="modal">
+	<div class="modal-registration" id="modal-registration">
 		<div class="modal-registration__body">
 			<div class="modal-registration__header">
 				<div class="modal-registration__logo">
@@ -954,6 +1025,9 @@
 
 			<div class="modal-registration__form">
 				<form action="#" method="get" class="form-login">
+					<!-- * -->
+
+
 					<!-- * -->
 					<fieldset class="form-login__form-group">
 						<label class="form-login__label fw700" for="email">Email</label>
@@ -980,10 +1054,12 @@
 						</div>
 					</div>
 				</form>
+
 			</div>
+
+
 		</div>
 	</div>
-
 </body>
 
 </html>
