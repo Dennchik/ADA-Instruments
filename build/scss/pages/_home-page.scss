@@ -98,6 +98,11 @@
       font-size: 14px;
       text-transform: uppercase;
       color: #a4a4a4;
+      margin-bottom: 1.6rem;
+
+      br {
+        display: none;
+      }
     }
   }
 
@@ -214,6 +219,15 @@
           height: 36px;
         }
       }
+    }
+  }
+
+  // .support-block__text
+  &__text {
+    font-size: 14px;
+
+    @include screen-992 {
+      font-size: 12px;
     }
   }
 

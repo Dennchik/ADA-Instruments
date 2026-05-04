@@ -5892,6 +5892,10 @@ header .top_menu > li > a {
     font-size: 14px;
     text-transform: uppercase;
     color: #a4a4a4;
+    margin-bottom: 1.6rem;
+  }
+  .support-block__header br {
+    display: none;
   }
 }
 .support-block__content {
@@ -6029,6 +6033,14 @@ header .top_menu > li > a {
 @media screen and (width < 490px) {
   .support-block__item:nth-child(2) .thin_grey_button {
     height: 36px;
+  }
+}
+.support-block__text {
+  font-size: 14px;
+}
+@media screen and (width < 992px) {
+  .support-block__text {
+    font-size: 12px;
   }
 }
 .support-block__phone {
