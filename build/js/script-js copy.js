@@ -232,8 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll);
   document.addEventListener('click', handleClickOutside);
 });
-
-//* ----------------------------------------------------------------------------
 //* ----------------------------------------------------------------------------
 //todo ---------- счетчик (добавить в корзину) кнопка --------------------------
 //todo ↓↓↓ (Для Виктора)

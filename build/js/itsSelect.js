@@ -8,10 +8,36 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
       const listItems = itsSelect.querySelectorAll('.select__list-item');
       const selectButton = itsSelect.querySelector('.select__button');
       const closeButton = itsSelect.querySelector('.close-button');
-      console.log(selectButton);
+      //* ----------------------------------------------------------------------
+      const datePicker = document.querySelector('#deliveryDate');
+      const timePicker = document.querySelector('#deliveryTime');
 
       let start = listItems[0];
 
+      //* ✅ НОВОЕ: Выбор Даты и времени обновления значения input и атрибута value
+      if (datePicker) {
+        datePicker.addEventListener('click', (e) => {
+          e.stopPropagation(); // Останавливаем всплытие
+        });
+
+        datePicker.addEventListener('change', (e) => {
+          e.stopPropagation();
+          console.log('Дата выбрана:', e.target.value);
+          //* Не закрываем дропдаун
+        });
+      }
+
+      if (timePicker) {
+        timePicker.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+
+        timePicker.addEventListener('change', (e) => {
+          e.stopPropagation();
+          console.log('Время выбрано:', e.target.value);
+          //* Не закрываем дропдаун
+        });
+      }
       //* ✅ НОВОЕ: Функция обновления значения input и атрибута value
       const updateInputValue = (inputElement, newValue) => {
         if (inputElement) {
@@ -86,6 +112,11 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
         }
 
         selectValue(index);
+
+        //* ✅ ЗАКРЫТИЕ ДРОПДАУНА:
+        if (itsSelect.classList.contains('_active-collapse')) {
+          _toggleOpen(itsSelect);
+        }
       };
 
       //* Переключатель классов (без изменений)

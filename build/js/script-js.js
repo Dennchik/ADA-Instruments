@@ -725,7 +725,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Применяем ко всем textarea с классом select__input
   document.querySelectorAll('.select__input').forEach((textarea) => {
-    // Инициализация
+    //* Инициализация
     autoResizeTextarea(textarea);
 
     // При вводе текста
@@ -733,7 +733,7 @@ document.addEventListener('DOMContentLoaded', () => {
       autoResizeTextarea(this);
     });
 
-    // При изменении значения программно (например, через выбор из списка)
+    //* При изменении значения программно (например, через выбор из списка)
     const observer = new MutationObserver(function () {
       autoResizeTextarea(textarea);
     });
