@@ -26,43 +26,43 @@
 }
 
 @mixin screen-1920 {
-  @media screen and (width <= 1920px) {
+  @media screen and (width < 1920px) {
     @content;
   }
 }
 
 @mixin screen-1800 {
-  @media screen and (width <= 1800px) {
+  @media screen and (width < 1800px) {
     @content;
   }
 }
 
 @mixin screen-1440 {
-  @media screen and (width <= 1440px) {
+  @media screen and (width < 1440px) {
     @content;
   }
 }
 
 @mixin screen-1376 {
-  @media screen and (width <= 1376px) {
+  @media screen and (width < 1376px) {
     @content;
   }
 }
 
 @mixin screen-1200 {
-  @media screen and (width <= 1200px) {
+  @media screen and (width < 1200px) {
     @content;
   }
 }
 
 @mixin screen-1140 {
-  @media screen and (width <= 1140px) {
+  @media screen and (width < 1140px) {
     @content;
   }
 }
 
 @mixin screen-1024 {
-  @media screen and (width <= 1024px) {
+  @media screen and (width < 1024px) {
     @content;
   }
 }

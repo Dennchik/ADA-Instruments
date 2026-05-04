@@ -31,6 +31,7 @@
 
     .send-button {
       width: 100%;
+      justify-content: flex-end;
 
       // .send-button__button
       &__button {
@@ -38,13 +39,20 @@
       }
     }
   }
+
+  //* .product-cart
   .product-cart {
     &__item {
       grid-template-columns: min-content max-content auto;
       justify-items: center;
 
+      @include screen-1140 {
+        grid-template-columns: 35% 1fr;
+      }
+
       @include screen-490 {
         grid-template-columns: 1fr;
+        row-gap: 20px;
       }
     }
 
@@ -53,22 +61,65 @@
       display: flex;
       justify-content: center;
 
+      @include screen-1140 {
+        grid-column: 1 / 2;
+      }
+
+      @include screen-992 {
+        grid-row: 1 / 3;
+        display: flex;
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          object-fit: contain;
+        }
+      }
+
       @include screen-490 {
         grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        max-width: 70%;
       }
     }
 
     // .product-cart__info
     &__info {
+      @include screen-1140 {
+        grid-column: 1/ 3;
+        grid-row: 2 / 3;
+        justify-self: start;
+      }
+
+      @include screen-992 {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        align-self: center;
+        justify-self: center;
+      }
+
       @include screen-490 {
         grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        max-width: 90%;
       }
     }
 
     // .product-cart__counter
     &__counter {
+      @include screen-1140 {
+        grid-column: 2/ 3;
+        grid-row: 1 / 2;
+        justify-self: end;
+      }
+
       @include screen-490 {
         grid-column: 1 / 2;
+        grid-row: 3 / 4;
       }
     }
   }
@@ -156,6 +207,7 @@
         padding: 0 0 20px 0;
       }
     }
+
     // .acccount-content__body
     &__body {
       display: grid;
@@ -168,9 +220,17 @@
         row-gap: 50px;
       }
 
+      @include screen-1140 {
+        grid-template-columns: 1fr 220px;
+      }
+
       @include screen-992 {
         grid-template-columns: 1fr;
         row-gap: 30px;
+      }
+
+      @include screen-490 {
+        row-gap: 10px;
       }
     }
 
