@@ -930,10 +930,6 @@
   margin-bottom: 0;
 }
 
-.support_section_body_toleft {
-  font-size: 14px;
-}
-
 .support_section_header {
   font-size: 40px;
   font-weight: 700;
@@ -970,11 +966,21 @@
   font-size: 14px;
   font-weight: 300;
 }
+@media screen and (width < 490px) {
+  .mp_feedback ::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+}
 
 .mp_feedback ::-moz-placeholder {
   color: inherit;
   font-size: 14px;
   font-weight: 300;
+}
+@media screen and (width < 490px) {
+  .mp_feedback ::-moz-placeholder {
+    font-size: 12px;
+  }
 }
 
 /* Firefox 19+ */
@@ -983,6 +989,11 @@
   font-size: 14px;
   font-weight: 300;
 }
+@media screen and (width < 490px) {
+  .mp_feedback :-moz-placeholder {
+    font-size: 12px;
+  }
+}
 
 /* Firefox 18- */
 .mp_feedback :-ms-input-placeholder {
@@ -990,33 +1001,66 @@
   font-size: 14px;
   font-weight: 300;
 }
+@media screen and (width < 490px) {
+  .mp_feedback :-ms-input-placeholder {
+    font-size: 12px;
+  }
+}
 
 .mp_feedback ::-webkit-input-placeholder {
   color: inherit;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
 }
 
 .mp_feedback ::-moz-placeholder {
   color: inherit;
-  font-size: 11px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.mp_feedback :-ms-input-placeholder {
+  color: inherit;
+  font-size: 14px;
   font-weight: 300;
 }
 
 .mp_feedback ::-ms-input-placeholder {
   color: inherit;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
 }
 
 .mp_feedback ::placeholder {
   color: inherit;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
+}
+@media screen and (width < 490px) {
+  .mp_feedback ::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  .mp_feedback ::-moz-placeholder {
+    font-size: 12px;
+  }
+  .mp_feedback :-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .mp_feedback ::-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .mp_feedback ::placeholder {
+    font-size: 12px;
+  }
 }
 
 .mp_feedback_body {
   position: relative;
+}
+@media (width >= 575px) {
+  .mp_feedback_body {
+    display: block !important;
+  }
 }
 
 .form_feedback_body {

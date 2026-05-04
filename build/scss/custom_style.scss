@@ -905,10 +905,6 @@
   margin-bottom: 0;
 }
 
-.support_section_body_toleft {
-  font-size: 14px;
-}
-
 // .support_section_body_toleft .img_cont {
 //   display: block;
 //   background-size: contain;
@@ -952,12 +948,18 @@
   color: inherit;
   font-size: 14px;
   font-weight: 300;
+  @include screen-490 {
+    font-size: 12px;
+  }
 }
 
 .mp_feedback ::-moz-placeholder {
   color: inherit;
   font-size: 14px;
   font-weight: 300;
+  @include screen-490 {
+    font-size: 12px;
+  }
 }
 
 /* Firefox 19+ */
@@ -965,6 +967,9 @@
   color: inherit;
   font-size: 14px;
   font-weight: 300;
+  @include screen-490 {
+    font-size: 12px;
+  }
 }
 
 /* Firefox 18- */
@@ -972,16 +977,26 @@
   color: inherit;
   font-size: 14px;
   font-weight: 300;
+  @include screen-490 {
+    font-size: 12px;
+  }
 }
 
 .mp_feedback ::placeholder {
   color: inherit;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
+  @include screen-490 {
+    font-size: 12px;
+  }
 }
 
 .mp_feedback_body {
   position: relative;
+
+  @include min-575 {
+    display: block !important;
+  }
 }
 .form_feedback_body {
   position: relative;

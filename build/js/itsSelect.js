@@ -1,4 +1,4 @@
-//* ========== ИНИЦИАЛИЗАЦИЯ КАСТОМНЫХ СЕЛЕКТОВ ==========
+//* ================== ИНИЦИАЛИЗАЦИЯ КАСТОМНЫХ СЕЛЕКТОВ ========================
 document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
   //* ПОЛУЧАЕМ ВСЕ СЕЛЕКТЫ В ГРУППЕ
   const itsSelects = selectGroup.querySelectorAll('.select');
@@ -113,7 +113,7 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
 
         selectValue(index);
 
-        //* ✅ ЗАКРЫТИЕ ДРОПДАУНА:
+        //* ✅ ЗАКРЫТИЕ ДРОПДАУНА: дропдаун после выбора
         if (itsSelect.classList.contains('_active-collapse')) {
           _toggleOpen(itsSelect);
         }

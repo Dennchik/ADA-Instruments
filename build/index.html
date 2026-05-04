@@ -31,18 +31,18 @@
   <script defer src="./dist/animate/wow.min.js"></script>
   <script defer src="./js/classie.js"></script>
   <script defer src="./dist/slick/slick.min.js"></script>
-  <script defer src="./js/bootstrap.min.js"></script>
+  <!-- <script defer src="./js/bootstrap.min.js"></script> -->
   <script defer src="./js/popover.js"></script>
   <script defer src="./js/script.js"></script>
   <script defer src="./js/script-js.js"></script>
 </head>
 
 <body class="home_page">
-  <!-- * ---------------------- * Preloader ----------------------------- -->
+  <!-- * ------------------------ [ * Preloader ] --------------------------- -->
   <div class="preloader">
     <div class="preloader-5"></div>
   </div>
-  <!-- * ---------------------- * mobile_menu --------------------------- -->
+  <!-- * ----------------------- [ * mobile_menu ] -------------------------- -->
   <div class="mobile_menu_wrapp">
     <div class="menu_close"><i class="icofont-close"></i></div>
     <div class="mobile_menu">
@@ -79,7 +79,7 @@
       </div><!-- /row -->
     </div>
   </div>
-  <!-- * ------------------- * Mobile menu / end ------------------------ -->
+  <!-- * ------------------- [ * Mobile menu / end ] ------------------------ -->
   <div id="main">
     <header>
       <div class="container h-100">
@@ -485,45 +485,50 @@
           <!--* ========================/Mob========================== -->
         </div>
       </section>
-      <!--* ================== support_block ===================== -->
+      <!-- * ------------------ [ support_block ] --------------------------- -->
       <section class="page__section grey_bg">
         <div class="container">
           <div class="support-block support_section">
-            <div class="support_section_header mb-lg-5 mb-4 lh12">Служба <br>
+            <div class="support-block__header support_section_header">Служба <br>
               поддержки</div>
             <div class="support_section_body">
-              <div class="row">
-                <div class="col-xl-7 col-lg-7">
-                  <div class="support_section_body_toleft">
-                    <div class="support_section_body_toleft_header">
-                      <div class="row justify-content-between">
-                        <div class="col-xl-8 col-sm-7 col-7">
-                          <div class="mb-4">
-                            <a href="tel:88001004170" class="fw700 mr-3 mb-sm-0 mb-3 font20 text-nowrap">8 (800)
-                              100-41-70</a>
-                            <span class="d-inline-block"> Единая горячая линия</span>
-                          </div>
-                        </div>
-                        <div class="col-xl-4 col-sm-5 col-5">
-                          <div class="text-right">
-                            <a href="#" class="thin_grey_button">подробнее</a>
-                          </div>
+              <div class="support-block__content">
+                <div class="support-block__column">
+                  <div class="support-block__info">
+                    <!-- * row -->
+                    <div class="support-block__row">
+                      <!-- <div class="row justify-content-between"> -->
+                      <div class="support-block__item">
+                        <a href="tel:88001004170" class="support-block__phone">8 (800)
+                          100-41-70</a>
+                        <span class="support-block__text"> Единая горячая линия</span>
+                      </div>
+                      <div class="support-block__item">
+                        <div class="text-right">
+                          <a href="#" class="thin_grey_button">подробнее</a>
                         </div>
                       </div>
+                      <!-- </div> -->
                     </div>
-                    <div class="row">
-                      <div class="col-xl-9">
-                        <p class="fw200 mb-xl-5">09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
-                          Суббота, воскресенье - выходной. Звонок по России бесплатный</p>
+                    <!-- * row -->
+                    <div class="support-block__row">
+                      <div class="support-block__item">
+                        <span class="support-block__text">
+                          09.00-18.00 Понедельник&#8209;Четверг / 09.00&#8209;17.00 Пятница, cуббота,
+                          воскресенье&#8209;выходной. Звонок по России&nbsp;бесплатный
+                        </span>
                       </div>
                     </div>
-                    <div class="img_cont row">
-                      <img src="./img/shp.png" alt="picture">
+                    <!-- * row -->
+                    <div class="support-block__row">
+                      <div class="img_cont _img">
+                        <img src="./img/shp.png" alt="picture">
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-xl-5 col-lg-5">
-                  <div class="pl-xl-5 support_section_body_toright pt-5 pt-lg-0">
+                <div class="support-block__column">
+                  <div class="pl-xl-5 support_section_body_toright pt-lg-0">
                     <div class="mp-feedback mp_feedback">
                       <div class="mp-feedback__title">
                         <div class="mp-feedback__row">
@@ -545,7 +550,10 @@
                           <input type="email" id="userEmail" name="user_email" placeholder="Ваш e-mail" required
                             autocomplete="email">
                           <input type="text" id="userQuestion" name="user_question" placeholder="Ваш вопрос" required>
-                          <input class="red_button mt-4 w-100" type="submit" id="submitBtn" value="ОТПРАВИТЬ">
+                          <div class="send-button">
+                            <button class="send-button__button red_button mt-4 w-400" type="submit"
+                              id="submitBtn">ОТПРАВИТЬ</button>
+                          </div>
                         </form>
                         <div class="succes_message">
                           <div class="succes_message_caption">
@@ -562,7 +570,7 @@
           </div>
         </div>
       </section>
-      <!--* ==================/support_block===================== -->
+      <!-- * ------------------ [ /support_block ] -------------------------- -->
       <div class="page__section-wow wow fadeInDown video_block">
         <div class="video_wrap">
           <div class="video_inner">
@@ -573,7 +581,7 @@
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>7укенцй
+            </iframe>
           </div>
         </div>
       </div>
@@ -603,7 +611,7 @@
         </div>
       </div>
       <div class="footer__menu footer_menu">
-        <!--* =============footer_menu_desk==================== -->
+        <!-- * --------------- [ footer_menu_desk ] -------------------------- -->
         <div class="d-none d-lg-block">
           <ul class="footer__menu-desk footer_menu_desk">
             <li>
@@ -618,7 +626,7 @@
             <li class="has_child">
               <a href="#">продукция</a>
               <div class="row flex-nowrap pt-3 desk-menu">
-                <!--* ===========-->
+                <!-- * -->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Лазерные дальномеры</a></li>
@@ -628,7 +636,7 @@
                     <li><a href="#">Теодолиты</a></li>
                   </ul>
                 </div>
-                <!--* ===========-->
+                <!-- * -->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Пирометры и тепловизоры</a></li>
@@ -638,7 +646,7 @@
                     <li><a href="#">Аксессуары</a></li>
                   </ul>
                 </div>
-                <!--* ===========-->
+                <!-- * -->
                 <div class="col-4">
                   <ul>
                     <li><a href="#">Штативы</a></li>
@@ -647,13 +655,13 @@
                     <li><a href="#">Мотобуры</a></li>
                   </ul>
                 </div>
-                <!--* ===========-->
+                <!-- * -->
               </div>
             </li>
           </ul>
         </div>
-        <!--* ===============/footer_menu_desk================== -->
-        <!--* =================footer_menu_mob================ -->
+        <!-- * -------------- [/ footer_menu_desk ] -------------------------- -->
+        <!-- * --------------- [ footer_menu_mob ] --------------------------- -->
         <div class="d-block d-lg-none">
           <ul class="footer_menu_mob">
             <li>
@@ -722,23 +730,23 @@
         </div>
         <div class="footer_contact">
           <div class="form-row flex-nowrap lh1 align-items-end mb-3">
-            <!--* ===========-->
+            <!-- * -->
             <div class="col-auto">
               <a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
             </div>
-            <!--* ===========-->
+            <!-- * -->
             <div class="col-auto">
               <span class="fw300 font14">Единая горячая линия</span>
             </div>
-            <!--* ===========-->
+            <!-- * -->
           </div>
           <!--/row-->
           <div class="grafic_raboty light_grey_color font12">
-            09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
-            Суббота, воскресенье - выходной. Звонок по России бесплатный
+            09.00-18.00 Понедельник&#8209;Четверг / 09.00&#8209;17.00 Пятница
+            Суббота, воскресенье&#8209;выходной. Звонок по России бесплатный
           </div>
         </div>
-        <!--*  ============================== -->
+        <!-- * -->
       </div>
     </div>
     <div class="footer_footer">

@@ -319,12 +319,6 @@
     height: 38px;
   }
 
-  .support_section_header {
-    font-size: 10px;
-    text-transform: uppercase;
-    color: #a4a4a4;
-  }
-
   .support_section_header br {
     display: none;
   }
@@ -867,17 +861,6 @@
     margin-right: 0px;
   }
 
-  /* .thin_white_button {
-    font-size: 8px;
-    padding: 0px 10px;
-    height: 34px;
-    line-height: 32px;
-
-    min-width: 0px;
-    display: block;
-    width: 120px;
-  } */
-
   .support_section_body_toleft_header .thin_grey_button {
     width: 100%;
     font-size: 8px;
@@ -916,10 +899,6 @@
     height: 40px;
     width: 100px;
   }
-
-  /* .items_greed_list > li {
-    width: 33.333%;
-  } */
 
   .video_greed_wrapper .form-row > div:nth-child(n + 3) {
     display: none;
