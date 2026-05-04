@@ -564,7 +564,7 @@
   position: relative;
   align-self: start;
   .send-button__button {
-    width: 190px !important;
+    width: 190px;
   }
 
   @include screen-768 {

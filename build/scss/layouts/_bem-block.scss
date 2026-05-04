@@ -222,6 +222,9 @@
   &:active {
     background-color: transparent;
     outline: none;
+    color: #252525;
+    color: var(--red);
+    border: 1px solid var(--red);
   }
 }
 .dark_button {

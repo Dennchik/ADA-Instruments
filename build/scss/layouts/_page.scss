@@ -26,6 +26,18 @@
 }
 //* ----------------------------------------------------------------------------
 .page-history {
+  .items_greed_wrapper {
+    width: 100%;
+
+    .send-button {
+      width: 100%;
+
+      // .send-button__button
+      &__button {
+        width: 100%;
+      }
+    }
+  }
   .product-cart {
     &__item {
       grid-template-columns: min-content max-content auto;
@@ -57,6 +69,73 @@
     &__counter {
       @include screen-490 {
         grid-column: 1 / 2;
+      }
+    }
+  }
+
+  .select-group__dropdown {
+    margin: 0;
+  }
+
+  //* select
+  .select {
+    padding: 0;
+    flex-direction: column;
+
+    .select__button {
+      color: inherit;
+      font-size: inherit;
+      margin-bottom: 10px;
+    }
+
+    // .select__drop-down
+    &__drop-down {
+      top: 85px;
+      width: 100%;
+
+      @include screen-992 {
+        top: 20px;
+      }
+    }
+    // .select__drop-down
+    &__drop-down {
+      max-width: 320px;
+      left: 0;
+    }
+
+    &__input {
+      width: 100%;
+      font-size: 12px;
+      line-height: 110%;
+      white-space: wrap;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: keep-all;
+    }
+
+    &__list-item {
+      font-size: 12px;
+      white-space: normal; /* Разрешаем перенос строк */
+      word-wrap: break-word; /* Переносим длинные слова */
+      /* Разрываем ИНН при необходимости */
+      line-height: 100%; /* Увеличиваем межстрочный интервал */
+      // padding: 10px 15px; /* Добавляем отступы для читаемости */
+    }
+  }
+
+  //*.profile
+  .profile {
+    &__body {
+      position: relative;
+
+      @include screen-1376 {
+        grid-template-columns: 1fr minmax(220px, 270px);
+      }
+
+      @include screen-992 {
+        border-bottom: 1px solid #a5a5a5;
+        background-color: transparent;
+        padding: 0 0 20px 0;
       }
     }
   }
@@ -144,6 +223,7 @@
     margin: 0;
   }
 
+  //* select
   .select {
     padding: 0;
     flex-direction: column;
@@ -172,6 +252,7 @@
     &__input {
       width: 100%;
       font-size: 12px;
+      line-height: 110%;
       white-space: wrap;
       word-wrap: break-word;
       overflow-wrap: break-word;
@@ -192,6 +273,11 @@
   .profile {
     &__body {
       position: relative;
+
+      @include screen-1376 {
+        grid-template-columns: 1fr minmax(220px, 270px);
+      }
+
       @include screen-992 {
         border-bottom: 1px solid #a5a5a5;
         background-color: transparent;

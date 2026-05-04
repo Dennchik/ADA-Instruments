@@ -38,6 +38,7 @@ document.querySelectorAll('[data-select]').forEach(function (selectGroup) {
           //* Не закрываем дропдаун
         });
       }
+
       //* ✅ НОВОЕ: Функция обновления значения input и атрибута value
       const updateInputValue = (inputElement, newValue) => {
         if (inputElement) {

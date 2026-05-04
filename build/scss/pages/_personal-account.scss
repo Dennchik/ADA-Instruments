@@ -53,7 +53,7 @@
 
       .aside-menu-l {
         position: absolute;
-        top: 0;
+        top: -51px;
         left: 0;
         transform: translateX(-130%);
         transition: transform 0.3s ease 0s;
@@ -61,7 +61,7 @@
         &.open {
           transform: translateX(0);
           width: 100%;
-          max-width: 290px;
+          max-width: 320px;
         }
       }
     }
@@ -112,7 +112,7 @@
         top: 42.5px;
         width: 30px;
         height: 30px;
-        transform: translate(228px, -90px);
+        transform: translate(248px, -90px);
 
         .icofont-close-squared {
           pointer-events: none;
@@ -478,7 +478,7 @@
       display: block !important;
       // position: sticky;
       width: 80px;
-      left: 5px;
+      left: 15px;
       top: 24px;
       height: 38px;
       background: #4b4b4b url(../img/logo_white.png) no-repeat;
@@ -486,7 +486,7 @@
   }
 
   .aside-menu-l {
-    height: calc(100vh - 125px);
+    height: calc(100vh - 70px);
   }
 
   .form-user__wrapp-group {

@@ -453,6 +453,9 @@ h3 {
 .red_button:hover, .red_button:active {
   background-color: transparent;
   outline: none;
+  color: #252525;
+  color: var(--red);
+  border: 1px solid var(--red);
 }
 
 .dark_button {
@@ -2191,6 +2194,15 @@ header .top_menu > li > a {
   }
 }
 
+.page-history .items_greed_wrapper {
+  width: 100%;
+}
+.page-history .items_greed_wrapper .send-button {
+  width: 100%;
+}
+.page-history .items_greed_wrapper .send-button__button {
+  width: 100%;
+}
 .page-history .product-cart__item {
   grid-template-columns: -webkit-min-content -webkit-max-content auto;
   grid-template-columns: min-content max-content auto;
@@ -2222,6 +2234,65 @@ header .top_menu > li > a {
 @media screen and (width < 490px) {
   .page-history .product-cart__counter {
     grid-column: 1/2;
+  }
+}
+.page-history .select-group__dropdown {
+  margin: 0;
+}
+.page-history .select {
+  padding: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.page-history .select .select__button {
+  color: inherit;
+  font-size: inherit;
+  margin-bottom: 10px;
+}
+.page-history .select__drop-down {
+  top: 85px;
+  width: 100%;
+}
+@media screen and (width < 992px) {
+  .page-history .select__drop-down {
+    top: 20px;
+  }
+}
+.page-history .select__drop-down {
+  max-width: 320px;
+  left: 0;
+}
+.page-history .select__input {
+  width: 100%;
+  font-size: 12px;
+  line-height: 110%;
+  white-space: wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+.page-history .select__list-item {
+  font-size: 12px;
+  white-space: normal; /* Разрешаем перенос строк */
+  word-wrap: break-word; /* Переносим длинные слова */
+  /* Разрываем ИНН при необходимости */
+  line-height: 100%; /* Увеличиваем межстрочный интервал */
+}
+.page-history .profile__body {
+  position: relative;
+}
+@media screen and (width <= 1376px) {
+  .page-history .profile__body {
+    grid-template-columns: 1fr minmax(220px, 270px);
+  }
+}
+@media screen and (width < 992px) {
+  .page-history .profile__body {
+    border-bottom: 1px solid #a5a5a5;
+    background-color: transparent;
+    padding: 0 0 20px 0;
   }
 }
 .page-history .acccount-section__body {
@@ -2326,6 +2397,7 @@ header .top_menu > li > a {
 .page-order .select__input {
   width: 100%;
   font-size: 12px;
+  line-height: 110%;
   white-space: wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -2340,6 +2412,11 @@ header .top_menu > li > a {
 }
 .page-order .profile__body {
   position: relative;
+}
+@media screen and (width <= 1376px) {
+  .page-order .profile__body {
+    grid-template-columns: 1fr minmax(220px, 270px);
+  }
 }
 @media screen and (width < 992px) {
   .page-order .profile__body {
@@ -4140,7 +4217,7 @@ header .top_menu > li > a {
       align-self: start;
 }
 .items_greed_wrapper .send-button__button {
-  width: 190px !important;
+  width: 190px;
 }
 @media (width < 768px) {
   .items_greed_wrapper .send-button__button {
@@ -4420,7 +4497,7 @@ header .top_menu > li > a {
   }
   .acccount-section__body .aside-menu-l {
     position: absolute;
-    top: 0;
+    top: -51px;
     left: 0;
     -webkit-transform: translateX(-130%);
             transform: translateX(-130%);
@@ -4433,7 +4510,7 @@ header .top_menu > li > a {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     width: 100%;
-    max-width: 290px;
+    max-width: 320px;
   }
 }
 @media (width < 768px) {
@@ -4476,8 +4553,8 @@ header .top_menu > li > a {
   top: 42.5px;
   width: 30px;
   height: 30px;
-  -webkit-transform: translate(228px, -90px);
-          transform: translate(228px, -90px);
+  -webkit-transform: translate(248px, -90px);
+          transform: translate(248px, -90px);
 }
 .acccount-section__column:nth-child(1) .side-menu__close-menu .icofont-close-squared {
   pointer-events: none;
@@ -4831,13 +4908,13 @@ header .top_menu > li > a {
   .side-menu .logo {
     display: block !important;
     width: 80px;
-    left: 5px;
+    left: 15px;
     top: 24px;
     height: 38px;
     background: #4b4b4b url(../img/logo_white.png) no-repeat;
   }
   .aside-menu-l {
-    height: calc(100vh - 125px);
+    height: calc(100vh - 70px);
   }
   .form-user__wrapp-group {
     gap: 15px;
