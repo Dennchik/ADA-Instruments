@@ -53,7 +53,7 @@
 
       .aside-menu-l {
         position: absolute;
-        top: -51px;
+        top: -43px;
         left: 0;
         transform: translateX(-130%);
         transition: transform 0.3s ease 0s;
@@ -537,9 +537,5 @@
 @include screen-425 {
   .acccount-section__column.transparent-right.open {
     width: 100%;
-  }
-
-  .profile__body {
-    height: 100%;
   }
 }

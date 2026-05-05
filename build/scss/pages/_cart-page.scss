@@ -120,12 +120,22 @@
   }
 
   // .product-cart__image
-
   &__image {
+    height: 100%;
+    width: 100%;
     img {
       width: 117px;
       max-width: none;
+      object-fit: contain;
+
+      @include screen-1200 {
+        // height: 100%;
+        width: 100%;
+      }
     }
+
+    align-self: center;
+    justify-self: center;
   }
 
   // .product-cart__info
@@ -166,7 +176,6 @@
   }
 
   // .product-cart__article
-
   &__article {
     margin-bottom: 17px;
     font-size: 12px;
@@ -286,6 +295,7 @@
 .delivery {
   // .delivery__content
   &__content {
+    position: relative;
     padding: 20px 20px 30px 20px;
   }
 

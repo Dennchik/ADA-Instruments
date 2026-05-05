@@ -132,6 +132,12 @@
   }
 }
 
+@mixin screen-550 {
+  @media (width < 550px) {
+    @content;
+  }
+}
+
 @mixin screen-490 {
   @media screen and (width < 490px) {
     @content;

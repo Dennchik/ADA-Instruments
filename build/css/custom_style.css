@@ -1719,6 +1719,10 @@
 .pdf_list_wrapper::-webkit-scrollbar-track {
   background-color: transparent;
 }
+.pdf_list_wrapper::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: var(--red);
+}
 
 .instr_right_list {
   overflow: hidden;
@@ -2160,6 +2164,9 @@
   margin-left: 15px;
   margin-right: 15px;
   max-width: 250px;
+}
+.suport_feedback_form_box .send-button {
+  margin-top: 30px;
 }
 
 .suport_feedback_form input[type=text],

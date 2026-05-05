@@ -21,6 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<link rel="stylesheet" type="text/css" href="./css/media.css">
 
+	<script defer src="./js/dynamic-adaptive.js"></script>
 	<script defer src="./js/collapse.js"></script>
 	<script defer src="./js/itsSelect.js"></script>
 	<script defer src="./js/jquery.min.js"></script>
@@ -250,6 +251,10 @@
 									<!-- * [ / BUTTONS ] -->
 									<h2 class="font_clamp_50 fw700">История покупок</h2>
 								</div>
+								<div class="acccount-content__emty-cart">
+									<span>Купленных товаров пока нет</span>
+									<span>Здесь будут отображаться товары, которые вы приобрели</span>
+								</div>
 								<form action="#" method="#" class="form-search">
 									<fieldset class="form-search__group">
 										<div class="form-search__input">
@@ -267,7 +272,7 @@
 							<!-- * content__column - 2 -->
 							<div class="acccount-content__column">
 								<div class="profile">
-									<div class="select-group profile__body" data-select>
+									<div class="select-group profile__body bp-5" data-select>
 										<!-- * -->
 										<div class="select-group__dropdown">
 											<div class="select">
@@ -296,10 +301,16 @@
 													</ul>
 												</div>
 											</div>
-
-
 										</div>
-										<!-- <div class="profile__user">Иванов Иван Иванович</div> -->
+
+
+									</div>
+									<div class="profile__btn-home" data-da="bp-5" data-da-position="last" data-da-resolution="992">
+										<div class="product-cart__return-button">
+											<div class="send-button">
+												<a class="send-button__button grey_button" href="./index.html">На главную</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -443,7 +454,7 @@
 		</section>
 		<!-- * ------------------ [ Section-form ] ------------------------------ -->
 		<section class="section_form container">
-			<div class="section_form_body wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+			<div class="section_form_body" style="visibility: visible; animation-name: fadeInUp;">
 				<div class="section_form_title">
 					<span>Возникли вопросы?</span>
 					<span>Напишите нам!</span>
