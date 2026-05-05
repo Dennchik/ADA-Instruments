@@ -39,11 +39,11 @@
 </head>
 
 <body class="whith_grey_band">
-	<!-- * ---------------------- * Preloader ----------------------------- -->
+	<!-- * ------------------------- [ * Preloader ] ----------------------------- -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
 	</div>
-	<!-- * ---------------------- * mobile_menu --------------------------- -->
+	<!-- * ------------------------ [ * mobile_menu ] ---------------------------- -->
 	<div class="mobile_menu_wrapp">
 		<div class="menu_close"><i class="icofont-close"></i></div>
 		<div class="mobile_menu">
@@ -80,11 +80,11 @@
 			</div><!-- /row -->
 		</div>
 	</div>
-	<!-- * ------------------- * Mobile menu / end ------------------------ -->
+	<!-- * ------------------------- [ Main block ] ------------------------------ -->
 	<div id="main">
-		<header>
-			<div class="container h-100">
-				<!--* ==================================================== -->
+		<header class="header">
+			<div class="header__body container h-100">
+				<!-- * ------------------- [ Top Search ] ------------------------------ -->
 				<div class="d-lg-none d-block">
 					<button class="menu_button menu_show">
 						<span class='toggle'><i></i> <i></i> <i></i></span>
@@ -94,24 +94,24 @@
 							<i class="icofont-search"></i>
 						</div>
 						<div class="top_search_body">
-							<form action="#">
-								<input type="text" placeholder="Поиск по сайту" required>
+							<form action="#" id="searchForm1" action="#" method="get">
+								<input type="text" id="searchInput1" name="search" placeholder="Поиск по сайту" required>
 								<button type="submit" class="whith_button"><i class="icofont-search-2"></i></button>
 							</form>
 						</div>
 					</div>
 				</div>
-				<!--* ==================================================== -->
+				<!-- * -------------------- [ TOP PANEL] ------------------------------- -->
 				<div class="top_panel h-100">
 					<div class="row h-100 flex-nowrap  justify-content-between  align-items-center">
 						<div class="col-auto">
 							<div class="left_TP">
 								<div class="row align-items-center">
-									<!--* =================== -->
+									<!-- * -->
 									<div class="col-auto">
 										<a href="../../index.html" class="logo"></a>
 									</div>
-									<!--* =================== -->
+									<!-- * -->
 									<div class="col-auto d-none d-lg-block">
 										<ul class="top_menu ml-lg-3">
 											<li class="has_child">
@@ -140,25 +140,25 @@
 											<li><a href="../../contact.html"><span>Контакты</span></a></li>
 										</ul>
 									</div>
-									<!--* =================== -->
+									<!-- * -->
 								</div>
 							</div>
 						</div>
-						<!--* ================== -->
+						<!-- * -->
 						<div class="col-auto">
 							<div class="right_TP">
-								<div class="row  align-items-center  justify-content-end">
-									<!--* =================== -->
-									<div class="col-auto  d-none d-lg-block">
-										<div class="search_flexbox">
+								<div class="row align-items-center justify-content-end">
+									<!-- * -->
+									<div class="col-auto d-none d-lg-block">
+										<form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
 											<div class="search_wrap">
 												<div>
-													<input type="text" placeholder="Поиск по сайту" required>
+													<input type="text" id="searchInput2" name="search" placeholder="Поиск по сайту" required>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
-									<!--* =================== -->
+									<!-- * -->
 									<div class="col-auto">
 										<div class="col_icons">
 											<a href="../../cart.html" class="col_cart icon_col cart-user">
@@ -191,7 +191,7 @@
 				</div>
 			</div>
 		</header>
-		<!-- * -------------------- [ Breadcrumb ] -------------------------- -->
+		<!-- * ----------------------- [ Breadcrumb ] ------------------------------ -->
 		<div class="breadcrumb_wrapper">
 			<div class="container ">
 				<ol class="breadcrumb">
@@ -202,8 +202,8 @@
 				</ol>
 			</div><!-- /container -->
 		</div>
-		<!-- * [ / Breadcrumb ] -->
-		<!-- * ------------------- [ cart-section ] ------------------------- -->
+		<!-- * -->
+		<!-- * --------------------- [ Cart section ] ------------------------------ -->
 		<div class="tovar_bock_1_wrapper">
 			<div class="tovar_bock_1">
 
@@ -716,7 +716,7 @@
 		</div>
 		<div class="tovar_bock_2">
 			<div class="tovar_info_tabs">
-				<!--* --------------- [ good_info_tabs ] ------------------------ -->
+				<!--* ----------------- [ good_info_tabs ] ----------------------------- -->
 				<div class="tab-section container">
 					<div class="tab-section__buttons tabs_over_wrap">
 						<ul class="tab-section__list nav" id="good_info_tabs_nav" role="tablist">
@@ -748,7 +748,9 @@
 												<div class="card_header_title">Basic edition</div>
 											</div>
 											<div class="artikul fw300 red_color">Арт А00582</div>
-											<div class="img_cont" style="background-image: url(../../img/complectatia/1.jpg);"></div>
+											<div class="img_cont _img">
+												<img src="../../img/complectatia/1.jpg" alt="image">
+											</div>
 											<div class="complectation_box_footer">
 												Лазерный уровень, батареи, инструкция
 											</div>
@@ -760,7 +762,11 @@
 												<div class="card_header_title">Home edition</div>
 											</div>
 											<div class="artikul fw300 red_color">Арт А00582</div>
-											<div class="img_cont" style="background-image: url(../../img/complectatia/1.jpg);"></div>
+											<div class="img_cont">
+												<div class="img_cont _img">
+													<img src="../../img/complectatia/2.png" alt="image">
+												</div>
+											</div>
 											<div class="complectation_box_footer">
 												Лазерный уровень, батареи, инструкция , батареи, инструкция , батареи, инструкция
 											</div>
@@ -772,7 +778,11 @@
 												<div class="card_header_title">Professional edition</div>
 											</div>
 											<div class="artikul fw300 red_color">Арт А00582</div>
-											<div class="img_cont" style="background-image: url(../../img/complectatia/1.jpg);"></div>
+											<div class="img_cont">
+												<div class="img_cont _img">
+													<img src="../../img/complectatia/2.png" alt="image">
+												</div>
+											</div>
 											<div class="complectation_box_footer">
 												Лазерный уровень, батареи, инструкция, батареи, инструкция, батареи, инструкция
 											</div>
@@ -784,7 +794,11 @@
 												<div class="card_header_title">Ultimate edition</div>
 											</div>
 											<div class="artikul fw300 red_color">Арт А00582</div>
-											<div class="img_cont" style="background-image: url(../../img/complectatia/1.jpg);"></div>
+											<div class="img_cont">
+												<div class="img_cont _img">
+													<img src="../../img/complectatia/3.png" alt="image">
+												</div>
+											</div>
 											<div class="complectation_box_footer">
 												Лазерный уровень, батареи, инструкция, батареи, инструкция, батареи, инструкция, батареи,
 												инструкция
@@ -834,7 +848,7 @@
 											</ul>
 
 											<div class="tab_form d-lg-block p-relstive">
-												<div class="tab_form_text">
+												<div class="tab_form_text ">
 													Возникли вопросы? <br> Напишите нам
 												</div>
 												<div class="send-button">
@@ -988,10 +1002,12 @@
 					</div>
 					<!-- * -->
 				</div>
-				<!--* --------------- [ /good_info_tabs ] ----------------------- -->
+				<!--* ----------------- [ /good_info_tabs ] ---------------------------- -->
 			</div>
 		</div>
 	</div>
+
+	<!-- * --------------------------- [ Footer] --------------------------------- -->
 	<!--*  wow fadeInDown -->
 	<footer>
 		<div class=" container">
@@ -1015,7 +1031,7 @@
 				</div>
 			</div>
 			<div class="footer_menu">
-				<!--* =============footer_menu_desk==================== -->
+				<!-- * ------------------ [ footer_menu_desk ] -------------------------- -->
 				<div class="d-none d-lg-block">
 					<ul class="footer_menu_desk">
 						<li>
@@ -1030,7 +1046,7 @@
 						<li class="has_child">
 							<a href="#">продукция</a>
 							<div class="row flex-nowrap pt-3 desk-menu">
-								<!--===========-->
+								<!-- * -->
 								<div class="col-4">
 									<ul>
 										<li><a href="#">Лазерные дальномеры</a></li>
@@ -1040,7 +1056,7 @@
 										<li><a href="#">Теодолиты</a></li>
 									</ul>
 								</div>
-								<!--* ===========-->
+								<!-- * -->
 								<div class="col-4">
 									<ul>
 										<li><a href="#">Пирометры и тепловизоры</a></li>
@@ -1050,7 +1066,7 @@
 										<li><a href="#">Аксессуары</a></li>
 									</ul>
 								</div>
-								<!--* ===========-->
+								<!-- * -->
 								<div class="col-4">
 									<ul>
 										<li><a href="#">Штативы</a></li>
@@ -1059,13 +1075,13 @@
 										<li><a href="#">Мотобуры</a></li>
 									</ul>
 								</div>
-								<!--* ===========-->
+								<!-- * -->
 							</div>
 						</li>
 					</ul>
 				</div>
-				<!--* ===============/footer_menu_desk================== -->
-				<!--* =================footer_menu_mob================ -->
+
+				<!-- * ------------------ [ footer_menu_mob ] --------------------------- -->
 				<div class="d-block d-lg-none">
 					<ul class="footer_menu_mob">
 						<li>
@@ -1107,15 +1123,15 @@
 				</div>
 				<div class="footer_contact">
 					<div class="form-row flex-nowrap lh1 align-items-end mb-3">
-						<!--* ===========-->
+						<!-- * -->
 						<div class="col-auto">
 							<a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
 						</div>
-						<!--* ===========-->
+						<!-- * -->
 						<div class="col-auto">
 							<span class="fw300 font14">Единая горячая линия</span>
 						</div>
-						<!--* ===========-->
+						<!-- * -->
 					</div>
 					<!--/row-->
 					<div class="grafic_raboty light_grey_color font12">
@@ -1123,7 +1139,7 @@
 						Суббота, воскресенье - выходной. Звонок по России бесплатный
 					</div>
 				</div>
-				<!--*  ============================== -->
+				<!-- * -->
 			</div>
 		</div>
 		<div class="footer_footer">
@@ -1136,7 +1152,7 @@
 	</footer>
 	<!-- * --- / End --- -->
 	<div id="toTop"><i class="icofont-rounded-up"></i></div>
-	<!--*-------------------------- [ Modal ] ------------------------------ -->
+	<!--*----------------------------- [ Modal ] --------------------------------- -->
 	<div class="modal fade" id="exampleModal" style="display: none;" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -1184,7 +1200,7 @@
 			</div>
 		</div>
 	</div>
-	<!--*------------------------ [ / Modal ]------------------------------- -->
+	<!--*---------------------------- [ / Modal ] -------------------------------- -->
 	<!-- * MODAL Login-->
 	<div class="modal-login" id="modal-login">
 		<div class="modal-login__body">

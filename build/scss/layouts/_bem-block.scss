@@ -122,6 +122,7 @@
 
 //* -----------------------------[ COLOR ]--------------------------------------
 .grey_button {
+  cursor: pointer;
   display: inline-block;
   background-color: transparent;
   font-size: 10px;
@@ -135,12 +136,9 @@
   outline: none;
   text-decoration: none;
   white-space: nowrap;
-  cursor: pointer;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
+
 .whith_button {
   position: absolute;
   right: 0px;
@@ -154,13 +152,16 @@
   color: #fff;
   background: transparent;
 }
+
 .grey_button:hover,
 .grey_button:focus {
   background-color: rgb(31, 31, 31);
   color: rgb(255, 255, 255);
   outline: none;
   text-decoration: none;
+  border: 1px solid transparent;
 }
+
 .thin_grey_button {
   cursor: pointer;
   display: inline-block;
@@ -176,7 +177,6 @@
   transition: all 0.4s ease-out;
   font-weight: 600;
   text-transform: uppercase;
-  // min-width: 200px;
 }
 
 .thin_grey_button:hover,
@@ -215,7 +215,6 @@
   outline: none;
   text-decoration: none;
   white-space: nowrap;
-  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 
   &:hover,
@@ -227,9 +226,9 @@
     border: 1px solid var(--red);
   }
 }
+
 .dark_button {
   cursor: pointer;
-
   background-color: rgb(68, 68, 68);
   font-size: 12px;
   text-transform: uppercase;
@@ -241,7 +240,6 @@
   outline: none;
   text-decoration: none;
   white-space: nowrap;
-  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 
   &:hover {
@@ -264,9 +262,6 @@
   outline: none;
   text-decoration: none;
   white-space: nowrap;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   font-weight: 600;
   text-transform: uppercase;
@@ -338,10 +333,10 @@
 }
 //* -----------------------------[ FONT ]--------------------------------------
 .font_clamp_60 {
-  font-size: clamp(1.41375rem, 3vw, 3.75rem);
+  font-size: clamp(3.41375rem, 3vw, 6.025rem);
 }
 .font_clamp_50 {
-  font-size: clamp(1.41375rem, 2.4vw, 3.125rem);
+  font-size: clamp(2.715rem, 2.4vw, 5.025rem);
 }
 .font_clamp_30 {
   font-size: clamp(1.51375rem, 2.4vw, 3.125rem);

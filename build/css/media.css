@@ -639,10 +639,6 @@
     justify-self: end;
   }
 
-  .cart-section__col:nth-child(1) {
-    padding: 0 0 40px 0;
-  }
-
   .product-cart__info {
     grid-column: 3 / 4;
     grid-row: 2/ 3;
@@ -1403,7 +1399,7 @@
 
 @media all and (width >= 992px) {
   .home_page .sub_menu {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.95);
   }
 
   .sub_menu {

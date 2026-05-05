@@ -30,10 +30,6 @@
   text-align: center;
 }
 
-// header.smaller .top_panel {
-//   /*display: none;*/
-// }
-
 /*=================================*/
 .dm-overlay {
   position: fixed;
@@ -2199,6 +2195,11 @@
   font-size: 11px;
   font-weight: 700;
   text-transform: none;
+  transition: background-color 0.4s ease-in-out;
+
+  &:hover {
+    background-color: #00000067;
+  }
 }
 
 .good_info_inner_tabs .nav-tabs .nav-item.show .nav-link,
@@ -2363,9 +2364,11 @@
 
 .complectation_box_footer {
   min-height: 70px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 300;
   padding: 10px 0;
+  text-align: left;
+  line-height: 100%;
 }
 
 .artikul {

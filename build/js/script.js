@@ -1,18 +1,18 @@
 jQuery('document').ready(function () {
-  function footerToBottom() {
-    var browserHeight = jQuery(window).height(),
-      footerOuterHeight = jQuery('footer').outerHeight(true),
-      mainHeightMarginPaddingBorder =
-        jQuery('#main').outerHeight(true) - jQuery('#main').height();
-    jQuery('#main').css({
-      'min-height':
-        browserHeight - footerOuterHeight - mainHeightMarginPaddingBorder - 120,
-    });
-  }
-  footerToBottom();
-  jQuery(window).resize(function () {
-    footerToBottom();
-  });
+  // function footerToBottom() {
+  //   var browserHeight = jQuery(window).height(),
+  //     footerOuterHeight = jQuery('footer').outerHeight(true),
+  //     mainHeightMarginPaddingBorder =
+  //       jQuery('#main').outerHeight(true) - jQuery('#main').height();
+  //   jQuery('#main').css({
+  //     'min-height':
+  //       browserHeight - footerOuterHeight - mainHeightMarginPaddingBorder - 120,
+  //   });
+  // }
+  // footerToBottom();
+  // jQuery(window).resize(function () {
+  //   footerToBottom();
+  // });
   //* --------------------------------------------------------------------------
   jQuery('.navbar-nav li a.nav-link').click(function () {
     var selected = jQuery(this).attr('href');

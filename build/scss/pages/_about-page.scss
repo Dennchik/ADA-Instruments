@@ -32,10 +32,9 @@
   background-position: center center;
   padding-top: 150px;
   position: relative;
-  // min-height: 940px;
 
   @include screen-1440 {
-    height: 100%;
+    min-height: 100%;
   }
 }
 
@@ -63,6 +62,7 @@
   }
 }
 .button_groupe {
+  margin-bottom: 2rem;
   .send-button__button {
     // width: 190px !important;
     min-width: 200px;
@@ -79,30 +79,24 @@
 .about-text {
   margin-bottom: 3rem;
 
-  @include screen-375 {
-    margin-bottom: 2rem;
-  }
-
   // .about-text__info
   &__info {
+    // white-space: normal;
+    // word-wrap: break-word;
+    // word-break: keep-all;
+    text-align: justify;
+
     @include screen-992 {
       max-width: 440px;
       font-size: 14px;
     }
 
     @include screen-690 {
-      max-width: 290px;
-      // text-align: justify;
+      max-width: 220px;
+      font-size: 12px;
     }
 
     @include screen-490 {
-      font-size: 13px;
-      // max-width: 250px;
-    }
-
-    @include screen-425 {
-      max-width: 220px;
-      font-size: 12px;
     }
   }
 }

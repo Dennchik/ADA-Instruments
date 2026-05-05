@@ -1,3 +1,4 @@
+@use '../core/mixins' as *;
 //* ----------------------------- Resset* --------------------------------------
 
 * {
@@ -7,12 +8,27 @@
   margin: 0;
   padding: 0;
   border: none;
-  -webkit-box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
 
   &::before,
   &::after {
     box-sizing: border-box;
+  }
+}
+
+html {
+  counter-reset: heading;
+  scroll-behavior: smooth;
+
+  height: 100%;
+
+  font: {
+    size: 62.5%;
+
+    style: normal;
+  }
+
+  @include screen-1140 {
+    font-size: 50%;
   }
 }
 
@@ -25,6 +41,7 @@ body {
   font-weight: 400;
   font-style: normal;
   padding-top: 110px;
+  height: 100%;
 
   &.no-scroll {
     overflow: -moz-hidden-unscrollable;
@@ -70,11 +87,6 @@ input:active,
 button:focus,
 button:active {
   outline: none;
-}
-a:hover {
-  outline: none;
-  border-color: transparent;
-  border: none;
 }
 
 //* ----------------------------------------------------------------------------

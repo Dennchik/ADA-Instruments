@@ -1,20 +1,5 @@
 @use '../core/mixins' as *;
 
-.cart-page {
-  .profile {
-    display: none;
-  }
-
-  .profile__body {
-    @include screen-860 {
-      background-color: transparent;
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 0;
-    }
-  }
-}
-
 .nav-link {
   span {
     white-space: nowrap;
@@ -76,6 +61,10 @@
 
 .nav-tabs .nav-link.active {
   transition: background-color 0.7s ease-in-out;
+  border-color: transparent;
+  &:hover {
+    background-color: white;
+  }
 }
 
 .good-info {
@@ -130,27 +119,37 @@
 
   // .tab-section__list
   &__list {
+    overflow-y: hidden;
     display: flex;
     align-items: center;
     gap: 30px;
-    padding: 20px 40px;
+    padding: 20px 0;
+
+    &::-webkit-scrollbar {
+      height: 0.2rem;
+      padding: 5.031em;
+      position: fixed;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--red);
+    }
 
     @include screen-960 {
-      padding: 20px;
+      padding: 10px;
       gap: 20px;
+      margin-bottom: 10px;
     }
 
     @include screen-575 {
-      padding: 20px 0;
+      padding: 10px 0;
       gap: 10px;
-    }
-
-    @include screen-490 {
     }
   }
 
   // .tab-section__nav-item
   &__nav-item {
+    line-height: 100%;
   }
 
   // .tab-section__nav-link
@@ -281,6 +280,8 @@
         margin: 0 -15px;
         background-color: rgba(241, 241, 241, 0.7);
         padding: 30px;
+
+        margin-bottom: 20px;
       }
     }
   }
@@ -295,6 +296,10 @@
 
     @include minmax-320-1920 {
       max-width: calc(260px + (550 - 260) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    @include screen-768 {
+      margin-bottom: 0;
     }
 
     span {
@@ -533,8 +538,6 @@
 
 //* ----------------------------------------------------------------------------
 .tovar_sliders {
-  height: 605px;
-  // width: 800px;
   position: static;
   height: auto;
   width: auto;
@@ -542,17 +545,13 @@
 
 .tovar_slider_nav_wrapper {
   position: relative;
-
-  @media only screen and (max-width: 1201.99px) {
-    left: 0;
-    width: 100%;
-  }
 }
 
 .tovar_slider_wrapper {
   overflow: hidden;
   max-height: 605px !important;
 }
+
 .tovar_slider_item_box .img_cont {
   background-position: center !important;
   height: 405px !important;
@@ -598,7 +597,7 @@
 }
 
 .tovar_slider_nav_wrapper .next {
-  right: -25px;
+  right: -35px;
 }
 
 .tovar_slider_nav_wrapper .prev {
@@ -646,6 +645,11 @@
 }
 .nav-tabs {
   margin-bottom: 3rem;
+  .nav-item {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
 }
 
 .tab-content > .active {
