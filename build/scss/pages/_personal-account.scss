@@ -11,8 +11,9 @@
       row-gap: 15px;
       display: grid;
       grid-template-columns: repeat(2, max-content);
-      justify-content: end;
-      justify-items: end;
+      justify-content: start;
+      justify-items: start;
+      border-bottom: 1px solid #c8c8c8;
     }
 
     @include screen-490 {
@@ -191,6 +192,26 @@
           display: flex;
           align-items: center;
           font-size: 13px !important;
+        }
+      }
+    }
+  }
+
+  // .profile__add-org
+  &__add-org {
+    margin-top: 40px;
+    @include screen-992 {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+
+    .send-button {
+      // .send-button__button
+      &__button {
+        width: 100%;
+
+        @include screen-992 {
+          max-width: 250px;
         }
       }
     }
