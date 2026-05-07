@@ -2776,7 +2776,7 @@
      object-fit: cover;
   background-color: transparent;
 }
-@media (width < 690px) {
+@media screen and (width < 1024px) {
   .section_form_body {
     margin: 0 -15px;
   }

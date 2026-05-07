@@ -2527,7 +2527,7 @@
   object-fit: cover;
   background-color: transparent;
 
-  @include screen-690 {
+  @include screen-1024 {
     margin: 0 -15px;
   }
 }
