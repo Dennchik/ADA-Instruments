@@ -31,6 +31,8 @@ body {
   color: #252525;
   min-width: 290px;
   font-family: "Montserrat", sans-serif;
+  -webkit-font-feature-settings: "liga";
+          font-feature-settings: "liga";
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -897,6 +899,7 @@ h3 {
 
 .breadcrumb a {
   color: #a4a4a4;
+  font-weight: 500;
 }
 
 .breadcrumb > li + li:before {
@@ -7071,6 +7074,12 @@ header .top_menu > li > a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 45px;
+}
+@media (width < 690px) {
+  .inn-form {
+    margin-bottom: 25px;
+  }
 }
 .inn-form .profile__body {
   -webkit-box-pack: start;
@@ -7084,7 +7093,12 @@ header .top_menu > li > a {
 .inn-form__title {
   font-size: 16px;
   font-weight: 700;
-  line-height: 135%;
+  line-height: 110%;
+}
+@media screen and (width < 490px) {
+  .inn-form__title {
+    font-size: 14px;
+  }
 }
 .inn-form__field {
   margin-bottom: 0;
@@ -7098,6 +7112,7 @@ header .top_menu > li > a {
   max-width: 563px;
   background: #ffffff;
   border: 1.5px solid #a5a5a5;
+  line-height: 175%;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-box-sizing: border-box;
@@ -7261,6 +7276,42 @@ header .top_menu > li > a {
   background: #f1f5f9;
   padding: 2px 8px;
   color: inherit;
+}
+
+.user-org__name {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 110%;
+}
+.user-org__name span {
+  display: block;
+}
+@media screen and (width < 490px) {
+  .user-org__name {
+    font-size: 14px;
+    line-height: 110%;
+  }
+}
+.user-org__inn {
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 110%;
+}
+@media screen and (width < 490px) {
+  .user-org__inn {
+    font-size: 12px;
+  }
+}
+.user-org__adres {
+  font-size: 14px;
+  max-width: 320px;
+  line-height: 110%;
+}
+@media screen and (width < 490px) {
+  .user-org__adres {
+    font-size: 12px;
+  }
 }
 
 .page__section-wow {

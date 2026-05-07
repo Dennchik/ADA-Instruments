@@ -1,9 +1,15 @@
+@use '../core/mixins' as *;
 //* СТИЛИ (inn-form.css) — подключается отдельно
 .inn-form {
   width: 100%;
   display: flex;
   gap: 20px;
   flex-direction: column;
+  margin-bottom: 45px;
+
+  @include screen-690 {
+    margin-bottom: 25px;
+  }
 
   .profile {
     // .profile__body
@@ -22,7 +28,11 @@
   &__title {
     font-size: 16px;
     font-weight: 700;
-    line-height: 135%;
+    line-height: 110%;
+
+    @include screen-490 {
+      font-size: 14px;
+    }
   }
 
   // .inn-form__field
@@ -42,6 +52,7 @@
     max-width: 563px;
     background: #ffffff;
     border: 1.5px solid #a5a5a5;
+    line-height: 175%;
 
     transition: all 0.5s;
     box-sizing: border-box;
@@ -190,5 +201,55 @@
     background: #f1f5f9;
     padding: 2px 8px;
     color: inherit;
+  }
+}
+
+//* user-organization
+.user-org {
+  // .user-org__body
+  &__body {
+  }
+
+  // .user-org__row
+  &__row {
+  }
+
+  // .user-org__name
+  &__name {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 110%;
+
+    span {
+      display: block;
+    }
+
+    @include screen-490 {
+      font-size: 14px;
+      line-height: 110%;
+    }
+  }
+
+  // .user-org__inn
+  &__inn {
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 110%;
+
+    @include screen-490 {
+      font-size: 12px;
+    }
+  }
+
+  // .user-org__adres
+  &__adres {
+    font-size: 14px;
+    max-width: 320px;
+    line-height: 110%;
+
+    @include screen-490 {
+      font-size: 12px;
+    }
   }
 }
