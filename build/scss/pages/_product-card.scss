@@ -274,12 +274,19 @@
         margin: 0 -15px;
         background-color: var(--background-fon);
         padding: 30px;
-
-        margin-bottom: 20px;
       }
     }
   }
 
+  // .product-card__slide-mob
+  &__slide-mob {
+    max-width: 490px;
+    margin: 0 auto;
+
+    @include screen-490 {
+      max-width: 280px;
+    }
+  }
   // .product-card__title
   &__title {
     position: relative;
@@ -363,10 +370,10 @@
 }
 
 .tovar_slider_item {
-  margin-bottom: 45px;
+  margin: 45px 0;
 
   @include screen-490 {
-    margin-bottom: 0;
+    margin: 20px 0;
   }
 }
 .tovar_slider_nav_wrapper {

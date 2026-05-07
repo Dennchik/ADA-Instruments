@@ -5767,7 +5767,15 @@ header .top_menu > li > a {
     margin: 0 -15px;
     background-color: var(--background-fon);
     padding: 30px;
-    margin-bottom: 20px;
+  }
+}
+.product-card__slide-mob {
+  max-width: 490px;
+  margin: 0 auto;
+}
+@media screen and (width < 490px) {
+  .product-card__slide-mob {
+    max-width: 280px;
   }
 }
 .product-card__title {
@@ -5851,11 +5859,11 @@ header .top_menu > li > a {
 }
 
 .tovar_slider_item {
-  margin-bottom: 45px;
+  margin: 45px 0;
 }
 @media screen and (width < 490px) {
   .tovar_slider_item {
-    margin-bottom: 0;
+    margin: 20px 0;
   }
 }
 
