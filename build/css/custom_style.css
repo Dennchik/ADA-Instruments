@@ -2131,6 +2131,10 @@
   max-width: 600px;
 }
 
+.main_slider_wrapper {
+  overflow: hidden;
+}
+
 .suport_feedback_form {
   margin-left: -15px;
   margin-right: -15px;

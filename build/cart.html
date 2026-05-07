@@ -9,7 +9,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
 		rel="stylesheet">
-	<link rel="icon" type="image/icon" href="./img/icon-log.png">
+
+	<link rel="icon" type="image/icon" href="./img/icons/icon-log.png">
 	<link rel="stylesheet" type="text/css" href="./dist/rangeslider/ion.rangeslider.min.css">
 	<link rel="stylesheet" type="text/css" href="./dist/fancybox/jquery.fancybox.min.css">
 	<link rel="stylesheet" type="text/css" href="./dist/icofont/icofont.min.css">
@@ -492,13 +493,27 @@
 						<div class="delivery__content">
 							<!--* Способ доставки -->
 							<div class="delivery__item">
-								<div class=" delivery__label">
+								<div class="delivery__label">
 									<span>Способ доставки</span>
 									<div class="delivery__help-info">
 										<span>i</span>
 									</div>
 								</div>
-								<!--* ==========================  Select ================================= -->
+								<div class="select__drop-info _collapse">
+									<div class="select__d-title">
+										<span>Условия доставки</span>
+										<div class="close-button">
+											<i class="icofont-close"></i>
+										</div>
+									</div>
+									<div class="select__d-text">Условия и стоимость доставки</div>
+									<ul class="select__list">
+										<li class="select__list-item">Мы осуществляем доставку по всей России</li>
+										<li class="select__list-item">При заказе от 20 000руб. стоимость доставки ...</li>
+										<li class="select__list-item">Стоимость и время доставки зависит от способа доставки</li>
+									</ul>
+								</div>
+								<!-- * ---------------- [ Select ] -------------------------- -->
 								<div class="select-group" data-select>
 									<div class="select-group__dropdown">
 										<div class="select">
@@ -564,7 +579,7 @@
 								<div class=" delivery__label">
 									<span>Покупатель</span>
 								</div>
-								<!--* ==========================  Select ================================= -->
+								<!-- * ---------------- [ Select ] -------------------------- -->
 								<div class="select-group" data-select>
 									<div class="select-group__dropdown">
 										<div class="select">
@@ -575,7 +590,7 @@
 											<!-- Выпадающий список -->
 											<div class="select__drop-down _collapse">
 												<div class="select__d-title">
-													<span></span>
+													<span>покупатель</span>
 													<div class="close-button">
 														<i class="icofont-close"></i>
 													</div>

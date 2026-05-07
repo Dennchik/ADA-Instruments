@@ -781,6 +781,7 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.mask-phone').mask('+7 (999) 999-99-99');
   }
 });
+
 //todo ----------------------[ Preloader ]--------------------------------------
 //todo ↓↓↓ (Для Виктора)
 function loaded(item) {

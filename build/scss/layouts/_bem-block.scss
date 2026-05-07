@@ -1,5 +1,11 @@
 @use '../core/mixins' as *;
+.select > ._collapse:not(._show) {
+  display: none;
+}
 
+.delivery__item > ._collapse:not(._show) {
+  display: none;
+}
 //* ----------------------------[ BUTTON ]--------------------------------------
 .active_button {
   display: inline-block;
@@ -767,13 +773,9 @@
 
   // .ms-capton__row
   &__row {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     align-items: center;
-    margin-right: -15px;
-    margin-left: -15px;
     height: 100% !important;
   }
 

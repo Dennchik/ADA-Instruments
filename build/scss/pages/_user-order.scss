@@ -210,12 +210,10 @@
     margin-bottom: 0;
     user-select: none;
     pointer-events: none;
-
-    display: block;
-    align-items: center;
     transition: transform 0.3s ease-in-out;
     display: flex;
     align-items: center;
+
     span {
       font-size: 12px;
       line-height: 100%;

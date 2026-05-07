@@ -15,10 +15,17 @@ footer {
     }
   }
 
+  // .footer__menu
   &__menu {
     position: relative;
     overflow: hidden;
     margin-bottom: 75px;
+  }
+
+  // .footer__header
+
+  &__header {
+    width: auto;
   }
 }
 
@@ -125,9 +132,6 @@ footer .grey_button {
   text-decoration: underline;
   font-weight: 300;
   text-transform: uppercase;
-  -moz-transition: all 0.4s ease-out;
-  -o-transition: all 0.4s ease-out;
-  -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   display: block;
   white-space: nowrap;
@@ -141,20 +145,27 @@ footer .grey_button {
   outline: none;
   text-shadow: 0 0 1px #000;
 }
-
 ul.footer_menu_desk {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 100px;
-
+  // gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
   li {
     height: auto;
     display: inline;
   }
 }
+// ul.footer_menu_desk {
+//   // display: flex;
+//   // flex-direction: row;
+//   // flex-wrap: nowrap;
+//   // justify-content: space-between;
+//   // align-items: stretch;
+
+//   li {
+//     height: auto;
+//     display: inline;
+//   }
+// }
 
 .footer_menu .has_child {
   text-decoration: none;

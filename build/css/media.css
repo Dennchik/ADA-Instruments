@@ -1530,7 +1530,7 @@
   .container-sm,
   .container-xl {
     max-width: 1376px;
-    box-sizing: content-box;
+    /* box-sizing: content-box; */
   }
 }
 

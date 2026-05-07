@@ -18,7 +18,7 @@
 html {
   counter-reset: heading;
   scroll-behavior: smooth;
-
+  -webkit-tap-highlight-color: transparent;
   height: 100%;
 
   font: {
@@ -42,6 +42,10 @@ body {
   font-style: normal;
   padding-top: 110px;
   height: 100%;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+  overflow-x: hidden;
 
   &.no-scroll {
     overflow: -moz-hidden-unscrollable;
@@ -71,6 +75,11 @@ li {
   line-height: 100%;
 }
 
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
 input,
 textarea,
 button,
@@ -142,12 +151,7 @@ button:active {
 }
 
 //* ----------------------------------------------------------------------------
-ol,
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+
 img {
   max-width: 100%;
   object-fit: cover;
