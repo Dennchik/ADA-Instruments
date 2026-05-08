@@ -132,6 +132,12 @@
   }
 }
 
+@mixin screen-520 {
+  @media (width < 520px) {
+    @content;
+  }
+}
+
 @mixin screen-550 {
   @media (width < 550px) {
     @content;
@@ -255,6 +261,12 @@
 
 @mixin minmax-1376-1920 {
   @media (width >= 1376.98px) and (width <= 1920px) {
+    @content;
+  }
+}
+
+@mixin minmax-1200-1920 {
+  @media (width >= 1200.98px) and (width <= 1920px) {
     @content;
   }
 }

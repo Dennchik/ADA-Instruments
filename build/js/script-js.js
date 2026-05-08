@@ -385,87 +385,73 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 //todo -------------------------------------------------------------------------
 //todo ↓↓↓ (Для Виктора) - скрытие панелей в "Личном кабинете"
+
 document.addEventListener('DOMContentLoaded', () => {
-  //* ========== ПРАВАЯ ПАНЕЛЬ ==========
-  const openButtonRight = document.querySelector(
-    '.acccount-section__open-button'
-  );
-  const closeButtonRight = document.querySelector('.profile__close-button');
-  const asideMenuRight = document.querySelector('.aside-menu-r');
-  const verticalDotsRight = document.getElementById('verticalDots');
-
-  if (openButtonRight) {
-    openButtonRight.addEventListener('click', () => {
-      asideMenuRight?.classList.toggle('open');
-      openButtonRight?.classList.toggle('active');
-      if (window.innerWidth <= 992) {
-        // verticalDotsRight?.classList.toggle('horizontal');
-      }
-    });
-  }
-
-  if (closeButtonRight) {
-    closeButtonRight.addEventListener('click', () => {
-      asideMenuRight?.classList.toggle('open');
-      openButtonRight?.classList.toggle('active');
-      if (window.innerWidth <= 992) {
-        // verticalDotsRight?.classList.toggle('horizontal');
-      }
-    });
-  }
-
   //* ========== ЛЕВАЯ ПАНЕЛЬ ==========
-  const openButtonLeft = document.querySelector(
+  const openButtonLeftAll = document.querySelectorAll(
     '.acccount-section__link-button'
   );
+
   const closeButtonLeft = document.querySelector('.side-menu__close-menu');
   const asideMenuLeft = document.querySelector('.aside-menu-l');
-  const verticalDotsLeft = document.getElementById('verticalDotsLeft');
 
-  if (openButtonLeft) {
-    openButtonLeft.addEventListener('click', () => {
-      asideMenuLeft?.classList.toggle('open');
-      openButtonLeft?.classList.toggle('active');
-      if (window.innerWidth <= 992) {
-        verticalDotsLeft?.classList.toggle('horizontal');
-      }
-    });
-  }
+  // Переменная для хранения активной кнопки (той, которая открыла панель)
+  let activeOpenButton = null;
+
+  openButtonLeftAll.forEach((openButtonLeft) => {
+    if (openButtonLeft) {
+      openButtonLeft.addEventListener('click', () => {
+        asideMenuLeft?.classList.toggle('open');
+        openButtonLeft.classList.toggle('active');
+
+        // Запоминаем текущую активную кнопку
+        if (openButtonLeft.classList.contains('active')) {
+          activeOpenButton = openButtonLeft;
+        } else {
+          activeOpenButton = null;
+        }
+      });
+    }
+  });
 
   if (closeButtonLeft) {
     closeButtonLeft.addEventListener('click', () => {
       asideMenuLeft?.classList.toggle('open');
-      openButtonLeft?.classList.toggle('active');
-      if (window.innerWidth <= 992) {
-        verticalDotsLeft?.classList.toggle('horizontal');
+      if (activeOpenButton) {
+        activeOpenButton.classList.toggle('active');
       }
     });
   }
 
   //* ========== ФУНКЦИЯ ЗАКРЫТИЯ ПАНЕЛЕЙ ==========
-  function closeAllPanels() {
-    //* ====== Правая панель ======
-    asideMenuRight?.classList.remove('open');
-    openButtonRight?.classList.remove('active');
-    verticalDotsRight?.classList.remove('horizontal');
-
-    //* ======  Левая панель ======
+  function closePanel() {
+    //* ====== Левая панель ======
     asideMenuLeft?.classList.remove('open');
-    openButtonLeft?.classList.remove('active');
-    verticalDotsLeft?.classList.remove('horizontal');
+    if (activeOpenButton) {
+      activeOpenButton.classList.remove('active');
+      activeOpenButton = null;
+    }
+    // Если переменная verticalDotsLeft определена где-то выше, раскомментируйте
+    // verticalDotsLeft?.classList.remove('horizontal');
+  }
+
+  //* ========== ФУНКЦИЯ ЗАКРЫТИЯ ВСЕХ ПАНЕЛЕЙ ==========
+  function closeAllPanels() {
+    closePanel();
+    // Здесь можно добавить закрытие других панелей
   }
 
   //* ========== ОБЩАЯ ФУНКЦИЯ ДЛЯ ШИРИНЫ ЭКРАНА ==========
   function checkScreenWidth() {
     if (window.innerWidth > 992) {
-      closeAllPanels();
+      closePanel();
     }
   }
 
   //* ========== ЗАКРЫТИЕ ПРИ СКРОЛЛЕ ==========
   let scrollTimeout;
   function handleScroll() {
-    //* ======  Очищаем предыдущий таймер ======
+    //* ====== Очищаем предыдущий таймер ======
     clearTimeout(scrollTimeout);
 
     //* Закрываем панели при скролле
@@ -473,113 +459,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //* Дополнительно: можно добавить задержку, чтобы не закрывалось при каждом тике
     scrollTimeout = setTimeout(() => {
-      closeAllPanels();
+      closePanel();
     }, 100);
   }
 
-  //* ========== ЗАКРЫТИЕ ПРИ КЛИКЕ ВНЕ ПАНЕЛИ (опционально) ==========
+  //* ========== ЗАКРЫТИЕ ПРИ КЛИКЕ ВНЕ ПАНЕЛИ ==========
   function handleClickOutside(event) {
-    //* Проверяем, был ли клик вне правой панели и не по кнопке открытия
-    const isRightPanel = asideMenuRight?.contains(event.target);
-    const isRightButton = openButtonRight?.contains(event.target);
-
     //* Проверяем, был ли клик вне левой панели и не по кнопке открытия
     const isLeftPanel = asideMenuLeft?.contains(event.target);
-    const isLeftButton = openButtonLeft?.contains(event.target);
 
-    //* Если клик был вне обеих панелей и не по кнопкам открытия
-    if (!isRightPanel && !isRightButton && !isLeftPanel && !isLeftButton) {
-      closeAllPanels();
+    // Проверяем, был ли клик по любой из кнопок открытия
+    let isLeftButton = false;
+    if (openButtonLeftAll.length > 0) {
+      openButtonLeftAll.forEach((button) => {
+        if (button.contains(event.target)) {
+          isLeftButton = true;
+        }
+      });
+    }
+
+    //* Если клик был вне панели и не по кнопке
+    if (!isLeftPanel && !isLeftButton) {
+      closePanel();
     }
   }
 
   //* ====== Запускаем проверку при загрузке ======
   checkScreenWidth();
 
-  //* ======  События ======
+  //* ====== События ======
   window.addEventListener('resize', checkScreenWidth);
   window.addEventListener('scroll', handleScroll);
   document.addEventListener('click', handleClickOutside);
 });
+
 //todo -------------------- [ Открытие модалок ]--------------------------------
 //todo ↓↓↓ (Для Виктора)
-// document.addEventListener('DOMContentLoaded', () => {
-//   //* Элементы модальных окон
-//   const modalLogin = document.querySelector('.modal-login');
-//   const modalRegistration = document.querySelector('.modal-registration');
-
-//   //* Кнопки открытия/закрытия
-//   const loginButton = document.getElementById('login-btn');
-//   const regButton = document.querySelector('.reg-button');
-//   const closeButton1 = document.querySelector('.modal-login__close-button');
-//   const closeButton2 = document.querySelector(
-//     '.modal-registration__close-button'
-//   );
-
-//   //* Вспомогательные функции
-//   const openModal = (modal) => {
-//     if (modal) modal.classList.add('open-modal');
-//   };
-
-//   const closeModal = (modal) => {
-//     if (modal) modal.classList.remove('open-modal');
-//   };
-
-//   //* Закрытие при клике на оверлей (фон)
-//   const handleOverlayClick = (modal, event) => {
-//     if (event.target === modal) closeModal(modal);
-//   };
-
-//   //* Закрытие по клавише Escape
-//   const handleEscape = (event) => {
-//     if (event.key === 'Escape') {
-//       closeModal(modalLogin);
-//       closeModal(modalRegistration);
-//     }
-//   };
-
-//   //* --- Назначение обработчиков (с проверкой существования элементов) ---
-
-//   // Открытие окна логина
-//   if (loginButton && modalLogin) {
-//     loginButton.addEventListener('click', () => openModal(modalLogin));
-//   }
-
-//   //* Закрытие окна логина через крестик
-//   if (closeButton1 && modalLogin) {
-//     closeButton1.addEventListener('click', () => closeModal(modalLogin));
-//   }
-
-//   //* Закрытие окна регистрации через крестик
-//   if (closeButton2 && modalRegistration) {
-//     closeButton2.addEventListener('click', () => closeModal(modalRegistration));
-//   }
-
-//   //* Переключение с логина на регистрацию
-//   if (regButton && modalLogin && modalRegistration) {
-//     regButton.addEventListener('click', () => {
-//       closeModal(modalLogin);
-//       openModal(modalRegistration);
-//     });
-//   }
-
-//   //* Закрытие логина по клику на фон
-//   if (modalLogin) {
-//     modalLogin.addEventListener('click', (event) =>
-//       handleOverlayClick(modalLogin, event)
-//     );
-//   }
-
-//   //* Закрытие регистрации по клику на фон
-//   if (modalRegistration) {
-//     modalRegistration.addEventListener('click', (event) =>
-//       handleOverlayClick(modalRegistration, event)
-//     );
-//   }
-
-//   //* Глобальное закрытие по Escape для любых открытых модалок
-//   document.addEventListener('keydown', handleEscape);
-// });
 document.addEventListener('DOMContentLoaded', () => {
   //* Элементы модальных окон
   const modalLogin = document.querySelector('.modal-login');
@@ -708,7 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //* Глобальное закрытие по Escape для любых открытых модалок
   document.addEventListener('keydown', handleEscape);
 });
-// Функция автоматической подстройки высоты
+//todo Функция автоматической подстройки высоты
 function autoResizeTextarea(textarea) {
   textarea.style.height = 'auto'; // Сбрасываем высоту
   textarea.style.height = textarea.scrollHeight + 'px'; // Устанавливаем по содержимому
@@ -744,7 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-//todo --------- выпадающий список в личнов кабю (плкупатель -> ) --------------
+//todo ------- выпадающий список в личный кабинет (плкупатель -> ) -------------
 //todo ↓↓↓ (Для Виктора)
 document.addEventListener('DOMContentLoaded', () => {
   const openButton = document.querySelector('.delivery__help-info');
@@ -995,5 +910,79 @@ $(document).ready(function () {
     $('.mask-inn-organization').mask('999 999 99 99', {
       clearIfNotMatch: true,
     });
+  }
+});
+/**
+ * Скрипт для работы табов
+ *
+ * Ожидается структура:
+ * - Кнопки с классом "tab-button" и атрибутом data-tab="имя_таба"
+ * - Блоки с классом "tab-content" и атрибутом data-tab="имя_таба"
+ *
+ * При клике на кнопку:
+ * - у всех кнопок удаляется класс "active"
+ * - у всех блоков удаляется класс "active"
+ * - выбранной кнопке и соответствующему блоку добавляется класс "active"
+ */
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Находим все кнопки табов
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const asideMenu = document.querySelector('.aside-menu-l');
+
+  // Находим все блоки контента
+  const tabContents = document.querySelectorAll('.inner-content');
+
+  // Функция для показа конкретного таба
+  function showTab(tabId) {
+    // Удаляем активный класс у всех кнопок
+    tabButtons.forEach((button) => {
+      button.classList.remove('active-link');
+    });
+
+    // Удаляем активный класс у всех блоков контента
+    tabContents.forEach((content) => {
+      content.classList.remove('active');
+    });
+
+    // Находим кнопку с нужным data-tab и добавляем ей active
+    const activeButton = document.querySelector(
+      `.tab-button[data-tab="${tabId}"]`
+    );
+    if (activeButton) {
+      activeButton.classList.add('active-link');
+    }
+
+    // Находим блок контента с нужным data-tab и добавляем ему active
+    const activeContent = document.querySelector(
+      `.inner-content[data-tab="${tabId}"]`
+    );
+    if (activeContent) {
+      activeContent.classList.add('active');
+    }
+  }
+
+  // Вешаем обработчики на каждую кнопку
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', function () {
+      const tabId = this.getAttribute('data-tab');
+      if (tabId) {
+        showTab(tabId);
+      }
+
+      if (asideMenu.classList.contains('open')) {
+        asideMenu.classList.remove('open');
+      }
+    });
+  });
+
+  // Опционально: показать первый таб по умолчанию
+  // Раскомментируйте, если нужно, чтобы первый таб был активен при загрузке
+
+  if (tabButtons.length > 0) {
+    const firstTabId = tabButtons[0].getAttribute('data-tab');
+    if (firstTabId) {
+      showTab(firstTabId);
+    }
   }
 });

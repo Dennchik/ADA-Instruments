@@ -226,7 +226,7 @@
 							<li><a class="side-menu__link" href="./user-order.html">Мои заказы</a></li>
 							<li><a class="side-menu__link" href="./history.html">История покупок</a></li>
 							<li><a class="side-menu__link" href="./profile.html">Профиль</a></li>
-							<li><a class="side-menu__link active-link" href="./personal-account.html">Мои организации</a></li>
+							<li><a class="side-menu__link active-link" href="./user-organizations.html">Мои организации</a></li>
 							<li><a class="side-menu__link" href="./repair.html">Возврат и ремонт</a></li>
 							<li><a class="side-menu__link" href="./cart.html">Корзина</a></li>
 							</li>
@@ -431,43 +431,43 @@
 	<!--*  wow fadeInDown -->
 	<footer class="footer">
 		<div class="footer__section container">
-			<div class="footer_header pb-4">
-				<div class="row flex-nowrap align-items-center">
-					<!--===========-->
-					<div class="col-lg-auto col-5 mr-lg-4">
-						<a href="./productia.html" class="grey_button">в каталог</a>
-					</div>
-					<!-- * -->
-					<div class="col-lg-auto col-7">
-						<div class="footer_search">
-							<form action="#" id="searchForm3" action="#" method="get">
-								<input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
-									autocomplete="off">
-								<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
-							</form>
-						</div>
-					</div>
-					<!-- * -->
+			<div class="footer__header">
+				<!-- <div class="footer__row"> -->
+				<!-- * -->
+				<div class="footer__col-auto">
+					<a href="./productia.html" class="grey_button">в каталог</a>
 				</div>
+				<!-- * -->
+				<div class="footer__col-auto">
+					<div class="footer__search footer_search">
+						<form action="#" id="searchForm3" action="#" method="get">
+							<input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
+								autocomplete="off">
+							<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
+						</form>
+					</div>
+				</div>
+				<!-- * -->
+				<!-- </div> -->
 			</div>
-			<div class="footer_menu">
+			<div class="footer__menu">
 				<!--* ---------------------- [ footer_menu_desk ] -------------------- -->
 				<div class="d-none d-lg-block">
-					<ul class="footer_menu_desk">
+					<ul class="footer__menu-desk">
 						<li>
-							<a href="#">ПОДДЕРЖКА</a>
+							<a href="#">поддержка</a>
 						</li>
 						<li>
-							<a href="#">о компании</a>
+							<a href="./about.html">о компании</a>
 						</li>
 						<li>
-							<a href="#">контакты</a>
+							<a href="./contact.html">контакты</a>
 						</li>
-						<li class="has_child">
-							<a href="#">продукция</a>
-							<div class="row flex-nowrap pt-3 desk-menu">
-								<!--===========-->
-								<div class="col-4">
+						<li class="footer__has-child has_child">
+							<a href="./productia.html">продукция</a>
+							<div class="footer__desk-menu-row pt-3">
+								<!-- * -->
+								<div class="footer__desk-menu-colo">
 									<ul>
 										<li><a href="#">Лазерные дальномеры</a></li>
 										<li><a href="#">Лазерные уровни</a></li>
@@ -477,7 +477,7 @@
 									</ul>
 								</div>
 								<!-- * -->
-								<div class="col-4">
+								<div class="footer__desk-menu-colo">
 									<ul>
 										<li><a href="#">Пирометры и тепловизоры</a></li>
 										<li><a href="#">Детекторы</a></li>
@@ -487,7 +487,7 @@
 									</ul>
 								</div>
 								<!-- * -->
-								<div class="col-4">
+								<div class="footer__desk-menu-colo">
 									<ul>
 										<li><a href="#">Штативы</a></li>
 										<li><a href="#">Рейки</a></li>

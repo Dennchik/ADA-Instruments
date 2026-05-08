@@ -1,19 +1,27 @@
 @use '../core/mixins' as *;
 
-//*  ---------------------- [ acccount-section ]--------------------------------
+//*  ---------------------- [ personal-account ]--------------------------------
 .personal-account {
+  .select {
+    &__input {
+      text-overflow: ellipsis;
+      width: 100%;
+      font-size: 12px;
+      line-height: 110%;
+      white-space: wrap;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: keep-all;
+      max-width: 320px;
+    }
+  }
   // .profile__body
   .profile__body {
     @include screen-992 {
       padding: 0 0 20px 0;
-      background-color: transparent;
-      column-gap: 50px;
-      row-gap: 15px;
-      display: grid;
-      grid-template-columns: repeat(2, max-content);
       justify-content: start;
       justify-items: start;
-      border-bottom: 1px solid #c8c8c8;
+      // border-bottom: 1px solid #c8c8c8;
     }
 
     @include screen-490 {
@@ -22,20 +30,26 @@
   }
 }
 
+//*  ---------------------- [ acccount-section ]--------------------------------
 .acccount-section {
   position: relative;
+
+  @include screen-840 {
+    margin: 0 auto;
+  }
 
   // .acccount-section__body
   &__body {
     display: grid;
-    column-gap: 70px;
+    grid-template-columns: minmax(210px, 270px) 1fr;
+    column-gap: 7rem;
 
     @include screen-1376 {
       gap: 0 20px;
     }
 
     @include screen-992 {
-      column-gap: 50px;
+      grid-template-columns: minmax(180px, 210px) 1fr;
     }
 
     @include screen-840 {
@@ -68,6 +82,543 @@
 
     @include screen-768 {
       max-width: 540px;
+    }
+  }
+
+  // .acccount-section__tabs-content
+  &__tabs {
+    position: relative;
+
+    //* .user-account
+    .user-account {
+      .profile {
+        @include screen-840 {
+          margin-bottom: 20px;
+        }
+
+        &__body {
+          @include screen-992 {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 10px 20px;
+          }
+
+          @include screen-490 {
+            margin: 0 -15px;
+          }
+        }
+      }
+
+      grid-template-columns: 1fr minmax(240px, 313px);
+
+      @include screen-992 {
+        grid-template-columns: 1fr;
+      }
+
+      .form-user__button {
+        @include screen-550 {
+          width: 100%;
+        }
+      }
+    }
+
+    //* .order-user
+    .order-user {
+      .form-user__button {
+        @include screen-550 {
+          width: 100%;
+        }
+      }
+
+      .select-group__dropdown {
+        margin: 0;
+      }
+
+      //* select
+      .select {
+        padding: 0;
+        flex-direction: column;
+
+        .select__button {
+          color: inherit;
+          font-size: inherit;
+          margin-bottom: 10px;
+        }
+
+        // .select__drop-down
+        &__drop-down {
+          top: 85px;
+          width: 100%;
+
+          @include screen-992 {
+            top: 20px;
+          }
+        }
+        // .select__drop-down
+        &__drop-down {
+          @include screen-992 {
+            max-width: 290px;
+            left: 7px;
+            top: 45px;
+          }
+        }
+
+        &__input {
+          width: 100%;
+          font-size: 12px;
+          line-height: 110%;
+          white-space: wrap;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          word-break: keep-all;
+        }
+
+        &__list-item {
+          font-size: 12px;
+          white-space: normal; /* Разрешаем перенос строк */
+          word-wrap: break-word; /* Переносим длинные слова */
+          /* Разрываем ИНН при необходимости */
+          line-height: 100%; /* Увеличиваем межстрочный интервал */
+          // padding: 10px 15px; /* Добавляем отступы для читаемости */
+        }
+      }
+
+      //*.profile
+      .profile {
+        margin-top: -60px;
+
+        @include screen-840 {
+          margin-top: 0;
+        }
+
+        // .profile__body
+        &__body {
+          position: relative;
+
+          @include screen-992 {
+            padding: 20px;
+          }
+        }
+      }
+
+      //* .acccount-content
+      .acccount-content {
+        // .acccount-content__body
+        &__body {
+          display: grid;
+          grid-template-columns: minmax(390px, 1fr) minmax(240px, 313px);
+          gap: 2rem 7rem;
+
+          @include screen-1376 {
+            gap: 50px 20px;
+          }
+
+          @include screen-992 {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+          }
+        }
+
+        // .acccount-content__column
+        &__column {
+          &:nth-child(2) {
+            // grid-column: 1 / 2;
+          }
+
+          &:nth-child(2) {
+            // grid-column: 2 / 3;
+            @include screen-490 {
+              margin: 0 -15px;
+            }
+          }
+
+          &:nth-child(3) {
+            grid-column: 1 /3;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            @include screen-1376 {
+              grid-column: 1 / 2;
+            }
+
+            @include screen-992 {
+              background-color: var(--background-fon);
+              padding: 20px;
+            }
+
+            @include screen-490 {
+              margin: 0 -15px;
+            }
+          }
+        }
+      }
+    }
+
+    //* .profile-user
+    .profile-user {
+      grid-template-columns: 1fr minmax(240px, 313px);
+
+      @include screen-992 {
+        grid-template-columns: 1fr;
+      }
+
+      .form-user__button {
+        @include screen-550 {
+          width: 100%;
+        }
+      }
+
+      .profile {
+        @include screen-840 {
+          margin-bottom: 20px;
+        }
+
+        &__body {
+          @include screen-992 {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 10px 20px;
+          }
+
+          @include screen-490 {
+            margin: 0 -15px;
+          }
+        }
+      }
+    }
+
+    //* .history-user
+    .history-user {
+      .form-user__button {
+        @include screen-550 {
+          width: 100%;
+        }
+      }
+
+      .select-group__dropdown {
+        margin: 0;
+      }
+
+      //* select
+      .select {
+        padding: 0;
+        flex-direction: column;
+
+        .select__button {
+          color: inherit;
+          font-size: inherit;
+          margin-bottom: 10px;
+        }
+
+        // .select__drop-down
+        &__drop-down {
+          top: 85px;
+          width: 100%;
+
+          @include screen-992 {
+            top: 20px;
+          }
+        }
+        // .select__drop-down
+        &__drop-down {
+          @include screen-992 {
+            max-width: 290px;
+            left: 7px;
+            top: 45px;
+          }
+        }
+
+        &__input {
+          width: 100%;
+          font-size: 12px;
+          line-height: 110%;
+          white-space: wrap;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          word-break: keep-all;
+        }
+
+        &__list-item {
+          font-size: 12px;
+          white-space: normal; /* Разрешаем перенос строк */
+          word-wrap: break-word; /* Переносим длинные слова */
+          /* Разрываем ИНН при необходимости */
+          line-height: 100%; /* Увеличиваем межстрочный интервал */
+          // padding: 10px 15px; /* Добавляем отступы для читаемости */
+        }
+      }
+
+      //*.profile
+      .profile {
+        margin-top: -60px;
+
+        @include screen-840 {
+          margin-top: 0;
+        }
+
+        // .profile__body
+        &__body {
+          position: relative;
+
+          @include screen-992 {
+            padding: 20px;
+          }
+        }
+
+        // .profile__btn-home
+        &__btn-home {
+          margin-top: 90px;
+          display: flex;
+          justify-content: flex-end;
+
+          @include screen-992 {
+            margin-top: 3rem;
+          }
+
+          @include screen-490 {
+            .grey_button {
+              height: 36px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      //* .acccount-content
+      .acccount-content {
+        // .acccount-content__body
+        &__body {
+          display: grid;
+          grid-template-columns: minmax(390px, 1fr) minmax(240px, 313px);
+          gap: 2rem 7rem;
+
+          @include screen-1376 {
+            gap: 50px 20px;
+          }
+
+          @include screen-992 {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+          }
+        }
+
+        // .acccount-content__column
+        &__column {
+          &:nth-child(2) {
+            @include screen-490 {
+              margin: 0 -15px;
+            }
+          }
+
+          &:nth-child(3) {
+            grid-column: 1 /3;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            @include screen-1376 {
+              grid-column: 1 / 2;
+            }
+
+            @include screen-992 {
+              // background-color: var(--background-fon);
+              padding: 20px;
+            }
+
+            @include screen-490 {
+              margin: 0 -15px;
+            }
+          }
+        }
+
+        // .acccount-content__body
+        &__body {
+          display: grid;
+          grid-template-columns: 1fr minmax(220px, 313px);
+          row-gap: 80px;
+          column-gap: 115px;
+
+          @include screen-1376 {
+            column-gap: 20px;
+            row-gap: 50px;
+          }
+
+          @include screen-1140 {
+            grid-template-columns: 1fr 220px;
+          }
+
+          @include screen-992 {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+          }
+
+          @include screen-490 {
+            row-gap: 10px;
+          }
+        }
+
+        // .acccount-content__column
+        &__column {
+          &:nth-child(3) {
+            grid-column: 1 / 3;
+
+            @include screen-1376 {
+              grid-column: 1 / 2;
+            }
+          }
+        }
+
+        // .acccount-content__emty-cart
+        &__emty-cart {
+          margin-bottom: 30px;
+          span {
+            display: block;
+            &:nth-child(1) {
+              font-size: 31px;
+              font-weight: 700;
+
+              @include minmax-320-1920 {
+                font-size: calc(
+                  18px + (31 - 18) * ((100vw - 320px) / (1920 - 320))
+                );
+              }
+
+              @include screen-320 {
+                font-size: 18px;
+              }
+            }
+
+            &:nth-child(2) {
+              font-size: 16px;
+
+              @include minmax-320-1920 {
+                font-size: calc(
+                  12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))
+                );
+              }
+              @include screen-320 {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+
+      //* .product-cart
+      .product-cart {
+        &__item {
+          grid-template-columns: min-content max-content auto;
+          justify-items: center;
+
+          @include screen-1140 {
+            grid-template-columns: 35% 1fr;
+          }
+
+          @include screen-490 {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+          }
+        }
+
+        // .product-cart__image
+        &__image {
+          display: flex;
+          justify-content: center;
+
+          @include screen-1140 {
+            grid-column: 1 / 2;
+          }
+
+          @include screen-992 {
+            grid-row: 1 / 3;
+            display: flex;
+            width: 100%;
+            align-self: center;
+            justify-self: center;
+
+            img {
+              width: 100%;
+              height: 100%;
+              max-width: 100%;
+              object-fit: contain;
+            }
+          }
+
+          @include screen-490 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            max-width: 70%;
+          }
+        }
+
+        // .product-cart__info
+        &__info {
+          @include screen-1140 {
+            grid-column: 1/ 3;
+            grid-row: 2 / 3;
+            justify-self: start;
+          }
+
+          @include screen-992 {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+            align-self: center;
+            justify-self: center;
+          }
+
+          @include screen-490 {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            max-width: 90%;
+          }
+        }
+
+        // .product-cart__counter
+        &__counter {
+          @include screen-1140 {
+            grid-column: 2/ 3;
+            grid-row: 1 / 2;
+            justify-self: end;
+          }
+
+          @include screen-490 {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+            justify-self: center;
+          }
+        }
+      }
+    }
+  }
+
+  // .acccount-section__tab-content
+  &__tab-content {
+    height: 100%;
+
+    gap: 7rem;
+    width: 100%;
+
+    @include screen-1376 {
+      gap: 20px;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      display: none;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      &.active {
+        display: grid;
+      }
     }
   }
 
@@ -130,12 +681,11 @@
     }
 
     &:nth-child(2) {
+      // display: grid;
+      // grid-template-columns: 1fr minmax(240px, 313px);
+      // gap: 7rem;
       z-index: 1;
       width: 100%;
-    }
-
-    &:nth-child(3) {
-      z-index: 99;
     }
   }
 
@@ -170,6 +720,33 @@
   }
 }
 
+//*  ---------------------- [ acccount-content ]--------------------------------
+.acccount-content {
+  // .acccount-content__body
+  &__body {
+    padding-block: 60px 20px;
+
+    @include screen-840 {
+      padding-block: 0;
+    }
+  }
+
+  //.acccount-content__title
+  &__title {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 33px;
+    line-height: 100%;
+    gap: 15px;
+
+    @include screen-840 {
+      margin-bottom: 40px;
+    }
+  }
+}
+
 //* ------------------------ [ Profile-section ]--------------------------------
 .profile {
   // .profile__body
@@ -179,6 +756,15 @@
     display: flex;
     flex-direction: column;
     row-gap: 25px;
+
+    @include screen-1376 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @include screen-992 {
+      border: none;
+    }
 
     @include screen-375 {
       gap: 20px;
@@ -212,6 +798,10 @@
 
         @include screen-992 {
           max-width: 250px;
+        }
+
+        @include screen-425 {
+          max-width: 100%;
         }
       }
     }
@@ -268,6 +858,18 @@
     width: 100%;
     line-height: 100%;
     transition: color 0.4s ease 0s;
+
+    @include screen-992 {
+      font-weight: 500;
+    }
+
+    @include screen-840 {
+      font-size: 14px;
+    }
+
+    @include screen-490 {
+      font-size: 12px;
+    }
   }
 
   // .profile__icon
@@ -302,13 +904,34 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
+
+    @include screen-840 {
+      gap: 0 15px;
+    }
+
+    @include screen-820 {
+      max-width: 100%;
+    }
   }
 
   // .form-user__line
   &__line {
     display: grid;
     grid-template-columns: 1fr 215px;
-    gap: 20px;
+    gap: 10px;
+
+    @include screen-992 {
+      padding: 20px;
+      background-color: var(--background-fon);
+    }
+
+    @include screen-550 {
+      grid-template-columns: 1fr;
+    }
+
+    @include screen-490 {
+      margin: 0 -15px;
+    }
   }
 
   // .form-user__group
@@ -318,6 +941,10 @@
     max-width: 355px;
     width: 100%;
     align-self: end;
+
+    @include screen-550 {
+      max-width: 100%;
+    }
 
     .radio-group__item {
       height: 17px;
@@ -332,20 +959,38 @@
     color: #c8c8c8;
     line-height: 100%; /* 17/16 */
     margin-bottom: 15px;
+
+    @include screen-840 {
+      font-size: 16px;
+    }
   }
 
   // .form-user__input
   &__input {
     font-size: 18px;
-    border: 1px solid #eee;
+    border: 1px solid #a5a5a5;
     padding: 3px 10px;
+    height: 35px;
+
+    @include screen-840 {
+      font-size: 14px;
+    }
   }
 
   // .form-user__button
   &__button {
-    max-width: 190px;
+    max-width: 100%;
     width: 100%;
     align-self: end;
+
+    @include screen-860 {
+      height: 45px;
+    }
+
+    @include screen-550 {
+      width: 190px;
+      margin-top: 30px;
+    }
   }
 }
 
@@ -354,6 +999,10 @@
   display: flex;
   width: 100%;
   gap: 30px;
+
+  @include screen-1200 {
+    gap: 10px;
+  }
 
   // .radio-group__item
   &__item {
@@ -383,7 +1032,7 @@
   // .radio-group__line
   &__line {
     &:not(:last-child) {
-      padding-right: 20px;
+      padding-right: 10px;
     }
   }
 
@@ -418,6 +1067,10 @@
       transition: transform 0.4s ease-in-out;
       pointer-events: none;
     }
+
+    @include screen-1376 {
+      font-size: 14px;
+    }
   }
 }
 
@@ -434,36 +1087,6 @@
     padding-left: 25px;
     padding-right: 25px;
   }
-
-  .profile__body {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .radio-group__label {
-    font-size: 14px;
-  }
-
-  .form-user__button {
-    max-width: 160px;
-  }
-}
-
-@include screen-1200 {
-  .radio-group {
-    gap: 10px;
-  }
-}
-
-@include screen-992 {
-  .profile__item {
-    font-weight: 500;
-  }
-
-  .profile__body {
-    border: none;
-    // border-bottom: 1px solid #a5a5a5;
-  }
 }
 
 @include screen-840 {
@@ -479,7 +1102,7 @@
       position: fixed;
     }
 
-    .side-menu__link {
+    &__tab-link {
       color: #ffffff;
       font-weight: 500;
     }
@@ -497,7 +1120,6 @@
 
     .logo {
       display: block !important;
-      // position: sticky;
       width: 80px;
       left: 15px;
       top: 24px;
@@ -510,48 +1132,12 @@
     height: calc(100vh - 70px);
   }
 
-  .form-user__wrapp-group {
-    gap: 15px;
-  }
-
-  .form-user__label {
-    font-size: 16px;
-  }
-
-  .form-user__input {
-    font-size: 14px;
-  }
-
-  .radio-group__label {
-    font-size: 14px;
-  }
-
   .side-menu__link {
     font-size: 14px;
-  }
-  .profile__item {
-    font-size: 14px;
-
-    @include screen-490 {
-      font-size: 12px;
-    }
   }
 
   .side-menu__close-menu {
     display: block;
-  }
-  .acccount-section {
-    margin: 0 auto;
-  }
-}
-
-@include screen-820 {
-  .form-user__line {
-    grid-template-columns: 1fr;
-  }
-
-  .form-user__group {
-    max-width: 100%;
   }
 }
 
