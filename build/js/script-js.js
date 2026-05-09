@@ -1,272 +1,3 @@
-//* ============== ГЛОБАЛЬНАЯ ФУНКЦИЯ ОБНОВЛЕНИЯ СЧЁТЧИКА КОРЗИНЫ ==============
-window.updateTotalCartQuantity = function () {
-  let totalQuantity = 0;
-  // Собираем значения из всех полей количества (универсальный селектор)
-  document
-    .querySelectorAll('.quantity .input, .quantity__input .input')
-    .forEach((input) => {
-      let val = parseInt(input.value, 10);
-      if (!isNaN(val) && val > 0) totalQuantity += val;
-    });
-  const cartQuantity = document.querySelector('.cart-user__quantity');
-  if (cartQuantity) {
-    cartQuantity.textContent = totalQuantity;
-    cartQuantity.style.display = totalQuantity > 0 ? 'flex' : 'none';
-  }
-};
-
-//* ====== ИНИЦИАЛИЗАЦИЯ СЧЁТЧИКОВ В КАТАЛОГЕ (с переключением видимости) ======
-function initCatalogCounters() {
-  document.querySelectorAll('.items_greed_wrapper').forEach((wrapper) => {
-    const addToCartBtn = wrapper.querySelector('.add-to-cart');
-    const quantityBlock = wrapper.querySelector('.quantity');
-    if (!addToCartBtn || !quantityBlock) return;
-
-    const input = quantityBlock.querySelector('.input');
-    const minusBtn = quantityBlock.querySelector('.quantity-remove');
-    const plusBtn = quantityBlock.querySelector('.quantity-add');
-
-    function updateItemVisibility() {
-      let currentValue = parseInt(input.value, 10) || 0;
-      addToCartBtn.style.display = currentValue > 0 ? 'none' : 'block';
-      quantityBlock.style.display = currentValue > 0 ? 'flex' : 'none';
-      window.updateTotalCartQuantity();
-    }
-
-    function updateValue(change) {
-      let newValue = (parseInt(input.value, 10) || 0) + change;
-      if (newValue < 0) newValue = 0;
-      input.value = newValue;
-      updateItemVisibility();
-    }
-
-    //* Если уже есть обработчики – не добавляем повторно
-    if (addToCartBtn && !addToCartBtn.hasAttribute('data-listener')) {
-      addToCartBtn.setAttribute('data-listener', 'true');
-      addToCartBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        updateValue(1);
-      });
-    }
-    if (plusBtn && !plusBtn.hasAttribute('data-listener')) {
-      plusBtn.setAttribute('data-listener', 'true');
-      plusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        updateValue(1);
-      });
-    }
-    if (minusBtn && !minusBtn.hasAttribute('data-listener')) {
-      minusBtn.setAttribute('data-listener', 'true');
-      minusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        updateValue(-1);
-      });
-    }
-    if (input && !input.hasAttribute('data-listener')) {
-      input.setAttribute('data-listener', 'true');
-      input.addEventListener('input', (e) => {
-        let value = parseInt(e.target.value, 10);
-        if (isNaN(value) || value < 0) input.value = 0;
-        updateItemVisibility();
-      });
-      input.addEventListener('keydown', (e) => {
-        if (e.key === '-' || e.key === 'e' || e.key === '.' || e.key === ',')
-          e.preventDefault();
-      });
-    }
-    updateItemVisibility();
-  });
-}
-
-//* === ИНИЦИАЛИЗАЦИЯ ВСЕХ ОСТАЛЬНЫХ СЧЁТЧИКОВ (без переключения видимости) ====
-function initOtherCounters() {
-  // Ищем все блоки .product-cart__quantity (в корзине) и любые другие .quantity, которые не внутри .items_greed_wrapper
-  const otherBlocks = document.querySelectorAll(
-    '.product-cart__quantity, .quantity:not(.items_greed_wrapper .quantity)'
-  );
-  otherBlocks.forEach((block) => {
-    if (block.hasAttribute('data-quantity-initialized')) return;
-    block.setAttribute('data-quantity-initialized', 'true');
-
-    const input = block.querySelector('.input');
-    const minusBtn = block.querySelector('.quantity-remove');
-    const plusBtn = block.querySelector('.quantity-add');
-
-    if (!input) return;
-
-    const changeQuantity = (delta) => {
-      let newVal = (parseInt(input.value, 10) || 0) + delta;
-      if (newVal < 0) newVal = 0;
-      input.value = newVal;
-      window.updateTotalCartQuantity();
-    };
-
-    if (plusBtn && !plusBtn.hasAttribute('data-listener')) {
-      plusBtn.setAttribute('data-listener', 'true');
-      plusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        changeQuantity(1);
-      });
-    }
-    if (minusBtn && !minusBtn.hasAttribute('data-listener')) {
-      minusBtn.setAttribute('data-listener', 'true');
-      minusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        changeQuantity(-1);
-      });
-    }
-    if (!input.hasAttribute('data-listener')) {
-      input.setAttribute('data-listener', 'true');
-      input.addEventListener('input', () => {
-        let val = parseInt(input.value, 10);
-        if (isNaN(val) || val < 0) input.value = 0;
-        window.updateTotalCartQuantity();
-      });
-      input.addEventListener('keydown', (e) => {
-        if (e.key === '-' || e.key === 'e' || e.key === '.' || e.key === ',')
-          e.preventDefault();
-      });
-    }
-  });
-}
-
-//* ==== ЛОГИКА ДЛЯ СТРАНИЦЫ КОРЗИНЫ (суммы, удаление, переключение блоков) ====
-function initCartPageSpecific() {
-  const cart = document.querySelector('.product-cart');
-  if (!cart) return;
-
-  const emptyMessage = document.querySelector('.product-cart__cart-empty');
-  const fullSumBlock = document.querySelector('.purchase-result__sum');
-  const discountedSumBlock = document.querySelector('.delivery__sum');
-  const discountBlock = document.querySelector('.discount-product__price');
-  const deliveryContent = document.querySelector('.delivery__content');
-  const profileBlock = document.querySelector('.profile');
-  const deleteAllBtn = document.querySelector('.delete-all');
-
-  function getNumberFromBlock(block) {
-    if (!block) return 0;
-    const text = block.textContent.trim();
-    const num = parseFloat(text.replace(/[^0-9]/g, ''));
-    return isNaN(num) ? 0 : num;
-  }
-
-  function formatPrice(price) {
-    return price.toLocaleString('ru-RU') + ' руб';
-  }
-
-  function updateTotalSums() {
-    let productsTotal = 0;
-    cart.querySelectorAll('.product-cart__new-price').forEach((el) => {
-      productsTotal += getNumberFromBlock(el);
-    });
-    const discount = getNumberFromBlock(discountBlock);
-    let finalWithDiscount = productsTotal - discount;
-    if (finalWithDiscount < 0) finalWithDiscount = 0;
-    if (fullSumBlock) fullSumBlock.textContent = formatPrice(productsTotal);
-    if (discountedSumBlock)
-      discountedSumBlock.textContent = formatPrice(finalWithDiscount);
-  }
-
-  function toggleEmptyCartBlocks(hasItems) {
-    if (deliveryContent) deliveryContent.style.display = hasItems ? '' : 'none';
-    if (profileBlock) profileBlock.style.display = hasItems ? 'none' : 'block';
-  }
-
-  function updateCartVisibility() {
-    const items = cart.querySelectorAll('.product-cart__item');
-    const hasItems = items.length > 0;
-    if (!hasItems) {
-      cart.style.display = 'none';
-      if (emptyMessage) emptyMessage.style.display = 'block';
-      if (fullSumBlock) fullSumBlock.textContent = '0 руб';
-      if (discountedSumBlock) discountedSumBlock.textContent = '0 руб';
-    } else {
-      cart.style.display = '';
-      if (emptyMessage) emptyMessage.style.display = 'none';
-      updateTotalSums();
-    }
-    toggleEmptyCartBlocks(hasItems);
-    window.updateTotalCartQuantity();
-  }
-
-  function initCartQuantityControls() {
-    cart.querySelectorAll('.product-cart__item').forEach((item) => {
-      const priceSpan = item.querySelector('.product-cart__new-price');
-      const input = item.querySelector('.quantity__input .input');
-      if (!priceSpan || !input) return;
-
-      const currentTotal = getNumberFromBlock(priceSpan);
-      const quantity = parseInt(input.value, 10) || 1;
-      const pricePerUnit = currentTotal / quantity;
-      item.dataset.pricePerUnit = pricePerUnit;
-
-      const updatePriceAndSum = () => {
-        const newQty = parseInt(input.value, 10) || 1;
-        if (newQty > 0) {
-          const newTotal = pricePerUnit * newQty;
-          priceSpan.textContent = formatPrice(newTotal);
-        }
-        updateTotalSums();
-        window.updateTotalCartQuantity();
-      };
-
-      if (!input.hasAttribute('data-cart-listener')) {
-        input.setAttribute('data-cart-listener', 'true');
-        input.addEventListener('input', updatePriceAndSum);
-      }
-      const addBtn = item.querySelector('.quantity-add');
-      const removeBtn = item.querySelector('.quantity-remove');
-      if (addBtn && !addBtn.hasAttribute('data-cart-listener')) {
-        addBtn.setAttribute('data-cart-listener', 'true');
-        addBtn.addEventListener('click', updatePriceAndSum);
-      }
-      if (removeBtn && !removeBtn.hasAttribute('data-cart-listener')) {
-        removeBtn.setAttribute('data-cart-listener', 'true');
-        removeBtn.addEventListener('click', updatePriceAndSum);
-      }
-    });
-  }
-
-  function initDeleteButtons() {
-    cart.querySelectorAll('.product-cart__item').forEach((item) => {
-      const deleteBtn = item.querySelector('[id="delete-product"]');
-      if (deleteBtn && !deleteBtn.hasAttribute('data-listener')) {
-        deleteBtn.setAttribute('data-listener', 'true');
-        deleteBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          item.remove();
-          updateCartVisibility();
-        });
-      }
-    });
-  }
-
-  function initDeleteAllButton() {
-    if (!deleteAllBtn || deleteAllBtn.hasAttribute('data-listener')) return;
-    deleteAllBtn.setAttribute('data-listener', 'true');
-    deleteAllBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      cart
-        .querySelectorAll('.product-cart__item')
-        .forEach((item) => item.remove());
-      updateCartVisibility();
-    });
-  }
-
-  initCartQuantityControls();
-  initDeleteButtons();
-  initDeleteAllButton();
-  updateCartVisibility();
-}
-
-//* ==================== ЗАПУСК ПРИ ЗАГРУЗКЕ ===================================
-document.addEventListener('DOMContentLoaded', function () {
-  initCatalogCounters(); //* счётчики в каталоге с переключением кнопка/счётчик
-  initOtherCounters(); //* все остальные счётчики (корзина и пр.)
-  if (document.querySelector('.cart-page')) {
-    initCartPageSpecific(); //* дополнительная логика для страницы корзины
-  }
-});
 //todo ---------------------[ Date and time ]-----------------------------------
 //todo ↓↓↓ (Для Виктора)
 document.addEventListener('DOMContentLoaded', function () {
@@ -624,44 +355,49 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', handleEscape);
 });
 //todo Функция автоматической подстройки высоты
+
 function autoResizeTextarea(textarea) {
   textarea.style.height = 'auto'; // Сбрасываем высоту
   textarea.style.height = textarea.scrollHeight + 'px'; // Устанавливаем по содержимому
 }
 
 // Применяем ко всем textarea с классом select__input
+function autoResizeText() {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Функция автоматической подстройки высоты
+    function autoResizeTextarea(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Функция автоматической подстройки высоты
-  function autoResizeTextarea(textarea) {
-    textarea.style.height = 'auto';
-    textarea.style.height = textarea.scrollHeight + 'px';
-  }
-
-  // Применяем ко всем textarea с классом select__input
-  document.querySelectorAll('.select__input').forEach((textarea) => {
-    //* Инициализация
-    autoResizeTextarea(textarea);
-
-    // При вводе текста
-    textarea.addEventListener('input', function () {
-      autoResizeTextarea(this);
-    });
-
-    //* При изменении значения программно (например, через выбор из списка)
-    const observer = new MutationObserver(function () {
+    // Применяем ко всем textarea с классом select__input
+    document.querySelectorAll('.select__input').forEach((textarea) => {
+      //* Инициализация
       autoResizeTextarea(textarea);
-    });
-    observer.observe(textarea, {
-      attributes: true,
-      attributeFilter: ['value'],
+
+      // При вводе текста
+      textarea.addEventListener('input', function () {
+        autoResizeTextarea(this);
+      });
+
+      //* При изменении значения программно (например, через выбор из списка)
+      const observer = new MutationObserver(function () {
+        autoResizeTextarea(textarea);
+      });
+      observer.observe(textarea, {
+        attributes: true,
+        attributeFilter: ['value'],
+      });
     });
   });
-});
+}
+
+autoResizeText();
 
 //todo ------- выпадающий список в личный кабинет (плкупатель -> ) -------------
 //todo ↓↓↓ (Для Виктора)
-document.addEventListener('DOMContentLoaded', () => {
+function selectDropByer() {
+  // document.addEventListener('DOMContentLoaded', () => {
   const openButton = document.querySelector('.delivery__help-info');
   const dropBox = document.querySelector('.select__drop-info');
   const item = document.querySelector('.delivery__item');
@@ -693,8 +429,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
-
+  // });
+}
+selectDropByer();
 //* ----------------------------------------------------------------------------
 function handleSubmit(event) {
   event.preventDefault(); // Отменяем перезагрузку страницы
@@ -703,6 +440,7 @@ function handleSubmit(event) {
   // Дальше ваша логика
 }
 //* ----------------------------------------------------------------------------
+
 // todo Основная функция инициализации формы поиска по ИНН
 function initInnSearch() {
   const input = document.getElementById('innInput');
@@ -904,85 +642,206 @@ if (document.readyState === 'loading') {
   initInnSearch();
 }
 
-$(document).ready(function () {
-  // Добавлено: проверка наличия элемента перед применением маски
-  if ($('.mask-inn-organization').length) {
-    $('.mask-inn-organization').mask('999 999 99 99', {
-      clearIfNotMatch: true,
-    });
-  }
-});
-/**
- * Скрипт для работы табов
- *
- * Ожидается структура:
- * - Кнопки с классом "tab-button" и атрибутом data-tab="имя_таба"
- * - Блоки с классом "tab-content" и атрибутом data-tab="имя_таба"
- *
- * При клике на кнопку:
- * - у всех кнопок удаляется класс "active"
- * - у всех блоков удаляется класс "active"
- * - выбранной кнопке и соответствующему блоку добавляется класс "active"
- */
+function innReady() {
+  function initInnSearch() {
+    const input = document.getElementById('innInput');
+    const dropdown = document.getElementById('innDropdown');
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Находим все кнопки табов
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const asideMenu = document.querySelector('.aside-menu-l');
+    // Добавлено: проверка наличия элементов на странице
+    if (!input || !dropdown) return;
 
-  // Находим все блоки контента
-  const tabContents = document.querySelectorAll('.inner-content');
+    let timeoutId = null;
 
-  // Функция для показа конкретного таба
-  function showTab(tabId) {
-    // Удаляем активный класс у всех кнопок
-    tabButtons.forEach((button) => {
-      button.classList.remove('active-link');
-    });
-
-    // Удаляем активный класс у всех блоков контента
-    tabContents.forEach((content) => {
-      content.classList.remove('active');
-    });
-
-    // Находим кнопку с нужным data-tab и добавляем ей active
-    const activeButton = document.querySelector(
-      `.tab-button[data-tab="${tabId}"]`
-    );
-    if (activeButton) {
-      activeButton.classList.add('active-link');
+    function getCleanInn(value) {
+      if (!value) return '';
+      return value.replace(/\s/g, '').replace(/\D/g, '').substring(0, 12);
     }
 
-    // Находим блок контента с нужным data-tab и добавляем ему active
-    const activeContent = document.querySelector(
-      `.inner-content[data-tab="${tabId}"]`
-    );
-    if (activeContent) {
-      activeContent.classList.add('active');
-    }
-  }
+    function displayOrganizations(organizationsList) {
+      dropdown.innerHTML = '';
 
-  // Вешаем обработчики на каждую кнопку
-  tabButtons.forEach((button) => {
-    button.addEventListener('click', function () {
-      const tabId = this.getAttribute('data-tab');
-      if (tabId) {
-        showTab(tabId);
+      if (organizationsList.length === 0) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'inn-form__dropdown-empty';
+
+        const titleLink = document.createElement('a');
+        titleLink.className = 'inn-form__dropdown-empty-title';
+        titleLink.textContent = 'Другой филиал';
+        titleLink.href = '#';
+        titleLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          dropdown.style.display = 'none';
+          input.setAttribute('data-manual-inn', 'true');
+        });
+
+        const descSpan = document.createElement('div');
+        descSpan.className = 'inn-form__dropdown-empty-desc';
+        descSpan.textContent =
+          'Выберите, если ИНН введен правильно, но вашего филиала нет в списке';
+
+        emptyDiv.appendChild(titleLink);
+        emptyDiv.appendChild(descSpan);
+        dropdown.appendChild(emptyDiv);
+        dropdown.style.display = 'block';
+        return;
       }
 
-      if (asideMenu.classList.contains('open')) {
-        asideMenu.classList.remove('open');
+      organizationsList.forEach((org) => {
+        const item = document.createElement('div');
+        item.className = 'inn-form__dropdown-item';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'inn-form__dropdown-name';
+        nameSpan.textContent = org.name;
+
+        const innKppSpan = document.createElement('span');
+        innKppSpan.className = 'inn-form__dropdown-inn';
+        innKppSpan.textContent = `ИНН ${org.inn} / КПП ${org.kpp}`;
+
+        item.appendChild(nameSpan);
+        item.appendChild(innKppSpan);
+
+        item.addEventListener('click', () => {
+          input.value = org.inn;
+          dropdown.style.display = 'none';
+        });
+
+        dropdown.appendChild(item);
+      });
+
+      dropdown.style.display = 'block';
+    }
+
+    //todo ⚠️ Удалить полностью (это временный мок-код)
+    function searchOrganizations(searchValue) {
+      const cleanInn = getCleanInn(searchValue);
+
+      if (cleanInn.length === 0) {
+        dropdown.style.display = 'none';
+        return;
       }
+
+      // 🔻 СЮДА ПРИДЁТ ОТВЕТ ОТ API 🔻
+      // Временный пример для проверки работы (удалишь при подключении API)
+      const mockData = [
+        {
+          name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ЯНДЕКС"',
+          inn: '7736207543',
+          kpp: '772701001',
+        },
+        {
+          name: 'ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "СБЕРБАНК РОССИИ"',
+          inn: '7707083893',
+          kpp: '773601001',
+        },
+        {
+          name: 'ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "ГАЗПРОМ"',
+          inn: '7736050003',
+          kpp: '997950001',
+        },
+        {
+          name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ОЗОН ТЕХНОЛОГИИ"',
+          inn: '7708503727',
+          kpp: '770801001',
+        },
+        {
+          name: 'АКЦИОНЕРНОЕ ОБЩЕСТВО "АЛЬФА-БАНК"',
+          inn: '7702079183',
+          kpp: '770801001',
+        },
+      ].filter((org) => org.inn.startsWith(cleanInn));
+
+      displayOrganizations(mockData);
+    }
+
+    // Функция поиска через реальное API (закомментирована)
+    // async function searchOrganizations(searchValue) {
+    //   const cleanInn = getCleanInn(searchValue);
+
+    //   if (cleanInn.length < 3) {
+    //     dropdown.style.display = 'none';
+    //     return;
+    //   }
+
+    //   // Показываем загрузку
+    //   dropdown.innerHTML =
+    //     '<div class="inn-form__dropdown-empty">⏳ Поиск...</div>';
+    //   dropdown.style.display = 'block';
+
+    //   try {
+    //     const response = await fetch(
+    //       'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party',
+    //       {
+    //         method: 'POST',
+    //         headers: {
+    //           'Content-Type': 'application/json',
+    //           Authorization: 'Token ВАШ_ТОКЕН_СЮДА',
+    //         },
+    //         body: JSON.stringify({ query: cleanInn, count: 10 }),
+    //       }
+    //     );
+
+    //     const data = await response.json();
+
+    //     const organizations = data.suggestions.map((s) => ({
+    //       name: s.data.name.full,
+    //       inn: s.data.inn,
+    //       kpp: s.data.kpp || '—',
+    //     }));
+
+    //     displayOrganizations(organizations);
+    //   } catch (error) {
+    //     dropdown.innerHTML =
+    //       '<div class="inn-form__dropdown-empty">⚠️ Ошибка загрузки</div>';
+    //     console.error('API error:', error);
+    //   }
+    // }
+    //* --------------------------------------------------------------------------
+
+    function handleInput() {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        searchOrganizations(input.value);
+      }, 300);
+    }
+
+    function handleClickOutside(event) {
+      if (!input.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = 'none';
+      }
+    }
+
+    input.addEventListener('input', handleInput);
+    input.addEventListener('keyup', function () {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        searchOrganizations(input.value);
+      }, 300);
     });
-  });
+    document.addEventListener('click', handleClickOutside);
+  }
 
-  // Опционально: показать первый таб по умолчанию
-  // Раскомментируйте, если нужно, чтобы первый таб был активен при загрузке
+  function handleSubmit(event) {
+    event.preventDefault();
+    const input = document.getElementById('innInput');
 
-  if (tabButtons.length > 0) {
-    const firstTabId = tabButtons[0].getAttribute('data-tab');
-    if (firstTabId) {
-      showTab(firstTabId);
+    // Добавлено: проверка наличия элемента
+    if (!input) return;
+
+    const inn = input.value.replace(/\s/g, '');
+
+    if (inn && inn.length >= 10) {
+      alert('Выбран ИНН: ' + inn);
+    } else {
+      alert('Пожалуйста, выберите организацию из списка');
     }
   }
-});
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initInnSearch);
+  } else {
+    initInnSearch();
+  }
+}
+innReady();
+//* ----------------------------------------------------------------------------

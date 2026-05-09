@@ -643,12 +643,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 190px;
+    width: 210px;
     height: 55px;
     font-weight: 600;
 
     @include screen-690 {
-      width: 130px;
       height: 45px;
     }
 

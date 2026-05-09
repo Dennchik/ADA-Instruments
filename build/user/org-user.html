@@ -1,0 +1,66 @@
+<!-- ! ----------------------- [ TAB - Organization ] ------------------------------ -->
+<div class="acccount-section__tab-content inner-content org-user">
+	<div class="acccount-content">
+		<div class="acccount-content__body">
+			<div class="acccount-content__title">
+				<!-- * [ BUTTONS ] -->
+				<div class="acccount-section__buttons">
+					<div class="acccount-section__link-button link-button">
+						<div class="vertical-dots" id="verticalDots">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+				<!-- * [ / BUTTONS ] -->
+				<h2 class="form-user__title font_clamp_50 fw700">Мои организации</h2>
+			</div>
+			<div class="acccount-content__company">
+				<!--* БЛОК ФОРМЫ (inn-form.html) -->
+				<div class="inn-form bp-6">
+					<div class="inn-form__title">Укажите ИНН организации или ИП</div>
+					<form id="innForm" onsubmit="handleSubmit(event)">
+						<div class="inn-form__field">
+							<div class="inn-form__wrapper">
+								<div class="inn-form__input">
+									<input type="text" name="innForm" class="mask-inn-organization" id="innInput" placeholder=" "
+										autocomplete="off">
+									<label for="innInput" class="inn-form__label"><span>ИНН</span></label>
+								</div>
+								<div class="inn-form__dropdown" id="innDropdown">
+									<div class="inn-form__dropdown-item">
+										<span class="inn-form__dropdown-name">
+											Другой филиал
+										</span>
+										<span class="inn-form__dropdown-inn">
+											Выберите, если ИНН введен правильно, но ващего филиала нет в сп
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="user-org">
+					<div class="user-org__body">
+						<div class="user-org__row">
+							<div class="user-org__name">
+								<span>Индивидуальный предприниматель</span>
+								<span>Сергеев Семён Петрович</span>
+							</div>
+							<div class="user-org__inn">
+								ИНН 402705563022
+							</div>
+							<div class="user-org__adres">
+								120056 г. Москва, пр. Мира, ул. Бориса Галушкина, д. 11, корп.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- * -->
+		</div>
+	</div>
+
+</div>

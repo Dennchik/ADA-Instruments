@@ -44,10 +44,6 @@
 
 /* *---------------------- Large Devices, Wide Screens ---------------------* */
 @media only screen and (width < 1376px) {
-  .items_greed_list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
-  }
   .catalog_list {
     gap: 25px;
   }

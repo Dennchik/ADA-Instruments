@@ -596,6 +596,7 @@
 
   // .acccount-section__tab-content
   &__tab-content {
+    display: grid;
     height: 100%;
 
     gap: 7rem;
@@ -605,12 +606,12 @@
       gap: 20px;
     }
 
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4) {
-      display: none;
-    }
+    // &:nth-child(1),
+    // &:nth-child(2),
+    // &:nth-child(3),
+    // &:nth-child(4) {
+    //   display: none;
+    // }
 
     &:nth-child(1),
     &:nth-child(2),
@@ -1079,15 +1080,6 @@
 }
 
 //* ------------ [ Small & Medium Devices, Wide Screens ] ----------------------
-@include screen-1376 {
-  .productia_wrapp {
-    max-width: 1140px !important;
-  }
-  .side-menu {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-}
 
 @include screen-840 {
   .side-menu {
