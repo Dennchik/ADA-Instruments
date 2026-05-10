@@ -84,8 +84,6 @@ jQuery('document').ready(function () {
   }
   window.onload = init();
   //* --------------------------------------------------------------------------
-  // jQuery('input[name="phone"]').mask('+7 (999) 999-99-99');
-  //* --------------------------------------------------------------------------
   //jQuery('.item_title').matchHeight();
   //* --------------------------------------------------------------------------
   jQuery(window).scroll(function () {
@@ -100,8 +98,8 @@ jQuery('document').ready(function () {
     jQuery('body,html').animate(
       {
         scrollTop: 0,
-      },
-      800
+      }
+      // 800
     );
   });
 
@@ -194,6 +192,7 @@ jQuery('document').ready(function () {
     ).find('[data-animation]');
     doAnimations(jQueryfirstAnimatingElements);
   });
+
   jQuery('.main_slider_desk').on(
     'beforeChange',
     function (e, slick, currentSlide, nextSlide) {
@@ -203,6 +202,7 @@ jQuery('document').ready(function () {
       doAnimations(jQueryanimatingElements);
     }
   );
+
   jQuery('.main_slider_desk').slick({
     dots: false,
     infinite: true,
@@ -318,6 +318,19 @@ jQuery('document').ready(function () {
         // Animation complete.
       });
   });
+
+  jQuery(document).ready(function () {
+    jQuery('#open__child-list').click(function () {
+      var $menu = jQuery(this).parents('.footer__menu');
+      var $submenu = $menu.find('.footer__sub-menu');
+
+      // Класс меняется сразу, одновременно с началом анимации
+      $menu.toggleClass('open');
+
+      // Анимация запускается параллельно
+      $submenu.slideToggle('slow');
+    });
+  });
   //* --------------------------------------------------------------------------
   // jQuery('.open_menu_child').click(function () {
   //   jQuery(this)
@@ -367,6 +380,7 @@ jQuery('document').ready(function () {
     to: my_to_002,
     values: custom_values_002,
   });
+
   //* --------------------------------------------------------------------------
   jQuery('.filters_open').click(function () {
     jQuery(this)
@@ -377,21 +391,25 @@ jQuery('document').ready(function () {
         // Animation complete.
       });
   });
+
   //* --------------------------------------------------------------------------
   jQuery('.show_moreitems').click(function () {
     jQuery(this).parents('.items_greed').toggleClass('open_more');
     jQuery(this).hide();
   });
+
   //* --------------------------------------------------------------------------
   jQuery('.open_more_pdf').click(function () {
     jQuery(this).parents('.instr_right_list').toggleClass('open_more');
     jQuery(this).hide();
   });
+
   //* --------------------------------------------------------------------------
   jQuery('.open_more_videos').click(function () {
     jQuery(this).parents('.video_greed_wrapper').toggleClass('open_more');
     jQuery(this).hide();
   });
+
   //* --------------------------------------------------------------------------
   $(document).on('click', '.button_play_video', function () {
     var $video = $('.video_iframe'),
@@ -400,6 +418,7 @@ jQuery('document').ready(function () {
     $video.attr('src', src + '&autoplay=1');
     $('.button_play_video').fadeOut();
   });
+
   //* --------------------------------------------------------------------------
   $(document).on('click', '.button_play_video_2', function () {
     var $video_2 = $(this).parent('.video_inner').find('.video_iframe'),
@@ -416,6 +435,7 @@ jQuery('document').ready(function () {
       .find('.mob_instruction_wrapper')
       .slideToggle('400', function () {});
   });
+
   jQuery('.open_instr').click(function () {
     jQuery(this)
       .parents('.instr_items_greed')
@@ -447,6 +467,7 @@ jQuery('document').ready(function () {
         // Animation complete.
       });
   });
+
   jQuery(document).click(function (e) {
     if (jQuery(e.target).closest('.mob_instruction_wrapper,.open_instr').length)
       return;
@@ -481,6 +502,7 @@ jQuery('document').ready(function () {
       .fadeOut(400);
     event.preventDefault();
   });
+
   //* --------------------------------------------------------------------------
   $('.tovar_slider').slick({
     slidesToShow: 1,
@@ -489,6 +511,7 @@ jQuery('document').ready(function () {
     fade: true,
     asNavFor: '.tovar_slider_nav',
   });
+
   $('.tovar_slider_nav').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -511,6 +534,7 @@ jQuery('document').ready(function () {
       },
     ],
   });
+
   //* --------------------------------------------------------------------------
   jQuery('.open_item').click(function () {
     jQuery(this)
@@ -520,17 +544,20 @@ jQuery('document').ready(function () {
       .slideToggle('400', function () {});
     return false;
   });
+
   //* --------------------------------------------------------------------------
   jQuery('.open_more_par').click(function () {
     jQuery(this).parents('.tovar_parameters_mobile').toggleClass('open_more');
     jQuery(this).hide();
   });
+
   //* --------------------------------------------------------------------------
   var $vid_quantity = $('.video_greed_wrapper .form-row>div');
 
   if ($vid_quantity.length < 3) {
     $vid_quantity.parents('.video_greed_wrapper').addClass('no_more');
   }
+
   //* --------------------------------------------------------------------------
   $('#open_mp_feedback').on('click', function () {
     $('.mp_feedback_body').slideToggle('slow', function () {
@@ -680,6 +707,7 @@ jQuery('document').ready(function () {
         });
     });
   });
+
   //todo [стр.Категории товара]  код для реальной работы с отправкой на сервер:
   //todo ↓↓↓ (Для Виктора) ↓↓↓
   //! === ЗАКОММЕНТИРОВАННЫЙ ЗАПРОС К СЕРВЕРУ (для реальной работы) ===

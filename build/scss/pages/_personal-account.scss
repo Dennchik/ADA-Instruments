@@ -375,7 +375,7 @@
           justify-content: flex-end;
 
           @include screen-992 {
-            margin-top: 3rem;
+            margin: 3rem 20px;
           }
 
           @include screen-490 {
@@ -606,13 +606,6 @@
       gap: 20px;
     }
 
-    // &:nth-child(1),
-    // &:nth-child(2),
-    // &:nth-child(3),
-    // &:nth-child(4) {
-    //   display: none;
-    // }
-
     &:nth-child(1),
     &:nth-child(2),
     &:nth-child(3),
@@ -700,8 +693,8 @@
     }
   }
 
-  // .acccount-section__link-button
-  &__link-button {
+  // .acccount-section__open-menu
+  &__open-menu {
     position: relative;
     display: none;
     z-index: 2;

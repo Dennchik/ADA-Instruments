@@ -18,9 +18,6 @@
 
 /* *---------------------- Large Devices, Wide Screens ---------------------* */
 @media only screen and (width < 1376px) {
-  footer .has_child ul a {
-    font-size: 13px;
-  }
   .product_slider_box .img_cont {
     height: 150px;
     margin-bottom: 15px;

@@ -755,40 +755,38 @@
 	<!--*  wow fadeInDown -->
 	<footer class="footer">
 		<div class="footer__section container">
-			<div class="footer_header pb-4">
-				<div class="row flex-nowrap align-items-center">
-					<!-- * -->
-					<div class="col-lg-auto col-5 mr-lg-4">
-						<a href="./productia.html" class="grey_button">в каталог</a>
-					</div>
-					<!-- * -->
-					<div class="col-lg-auto col-7">
-						<div class="footer_search">
-							<form action="#" id="searchForm3" action="#" method="get">
-								<input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
-									autocomplete="off">
-								<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
-							</form>
-						</div>
-					</div>
-					<!-- * -->
+			<div class="footer__header ">
+				<!-- * -->
+				<div class="footer__col-auto">
+					<a href="./productia.html" class="grey_button">в каталог</a>
 				</div>
+				<!-- * -->
+				<div class="footer__col-auto">
+					<div class="footer__search ">
+						<form action="#" id="searchForm3" action="#" method="get">
+							<input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
+								autocomplete="off">
+							<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
+						</form>
+					</div>
+				</div>
+				<!-- * -->
 			</div>
-			<div class="footer_menu">
-				<!--* =============footer_menu_desk==================== -->
+			<div class="footer__menu">
+				<!-- * --------------- [ footer_menu_desk ] -------------------------- -->
 				<div class="d-none d-lg-block">
-					<ul class="footer_menu_desk">
+					<ul class="footer__menu-desk">
 						<li>
-							<a href="#">ПОДДЕРЖКА</a>
+							<a class="footer__menu-list" href="#">ПОДДЕРЖКА</a>
 						</li>
 						<li>
-							<a href="#">о компании</a>
+							<a class="footer__menu-list" href="#">о компании</a>
 						</li>
 						<li>
-							<a href="#">контакты</a>
+							<a class="footer__menu-list" href="#">контакты</a>
 						</li>
-						<li class="has_child">
-							<a href="#">продукция</a>
+						<li class="footer__has-child has_child">
+							<a class="footer__menu-list" href="#">продукция</a>
 							<div class="row flex-nowrap pt-3 desk-menu">
 								<!-- * -->
 								<div class="col-4">
@@ -824,24 +822,26 @@
 						</li>
 					</ul>
 				</div>
-				<!--* ===============/footer_menu_desk================== -->
-				<!--* =================footer_menu_mob================ -->
+				<!-- * --------------- [ footer_menu_mob ] --------------------------- -->
 				<div class="d-block d-lg-none">
-					<ul class="footer_menu_mob">
+					<ul class="footer__menu-mob">
 						<li>
-							<a href="#">ПОДДЕРЖКА</a>
+							<a href="#"><span>поддержка</span></a>
 						</li>
 						<li>
-							<a href="#">о компании</a>
+							<a href="#"><span>о компании</span></a>
 						</li>
-						<li class="has_child">
-							<a id="open_child_list">продукция</a>
+						<li class="footer__has-child">
+							<a class="footer__open-child-list" id="open__child-list">
+								<span>продукция</span>
+								<i class="icofont-thin-down"></i>
+							</a>
 						</li>
 						<li>
-							<a href="#">контакты</a>
+							<a href="#"><span>контакты</span></a>
 						</li>
 					</ul>
-					<div class="footer_menu_mob_submenu">
+					<div class="footer__sub-menu footer_menu_mob_submenu'">
 						<div class="footer_menu_mob_list flex-nowrap pt-3">
 							<ul class="fmb_list">
 								<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
@@ -865,28 +865,28 @@
 						</div>
 					</div>
 				</div>
-				<div class="footer_contact">
-					<div class="form-row flex-nowrap lh1 align-items-end mb-3">
+				<div class="footer__contact">
+					<div class="footer__contact-row">
 						<!-- * -->
 						<div class="col-auto">
 							<a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
 						</div>
 						<!-- * -->
 						<div class="col-auto">
-							<span class="fw300 font14">Единая горячая линия</span>
+							<span class="fw500 font14">Единая горячая линия</span>
 						</div>
 						<!-- * -->
 					</div>
 					<!--/row-->
 					<div class="grafic_raboty light_grey_color font12">
-						09.00-18.00 Понедельник - Четверг / 09.00-17.00 Пятница
-						Суббота, воскресенье - выходной. Звонок по России бесплатный
+						09.00-18.00 Понедельник&#8209;Четверг / 09.00&#8209;17.00 Пятница
+						Суббота, воскресенье&#8209;выходной. Звонок по России бесплатный
 					</div>
 				</div>
 				<!-- * -->
 			</div>
 		</div>
-		<div class="footer_footer">
+		<div class="footer__footer">
 			<div class="copyright container">
 				<div class="copyright__text">
 					<span>Copyright&copy;2008-2024 ADA&nbsp;Instruments</span>

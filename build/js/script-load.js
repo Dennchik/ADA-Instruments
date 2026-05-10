@@ -85,7 +85,6 @@ function initOtherCounters() {
   const otherBlocks = document.querySelectorAll(
     '.product-cart__quantity, .quantity:not(.items-greed__wrapper .quantity)'
   );
-  console.log(otherBlocks);
 
   otherBlocks.forEach((block) => {
     if (block.hasAttribute('data-quantity-initialized')) return;
@@ -271,9 +270,11 @@ function initCounter() {
   }
 }
 
-//* ==================== ОБЩИЙ ЗАПУСК ПРИ ЗАГРУЗКЕ СТРАНИЦЫ ====================
+//todo ============== ОБЩИЙ ЗАПУСК ПРИ ЗАГРУЗКЕ СТРАНИЦЫ =======================
+// ------------------ Личный кабинет (загрузка контента) -----------------------
 document.addEventListener('DOMContentLoaded', function () {
   // Инициализируем счётчики на всех страницах
+  leftMenuOpenClose();
   initCounter();
 
   // Логика для страницы личного кабинета (если она есть на странице)
@@ -281,6 +282,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Проверяем, есть ли на странице блок личного кабинета
   if (content) {
+    function setActiveButton(activeLink) {
+      // Удаляем класс active-link у всех кнопок
+      const allLinks = document.querySelectorAll('.tab-button');
+      allLinks.forEach((btn) => {
+        btn.classList.remove('active-link');
+      });
+      // Добавляем класс active-link выбранной кнопке
+      if (activeLink) {
+        activeLink.classList.add('active-link');
+      }
+    }
+
     function bindEvents() {
       const links = document.querySelectorAll('.tab-button');
       links.forEach((link) => {
@@ -289,6 +302,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Создаём новый обработчик
         const handler = function () {
           const page = this.getAttribute('data-page');
+
+          // Устанавливаем активную кнопку
+          setActiveButton(this);
+
           loadPage(page);
         };
         link._listener = handler;
@@ -301,24 +318,30 @@ document.addEventListener('DOMContentLoaded', function () {
         .then((response) => response.text())
         .then((data) => {
           content.innerHTML = data;
+
           if (page === 'user-account') {
             if (typeof maskPhone === 'function') {
               maskPhone();
             }
+            leftMenuOpenClose(); // ✅ Перезапускаем меню
           } else if (page === 'order-user') {
+            leftMenuOpenClose(); // ✅ Перезапускаем меню
             if (typeof itSelect === 'function') itSelect();
             if (typeof selectDropByer === 'function') selectDropByer();
             if (typeof autoResizeText === 'function') autoResizeText();
           } else if (page === 'history-user') {
+            leftMenuOpenClose(); // ✅ Перезапускаем меню
             if (typeof itSelect === 'function') itSelect();
             if (typeof selectDropByer === 'function') selectDropByer();
             if (typeof autoResizeText === 'function') autoResizeText();
-            initCounter(); // Повторная инициализация для загруженного контента
+            initCounter();
           } else if (page === 'profile-user') {
+            leftMenuOpenClose(); // ✅ Перезапускаем меню
             if (typeof maskPhone === 'function') maskPhone();
           } else if (page === 'org-user') {
-            if (typeof innReady === 'function') {
-              innReady();
+            leftMenuOpenClose(); // ✅ Перезапускаем меню
+            if (typeof initInnSearch === 'function') {
+              initInnSearch();
             }
             if (typeof maskInn === 'function') {
               maskInn();
@@ -326,11 +349,23 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         })
         .catch((error) => {
-          // console.error('Error loading page:', error);
           content.innerHTML = 'Error loading content';
         });
     }
 
+    // Находим кнопку user-account или первую кнопку
+    const defaultButton =
+      document.querySelector('.tab-button[data-page="user-account"]') ||
+      document.querySelector('.tab-button');
+
+    if (defaultButton) {
+      // Устанавливаем активную кнопку
+      setActiveButton(defaultButton);
+      // Загружаем контент user-account
+      loadPage('user-account');
+    }
+
+    // Привязываем события после установки начального состояния
     bindEvents();
   }
 });

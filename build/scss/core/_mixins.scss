@@ -427,6 +427,12 @@
   }
 }
 
+@mixin minmax-320-425 {
+  @media (width >= 320px) and (width <= 425px) {
+    @content;
+  }
+}
+
 @mixin minmax-320-490 {
   @media (width >= 320px) and (width <= 490px) {
     @content;

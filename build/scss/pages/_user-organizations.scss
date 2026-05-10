@@ -43,6 +43,7 @@
   // .inn-form__wrapper
   &__wrapper {
     position: relative;
+    max-width: 563px;
   }
 
   // .inn-form__input
@@ -110,11 +111,10 @@
   &__dropdown {
     padding: 20px;
     position: absolute;
-    top: 100%;
-    left: 10px;
+    top: 105%;
+    left: 0;
     right: 0;
     width: 100%;
-    max-width: 80%;
     margin-top: 1px;
     background: #ffffff;
     box-shadow:
@@ -144,7 +144,6 @@
   // .inn-form__dropdown-item
   &__dropdown-item {
     cursor: pointer;
-
     transition: color 0.2s;
     display: flex;
     align-items: baseline;
@@ -155,6 +154,7 @@
     &:not(:last-child) {
       margin-bottom: 15px;
     }
+
     &:hover {
       color: var(--red);
     }
@@ -162,7 +162,7 @@
 
   // .inn-form__dropdown-name
   &__dropdown-name {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     flex: 1;
     line-height: 100%;
@@ -176,6 +176,11 @@
     background: #f1f5f9;
     padding: 2px 8px;
     color: inherit;
+  }
+
+  // .inn-form__dropdown-address
+  &__dropdown-address {
+    font-size: 14px;
   }
 
   &__dropdown-empty {

@@ -36,16 +36,16 @@
 	<script defer src="./dist/slick/slick.min.js"></script>
 	<script defer src="./js/bootstrap.min.js"></script>
 	<script defer src="./js/popover.js"></script>
-	<script defer src="./js/script.js"></script>
+	<!-- <script defer src="./js/script.js"></script> -->
 	<script defer src="./js/script-js.js"></script>
 	<script defer src="./js/script-load.js"></script>
 </head>
 
 <body class="personal-account">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
-	<div class="preloader">
+	<!-- <div class="preloader">
 		<div class="preloader-5"></div>
-	</div>
+	</div> -->
 	<!-- * ------------------------ [ * mobile_menu ] ---------------------------- -->
 	<div class="mobile_menu_wrapp">
 		<div class="menu_close"><i class="icofont-close"></i></div>
@@ -113,11 +113,11 @@
 						<div class="col-auto">
 							<div class="left_TP">
 								<div class="row align-items-center">
-									<!--* =================== -->
+									<!-- * -->
 									<div class="col-auto">
 										<a href="./index.html" class="logo"></a>
 									</div>
-									<!-- *=================== -->
+									<!-- * -->
 									<div class="col-auto d-none d-lg-block">
 										<ul class="top_menu ml-lg-3">
 											<li class="has_child">
@@ -146,11 +146,11 @@
 											<li><a href="./contact.html"><span>Контакты</span></a></li>
 										</ul>
 									</div>
-									<!--* =================== -->
+									<!-- * -->
 								</div>
 							</div>
 						</div>
-						<!--* ================== -->
+						<!-- * -->
 						<div class="col-auto">
 							<div class="right_TP">
 								<div class="row  align-items-center  justify-content-end">
@@ -240,204 +240,7 @@
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
 					<div class="acccount-section__tabs personal-data">
-						<!-- ! --------------------------[ TAB - Личный кабинет ] -------------------------- -->
-						<div class="acccount-section__tab-content inner-content user-account">
-							<!-- * -->
-							<div class="acccount-content">
-								<div class="acccount-content__body">
-									<div class="acccount-content__title">
-										<!-- * [ BUTTONS ] -->
-										<div class="acccount-section__buttons">
-											<div class="acccount-section__link-button link-button">
-												<div class="vertical-dots" id="verticalDots">
-													<span></span>
-													<span></span>
-													<span></span>
-												</div>
-											</div>
-										</div>
-										<!-- * [ / BUTTONS ] -->
-										<h2 class="form-user__title font_clamp_50 fw700">Личный кабинет</h2>
-									</div>
-									<form class="form-user" id="orderForm">
-										<div class="form-user__wrapp-group bp-1">
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!--* ФИО -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="fullname">ФИО</label>
-													<input class="form-user__input" type="text" id="fullname" name="fullname"
-														placeholder="Иванов Иван Иванович" value="">
-												</div>
-												<!--* Дата рождения -->
-												<div class="form-user__group">
-													<label class="form-user__label text-right" for="birthdate">Дата рождения</label>
-													<input class="form-user__input text-right" type="date" id="birthdate" name="birthdate">
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<!-- * [ FORM ] -->
-											<div class="form-user__line">
-
-												<!--* Пол (радиокнопки) -->
-												<div class="form-user__group">
-													<span class="form-user__label">Пол</span>
-													<div class="radio-group">
-														<label class="radio-group__item">
-															<input class="radio-group__input" type="radio" name="gender" value="male" required>
-															<span class="radio-group__label">Мужской</span>
-														</label>
-														<label class="radio-group__item">
-															<input class="radio-group__input" type="radio" name="gender" value="female" required>
-															<span class="radio-group__label">Женский</span>
-														</label>
-													</div>
-												</div>
-
-												<!--* Город -->
-												<div class="form-user__group">
-													<label class="form-user__label text-right" for="city">Город *</label>
-													<input class="form-user__input text-right" type="text" id="city" name="city"
-														placeholder="Москва" required>
-												</div>
-											</div>
-											<!-- * [ / FORM ] -->
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Email -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="email">Email</label>
-													<input class="form-user__input" type="email" id="email" name="email" autocomplete="email"
-														placeholder="example@mail.ru" required>
-												</div>
-												<!--* Телефон -->
-												<div class="form-user__group">
-
-													<label class="form-user__label text-right" for="phone">Телефон</label>
-													<div class="form-user__group">
-														<input class="form-user__input text-right mask-phone" type="tel" id="phone" name="phone"
-															autocomplete="tel" placeholder="+7 (999) 123-45-67" required="">
-													</div>
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Адрес доставки -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="address">Адрес доставки *</label>
-													<input class="form-user__input" type="text" id="address" name="address" autocomplete="address"
-														placeholder="ул. Пушкина, д. 10, кв. 5" required>
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Способ доставки (радиокнопки) -->
-												<div class="form-user__group _delivery">
-													<span class="form-user__label">Способ доставки</span>
-													<div class="radio-group">
-														<div class="radio-group__line">
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="cdek" required>
-																<span class="radio-group__label">СДЭК</span>
-															</label>
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pvz" required>
-																<span class="radio-group__label">ПВЗ</span>
-															</label>
-														</div>
-
-														<div class="radio-group__line">
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="yandex" required>
-																<span class="radio-group__label">Яндекс Доставка</span>
-															</label>
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pochta" required>
-																<span class="radio-group__label">Почта России</span>
-															</label>
-														</div>
-													</div>
-												</div>
-												<!--* Кнопка Сохранить -->
-												<div class="form-user__group">
-													<button class="form-user__button dark_button" type="submit">Сохранить</button>
-												</div>
-
-
-											</div>
-										</div>
-									</form>
-									<!-- * -->
-								</div>
-							</div>
-							<!-- * -->
-							<div class="aside-menu-right transparent-right" data-da="bp-1" data-da-position="0"
-								data-da-resolution="991">
-								<div class="profile">
-									<div class="profile__body">
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link add-phone">
-												<div class="profile__item">Добавить телефон</div>
-												<div class="profile__icon">
-													<i class="icofont-close icon"></i>
-												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a href="#" class="profile__link">
-															<div class="profile__item">Добавить телефон</div>
-															<div class="profile__icon" id="add-tel">
-																<i class="icofont-close icon" id="add-button"></i>
-															</div>
-														</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link">
-												<div class="profile__item">Изменить пароль</div>
-												<div class="profile__icon">
-													<i class="icofont-unlock icon" id="edit button"></i>
-												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a href="#" class="profile__link">
-															<div class="profile__item">Изменить пароль</div>
-															<div class="profile__icon">
-																<i class="icofont-unlock icon" id="edit button"></i>
-															</div>
-														</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link">
-												<div class="profile__item">Удалить аккаунт</div>
-												<div class="profile__icon delete-button">
-													<i class="icofont-close icon"></i>
-												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a class="profile__link">
-															<div class="profile__item">Удалить аккаунт</div>
-															<div class="profile__icon delete-button">
-																<i class="icofont-close icon"></i>
-															</div>
-														</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<!-- todo (только-ссылка) -->
-											<a href="#" class="profile__link">
-												<div class="profile__item">Выход</div>
-												<div class="profile__icon">
-													<i class="icofont-long-arrow-right icon"></i>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- * -->
-						</div>
+						<!-- ! ---------- [ TAB - Личный кабинет ] -------------------------- -->
 
 					</div>
 				</div>
@@ -501,40 +304,38 @@
 	<!--*  wow fadeInDown -->
 	<footer class="footer">
 		<div class="footer__section container">
-			<div class="footer__header footer_header">
-				<div class="row flex-nowrap align-items-center">
-					<!-- * -->
-					<div class="col-lg-auto col-5 mr-lg-4">
-						<a href="./productia.html" class="grey_button">в каталог</a>
-					</div>
-					<!-- * -->
-					<div class="col-lg-auto col-7">
-						<div class="footer_search">
-							<form action="#" id="searchForm3" action="#" method="get">
-								<input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
-									autocomplete="off">
-								<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
-							</form>
-						</div>
-					</div>
-					<!-- * -->
+			<div class="footer__header ">
+				<!-- * -->
+				<div class="footer__col-auto">
+					<a href="./productia.html" class="grey_button">в каталог</a>
 				</div>
+				<!-- * -->
+				<div class="footer__col-auto">
+					<div class="footer__search ">
+						<form action="#" id="searchForm3" action="#" method="get">
+							<input type="text" id="searchInput3" name="search" placeholder="Поиск по сайту" required
+								autocomplete="off">
+							<button type='submit' class="footer_sb"><i class="icofont-search-1"></i></button>
+						</form>
+					</div>
+				</div>
+				<!-- * -->
 			</div>
-			<div class="footer__menu footer_menu">
+			<div class="footer__menu">
 				<!-- * --------------- [ footer_menu_desk ] -------------------------- -->
 				<div class="d-none d-lg-block">
-					<ul class="footer__menu-desk footer_menu_desk">
+					<ul class="footer__menu-desk">
 						<li>
-							<a href="#">ПОДДЕРЖКА</a>
+							<a class="footer__menu-list" href="#">ПОДДЕРЖКА</a>
 						</li>
 						<li>
-							<a href="#">о компании</a>
+							<a class="footer__menu-list" href="#">о компании</a>
 						</li>
 						<li>
-							<a href="#">контакты</a>
+							<a class="footer__menu-list" href="#">контакты</a>
 						</li>
-						<li class="has_child">
-							<a href="#">продукция</a>
+						<li class="footer__has-child has_child">
+							<a class="footer__menu-list" href="#">продукция</a>
 							<div class="row flex-nowrap pt-3 desk-menu">
 								<!-- * -->
 								<div class="col-4">
@@ -570,24 +371,26 @@
 						</li>
 					</ul>
 				</div>
-				<!-- * -------------- [/ footer_menu_desk ] -------------------------- -->
 				<!-- * --------------- [ footer_menu_mob ] --------------------------- -->
 				<div class="d-block d-lg-none">
-					<ul class="footer_menu_mob">
+					<ul class="footer__menu-mob">
 						<li>
-							<a href="#">ПОДДЕРЖКА</a>
+							<a href="#"><span>поддержка</span></a>
 						</li>
 						<li>
-							<a href="#">о компании</a>
+							<a href="#"><span>о компании</span></a>
 						</li>
-						<li class="has_child">
-							<a id="open_child_list">продукция</a>
+						<li class="footer__has-child">
+							<a class="footer__open-child-list" id="open__child-list">
+								<span>продукция</span>
+								<i class="icofont-thin-down"></i>
+							</a>
 						</li>
 						<li>
-							<a href="#">контакты</a>
+							<a href="#"><span>контакты</span></a>
 						</li>
 					</ul>
-					<div class="footer_menu_mob_submenu">
+					<div class="footer__sub-menu footer_menu_mob_submenu'">
 						<div class="footer_menu_mob_list flex-nowrap pt-3">
 							<ul class="fmb_list">
 								<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
@@ -611,15 +414,15 @@
 						</div>
 					</div>
 				</div>
-				<div class="footer_contact">
-					<div class="form-row flex-nowrap lh1 align-items-end mb-3">
+				<div class="footer__contact">
+					<div class="footer__contact-row">
 						<!-- * -->
 						<div class="col-auto">
 							<a class="font20 fw700 d-block text-color-inherit" href="tel:88001004170">8 (800) 100-41-70</a>
 						</div>
 						<!-- * -->
 						<div class="col-auto">
-							<span class="fw300 font14">Единая горячая линия</span>
+							<span class="fw500 font14">Единая горячая линия</span>
 						</div>
 						<!-- * -->
 					</div>
@@ -632,7 +435,7 @@
 				<!-- * -->
 			</div>
 		</div>
-		<div class="footer_footer">
+		<div class="footer__footer">
 			<div class="copyright container">
 				<div class="copyright__text">
 					<span>Copyright&copy;2008-2024 ADA&nbsp;Instruments</span>

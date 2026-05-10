@@ -116,114 +116,95 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 //todo -------------------------------------------------------------------------
 //todo ↓↓↓ (Для Виктора) - скрытие панелей в "Личном кабинете"
+function leftMenuOpenClose() {
+  // Ждем полной загрузки DOM
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
-  //* ========== ЛЕВАЯ ПАНЕЛЬ ==========
-  const openButtonLeftAll = document.querySelectorAll(
-    '.acccount-section__link-button'
-  );
+  function init() {
+    const openButtonLeft = document.querySelector('._open-menu');
+    const closeButtonLeft = document.querySelector('.side-menu__close-menu');
+    const asideMenuLeft = document.querySelector('.aside-menu-l');
+    const tabButtons = document.querySelectorAll('.tab-button');
 
-  const closeButtonLeft = document.querySelector('.side-menu__close-menu');
-  const asideMenuLeft = document.querySelector('.aside-menu-l');
+    if (!openButtonLeft) {
+      return;
+    }
 
-  // Переменная для хранения активной кнопки (той, которая открыла панель)
-  let activeOpenButton = null;
+    if (!asideMenuLeft) {
+      return;
+    }
 
-  openButtonLeftAll.forEach((openButtonLeft) => {
-    if (openButtonLeft) {
-      openButtonLeft.addEventListener('click', () => {
-        asideMenuLeft?.classList.toggle('open');
-        openButtonLeft.classList.toggle('active');
+    console.log('Все элементы найдены');
 
-        // Запоминаем текущую активную кнопку
-        if (openButtonLeft.classList.contains('active')) {
-          activeOpenButton = openButtonLeft;
-        } else {
-          activeOpenButton = null;
-        }
+    // Снимаем все старые обработчики, делаем клон и заменяем
+    const newButton = openButtonLeft.cloneNode(true);
+    openButtonLeft.parentNode.replaceChild(newButton, openButtonLeft);
+
+    // Обновляем переменную
+    const newOpenButton = document.querySelector('._open-menu');
+
+    function closePanel() {
+      asideMenuLeft.classList.remove('open');
+      newOpenButton.classList.remove('active');
+    }
+
+    tabButtons.forEach((tabButton) => {
+      tabButton.addEventListener('click', () => {
+        asideMenuLeft.classList.remove('open');
+      });
+    });
+    function openPanel() {
+      asideMenuLeft.classList.add('open');
+      newOpenButton.classList.add('active');
+    }
+
+    function togglePanel() {
+      if (asideMenuLeft.classList.contains('open')) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    }
+
+    // Новый обработчик
+    newOpenButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      event.preventDefault();
+      togglePanel();
+    });
+
+    // Крестик
+    if (closeButtonLeft) {
+      const newClose = closeButtonLeft.cloneNode(true);
+      closeButtonLeft.parentNode.replaceChild(newClose, closeButtonLeft);
+      newClose.addEventListener('click', function (event) {
+        event.stopPropagation();
+        closePanel();
       });
     }
-  });
 
-  if (closeButtonLeft) {
-    closeButtonLeft.addEventListener('click', () => {
-      asideMenuLeft?.classList.toggle('open');
-      if (activeOpenButton) {
-        activeOpenButton.classList.toggle('active');
+    // Закрытие при клике вне панели
+    document.addEventListener('click', function (event) {
+      // Проверяем существование элементов
+      if (!asideMenuLeft) return;
+
+      const isClickOnPanel = asideMenuLeft.contains(event.target);
+
+      // Проверяем, что клик не по панели и панель открыта
+      if (!isClickOnPanel && asideMenuLeft.classList.contains('open')) {
+        closePanel();
       }
     });
+
+    console.log('Инициализация завершена');
   }
+}
 
-  //* ========== ФУНКЦИЯ ЗАКРЫТИЯ ПАНЕЛЕЙ ==========
-  function closePanel() {
-    //* ====== Левая панель ======
-    asideMenuLeft?.classList.remove('open');
-    if (activeOpenButton) {
-      activeOpenButton.classList.remove('active');
-      activeOpenButton = null;
-    }
-    // Если переменная verticalDotsLeft определена где-то выше, раскомментируйте
-    // verticalDotsLeft?.classList.remove('horizontal');
-  }
-
-  //* ========== ФУНКЦИЯ ЗАКРЫТИЯ ВСЕХ ПАНЕЛЕЙ ==========
-  function closeAllPanels() {
-    closePanel();
-    // Здесь можно добавить закрытие других панелей
-  }
-
-  //* ========== ОБЩАЯ ФУНКЦИЯ ДЛЯ ШИРИНЫ ЭКРАНА ==========
-  function checkScreenWidth() {
-    if (window.innerWidth > 992) {
-      closePanel();
-    }
-  }
-
-  //* ========== ЗАКРЫТИЕ ПРИ СКРОЛЛЕ ==========
-  let scrollTimeout;
-  function handleScroll() {
-    //* ====== Очищаем предыдущий таймер ======
-    clearTimeout(scrollTimeout);
-
-    //* Закрываем панели при скролле
-    closeAllPanels();
-
-    //* Дополнительно: можно добавить задержку, чтобы не закрывалось при каждом тике
-    scrollTimeout = setTimeout(() => {
-      closePanel();
-    }, 100);
-  }
-
-  //* ========== ЗАКРЫТИЕ ПРИ КЛИКЕ ВНЕ ПАНЕЛИ ==========
-  function handleClickOutside(event) {
-    //* Проверяем, был ли клик вне левой панели и не по кнопке открытия
-    const isLeftPanel = asideMenuLeft?.contains(event.target);
-
-    // Проверяем, был ли клик по любой из кнопок открытия
-    let isLeftButton = false;
-    if (openButtonLeftAll.length > 0) {
-      openButtonLeftAll.forEach((button) => {
-        if (button.contains(event.target)) {
-          isLeftButton = true;
-        }
-      });
-    }
-
-    //* Если клик был вне панели и не по кнопке
-    if (!isLeftPanel && !isLeftButton) {
-      closePanel();
-    }
-  }
-
-  //* ====== Запускаем проверку при загрузке ======
-  checkScreenWidth();
-
-  //* ====== События ======
-  window.addEventListener('resize', checkScreenWidth);
-  window.addEventListener('scroll', handleScroll);
-  document.addEventListener('click', handleClickOutside);
-});
-
+leftMenuOpenClose();
 //todo -------------------- [ Открытие модалок ]--------------------------------
 //todo ↓↓↓ (Для Виктора)
 document.addEventListener('DOMContentLoaded', () => {
@@ -361,7 +342,7 @@ function autoResizeTextarea(textarea) {
   textarea.style.height = textarea.scrollHeight + 'px'; // Устанавливаем по содержимому
 }
 
-// Применяем ко всем textarea с классом select__input
+//todo Применяем ко всем textarea с классом select__input
 function autoResizeText() {
   document.addEventListener('DOMContentLoaded', () => {
     // Функция автоматической подстройки высоты
@@ -442,11 +423,12 @@ function handleSubmit(event) {
 //* ----------------------------------------------------------------------------
 
 // todo Основная функция инициализации формы поиска по ИНН
+// Основная функция инициализации формы поиска по ИНН
 function initInnSearch() {
   const input = document.getElementById('innInput');
   const dropdown = document.getElementById('innDropdown');
 
-  // Добавлено: проверка наличия элементов на странице
+  // Проверка наличия элементов на странице
   if (!input || !dropdown) return;
 
   let timeoutId = null;
@@ -460,13 +442,12 @@ function initInnSearch() {
     dropdown.innerHTML = '';
 
     if (organizationsList.length === 0) {
-      const emptyDiv = document.createElement('div');
+      const emptyDiv = document.createElement('a');
       emptyDiv.className = 'inn-form__dropdown-empty';
 
-      const titleLink = document.createElement('a');
+      const titleLink = document.createElement('div');
       titleLink.className = 'inn-form__dropdown-empty-title';
       titleLink.textContent = 'Другой филиал';
-      titleLink.href = '#';
       titleLink.addEventListener('click', (e) => {
         e.preventDefault();
         dropdown.style.display = 'none';
@@ -497,8 +478,13 @@ function initInnSearch() {
       innKppSpan.className = 'inn-form__dropdown-inn';
       innKppSpan.textContent = `ИНН ${org.inn} / КПП ${org.kpp}`;
 
+      const addressSpan = document.createElement('span');
+      addressSpan.className = 'inn-form__dropdown-address';
+      addressSpan.textContent = org.address || 'Адрес не указан';
+
       item.appendChild(nameSpan);
       item.appendChild(innKppSpan);
+      item.appendChild(addressSpan);
 
       item.addEventListener('click', () => {
         input.value = org.inn;
@@ -511,7 +497,41 @@ function initInnSearch() {
     dropdown.style.display = 'block';
   }
 
-  //todo ⚠️ Удалить полностью (это временный мок-код)
+  // Единый мок-массив данных
+  const MOCK_DATA = [
+    {
+      name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ЯНДЕКС"',
+      inn: '7736207543',
+      kpp: '772701001',
+      address: 'г Москва, ул Льва Толстого, д 16',
+    },
+    {
+      name: 'ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "СБЕРБАНК РОССИИ"',
+      inn: '7707083893',
+      kpp: '773601001',
+      address: 'г Москва, ул Вавилова, д 19',
+    },
+    {
+      name: 'ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "ГАЗПРОМ"',
+      inn: '7736050003',
+      kpp: '997950001',
+      address: 'г Санкт-Петербург, ул Набережная реки Мойки, д 16',
+    },
+    {
+      name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ОЗОН ТЕХНОЛОГИИ"',
+      inn: '7708503727',
+      kpp: '770801001',
+      address: 'г Москва, пр-кт Вернадского, д 29',
+    },
+    {
+      name: 'АКЦИОНЕРНОЕ ОБЩЕСТВО "АЛЬФА-БАНК"',
+      inn: '7702079183',
+      kpp: '770801001',
+      address: 'г Москва, ул Каланчевская, д 27',
+    },
+  ];
+
+  // Функция поиска (использует мок-данные)
   function searchOrganizations(searchValue) {
     const cleanInn = getCleanInn(searchValue);
 
@@ -520,53 +540,23 @@ function initInnSearch() {
       return;
     }
 
-    // 🔻 СЮДА ПРИДЁТ ОТВЕТ ОТ API 🔻
-    // Временный пример для проверки работы (удалишь при подключении API)
-    const mockData = [
-      {
-        name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ЯНДЕКС"',
-        inn: '7736207543',
-        kpp: '772701001',
-      },
-      {
-        name: 'ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "СБЕРБАНК РОССИИ"',
-        inn: '7707083893',
-        kpp: '773601001',
-      },
-      {
-        name: 'ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "ГАЗПРОМ"',
-        inn: '7736050003',
-        kpp: '997950001',
-      },
-      {
-        name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ОЗОН ТЕХНОЛОГИИ"',
-        inn: '7708503727',
-        kpp: '770801001',
-      },
-      {
-        name: 'АКЦИОНЕРНОЕ ОБЩЕСТВО "АЛЬФА-БАНК"',
-        inn: '7702079183',
-        kpp: '770801001',
-      },
-    ].filter((org) => org.inn.startsWith(cleanInn));
-
-    displayOrganizations(mockData);
+    const filteredData = MOCK_DATA.filter((org) =>
+      org.inn.startsWith(cleanInn)
+    );
+    displayOrganizations(filteredData);
   }
 
-  // Функция поиска через реальное API (закомментирована)
+  // Реальная функция для API DaData (закомментирована до получения токена)
   // async function searchOrganizations(searchValue) {
   //   const cleanInn = getCleanInn(searchValue);
-
   //   if (cleanInn.length < 3) {
   //     dropdown.style.display = 'none';
   //     return;
   //   }
-
-  //   // Показываем загрузку
-  //   dropdown.innerHTML =
-  //     '<div class="inn-form__dropdown-empty">⏳ Поиск...</div>';
+  //
+  //   dropdown.innerHTML = '<div class="inn-form__dropdown-empty">⏳ Поиск...</div>';
   //   dropdown.style.display = 'block';
-
+  //
   //   try {
   //     const response = await fetch(
   //       'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party',
@@ -579,23 +569,21 @@ function initInnSearch() {
   //         body: JSON.stringify({ query: cleanInn, count: 10 }),
   //       }
   //     );
-
+  //
   //     const data = await response.json();
-
   //     const organizations = data.suggestions.map((s) => ({
   //       name: s.data.name.full,
   //       inn: s.data.inn,
   //       kpp: s.data.kpp || '—',
+  //       address: s.data.address?.unrestricted_value || s.data.address?.value || 'Адрес не указан',
   //     }));
-
+  //
   //     displayOrganizations(organizations);
   //   } catch (error) {
-  //     dropdown.innerHTML =
-  //       '<div class="inn-form__dropdown-empty">⚠️ Ошибка загрузки</div>';
+  //     dropdown.innerHTML = '<div class="inn-form__dropdown-empty">⚠️ Ошибка загрузки</div>';
   //     console.error('API error:', error);
   //   }
   // }
-  //* --------------------------------------------------------------------------
 
   function handleInput() {
     if (timeoutId) clearTimeout(timeoutId);
@@ -611,20 +599,14 @@ function initInnSearch() {
   }
 
   input.addEventListener('input', handleInput);
-  input.addEventListener('keyup', function () {
-    if (timeoutId) clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      searchOrganizations(input.value);
-    }, 300);
-  });
   document.addEventListener('click', handleClickOutside);
 }
 
+initInnSearch();
 function handleSubmit(event) {
   event.preventDefault();
   const input = document.getElementById('innInput');
 
-  // Добавлено: проверка наличия элемента
   if (!input) return;
 
   const inn = input.value.replace(/\s/g, '');
@@ -636,212 +618,6 @@ function handleSubmit(event) {
   }
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initInnSearch);
-} else {
-  initInnSearch();
-}
-
-function innReady() {
-  function initInnSearch() {
-    const input = document.getElementById('innInput');
-    const dropdown = document.getElementById('innDropdown');
-
-    // Добавлено: проверка наличия элементов на странице
-    if (!input || !dropdown) return;
-
-    let timeoutId = null;
-
-    function getCleanInn(value) {
-      if (!value) return '';
-      return value.replace(/\s/g, '').replace(/\D/g, '').substring(0, 12);
-    }
-
-    function displayOrganizations(organizationsList) {
-      dropdown.innerHTML = '';
-
-      if (organizationsList.length === 0) {
-        const emptyDiv = document.createElement('div');
-        emptyDiv.className = 'inn-form__dropdown-empty';
-
-        const titleLink = document.createElement('a');
-        titleLink.className = 'inn-form__dropdown-empty-title';
-        titleLink.textContent = 'Другой филиал';
-        titleLink.href = '#';
-        titleLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          dropdown.style.display = 'none';
-          input.setAttribute('data-manual-inn', 'true');
-        });
-
-        const descSpan = document.createElement('div');
-        descSpan.className = 'inn-form__dropdown-empty-desc';
-        descSpan.textContent =
-          'Выберите, если ИНН введен правильно, но вашего филиала нет в списке';
-
-        emptyDiv.appendChild(titleLink);
-        emptyDiv.appendChild(descSpan);
-        dropdown.appendChild(emptyDiv);
-        dropdown.style.display = 'block';
-        return;
-      }
-
-      organizationsList.forEach((org) => {
-        const item = document.createElement('div');
-        item.className = 'inn-form__dropdown-item';
-
-        const nameSpan = document.createElement('span');
-        nameSpan.className = 'inn-form__dropdown-name';
-        nameSpan.textContent = org.name;
-
-        const innKppSpan = document.createElement('span');
-        innKppSpan.className = 'inn-form__dropdown-inn';
-        innKppSpan.textContent = `ИНН ${org.inn} / КПП ${org.kpp}`;
-
-        item.appendChild(nameSpan);
-        item.appendChild(innKppSpan);
-
-        item.addEventListener('click', () => {
-          input.value = org.inn;
-          dropdown.style.display = 'none';
-        });
-
-        dropdown.appendChild(item);
-      });
-
-      dropdown.style.display = 'block';
-    }
-
-    //todo ⚠️ Удалить полностью (это временный мок-код)
-    function searchOrganizations(searchValue) {
-      const cleanInn = getCleanInn(searchValue);
-
-      if (cleanInn.length === 0) {
-        dropdown.style.display = 'none';
-        return;
-      }
-
-      // 🔻 СЮДА ПРИДЁТ ОТВЕТ ОТ API 🔻
-      // Временный пример для проверки работы (удалишь при подключении API)
-      const mockData = [
-        {
-          name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ЯНДЕКС"',
-          inn: '7736207543',
-          kpp: '772701001',
-        },
-        {
-          name: 'ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "СБЕРБАНК РОССИИ"',
-          inn: '7707083893',
-          kpp: '773601001',
-        },
-        {
-          name: 'ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "ГАЗПРОМ"',
-          inn: '7736050003',
-          kpp: '997950001',
-        },
-        {
-          name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ОЗОН ТЕХНОЛОГИИ"',
-          inn: '7708503727',
-          kpp: '770801001',
-        },
-        {
-          name: 'АКЦИОНЕРНОЕ ОБЩЕСТВО "АЛЬФА-БАНК"',
-          inn: '7702079183',
-          kpp: '770801001',
-        },
-      ].filter((org) => org.inn.startsWith(cleanInn));
-
-      displayOrganizations(mockData);
-    }
-
-    // Функция поиска через реальное API (закомментирована)
-    // async function searchOrganizations(searchValue) {
-    //   const cleanInn = getCleanInn(searchValue);
-
-    //   if (cleanInn.length < 3) {
-    //     dropdown.style.display = 'none';
-    //     return;
-    //   }
-
-    //   // Показываем загрузку
-    //   dropdown.innerHTML =
-    //     '<div class="inn-form__dropdown-empty">⏳ Поиск...</div>';
-    //   dropdown.style.display = 'block';
-
-    //   try {
-    //     const response = await fetch(
-    //       'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party',
-    //       {
-    //         method: 'POST',
-    //         headers: {
-    //           'Content-Type': 'application/json',
-    //           Authorization: 'Token ВАШ_ТОКЕН_СЮДА',
-    //         },
-    //         body: JSON.stringify({ query: cleanInn, count: 10 }),
-    //       }
-    //     );
-
-    //     const data = await response.json();
-
-    //     const organizations = data.suggestions.map((s) => ({
-    //       name: s.data.name.full,
-    //       inn: s.data.inn,
-    //       kpp: s.data.kpp || '—',
-    //     }));
-
-    //     displayOrganizations(organizations);
-    //   } catch (error) {
-    //     dropdown.innerHTML =
-    //       '<div class="inn-form__dropdown-empty">⚠️ Ошибка загрузки</div>';
-    //     console.error('API error:', error);
-    //   }
-    // }
-    //* --------------------------------------------------------------------------
-
-    function handleInput() {
-      if (timeoutId) clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        searchOrganizations(input.value);
-      }, 300);
-    }
-
-    function handleClickOutside(event) {
-      if (!input.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.style.display = 'none';
-      }
-    }
-
-    input.addEventListener('input', handleInput);
-    input.addEventListener('keyup', function () {
-      if (timeoutId) clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        searchOrganizations(input.value);
-      }, 300);
-    });
-    document.addEventListener('click', handleClickOutside);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const input = document.getElementById('innInput');
-
-    // Добавлено: проверка наличия элемента
-    if (!input) return;
-
-    const inn = input.value.replace(/\s/g, '');
-
-    if (inn && inn.length >= 10) {
-      alert('Выбран ИНН: ' + inn);
-    } else {
-      alert('Пожалуйста, выберите организацию из списка');
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initInnSearch);
-  } else {
-    initInnSearch();
-  }
-}
-innReady();
+// Убираем автоматическую инициализацию, т.к. теперь всё через loadPage
+// initInnSearch() больше не вызывается автоматически
 //* ----------------------------------------------------------------------------
