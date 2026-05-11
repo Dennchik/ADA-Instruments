@@ -36,7 +36,7 @@
 	<script defer src="./dist/slick/slick.min.js"></script>
 	<script defer src="./js/bootstrap.min.js"></script>
 	<script defer src="./js/popover.js"></script>
-	<!-- <script defer src="./js/script.js"></script> -->
+	<script defer src="./js/script.js"></script>
 	<script defer src="./js/script-js.js"></script>
 	<script defer src="./js/script-load.js"></script>
 </head>
@@ -203,13 +203,27 @@
 			<div class="container">
 				<ol class="breadcrumb">
 					<li><a href="./index.html">главная</a></li>
-					<li class="active">
-						<span>Личный кабинет</span>
+					<li class="tab-button active">
+						<span class="">Личный кабинет</span>
 					</li>
 				</ol>
 			</div>
 		</div>
 		<!-- * -->
+		<!-- <div class="breadcrumb_wrapper mb-2">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><a href="./index.html">главная</a></li>
+					<li>
+						<span class="tab-button active" data-page="user-account">Личный кабинет</span>
+					</li>
+					<li class="active">
+						<span>Мои организации</span>
+					</li>
+				</ol>
+			</div>
+		</div> -->
+
 		<!-- * -------------------- [ Acccount-section ] --------------------------- -->
 		<section class="acccount-section container wow fadeInDown">
 			<div class="acccount-section__body">
@@ -223,16 +237,29 @@
 							<i class="icofont-close-squared icon"></i>
 						</div>
 						<!-- * [ MENU -LEFT ] -->
-						<ul class="side-menu__list catalog_menu_list">
-							<li><span class="side-menu__tab-link tab-button" data-page="user-account">Личный
-									кабинет</span>
+						<ul class="side-menu__list">
+							<li class="side-menu__item">
+								<span class="side-menu__tab-link tab-button" data-page="user-account">Личный кабинет</span>
 							</li>
-							<li><span class="side-menu__tab-link tab-button" data-page="order-user">Мои заказы</span></li>
-							<li><span class="side-menu__tab-link tab-button" data-page="history-user">История покупок</span></li>
-							<li><span class="side-menu__tab-link tab-button" data-page="profile-user">Профиль</span></li>
-							<li><span class="side-menu__tab-link tab-button" data-page="org-user">Мои организации</span></li>
-							<li><span class="side-menu__tab-link tab-button" data-page="">Возврат и ремонт</a></li>
-							<li><span class="side-menu__tab-link tab-button" data-page="">Корзина</span></li>
+							<li class="side-menu__item">
+								<span class="side-menu__tab-link tab-button" data-page="order-user">Мои заказы</span>
+							</li>
+							<li class="side-menu__item">
+								<span class="side-menu__tab-link tab-button" data-page="history-user">История покупок</span>
+							</li>
+							<li class="side-menu__item">
+								<span class="side-menu__tab-link tab-button" data-page="profile-user">Профиль</span>
+							</li>
+							<li class="side-menu__item">
+								<span class="side-menu__tab-link tab-button" data-page="org-user">Мои организации</span>
+							</li>
+							<li class="side-menu__item">
+								<span class="side-menu__tab-link tab-button" data-page="repair-user">Возврат и ремонт</span>
+							</li>
+							<li class="side-menu__item">
+								<a href="./cart.html" class="side-menu__tab-link">Корзина</a>
+								<span class="side-menu__col-tovara"></span>
+							</li>
 							</li>
 						</ul>
 					</div>
@@ -249,51 +276,54 @@
 		<!-- * ---------------------- [ Section form ] ----------------------------- -->
 		<section class="section_form container">
 			<div class="section_form_body">
-				<div class="section_form_title">
-					<span>Возникли вопросы?</span>
-					<span>Напишите нам!</span>
-				</div>
-				<div class="form_feedback_body">
-					<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-3">
-									<label for="suportName" class="sr-only">Ваше имя</label>
-									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
-								</div>
-							</div><!-- /suport_feedback_form_box -->
+				<div class="section_form_content container">
+
+					<div class="section_form_title">
+						<span>Возникли вопросы?</span>
+						<span>Напишите нам!</span>
+					</div>
+					<div class="form_feedback_body">
+						<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="mb-3">
+										<label for="suportName" class="sr-only">Ваше имя</label>
+										<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
+									</div>
+								</div><!-- /suport_feedback_form_box -->
+							</div>
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="mb-3">
+										<label for="suportEmail" class="sr-only">Ваш e-mail</label>
+										<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
+											autocomplete="off">
+									</div>
+								</div><!-- /suport_feedback_form_box -->
+							</div>
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="mb-4">
+										<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
+										<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
+											rows="1"></textarea>
+									</div>
+								</div><!-- /suport_feedback_form_box -->
+							</div>
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="send-button">
+										<button class="send-button__button red_button" type="submit">отправить</button>
+									</div>
+								</div><!-- /suport_feedback_form_box -->
+							</div>
+						</form>
+						<div class="succes_message bg_transparent" style="display: none;">
+							<div class="succes_message_caption">
+								Спасибо за обращение ! <br>
+								мы ответим Вам в ближайшее время!
+							</div><!-- /succes_message_caption -->
 						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-3">
-									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
-									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
-										autocomplete="off">
-								</div>
-							</div><!-- /suport_feedback_form_box -->
-						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-4">
-									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
-									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
-										rows="1"></textarea>
-								</div>
-							</div><!-- /suport_feedback_form_box -->
-						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="send-button">
-									<button class="send-button__button red_button" type="submit">отправить</button>
-								</div>
-							</div><!-- /suport_feedback_form_box -->
-						</div>
-					</form>
-					<div class="succes_message bg_transparent" style="display: none;">
-						<div class="succes_message_caption">
-							Спасибо за обращение ! <br>
-							мы ответим Вам в ближайшее время!
-						</div><!-- /succes_message_caption -->
 					</div>
 				</div>
 			</div>

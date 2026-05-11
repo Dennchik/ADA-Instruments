@@ -415,13 +415,12 @@
   width: 30px;
   height: 30px;
   padding: 10px;
-  border: solid 2px #a5a5a5;
+  border: solid 2px #ffffff;
   outline: none;
   border-radius: 35px;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
   line-height: 30px;
-  /*cursor: pointer;*/
 }
 
 .home_page .search_wrap > div > input {
@@ -1423,12 +1422,12 @@
 .icon_col .icon-user {
   width: 28px;
   height: 28px;
-  fill: #a5a5a5;
+  fill: #ffffff;
 }
 .icon_col .icon-cart {
   width: 31px;
   height: 31px;
-  fill: #a5a5a5;
+  fill: #ffffff;
 }
 
 .narrow {
@@ -2136,8 +2135,6 @@
 }
 
 .suport_feedback_form {
-  margin-left: -15px;
-  margin-right: -15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2165,8 +2162,6 @@
 }
 
 .suport_feedback_form_box {
-  margin-left: 15px;
-  margin-right: 15px;
   max-width: 250px;
 }
 .suport_feedback_form_box .send-button {
@@ -2779,6 +2774,22 @@
 @media screen and (width < 1024px) {
   .section_form_body {
     margin: 0 -15px;
+  }
+}
+@media (width < 768px) {
+  .section_form_body {
+    padding: 40px 0;
+  }
+}
+@media screen and (width < 425px) {
+  .section_form_body .send-button__button {
+    width: 100%;
+  }
+}
+
+@media (width < 768px) {
+  .section_form_content {
+    max-width: 540px;
   }
 }
 

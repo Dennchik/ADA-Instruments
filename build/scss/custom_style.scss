@@ -434,12 +434,11 @@
   width: 30px;
   height: 30px;
   padding: 10px;
-  border: solid 2px #a5a5a5;
+  border: solid 2px #ffffff;
   outline: none;
   border-radius: 35px;
   transition: width 0.5s;
   line-height: 30px;
-  /*cursor: pointer;*/
 }
 
 .home_page .search_wrap > div > input {
@@ -1328,13 +1327,13 @@
   .icon-user {
     width: 28px;
     height: 28px;
-    fill: #a5a5a5;
+    fill: #ffffff;
   }
 
   .icon-cart {
     width: 31px;
     height: 31px;
-    fill: #a5a5a5;
+    fill: #ffffff;
   }
 }
 
@@ -1962,8 +1961,6 @@
   overflow: hidden;
 }
 .suport_feedback_form {
-  margin-left: -15px;
-  margin-right: -15px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1981,8 +1978,6 @@
 }
 
 .suport_feedback_form_box {
-  margin-left: 15px;
-  margin-right: 15px;
   max-width: 250px;
   .send-button {
     margin-top: 30px;
@@ -2529,6 +2524,22 @@
 
   @include screen-1024 {
     margin: 0 -15px;
+  }
+
+  @include screen-768 {
+    padding: 40px 0;
+  }
+
+  @include screen-425 {
+    .send-button__button {
+      width: 100%;
+    }
+  }
+}
+
+.section_form_content {
+  @include screen-768 {
+    max-width: 540px;
   }
 }
 

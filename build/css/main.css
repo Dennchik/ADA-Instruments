@@ -851,12 +851,10 @@ h3 {
 
 .wh_txt:hover .thin_white_button,
 .wh_txt:focus .thin_white_button {
-  /* background-color: #fff;
-  color: #FF2F2F;*/
   outline: none;
   text-decoration: none;
   -webkit-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
-  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+          box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
 }
 
 .wh_txt {
@@ -883,11 +881,11 @@ h3 {
   vertical-align: top;
 }
 
-.breadcrumb > .active {
-  color: inherit;
-}
-
 .breadcrumb {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   list-style: none;
   background-color: transparent;
   border-radius: 0px;
@@ -895,11 +893,23 @@ h3 {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 0;
+  color: rgb(33, 37, 41);
+}
+.breadcrumb a {
+  font-weight: 500;
+}
+.breadcrumb li {
+  color: #a4a4a4;
+}
+.breadcrumb li:not(:last-child) {
+  cursor: pointer;
+}
+.breadcrumb .active {
+  color: rgb(33, 37, 41);
 }
 
-.breadcrumb a {
-  color: #a4a4a4;
-  font-weight: 500;
+.breadcrumb > .active {
+  color: rgb(33, 37, 41);
 }
 
 .breadcrumb > li + li:before {
@@ -1009,7 +1019,7 @@ h3 {
 }
 .open_search .icofont-search {
   font-size: 25px;
-  color: #a5a5a5;
+  color: #ffffff;
 }
 
 .home_page .open_search,
@@ -3030,15 +3040,40 @@ header .top_menu > li > a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 15px;
-}
-@media screen and (width < 992px) {
-  .side-menu__list {
-    gap: 15px;
-  }
+  gap: 20px 0;
 }
 .side-menu__list li {
   line-height: 100%;
+}
+.side-menu__list li .side-menu__col-tovara {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--red);
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  font-size: 10px;
+  color: #fff;
+  border-radius: 50%;
+}
+.side-menu__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 25px;
 }
 .side-menu__link {
   color: #000;
@@ -3052,7 +3087,7 @@ header .top_menu > li > a {
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .side-menu__tab-link:hover {
   color: var(--red);
@@ -3068,7 +3103,7 @@ header .top_menu > li > a {
 }
 
 .active-link {
-  color: rgb(255, 111, 111) !important;
+  color: var(--red) !important;
   -webkit-filter: contrast(170%);
           filter: contrast(170%);
 }
@@ -5215,6 +5250,9 @@ header .top_menu > li > a {
 .acccount-section__tabs {
   position: relative;
 }
+.acccount-section__tabs .user-account {
+  grid-template-columns: 1fr minmax(210px, 300px);
+}
 @media screen and (width < 840px) {
   .acccount-section__tabs .user-account .profile {
     margin-bottom: 20px;
@@ -5222,7 +5260,7 @@ header .top_menu > li > a {
 }
 @media screen and (width < 992px) {
   .acccount-section__tabs .user-account .profile__body {
-    padding: 20px;
+    padding: 20px 16px;
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px 20px;
@@ -5232,9 +5270,6 @@ header .top_menu > li > a {
   .acccount-section__tabs .user-account .profile__body {
     margin: 0 -15px;
   }
-}
-.acccount-section__tabs .user-account {
-  grid-template-columns: 1fr minmax(240px, 313px);
 }
 @media screen and (width < 992px) {
   .acccount-section__tabs .user-account {
@@ -5311,7 +5346,7 @@ header .top_menu > li > a {
 }
 @media screen and (width < 992px) {
   .acccount-section__tabs .order-user .profile__body {
-    padding: 20px;
+    padding: 15px;
   }
 }
 .acccount-section__tabs .order-user .acccount-content__body {
@@ -5354,7 +5389,7 @@ header .top_menu > li > a {
 @media screen and (width < 992px) {
   .acccount-section__tabs .order-user .acccount-content__column:nth-child(3) {
     background-color: var(--background-fon);
-    padding: 20px;
+    padding: 15px;
   }
 }
 @media screen and (width < 490px) {
@@ -6007,7 +6042,7 @@ header .top_menu > li > a {
 }
 @media screen and (width < 992px) {
   .form-user__line {
-    padding: 20px;
+    padding: 15px;
     background-color: var(--background-fon);
   }
 }
@@ -7602,6 +7637,16 @@ header .top_menu > li > a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 15px;
+}
+@media screen and (width < 490px) {
+  .order-status__buttons .send-button {
+    max-width: 160px;
+  }
+}
+@media screen and (width < 375px) {
+  .order-status__buttons .send-button {
+    max-width: 130px;
+  }
 }
 .order-status .send-button {
   width: auto;

@@ -91,14 +91,18 @@
 
     //* .user-account
     .user-account {
+      grid-template-columns: 1fr minmax(210px, 300px);
+
+      // * .profile
       .profile {
         @include screen-840 {
           margin-bottom: 20px;
         }
 
+        // .profile__body
         &__body {
           @include screen-992 {
-            padding: 20px;
+            padding: 20px 16px;
             display: grid;
             grid-template-columns: repeat(2, auto);
             gap: 10px 20px;
@@ -109,8 +113,6 @@
           }
         }
       }
-
-      grid-template-columns: 1fr minmax(240px, 313px);
 
       @include screen-992 {
         grid-template-columns: 1fr;
@@ -197,7 +199,7 @@
           position: relative;
 
           @include screen-992 {
-            padding: 20px;
+            padding: 15px;
           }
         }
       }
@@ -223,11 +225,6 @@
         // .acccount-content__column
         &__column {
           &:nth-child(2) {
-            // grid-column: 1 / 2;
-          }
-
-          &:nth-child(2) {
-            // grid-column: 2 / 3;
             @include screen-490 {
               margin: 0 -15px;
             }
@@ -245,7 +242,7 @@
 
             @include screen-992 {
               background-color: var(--background-fon);
-              padding: 20px;
+              padding: 15px;
             }
 
             @include screen-490 {
@@ -915,7 +912,7 @@
     gap: 10px;
 
     @include screen-992 {
-      padding: 20px;
+      padding: 15px;
       background-color: var(--background-fon);
     }
 

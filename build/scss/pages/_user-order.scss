@@ -161,6 +161,18 @@
     display: flex;
     justify-content: space-between;
     gap: 15px;
+
+    @include screen-490 {
+      .send-button {
+        max-width: 160px;
+      }
+    }
+
+    @include screen-375 {
+      .send-button {
+        max-width: 130px;
+      }
+    }
   }
 
   .send-button {

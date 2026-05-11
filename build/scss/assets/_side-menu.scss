@@ -15,15 +15,32 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px 0;
 
-    @include screen-992 {
-      gap: 15px;
-    }
-    // items_greed_list
     li {
       line-height: 100%;
+
+      .side-menu__col-tovara {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--red);
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+        font-size: 10px;
+        color: #fff;
+        border-radius: 50%;
+      }
     }
+  }
+
+  // .side-menu__item
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
   }
 
   // .side-menu__link
@@ -40,7 +57,7 @@
     text-decoration: none;
     transition: all 0.4s ease 0s;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 
     &:hover {
       color: var(--red);
@@ -60,7 +77,7 @@
 }
 
 .active-link {
-  color: rgb(255, 111, 111) !important;
+  color: var(--red) !important;
   filter: contrast(170%);
 }
 //* --------------------------- [ menu_button ] --------------------------------

@@ -421,17 +421,18 @@ function handleSubmit(event) {
   // Дальше ваша логика
 }
 //* ----------------------------------------------------------------------------
-
 // todo Основная функция инициализации формы поиска по ИНН
-// Основная функция инициализации формы поиска по ИНН
 function initInnSearch() {
   const input = document.getElementById('innInput');
   const dropdown = document.getElementById('innDropdown');
 
   // Проверка наличия элементов на странице
   if (!input || !dropdown) return;
+  if (input.hasAttribute('data-inn-search-initialized')) return;
+  input.setAttribute('data-inn-search-initialized', 'true');
 
   let timeoutId = null;
+  let isSelecting = false; // 👈 ФЛАГ ДЛЯ БЛОКИРОВКИ ПОИСКА ПРИ ВЫБОРЕ
 
   function getCleanInn(value) {
     if (!value) return '';
@@ -450,6 +451,7 @@ function initInnSearch() {
       titleLink.textContent = 'Другой филиал';
       titleLink.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         dropdown.style.display = 'none';
         input.setAttribute('data-manual-inn', 'true');
       });
@@ -486,9 +488,23 @@ function initInnSearch() {
       item.appendChild(innKppSpan);
       item.appendChild(addressSpan);
 
-      item.addEventListener('click', () => {
-        input.value = org.inn;
+      item.addEventListener('click', (event) => {
+        event.stopPropagation();
+
+        isSelecting = true; // 👈 ВКЛЮЧАЕМ ФЛАГ, ЧТОБЫ НЕ ТРИГГЕРИТЬ ПОИСК
+
+        // Вставляем отформатированный ИНН с пробелами
+        const formattedInn = org.inn.replace(
+          /(\d{3})(\d{3})(\d{4})/,
+          '$1 $2 $3'
+        );
+        input.value = formattedInn;
         dropdown.style.display = 'none';
+
+        // Выключаем флаг после того, как событие input обработается
+        setTimeout(() => {
+          isSelecting = false;
+        }, 100);
       });
 
       dropdown.appendChild(item);
@@ -497,7 +513,8 @@ function initInnSearch() {
     dropdown.style.display = 'block';
   }
 
-  // Единый мок-массив данных
+  // 🔻 СЮДА ПРИДЁТ ОТВЕТ ОТ API 🔻
+  // Временный пример для проверки работы (удалишь при подключении API)
   const MOCK_DATA = [
     {
       name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ЯНДЕКС"',
@@ -586,6 +603,8 @@ function initInnSearch() {
   // }
 
   function handleInput() {
+    if (isSelecting) return; // 👈 ЕСЛИ ВЫБИРАЕМ ИЗ СПИСКА - ИГНОРИРУЕМ
+
     if (timeoutId) clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
       searchOrganizations(input.value);
@@ -593,7 +612,12 @@ function initInnSearch() {
   }
 
   function handleClickOutside(event) {
-    if (!input.contains(event.target) && !dropdown.contains(event.target)) {
+    if (
+      dropdown &&
+      input &&
+      !input.contains(event.target) &&
+      !dropdown.contains(event.target)
+    ) {
       dropdown.style.display = 'none';
     }
   }
@@ -602,7 +626,6 @@ function initInnSearch() {
   document.addEventListener('click', handleClickOutside);
 }
 
-initInnSearch();
 function handleSubmit(event) {
   event.preventDefault();
   const input = document.getElementById('innInput');
@@ -621,3 +644,49 @@ function handleSubmit(event) {
 // Убираем автоматическую инициализацию, т.к. теперь всё через loadPage
 // initInnSearch() больше не вызывается автоматически
 //* ----------------------------------------------------------------------------
+
+//* ----------------------------------------------------------------------------
+function maskPhone() {
+  if ($('.mask-phone').length) {
+    $('.mask-phone').mask('+7 (999) 999-99-99');
+  }
+}
+
+$(document).ready(function () {
+  maskPhone();
+});
+//* ------------------- [ ИНН С МАСКОЙ И ПОИСКОМ ] -----------------------------
+function maskInn() {
+  const innInputs = document.querySelectorAll('.mask-inn-organization');
+
+  innInputs.forEach((input) => {
+    if (input.hasAttribute('data-mask-initialized')) return;
+    input.setAttribute('data-mask-initialized', 'true');
+
+    // Своя простая маска, которая не конфликтует с поиском
+    input.addEventListener('input', function (e) {
+      let value = this.value.replace(/\D/g, ''); // Убираем все не-цифры
+      if (value.length > 10) value = value.slice(0, 10);
+
+      // Форматируем как 123 456 7890
+      let formatted = '';
+      if (value.length > 0) {
+        formatted = value.slice(0, 3);
+        if (value.length > 3) {
+          formatted += ' ' + value.slice(3, 6);
+          if (value.length > 6) {
+            formatted += ' ' + value.slice(6, 10);
+          }
+        }
+      }
+
+      // Временно отключаем событие, чтобы избежать зацикливания
+      const cursorPos = this.selectionStart;
+      this.value = formatted;
+
+      // Восстанавливаем позицию курсора
+      const newPos = cursorPos + (formatted.length - value.length);
+      this.setSelectionRange(newPos, newPos);
+    });
+  });
+}

@@ -505,12 +505,8 @@
 
 .wh_txt:hover .thin_white_button,
 .wh_txt:focus .thin_white_button {
-  /* background-color: #fff;
-  color: #FF2F2F;*/
   outline: none;
   text-decoration: none;
-  -webkit-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
-  -moz-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
   box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
 }
 .wh_txt {
@@ -527,11 +523,8 @@
   vertical-align: top;
 }
 
-.breadcrumb > .active {
-  color: inherit;
-}
-
 .breadcrumb {
+  user-select: none;
   list-style: none;
   background-color: transparent;
   border-radius: 0px;
@@ -539,10 +532,25 @@
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 0;
+  color: rgb(33, 37, 41);
+  a {
+    // color: #a4a4a4;
+    font-weight: 500;
+  }
+
+  li {
+    color: #a4a4a4;
+    &:not(:last-child) {
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    color: rgb(33, 37, 41);
+  }
 }
-.breadcrumb a {
-  color: #a4a4a4;
-  font-weight: 500;
+.breadcrumb > .active {
+  color: rgb(33, 37, 41);
 }
 
 .breadcrumb > li + li:before {
@@ -658,7 +666,7 @@
 
   .icofont-search {
     font-size: 25px;
-    color: #a5a5a5;
+    color: #ffffff;
   }
 }
 
