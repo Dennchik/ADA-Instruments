@@ -73,7 +73,7 @@
       color: #0f172a;
       &:not(:placeholder-shown) + label,
       &:focus + label {
-        transform: translateY(-49%);
+        transform: translateY(-51%);
       }
     }
   }
@@ -82,18 +82,18 @@
   &__label {
     position: absolute;
     margin-left: 15px;
-
     top: 0;
     left: 0;
     width: auto;
     height: 100%;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out;
     user-select: none;
     font-size: 14px;
     font-weight: 600;
     color: #a5a5a5;
     display: flex;
     align-items: center;
+    pointer-events: none;
 
     span {
       padding: 0 5px;
@@ -104,7 +104,6 @@
 
   &__input::placeholder {
     color: #94a3b8;
-    font-family: system-ui, monospace;
   }
 
   // .inn-form__dropdown

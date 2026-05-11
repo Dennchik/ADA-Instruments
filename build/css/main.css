@@ -2607,7 +2607,7 @@ header .top_menu > li > a {
 }
 .cart-page .select__input {
   width: 100%;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 110%;
   white-space: wrap;
   word-wrap: break-word;
@@ -2908,6 +2908,7 @@ header .top_menu > li > a {
   display: grid;
   grid-template-columns: minmax(220px, 270px) 1fr;
 }
+
 .page-order .select-group__dropdown {
   margin: 0;
 }
@@ -4529,7 +4530,7 @@ header .top_menu > li > a {
 .delivery__label {
   width: 100%;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: #080808;
   display: -webkit-box;
@@ -8067,14 +8068,14 @@ header .top_menu > li > a {
   color: #0f172a;
 }
 .inn-form__input input:not(:-moz-placeholder) + label {
-  transform: translateY(-49%);
+  transform: translateY(-51%);
 }
 .inn-form__input input:not(:-ms-input-placeholder) + label {
-  transform: translateY(-49%);
+  transform: translateY(-51%);
 }
 .inn-form__input input:not(:placeholder-shown) + label, .inn-form__input input:focus + label {
-  -webkit-transform: translateY(-49%);
-          transform: translateY(-49%);
+  -webkit-transform: translateY(-51%);
+          transform: translateY(-51%);
 }
 .inn-form__label {
   position: absolute;
@@ -8083,10 +8084,10 @@ header .top_menu > li > a {
   left: 0;
   width: auto;
   height: 100%;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -8100,6 +8101,7 @@ header .top_menu > li > a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  pointer-events: none;
 }
 .inn-form__label span {
   padding: 0 5px;
@@ -8108,23 +8110,18 @@ header .top_menu > li > a {
 }
 .inn-form__input::-webkit-input-placeholder {
   color: #94a3b8;
-  font-family: system-ui, monospace;
 }
 .inn-form__input::-moz-placeholder {
   color: #94a3b8;
-  font-family: system-ui, monospace;
 }
 .inn-form__input:-ms-input-placeholder {
   color: #94a3b8;
-  font-family: system-ui, monospace;
 }
 .inn-form__input::-ms-input-placeholder {
   color: #94a3b8;
-  font-family: system-ui, monospace;
 }
 .inn-form__input::placeholder {
   color: #94a3b8;
-  font-family: system-ui, monospace;
 }
 .inn-form__dropdown {
   padding: 20px;

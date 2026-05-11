@@ -516,57 +516,59 @@
 			</div>
 		</div>
 		<!-- * ---------------------- [ Section form ] ----------------------------- -->
-		<div class="section_form container">
-			<div class="section_form_body wow fadeInUp">
-				<div class="section_form_title">
-					<span>Возникли вопросы?</span>
-					<span>Напишите нам!</span>
-				</div>
-				<div class="form_feedback_body">
-					<form action="#" method="POST" class="suport_feedback_form feedback_form">
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-3">
-									<label for="suportName" class="sr-only">Ваше имя</label>
-									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required>
-								</div>
-							</div><!-- /suport_feedback_form_box -->
+		<section class="section_form container">
+			<div class="section_form_body">
+				<div class="section_form_content container">
+					<div class="section_form_title">
+						<span>Возникли вопросы?</span>
+						<span>Напишите нам!</span>
+					</div>
+					<div class="form_feedback_body">
+						<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="mb-3">
+										<label for="suportName" class="sr-only">Ваше имя</label>
+										<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
+									</div>
+								</div><!-- /suport_feedback_form_box -->
+							</div>
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="mb-3">
+										<label for="suportEmail" class="sr-only">Ваш e-mail</label>
+										<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
+											autocomplete="off">
+									</div>
+								</div><!-- /suport_feedback_form_box -->
+							</div>
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="mb-4">
+										<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
+										<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
+											rows="1"></textarea>
+									</div>
+								</div><!-- /suport_feedback_form_box -->
+							</div>
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="send-button">
+										<button class="send-button__button red_button" type="submit">отправить</button>
+									</div>
+								</div><!-- /suport_feedback_form_box -->
+							</div>
+						</form>
+						<div class="succes_message bg_transparent" style="display: none;">
+							<div class="succes_message_caption">
+								Спасибо за обращение ! <br>
+								мы ответим Вам в ближайшее время!
+							</div><!-- /succes_message_caption -->
 						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-3">
-									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
-									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required
-										autocomplete="off">
-								</div>
-							</div><!-- /suport_feedback_form_box -->
-						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-4">
-									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
-									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required
-										rows="1"></textarea>
-								</div>
-							</div><!-- /suport_feedback_form_box -->
-						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="send-button">
-									<button class="send-button__button red_button" type="submit">отправить</button>
-								</div>
-							</div><!-- /suport_feedback_form_box -->
-						</div>
-					</form>
-					<div class="succes_message bg_transparent" style="display: none;">
-						<div class="succes_message_caption">
-							Спасибо за обращение ! <br>
-							мы ответим Вам в ближайшее время!
-						</div><!-- /succes_message_caption -->
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</div>
 	<!-- * --------------------------- [ Footer] --------------------------------- -->
 	<!--*  wow fadeInDown -->
@@ -597,13 +599,13 @@
 							<a class="footer__menu-list" href="#">ПОДДЕРЖКА</a>
 						</li>
 						<li>
-							<a class="footer__menu-list" href="#">о компании</a>
+							<a class="footer__menu-list" href="../about.html">о компании</a>
 						</li>
 						<li>
-							<a class="footer__menu-list" href="#">контакты</a>
+							<a class="footer__menu-list" href="../contact.html">контакты</a>
 						</li>
 						<li class="footer__has-child has_child">
-							<a class="footer__menu-list" href="#">продукция</a>
+							<a class="footer__menu-list" href="../productia.html">продукция</a>
 							<div class="row flex-nowrap pt-3 desk-menu">
 								<!-- * -->
 								<div class="col-4">
@@ -646,7 +648,7 @@
 							<a href="#"><span>поддержка</span></a>
 						</li>
 						<li>
-							<a href="#"><span>о компании</span></a>
+							<a href="../about.html"><span>о компании</span></a>
 						</li>
 						<li class="footer__has-child">
 							<a class="footer__open-child-list" id="open__child-list">
@@ -655,13 +657,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="#"><span>контакты</span></a>
+							<a href="../contact.html"><span>контакты</span></a>
 						</li>
 					</ul>
 					<div class="footer__sub-menu footer_menu_mob_submenu'">
 						<div class="footer_menu_mob_list flex-nowrap pt-3">
 							<ul class="fmb_list">
-								<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
+								<li><a href="../catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 								<li><a href="#">Лазерные уровни</a></li>
 								<li><a href="#">Ротационные нивелиры</a></li>
 								<li><a href="#">Оптические нивелиры</a></li>
