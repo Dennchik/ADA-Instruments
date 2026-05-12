@@ -3092,6 +3092,8 @@ header .top_menu > li > a {
 }
 .side-menu__tab-link:hover {
   color: var(--red);
+  -webkit-filter: contrast(170%);
+          filter: contrast(170%);
 }
 .side-menu__close-menu {
   display: none;
@@ -8292,6 +8294,14 @@ header .top_menu > li > a {
 .org-form__bank-requisites {
   margin-bottom: 30px;
 }
+.org-form__bank-requisites.active .org-form__collapse {
+  grid-template-rows: 1fr;
+}
+.org-form__bank-requisites.active .icofont-thin-down {
+  -webkit-transform: scale(-1);
+          transform: scale(-1);
+  color: var(--red);
+}
 .org-form__reg-button {
   cursor: pointer;
   padding: 20px;
@@ -8305,13 +8315,17 @@ header .top_menu > li > a {
   background-color: var(--background-fon);
 }
 .org-form__reg-button span {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 .org-form__reg-button .icofont-thin-down {
   color: #a5a5a5;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
+  -webkit-transition: color 0.3s, -webkit-transform 0.3s ease-in-out;
+  transition: color 0.3s, -webkit-transform 0.3s ease-in-out;
+  transition: color 0.3s, transform 0.3s ease-in-out;
+  transition: color 0.3s, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 .org-form__collapse {
   display: grid;
@@ -8321,9 +8335,6 @@ header .top_menu > li > a {
   -webkit-transition: grid-template-rows 0.3s ease-in-out;
   transition: grid-template-rows 0.3s ease-in-out;
   transition: grid-template-rows 0.3s ease-in-out, -ms-grid-rows 0.3s ease-in-out;
-}
-.org-form__collapse.active {
-  grid-template-rows: 1fr;
 }
 .org-form__wrapper {
   overflow: hidden;
@@ -8368,6 +8379,8 @@ header .top_menu > li > a {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px;
+  background-color: var(--background-fon);
+  max-width: 500px;
 }
 .org-form__header button {
   display: -webkit-box;

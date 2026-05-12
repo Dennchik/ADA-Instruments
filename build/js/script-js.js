@@ -493,7 +493,7 @@ function initInnSearch() {
           <div class="org-form__bank-requisites">
             <div class="org-form__reg-button">
               <span>Указать банковские реквизиты</span>
-              <i class="icofont-rounded-down"></i>
+              <i class="icofont-thin-down"></i>
             </div>
 
             <div class="org-form__collapse">
@@ -970,7 +970,7 @@ function maskInn() {
 }
 function collapseBlock() {
   const regButton = document.querySelector('.org-form__reg-button');
-  const formCollapse = document.querySelector('.org-form__collapse');
+  const formCollapse = document.querySelector('.org-form__bank-requisites');
   regButton.addEventListener('click', () => {
     formCollapse.classList.toggle('active');
   });

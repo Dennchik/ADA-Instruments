@@ -292,11 +292,22 @@
     }
   }
 }
+
 //* ----------------------------------------------------------------------------
 .org-form {
   // .org-form__bank-requisites
   &__bank-requisites {
     margin-bottom: 30px;
+
+    &.active {
+      .org-form__collapse {
+        grid-template-rows: 1fr;
+      }
+      .icofont-thin-down {
+        transform: scale(-1);
+        color: var(--red);
+      }
+    }
   }
 
   // .org-form__reg-button
@@ -309,14 +320,17 @@
     background-color: var(--background-fon);
 
     span {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
     }
 
     .icofont-thin-down {
       color: #a5a5a5;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 600;
+      transition:
+        color 0.3s,
+        transform 0.3s ease-in-out;
     }
   }
   // .org-form__collapse
@@ -326,10 +340,6 @@
     grid-template-rows: 0fr;
     background-color: var(--background-fon);
     transition: grid-template-rows 0.3s ease-in-out;
-
-    &.active {
-      grid-template-rows: 1fr;
-    }
   }
 
   // .org-form__wrapper
@@ -373,7 +383,8 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    // background-color: var(--background-fon);
+    background-color: var(--background-fon);
+    max-width: 500px;
 
     button {
       display: flex;
