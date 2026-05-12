@@ -682,7 +682,7 @@ jQuery('document').ready(function () {
 
     var $form = $(this);
 
-    var $feedbackBody = $form.closest('.section-form__body');
+    var $feedbackBody = $form.closest('.section_form_body');
     var $successMessage = $feedbackBody.find('.succes_message');
 
     //* 🔥 фиксируем реальную высоту
@@ -830,3 +830,15 @@ if (document.querySelector('.preloader')) {
   loaded('.preloader');
 }
 //* ----------------------------------------------------------------------------
+// function maskInn() {
+//   if ($('.mask-inn-organization').length) {
+//     // Для ИНН организации (10 цифр)
+//     $('.mask-inn-organization').mask('999 999 9999', {
+//       clearIfNotMatch: true,
+//     });
+//   }
+// }
+
+// $(document).ready(function () {
+//   maskInn();
+// });

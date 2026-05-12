@@ -1978,10 +1978,14 @@
 }
 
 .suport_feedback_form_box {
-  max-width: 250px;
-
   .send-button {
     margin-top: 30px;
+  }
+
+  @include screen-992 {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -2035,6 +2039,10 @@
 
 .suport_feedback_form {
   padding: 0px 70px 100px;
+
+  @include screen-992 {
+    padding: 30px;
+  }
 }
 
 .suport_feedback_top {
@@ -2517,7 +2525,7 @@
 }
 //*  Form ---------------------------------------------------------------------
 .section_form_body {
-  padding: 40px;
+  padding: 75px 40px;
   background: transparent url('../img/fon_form.png') center center / cover
     no-repeat;
   object-fit: cover;
