@@ -830,15 +830,3 @@ if (document.querySelector('.preloader')) {
   loaded('.preloader');
 }
 //* ----------------------------------------------------------------------------
-// function maskInn() {
-//   if ($('.mask-inn-organization').length) {
-//     // Для ИНН организации (10 цифр)
-//     $('.mask-inn-organization').mask('999 999 9999', {
-//       clearIfNotMatch: true,
-//     });
-//   }
-// }
-
-// $(document).ready(function () {
-//   maskInn();
-// });

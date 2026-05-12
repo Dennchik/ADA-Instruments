@@ -255,7 +255,7 @@
 
     //* .profile-user
     .profile-user {
-      grid-template-columns: 1fr minmax(240px, 313px);
+      grid-template-columns: 1fr minmax(240px, 300px);
 
       @include screen-992 {
         grid-template-columns: 1fr;

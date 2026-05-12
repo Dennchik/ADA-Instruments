@@ -567,7 +567,7 @@ function initCounter() {
 }
 
 //todo ============== ОБЩИЙ ЗАПУСК ПРИ ЗАГРУЗКЕ СТРАНИЦЫ =======================
-// ------------------ Личный кабинет (загрузка контента) -----------------------
+//* ----------------- Личный кабинет (загрузка контента) -----------------------
 document.addEventListener('DOMContentLoaded', function () {
   // 👇 Инициализируем счётчики на всех страницах
   leftMenuOpenClose();
@@ -708,29 +708,28 @@ document.addEventListener('DOMContentLoaded', function () {
             if (typeof maskPhone === 'function') maskPhone();
             leftMenuOpenClose();
             dynamicAdaptive();
-          } else if (page === 'order-user') {
+          } else if (page === 'user-order') {
             leftMenuOpenClose();
             if (typeof itSelect === 'function') itSelect();
             if (typeof selectDropByer === 'function') selectDropByer();
             if (typeof autoResizeText === 'function') autoResizeText();
-          } else if (page === 'history-user') {
+          } else if (page === 'user-history') {
             leftMenuOpenClose();
             if (typeof itSelect === 'function') itSelect();
             if (typeof selectDropByer === 'function') selectDropByer();
             if (typeof autoResizeText === 'function') autoResizeText();
             initCounter(); // Переинициализируем счётчики после загрузки
-          } else if (page === 'profile-user') {
+          } else if (page === 'user-profile') {
             leftMenuOpenClose();
             dynamicAdaptive();
             if (typeof maskPhone === 'function') maskPhone();
-          } else if (page === 'org-user') {
+          } else if (page === 'user-organitrashion') {
             leftMenuOpenClose();
-            // if (typeof maskInn === 'function') maskInn();
+            // if (typeof collapseBlock === 'function') collapseBlock();
             // Вызываем маску и поиск ПОСЛЕ загрузки контента
-
             if (typeof maskInn === 'function') maskInn();
             if (typeof initInnSearch === 'function') initInnSearch();
-          } else if (page === 'repair-user') {
+          } else if (page === 'user-repair') {
           }
         })
         .catch((error) => {
