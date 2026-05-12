@@ -725,7 +725,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (typeof maskPhone === 'function') maskPhone();
           } else if (page === 'user-organitrashion') {
             leftMenuOpenClose();
-            // if (typeof collapseBlock === 'function') collapseBlock();
             // Вызываем маску и поиск ПОСЛЕ загрузки контента
             if (typeof maskInn === 'function') maskInn();
             if (typeof initInnSearch === 'function') initInnSearch();

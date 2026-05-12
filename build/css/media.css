@@ -1,4 +1,3 @@
-/**==========  Desktop First Method  ==========*/
 /* *------------------------- Desktop First Method -------------------------* */
 /* *---------------------- Large Devices, Wide Screens ---------------------* */
 @media only screen and (max-width: 1700px) {
@@ -163,22 +162,6 @@
   ul.footer_menu_desk {
     gap: 30px !important;
   }
-
-  /* .product-cart__info {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-  } */
-
-  /* .product-cart__counter {
-    grid-row: 1 / 3;
-    align-self: center;
-  } */
-
-  /* .product-cart__image {
-    grid-column: 2 / 3;
-    align-self: center;
-    justify-self: center;
-  } */
 }
 
 @media only screen and (width < 1024px) {
@@ -195,16 +178,12 @@
   .sub_menu2 {
     width: auto;
     max-width: 100%;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
     position: static;
     margin-top: 0px;
     opacity: 1;
     visibility: visible;
     border-radius: 0px !important;
-    -webkit-border-radius: 0px !important;
-    -moz-border-radius: 0px !important;
   }
 
   .has_child:hover .sub_menu {
@@ -215,8 +194,6 @@
 
   .has_child a:hover {
     border-radius: 0 !important;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
   }
 }
 /* *---------------------- Medium Devices, Desktops ------------------------* */
@@ -263,11 +240,6 @@
     top: -15px;
     gap: 15px;
   }
-  /* .smaller {
-    .col_icons svg {
-      fill: #fff !important;
-    }
-  } */
 
   .col_icons .icon-cart {
     width: 27px;
@@ -352,8 +324,6 @@
     word-wrap: normal;
     direction: ltr;
     line-height: 1;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
     font-size: 17px;
     margin-top: 4px;
   }
@@ -473,10 +443,6 @@
     background-image: url(../img/suport.jpg);
   }
 
-  /* .suport_feedback .thin_white_button {
-    width: 140px;
-  } */
-
   .suport_feedback .font20 {
     font-size: 14px;
   }
@@ -499,10 +465,6 @@
     padding-bottom: 100px;
   }
 
-  .suport_feedback_form {
-    padding: 30px;
-  }
-
   .suport_feedback_form > li {
     width: 100%;
   }
@@ -515,12 +477,6 @@
     justify-content: center;
     align-items: center;
     align-content: stretch;
-  }
-
-  .suport_feedback_form_box {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 300px;
   }
 
   .sff_wrapper {
@@ -796,6 +752,7 @@
     color: #000;
   }
 }
+
 @media only screen and (width < 640px) {
   .popup {
     width: 96%;
@@ -1086,6 +1043,7 @@
     margin-right: 10px;
   }
 }
+
 @media only screen and (width < 460px) {
   .au_bootom_txt > .row > div {
     position: static;
@@ -1359,6 +1317,7 @@
 /* *-------------------- Extra Small Devices, Phones  ----------------------* */
 @media only screen and (width >= 320px) {
 }
+
 /* *---------------------- Custom, iPhone Retina ---------------------------* */
 @media only screen and (width >= 400px) {
   .show_more_contacts_list_box {
@@ -1396,8 +1355,6 @@
     width: 800px;
     padding: 30px 20px 20px;
     background: #fff;
-    -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
     position: absolute;
     top: 100%;
@@ -1407,18 +1364,6 @@
     margin-top: 20px;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition:
-      opacity 0.3s,
-      margin-top 0.3s,
-      visibility 0s linear 0.3s;
-    -moz-transition:
-      opacity 0.3s,
-      margin-top 0.3s,
-      visibility 0s linear 0.3s;
-    -o-transition:
-      opacity 0.3s,
-      margin-top 0.3s,
-      visibility 0s linear 0.3s;
     transition:
       opacity 0.3s,
       margin-top 0.3s,
@@ -1434,9 +1379,6 @@
     margin-top: 0;
     opacity: 1;
     visibility: visible;
-    -webkit-transition-delay: 0s;
-    -moz-transition-delay: 0s;
-    -o-transition-delay: 0s;
     transition-delay: 0s;
     pointer-events: auto;
   }
@@ -1476,28 +1418,6 @@
   .whith_grey_band {
     position: relative;
   }
-
-  /* .whith_grey_band:after {
-    content: ' ';
-    position: absolute;
-    width: 50%;
-    height: 1350px;
-    background-color: #eeeeee;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-
-  .whith_grey_band header:after {
-    content: ' ';
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    background-color: #eeeeee;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  } */
 
   .whith_grey_band header.smaller:after {
     display: none;

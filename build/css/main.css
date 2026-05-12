@@ -349,20 +349,20 @@ h3 {
 
 .menu_button.active span i:nth-child(1) {
   -webkit-transform: rotate(-45deg) translate(-50%, -50%);
-  transform: rotate(-45deg) translate(-50%, -50%);
+          transform: rotate(-45deg) translate(-50%, -50%);
   top: 16%;
   left: 21px;
 }
 
 .menu_button.active span i:nth-child(2) {
   -webkit-transform: translateX(-100px);
-  transform: translateX(-100px);
+          transform: translateX(-100px);
   opacity: 0;
 }
 
 .menu_button.active span i:nth-child(3) {
   -webkit-transform: rotate(45deg) translate(-50%, -50%);
-  transform: rotate(45deg) translate(-50%, -50%);
+          transform: rotate(45deg) translate(-50%, -50%);
   top: 54%;
   left: 18px;
 }
@@ -380,7 +380,7 @@ h3 {
 .menu_button span i {
   position: absolute;
   -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
   width: 68%;
   height: 4px;
   left: 0;
@@ -496,6 +496,10 @@ h3 {
   overflow: hidden;
 }
 
+.bg-accent {
+  background: rgb(239, 239, 239);
+}
+
 .red_button {
   cursor: pointer;
   background-color: rgb(255, 51, 51);
@@ -518,6 +522,14 @@ h3 {
   color: #252525;
   color: var(--red);
   border: 1px solid var(--red);
+}
+@media screen and (width < 1024px) {
+  .red_button:hover, .red_button:active {
+    background-color: transparent;
+    color: rgb(255, 51, 51);
+    outline: none;
+    text-decoration: none;
+  }
 }
 
 .dark_button {
@@ -560,15 +572,6 @@ h3 {
   text-transform: uppercase;
 }
 
-@media screen and (width < 1024px) {
-  .red_button:hover,
-  .red_button:focus {
-    background-color: transparent;
-    color: rgb(255, 51, 51);
-    outline: none;
-    text-decoration: none;
-  }
-}
 .mb-75 {
   margin-bottom: 75px;
 }
@@ -2564,6 +2567,10 @@ header .top_menu > li > a {
   font-feature-settings: "liga";
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
+}
+
+.services .suport_feedback_form li:nth-child(odd) {
+  padding-right: 15px;
 }
 
 .cart-page .send-button__button a {
@@ -8085,7 +8092,7 @@ header .top_menu > li > a {
 .inn-form__input input {
   width: 100%;
   outline: none;
-  padding: 12px 16px;
+  padding: 5px 15px;
   font-size: 15px;
   color: #0f172a;
 }
@@ -8297,7 +8304,7 @@ header .top_menu > li > a {
           transform: scale(0);
   position: absolute;
   max-width: 450px;
-  top: 20%;
+  top: 32%;
   margin: 0 auto;
   pointer-events: none;
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s ease-in-out;
@@ -8306,6 +8313,26 @@ header .top_menu > li > a {
   transition: opacity 0.3s, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+@media screen and (width < 1440px) {
+  .show-notification {
+    top: 30%;
+  }
+}
+@media screen and (width < 992px) {
+  .show-notification {
+    top: 28%;
+  }
+}
+@media (width < 768px) {
+  .show-notification {
+    top: 23%;
+  }
+}
+@media (width < 690px) {
+  .show-notification {
+    top: 25%;
+  }
 }
 .show-notification.active {
   opacity: 1;
@@ -8410,8 +8437,10 @@ header .top_menu > li > a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 3px;
-  margin-bottom: 20px;
 }
 .org-form__label {
   display: -webkit-box;
@@ -8455,7 +8484,7 @@ header .top_menu > li > a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.6rem;
+  padding: 16px;
 }
 .org-form__header button {
   display: -webkit-box;
@@ -8526,19 +8555,6 @@ header .top_menu > li > a {
   display: flex;
   gap: 30px;
 }
-.org-form__field {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 5px;
-}
 .org-form__name-value {
   font-size: 16px;
   font-weight: 600;
@@ -8566,12 +8582,12 @@ header .top_menu > li > a {
     font-size: 12px;
   }
 }
-.org-form__addes-value {
+.org-form__address-value {
   font-size: 14px;
   font-weight: 500;
 }
 @media (width < 690px) {
-  .org-form__addes-value {
+  .org-form__address-value {
     font-size: 12px;
   }
 }

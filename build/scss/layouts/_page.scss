@@ -1,4 +1,16 @@
 @use '../core/mixins' as *;
+.services {
+  .suport_feedback_form_box {
+  }
+
+  .suport_feedback_form {
+    li {
+      &:nth-child(odd) {
+        padding-right: 15px;
+      }
+    }
+  }
+}
 
 .cart-page {
   .send-button__button {

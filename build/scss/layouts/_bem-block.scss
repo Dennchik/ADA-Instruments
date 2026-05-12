@@ -55,20 +55,17 @@
 }
 
 .menu_button.active span i:nth-child(1) {
-  -webkit-transform: rotate(-45deg) translate(-50%, -50%);
   transform: rotate(-45deg) translate(-50%, -50%);
   top: 16%;
   left: 21px;
 }
 
 .menu_button.active span i:nth-child(2) {
-  -webkit-transform: translateX(-100px);
   transform: translateX(-100px);
   opacity: 0;
 }
 
 .menu_button.active span i:nth-child(3) {
-  -webkit-transform: rotate(45deg) translate(-50%, -50%);
   transform: rotate(45deg) translate(-50%, -50%);
   top: 54%;
   left: 18px;
@@ -86,7 +83,6 @@
 
 .menu_button span i {
   position: absolute;
-  -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
   width: 68%;
   height: 4px;
@@ -94,20 +90,11 @@
   right: 0;
   margin: auto;
   background-color: #a5a5a5;
-  -webkit-transition:
-    opacity 0.1s ease 0.1s,
-    -webkit-transform 0.3s ease;
-  transition:
-    opacity 0.1s ease 0.1s,
-    -webkit-transform 0.3s ease;
   transition:
     transform 0.3s ease,
     opacity 0.1s ease 0.1s;
-  transition:
-    transform 0.3s ease,
-    opacity 0.1s ease 0.1s,
-    -webkit-transform 0.3s ease;
 }
+
 //* ----------------------------------------------------------------------------
 .home_page .menu_button span i,
 .smaller .menu_button span i {
@@ -202,6 +189,7 @@
   box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
   border: 1px solid #00000000;
 }
+
 .invisible-button {
   position: absolute;
   width: 30px;
@@ -216,9 +204,13 @@
   text-indent: -9999px;
   overflow: hidden;
 }
+
+.bg-accent {
+  background: rgb(239, 239, 239);
+}
+
 .red_button {
   cursor: pointer;
-
   background-color: rgb(255, 51, 51);
   font-size: 12px;
   text-transform: uppercase;
@@ -239,6 +231,13 @@
     color: #252525;
     color: var(--red);
     border: 1px solid var(--red);
+
+    @include screen-1024 {
+      background-color: transparent;
+      color: rgb(255, 51, 51);
+      outline: none;
+      text-decoration: none;
+    }
   }
 }
 
@@ -281,15 +280,7 @@
   font-weight: 600;
   text-transform: uppercase;
 }
-@include screen-1024 {
-  .red_button:hover,
-  .red_button:focus {
-    background-color: transparent;
-    color: rgb(255, 51, 51);
-    outline: none;
-    text-decoration: none;
-  }
-}
+
 .mb-75 {
   margin-bottom: 75px;
 }
