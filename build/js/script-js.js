@@ -1,5 +1,5 @@
 //todo ---------------------[ Date and time ]-----------------------------------
-//todo ↓↓↓ (Для Виктора)
+//todo 👇 (Для Виктора)
 document.addEventListener('DOMContentLoaded', function () {
   const datePicker = document.getElementById('deliveryDate');
   const timePicker = document.getElementById('deliveryTime');
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 //todo -------------------------------------------------------------------------
-//todo ↓↓↓ (Для Виктора) - скрытие панелей в "Личном кабинете"
+//todo 👇 (Для Виктора) - скрытие панелей в "Личном кабинете"
 function leftMenuOpenClose() {
   // Ждем полной загрузки DOM
   if (document.readyState === 'loading') {
@@ -137,8 +137,6 @@ function leftMenuOpenClose() {
     if (!asideMenuLeft) {
       return;
     }
-
-    console.log('Все элементы найдены');
 
     // Снимаем все старые обработчики, делаем клон и заменяем
     const newButton = openButtonLeft.cloneNode(true);
@@ -199,14 +197,11 @@ function leftMenuOpenClose() {
         closePanel();
       }
     });
-
-    console.log('Инициализация завершена');
   }
 }
-
 leftMenuOpenClose();
 //todo -------------------- [ Открытие модалок ]--------------------------------
-//todo ↓↓↓ (Для Виктора)
+//todo 👇 (Для Виктора)
 document.addEventListener('DOMContentLoaded', () => {
   //* Элементы модальных окон
   const modalLogin = document.querySelector('.modal-login');
@@ -336,13 +331,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', handleEscape);
 });
 //todo Функция автоматической подстройки высоты
-
+//todo 👇 (Для Виктора)
 function autoResizeTextarea(textarea) {
   textarea.style.height = 'auto'; // Сбрасываем высоту
   textarea.style.height = textarea.scrollHeight + 'px'; // Устанавливаем по содержимому
 }
 
 //todo Применяем ко всем textarea с классом select__input
+//todo 👇 (Для Виктора)
 function autoResizeText() {
   document.addEventListener('DOMContentLoaded', () => {
     // Функция автоматической подстройки высоты
@@ -376,7 +372,7 @@ function autoResizeText() {
 autoResizeText();
 
 //todo ------- выпадающий список в личный кабинет (плкупатель -> ) -------------
-//todo ↓↓↓ (Для Виктора)
+//todo 👇 (Для Виктора)
 function selectDropByer() {
   // document.addEventListener('DOMContentLoaded', () => {
   const openButton = document.querySelector('.delivery__help-info');
@@ -421,37 +417,39 @@ function handleSubmit(event) {
   // Дальше ваша логика
 }
 //* ----------------------------------------------------------------------------
-// todo Основная функция инициализации формы поиска по ИНН
+// todo 👇 Основная функция инициализации формы поиска по ИНН
 function initInnSearch() {
   const input = document.getElementById('innInput');
   const dropdown = document.getElementById('innDropdown');
 
-  // Проверка наличия элементов на странице
+  //* 👇 Проверка наличия элементов на странице
   if (!input || !dropdown) return;
+
+  //* 👇 Защита от повторной инициализации
   if (input.hasAttribute('data-inn-search-initialized')) return;
   input.setAttribute('data-inn-search-initialized', 'true');
 
+  //* 👇 Таймер для debounce и флаг блокировки при выборе из списка
   let timeoutId = null;
   let isSelecting = false;
 
+  //* 👇 Очищает ИНН от пробелов и нецифровых символов, оставляет максимум 12 цифр
   function getCleanInn(value) {
     if (!value) return '';
     return value.replace(/\s/g, '').replace(/\D/g, '').substring(0, 12);
   }
 
-  // Функция для замены формы на форму с данными организации
+  //* 👇 Функция для замены формы на форму с данными организации
   function replaceFormWithOrganizationData(org) {
     // Находим контейнер
-    const formContainer = document.getElementById('formContainer');
-    const targetContainer =
-      formContainer || document.getElementById('innForm')?.parentNode;
+    const targetContainer = document.getElementById('innForm')?.parentNode;
 
     if (!targetContainer) {
       console.error('Контейнер для формы не найден');
       return;
     }
 
-    // Создаем новую форму с данными организации
+    //todo 👇 (Для Виктора) Создаем новую форму с данными организации
     const newForm = document.createElement('form');
     newForm.id = 'organizationDataForm';
     newForm.className = 'org-form org-form__section';
@@ -460,8 +458,8 @@ function initInnSearch() {
         <button type="button" class="org-form__back-btn" onclick="window.backToSearch()">
           <i class="icofont-long-arrow-left"></i>
           <span>Вернуться к поиску</span>
+          <i class="icofont-close"></i>
         </button>
-        <i class="icofont-close"></i>
       </div>
 
       <div class="org-form__body">
@@ -499,7 +497,9 @@ function initInnSearch() {
             <div class="org-form__collapse">
               <div class="org-form__wrapper">
                 <fieldset class="org-form__field">
-                  <label class="org-form__label" for="paymentAccount">Расчетный счет</label>
+                  <label class="org-form__label" for="paymentAccount">
+                  Расчетный счет
+                  </label>
                   <input id="paymentAccount" class="org-form__input" autocomplete="off" type="text" name="paymentAccount"
                     data-error="Ошибка" data value="">
                 </fieldset>
@@ -511,31 +511,37 @@ function initInnSearch() {
                 </fieldset>
 
                 <fieldset class="org-form__field">
-                  <label class="org-form__label" for="nameBank">Наименование банка</label>
+                  <label class="org-form__label" for="nameBank">
+                  Наименование банка
+                  </label>
                   <input id="nameBank" class="org-form__input" autocomplete="off" type="text" name="nameBank"
                     data-error="Ошибка" data value="">
                 </fieldset>
 
                 <fieldset class="org-form__field">
-                  <label class="org-form__label" for="correspondentAccount">Корреспондентский счет</label>
+                  <label class="org-form__label" for="correspondentAccount">
+                  Корреспондентский счет
+                  </label>
                   <input id="correspondentAccount" class="org-form__input" autocomplete="off" type="text"
                     name="correspondentAccount" data-error="Ошибка" data value="">
                 </fieldset>
               </div>
             </div>
-          </div>
+          </div> 
           <div class="org-form__actions">
             <button type="button" class="org-form__submit-btn red_button" id="addOrganizationBtn">Добавить организацию
             </button>
           </div>
         </div>
+      </div>
     `;
 
-    // Очищаем контейнер и добавляем новую форму
+    //* 👇 Очищаем контейнер и добавляем новую форму
     targetContainer.innerHTML = '';
     targetContainer.appendChild(newForm);
     collapseBlock();
-    // Добавляем обработчик для кнопки "Добавить организацию"
+
+    //* 👇 Добавляем обработчик для кнопки "Добавить организацию"
     const addBtn = document.getElementById('addOrganizationBtn');
     if (addBtn) {
       addBtn.addEventListener('click', (e) => {
@@ -545,7 +551,7 @@ function initInnSearch() {
     }
   }
 
-  // Функция для отправки данных на сервер (временная симуляция)
+  //* 👇 Функция для отправки данных на сервер (временная симуляция) - удалить
   async function submitOrganizationData(org) {
     const submitBtn = document.getElementById('addOrganizationBtn');
     const orgformHeader = document.querySelector('.org-form__header');
@@ -555,7 +561,7 @@ function initInnSearch() {
     submitBtn.textContent = 'Отправка...';
     submitBtn.disabled = true;
 
-    // СИМУЛЯЦИЯ УСПЕШНОЙ ОТПРАВКИ
+    //* 👇 СИМУЛЯЦИЯ УСПЕШНОЙ ОТПРАВКИ
     setTimeout(() => {
       console.log('Отправлены данные (симуляция):', {
         inn: org.inn,
@@ -564,23 +570,22 @@ function initInnSearch() {
         address: org.address,
       });
 
-      showNotification(
-        'Организация успешно добавлена! (тестовый режим)',
-        'success'
-      );
+      showNotification(); //* 👇 Показываем модалку
 
-      // МЕНЯЕМ ТЕКСТ КНОПКИ С "Вернуться к поиску" НА "Добавить организацию"
+      //* 👇 МЕНЯЕМ ТЕКСТ КНОПКИ С "Вернуться к поиску" НА "Добавить организацию"
       const backBtn = document.querySelector('.org-form__back-btn');
       if (backBtn) {
-        backBtn.textContent = 'Добавить организацию';
+        const span = backBtn.querySelector('span');
+        span.textContent = 'Добавить организацию';
         orgformHeader.classList.add('active');
       }
+      //* 👇 СКРЫВАЕМ СТАРУЮ КНОПКУ "Добавить организацию" ВНИЗУ
       submitBtn.style.display = 'none';
       submitBtn.textContent = originalText;
-    }, 1000); // Имитируем задержку сервера 1 секунду
+    }, 1500); // Имитируем задержку сервера 1,5 секунду
   }
 
-  //* Функция для отправки данных на сервер
+  //*todo 👇 Функция для отправки данных на сервер (раскоментировать)
   /*
   async function submitOrganizationData(org) {
     const submitBtn = document.getElementById('addOrganizationBtn');
@@ -612,97 +617,107 @@ function initInnSearch() {
       const data = await response.json();
 
       if (response.ok) {
-        showNotification('Организация успешно добавлена!', 'success');
+        showNotification(); //* 👇 Показываем модалку при успехе
 
-        // МЕНЯЕМ ТЕКСТ КНОПКИ С "Вернуться к поиску" НА "Добавить организацию"
+        //* МЕНЯЕМ ТЕКСТ КНОПКИ С "Вернуться к поиску" НА "Добавить организацию"
         const backBtn = document.querySelector('.org-form__back-btn');
         if (backBtn) {
-          backBtn.textContent = 'Добавить организацию';
+          const span = backBtn.querySelector('span');
+          span.textContent = 'Добавить организацию';
           orgformHeader.classList.add('active');
         }
-
-        // СКРЫВАЕМ СТАРУЮ КНОПКУ "Добавить организацию" ВНИЗУ
+        //* СКРЫВАЕМ СТАРУЮ КНОПКУ "Добавить организацию" ВНИЗУ
         submitBtn.style.display = 'none';
-
+        submitBtn.textContent = originalText;
       } else {
-        showNotification(
-          data.message || 'Ошибка при добавлении организации',
-          'error'
-        );
+        showNotification(); //* 👇 Показываем модалку при ошибке от сервера
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }
     } catch (error) {
       console.error('Ошибка при отправке:', error);
-      showNotification('Ошибка соединения с сервером', 'error');
+      showNotification(); //* 👇 Показываем модалку при ошибке соединения
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
     }
   }
-*/
-  // Функция для возврата к поиску (глобальная)
+
+  */
+
+  //* 👇 Функция для возврата к поиску (глобальная)
   window.backToSearch = function () {
-    const formContainer = document.getElementById('formContainer');
-    const targetContainer =
-      formContainer ||
-      document.getElementById('organizationDataForm')?.parentNode;
+    const targetContainer = document.getElementById(
+      'organizationDataForm'
+    )?.parentNode;
 
     if (!targetContainer) {
       console.error('Контейнер для восстановления формы не найден');
       return;
     }
 
-    // Восстанавливаем форму поиска
+    //* 👇 Восстанавливаем форму поиска
     targetContainer.innerHTML = `
-				<div class="inn-form bp-6">
-					<div class="inn-form__title">Укажите ИНН организации или ИП</div>
-					<form id="innForm" onsubmit="handleSubmit(event)">
-						<div class="inn-form__field">
-							<div class="inn-form__wrapper">
-								<div class="inn-form__input">
-									<input type="text" name="innForm" class="mask-inn-organization" id="innInput" placeholder=" "
-										autocomplete="off">
-									<label for="innInput" class="inn-form__label"><span>ИНН</span></label>
-								</div>
-								<div class="inn-form__dropdown" id="innDropdown">
-
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
+      <div class="inn-form bp-6">
+        <div class="inn-form__title">Укажите ИНН организации или ИП</div>
+        <form id="innForm" onsubmit="handleSubmit(event)">
+          <div class="inn-form__field">
+            <div class="inn-form__wrapper">
+              <div class="inn-form__input">
+                <input type="text" name="innForm"     class="mask-inn-organization" id="innInput" placeholder=" "
+                  autocomplete="off">
+                <label for="innInput" class="inn-form__label">
+                  <span>ИНН</span>
+                </label>
+              </div>
+              <div class="inn-form__dropdown" id="innDropdown">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     `;
-    // 👇 Перезапускаем маску
+    //* 👇 Перезапускаем маску
     maskInn();
 
-    // Переинициализируем поиск
+    //* Переинициализируем поиск
     initInnSearch();
   };
 
+  //* 👇 Показывает модальное окно с уведомлением
   function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.textContent = message;
-    notification.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 12px 20px;
-      background: ${type === 'success' ? '#4caf50' : type === 'error' ? '#f44336' : '#2196f3'};
-      color: white;
-      border-radius: 4px;
-      z-index: 1000;
-      animation: slideIn 0.3s ease;
-    `;
+    const modal = document.getElementById('show-notification');
+    if (!modal) return;
 
-    document.body.appendChild(notification);
+    const messageElement = modal.querySelector('.modal__message');
+    if (messageElement) {
+      messageElement.textContent = message;
+    }
 
+    modal.classList.add('active');
+
+    //* 👇 Функция для закрытия модалки
+    function closeModal() {
+      modal.classList.remove('active');
+      document.removeEventListener('click', closeOnClick);
+    }
+
+    //* 👇 Закрытие по клику в любом месте
+    function closeOnClick() {
+      closeModal();
+    }
+
+    //* 👇 Добавляем обработчик клика
     setTimeout(() => {
-      notification.style.animation = 'slideOut 0.3s ease';
-      setTimeout(() => notification.remove(), 300);
-    }, 3000);
+      document.addEventListener('click', closeOnClick);
+    }, 0);
+
+    //* 👇 Автоматическое закрытие через 7 секунд
+    setTimeout(() => {
+      closeModal();
+    }, 7000);
   }
 
+  //* 👇 Экранирует HTML-символы для защиты от XSS
   function escapeHtml(str) {
     if (!str) return '';
     return str
@@ -713,9 +728,11 @@ function initInnSearch() {
       .replace(/'/g, '&#39;');
   }
 
+  //* 👇 Отображает выпадающий список с найденными организациями
   function displayOrganizations(organizationsList) {
     dropdown.innerHTML = '';
 
+    //* 👇 Если есть результаты поиска - отображаем их
     if (organizationsList.length > 0) {
       organizationsList.forEach((org) => {
         const item = document.createElement('div');
@@ -737,6 +754,7 @@ function initInnSearch() {
         item.appendChild(innKppSpan);
         item.appendChild(addressSpan);
 
+        //* 👇 Обработчик выбора организации из списка
         item.addEventListener('click', (event) => {
           event.stopPropagation();
           isSelecting = true;
@@ -751,7 +769,7 @@ function initInnSearch() {
       });
     }
 
-    // Блок "Другой филиал"
+    //* 👇 Блок "Другой филиал" - всегда внизу списка
     const emptyDiv = document.createElement('a');
     emptyDiv.className = 'inn-form__dropdown-empty';
 
@@ -777,11 +795,12 @@ function initInnSearch() {
     emptyDiv.appendChild(descSpan);
     dropdown.appendChild(emptyDiv);
 
+    //* 👇 Показываем выпадающий список
     dropdown.style.display = 'block';
   }
 
-  // ========== ВРЕМЕННЫЙ МОК-ДАННЫЕ ДЛЯ ПРИМЕРА ==========
-  // Удали эту секцию при подключении реального API DaData
+  //* 👇  ВРЕМЕННЫЙ МОК-ДАННЫЕ ДЛЯ ПРИМЕРА
+  //todo 👇 (Для Виктора) Удали эту секцию при подключении реального API DaData
   const MOCK_DATA = [
     {
       name: 'Индивидуальный предприниматель Сергеев Семён Петрович',
@@ -821,7 +840,8 @@ function initInnSearch() {
     },
   ];
 
-  // Функция поиска (использует мок-данные для тестирования)
+  //* 👇 Функция поиска (использует мок-данные для тестирования)
+  //todo 👇 (Для Виктора) УДАЛИТЬ ЭТУ ФУНКЦИЮ ПРИ ПОДКЛЮЧЕНИИ РЕАЛЬНОГО API DaData
   function searchOrganizations(searchValue) {
     const cleanInn = getCleanInn(searchValue);
 
@@ -836,9 +856,9 @@ function initInnSearch() {
     displayOrganizations(filteredData);
   }
 
+  //todo 👇 (Для виктора) РЕАЛЬНАЯ ФУНКЦИЯ ДЛЯ API DADATA
+  //* 👇 Раскомментируй и вставь свой токен при подключении к реальному API
   /*
-  // ========== РЕАЛЬНАЯ ФУНКЦИЯ ДЛЯ API DADATA ==========
-  // Раскомментируй и вставь свой токен при подключении к реальному API
   async function searchOrganizations(searchValue) {
     const cleanInn = getCleanInn(searchValue);
     if (cleanInn.length < 3) {
@@ -878,6 +898,7 @@ function initInnSearch() {
   }
   */
 
+  //* 👇 Обработчик ввода текста (с debounce 300мс)
   function handleInput() {
     if (isSelecting) return;
     if (timeoutId) clearTimeout(timeoutId);
@@ -886,6 +907,7 @@ function initInnSearch() {
     }, 300);
   }
 
+  //* 👇 Закрывает выпадающий список при клике вне его
   function handleClickOutside(event) {
     if (
       dropdown &&
@@ -901,7 +923,7 @@ function initInnSearch() {
   document.addEventListener('click', handleClickOutside);
 }
 
-// Инициализация при загрузке страницы
+//* 👇 Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', initInnSearch);
 //* ----------------------------------------------------------------------------
 function handleSubmit(event) {
@@ -919,10 +941,6 @@ function handleSubmit(event) {
   }
 }
 
-// Убираем автоматическую инициализацию, т.к. теперь всё через loadPage
-// initInnSearch() больше не вызывается автоматически
-//* ----------------------------------------------------------------------------
-
 //* ----------------------------------------------------------------------------
 function maskPhone() {
   if ($('.mask-phone').length) {
@@ -933,6 +951,7 @@ function maskPhone() {
 $(document).ready(function () {
   maskPhone();
 });
+
 //* ------------------- [ ИНН С МАСКОЙ И ПОИСКОМ ] -----------------------------
 function maskInn() {
   const innInputs = document.querySelectorAll('.mask-inn-organization');
@@ -958,20 +977,27 @@ function maskInn() {
         }
       }
 
-      // Временно отключаем событие, чтобы избежать зацикливания
+      //* Временно отключаем событие, чтобы избежать зацикливания
       const cursorPos = this.selectionStart;
       this.value = formatted;
 
-      // Восстанавливаем позицию курсора
+      //* Восстанавливаем позицию курсора
       const newPos = cursorPos + (formatted.length - value.length);
       this.setSelectionRange(newPos, newPos);
     });
   });
 }
+
 function collapseBlock() {
-  const regButton = document.querySelector('.org-form__reg-button');
-  const formCollapse = document.querySelector('.org-form__bank-requisites');
-  regButton.addEventListener('click', () => {
-    formCollapse.classList.toggle('active');
+  const formCollapseBlocks = document.querySelectorAll(
+    '.org-form__bank-requisites'
+  );
+
+  formCollapseBlocks.forEach((formCollapseBlock) => {
+    const regButton = formCollapseBlock.querySelector('.org-form__reg-button');
+
+    regButton.addEventListener('click', () => {
+      formCollapseBlock.classList.toggle('active');
+    });
   });
 }

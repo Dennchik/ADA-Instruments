@@ -293,6 +293,55 @@
   }
 }
 
+//* show-notification
+.show-notification {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+  max-width: 450px;
+  top: 20%;
+  margin: 0 auto;
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  // .show-notification__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 15px;
+    background-color: rgb(250 250 250);
+    box-shadow: 0 0 7px #0f172a46;
+  }
+
+  // .show-notification__title
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+
+    .icofont-check-alt {
+      font-size: 20px;
+      color: var(--red);
+    }
+  }
+
+  // .show-notification__text
+  &__text {
+    font-size: 10px;
+  }
+}
+
 //* ----------------------------------------------------------------------------
 .org-form {
   // .org-form__bank-requisites
@@ -320,8 +369,14 @@
     background-color: var(--background-fon);
 
     span {
-      font-size: 16px;
+      text-align-last: left;
+      font-size: 14px;
       font-weight: 600;
+      line-height: 100%;
+
+      @include screen-690 {
+        font-size: 12px;
+      }
     }
 
     .icofont-thin-down {
@@ -333,6 +388,7 @@
         transform 0.3s ease-in-out;
     }
   }
+
   // .org-form__collapse
   &__collapse {
     display: grid;
@@ -358,8 +414,14 @@
 
   // .org-form__label
   &__label {
-    font-size: 12px;
+    display: flex;
+    gap: 5px;
     color: #a5a5a5;
+    font-size: 12px;
+
+    @include screen-690 {
+      font-size: 10px;
+    }
   }
 
   // .org-form__input
@@ -367,14 +429,19 @@
     width: 100%;
     padding: 10px 10px;
     border: 1px solid #cecece59;
-    font-size: 16px;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255);
+
+    @include screen-690 {
+      font-size: 12px;
+    }
   }
 
   // .org-form__section
   &__section {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
   }
 
   //* --------------------------------------------------------------------------
@@ -382,47 +449,48 @@
   &__header {
     display: flex;
     align-items: center;
-    padding: 20px;
-    background-color: var(--background-fon);
-    max-width: 500px;
+    padding: 1.6rem;
 
     button {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 1.6rem;
 
       .icofont-long-arrow-left {
         font-size: 20px;
         font-weight: 500;
+        color: #a5a5a5;
       }
-    }
 
-    .icofont-close {
-      display: none;
-      width: 22px;
-      height: 22px;
-      color: #a5a5a5;
-      font-size: 22px;
-      transform: rotate(-45deg);
-      margin-left: 20px;
+      .icofont-close {
+        display: none;
+        width: 20px;
+        height: 20px;
+        color: #a5a5a5;
+        font-size: 20px;
+        transform: rotate(-45deg);
+      }
     }
 
     &.active {
       .icofont-close {
         display: block;
       }
+
+      .icofont-long-arrow-left {
+        display: none;
+      }
     }
   }
 
   // .org-form__body
   &__body {
-    display: flex;
-    gap: 20px;
+    max-width: 54rem;
   }
 
   //  .org-form__column
   &__column {
-    max-width: 50rem;
+    width: 100%;
   }
 
   // .org-form__content
@@ -437,13 +505,17 @@
 
   // .org-form__back-btn
   &__back-btn {
-    font-size: 18px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
     transition: color 0.3s ease-in-out;
 
     &:hover {
       color: var(--red);
+    }
+
+    @include screen-690 {
+      font-size: 12px;
     }
   }
 
@@ -461,36 +533,44 @@
     gap: 5px;
   }
 
-  // .org-form__label
-  &__label {
-    display: flex;
-    gap: 5px;
-    font-size: 16px;
-    color: #a5a5a5;
-  }
-
   // .org-form__value
   &__name-value {
     font-size: 16px;
     font-weight: 600;
+
+    @include screen-690 {
+      font-size: 14px;
+    }
   }
 
   // .org-form__inn-value
   &__inn-value {
     font-size: 14px;
     font-weight: 400;
+
+    @include screen-690 {
+      font-size: 12px;
+    }
   }
 
   // .org-form__kpp-value
   &__kpp-value {
     font-size: 14px;
     font-weight: 400;
+
+    @include screen-690 {
+      font-size: 12px;
+    }
   }
 
   // .org-form__addes-value
   &__addes-value {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
+
+    @include screen-690 {
+      font-size: 12px;
+    }
   }
 
   // .org-form__actions

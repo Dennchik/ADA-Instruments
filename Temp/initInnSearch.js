@@ -2,32 +2,34 @@ function initInnSearch() {
   const input = document.getElementById('innInput');
   const dropdown = document.getElementById('innDropdown');
 
-  // Проверка наличия элементов на странице
+  //* 👇 Проверка наличия элементов на странице
   if (!input || !dropdown) return;
+
+  //* 👇 Защита от повторной инициализации
   if (input.hasAttribute('data-inn-search-initialized')) return;
   input.setAttribute('data-inn-search-initialized', 'true');
 
+  //* 👇 Таймер для debounce и флаг блокировки при выборе из списка
   let timeoutId = null;
   let isSelecting = false;
 
+  //* 👇 Очищает ИНН от пробелов и нецифровых символов, оставляет максимум 12 цифр
   function getCleanInn(value) {
     if (!value) return '';
     return value.replace(/\s/g, '').replace(/\D/g, '').substring(0, 12);
   }
 
-  // Функция для замены формы на форму с данными организации
+  //* 👇 Функция для замены формы на форму с данными организации
   function replaceFormWithOrganizationData(org) {
     // Находим контейнер
-    const formContainer = document.getElementById('formContainer');
-    const targetContainer =
-      formContainer || document.getElementById('innForm')?.parentNode;
+    const targetContainer = document.getElementById('innForm')?.parentNode;
 
     if (!targetContainer) {
       console.error('Контейнер для формы не найден');
       return;
     }
 
-    // Создаем новую форму с данными организации
+    //todo 👇 (Для Виктора) Создаем новую форму с данными организации
     const newForm = document.createElement('form');
     newForm.id = 'organizationDataForm';
     newForm.className = 'org-form org-form__section';
@@ -36,43 +38,90 @@ function initInnSearch() {
         <button type="button" class="org-form__back-btn" onclick="window.backToSearch()">
           <i class="icofont-long-arrow-left"></i>
           <span>Вернуться к поиску</span>
+          <i class="icofont-close"></i>
         </button>
       </div>
 
       <div class="org-form__body">
-        <div class="org-form__field">
-          <div class="org-form__label">Наименование организации</div>
-          <div class="org-form__name-value">${escapeHtml(org.name)}</div>
-        </div>
+        <div class="org-form__column">
+          <div class="org-form__content">
+            <div class="org-form__field">
+              <div class="org-form__label">Наименование организации</div>
+              <div class="org-form__name-value">${escapeHtml(org.name)}</div>
+            </div>
 
-        <div class="org-form__line">
-          <div class=" org-form__field">
-            <div class="org-form__label">ИНН</div>
-            <div class="org-form__inn-value">${org.inn}</div>
+            <div class="org-form__line">
+              <div class=" org-form__field">
+                <div class="org-form__label">ИНН</div>
+                <div class="org-form__inn-value">${org.inn}</div>
+              </div>
+
+              <div class="org-form__field">
+                <div class="org-form__label">КПП</div>
+                <div class="org-form__kpp-value">${org.kpp}</div>
+              </div>
+            </div>
+
+            <div class="org-form__field">
+              <div class="org-form__label">Фактический адрес</div>
+              <div class="org-form__address-value">${escapeHtml(org.address || 'Адрес не указан')}</div>
+            </div> 
           </div>
 
-          <div class="org-form__field">
-            <div class="org-form__label">КПП</div>
-            <div class="org-form__kpp-value">${org.kpp}</div>
+          <div class="org-form__bank-requisites">
+            <div class="org-form__reg-button">
+              <span>Указать банковские реквизиты</span>
+              <i class="icofont-thin-down"></i>
+            </div>
+
+            <div class="org-form__collapse">
+              <div class="org-form__wrapper">
+                <fieldset class="org-form__field">
+                  <label class="org-form__label" for="paymentAccount">
+                  Расчетный счет
+                  </label>
+                  <input id="paymentAccount" class="org-form__input" autocomplete="off" type="text" name="paymentAccount"
+                    data-error="Ошибка" data value="">
+                </fieldset>
+
+                <fieldset class="org-form__field">
+                  <label class="org-form__label" for="bik">Бик банка</label>
+                  <input id="bik" class="org-form__input" autocomplete="off" type="text" name="bik" data-error="Ошибка"
+                    data value="">
+                </fieldset>
+
+                <fieldset class="org-form__field">
+                  <label class="org-form__label" for="nameBank">
+                  Наименование банка
+                  </label>
+                  <input id="nameBank" class="org-form__input" autocomplete="off" type="text" name="nameBank"
+                    data-error="Ошибка" data value="">
+                </fieldset>
+
+                <fieldset class="org-form__field">
+                  <label class="org-form__label" for="correspondentAccount">
+                  Корреспондентский счет
+                  </label>
+                  <input id="correspondentAccount" class="org-form__input" autocomplete="off" type="text"
+                    name="correspondentAccount" data-error="Ошибка" data value="">
+                </fieldset>
+              </div>
+            </div>
+          </div> 
+          <div class="org-form__actions">
+            <button type="button" class="org-form__submit-btn red_button" id="addOrganizationBtn">Добавить организацию
+            </button>
           </div>
         </div>
-
-        <div class="org-form__field">
-          <div class="org-form__label">Фактический адрес</div>
-          <div class="org-form__address-value">${escapeHtml(org.address || 'Адрес не указан')}</div>
-        </div> 
-      </div>
-      <div class="org-form__actions">
-        <button type="button" class="org-form__submit-btn red_button" id="addOrganizationBtn">Добавить организацию
-        </button>
       </div>
     `;
 
-    // Очищаем контейнер и добавляем новую форму
+    //* 👇 Очищаем контейнер и добавляем новую форму
     targetContainer.innerHTML = '';
     targetContainer.appendChild(newForm);
+    collapseBlock();
 
-    // Добавляем обработчик для кнопки "Добавить организацию"
+    //* 👇 Добавляем обработчик для кнопки "Добавить организацию"
     const addBtn = document.getElementById('addOrganizationBtn');
     if (addBtn) {
       addBtn.addEventListener('click', (e) => {
@@ -82,16 +131,17 @@ function initInnSearch() {
     }
   }
 
-  // Функция для отправки данных на сервер (временная симуляция)
+  //* 👇 Функция для отправки данных на сервер (временная симуляция) - удалить
   async function submitOrganizationData(org) {
     const submitBtn = document.getElementById('addOrganizationBtn');
+    const orgformHeader = document.querySelector('.org-form__header');
     if (!submitBtn) return;
 
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Отправка...';
     submitBtn.disabled = true;
 
-    // СИМУЛЯЦИЯ УСПЕШНОЙ ОТПРАВКИ
+    //* 👇 Симуляция успешной отправки
     setTimeout(() => {
       console.log('Отправлены данные (симуляция):', {
         inn: org.inn,
@@ -104,14 +154,25 @@ function initInnSearch() {
         'Организация успешно добавлена! (тестовый режим)',
         'success'
       );
+
+      //* 👇 Меняем текст кнопки c "Вернуться к поиску" НА "Добавить организацию"
+      const backBtn = document.querySelector('.org-form__back-btn');
+      if (backBtn) {
+        const span = backBtn.querySelector('span');
+        span.textContent = 'Добавить организацию';
+        orgformHeader.classList.add('active');
+      }
+      //* 👇 Скрываем старую кнопку "Добавить организацию" ВНИЗУ
+      submitBtn.style.display = 'none';
       submitBtn.textContent = originalText;
-    }, 1000); // Имитируем задержку сервера 1 секунду
+    }, 1500); // Имитируем задержку сервера 1,5 секунду
   }
 
-  //* Функция для отправки данных на сервер
+  //*todo 👇 Функция для отправки данных на сервер (раскоментировать)
   /*
   async function submitOrganizationData(org) {
     const submitBtn = document.getElementById('addOrganizationBtn');
+    const orgformHeader = document.querySelector('.org-form__header');
     if (!submitBtn) return;
 
     const originalText = submitBtn.textContent;
@@ -140,9 +201,17 @@ function initInnSearch() {
 
       if (response.ok) {
         showNotification('Организация успешно добавлена!', 'success');
-        setTimeout(() => {
-          window.backToSearch();
-        }, 1500);
+
+        //* МЕНЯЕМ ТЕКСТ КНОПКИ С "Вернуться к поиску" НА "Добавить организацию"
+        const backBtn = document.querySelector('.org-form__back-btn');
+        if (backBtn) {
+          const span = backBtn.querySelector('span');
+          span.textContent = 'Добавить организацию';
+          orgformHeader.classList.add('active');
+        }
+        //* СКРЫВАЕМ СТАРУЮ КНОПКУ "Добавить организацию" ВНИЗУ
+        submitBtn.style.display = 'none';
+        submitBtn.textContent = originalText;
       } else {
         showNotification(
           data.message || 'Ошибка при добавлении организации',
@@ -159,39 +228,46 @@ function initInnSearch() {
     }
   }
 */
-  // Функция для возврата к поиску (глобальная)
+  //* 👇 Функция для возврата к поиску (глобальная)
   window.backToSearch = function () {
-    const formContainer = document.getElementById('formContainer');
-    const targetContainer =
-      formContainer ||
-      document.getElementById('organizationDataForm')?.parentNode;
+    const targetContainer = document.getElementById(
+      'organizationDataForm'
+    )?.parentNode;
 
     if (!targetContainer) {
       console.error('Контейнер для восстановления формы не найден');
       return;
     }
 
-    // Восстанавливаем форму поиска
+    //* 👇 Восстанавливаем форму поиска
     targetContainer.innerHTML = `
-      <form id="innForm" onsubmit="handleSubmit(event)">
-        <div class="inn-form__field">
-          <div class="inn-form__wrapper">
-            <div class="inn-form__input">
-              <input type="text" name="innForm" class="mask-inn-organization" id="innInput" placeholder=" " autocomplete="off">
-              <label for="innInput" class="inn-form__label"><span>ИНН</span></label>
+      <div class="inn-form bp-6">
+        <div class="inn-form__title">Укажите ИНН организации или ИП</div>
+        <form id="innForm" onsubmit="handleSubmit(event)">
+          <div class="inn-form__field">
+            <div class="inn-form__wrapper">
+              <div class="inn-form__input">
+                <input type="text" name="innForm"     class="mask-inn-organization" id="innInput" placeholder=" "
+                  autocomplete="off">
+                <label for="innInput" class="inn-form__label">
+                  <span>ИНН</span>
+                </label>
+              </div>
+              <div class="inn-form__dropdown" id="innDropdown">
+              </div>
             </div>
-            <div class="inn-form__dropdown" id="innDropdown"></div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     `;
-    // 👇 Перезапускаем маску
+    //* 👇 Перезапускаем маску
     maskInn();
 
-    // Переинициализируем поиск
+    //* Переинициализируем поиск
     initInnSearch();
   };
 
+  //* 👇 Показывает всплывающее уведомление
   function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
@@ -216,6 +292,7 @@ function initInnSearch() {
     }, 3000);
   }
 
+  //* 👇 Экранирует HTML-символы для защиты от XSS
   function escapeHtml(str) {
     if (!str) return '';
     return str
@@ -226,9 +303,11 @@ function initInnSearch() {
       .replace(/'/g, '&#39;');
   }
 
+  //* 👇 Отображает выпадающий список с найденными организациями
   function displayOrganizations(organizationsList) {
     dropdown.innerHTML = '';
 
+    //* 👇 Если есть результаты поиска - отображаем их
     if (organizationsList.length > 0) {
       organizationsList.forEach((org) => {
         const item = document.createElement('div');
@@ -250,6 +329,7 @@ function initInnSearch() {
         item.appendChild(innKppSpan);
         item.appendChild(addressSpan);
 
+        //* 👇 Обработчик выбора организации из списка
         item.addEventListener('click', (event) => {
           event.stopPropagation();
           isSelecting = true;
@@ -264,7 +344,7 @@ function initInnSearch() {
       });
     }
 
-    // Блок "Другой филиал"
+    //* 👇 Блок "Другой филиал" - всегда внизу списка
     const emptyDiv = document.createElement('a');
     emptyDiv.className = 'inn-form__dropdown-empty';
 
@@ -290,11 +370,12 @@ function initInnSearch() {
     emptyDiv.appendChild(descSpan);
     dropdown.appendChild(emptyDiv);
 
+    //* 👇 Показываем выпадающий список
     dropdown.style.display = 'block';
   }
 
-  // ========== ВРЕМЕННЫЙ МОК-ДАННЫЕ ДЛЯ ПРИМЕРА ==========
-  // Удали эту секцию при подключении реального API DaData
+  //* 👇  ВРЕМЕННЫЙ МОК-ДАННЫЕ ДЛЯ ПРИМЕРА
+  //todo 👇 (Для Виктора) Удали эту секцию при подключении реального API DaData
   const MOCK_DATA = [
     {
       name: 'Индивидуальный предприниматель Сергеев Семён Петрович',
@@ -334,7 +415,8 @@ function initInnSearch() {
     },
   ];
 
-  // Функция поиска (использует мок-данные для тестирования)
+  //* 👇 Функция поиска (использует мок-данные для тестирования)
+  //todo 👇 (Для Виктора) УДАЛИТЬ ЭТУ ФУНКЦИЮ ПРИ ПОДКЛЮЧЕНИИ РЕАЛЬНОГО API DaData
   function searchOrganizations(searchValue) {
     const cleanInn = getCleanInn(searchValue);
 
@@ -349,9 +431,9 @@ function initInnSearch() {
     displayOrganizations(filteredData);
   }
 
+  //todo 👇 (Для виктора) РЕАЛЬНАЯ ФУНКЦИЯ ДЛЯ API DADATA
+  //* 👇 Раскомментируй и вставь свой токен при подключении к реальному API
   /*
-  // ========== РЕАЛЬНАЯ ФУНКЦИЯ ДЛЯ API DADATA ==========
-  // Раскомментируй и вставь свой токен при подключении к реальному API
   async function searchOrganizations(searchValue) {
     const cleanInn = getCleanInn(searchValue);
     if (cleanInn.length < 3) {
@@ -391,6 +473,7 @@ function initInnSearch() {
   }
   */
 
+  //* 👇 Обработчик ввода текста (с debounce 300мс)
   function handleInput() {
     if (isSelecting) return;
     if (timeoutId) clearTimeout(timeoutId);
@@ -399,6 +482,7 @@ function initInnSearch() {
     }, 300);
   }
 
+  //* 👇 Закрывает выпадающий список при клике вне его
   function handleClickOutside(event) {
     if (
       dropdown &&
