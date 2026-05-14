@@ -426,10 +426,11 @@ document.addEventListener('DOMContentLoaded', function () {
             dynamicAdaptive();
           } else if (page === 'user-order') {
             leftMenuOpenClose();
+            showRejectModal();
             if (typeof itSelect === 'function') itSelect();
             if (typeof selectDropByer === 'function') selectDropByer();
             if (typeof autoResizeText === 'function') autoResizeText();
-            if (typeof showRejectModal === 'function') showRejectModal();
+            // if (typeof showRejectModal === 'function') showRejectModal();
           } else if (page === 'user-history') {
             leftMenuOpenClose();
             if (typeof itSelect === 'function') itSelect();
