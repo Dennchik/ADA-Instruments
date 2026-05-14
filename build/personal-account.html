@@ -573,6 +573,61 @@
 		</div>
 	</div>
 
+	<!-- * MODAL: Причина отказа  -->
+	<div class="modal-rejection" id="rejectModal">
+		<div class="modal-rejection__body">
+			<div class="modal-rejection__header">
+				<h3 class="modal-rejection__title">Причина отмены заказа</h3>
+				<span class="modal-rejection__close" id="closeModalBtn" type="button">
+					<i class="icofont-close"></i>
+				</span>
+			</div>
+			<div class="modal-rejection__content">
+				<form class="modal-rejection__form" id="rejectForm">
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Меняю адрес доставки">
+						<span class="modal-rejection__radio-text">Меняю адрес доставки</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Убираю/добавляю позиции">
+						<span class="modal-rejection__radio-text">Убираю/добавляю позиции</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Проблема с оплатой">
+						<span class="modal-rejection__radio-text">Проблема с оплатой</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="В другом магазине дешевле">
+						<span class="modal-rejection__radio-text">В другом магазине дешевле</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason"
+							value="В другом магазине доставка быстрее">
+						<span class="modal-rejection__radio-text">В другом магазине доставка быстрее</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Заказ больше не актуален">
+						<span class="modal-rejection__radio-text">Заказ больше не актуален</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Другая причина">
+						<span class="modal-rejection__radio-text">Другая причина</span>
+					</label>
+
+					<div class="modal-rejection__field">
+						<textarea class="modal-rejection__textarea" id="otherReason" rows="2"
+							placeholder="Укажите причину отмены заказа..."></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-rejection__footer">
+				<button class="modal-rejection__btn red_button" id="submitBtn" type="button" form="rejectForm">
+					<span>Отменить заказ</span>
+				</button>
+			</div>
+		</div>
+	</div>
+
 </body>
 
 </html>

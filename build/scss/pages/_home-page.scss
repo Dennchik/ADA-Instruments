@@ -160,7 +160,7 @@
       grid-template-columns: max-content 31%;
       gap: 15px;
 
-      @include screen-575 {
+      @include screen-768 {
         display: flex;
 
         .support-block__item {

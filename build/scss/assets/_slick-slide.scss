@@ -78,15 +78,30 @@
 
 .prev {
   .icofont-thin-left {
+    transition: color 0.4s ease-in-out;
+
     &::before {
       font-weight: 900;
+    }
+  }
+
+  &:hover {
+    .icofont-thin-left {
+      color: var(--danger);
     }
   }
 }
 .next {
   .icofont-thin-right {
+    transition: color 0.4s ease-in-out;
+
     &::before {
       font-weight: 900;
+    }
+  }
+  &:hover {
+    .icofont-thin-right {
+      color: var(--danger);
     }
   }
 }

@@ -1,0 +1,175 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?npwhlx');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?npwhlx#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?npwhlx') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?npwhlx') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?npwhlx##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-12 {
+  &:before {
+    content: $icon-12; 
+  }
+}
+.icon-search-2 {
+  &:before {
+    content: $icon-search-2; 
+  }
+}
+.icon-active-search-symbol_icon-iconscom_53795 {
+  &:before {
+    content: $icon-active-search-symbol_icon-iconscom_53795; 
+  }
+}
+.icon-11 {
+  &:before {
+    content: $icon-11; 
+  }
+}
+.icon-thin-left {
+  &:before {
+    content: $icon-thin-left; 
+  }
+}
+.icon-thin-right {
+  &:before {
+    content: $icon-thin-right; 
+  }
+}
+.icon-1 {
+  &:before {
+    content: $icon-1; 
+  }
+}
+.icon-cart {
+  &:before {
+    content: $icon-cart; 
+  }
+}
+.icon-user-account {
+  &:before {
+    content: $icon-user-account; 
+  }
+}
+.icon-sign-out {
+  &:before {
+    content: $icon-sign-out; 
+  }
+}
+.icon-vertical-dots {
+  &:before {
+    content: $icon-vertical-dots; 
+  }
+}
+.icon-management {
+  &:before {
+    content: $icon-management; 
+  }
+}
+.icon-catalog {
+  &:before {
+    content: $icon-catalog; 
+  }
+}
+.icon-rub {
+  &:before {
+    content: $icon-rub; 
+  }
+}
+.icon-angle-up {
+  &:before {
+    content: $icon-angle-up; 
+  }
+}
+.icon-angle-down {
+  &:before {
+    content: $icon-angle-down; 
+  }
+}
+.icon-angle-left {
+  &:before {
+    content: $icon-angle-left; 
+  }
+}
+.icon-angle-right {
+  &:before {
+    content: $icon-angle-right; 
+  }
+}
+.icon-check-box {
+  &:before {
+    content: $icon-check-box; 
+  }
+}
+.icon-pencil-alt {
+  &:before {
+    content: $icon-pencil-alt; 
+  }
+}
+.icon-minus {
+  &:before {
+    content: $icon-minus; 
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus; 
+  }
+}
+.icon-check2 {
+  &:before {
+    content: $icon-check2; 
+  }
+}
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down; 
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left; 
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right; 
+  }
+}
+.icon-arrow-up {
+  &:before {
+    content: $icon-arrow-up; 
+  }
+}
+

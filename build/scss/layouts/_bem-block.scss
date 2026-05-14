@@ -89,7 +89,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  background-color: #a5a5a5;
+  background-color: white;
   transition:
     transform 0.3s ease,
     opacity 0.1s ease 0.1s;
@@ -98,7 +98,7 @@
 //* ----------------------------------------------------------------------------
 .home_page .menu_button span i,
 .smaller .menu_button span i {
-  background-color: #a5a5a5;
+  background-color: white;
 }
 
 .menu_button span i:nth-child(1) {
@@ -680,6 +680,10 @@
   top: 0;
   width: 100%;
   display: none;
+
+  @include screen-490 {
+    padding: 25px 15px;
+  }
 }
 
 .top_search_body input[type='text'],

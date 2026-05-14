@@ -1,24 +1,30 @@
 //* ============== ГЛОБАЛЬНАЯ ФУНКЦИЯ ОБНОВЛЕНИЯ СЧЁТЧИКА КОРЗИНЫ ==============
-
 window.updateTotalCartQuantity = function () {
   let totalQuantity = 0;
-  // Собираем значения из всех полей количества (универсальный селектор)
+
   document
     .querySelectorAll('.quantity .input, .quantity__input .input')
     .forEach((input) => {
       let val = parseInt(input.value, 10);
       if (!isNaN(val) && val > 0) totalQuantity += val;
     });
+
   const cartQuantity = document.querySelector('.cart-user__quantity');
   if (cartQuantity) {
     cartQuantity.textContent = totalQuantity;
     cartQuantity.style.display = totalQuantity > 0 ? 'flex' : 'none';
   }
+
+  const sideMenuTovara = document.querySelector('.side-menu__col-tovara');
+  if (sideMenuTovara) {
+    sideMenuTovara.textContent = totalQuantity;
+    sideMenuTovara.style.display = totalQuantity > 0 ? 'flex' : 'none';
+  }
 };
 
 //* ====== ИНИЦИАЛИЗАЦИЯ СЧЁТЧИКОВ В КАТАЛОГЕ (с переключением видимости) ======
 function initCatalogCounters() {
-  document.querySelectorAll('.items_greed_wrapper').forEach((wrapper) => {
+  document.querySelectorAll('.items-greed__wrapper').forEach((wrapper) => {
     const addToCartBtn = wrapper.querySelector('.add-to-cart');
     const quantityBlock = wrapper.querySelector('.quantity');
     if (!addToCartBtn || !quantityBlock) return;
@@ -41,7 +47,6 @@ function initCatalogCounters() {
       updateItemVisibility();
     }
 
-    //* Если уже есть обработчики – не добавляем повторно
     if (addToCartBtn && !addToCartBtn.hasAttribute('data-listener')) {
       addToCartBtn.setAttribute('data-listener', 'true');
       addToCartBtn.addEventListener('click', (e) => {
@@ -78,14 +83,10 @@ function initCatalogCounters() {
     updateItemVisibility();
   });
 }
-initCatalogCounters();
+
 //* === ИНИЦИАЛИЗАЦИЯ ВСЕХ ОСТАЛЬНЫХ СЧЁТЧИКОВ (без переключения видимости) ====
 function initOtherCounters() {
-  // Ищем все блоки .product-cart__quantity (в корзине) и любые другие .quantity, которые не внутри .items_greed_wrapper
-  const otherBlocks = document.querySelectorAll(
-    '.product-cart__quantity, .quantity:not(.items_greed_wrapper .quantity)'
-  );
-  console.log(otherBlocks);
+  const otherBlocks = document.querySelectorAll('.product-cart__quantity');
 
   otherBlocks.forEach((block) => {
     if (block.hasAttribute('data-quantity-initialized')) return;
@@ -132,7 +133,7 @@ function initOtherCounters() {
     }
   });
 }
-initOtherCounters();
+
 //* ==== ЛОГИКА ДЛЯ СТРАНИЦЫ КОРЗИНЫ (суммы, удаление, переключение блоков) ====
 function initCartPageSpecific() {
   const cart = document.querySelector('.product-cart');
@@ -162,7 +163,7 @@ function initCartPageSpecific() {
     cart.querySelectorAll('.product-cart__new-price').forEach((el) => {
       productsTotal += getNumberFromBlock(el);
     });
-    const discount = getNumberFromBlock(discountBlock);
+    const discount = discountBlock ? getNumberFromBlock(discountBlock) : 0;
     let finalWithDiscount = productsTotal - discount;
     if (finalWithDiscount < 0) finalWithDiscount = 0;
     if (fullSumBlock) fullSumBlock.textContent = formatPrice(productsTotal);
@@ -204,11 +205,14 @@ function initCartPageSpecific() {
       item.dataset.pricePerUnit = pricePerUnit;
 
       const updatePriceAndSum = () => {
-        const newQty = parseInt(input.value, 10) || 1;
-        if (newQty > 0) {
-          const newTotal = pricePerUnit * newQty;
-          priceSpan.textContent = formatPrice(newTotal);
+        let newQty = parseInt(input.value, 10) || 0;
+        if (newQty <= 0) {
+          item.remove();
+          updateCartVisibility();
+          return;
         }
+        const newTotal = pricePerUnit * newQty;
+        priceSpan.textContent = formatPrice(newTotal);
         updateTotalSums();
         window.updateTotalCartQuantity();
       };
@@ -231,29 +235,32 @@ function initCartPageSpecific() {
   }
 
   function initDeleteButtons() {
-    cart.querySelectorAll('.product-cart__item').forEach((item) => {
-      const deleteBtn = item.querySelector('[id="delete-product"]');
-      if (deleteBtn && !deleteBtn.hasAttribute('data-listener')) {
-        deleteBtn.setAttribute('data-listener', 'true');
-        deleteBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          item.remove();
-          updateCartVisibility();
-        });
+    if (cart.hasAttribute('data-delete-listener')) return;
+    cart.setAttribute('data-delete-listener', 'true');
+
+    cart.addEventListener('click', (e) => {
+      const deleteBtn = e.target.closest('[id="delete-product"]');
+      if (!deleteBtn) return;
+      e.preventDefault();
+      const item = deleteBtn.closest('.product-cart__item');
+      if (item) {
+        item.remove();
+        updateCartVisibility();
       }
     });
   }
 
   function initDeleteAllButton() {
-    if (!deleteAllBtn || deleteAllBtn.hasAttribute('data-listener')) return;
-    deleteAllBtn.setAttribute('data-listener', 'true');
-    deleteAllBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      cart
-        .querySelectorAll('.product-cart__item')
-        .forEach((item) => item.remove());
-      updateCartVisibility();
-    });
+    if (deleteAllBtn && !deleteAllBtn.hasAttribute('data-listener')) {
+      deleteAllBtn.setAttribute('data-listener', 'true');
+      deleteAllBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        cart
+          .querySelectorAll('.product-cart__item')
+          .forEach((item) => item.remove());
+        updateCartVisibility();
+      });
+    }
   }
 
   initCartQuantityControls();
@@ -261,13 +268,14 @@ function initCartPageSpecific() {
   initDeleteAllButton();
   updateCartVisibility();
 }
-initCartPageSpecific();
-//* ==================== ЗАПУСК ПРИ ЗАГРУЗКЕ ===================================
 
-document.addEventListener('DOMContentLoaded', function () {
-  initCatalogCounters(); //* счётчики в каталоге с переключением кнопка/счётчик
-  initOtherCounters(); //* все остальные счётчики (корзина и пр.)
+//* ==================== ЕДИНАЯ ФУНКЦИЯ ИНИЦИАЛИЗАЦИИ ==========================
+function initCounter() {
+  initCatalogCounters();
+  initOtherCounters();
   if (document.querySelector('.cart-page')) {
-    initCartPageSpecific(); //* дополнительная логика для страницы корзины
+    initCartPageSpecific();
   }
-});
+}
+
+initCounter();

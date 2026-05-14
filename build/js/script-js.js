@@ -330,6 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //* Глобальное закрытие по Escape для любых открытых модалок
   document.addEventListener('keydown', handleEscape);
 });
+
 //todo Функция автоматической подстройки высоты
 //todo 👇 (Для Виктора)
 function autoResizeTextarea(textarea) {

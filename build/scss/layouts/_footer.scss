@@ -75,7 +75,10 @@
     margin-bottom: 75px;
 
     .icofont-thin-down {
-      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       transition:
         transform 0.4s,
         color 0.4s ease-in-out;
@@ -138,6 +141,13 @@
 
   // .footer__search
   &__search {
+    // display: flex;
+    // align-items: center;
+
+    .icon-search-1 {
+      font-size: 20px;
+    }
+
     form {
       position: relative;
     }
@@ -320,12 +330,9 @@
       font-size: 22px;
       width: 22px;
       height: 22px;
-      font-weight: 600;
       color: #a4a4a4;
-      &::before {
-        width: 22px;
-        height: 22px;
-      }
+      margin-left: 10px;
+      font-weight: 700;
     }
   }
 
