@@ -445,7 +445,7 @@ function initInnSearch() {
   }
 
   //* 👇 Функция для замены формы на форму с данными организации
-  async function replaceFormWithOrganizationData(org) {
+  function replaceFormWithOrganizationData(org) {
     // Находим контейнер
     const targetContainer = document.getElementById('innForm')?.parentNode;
 
@@ -454,89 +454,105 @@ function initInnSearch() {
       return;
     }
 
-    try {
-      //* 👇 Загружаем контент ТОЛЬКО из файла
-      const response = await fetch('./user/organizations/form-content.html');
-      editBankingDetails();
-      if (!response.ok) {
-        throw new Error(`Ошибка загрузки файла: ${response.status}`);
-      }
+    //todo 👇 (Для Виктора) Создаем новую форму с данными организации
+    const newForm = document.createElement('form');
+    newForm.id = 'organizationDataForm';
+    newForm.className = 'org-form org-form__section';
+    newForm.innerHTML = `
+      <div class="org-form__header">
+        <button type="button" class="org-form__back-btn" onclick="window.backToSearch()">
+          <i class="icofont-long-arrow-left"></i>
+          <span>Вернуться к поиску</span>
+          <i class="icofont-close"></i>
+        </button>
+      </div>
 
-      let htmlContent = await response.text();
+      <div class="org-form__body">
+        <div class="org-form__column">
+          <div class="org-form__content">
+            <div class="org-form__field">
+              <div class="org-form__label">Наименование организации</div>
+              <div class="org-form__name-value">${escapeHtml(org.name)}</div>
+            </div>
 
-      //* 👇 Заменяем плейсхолдеры на данные организации
-      htmlContent = htmlContent
-        .replace(/\{\{org\.name\}\}/g, escapeHtml(org.name))
-        .replace(/\{\{org\.inn\}\}/g, org.inn)
-        .replace(/\{\{org\.kpp\}\}/g, org.kpp)
-        .replace(
-          /\{\{org\.address\}\}/g,
-          escapeHtml(org.address || 'Адрес не указан')
-        );
+            <div class="org-form__line">
+              <div class=" org-form__field">
+                <div class="org-form__label">ИНН</div>
+                <div class="org-form__inn-value">${org.inn}</div>
+              </div>
 
-      // Создаем новую форму
-      const newForm = document.createElement('form');
-      newForm.id = 'organizationDataForm';
-      newForm.className = 'org-form org-form__section';
-      newForm.innerHTML = htmlContent;
+              <div class="org-form__field">
+                <div class="org-form__label">КПП</div>
+                <div class="org-form__kpp-value">${org.kpp}</div>
+              </div>
+            </div>
 
-      // Очищаем контейнер и добавляем новую форму
-      targetContainer.innerHTML = '';
-      targetContainer.appendChild(newForm);
+            <div class="org-form__field">
+              <div class="org-form__label">Фактический адрес</div>
+              <div class="org-form__address-value">${escapeHtml(org.address || 'Адрес не указан')}</div>
+            </div> 
+          </div>
 
-      //* 👇 Вызываем функции после загрузки
-      if (typeof collapseBlock === 'function') {
-        collapseBlock();
-      }
+          <div class="org-form__bank-requisites">
+            <div class="org-form__reg-button">
+              <span>Указать банковские реквизиты</span>
+              <i class="icofont-thin-down"></i>
+            </div>
 
-      // Добавляем обработчик для кнопки
-      const addBtn = document.getElementById('addOrganizationBtn');
-      if (addBtn) {
-        addBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          submitOrganizationData(org);
-        });
-      }
+            <div class="org-form__collapse">
+              <div class="org-form__wrapper">
+                <fieldset class="org-form__field">
+                  <label class="org-form__label" for="paymentAccount">
+                  Расчетный счет
+                  </label>
+                  <input id="paymentAccount" class="org-form__input" autocomplete="off" type="text" name="paymentAccount"
+                    data-error="Ошибка" data value="">
+                </fieldset>
 
-      const container = document.querySelector('.org-form__name');
-      if (container) {
-        const popUp = container.querySelector('.pop-up');
-        const button = container.querySelector('.org-form__button-edit');
-        console.log(container);
+                <fieldset class="org-form__field">
+                  <label class="org-form__label" for="bik">Бик банка</label>
+                  <input id="bik" class="org-form__input" autocomplete="off" type="text" name="bik" data-error="Ошибка"
+                    data value="">
+                </fieldset>
 
-        if (button && popUp) {
-          button.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            popUp.classList.toggle('_show');
-            //* 👇 Добавляем обработчик для закрытия по клику
-            document.addEventListener('click', closeOnClick);
-          });
-        }
+                <fieldset class="org-form__field">
+                  <label class="org-form__label" for="nameBank">
+                  Наименование банка
+                  </label>
+                  <input id="nameBank" class="org-form__input" autocomplete="off" type="text" name="nameBank"
+                    data-error="Ошибка" data value="">
+                </fieldset>
 
-        //* 👇 Функция для закрытия модалки
-        function closeModal() {
-          popUp.classList.remove('_show');
-          document.removeEventListener('click', closeOnClick);
-        }
-
-        //* 👇 Закрытие по клику в любом месте
-        function closeOnClick(e) {
-          //* 👇 Не закрываем, если клик был по кнопке или внутри popUp
-          if (!popUp.contains(event.target)) {
-            closeModal();
-          }
-        }
-      }
-    } catch (error) {
-      console.error('Ошибка при загрузке контента из файла:', error);
-      //* 👇 Показываем сообщение об ошибке, но НЕ вставляем встроенный HTML
-      targetContainer.innerHTML = `
-      <div class="error-message">
-        <p>Ошибка загрузки формы. Пожалуйста, обновите страницу.</p>
-        <button onclick="window.backToSearch()">Вернуться к поиску</button>
+                <fieldset class="org-form__field">
+                  <label class="org-form__label" for="correspondentAccount">
+                  Корреспондентский счет
+                  </label>
+                  <input id="correspondentAccount" class="org-form__input" autocomplete="off" type="text"
+                    name="correspondentAccount" data-error="Ошибка" data value="">
+                </fieldset>
+              </div>
+            </div>
+          </div> 
+          <div class="org-form__actions">
+            <button type="button" class="org-form__submit-btn red_button" id="addOrganizationBtn">Добавить организацию
+            </button>
+          </div>
+        </div>
       </div>
     `;
+
+    //* 👇 Очищаем контейнер и добавляем новую форму
+    targetContainer.innerHTML = '';
+    targetContainer.appendChild(newForm);
+    collapseBlock();
+
+    //* 👇 Добавляем обработчик для кнопки "Добавить организацию"
+    const addBtn = document.getElementById('addOrganizationBtn');
+    if (addBtn) {
+      addBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        submitOrganizationData(org);
+      });
     }
   }
 
@@ -646,22 +662,24 @@ function initInnSearch() {
 
     //* 👇 Восстанавливаем форму поиска
     targetContainer.innerHTML = `
-      <div class="inn-form__title">Укажите ИНН организации или ИП</div>
-      <form id="innForm" onsubmit="handleSubmit(event)">
-        <div class="inn-form__field">
-          <div class="inn-form__wrapper">
-            <div class="inn-form__input">
-              <input type="text" name="innForm"     class="mask-inn-organization" id="innInput" placeholder=" "
-                autocomplete="off">
-              <label for="innInput" class="inn-form__label">
-                <span>ИНН</span>
-              </label>
-            </div>
-            <div class="inn-form__dropdown" id="innDropdown">
+      <div class="inn-form bp-6">
+        <div class="inn-form__title">Укажите ИНН организации или ИП</div>
+        <form id="innForm" onsubmit="handleSubmit(event)">
+          <div class="inn-form__field">
+            <div class="inn-form__wrapper">
+              <div class="inn-form__input">
+                <input type="text" name="innForm"     class="mask-inn-organization" id="innInput" placeholder=" "
+                  autocomplete="off">
+                <label for="innInput" class="inn-form__label">
+                  <span>ИНН</span>
+                </label>
+              </div>
+              <div class="inn-form__dropdown" id="innDropdown">
+              </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     `;
     //* 👇 Перезапускаем маску
     maskInn();

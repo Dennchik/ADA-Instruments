@@ -378,11 +378,10 @@
   // .org-form__reg-button
   &__reg-button {
     cursor: pointer;
-    padding: 20px;
+    // padding: 0 20px;
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: var(--background-fon);
 
     span {
       text-align-last: left;
@@ -408,9 +407,7 @@
   // .org-form__collapse
   &__collapse {
     display: grid;
-    padding: 0 20px;
     grid-template-rows: 0fr;
-    background-color: var(--background-fon);
     transition: grid-template-rows 0.3s ease-in-out;
   }
 
@@ -424,15 +421,25 @@
   &__field {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 3px;
+  }
+
+  // .org-form__fieldset
+  &__fieldset {
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
   }
 
   // .org-form__label
   &__label {
     display: flex;
     gap: 5px;
-    color: #a5a5a5;
+    color: rgb(176, 176, 176);
     font-size: 12px;
 
     @include screen-690 {
@@ -443,7 +450,7 @@
   // .org-form__input
   &__input {
     width: 100%;
-    padding: 10px 10px;
+    padding: 5px 10px;
     border: 1px solid #cecece59;
     font-size: 14px;
     background-color: rgb(255, 255, 255);
@@ -465,7 +472,7 @@
   &__header {
     display: flex;
     align-items: center;
-    padding: 16px;
+    padding: 16px 0;
 
     button {
       display: flex;
@@ -511,8 +518,6 @@
 
   // .org-form__content
   &__content {
-    padding: 20px;
-    background-color: var(--background-fon);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -541,9 +546,38 @@
     gap: 30px;
   }
 
+  // .org-form__button-edit
+  &__button-edit {
+    cursor: pointer;
+    padding: 5px;
+    margin-right: -12px;
+
+    .vertical-dots {
+      width: 24px;
+    }
+  }
+
+  // .org-form__name
+  &__name {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+
+    .pop-up {
+      transform: scale(0);
+      transition: transform 0.4s ease-in-out;
+      &._show {
+        transform: scale(1);
+        pointer-events: all;
+      }
+    }
+  }
+
   // .org-form__value
   &__name-value {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
 
     @include screen-690 {

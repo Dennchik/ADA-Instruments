@@ -369,14 +369,14 @@
   // .select__drop-down
   &__drop-down {
     position: absolute;
-    width: 100%;
-
-    z-index: 9;
+    margin: 0 auto;
+    width: 98%;
+    left: 0;
     right: 0;
     top: 5px;
     background-color: #fff;
-
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.635);
+    z-index: 9;
+    box-shadow: 0 0 8px rgba(90, 90, 90, 0.418);
 
     .close-button {
       cursor: pointer;

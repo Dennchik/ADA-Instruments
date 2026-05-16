@@ -1,4 +1,4 @@
-//* ============== ГЛОБАЛЬНАЯ ФУНКЦИЯ ОБНОВЛЕНИЯ СЧЁТЧИКА КОРЗИНЫ ==============
+//* ============ ГЛОБАЛЬНАЯ ФУНКЦИЯ ОБНОВЛЕНИЯ СЧЁТЧИКА КОРЗИНЫ ================
 window.updateTotalCartQuantity = function () {
   let totalQuantity = 0;
 
@@ -22,7 +22,7 @@ window.updateTotalCartQuantity = function () {
   }
 };
 
-//* ====== ИНИЦИАЛИЗАЦИЯ СЧЁТЧИКОВ В КАТАЛОГЕ ======
+//* ================= ИНИЦИАЛИЗАЦИЯ СЧЁТЧИКОВ В КАТАЛОГЕ =======================
 function initCatalogCounters() {
   document.querySelectorAll('.items-greed__wrapper').forEach((wrapper) => {
     const addToCartBtn = wrapper.querySelector('.add-to-cart');
@@ -84,7 +84,7 @@ function initCatalogCounters() {
   });
 }
 
-//* === ИНИЦИАЛИЗАЦИЯ ВСЕХ ОСТАЛЬНЫХ СЧЁТЧИКОВ ====
+//* =============== ИНИЦИАЛИЗАЦИЯ ВСЕХ ОСТАЛЬНЫХ СЧЁТЧИКОВ =====================
 function initOtherCounters() {
   const otherBlocks = document.querySelectorAll('.product-cart__quantity');
 
@@ -134,7 +134,7 @@ function initOtherCounters() {
   });
 }
 
-//* ==== ЛОГИКА ДЛЯ СТРАНИЦЫ КОРЗИНЫ ======
+//* ==================== ЛОГИКА ДЛЯ СТРАНИЦЫ КОРЗИНЫ ===========================
 function initCartPageSpecific() {
   const cart = document.querySelector('.product-cart');
   if (!cart) return;
@@ -269,7 +269,7 @@ function initCartPageSpecific() {
   updateCartVisibility();
 }
 
-//* ==================== ЕДИНАЯ ФУНКЦИЯ ИНИЦИАЛИЗАЦИИ ==========================
+//* =============== ЕДИНАЯ ФУНКЦИЯ ИНИЦИАЛИЗАЦИИ СЧЁТЧИКА ======================
 function initCounter() {
   initCatalogCounters();
   initOtherCounters();
@@ -278,7 +278,7 @@ function initCounter() {
   }
 }
 
-// Запускаем после загрузки страницы
+//* Запускаем после загрузки страницы
 document.addEventListener('DOMContentLoaded', function () {
   initCounter();
 });
@@ -297,6 +297,27 @@ document.addEventListener('DOMContentLoaded', function () {
   if (content && sideMenuList) {
     // Добавил проверку sideMenuList
 
+    // 👉 НОВОЕ: Функция для получения страницы из URL параметров
+    function getPageFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      const page = params.get('page');
+      const validPages = [
+        'user-account',
+        'user-order',
+        'user-history',
+        'user-profile',
+        'user-organizations',
+        'user-repair',
+      ];
+      return validPages.includes(page) ? page : null;
+    }
+
+    // 👉 НОВОЕ: Функция для обновления URL без перезагрузки страницы
+    function updateURL(page) {
+      const newURL = `${window.location.pathname}?page=${page}`;
+      window.history.pushState({ page }, '', newURL);
+    }
+
     // Функция для получения текста кнопки по data-page
     function getPageTitle(page) {
       const button = sideMenuList.querySelector(
@@ -305,17 +326,17 @@ document.addEventListener('DOMContentLoaded', function () {
       return button ? button.textContent.trim() : page;
     }
 
-    // Функция для обновления хлебных крошек
+    // 👇 Функция для обновления хлебных крошек
     function updateBreadcrumbs(page, pageTitle) {
       const breadcrumb = document.querySelector('.breadcrumb');
       if (!breadcrumb) return;
 
-      // Очищаем все li, кроме первого (Главная)
+      // 👇 Очищаем все li, кроме первого (Главная)
       while (breadcrumb.children.length > 1) {
         breadcrumb.removeChild(breadcrumb.lastChild);
       }
 
-      // Добавляем второй уровень (Личный кабинет)
+      // 👇 Добавляем второй уровень (Личный кабинет)
       const secondLi = document.createElement('li');
       const secondSpan = document.createElement('span');
       secondSpan.className = 'tab-button';
@@ -324,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function () {
       secondLi.appendChild(secondSpan);
       breadcrumb.appendChild(secondLi);
 
-      // Если это не страница личного кабинета, добавляем третий уровень
+      // 👇 Если это не страница личного кабинета, добавляем третий уровень
       if (page !== 'user-account') {
         const thirdLi = document.createElement('li');
         const thirdSpan = document.createElement('span');
@@ -334,10 +355,10 @@ document.addEventListener('DOMContentLoaded', function () {
         thirdLi.appendChild(thirdSpan);
         breadcrumb.appendChild(thirdLi);
 
-        // Убираем класс active у второго уровня
+        // 👇 Убираем класс active у второго уровня
         secondSpan.classList.remove('active');
       } else {
-        // На странице личного кабинета делаем активным второй уровень
+        // 👇 На странице личного кабинета делаем активным второй уровень
         secondSpan.classList.add('active');
       }
       // 👇 инициализируем клики по крошкам
@@ -364,7 +385,8 @@ document.addEventListener('DOMContentLoaded', function () {
           );
           if (targetButton) {
             setActiveButton(targetButton);
-            loadPage(page);
+            // 👉 ИЗМЕНЕНО: теперь используем navigateToPage вместо прямого loadPage
+            navigateToPage(page);
           }
         });
       });
@@ -372,32 +394,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 👇 Устанавливает активную кнопку в боковом меню
     function setActiveButton(activeLink) {
-      // Удаляем класс active-link у всех кнопок ТОЛЬКО внутри side-menu__list
       const allLinks = sideMenuList.querySelectorAll('.tab-button');
       allLinks.forEach((btn) => {
         btn.classList.remove('active-link');
       });
-      // Добавляем класс active-link выбранной кнопке
+      // 👇 Добавляем класс active-link выбранной кнопке
       if (activeLink) {
         activeLink.classList.add('active-link');
       }
     }
 
+    // 👉 НОВОЕ: Функция навигации с обновлением URL
+    function navigateToPage(page) {
+      // Проверяем, не загружаем ли уже эту страницу
+      const currentPage = getPageFromURL();
+      if (currentPage === page) return;
+
+      // Обновляем URL
+      updateURL(page);
+      // Загружаем контент
+      loadPage(page);
+    }
+
+    // 👉 НОВОЕ: Обработка кнопки "Назад" и "Вперёд" в браузере
+    window.addEventListener('popstate', (event) => {
+      const page = event.state?.page || getPageFromURL() || 'user-account';
+      // Временно отключаем обновление URL, чтобы не зациклить
+      const targetButton = sideMenuList.querySelector(
+        `.tab-button[data-page="${page}"]`
+      );
+      if (targetButton) {
+        setActiveButton(targetButton);
+      }
+      loadPage(page);
+    });
+
     // 👇 Привязывает обработчики кликов к кнопкам меню
     function bindEvents() {
       const links = sideMenuList.querySelectorAll('.tab-button');
       links.forEach((link) => {
-        // Удаляем старые обработчики, чтобы не дублировать
+        // 👇 Удаляем старые обработчики, чтобы не дублировать
         link.removeEventListener('click', link._listener);
         // Создаём новый обработчик
         const handler = function () {
           const page = this.getAttribute('data-page');
-          if (!page) return; // Пропускаем кнопки без data-page
+          if (!page) return; // 👇 Пропускаем кнопки без data-page
 
-          // Устанавливаем активную кнопку
+          // 👇 Устанавливаем активную кнопку
           setActiveButton(this);
-          // Загружаем контент
-          loadPage(page);
+          // 👉 ИЗМЕНЕНО: теперь используем navigateToPage вместо прямого loadPage
+          navigateToPage(page);
         };
         link._listener = handler;
         link.addEventListener('click', handler);
@@ -414,12 +460,12 @@ document.addEventListener('DOMContentLoaded', function () {
         .then((data) => {
           content.innerHTML = data;
 
-          // Обновляем хлебные крошки
+          // 👇 Обновляем хлебные крошки
           const pageTitle = getPageTitle(page);
           updateBreadcrumbs(page, pageTitle);
           window.updateTotalCartQuantity();
 
-          // Запускаем специфичные для страницы инициализации
+          // 👇 Запускаем специфичные для страницы инициализации
           if (page === 'user-account') {
             if (typeof maskPhone === 'function') maskPhone();
             leftMenuOpenClose();
@@ -430,23 +476,25 @@ document.addEventListener('DOMContentLoaded', function () {
             if (typeof itSelect === 'function') itSelect();
             if (typeof selectDropByer === 'function') selectDropByer();
             if (typeof autoResizeText === 'function') autoResizeText();
-            // if (typeof showRejectModal === 'function') showRejectModal();
           } else if (page === 'user-history') {
             leftMenuOpenClose();
             if (typeof itSelect === 'function') itSelect();
             if (typeof selectDropByer === 'function') selectDropByer();
             if (typeof autoResizeText === 'function') autoResizeText();
-            initCounter(); // Переинициализируем счётчики после загрузки
+            // 👇 Переинициализируем счётчики после загрузки
+            initCounter();
           } else if (page === 'user-profile') {
             leftMenuOpenClose();
             dynamicAdaptive();
             if (typeof maskPhone === 'function') maskPhone();
-          } else if (page === 'user-organitrashion') {
+          } else if (page === 'user-organizations') {
             leftMenuOpenClose();
-            // Вызываем маску и поиск ПОСЛЕ загрузки контента
+            editBankingDetails();
+            // 👇 Вызываем маску и поиск ПОСЛЕ загрузки контента
             if (typeof maskInn === 'function') maskInn();
             if (typeof initInnSearch === 'function') initInnSearch();
           } else if (page === 'user-repair') {
+            leftMenuOpenClose();
           }
         })
         .catch((error) => {
@@ -454,20 +502,58 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 👇 Определяем кнопку по умолчанию (user-account или первую)
-    const defaultButton =
-      sideMenuList.querySelector('.tab-button[data-page="user-account"]') ||
-      sideMenuList.querySelector('.tab-button');
+    // 👉 ИЗМЕНЕНО: Определяем кнопку по умолчанию или из URL
+    let defaultButton;
+    const pageFromURL = getPageFromURL();
+
+    if (pageFromURL) {
+      // Если в URL указана страница, используем её
+      defaultButton = sideMenuList.querySelector(
+        `.tab-button[data-page="${pageFromURL}"]`
+      );
+      if (!defaultButton) {
+        defaultButton =
+          sideMenuList.querySelector('.tab-button[data-page="user-account"]') ||
+          sideMenuList.querySelector('.tab-button');
+      }
+    } else {
+      // Иначе используем user-account или первую кнопку
+      defaultButton =
+        sideMenuList.querySelector('.tab-button[data-page="user-account"]') ||
+        sideMenuList.querySelector('.tab-button');
+    }
 
     if (defaultButton) {
+      const defaultPage = defaultButton.getAttribute('data-page');
       setActiveButton(defaultButton);
-      loadPage('user-account');
+      // 👉 ИЗМЕНЕНО: загружаем страницу и обновляем URL, если нужно
+      loadPage(defaultPage);
+      // Обновляем URL, если его нет или он не соответствует
+      if (!getPageFromURL() || getPageFromURL() !== defaultPage) {
+        updateURL(defaultPage);
+      }
     }
 
     bindEvents();
+
+    // 👉 НОВОЕ: Автоматическая обработка всех ссылок с data-page атрибутом (для внешних переходов)
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[data-page]');
+      if (link && link.dataset.page) {
+        e.preventDefault();
+        const page = link.dataset.page;
+        const targetButton = sideMenuList.querySelector(
+          `.tab-button[data-page="${page}"]`
+        );
+        if (targetButton) {
+          setActiveButton(targetButton);
+          navigateToPage(page);
+        }
+      }
+    });
   }
 });
-//* ----------------------------------------------------------------------------
+//todo -------- Показ модального окна (мои заказы - отмена заказа) -------------
 function showRejectModal() {
   const buttons = document.querySelectorAll('.cancel-order');
   const modal = document.querySelector('.modal-rejection');
@@ -477,22 +563,22 @@ function showRejectModal() {
 
   if (!modal) return;
 
-  // Закрытие по крестику
+  // 👇 Закрытие по крестику
   if (closeModal) {
     closeModal.onclick = () => modal.classList.remove('open');
   }
 
-  // Закрытие по клику на фон
+  // 👇 Закрытие по клику на фон
   modal.onclick = (e) => {
     if (e.target === modal) modal.classList.remove('open');
   };
 
-  // Открытие по кнопкам отмены
+  // 👇 Открытие по кнопкам отмены
   buttons.forEach((button) => {
     button.onclick = () => modal.classList.add('open');
   });
 
-  // Симуляция отправки формы
+  // 👇 Симуляция отправки формы
   if (submitBtn && form) {
     submitBtn.onclick = () => {
       // Получаем выбранную причину
@@ -505,22 +591,25 @@ function showRejectModal() {
         reasonValue = selectedReason.value;
       }
 
-      // Показываем состояние загрузки (опционально)
+      // 👇 Показываем состояние загрузки (опционально)
       submitBtn.disabled = true;
       submitBtn.textContent = 'Отправка...';
 
-      // Симуляция задержки сервера
+      // 👇 Симуляция задержки сервера
       setTimeout(() => {
         // Сбрасываем форму
         form.reset();
 
-        // Закрываем модалку
+        // 👇 Закрываем модалку
         modal.classList.remove('open');
 
-        // Возвращаем кнопку в исходное состояние
+        // 👇 Возвращаем кнопку в исходное состояние
         submitBtn.disabled = false;
         submitBtn.textContent = 'Отменить заказ';
       }, 2000);
     };
   }
 }
+//todo ----------- Показ pop-up окна (Редактировать реквизиты) -----------------
+function editBankingDetails() {}
+//todo ----------- Показ pop-up окна (Редактировать реквизиты) -----------------

@@ -428,7 +428,7 @@
 }
 
 @mixin minmax-320-425 {
-  @media (width >= 320px) and (width <= 425px) {
+  @media (width >= 320px) and (width < 425px) {
     @content;
   }
 }
