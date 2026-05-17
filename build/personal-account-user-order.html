@@ -203,8 +203,11 @@
 			<div class="container">
 				<ol class="breadcrumb">
 					<li><a href="./index.html">главная</a></li>
+					<li class="tab-button">
+						<a href="./personal-account.html" class="">Личный кабинет</a>
+					</li>
 					<li class="tab-button active">
-						<span class="">Личный кабинет</span>
+						<span class="">Мои заказы</span>
 					</li>
 				</ol>
 			</div>
@@ -224,11 +227,11 @@
 						<!-- * [ MENU -LEFT ] -->
 						<ul class="side-menu__list">
 							<li class="side-menu__item">
-								<a href="./personal-account.html" class="side-menu__tab-link active-link" data-page="user-account">
+								<a href="./personal-account.html" class="side-menu__tab-link">
 									Личный кабинет</a>
 							</li>
 							<li class="side-menu__item">
-								<a href="./personal-account-user-order.html" class="side-menu__tab-link">Мои заказы</a>
+								<a href="./personal-account-user-order.html" class="side-menu__tab-link active-link">Мои заказы</a>
 							</li>
 							<li class="side-menu__item">
 								<a href="./personal-account-user-history.html" class="side-menu__tab-link">
@@ -255,206 +258,175 @@
 				</div>
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
-					<div class="acccount-section__tabs">
-						<!-- ! --------------------------[ TAB - Личный кабинет ] -------------------------- -->
-						<div class="acccount-section__tab-content inner-content user-account">
-							<!-- * -->
+					<div class="acccount-section__tabs personal-data">
+						<!-- ! ------------------------ [ TAB - User-order ] ------------------------------- -->
+						<div class="acccount-section__tab-content inner-content order-user" data-page="order-user">
 							<div class="acccount-content">
 								<div class="acccount-content__body">
-									<div class="acccount-content__header">
-										<!-- * [ BUTTONS ] -->
-
-										<div class="acccount-section__buttons">
-											<div class="acccount-section__open-menu _open-menu">
-												<div class="vertical-dots" id="verticalDots">
-													<span></span>
-													<span></span>
-													<span></span>
+									<!-- * content__column - 1 -->
+									<div class="acccount-content__column">
+										<div class="acccount-content__header">
+											<!-- * [ BUTTONS ] -->
+											<div class="acccount-section__buttons">
+												<div class="acccount-section__open-menu _open-menu">
+													<div class="vertical-dots" id="verticalDots">
+														<span></span>
+														<span></span>
+														<span></span>
+													</div>
 												</div>
 											</div>
+											<div class="acccount-content__title">
+												<h2 class="font_clamp_50">Мои заказы</h2>
+											</div>
 										</div>
-										<div class="acccount-content__title">
-											<h2 class="font_clamp_50">Личный кабинет</h2>
-										</div>
+										<form action="#" method="#" class="form-search">
+											<fieldset class="form-search__group">
+												<div class="form-search__input">
+													<input type="text" id="search-product" placeholder=" " name="search-product">
+													<label class="form-search__label" for="search-product">
+														<span>Быстрый поиск: введите наименование или код товара</span>
+													</label>
+												</div>
+												<button class="form-search__button" type="submit">
+													<i class="icofont-search-2" value="Submit"></i>
+												</button>
+											</fieldset>
+										</form>
 									</div>
-									<form class="form-user" id="orderForm">
-										<div class="form-user__wrapp-group bp-1">
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!--* ФИО -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="fullname">ФИО</label>
-													<input class="form-user__input" type="text" id="fullname" name="fullname"
-														placeholder="Иванов Иван Иванович" value="">
-												</div>
-												<!--* Дата рождения -->
-												<div class="form-user__group">
-													<label class="form-user__label text-right" for="birthdate">Дата рождения</label>
-													<input class="form-user__input text-right" type="date" id="birthdate" name="birthdate">
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<!-- * [ FORM ] -->
-											<div class="form-user__line">
+									<!-- * content__column - 2 -->
+									<div class="acccount-content__column">
+										<div class="profile">
+											<div class="select-group profile__body" data-select>
+												<!-- * -->
+												<div class="select-group__dropdown">
+													<div class="select">
 
-												<!--* Пол (радиокнопки) -->
-												<div class="form-user__group">
-													<span class="form-user__label">Пол</span>
-													<div class="radio-group">
-														<label class="radio-group__item">
-															<input class="radio-group__input" type="radio" name="gender" value="male" required>
-															<span class="radio-group__label">Мужской</span>
-														</label>
-														<label class="radio-group__item">
-															<input class="radio-group__input" type="radio" name="gender" value="female" required>
-															<span class="radio-group__label">Женский</span>
-														</label>
-													</div>
-												</div>
-
-												<!--* Город -->
-												<div class="form-user__group">
-													<label class="form-user__label text-right" for="city">Город *</label>
-													<input class="form-user__input text-right" type="text" id="city" name="city"
-														placeholder="Москва" required>
-												</div>
-											</div>
-											<!-- * [ / FORM ] -->
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Email -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="email">Email</label>
-													<input class="form-user__input" type="email" id="email" name="email" autocomplete="email"
-														placeholder="example@mail.ru" required>
-												</div>
-												<!--* Телефон -->
-												<div class="form-user__group">
-
-													<label class="form-user__label text-right" for="phone">Телефон</label>
-													<div class="form-user__group">
-														<input class="form-user__input text-right mask-phone" type="tel" id="phone" name="phone"
-															autocomplete="tel" placeholder="+7 (999) 123-45-67" required="">
-													</div>
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Адрес доставки -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="address">Адрес доставки *</label>
-													<input class="form-user__input" type="text" id="address" name="address" autocomplete="address"
-														placeholder="ул. Пушкина, д. 10, кв. 5" required>
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Способ доставки (радиокнопки) -->
-												<div class="form-user__group _delivery">
-													<span class="form-user__label">Способ доставки</span>
-													<div class="radio-group">
-														<div class="radio-group__line">
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="cdek" required>
-																<span class="radio-group__label">СДЭК</span>
-															</label>
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pvz" required>
-																<span class="radio-group__label">ПВЗ</span>
-															</label>
+														<div class="profile__title select__button">
+															<span>Покупатель</span>
+															<i class="icofont-rounded-right"></i>
 														</div>
 
-														<div class="radio-group__line">
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="yandex" required>
-																<span class="radio-group__label">Яндекс Доставка</span>
-															</label>
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pochta" required>
-																<span class="radio-group__label">Почта России</span>
-															</label>
+														<textarea type="text" class="select__input" id="deliveryMethod1" name="delivery_method"
+															rows="3" value="Иванов Иван Иванович" readonly>Иванов Иван Иванович</textarea>
+
+														<div class="select__drop-down _collapse">
+															<div class="select__d-title">
+																<span>Все</span>
+																<div class="close-button">
+																	<i class="icofont-close"></i>
+																</div>
+															</div>
+															<ul class="select__list">
+																<li class="select__list-item _selected" value="Иванов Иван Иванович">Иванов Иван
+																	Иванович
+																</li>
+																<li class="select__list-item" value="">Индивидуальны предприниматель
+																	Степанов&nbsp;Степан&nbsp;Степанович ИНН&nbsp;402705559022
+																</li>
+																<li class="select__list-item" value="">Индивидуальны предприниматель
+																	Степанов&nbsp;Степан&nbsp;Степанович ИНН&nbsp;402705559022
+																</li>
+															</ul>
 														</div>
 													</div>
 												</div>
-												<!--* Кнопка Сохранить -->
-												<div class="form-user__group">
-													<button class="form-user__button dark_button" type="submit">Сохранить</button>
-												</div>
-
-
 											</div>
 										</div>
-									</form>
-									<!-- * -->
-								</div>
-							</div>
-							<!-- * -->
-							<div class="aside-menu-right transparent-right" data-da="bp-1" data-da-position="0"
-								data-da-resolution="991">
-								<div class="profile">
-									<div class="profile__body">
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link add-phone">
-												<div class="profile__item">Добавить телефон</div>
-												<div class="profile__icon">
-													<i class="icofont-close icon"></i>
+									</div>
+									<!-- * content__column - 3 -->
+									<div class="acccount-content__column">
+										<div class="order-status">
+											<!-- * Grid-cont-1 -->
+											<div class="order-status__body">
+												<div class="order-status__content">
+													<!-- * column-1 order-status -->
+													<div class="order-status__column">
+														<div class="order-status__type">
+															<div class="order-status__oplata">
+																<span>Не оплачен</span>
+																<i class="icofont-rounded-right"></i>
+															</div>
+															<div class="order-status__dostavka">
+																<span>В пути</span>
+																<i class="icofont-rounded-right"></i>
+															</div>
+
+														</div>
+														<div class="order-status__type">
+															<div class="order-status__info">
+																Заказ от 21 сентября 2026г №2509-704-301
+															</div>
+														</div>
+													</div>
+													<!-- * column-2 order-status -->
+													<div class="order-status__price">
+														<span id="order-price">3 950 р</span>
+													</div>
 												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a href="#" class="profile__link">
-																					<div class="profile__item">Добавить телефон</div>
-																					<div class="profile__icon" id="add-tel">
-																						<i class="icofont-close icon" id="add-button"></i>
-																					</div>
-																				</a> -->
+												<div class="order-status__buttons">
+													<div class="send-button">
+														<button class="send-button__button dark_button" type="submit">
+															<span>повторить</span>
+														</button>
+													</div>
+
+													<div class="send-button">
+														<button class="cancel-order send-button__button dark_button" type="submit">
+															<span>отменить</span>
+														</button>
+													</div>
+												</div>
+											</div>
 										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link">
-												<div class="profile__item">Изменить пароль</div>
-												<div class="profile__icon">
-													<i class="icofont-unlock icon" id="edit button"></i>
+
+										<div class="order-status">
+											<!-- * Grid-cont-1 -->
+											<div class="order-status__body">
+												<div class="order-status__content">
+													<!-- * column-1 order-status -->
+													<div class="order-status__column">
+														<div class="order-status__type">
+															<div class="order-status__oplata">
+																<span>Оплачен</span>
+																<i class="icofont-rounded-right"></i>
+															</div>
+															<div class="order-status__dostavka">
+																<span>Доставлен</span>
+																<i class="icofont-rounded-right"></i>
+															</div>
+
+														</div>
+														<div class="order-status__type">
+															<div class="order-status__info">
+																Заказ от 21 сентября 2026г №2509-704-301
+															</div>
+														</div>
+													</div>
+													<!-- * column-2 order-status -->
+													<div class="order-status__price">
+														<span id="order-price">3 950 р</span>
+													</div>
 												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a href="#" class="profile__link">
-																					<div class="profile__item">Изменить пароль</div>
-																					<div class="profile__icon">
-																						<i class="icofont-unlock icon" id="edit button"></i>
-																					</div>
-																				</a> -->
+												<div class="order-status__buttons">
+													<div class="send-button">
+														<button class="send-button__button dark_button" type="submit">
+															<span>повторить</span>
+														</button>
+													</div>
+
+													<div class="send-button">
+														<button class="cancel-order send-button__button dark_button" type="submit">
+															<span>отменить</span>
+														</button>
+													</div>
+												</div>
+											</div>
 										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link">
-												<div class="profile__item">Удалить аккаунт</div>
-												<div class="profile__icon delete-button">
-													<i class="icofont-close icon"></i>
-												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a class="profile__link">
-												<div class="profile__item">Удалить аккаунт</div>
-												<div class="profile__icon delete-button">
-													<i class="icofont-close icon"></i>
-												</div>
-											</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<!-- todo (только-ссылка) -->
-											<a href="#" class="profile__link">
-												<div class="profile__item">Выход</div>
-												<div class="profile__icon">
-													<i class="icofont-long-arrow-right icon"></i>
-												</div>
-											</a>
-										</div>
+
 									</div>
 								</div>
 							</div>
-							<!-- * -->
 						</div>
 					</div>
 				</div>

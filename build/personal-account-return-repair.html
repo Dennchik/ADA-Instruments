@@ -41,7 +41,7 @@
 	<script defer src="./js/script-load.js"></script>
 </head>
 
-<body class="personal-account">
+<body class="personal-repair">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
@@ -203,8 +203,11 @@
 			<div class="container">
 				<ol class="breadcrumb">
 					<li><a href="./index.html">главная</a></li>
+					<li class="tab-button">
+						<a href="./personal-account.html" class="">Личный кабинет</a>
+					</li>
 					<li class="tab-button active">
-						<span class="">Личный кабинет</span>
+						<span class="">Возврат и ремонт</span>
 					</li>
 				</ol>
 			</div>
@@ -224,7 +227,7 @@
 						<!-- * [ MENU -LEFT ] -->
 						<ul class="side-menu__list">
 							<li class="side-menu__item">
-								<a href="./personal-account.html" class="side-menu__tab-link active-link" data-page="user-account">
+								<a href="./personal-account.html" class="side-menu__tab-link">
 									Личный кабинет</a>
 							</li>
 							<li class="side-menu__item">
@@ -242,7 +245,7 @@
 									Мои организации</a>
 							</li>
 							<li class="side-menu__item">
-								<a href="./personal-account-return-repair.html" class="side-menu__tab-link">
+								<a href="./personal-account-return-repair.html" class="side-menu__tab-link active-link">
 									Возврат и ремонт</a>
 							</li>
 							<li class="side-menu__item">
@@ -255,15 +258,14 @@
 				</div>
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
-					<div class="acccount-section__tabs">
-						<!-- ! --------------------------[ TAB - Личный кабинет ] -------------------------- -->
-						<div class="acccount-section__tab-content inner-content user-account">
-							<!-- * -->
-							<div class="acccount-content">
-								<div class="acccount-content__body">
+					<div class="acccount-section__tabs personal-data">
+						<!-- ! ----------------------- [ TAB - Repair-user ] ------------------------------ -->
+						<div class="acccount-section__tab-content inner-content repair-user">
+							<div class="acccount-content__body">
+								<!-- * content__column - 1 -->
+								<div class="acccount-content__column">
 									<div class="acccount-content__header">
 										<!-- * [ BUTTONS ] -->
-
 										<div class="acccount-section__buttons">
 											<div class="acccount-section__open-menu _open-menu">
 												<div class="vertical-dots" id="verticalDots">
@@ -274,188 +276,97 @@
 											</div>
 										</div>
 										<div class="acccount-content__title">
-											<h2 class="font_clamp_50">Личный кабинет</h2>
+											<h2 class="font_clamp_50">Возврат, ремонт</h2>
+											<span>и другие обращения</span>
 										</div>
 									</div>
-									<form class="form-user" id="orderForm">
-										<div class="form-user__wrapp-group bp-1">
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!--* ФИО -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="fullname">ФИО</label>
-													<input class="form-user__input" type="text" id="fullname" name="fullname"
-														placeholder="Иванов Иван Иванович" value="">
-												</div>
-												<!--* Дата рождения -->
-												<div class="form-user__group">
-													<label class="form-user__label text-right" for="birthdate">Дата рождения</label>
-													<input class="form-user__input text-right" type="date" id="birthdate" name="birthdate">
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<!-- * [ FORM ] -->
-											<div class="form-user__line">
-
-												<!--* Пол (радиокнопки) -->
-												<div class="form-user__group">
-													<span class="form-user__label">Пол</span>
-													<div class="radio-group">
-														<label class="radio-group__item">
-															<input class="radio-group__input" type="radio" name="gender" value="male" required>
-															<span class="radio-group__label">Мужской</span>
-														</label>
-														<label class="radio-group__item">
-															<input class="radio-group__input" type="radio" name="gender" value="female" required>
-															<span class="radio-group__label">Женский</span>
-														</label>
-													</div>
-												</div>
-
-												<!--* Город -->
-												<div class="form-user__group">
-													<label class="form-user__label text-right" for="city">Город *</label>
-													<input class="form-user__input text-right" type="text" id="city" name="city"
-														placeholder="Москва" required>
-												</div>
-											</div>
-											<!-- * [ / FORM ] -->
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Email -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="email">Email</label>
-													<input class="form-user__input" type="email" id="email" name="email" autocomplete="email"
-														placeholder="example@mail.ru" required>
-												</div>
-												<!--* Телефон -->
-												<div class="form-user__group">
-
-													<label class="form-user__label text-right" for="phone">Телефон</label>
-													<div class="form-user__group">
-														<input class="form-user__input text-right mask-phone" type="tel" id="phone" name="phone"
-															autocomplete="tel" placeholder="+7 (999) 123-45-67" required="">
-													</div>
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Адрес доставки -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="address">Адрес доставки *</label>
-													<input class="form-user__input" type="text" id="address" name="address" autocomplete="address"
-														placeholder="ул. Пушкина, д. 10, кв. 5" required>
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Способ доставки (радиокнопки) -->
-												<div class="form-user__group _delivery">
-													<span class="form-user__label">Способ доставки</span>
-													<div class="radio-group">
-														<div class="radio-group__line">
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="cdek" required>
-																<span class="radio-group__label">СДЭК</span>
-															</label>
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pvz" required>
-																<span class="radio-group__label">ПВЗ</span>
-															</label>
-														</div>
-
-														<div class="radio-group__line">
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="yandex" required>
-																<span class="radio-group__label">Яндекс Доставка</span>
-															</label>
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pochta" required>
-																<span class="radio-group__label">Почта России</span>
-															</label>
-														</div>
-													</div>
-												</div>
-												<!--* Кнопка Сохранить -->
-												<div class="form-user__group">
-													<button class="form-user__button dark_button" type="submit">Сохранить</button>
-												</div>
-
-
-											</div>
-										</div>
-									</form>
-									<!-- * -->
 								</div>
-							</div>
-							<!-- * -->
-							<div class="aside-menu-right transparent-right" data-da="bp-1" data-da-position="0"
-								data-da-resolution="991">
-								<div class="profile">
-									<div class="profile__body">
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link add-phone">
-												<div class="profile__item">Добавить телефон</div>
-												<div class="profile__icon">
-													<i class="icofont-close icon"></i>
+								<!-- * content__column - 2 -->
+								<div class="acccount-content__column">
+									<div class="categiries-servise">
+										<div class="categiries-servise__body">
+											<!-- * -->
+											<div class="categiries-servise__column">
+												<a href="./user/servise/personal-account-user-repair.html"
+													class="categiries-servise__image _img">
+													<img src="./img/return-repair/repair_img.png" alt="image">
+												</a>
+												<div class="categiries-servise__content">
+													<div class="categiries-servise__text">
+														Ремонт
+													</div>
+													<div class="categiries-servise__info">
+														<div class="categiries-content">
+															<div class="categiries-content__column">
+																<div class="categiries-content__title">Ремонт</div>
+																<div class="categiries-content__text">
+																	<a href="./user/servise/repair/personal-account-repair.html"
+																		class="categiries-content__link">Сдать
+																		товар</a>
+																	<a href="#" class="categiries-content__link">Отслеживание хода ремонта</a>
+																</div>
+															</div>
+															<div class="categiries-content__column">
+																<div class="categiries-content__info">
+																	<div class="categiries-content__info-btn">
+																		<span>Сроки работ</span>
+																		<span class="categiries-content__icon">
+																			<span>i</span>
+																		</span>
+																	</div>
+																	<!-- * ---------- [ Bсплывающее окно ] ------------- -->
+																	<div class="categiries-content__pop-up">
+																		<ul class="categiries-content__list">
+																			<li class="categiries-content__item">
+																				Возврат при оплате безналичным расчётом — от 3 до 10 дней
+																			</li>
+																			<li class="categiries-content__item">
+																				Возврат при оплате наличными — 1 день
+																			</li>
+																			<li class="categiries-content__item">
+																				Диагностика инструмента — до 21 дня
+																			</li>
+																			<li class="categiries-content__item">
+																				Гарантийный ремонт — от 5 до 45 дней
+																			</li>
+																			<li class="categiries-content__item">
+																				Обмен или возврат товара — 1 день
+																			</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
 												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a href="#" class="profile__link">
-																					<div class="profile__item">Добавить телефон</div>
-																					<div class="profile__icon" id="add-tel">
-																						<i class="icofont-close icon" id="add-button"></i>
-																					</div>
-																				</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link">
-												<div class="profile__item">Изменить пароль</div>
-												<div class="profile__icon">
-													<i class="icofont-unlock icon" id="edit button"></i>
+											</div>
+											<!-- * -->
+											<div class="categiries-servise__column">
+												<div class="categiries-servise__image _img"></div>
+												<div class="categiries-servise__content">
+													<div class="categiries-servise__text">
+														Другие обращения
+													</div>
 												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a href="#" class="profile__link">
-																					<div class="profile__item">Изменить пароль</div>
-																					<div class="profile__icon">
-																						<i class="icofont-unlock icon" id="edit button"></i>
-																					</div>
-																				</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link">
-												<div class="profile__item">Удалить аккаунт</div>
-												<div class="profile__icon delete-button">
-													<i class="icofont-close icon"></i>
+
+											</div>
+											<!-- * -->
+											<div class="categiries-servise__column">
+												<div class="categiries-servise__image _img">
+													<img src="./img/return-repair/exchange_img.png" alt="image">
 												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a class="profile__link">
-												<div class="profile__item">Удалить аккаунт</div>
-												<div class="profile__icon delete-button">
-													<i class="icofont-close icon"></i>
+												<div class="categiries-servise__content">
+													<div class="categiries-servise__text">
+														Обмен и возврат
+													</div>
 												</div>
-											</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<!-- todo (только-ссылка) -->
-											<a href="#" class="profile__link">
-												<div class="profile__item">Выход</div>
-												<div class="profile__icon">
-													<i class="icofont-long-arrow-right icon"></i>
-												</div>
-											</a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- * -->
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -476,7 +387,7 @@
 										<label for="suportName" class="sr-only">Ваше имя</label>
 										<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
 									</div>
-								</div><!-- /suport_feedback_form_box -->
+								</div>
 							</div>
 							<div class="section_form_line">
 								<div class="suport_feedback_form_box">
@@ -501,14 +412,14 @@
 									<div class="send-button">
 										<button class="send-button__button red_button" type="submit">отправить</button>
 									</div>
-								</div>
+								</div><!-- /suport_feedback_form_box -->
 							</div>
 						</form>
 						<div class="succes_message bg_transparent" style="display: none;">
 							<div class="succes_message_caption">
 								Спасибо за обращение ! <br>
 								мы ответим Вам в ближайшее время!
-							</div>
+							</div><!-- /succes_message_caption -->
 						</div>
 					</div>
 				</div>
@@ -771,61 +682,6 @@
 			</div>
 
 
-		</div>
-	</div>
-
-	<!-- * MODAL: Причина отказа  -->
-	<div class="modal-rejection" id="rejectModal">
-		<div class="modal-rejection__body">
-			<div class="modal-rejection__header">
-				<h3 class="modal-rejection__title">Причина отмены заказа</h3>
-				<span class="modal-rejection__close" id="closeModalBtn" type="button">
-					<i class="icofont-close"></i>
-				</span>
-			</div>
-			<div class="modal-rejection__content">
-				<form class="modal-rejection__form" id="rejectForm">
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Меняю адрес доставки">
-						<span class="modal-rejection__radio-text">Меняю адрес доставки</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Убираю/добавляю позиции">
-						<span class="modal-rejection__radio-text">Убираю/добавляю позиции</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Проблема с оплатой">
-						<span class="modal-rejection__radio-text">Проблема с оплатой</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="В другом магазине дешевле">
-						<span class="modal-rejection__radio-text">В другом магазине дешевле</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason"
-							value="В другом магазине доставка быстрее">
-						<span class="modal-rejection__radio-text">В другом магазине доставка быстрее</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Заказ больше не актуален">
-						<span class="modal-rejection__radio-text">Заказ больше не актуален</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Другая причина">
-						<span class="modal-rejection__radio-text">Другая причина</span>
-					</label>
-
-					<div class="modal-rejection__field">
-						<textarea class="modal-rejection__textarea" id="otherReason" rows="2"
-							placeholder="Укажите причину отмены заказа..."></textarea>
-					</div>
-				</form>
-			</div>
-			<div class="modal-rejection__footer">
-				<button class="modal-rejection__btn red_button" id="submitBtn" type="button" form="rejectForm">
-					<span>Отменить заказ</span>
-				</button>
-			</div>
 		</div>
 	</div>
 

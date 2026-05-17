@@ -199,7 +199,9 @@ function leftMenuOpenClose() {
     });
   }
 }
-leftMenuOpenClose();
+document.addEventListener('DOMContentLoaded', function () {
+  leftMenuOpenClose();
+});
 //todo -------------------- [ Открытие модалок ]--------------------------------
 //todo 👇 (Для Виктора)
 document.addEventListener('DOMContentLoaded', () => {
@@ -373,8 +375,9 @@ function autoResizeText() {
     });
   });
 }
-
-autoResizeText();
+document.addEventListener('DOMContentLoaded', function () {
+  autoResizeText();
+});
 
 //todo ------- выпадающий список в личный кабинет (плкупатель -> ) -------------
 //todo 👇 (Для Виктора)
@@ -413,7 +416,9 @@ function selectDropByer() {
   }
   // });
 }
-selectDropByer();
+document.addEventListener('DOMContentLoaded', function () {
+  selectDropByer();
+});
 //* ----------------------------------------------------------------------------
 function handleSubmit(event) {
   event.preventDefault(); // Отменяем перезагрузку страницы
@@ -988,3 +993,30 @@ function collapseBlock() {
     });
   });
 }
+//* ----------------------------------------------------------------------------
+
+function repairStatus() {
+  const statusBlocks = document.querySelectorAll('.repair-status');
+
+  if (statusBlocks.length) {
+    statusBlocks.forEach((statusBlock) => {
+      const button = statusBlock.querySelector('.repair-status__title');
+      if (button) {
+        button.addEventListener('click', (event) => {
+          const currentButton = event.currentTarget;
+          const collapseElement = currentButton
+            .closest('.repair-status')
+            .querySelector('._collapse');
+          console.log(collapseElement);
+
+          if (collapseElement) {
+            const collapse = new ItcCollapse(collapseElement);
+            collapse.toggle();
+            currentButton.classList.toggle('_active-collapse');
+          }
+        });
+      }
+    });
+  }
+}
+document.addEventListener('DOMContentLoaded', repairStatus);

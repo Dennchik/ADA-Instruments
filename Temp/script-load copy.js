@@ -1,24 +1,30 @@
-//* ============== ГЛОБАЛЬНАЯ ФУНКЦИЯ ОБНОВЛЕНИЯ СЧЁТЧИКА КОРЗИНЫ ==============
-
+//* ============ ГЛОБАЛЬНАЯ ФУНКЦИЯ ОБНОВЛЕНИЯ СЧЁТЧИКА КОРЗИНЫ ================
 window.updateTotalCartQuantity = function () {
   let totalQuantity = 0;
-  // Собираем значения из всех полей количества (универсальный селектор)
+
   document
     .querySelectorAll('.quantity .input, .quantity__input .input')
     .forEach((input) => {
       let val = parseInt(input.value, 10);
       if (!isNaN(val) && val > 0) totalQuantity += val;
     });
+
   const cartQuantity = document.querySelector('.cart-user__quantity');
   if (cartQuantity) {
     cartQuantity.textContent = totalQuantity;
     cartQuantity.style.display = totalQuantity > 0 ? 'flex' : 'none';
   }
+
+  const sideMenuTovara = document.querySelector('.side-menu__col-tovara');
+  if (sideMenuTovara) {
+    sideMenuTovara.textContent = totalQuantity;
+    sideMenuTovara.style.display = totalQuantity > 0 ? 'flex' : 'none';
+  }
 };
 
-//* ====== ИНИЦИАЛИЗАЦИЯ СЧЁТЧИКОВ В КАТАЛОГЕ (с переключением видимости) ======
+//* ================= ИНИЦИАЛИЗАЦИЯ СЧЁТЧИКОВ В КАТАЛОГЕ =======================
 function initCatalogCounters() {
-  document.querySelectorAll('.items_greed_wrapper').forEach((wrapper) => {
+  document.querySelectorAll('.items-greed__wrapper').forEach((wrapper) => {
     const addToCartBtn = wrapper.querySelector('.add-to-cart');
     const quantityBlock = wrapper.querySelector('.quantity');
     if (!addToCartBtn || !quantityBlock) return;
@@ -41,7 +47,6 @@ function initCatalogCounters() {
       updateItemVisibility();
     }
 
-    //* Если уже есть обработчики – не добавляем повторно
     if (addToCartBtn && !addToCartBtn.hasAttribute('data-listener')) {
       addToCartBtn.setAttribute('data-listener', 'true');
       addToCartBtn.addEventListener('click', (e) => {
@@ -79,13 +84,9 @@ function initCatalogCounters() {
   });
 }
 
-//* === ИНИЦИАЛИЗАЦИЯ ВСЕХ ОСТАЛЬНЫХ СЧЁТЧИКОВ (без переключения видимости) ====
+//* =============== ИНИЦИАЛИЗАЦИЯ ВСЕХ ОСТАЛЬНЫХ СЧЁТЧИКОВ =====================
 function initOtherCounters() {
-  // Ищем все блоки .product-cart__quantity (в корзине) и любые другие .quantity, которые не внутри .items_greed_wrapper
-  const otherBlocks = document.querySelectorAll(
-    '.product-cart__quantity, .quantity:not(.items_greed_wrapper .quantity)'
-  );
-  console.log(otherBlocks);
+  const otherBlocks = document.querySelectorAll('.product-cart__quantity');
 
   otherBlocks.forEach((block) => {
     if (block.hasAttribute('data-quantity-initialized')) return;
@@ -133,7 +134,7 @@ function initOtherCounters() {
   });
 }
 
-//* ==== ЛОГИКА ДЛЯ СТРАНИЦЫ КОРЗИНЫ (суммы, удаление, переключение блоков) ====
+//* ==================== ЛОГИКА ДЛЯ СТРАНИЦЫ КОРЗИНЫ ===========================
 function initCartPageSpecific() {
   const cart = document.querySelector('.product-cart');
   if (!cart) return;
@@ -162,7 +163,7 @@ function initCartPageSpecific() {
     cart.querySelectorAll('.product-cart__new-price').forEach((el) => {
       productsTotal += getNumberFromBlock(el);
     });
-    const discount = getNumberFromBlock(discountBlock);
+    const discount = discountBlock ? getNumberFromBlock(discountBlock) : 0;
     let finalWithDiscount = productsTotal - discount;
     if (finalWithDiscount < 0) finalWithDiscount = 0;
     if (fullSumBlock) fullSumBlock.textContent = formatPrice(productsTotal);
@@ -204,11 +205,14 @@ function initCartPageSpecific() {
       item.dataset.pricePerUnit = pricePerUnit;
 
       const updatePriceAndSum = () => {
-        const newQty = parseInt(input.value, 10) || 1;
-        if (newQty > 0) {
-          const newTotal = pricePerUnit * newQty;
-          priceSpan.textContent = formatPrice(newTotal);
+        let newQty = parseInt(input.value, 10) || 0;
+        if (newQty <= 0) {
+          item.remove();
+          updateCartVisibility();
+          return;
         }
+        const newTotal = pricePerUnit * newQty;
+        priceSpan.textContent = formatPrice(newTotal);
         updateTotalSums();
         window.updateTotalCartQuantity();
       };
@@ -231,29 +235,32 @@ function initCartPageSpecific() {
   }
 
   function initDeleteButtons() {
-    cart.querySelectorAll('.product-cart__item').forEach((item) => {
-      const deleteBtn = item.querySelector('[id="delete-product"]');
-      if (deleteBtn && !deleteBtn.hasAttribute('data-listener')) {
-        deleteBtn.setAttribute('data-listener', 'true');
-        deleteBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          item.remove();
-          updateCartVisibility();
-        });
+    if (cart.hasAttribute('data-delete-listener')) return;
+    cart.setAttribute('data-delete-listener', 'true');
+
+    cart.addEventListener('click', (e) => {
+      const deleteBtn = e.target.closest('[id="delete-product"]');
+      if (!deleteBtn) return;
+      e.preventDefault();
+      const item = deleteBtn.closest('.product-cart__item');
+      if (item) {
+        item.remove();
+        updateCartVisibility();
       }
     });
   }
 
   function initDeleteAllButton() {
-    if (!deleteAllBtn || deleteAllBtn.hasAttribute('data-listener')) return;
-    deleteAllBtn.setAttribute('data-listener', 'true');
-    deleteAllBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      cart
-        .querySelectorAll('.product-cart__item')
-        .forEach((item) => item.remove());
-      updateCartVisibility();
-    });
+    if (deleteAllBtn && !deleteAllBtn.hasAttribute('data-listener')) {
+      deleteAllBtn.setAttribute('data-listener', 'true');
+      deleteAllBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        cart
+          .querySelectorAll('.product-cart__item')
+          .forEach((item) => item.remove());
+        updateCartVisibility();
+      });
+    }
   }
 
   initCartQuantityControls();
@@ -262,7 +269,7 @@ function initCartPageSpecific() {
   updateCartVisibility();
 }
 
-//* ==================== ЕДИНАЯ ФУНКЦИЯ ИНИЦИАЛИЗАЦИИ ==========================
+//* =============== ЕДИНАЯ ФУНКЦИЯ ИНИЦИАЛИЗАЦИИ СЧЁТЧИКА ======================
 function initCounter() {
   initCatalogCounters();
   initOtherCounters();
@@ -271,66 +278,375 @@ function initCounter() {
   }
 }
 
-//* ==================== ОБЩИЙ ЗАПУСК ПРИ ЗАГРУЗКЕ СТРАНИЦЫ ====================
+//* Запускаем после загрузки страницы
 document.addEventListener('DOMContentLoaded', function () {
-  // Инициализируем счётчики на всех страницах
+  initCounter();
+});
+//todo ============== ОБЩИЙ ЗАПУСК ПРИ ЗАГРУЗКЕ СТРАНИЦЫ =======================
+//* ----------------- Личный кабинет (загрузка контента) -----------------------
+document.addEventListener('DOMContentLoaded', function () {
+  // 👇 Инициализируем счётчики на всех страницах
+  leftMenuOpenClose();
   initCounter();
 
-  // Логика для страницы личного кабинета (если она есть на странице)
+  // 👇 Логика для страницы личного кабинета (если она есть на странице)
   const content = document.querySelector('.personal-data');
+  const sideMenuList = document.querySelector('.side-menu__list');
 
-  // Проверяем, есть ли на странице блок личного кабинета
-  if (content) {
+  // 👇 Проверяем, есть ли на странице блок личного кабинета
+  if (content && sideMenuList) {
+    // Добавил проверку sideMenuList
+
+    // 👉 НОВОЕ: Функция для получения страницы из URL параметров
+    function getPageFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      const page = params.get('page');
+      const validPages = [
+        'user-account',
+        'user-order',
+        'user-history',
+        'user-profile',
+        'user-organizations',
+        'user-repair',
+      ];
+      return validPages.includes(page) ? page : null;
+    }
+
+    // 👉 НОВОЕ: Функция для обновления URL без перезагрузки страницы
+    function updateURL(page) {
+      const newURL = `${window.location.pathname}?page=${page}`;
+      window.history.pushState({ page }, '', newURL);
+    }
+
+    // Функция для получения текста кнопки по data-page
+    function getPageTitle(page) {
+      const button = sideMenuList.querySelector(
+        `.tab-button[data-page="${page}"]`
+      );
+      return button ? button.textContent.trim() : page;
+    }
+
+    // 👇 Функция для обновления хлебных крошек
+    function updateBreadcrumbs(page, pageTitle) {
+      const breadcrumb = document.querySelector('.breadcrumb');
+      if (!breadcrumb) return;
+
+      // 👇 Очищаем все li, кроме первого (Главная)
+      while (breadcrumb.children.length > 1) {
+        breadcrumb.removeChild(breadcrumb.lastChild);
+      }
+
+      // 👇 Добавляем второй уровень (Личный кабинет)
+      const secondLi = document.createElement('li');
+      const secondSpan = document.createElement('span');
+      secondSpan.className = 'tab-button';
+      secondSpan.setAttribute('data-page', 'user-account');
+      secondSpan.textContent = 'Личный кабинет';
+      secondLi.appendChild(secondSpan);
+      breadcrumb.appendChild(secondLi);
+
+      // 👇 Если это не страница личного кабинета, добавляем третий уровень
+      if (page !== 'user-account') {
+        const thirdLi = document.createElement('li');
+        const thirdSpan = document.createElement('span');
+        thirdSpan.className = 'tab-button active';
+        thirdSpan.setAttribute('data-page', page);
+        thirdSpan.textContent = pageTitle;
+        thirdLi.appendChild(thirdSpan);
+        breadcrumb.appendChild(thirdLi);
+
+        // 👇 Убираем класс active у второго уровня
+        secondSpan.classList.remove('active');
+      } else {
+        // 👇 На странице личного кабинета делаем активным второй уровень
+        secondSpan.classList.add('active');
+      }
+      // 👇 инициализируем клики по крошкам
+      initBreadcrumbClicks();
+    }
+
+    // 👇 Инициализирует клики по хлебным крошкам
+    function initBreadcrumbClicks() {
+      const breadcrumb = document.querySelector('.breadcrumb');
+      if (!breadcrumb) return;
+
+      const breadcrumbLinks = breadcrumb.querySelectorAll('span[data-page]');
+      breadcrumbLinks.forEach((link) => {
+        if (link.hasAttribute('data-breadcrumb-listener')) return;
+        link.setAttribute('data-breadcrumb-listener', 'true');
+
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const page = link.getAttribute('data-page');
+          if (!page) return;
+
+          const targetButton = sideMenuList.querySelector(
+            `.tab-button[data-page="${page}"]`
+          );
+          if (targetButton) {
+            setActiveButton(targetButton);
+            // 👉 ИЗМЕНЕНО: теперь используем navigateToPage вместо прямого loadPage
+            navigateToPage(page);
+          }
+        });
+      });
+    }
+
+    // 👇 Устанавливает активную кнопку в боковом меню
+    function setActiveButton(activeLink) {
+      const allLinks = sideMenuList.querySelectorAll('.tab-button');
+      allLinks.forEach((btn) => {
+        btn.classList.remove('active-link');
+      });
+      // 👇 Добавляем класс active-link выбранной кнопке
+      if (activeLink) {
+        activeLink.classList.add('active-link');
+      }
+    }
+
+    // 👉 НОВОЕ: Функция навигации с обновлением URL
+    function navigateToPage(page) {
+      // Проверяем, не загружаем ли уже эту страницу
+      const currentPage = getPageFromURL();
+      if (currentPage === page) return;
+
+      // Обновляем URL
+      updateURL(page);
+      // Загружаем контент
+      loadPage(page);
+    }
+
+    // 👉 НОВОЕ: Обработка кнопки "Назад" и "Вперёд" в браузере
+    window.addEventListener('popstate', (event) => {
+      const page = event.state?.page || getPageFromURL() || 'user-account';
+      // Временно отключаем обновление URL, чтобы не зациклить
+      const targetButton = sideMenuList.querySelector(
+        `.tab-button[data-page="${page}"]`
+      );
+      if (targetButton) {
+        setActiveButton(targetButton);
+      }
+      loadPage(page);
+    });
+
+    // 👇 Привязывает обработчики кликов к кнопкам меню
     function bindEvents() {
-      const links = document.querySelectorAll('.tab-button');
+      const links = sideMenuList.querySelectorAll('.tab-button');
       links.forEach((link) => {
-        // Удаляем старые обработчики, чтобы не дублировать
+        // 👇 Удаляем старые обработчики, чтобы не дублировать
         link.removeEventListener('click', link._listener);
         // Создаём новый обработчик
         const handler = function () {
           const page = this.getAttribute('data-page');
-          loadPage(page);
+          if (!page) return; // 👇 Пропускаем кнопки без data-page
+
+          // 👇 Устанавливаем активную кнопку
+          setActiveButton(this);
+          // 👉 ИЗМЕНЕНО: теперь используем navigateToPage вместо прямого loadPage
+          navigateToPage(page);
         };
         link._listener = handler;
         link.addEventListener('click', handler);
       });
     }
 
+    // 👇 Загружает контент страницы через fetch
     function loadPage(page) {
       fetch(`user/${page}.html`)
-        .then((response) => response.text())
+        .then((response) => {
+          if (!response.ok) throw new Error('Page not found');
+          return response.text();
+        })
         .then((data) => {
           content.innerHTML = data;
+
+          // 👇 Обновляем хлебные крошки
+          const pageTitle = getPageTitle(page);
+          updateBreadcrumbs(page, pageTitle);
+          window.updateTotalCartQuantity();
+
+          // 👇 Запускаем специфичные для страницы инициализации
           if (page === 'user-account') {
-            if (typeof maskPhone === 'function') {
-              maskPhone();
-            }
-          } else if (page === 'order-user') {
-            if (typeof itSelect === 'function') itSelect();
-            if (typeof selectDropByer === 'function') selectDropByer();
-            if (typeof autoResizeText === 'function') autoResizeText();
-          } else if (page === 'history-user') {
-            if (typeof itSelect === 'function') itSelect();
-            if (typeof selectDropByer === 'function') selectDropByer();
-            if (typeof autoResizeText === 'function') autoResizeText();
-            initCounter(); // Повторная инициализация для загруженного контента
-          } else if (page === 'profile-user') {
             if (typeof maskPhone === 'function') maskPhone();
-          } else if (page === 'org-user') {
-            if (typeof innReady === 'function') {
-              innReady();
-            }
-            if (typeof maskInn === 'function') {
-              maskInn();
-            }
+            leftMenuOpenClose();
+            dynamicAdaptive();
+          } else if (page === 'user-order') {
+            leftMenuOpenClose();
+            showRejectModal();
+            if (typeof itSelect === 'function') itSelect();
+            if (typeof selectDropByer === 'function') selectDropByer();
+            if (typeof autoResizeText === 'function') autoResizeText();
+          } else if (page === 'user-history') {
+            leftMenuOpenClose();
+
+            if (typeof itSelect === 'function') itSelect();
+            if (typeof selectDropByer === 'function') selectDropByer();
+            if (typeof autoResizeText === 'function') autoResizeText();
+            // 👇 Переинициализируем счётчики после загрузки
+            initCounter();
+            autoResizeText();
+          } else if (page === 'user-profile') {
+            leftMenuOpenClose();
+            dynamicAdaptive();
+            if (typeof maskPhone === 'function') maskPhone();
+          } else if (page === 'user-organizations') {
+            leftMenuOpenClose();
+            editBankingDetails();
+            // 👇 Вызываем маску и поиск ПОСЛЕ загрузки контента
+            if (typeof maskInn === 'function') maskInn();
+            if (typeof initInnSearch === 'function') initInnSearch();
+          } else if (page === 'user-repair') {
+            leftMenuOpenClose();
+            timeWorks();
           }
         })
         .catch((error) => {
-          // console.error('Error loading page:', error);
-          content.innerHTML = 'Error loading content';
+          content.innerHTML = '<p>Ошибка загрузки контента</p>';
         });
     }
 
+    // 👉 ИЗМЕНЕНО: Определяем кнопку по умолчанию или из URL
+    let defaultButton;
+    const pageFromURL = getPageFromURL();
+
+    if (pageFromURL) {
+      // Если в URL указана страница, используем её
+      defaultButton = sideMenuList.querySelector(
+        `.tab-button[data-page="${pageFromURL}"]`
+      );
+      if (!defaultButton) {
+        defaultButton =
+          sideMenuList.querySelector('.tab-button[data-page="user-account"]') ||
+          sideMenuList.querySelector('.tab-button');
+      }
+    } else {
+      // Иначе используем user-account или первую кнопку
+      defaultButton =
+        sideMenuList.querySelector('.tab-button[data-page="user-account"]') ||
+        sideMenuList.querySelector('.tab-button');
+    }
+
+    if (defaultButton) {
+      const defaultPage = defaultButton.getAttribute('data-page');
+      setActiveButton(defaultButton);
+      // 👉 ИЗМЕНЕНО: загружаем страницу и обновляем URL, если нужно
+      loadPage(defaultPage);
+      // Обновляем URL, если его нет или он не соответствует
+      if (!getPageFromURL() || getPageFromURL() !== defaultPage) {
+        updateURL(defaultPage);
+      }
+    }
+
     bindEvents();
+
+    // 👉 НОВОЕ: Автоматическая обработка всех ссылок с data-page атрибутом (для внешних переходов)
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[data-page]');
+      if (link && link.dataset.page) {
+        e.preventDefault();
+        const page = link.dataset.page;
+        const targetButton = sideMenuList.querySelector(
+          `.tab-button[data-page="${page}"]`
+        );
+        if (targetButton) {
+          setActiveButton(targetButton);
+          navigateToPage(page);
+        }
+      }
+    });
   }
 });
+//todo -------- Показ модального окна (мои заказы - отмена заказа) -------------
+function showRejectModal() {
+  const buttons = document.querySelectorAll('.cancel-order');
+  const modal = document.querySelector('.modal-rejection');
+  const closeModal = document.getElementById('closeModalBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  const form = document.getElementById('rejectForm');
+
+  if (!modal) return;
+
+  // 👇 Закрытие по крестику
+  if (closeModal) {
+    closeModal.onclick = () => modal.classList.remove('open');
+  }
+
+  // 👇 Закрытие по клику на фон
+  modal.onclick = (e) => {
+    if (e.target === modal) modal.classList.remove('open');
+  };
+
+  // 👇 Открытие по кнопкам отмены
+  buttons.forEach((button) => {
+    button.onclick = () => modal.classList.add('open');
+  });
+
+  // 👇 Симуляция отправки формы
+  if (submitBtn && form) {
+    submitBtn.onclick = () => {
+      // Получаем выбранную причину
+      const selectedReason = form.querySelector('input[name="reason"]:checked');
+      const otherReasonText =
+        document.getElementById('otherReason')?.value || '';
+
+      let reasonValue = '';
+      if (selectedReason) {
+        reasonValue = selectedReason.value;
+      }
+
+      // 👇 Показываем состояние загрузки (опционально)
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Отправка...';
+
+      // 👇 Симуляция задержки сервера
+      setTimeout(() => {
+        // Сбрасываем форму
+        form.reset();
+
+        // 👇 Закрываем модалку
+        modal.classList.remove('open');
+
+        // 👇 Возвращаем кнопку в исходное состояние
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Отменить заказ';
+      }, 2000);
+    };
+  }
+}
+//todo ----------- Показ pop-up окна (Редактировать реквизиты) -----------------
+function editBankingDetails() {}
+//todo ----------------- Показ pop-up окна (Сроки работ) -----------------------
+
+function timeWorks() {
+  const button = document.querySelector('.categiries-content__info');
+  const popUp = document.querySelector('.categiries-content__pop-up');
+  let closeTimeout;
+
+  if (!button || !popUp) return;
+
+  button.addEventListener('click', (event) => {
+    event.stopPropagation();
+    clearTimeout(closeTimeout);
+    popUp.classList.toggle('_show');
+  });
+
+  function closePopup() {
+    popUp.classList.remove('_show');
+  }
+
+  // Закрытие при клике вне
+  document.addEventListener('click', (event) => {
+    if (popUp.classList.contains('_show')) {
+      if (!popUp.contains(event.target) && !button.contains(event.target)) {
+        closePopup();
+      }
+    }
+  });
+
+  // Закрытие по Escape
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && popUp.classList.contains('_show')) {
+      closePopup();
+    }
+  });
+}

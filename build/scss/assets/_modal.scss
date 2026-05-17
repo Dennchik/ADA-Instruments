@@ -186,6 +186,10 @@
     &__button {
       width: 190px;
       height: 55px;
+
+      @include screen-490 {
+        height: 35px;
+      }
     }
   }
 }

@@ -20,7 +20,7 @@ function initInnSearch() {
   }
 
   //* 👇 Функция для замены формы на форму с данными организации
-  function replaceFormWithOrganizationData(org) {
+  async function replaceFormWithOrganizationData(org) {
     // Находим контейнер
     const targetContainer = document.getElementById('innForm')?.parentNode;
 
@@ -29,105 +29,89 @@ function initInnSearch() {
       return;
     }
 
-    //todo 👇 (Для Виктора) Создаем новую форму с данными организации
-    const newForm = document.createElement('form');
-    newForm.id = 'organizationDataForm';
-    newForm.className = 'org-form org-form__section';
-    newForm.innerHTML = `
-      <div class="org-form__header">
-        <button type="button" class="org-form__back-btn" onclick="window.backToSearch()">
-          <i class="icofont-long-arrow-left"></i>
-          <span>Вернуться к поиску</span>
-          <i class="icofont-close"></i>
-        </button>
-      </div>
+    try {
+      //* 👇 Загружаем контент ТОЛЬКО из файла
+      const response = await fetch('./user/organizations/form-content.html');
+      editBankingDetails();
+      if (!response.ok) {
+        throw new Error(`Ошибка загрузки файла: ${response.status}`);
+      }
 
-      <div class="org-form__body">
-        <div class="org-form__column">
-          <div class="org-form__content">
-            <div class="org-form__field">
-              <div class="org-form__label">Наименование организации</div>
-              <div class="org-form__name-value">${escapeHtml(org.name)}</div>
-            </div>
+      let htmlContent = await response.text();
 
-            <div class="org-form__line">
-              <div class=" org-form__field">
-                <div class="org-form__label">ИНН</div>
-                <div class="org-form__inn-value">${org.inn}</div>
-              </div>
+      //* 👇 Заменяем плейсхолдеры на данные организации
+      htmlContent = htmlContent
+        .replace(/\{\{org\.name\}\}/g, escapeHtml(org.name))
+        .replace(/\{\{org\.inn\}\}/g, org.inn)
+        .replace(/\{\{org\.kpp\}\}/g, org.kpp)
+        .replace(
+          /\{\{org\.address\}\}/g,
+          escapeHtml(org.address || 'Адрес не указан')
+        );
 
-              <div class="org-form__field">
-                <div class="org-form__label">КПП</div>
-                <div class="org-form__kpp-value">${org.kpp}</div>
-              </div>
-            </div>
+      // Создаем новую форму
+      const newForm = document.createElement('form');
+      newForm.id = 'organizationDataForm';
+      newForm.className = 'org-form org-form__section';
+      newForm.innerHTML = htmlContent;
 
-            <div class="org-form__field">
-              <div class="org-form__label">Фактический адрес</div>
-              <div class="org-form__address-value">${escapeHtml(org.address || 'Адрес не указан')}</div>
-            </div> 
-          </div>
+      // Очищаем контейнер и добавляем новую форму
+      targetContainer.innerHTML = '';
+      targetContainer.appendChild(newForm);
 
-          <div class="org-form__bank-requisites">
-            <div class="org-form__reg-button">
-              <span>Указать банковские реквизиты</span>
-              <i class="icofont-thin-down"></i>
-            </div>
+      //* 👇 Вызываем функции после загрузки
+      if (typeof collapseBlock === 'function') {
+        collapseBlock();
+      }
 
-            <div class="org-form__collapse">
-              <div class="org-form__wrapper">
-                <fieldset class="org-form__field">
-                  <label class="org-form__label" for="paymentAccount">
-                  Расчетный счет
-                  </label>
-                  <input id="paymentAccount" class="org-form__input" autocomplete="off" type="text" name="paymentAccount"
-                    data-error="Ошибка" data value="">
-                </fieldset>
+      // Добавляем обработчик для кнопки
+      const addBtn = document.getElementById('addOrganizationBtn');
+      if (addBtn) {
+        addBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          submitOrganizationData(org);
+        });
+      }
 
-                <fieldset class="org-form__field">
-                  <label class="org-form__label" for="bik">Бик банка</label>
-                  <input id="bik" class="org-form__input" autocomplete="off" type="text" name="bik" data-error="Ошибка"
-                    data value="">
-                </fieldset>
+      const container = document.querySelector('.org-form__name');
+      if (container) {
+        const popUp = container.querySelector('.pop-up');
+        const button = container.querySelector('.org-form__button-edit');
+        console.log(container);
 
-                <fieldset class="org-form__field">
-                  <label class="org-form__label" for="nameBank">
-                  Наименование банка
-                  </label>
-                  <input id="nameBank" class="org-form__input" autocomplete="off" type="text" name="nameBank"
-                    data-error="Ошибка" data value="">
-                </fieldset>
+        if (button && popUp) {
+          button.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            popUp.classList.toggle('_show');
+            //* 👇 Добавляем обработчик для закрытия по клику
+            document.addEventListener('click', closeOnClick);
+          });
+        }
 
-                <fieldset class="org-form__field">
-                  <label class="org-form__label" for="correspondentAccount">
-                  Корреспондентский счет
-                  </label>
-                  <input id="correspondentAccount" class="org-form__input" autocomplete="off" type="text"
-                    name="correspondentAccount" data-error="Ошибка" data value="">
-                </fieldset>
-              </div>
-            </div>
-          </div> 
-          <div class="org-form__actions">
-            <button type="button" class="org-form__submit-btn red_button" id="addOrganizationBtn">Добавить организацию
-            </button>
-          </div>
-        </div>
+        //* 👇 Функция для закрытия модалки
+        function closeModal() {
+          popUp.classList.remove('_show');
+          document.removeEventListener('click', closeOnClick);
+        }
+
+        //* 👇 Закрытие по клику в любом месте
+        function closeOnClick(e) {
+          //* 👇 Не закрываем, если клик был по кнопке или внутри popUp
+          if (!popUp.contains(event.target)) {
+            closeModal();
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Ошибка при загрузке контента из файла:', error);
+      //* 👇 Показываем сообщение об ошибке, но НЕ вставляем встроенный HTML
+      targetContainer.innerHTML = `
+      <div class="error-message">
+        <p>Ошибка загрузки формы. Пожалуйста, обновите страницу.</p>
+        <button onclick="window.backToSearch()">Вернуться к поиску</button>
       </div>
     `;
-
-    //* 👇 Очищаем контейнер и добавляем новую форму
-    targetContainer.innerHTML = '';
-    targetContainer.appendChild(newForm);
-    collapseBlock();
-
-    //* 👇 Добавляем обработчик для кнопки "Добавить организацию"
-    const addBtn = document.getElementById('addOrganizationBtn');
-    if (addBtn) {
-      addBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        submitOrganizationData(org);
-      });
     }
   }
 
@@ -141,7 +125,7 @@ function initInnSearch() {
     submitBtn.textContent = 'Отправка...';
     submitBtn.disabled = true;
 
-    //* 👇 Симуляция успешной отправки
+    //* 👇 СИМУЛЯЦИЯ УСПЕШНОЙ ОТПРАВКИ
     setTimeout(() => {
       console.log('Отправлены данные (симуляция):', {
         inn: org.inn,
@@ -150,19 +134,16 @@ function initInnSearch() {
         address: org.address,
       });
 
-      showNotification(
-        'Организация успешно добавлена! (тестовый режим)',
-        'success'
-      );
+      showNotification(); //* 👇 Показываем модалку
 
-      //* 👇 Меняем текст кнопки c "Вернуться к поиску" НА "Добавить организацию"
+      //* 👇 МЕНЯЕМ ТЕКСТ КНОПКИ С "Вернуться к поиску" НА "Добавить организацию"
       const backBtn = document.querySelector('.org-form__back-btn');
       if (backBtn) {
         const span = backBtn.querySelector('span');
         span.textContent = 'Добавить организацию';
         orgformHeader.classList.add('active');
       }
-      //* 👇 Скрываем старую кнопку "Добавить организацию" ВНИЗУ
+      //* 👇 СКРЫВАЕМ СТАРУЮ КНОПКУ "Добавить организацию" ВНИЗУ
       submitBtn.style.display = 'none';
       submitBtn.textContent = originalText;
     }, 1500); // Имитируем задержку сервера 1,5 секунду
@@ -200,7 +181,7 @@ function initInnSearch() {
       const data = await response.json();
 
       if (response.ok) {
-        showNotification('Организация успешно добавлена!', 'success');
+        showNotification(); //* 👇 Показываем модалку при успехе
 
         //* МЕНЯЕМ ТЕКСТ КНОПКИ С "Вернуться к поиску" НА "Добавить организацию"
         const backBtn = document.querySelector('.org-form__back-btn');
@@ -213,21 +194,20 @@ function initInnSearch() {
         submitBtn.style.display = 'none';
         submitBtn.textContent = originalText;
       } else {
-        showNotification(
-          data.message || 'Ошибка при добавлении организации',
-          'error'
-        );
+        showNotification(); //* 👇 Показываем модалку при ошибке от сервера
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }
     } catch (error) {
       console.error('Ошибка при отправке:', error);
-      showNotification('Ошибка соединения с сервером', 'error');
+      showNotification(); //* 👇 Показываем модалку при ошибке соединения
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
     }
   }
-*/
+
+  */
+
   //* 👇 Функция для возврата к поиску (глобальная)
   window.backToSearch = function () {
     const targetContainer = document.getElementById(
@@ -241,24 +221,22 @@ function initInnSearch() {
 
     //* 👇 Восстанавливаем форму поиска
     targetContainer.innerHTML = `
-      <div class="inn-form bp-6">
-        <div class="inn-form__title">Укажите ИНН организации или ИП</div>
-        <form id="innForm" onsubmit="handleSubmit(event)">
-          <div class="inn-form__field">
-            <div class="inn-form__wrapper">
-              <div class="inn-form__input">
-                <input type="text" name="innForm"     class="mask-inn-organization" id="innInput" placeholder=" "
-                  autocomplete="off">
-                <label for="innInput" class="inn-form__label">
-                  <span>ИНН</span>
-                </label>
-              </div>
-              <div class="inn-form__dropdown" id="innDropdown">
-              </div>
+      <div class="inn-form__title">Укажите ИНН организации или ИП</div>
+      <form id="innForm" onsubmit="handleSubmit(event)">
+        <div class="inn-form__field">
+          <div class="inn-form__wrapper">
+            <div class="inn-form__input">
+              <input type="text" name="innForm"     class="mask-inn-organization" id="innInput" placeholder=" "
+                autocomplete="off">
+              <label for="innInput" class="inn-form__label">
+                <span>ИНН</span>
+              </label>
+            </div>
+            <div class="inn-form__dropdown" id="innDropdown">
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     `;
     //* 👇 Перезапускаем маску
     maskInn();
@@ -267,29 +245,38 @@ function initInnSearch() {
     initInnSearch();
   };
 
-  //* 👇 Показывает всплывающее уведомление
+  //* 👇 Показывает модальное окно с уведомлением
   function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.textContent = message;
-    notification.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 12px 20px;
-      background: ${type === 'success' ? '#4caf50' : type === 'error' ? '#f44336' : '#2196f3'};
-      color: white;
-      border-radius: 4px;
-      z-index: 1000;
-      animation: slideIn 0.3s ease;
-    `;
+    const modal = document.getElementById('show-notification');
+    if (!modal) return;
 
-    document.body.appendChild(notification);
+    const messageElement = modal.querySelector('.modal__message');
+    if (messageElement) {
+      messageElement.textContent = message;
+    }
 
+    modal.classList.add('active');
+
+    //* 👇 Функция для закрытия модалки
+    function closeModal() {
+      modal.classList.remove('active');
+      document.removeEventListener('click', closeOnClick);
+    }
+
+    //* 👇 Закрытие по клику в любом месте
+    function closeOnClick() {
+      closeModal();
+    }
+
+    //* 👇 Добавляем обработчик клика
     setTimeout(() => {
-      notification.style.animation = 'slideOut 0.3s ease';
-      setTimeout(() => notification.remove(), 300);
-    }, 3000);
+      document.addEventListener('click', closeOnClick);
+    }, 0);
+
+    //* 👇 Автоматическое закрытие через 7 секунд
+    setTimeout(() => {
+      closeModal();
+    }, 8000);
   }
 
   //* 👇 Экранирует HTML-символы для защиты от XSS
@@ -497,3 +484,4 @@ function initInnSearch() {
   input.addEventListener('input', handleInput);
   document.addEventListener('click', handleClickOutside);
 }
+initInnSearch();

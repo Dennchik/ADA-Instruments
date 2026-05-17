@@ -6,6 +6,9 @@
 .delivery__item > ._collapse:not(._show) {
   display: none;
 }
+.repair-status > ._collapse:not(._show) {
+  display: none;
+}
 //* ----------------------------[ BUTTON ]--------------------------------------
 .active_button {
   display: inline-block;
@@ -345,7 +348,7 @@
   font-size: clamp(2.715rem, 2.4vw, 5.025rem);
 }
 .font_clamp_30 {
-  font-size: clamp(1.51375rem, 2.4vw, 3.125rem);
+  font-size: clamp(1.51375rem, 2.3vw, 3.005rem);
 }
 .font10 {
   font-size: 10px;
@@ -524,8 +527,14 @@
   font-weight: 500;
   margin-bottom: 0;
   color: rgb(33, 37, 41);
+
   a {
-    // color: #a4a4a4;
+    transition: color 0.3s ease-in-out;
+    font-weight: 600;
+
+    &:hover {
+      color: var(--danger);
+    }
   }
 
   li {

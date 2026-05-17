@@ -51,18 +51,13 @@
 
     // .select__drop-down
     &__drop-down {
-      top: 30px;
-      width: 100%;
+      top: 5px;
+      left: 0;
+      max-width: 320px;
 
       @include screen-992 {
-        top: 20px;
+        top: 25px;
       }
-    }
-
-    // .select__drop-down
-    &__drop-down {
-      max-width: 320px;
-      left: 0;
     }
 
     // .select__input
@@ -512,3 +507,14 @@
   }
 }
 //* ----------------------------------------------------------------------------
+.personal-account {
+  .breadcrumb_wrapper {
+    @include screen-768 {
+      max-width: 575px;
+    }
+
+    @include screen-575 {
+      margin: 0 -5px;
+    }
+  }
+}

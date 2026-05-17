@@ -203,8 +203,9 @@
 			<div class="container">
 				<ol class="breadcrumb">
 					<li><a href="./index.html">главная</a></li>
+					<li><a href="./personal-account.html">Личный кабинет</a></li>
 					<li class="tab-button active">
-						<span class="">Личный кабинет</span>
+						<span class="">Профиль</span>
 					</li>
 				</ol>
 			</div>
@@ -224,7 +225,7 @@
 						<!-- * [ MENU -LEFT ] -->
 						<ul class="side-menu__list">
 							<li class="side-menu__item">
-								<a href="./personal-account.html" class="side-menu__tab-link active-link" data-page="user-account">
+								<a href="./personal-account.html" class="side-menu__tab-link tab-button">
 									Личный кабинет</a>
 							</li>
 							<li class="side-menu__item">
@@ -235,7 +236,7 @@
 									История покупок</a>
 							</li>
 							<li class="side-menu__item">
-								<a href="./personal-account-user-profile.html" class="side-menu__tab-link">Профиль</a>
+								<a href="./personal-account-user-profile.html" class="side-menu__tab-link active-link">Профиль</a>
 							</li>
 							<li class="side-menu__item">
 								<a href="./personal-account-user-organizations.html" class="side-menu__tab-link">
@@ -255,15 +256,13 @@
 				</div>
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
-					<div class="acccount-section__tabs">
-						<!-- ! --------------------------[ TAB - Личный кабинет ] -------------------------- -->
-						<div class="acccount-section__tab-content inner-content user-account">
-							<!-- * -->
+					<div class="acccount-section__tabs personal-data">
+						<!-- ! -------------------------- [ TAB - Profile ] -------------------------------- -->
+						<div class="acccount-section__tab-content inner-content profile-user">
 							<div class="acccount-content">
-								<div class="acccount-content__body">
+								<div class="acccount-content__body bp-7">
 									<div class="acccount-content__header">
 										<!-- * [ BUTTONS ] -->
-
 										<div class="acccount-section__buttons">
 											<div class="acccount-section__open-menu _open-menu">
 												<div class="vertical-dots" id="verticalDots">
@@ -274,7 +273,7 @@
 											</div>
 										</div>
 										<div class="acccount-content__title">
-											<h2 class="font_clamp_50">Личный кабинет</h2>
+											<h2 class="font_clamp_50">Мой профиль</h2>
 										</div>
 									</div>
 									<form class="form-user" id="orderForm">
@@ -285,18 +284,18 @@
 												<div class="form-user__group">
 													<label class="form-user__label" for="fullname">ФИО</label>
 													<input class="form-user__input" type="text" id="fullname" name="fullname"
-														placeholder="Иванов Иван Иванович" value="">
+														placeholder="Иванов Иван Иванович" value="Иванов Иван Иванович" required>
 												</div>
 												<!--* Дата рождения -->
 												<div class="form-user__group">
 													<label class="form-user__label text-right" for="birthdate">Дата рождения</label>
-													<input class="form-user__input text-right" type="date" id="birthdate" name="birthdate">
+													<input class="form-user__input text-right" type="date" id="birthdate" value=""
+														name="birthdate">
 												</div>
 											</div>
 											<!--* ------------------ Line ------------------------- -->
 											<!-- * [ FORM ] -->
 											<div class="form-user__line">
-
 												<!--* Пол (радиокнопки) -->
 												<div class="form-user__group">
 													<span class="form-user__label">Пол</span>
@@ -311,12 +310,11 @@
 														</label>
 													</div>
 												</div>
-
 												<!--* Город -->
 												<div class="form-user__group">
-													<label class="form-user__label text-right" for="city">Город *</label>
+													<label class="form-user__label text-right" for="city">Город</label>
 													<input class="form-user__input text-right" type="text" id="city" name="city"
-														placeholder="Москва" required>
+														placeholder="Москва" value="Москва" required>
 												</div>
 											</div>
 											<!-- * [ / FORM ] -->
@@ -326,62 +324,28 @@
 												<div class="form-user__group">
 													<label class="form-user__label" for="email">Email</label>
 													<input class="form-user__input" type="email" id="email" name="email" autocomplete="email"
-														placeholder="example@mail.ru" required>
+														placeholder="example@mail.ru" value="example@mail.ru" required>
 												</div>
-												<!--* Телефон -->
+												<!-- Телефон -->
 												<div class="form-user__group">
 
 													<label class="form-user__label text-right" for="phone">Телефон</label>
 													<div class="form-user__group">
 														<input class="form-user__input text-right mask-phone" type="tel" id="phone" name="phone"
-															autocomplete="tel" placeholder="+7 (999) 123-45-67" required="">
+															autocomplete="tel" placeholder="+7 (999) 123-45-67" value="" required>
 													</div>
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Адрес доставки -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="address">Адрес доставки *</label>
-													<input class="form-user__input" type="text" id="address" name="address" autocomplete="address"
-														placeholder="ул. Пушкина, д. 10, кв. 5" required>
 												</div>
 											</div>
 											<!--* ------------------ Line ------------------------- -->
 											<div class="form-user__line">
 												<!-- Способ доставки (радиокнопки) -->
-												<div class="form-user__group _delivery">
-													<span class="form-user__label">Способ доставки</span>
-													<div class="radio-group">
-														<div class="radio-group__line">
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="cdek" required>
-																<span class="radio-group__label">СДЭК</span>
-															</label>
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pvz" required>
-																<span class="radio-group__label">ПВЗ</span>
-															</label>
-														</div>
+												<div class="form-user__group">
 
-														<div class="radio-group__line">
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="yandex" required>
-																<span class="radio-group__label">Яндекс Доставка</span>
-															</label>
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pochta" required>
-																<span class="radio-group__label">Почта России</span>
-															</label>
-														</div>
-													</div>
 												</div>
 												<!--* Кнопка Сохранить -->
 												<div class="form-user__group">
 													<button class="form-user__button dark_button" type="submit">Сохранить</button>
 												</div>
-
-
 											</div>
 										</div>
 									</form>
@@ -389,7 +353,7 @@
 								</div>
 							</div>
 							<!-- * -->
-							<div class="aside-menu-right transparent-right" data-da="bp-1" data-da-position="0"
+							<div class="aside-menu-right transparent-right" data-da="bp-7" data-da-position="1"
 								data-da-resolution="991">
 								<div class="profile">
 									<div class="profile__body">
@@ -403,11 +367,11 @@
 											</button>
 											<!-- todo (ссылка) -->
 											<!-- <a href="#" class="profile__link">
-																					<div class="profile__item">Добавить телефон</div>
-																					<div class="profile__icon" id="add-tel">
-																						<i class="icofont-close icon" id="add-button"></i>
-																					</div>
-																				</a> -->
+						<div class="profile__item">Добавить телефон</div>
+						<div class="profile__icon" id="add-tel">
+							<i class="icofont-close icon" id="add-button"></i>
+						</div>
+					</a> -->
 										</div>
 										<!-- * -->
 										<div class="profile__line">
@@ -419,11 +383,11 @@
 											</button>
 											<!-- todo (ссылка) -->
 											<!-- <a href="#" class="profile__link">
-																					<div class="profile__item">Изменить пароль</div>
-																					<div class="profile__icon">
-																						<i class="icofont-unlock icon" id="edit button"></i>
-																					</div>
-																				</a> -->
+						<div class="profile__item">Изменить пароль</div>
+						<div class="profile__icon">
+							<i class="icofont-unlock icon" id="edit button"></i>
+						</div>
+					</a> -->
 										</div>
 										<!-- * -->
 										<div class="profile__line">
@@ -435,11 +399,11 @@
 											</button>
 											<!-- todo (ссылка) -->
 											<!-- <a class="profile__link">
-												<div class="profile__item">Удалить аккаунт</div>
-												<div class="profile__icon delete-button">
-													<i class="icofont-close icon"></i>
-												</div>
-											</a> -->
+						<div class="profile__item">Удалить аккаунт</div>
+						<div class="profile__icon delete-button">
+							<i class="icofont-close icon"></i>
+						</div>
+					</a> -->
 										</div>
 										<!-- * -->
 										<div class="profile__line">
@@ -456,6 +420,7 @@
 							</div>
 							<!-- * -->
 						</div>
+
 					</div>
 				</div>
 			</div>

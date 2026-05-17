@@ -24,7 +24,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--red);
+        background-color: var(--danger);
         width: 25px;
         height: 25px;
         padding: 5px;
@@ -60,7 +60,7 @@
     font-weight: 600;
 
     &:hover {
-      color: var(--red);
+      color: var(--danger);
       filter: contrast(170%);
     }
   }
@@ -74,11 +74,11 @@
 .selected-link {
   font-weight: 600;
   white-space: nowrap;
-  color: var(--red) !important;
+  color: var(--danger);
 }
 
 .active-link {
-  color: var(--red) !important;
+  color: var(--danger);
   filter: contrast(170%);
 }
 //* --------------------------- [ menu_button ] --------------------------------

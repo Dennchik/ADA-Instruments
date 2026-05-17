@@ -290,7 +290,7 @@
 }
 
 @mixin minmax-768-1920 {
-  @media (width >= 768.98px) and (width <= 1920px) {
+  @media (width >= 768px) and (width < 1920px) {
     @content;
   }
 }
@@ -309,6 +309,11 @@
 
 @mixin minmax-320-1920 {
   @media (width >= 320.98px) and (width <= 1920px) {
+    @content;
+  }
+}
+@mixin minmax-768-1376 {
+  @media (width >= 768px) and (width <= 1376px) {
     @content;
   }
 }
@@ -423,6 +428,12 @@
 
 @mixin minmax-320-690 {
   @media (width >= 330.98px) and (width <= 690px) {
+    @content;
+  }
+}
+
+@mixin minmax-320-575 {
+  @media (width >= 320px) and (width <= 575px) {
     @content;
   }
 }
