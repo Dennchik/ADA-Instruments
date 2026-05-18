@@ -5,7 +5,7 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 7rem;
+    gap: 4rem;
   }
 
   // .ready-order__row
@@ -314,6 +314,16 @@
 
     @include screen-690 {
       margin-block: 0 2rem;
+    }
+  }
+
+  // .ready-order__button
+  &__button {
+    display: flex;
+    justify-content: end;
+
+    .send-button {
+      width: auto;
     }
   }
 }

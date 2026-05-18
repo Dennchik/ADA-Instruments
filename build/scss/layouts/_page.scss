@@ -35,9 +35,29 @@
     }
   }
 
-  .repair-status__wrapper {
+  .repair-status__wrapp {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 4rem;
-    gap: 8rem;
+
+    @include screen-1376 {
+      gap: 4rem;
+    }
+
+    @include screen-690 {
+      margin-bottom: 2rem;
+    }
+
+    @include screen-490 {
+      gap: 2rem;
+    }
+  }
+
+  .repair-status__block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 8.2rem;
 
     @include screen-1376 {
       gap: 4rem;

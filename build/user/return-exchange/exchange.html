@@ -302,19 +302,22 @@
 												<label class="repair-status__label" for="number-order">Введите номер заказа, чтобы найти товар
 													среди ваших покупок и составить заявку на возврат
 													или обмен.</label>
-												<div class="repair-status__wrapper">
-													<input class="repair-status__input" type="text" id="number-order" placeholder="LH-GH-123456">
-													<div class="repair-status__info-block">
-														<span class="icon-info">
-															<i>i</i>
-														</span>
-														<span class="repair-status__info-text">
-															Номер заказа найдите в разделе <a class="repair-status__info-link"
-																href="../../personal-account-user-order.html">«Мои заказы»</a>
-														</span>
-														<!-- <button class="send-button__button red_button" type="submit">
-															проверить
-														</button> -->
+												<div class="repair-status__wrapp">
+													<div class="repair-status__block">
+														<input class="repair-status__input" type="text" id="number-order"
+															placeholder="LH-GH-123456">
+														<div class="repair-status__info-block">
+															<span class="icon-info">
+																<i>i</i>
+															</span>
+															<span class="repair-status__info-text">
+																Номер заказа найдите в разделе <a class="repair-status__info-link"
+																	href="../../personal-account-user-order.html">«Мои заказы»</a>
+															</span>
+														</div>
+													</div>
+													<div class="repair-status__search-result">
+														По вашему запросу ничего не найдено.
 													</div>
 												</div>
 											</form>
@@ -356,7 +359,8 @@
 								<!-- * content__row - 4 -->
 								<div class="acccount-content__row">
 									<!-- * -->
-									<div class="ready-order">
+
+									<form action="#" method="#" class="ready-order" id="ready-form">
 										<div class="ready-order__body">
 											<!-- * Tovar - 1 -->
 											<div class="ready-order__row product-order">
@@ -612,8 +616,18 @@
 													</div>
 												</div>
 											</div>
+											<!-- * Button submit -->
+											<div class="ready-order__button">
+												<div class="send-button">
+													<button class="send-button__button red_button" type="submit">
+														<span>отправить заявку</span>
+													</button>
+												</div>
+											</div>
 										</div>
-									</div>
+
+									</form>
+
 									<!-- * -->
 								</div>
 							</div>

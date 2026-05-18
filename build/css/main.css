@@ -2989,22 +2989,53 @@ header .top_menu > li > a {
 .exchange .repair-status__info-link .send-button__button {
   height: 40px;
 }
-.exchange .repair-status__wrapper {
+.exchange .repair-status__wrapp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 4rem;
-  gap: 8rem;
 }
 @media screen and (width < 1376px) {
-  .exchange .repair-status__wrapper {
+  .exchange .repair-status__wrapp {
     gap: 4rem;
   }
 }
 @media (width < 690px) {
-  .exchange .repair-status__wrapper {
+  .exchange .repair-status__wrapp {
     margin-bottom: 2rem;
   }
 }
 @media screen and (width < 490px) {
-  .exchange .repair-status__wrapper {
+  .exchange .repair-status__wrapp {
+    gap: 2rem;
+  }
+}
+.exchange .repair-status__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+  gap: 8.2rem;
+}
+@media screen and (width < 1376px) {
+  .exchange .repair-status__block {
+    gap: 4rem;
+  }
+}
+@media (width < 690px) {
+  .exchange .repair-status__block {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (width < 490px) {
+  .exchange .repair-status__block {
     gap: 2rem;
   }
 }
@@ -3709,7 +3740,7 @@ header .top_menu > li > a {
 .check-box__icon .icofont-check {
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
-  opacity: 0.3;
+  opacity: 0.5;
   color: rgb(92, 92, 92);
 }
 
@@ -4812,7 +4843,7 @@ header .top_menu > li > a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 7rem;
+  gap: 4rem;
 }
 .ready-order__row {
   display: grid;
@@ -5147,6 +5178,17 @@ header .top_menu > li > a {
     margin-block: 0 2rem;
   }
 }
+.ready-order__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.ready-order__button .send-button {
+  width: auto;
+}
 
 .choice-block {
   display: -webkit-box;
@@ -5363,7 +5405,6 @@ header .top_menu > li > a {
 .cart-section__icon {
   width: 20px;
   height: 20px;
-  margin-right: 3px;
 }
 .cart-section__icon .icofont-check,
 .cart-section__icon .icofont-close {
@@ -6299,6 +6340,10 @@ header .top_menu > li > a {
   color: var(--danger);
   -webkit-transform: scale(-1);
           transform: scale(-1);
+}
+.repair-status__search-result {
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 .repair-status__label {
   font-size: 1.4rem;

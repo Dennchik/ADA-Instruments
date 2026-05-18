@@ -69,8 +69,10 @@
     }
   }
 
-  // .repair-status__collapse
-  &__collapse {
+  // .repair-status__search-result
+  &__search-result {
+    font-weight: 600;
+    font-size: 1.4rem;
   }
 
   // .repair-status__label
@@ -114,7 +116,6 @@
   }
 
   // .repair-status__info-text
-
   &__info-text {
     line-height: 110%;
     font-size: 1.4rem;
