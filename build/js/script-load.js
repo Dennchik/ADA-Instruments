@@ -385,6 +385,191 @@ function timeWorks() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   timeWorks();
+});
+//todo ------ КЛАСС ДЛЯ УПРАВЛЕНИЯ ПРОГРЕСС-БАРОМ СТАТУСОВ ЗАКАЗА --------------
+//* КОНСТРУКТОР - ИНИЦИАЛИЗАЦИЯ ПРИ СОЗДАНИИ ОБЪЕКТА
+class ProgressBarManager {
+  constructor() {
+    //* Словарь соответствия статусов и индексов (позиция в прогресс-баре)
+    //* Индексы: 0 - первый этап, 1 - второй, 2 - третий, 3 - четвёртый, 4 - пятый
+    this.statusMap = {
+      Приём: 0, // Начальный статус (0%)
+      'Принято СЦ': 1, // Сервисный центр принял (25%)
+      'В ремонте': 2, // Ремонт в процессе (50%)
+      'Готово к выдаче': 3, // Ремонт завершён (75%)
+      'Выдано СЦ': 4, // Заказ выдан клиенту (100%)
+    };
+    //* Поиск всех DOM-элементов прогресс-бара на странице
+    this.elements = {
+      fill: document.querySelector('.progress-bar__fill'),
+      labels: document.querySelectorAll('.progress-bar__label'),
+      stages: document.querySelectorAll('.progress-bar__stage'),
+      percent: document.querySelector('.progress-bar__percent'),
+    };
+
+    //* ========== НАСТРОЙКИ (меняй здесь) ==========
+    this.useRealServer = false; // TODO (Для Виктора): true - реальный сервер, false - тестовый режим (без API)
+    this.testStatus = 'Готово к выдаче'; // TODO (Для Виктора): это временно, для тестов,(не удалять)
+  }
+  //* ==========================================================================
+  //* ОСНОВНОЙ МЕТОД ОБНОВЛЕНИЯ СТАТУСА
+  //* Вызывается при получении нового статуса с сервера или из тестового режима
+  //* @param {string} status - текст статуса ('Приём', 'В ремонте' и т.д.)
+  //* ==========================================================================
+
+  updateStatus(status) {
+    const index = this.statusMap[status];
+
+    if (index === undefined) {
+      throw new Error(`Неизвестный статус: ${status}`);
+    }
+
+    // Проценты: 10%, 30%, 50%, 70%, 100%
+    const percentMap = [10, 30, 50, 70, 100];
+    const percent = percentMap[index];
+
+    setTimeout(() => {
+      //* Анимированное обновление прогресса
+      this.animateProgress(percent);
+    }, 500);
+    //* Обновляем активные классы
+    this.updateActiveElements(index);
+
+    //* Обновляем отображение процента
+    if (this.elements.percent) {
+      this.elements.percent.textContent = `${percent}%`;
+    }
+  }
+  //* ==========================================================================
+  //* АНИМАЦИЯ ЗАПОЛНЕНИЯ ПОЛОСКИ ПРОГРЕССА
+  //* @param {number} targetPercent - целевой процент (0-100)
+  //* ==========================================================================
+  animateProgress(targetPercent) {
+    if (!this.elements.fill) return;
+
+    const currentPercent = parseFloat(this.elements.fill.style.width) || 0;
+    const duration = 500;
+    const startTime = performance.now();
+
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      const newPercent =
+        currentPercent + (targetPercent - currentPercent) * easeOutCubic;
+
+      this.elements.fill.style.width = `${newPercent}%`;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }
+  //* ==========================================================================
+  //* ПОДСВЕТКА АКТИВНЫХ ЭЛЕМЕНТОВ ПРОГРЕСС-БАРА
+  //* Добавляет класс 'active' к текущему этапу и убирает с остальных
+  //* @param {number} activeIndex - индекс активного этапа (0-4)
+  //* ==========================================================================
+  updateActiveElements(activeIndex) {
+    //* Обрабатываем метки дат (progress-bar__label)
+    this.elements.labels.forEach((label, index) => {
+      if (index === activeIndex) {
+        label.classList.add('active');
+      } else {
+        label.classList.remove('active');
+      }
+    });
+    //* Обрабатываем названия этапов (progress-bar__stage)
+    this.elements.stages.forEach((stage, index) => {
+      if (index === activeIndex) {
+        stage.classList.add('active'); // Добавляем активный класс
+      } else {
+        stage.classList.remove('active'); // Убираем с остальных
+      }
+    });
+  }
+
+  // TODO (Для Виктора): метод для получения статуса с сервера - нужно реализовать API endpoint
+  async fetchStatus(endpoint) {
+    try {
+      // TODO (Для Виктора): ожидается ответ от сервера в формате:
+      // {
+      //   "status": "Приём" | "Принято СЦ" | "В ремонте" | "Готово к выдаче" | "Выдано СЦ"
+      // }
+      //* Отправляем GET-запрос на сервер
+      const response = await fetch(endpoint);
+      //* Проверяем, успешно ли завершился запрос
+      if (!response.ok) throw new Error('Ошибка сети');
+      //* Преобразуем ответ в JSON
+      const data = await response.json();
+      //* Обновляем прогресс-бар полученным статусом
+      this.updateStatus(data.status);
+      return data;
+    } catch (error) {
+      //* Логируем ошибку в консоль для отладки
+      console.error('Ошибка при получении статуса:', error);
+      throw error;
+    }
+  }
+  //* ==========================================================================
+  //* ПЕРИОДИЧЕСКИЙ ОПРОС СЕРВЕРА (ПОЛЛИНГ)
+  //* Автоматически запрашивает статус каждые N секунд
+  //* @param {string} endpoint - URL API
+  //* @param {number} interval - интервал опроса в миллисекундах (по умолчанию 5000 = 5 сек)
+  //* ==========================================================================
+  startPolling(endpoint, interval = 5000) {
+    //* Сразу получаем статус при запуске
+    this.fetchStatus(endpoint);
+
+    //* Запускаем интервал для периодических запросов
+    this.pollingInterval = setInterval(() => {
+      this.fetchStatus(endpoint);
+    }, interval);
+  }
+  //* ==========================================================================
+  //* ОСТАНОВКА ПЕРИОДИЧЕСКОГО ОПРОСА
+  //* Вызывается, когда нужно прекратить обновление статуса
+  //* ==========================================================================
+  stopPolling() {
+    if (this.pollingInterval) {
+      clearInterval(this.pollingInterval);
+      this.pollingInterval = null; // Очищаем переменную
+    }
+  }
+
+  //* ==========================================================================
+  //* ЗАПУСК ПРОГРЕСС-БАРА С АВТООПРЕДЕЛЕНИЕМ РЕЖИМА
+  //* Самый главный метод - его нужно вызвать для инициализации
+  //* @param {string} endpoint - URL API (используется только в реальном режиме)
+  //* ==========================================================================
+  async start(endpoint = '/api/order/status/123') {
+    if (this.useRealServer) {
+      //* Режим реального сервера
+      console.log('🟢 Режим: Реальный сервер');
+      await this.fetchStatus(endpoint);
+    } else {
+      //* Тестовый режим
+      console.log('🟡 Режим: Тестовый (без сервера)');
+      //* Просто показываем тестовый статус без запросов к API
+      this.updateStatus(this.testStatus);
+    }
+  }
+}
+
+//* ============================================================================
+//* ИНИЦИАЛИЗАЦИЯ И ЗАПУСК ПРОГРЕСС-БАРА
+//* ============================================================================
+
+//* Создаём экземпляр менеджера прогресс-бара
+const progressBar = new ProgressBarManager();
+
+//* Запускаем при загрузке страницы
+//* Ждём полной загрузки DOM-дерева страницы
+document.addEventListener('DOMContentLoaded', () => {
+  // TODO (Для Виктора): заменить '/api/order/status/123' на реальный endpoint бэкэнда
+  progressBar.start('/api/order/status/123');
 });

@@ -12,6 +12,61 @@
   }
 }
 
+.exchange {
+  .repair-status__input {
+    height: 40px;
+    max-width: 365px;
+
+    @include screen-490 {
+      max-width: 100%;
+    }
+  }
+
+  .repair-status__info-block {
+    @include screen-490 {
+      width: 100%;
+      flex: 0 1 100%;
+    }
+  }
+
+  .repair-status__info-link {
+    .send-button__button {
+      height: 40px;
+    }
+  }
+
+  .repair-status__wrapper {
+    margin-bottom: 4rem;
+    gap: 8rem;
+
+    @include screen-1376 {
+      gap: 4rem;
+    }
+
+    @include screen-690 {
+      margin-bottom: 2rem;
+    }
+
+    @include screen-490 {
+      gap: 2rem;
+    }
+  }
+}
+
+//* ----------------------------------------------------------------------------
+.return-exchange {
+  .categiries-servise__column {
+    &:nth-child(3) {
+      .categiries-servise__text {
+        text-align: right;
+      }
+    }
+  }
+  .categiries-servise__text {
+    align-self: end;
+  }
+}
+//* ----------------------------------------------------------------------------
 .cart-page {
   .send-button__button {
     a {

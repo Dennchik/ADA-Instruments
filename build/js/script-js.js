@@ -933,7 +933,7 @@ function handleSubmit(event) {
   }
 }
 
-//* ----------------------------------------------------------------------------
+//* ---------------------- [ МАСКА И ТЕЛЕФОНА ] --------------------------------
 function maskPhone() {
   if ($('.mask-phone').length) {
     $('.mask-phone').mask('+7 (999) 999-99-99');
@@ -1007,7 +1007,6 @@ function repairStatus() {
           const collapseElement = currentButton
             .closest('.repair-status')
             .querySelector('._collapse');
-          console.log(collapseElement);
 
           if (collapseElement) {
             const collapse = new ItcCollapse(collapseElement);
@@ -1020,3 +1019,26 @@ function repairStatus() {
   }
 }
 document.addEventListener('DOMContentLoaded', repairStatus);
+//* ----------------------------------------------------------------------------
+
+function choiceBlock() {
+  //* Находим все блоки choice-block на странице
+  const blocks = document.querySelectorAll('.choice-block');
+
+  blocks.forEach((block) => {
+    //* Внутри каждого блока ищем ТОЛЬКО свои чекбоксы
+    const checkboxes = block.querySelectorAll('.choice-block__native-input');
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', function () {
+        if (this.checked) {
+          checkboxes.forEach((other) => {
+            if (other !== this) other.checked = false;
+          });
+        }
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', choiceBlock);

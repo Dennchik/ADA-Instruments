@@ -2,7 +2,6 @@
 @use 'core/reset' as *;
 @use 'core/mixins' as *;
 @use 'core/variables' as *;
-// @use 'core/icon-variables' as *;
 // todo ------------------------- layouts --------------------------------------
 @use 'layouts/bem-block';
 @use 'layouts/footer';
@@ -14,6 +13,7 @@
 @use './assets/slick-slide';
 @use './assets/preloader';
 @use './assets/modal';
+@use './assets/choice-block';
 // todo -------------------------- Pages ---------------------------------------
 @use './pages/about-page';
 @use './pages/cart-page';

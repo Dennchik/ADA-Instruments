@@ -27,6 +27,27 @@
   font-family: 'Open Sans Bold';
   width: 160px;
 }
+.icon-info {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--red);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    line-height: 100%;
+    color: var(--red);
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+  }
+}
+//* ----------------------------------------------------------------------------
 
 .active_button:hover,
 .active_button:focus {
