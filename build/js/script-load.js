@@ -354,6 +354,7 @@ function editBankingDetails() {}
 function timeWorks() {
   const button = document.querySelector('.categiries-content__info');
   const popUp = document.querySelector('.categiries-content__pop-up');
+  const closeButton = document.querySelector('.categiries-content__button');
   let closeTimeout;
 
   if (!button || !popUp) return;
@@ -364,11 +365,16 @@ function timeWorks() {
     popUp.classList.toggle('_show');
   });
 
+  closeButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    closePopup();
+  });
+
   function closePopup() {
     popUp.classList.remove('_show');
   }
 
-  // Закрытие при клике вне
+  //* Закрытие при клике вне
   document.addEventListener('click', (event) => {
     if (popUp.classList.contains('_show')) {
       if (!popUp.contains(event.target) && !button.contains(event.target)) {
@@ -388,6 +394,7 @@ function timeWorks() {
 document.addEventListener('DOMContentLoaded', () => {
   timeWorks();
 });
+
 //todo ------ КЛАСС ДЛЯ УПРАВЛЕНИЯ ПРОГРЕСС-БАРОМ СТАТУСОВ ЗАКАЗА --------------
 //* КОНСТРУКТОР - ИНИЦИАЛИЗАЦИЯ ПРИ СОЗДАНИИ ОБЪЕКТА
 class ProgressBarManager {

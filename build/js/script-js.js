@@ -1019,8 +1019,7 @@ function repairStatus() {
   }
 }
 document.addEventListener('DOMContentLoaded', repairStatus);
-//* ----------------------------------------------------------------------------
-
+//todo ------------ [Choice Block (стр. Возврат обмен)] ------------------------
 function choiceBlock() {
   //* Находим все блоки choice-block на странице
   const blocks = document.querySelectorAll('.choice-block');
@@ -1042,3 +1041,24 @@ function choiceBlock() {
 }
 
 document.addEventListener('DOMContentLoaded', choiceBlock);
+//todo -------------- [Check Box (стр. Возврат обмен)] -------------------------
+function checkBoxVisible() {
+  const orderBlocks = document.querySelectorAll('.product-order');
+  orderBlocks.forEach((orderBlock) => {
+    if (orderBlock) {
+      const checkBox = orderBlock.querySelector('.check-box__input');
+      console.log('Начальное состояние:', checkBox.checked); // false
+
+      // Слушаем изменения
+      checkBox.addEventListener('change', function () {
+        if (checkBox.checked) {
+          orderBlock.classList.add('_checked');
+        } else {
+          orderBlock.classList.remove('_checked');
+        }
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', checkBoxVisible);

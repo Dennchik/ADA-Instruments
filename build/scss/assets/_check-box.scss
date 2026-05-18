@@ -1,5 +1,6 @@
 //* ---------------- check-box ----------------------------------------
 .check-box {
+  pointer-events: all;
   &._error {
     .checkbox__label::before {
       box-shadow: 0 0 14px 3px #ff0000;
@@ -16,7 +17,7 @@
     }
     &:checked + .icon-gray .icofont-check {
       opacity: 1;
-      color: #5c5c5c !important;
+      color: var(--danger) !important;
     }
   }
 

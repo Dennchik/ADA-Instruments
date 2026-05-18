@@ -3645,6 +3645,9 @@ header .top_menu > li > a {
   top: 47%;
 }
 
+.check-box {
+  pointer-events: all;
+}
 .check-box._error .checkbox__label::before {
   -webkit-box-shadow: 0 0 14px 3px #ff0000;
           box-shadow: 0 0 14px 3px #ff0000;
@@ -3658,7 +3661,7 @@ header .top_menu > li > a {
 }
 .check-box__input:checked + .icon-gray .icofont-check {
   opacity: 1;
-  color: #5c5c5c !important;
+  color: var(--danger) !important;
 }
 .check-box__label {
   position: relative;
@@ -5200,6 +5203,23 @@ header .top_menu > li > a {
 .choice-block__native-input:checked + .choice-block__custom-button--exchange {
   color: black;
   text-shadow: 0 0 1px #000;
+}
+
+.product-order {
+  pointer-events: none;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  opacity: 0.5;
+  -webkit-transition: opacity 0.3s ease-in-out, -webkit-filter 0.3s;
+  transition: opacity 0.3s ease-in-out, -webkit-filter 0.3s;
+  transition: filter 0.3s, opacity 0.3s ease-in-out;
+  transition: filter 0.3s, opacity 0.3s ease-in-out, -webkit-filter 0.3s;
+}
+.product-order._checked {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .about-page {
@@ -7591,10 +7611,10 @@ header .top_menu > li > a {
 .categiries-content__pop-up {
   position: absolute;
   z-index: 10;
-  max-width: 385px;
+  max-width: 315px;
   top: 34px;
   right: -10px;
-  padding: 25px;
+  padding: 30px 20px;
   background-color: white;
   -webkit-box-shadow: 0 0 8px rgba(100, 100, 100, 0.5137254902);
           box-shadow: 0 0 8px rgba(100, 100, 100, 0.5137254902);
@@ -7628,6 +7648,16 @@ header .top_menu > li > a {
   .categiries-content__pop-up {
     padding: 20px 15px;
   }
+}
+.categiries-content__button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.categiries-content__button .icofont-close {
+  font-size: 22px;
+  display: inline-block;
+  color: #a4a4a4;
 }
 .categiries-content__list {
   display: -webkit-box;

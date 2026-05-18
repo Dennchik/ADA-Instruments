@@ -1446,10 +1446,10 @@
   &__pop-up {
     position: absolute;
     z-index: 10;
-    max-width: 385px;
+    max-width: 315px;
     top: 34px;
     right: -10px;
-    padding: 25px;
+    padding: 30px 20px;
     background-color: white;
     box-shadow: 0 0 8px #64646483;
     transform: scale(0);
@@ -1474,6 +1474,19 @@
 
     @include screen-490 {
       padding: 20px 15px;
+    }
+  }
+
+  // .categiries-content__button
+  &__button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    .icofont-close {
+      font-size: 22px;
+      display: inline-block;
+      color: #a4a4a4;
     }
   }
 

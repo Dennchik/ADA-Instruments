@@ -371,3 +371,18 @@
     text-shadow: 0 0 1px #000;
   }
 }
+//* ----------------------------------------------------------------------------
+.product-order {
+  pointer-events: none;
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition:
+    filter 0.3s,
+    opacity 0.3s ease-in-out;
+
+  &._checked {
+    filter: grayscale(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+}
