@@ -7694,7 +7694,6 @@ header .top_menu > li > a {
 
 .acccount-content__body {
   padding-block: 60px 0;
-  overflow-x: hidden;
 }
 .acccount-content__body::-webkit-scrollbar {
   width: 0.2rem;
