@@ -1875,6 +1875,13 @@
 
     .radio-group__item {
       height: 17px;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    .radio-group__label {
+      cursor: pointer;
     }
   }
 

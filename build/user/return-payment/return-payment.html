@@ -42,7 +42,7 @@
 </head>
 
 
-<body class="exchange">
+<body class="return-payment">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
@@ -423,32 +423,264 @@
 											<!-- * Tovar-column - 2 -->
 											<div class="ready-order__info">
 												<div class="ready-order__header">
-													<span>Выберите тип заявки и укажите причину</span>
+													<span>Укажите причину возврата</span>
+													<span>Прикрепите фото дефекта</span>
 												</div>
-												<div class="ready-order__choice-block">
-													<form class="choice-block">
-														<label class="choice-block__option">
-															<input type="checkbox" class="choice-block__native-input" name="operation" value="return">
-															<span
-																class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
-														</label>
-														<label class="choice-block__option">
-															<input type="checkbox" class="choice-block__native-input" name="operation"
-																value="exchange">
-															<span
-																class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
-														</label>
-													</form>
-												</div>
-												<div class="ready-order__text">
-													<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
+												<div class="ready-order__load-block">
+													<div class="ready-order__text">
+														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
+													</div>
+
+													<div class="load-block">
+														<div class="load-block__upload-area">
+															<div class="load-block__preview"></div>
+															<button class="load-block__upload-btn" type="button">
+																<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+																	stroke-width="2">
+																	<path d="M12 5v14M5 12h14" />
+																</svg>
+															</button>
+															<input class="load-block__file-input" type="file" id="bouquet-upload" name="bouquet_photo"
+																accept="image/*" multiple>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
 										<!-- * Tovar - 2 -->
+										<div class="ready-order__row product-order">
+											<!-- * Tovar-column - 1 -->
+											<div class="ready-order__product">
+												<div class="ready-order__header">
+													<span>Выберите товары</span>
+												</div>
+												<div class="ready-order__content">
+													<div class="product-cart__item">
+														<div class="cart-section__icon">
+															<div class="check-box">
+																<label class="check-box__label">
+																	<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+																	<span class="check-box__icon icon-gray">
+																		<i class="icofont-check"></i>
+																	</span>
+																</label>
+															</div>
+														</div>
+														<div class="product-cart__image">
+															<img src="../../img/cart_img/product-2.png" alt="картинка">
+														</div>
+														<div class="product-cart__info">
+															<div class="product-cart__title">
+																<div class="product-cart__article">Арт 000541</div>
+																<span class="product-cart__title-wrap">
+																	<span>Лазерный дальномер</span>
+																	<span>ADA COSMO MICRO 25</span>
+																</span>
+															</div>
+															<div class="product-cart__description">
+																Диапазон работы 30 м, точность ± 3,0 мм
+															</div>
+														</div>
+														<div class="product-cart__counter">
+															<div class="counter-wrapper">
+																<div class="product-cart__price">
+																	<div class="product-cart__new-price">3 750 руб</div>
+																</div>
+																<div class="quantity product-cart__quantity" style="display: flex;">
+																	<div class="quantity__button quantity-remove">
+																		<i class="icofont-minus"></i>
+																	</div>
+																	<div class="quantity__input">
+																		<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																			autocomplete="off">
+																	</div>
+																	<div class="quantity__button quantity-add">
+																		<i class="icofont-plus"></i>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- * Tovar-column - 2 -->
+											<div class="ready-order__info">
+												<div class="ready-order__header">
+													<span>Укажите причину возврата</span>
+													<span>Прикрепите фото дефекта</span>
+												</div>
+												<div class="ready-order__load-block">
+													<div class="ready-order__text">
+														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
+													</div>
 
+													<div class="load-block">
+														<div class="load-block__upload-area">
+															<div class="load-block__preview"></div>
+															<button class="load-block__upload-btn" type="button">
+																<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+																	stroke-width="2">
+																	<path d="M12 5v14M5 12h14" />
+																</svg>
+															</button>
+															<input class="load-block__file-input" type="file" id="bouquet-upload" name="bouquet_photo"
+																accept="image/*" multiple>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 										<!-- * Tovar - 3 -->
+										<div class="ready-order__row product-order">
+											<!-- * Tovar-column - 1 -->
+											<div class="ready-order__product">
+												<div class="ready-order__header">
+													<span>Выберите товары</span>
+												</div>
+												<div class="ready-order__content">
+													<div class="product-cart__item">
+														<div class="cart-section__icon">
+															<div class="check-box">
+																<label class="check-box__label">
+																	<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+																	<span class="check-box__icon icon-gray">
+																		<i class="icofont-check"></i>
+																	</span>
+																</label>
+															</div>
+														</div>
+														<div class="product-cart__image">
+															<img src="../../img/cart_img/product-3.png" alt="картинка">
+														</div>
+														<div class="product-cart__info">
+															<div class="product-cart__title">
+																<div class="product-cart__article">Арт 000541</div>
+																<span class="product-cart__title-wrap">
+																	<span>Лазерный дальномер</span>
+																	<span>ADA COSMO MICRO 25</span>
+																</span>
+															</div>
+															<div class="product-cart__description">
+																Диапазон работы 30 м, точность ± 3,0 мм
+															</div>
+														</div>
+														<div class="product-cart__counter">
+															<div class="counter-wrapper">
+																<div class="product-cart__price">
+																	<div class="product-cart__new-price">3 750 руб</div>
+																</div>
+																<div class="quantity product-cart__quantity" style="display: flex;">
+																	<div class="quantity__button quantity-remove">
+																		<i class="icofont-minus"></i>
+																	</div>
+																	<div class="quantity__input">
+																		<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																			autocomplete="off">
+																	</div>
+																	<div class="quantity__button quantity-add">
+																		<i class="icofont-plus"></i>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- * Tovar-column - 2 -->
+											<div class="ready-order__info">
+												<div class="ready-order__header">
+													<span>Укажите причину возврата</span>
+													<span>Прикрепите фото дефекта</span>
+												</div>
+												<div class="ready-order__load-block">
+													<div class="ready-order__text">
+														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
+													</div>
 
+													<div class="load-block">
+														<div class="load-block__upload-area">
+															<div class="load-block__preview"></div>
+															<button class="load-block__upload-btn" type="button">
+																<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+																	stroke-width="2">
+																	<path d="M12 5v14M5 12h14" />
+																</svg>
+															</button>
+															<input class="load-block__file-input" type="file" id="bouquet-upload" name="bouquet_photo"
+																accept="image/*" multiple>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- * Tovar - Способ возврата -->
+										<div class="ready-order__footer">
+											<!-- * Способ возврата денежных средств -->
+											<div class="ready-order__method">
+												<div class="manual-repair__header">
+													<div class="manual-repair__title font_clamp_30">
+														Способ возврата денежных средств:
+													</div>
+												</div>
+												<!-- * -->
+												<label class="modal-rejection__radio">
+													<input class="modal-rejection__radio-input" type="radio" name="reason"
+														value="Неполная комплектация товара">
+													<span class="modal-rejection__radio-text">На банковскую карту, с которой производилась оплата
+														(срок 3–10 дней)</span>
+												</label>
+												<!-- * -->
+												<label class="modal-rejection__radio">
+													<input class="modal-rejection__radio-input" type="radio" name="reason"
+														value="Неполная комплектация товара">
+													<span class="modal-rejection__radio-text">На банковскую карту, с которой производилась оплата
+														(срок 3–10 дней)</span>
+												</label>
+												<!-- * -->
+												<label class="modal-rejection__radio">
+													<input class="modal-rejection__radio-input" type="radio" name="reason"
+														value="Неполная комплектация товара">
+													<span class="modal-rejection__radio-text">По реквизитам счета (если оплата была через
+														квитанцию/банк)</span>
+												</label>
+											</div>
+
+											<!-- * Подтверждение -->
+											<div class="ready-order__confirm">
+												<div class="manual-repair__header">
+													<div class="manual-repair__title font_clamp_30">
+														Подтверждение:
+													</div>
+												</div>
+												<div class="ready-order__confirm-line">
+													<div class="check-box">
+														<label class="check-box__label">
+															<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+															<span class="check-box__icon icon-gray">
+																<i class="icofont-check"></i>
+															</span>
+														</label>
+													</div>
+													<div class="ready-order__confirm-text">
+														Я подтверждаю, что товар не был в употреблении, сохранен его
+														товарный вид и потребительские свойства.
+													</div>
+												</div>
+												<div class="ready-order__confirm-line">
+													<div class="check-box">
+														<label class="check-box__label">
+															<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+															<span class="check-box__icon icon-gray">
+																<i class="icofont-check"></i>
+															</span>
+														</label>
+													</div>
+													<div class="ready-order__confirm-text">
+														Я согласен с политикой конфиденциальности и правилами возврата.
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 									<!-- * Submit - Button -->
 									<div class="ready-order__button">
@@ -458,20 +690,16 @@
 											</button>
 										</div>
 									</div>
+								</form>
+								<!-- * -->
 							</div>
-							<!-- * -->
-						</div>
-						<!-- * content__row - 5 -->
-						<div class="acccount-content__row">
-							<div class="manual-repair__header">
-								<div class="manual-repair__title font_clamp_30">
-									Способ возврата денежных средств:
-								</div>
+							<!-- * content__row - 5 -->
+							<div class="acccount-content__row">
+
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		</section>
 	</main>

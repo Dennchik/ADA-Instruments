@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 10px;
 
     .icofont-close {
       transition: all 0.4s ease 0s;
@@ -130,7 +131,7 @@
     font-size: 13px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     max-width: 340px;
 
     .cart-section__icon {

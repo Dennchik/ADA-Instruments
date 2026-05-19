@@ -1062,3 +1062,103 @@ function checkBoxVisible() {
 }
 
 document.addEventListener('DOMContentLoaded', checkBoxVisible);
+
+//* ----------------------------------------------------------------------------
+//todo Реализация drag-and-drop загрузку фото (.load-block ) с возможностью выбора до 5 фото, превью и кнопкой удаления
+//todo 👇 (Для Виктора)
+function dragAndDrop() {
+  const MAX_FILES = 5;
+
+  // Находим ВСЕ блоки
+  const loadBlocks = document.querySelectorAll('.load-block');
+
+  loadBlocks.forEach((loadBlock) => {
+    const uploadArea = loadBlock.querySelector('.load-block__upload-area');
+    const uploadBtn = loadBlock.querySelector('.load-block__upload-btn');
+    const fileInput = loadBlock.querySelector('.load-block__file-input');
+    const preview = loadBlock.querySelector('.load-block__preview');
+
+    if (!uploadArea || !uploadBtn || !fileInput || !preview) return;
+
+    fileInput.setAttribute('multiple', '');
+
+    function getCurrentFilesCount() {
+      return preview.querySelectorAll('.load-block__preview-item').length;
+    }
+
+    function showError(message) {
+      const existingError = uploadArea.querySelector('.load-block__error');
+      if (existingError) existingError.remove();
+
+      const error = document.createElement('div');
+      error.className = 'load-block__error';
+      error.textContent = message;
+      uploadArea.appendChild(error);
+      setTimeout(() => error.remove(), 3000);
+    }
+
+    function addFile(file) {
+      if (!file.type.startsWith('image/')) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const item = document.createElement('div');
+        item.className = 'load-block__preview-item';
+        item.innerHTML = `
+          <img class="load-block__preview-image" src="${e.target.result}" alt="preview">
+          <button class="load-block__preview-remove">×</button>
+        `;
+        item.querySelector('.load-block__preview-remove').onclick = () => {
+          item.remove();
+        };
+        preview.appendChild(item);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function handleFiles(files) {
+      const currentCount = getCurrentFilesCount();
+      const validFiles = files.filter((f) => f.type.startsWith('image/'));
+
+      if (currentCount + validFiles.length > MAX_FILES) {
+        showError(
+          `Можно загрузить не более ${MAX_FILES} фото. Сейчас загружено ${currentCount} из ${MAX_FILES}`
+        );
+        return;
+      }
+
+      validFiles.forEach((file) => addFile(file));
+      fileInput.value = '';
+    }
+
+    // Клик по кнопке
+    uploadBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      fileInput.click();
+    });
+
+    // Выбор файлов
+    fileInput.addEventListener('change', (e) => {
+      handleFiles(Array.from(e.target.files));
+    });
+
+    // Drag & Drop на всю область
+    uploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadArea.classList.add('load-block__upload-area--drag-over');
+    });
+
+    uploadArea.addEventListener('dragleave', () => {
+      uploadArea.classList.remove('load-block__upload-area--drag-over');
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadArea.classList.remove('load-block__upload-area--drag-over');
+      const files = Array.from(e.dataTransfer.files);
+      handleFiles(files);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', dragAndDrop);
