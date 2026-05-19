@@ -2975,24 +2975,14 @@ header .top_menu > li > a {
           align-items: flex-start !important;
 }
 
+.repaire .repair-status__input {
+  max-width: 295px;
+  height: 55px;
+}
+
 .requests .modal-rejection__textarea {
   max-width: 780px;
 }
-.requests .repair-status__wrapper {
-  margin-bottom: 4rem;
-  gap: 8rem;
-}
-@media screen and (width < 1376px) {
-  .requests .repair-status__wrapper {
-    gap: 4rem;
-  }
-}
-@media screen and (width < 490px) {
-  .requests .repair-status__wrapper {
-    gap: 2rem;
-  }
-}
-
 .requests .repair-status__input,
 .exchange .repair-status__input {
   height: 40px;
@@ -4754,10 +4744,10 @@ header .top_menu > li > a {
 .modal-rejection__radio-input {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 15px;
-          flex: 0 0 15px;
-  width: 15px;
-  height: 15px;
+      -ms-flex: 0 0 17px;
+          flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
   margin: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -4769,8 +4759,8 @@ header .top_menu > li > a {
   cursor: pointer;
   position: relative;
   display: block;
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   border: 2px solid #a5a5a5;
   border-radius: 50%;
   visibility: visible;
@@ -6287,6 +6277,11 @@ header .top_menu > li > a {
 .manual-repair__body {
   padding-block: 4.5rem 0;
 }
+@media (width < 690px) {
+  .manual-repair__body {
+    padding-block: 3rem 0;
+  }
+}
 .manual-repair__header {
   margin-bottom: 4rem;
   line-height: 100%;
@@ -6349,10 +6344,6 @@ header .top_menu > li > a {
   -webkit-transform: scale(-1);
           transform: scale(-1);
 }
-.repair-status__search-result {
-  font-weight: 600;
-  font-size: 14px;
-}
 .repair-status__label {
   font-size: 1.4rem;
   margin-bottom: 1.6rem;
@@ -6364,11 +6355,22 @@ header .top_menu > li > a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10px;
+  margin-bottom: 4rem;
+  gap: 8rem;
+}
+@media screen and (width < 1376px) {
+  .repair-status__wrapper {
+    gap: 4rem;
+  }
 }
 @media (width < 690px) {
   .repair-status__wrapper .send-button__button {
     height: 40px;
+  }
+}
+@media screen and (width < 490px) {
+  .repair-status__wrapper {
+    gap: 2rem;
   }
 }
 @media screen and (width < 460px) {
@@ -6378,8 +6380,6 @@ header .top_menu > li > a {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-}
-@media screen and (width < 460px) {
   .repair-status__wrapper .send-button__button {
     width: 100%;
   }
@@ -6447,12 +6447,12 @@ header .top_menu > li > a {
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
   display: block;
+  width: 100%;
   border: 1px solid #a5a5a5;
   font-size: 14px;
   padding: 10px;
-  max-width: 295px;
-  width: 100%;
-  height: 55px;
+  height: 40px;
+  max-width: 365px;
 }
 @media (width < 690px) {
   .repair-status__input {
@@ -6662,30 +6662,35 @@ header .top_menu > li > a {
   }
 }
 
-.product-status {
+.product-status__body {
   display: grid;
   grid-template-columns: -webkit-max-content auto auto auto;
   grid-template-columns: max-content auto auto auto;
   gap: 7rem;
   overflow-y: hidden;
+  padding-block: 0 10px;
 }
-.product-status::-webkit-scrollbar {
+.product-status__body::-webkit-scrollbar {
   height: 0.3rem;
   padding: 0.031em;
   position: fixed;
 }
-.product-status::-webkit-scrollbar-thumb {
+.product-status__body::-webkit-scrollbar-thumb {
   background-color: var(--danger);
 }
 @media screen and (width < 1376px) {
-  .product-status {
+  .product-status__body {
     gap: 5rem;
   }
 }
 @media screen and (width < 1024px) {
-  .product-status {
+  .product-status__body {
     gap: 3rem;
   }
+}
+.product-status__search-result {
+  font-weight: 600;
+  font-size: 1.8rem;
 }
 .product-status__column:nth-child(n+2):nth-child(-n+4) .order-product__type {
   color: red;
@@ -7797,7 +7802,7 @@ header .top_menu > li > a {
 }
 
 .acccount-content__body {
-  padding-block: 6rem 0;
+  padding-block: 60px 0;
 }
 .acccount-content__body::-webkit-scrollbar {
   width: 0.2rem;
@@ -8165,25 +8170,63 @@ header .top_menu > li > a {
 .radio-group__item span {
   white-space: nowrap;
 }
-.radio-group__item input[type=radio]::before {
-  content: "";
-  position: relative;
-  display: block;
-  width: 17px;
-  height: 17px;
-  border: 2px solid var(--red);
-  border-radius: 50%;
-  visibility: visible;
-  background-color: #ffffff;
-}
 .radio-group__line:not(:last-child) {
   padding-right: 10px;
 }
 .radio-group__input {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 17px;
+          flex: 0 0 17px;
   width: 17px;
   height: 17px;
-  cursor: pointer;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   line-height: 100%;
+}
+.radio-group__input::before {
+  content: "";
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: 2px solid #a5a5a5;
+  border-radius: 50%;
+  visibility: visible;
+  background-color: #ffffff;
+  -webkit-transition: border 0.4s ease-in-out;
+  transition: border 0.4s ease-in-out;
+}
+.radio-group__input::after {
+  content: "";
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--danger);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  pointer-events: none;
+}
+.radio-group__input:checked::before {
+  border: 2px solid var(--red);
+}
+.radio-group__input:checked::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 .radio-group__label {
   display: block;
@@ -8192,23 +8235,6 @@ header .top_menu > li > a {
   color: rgb(0, 0, 0);
   line-height: 100%; /* 17/16 */
   height: 17px;
-}
-.radio-group__label::before {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: -24px;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--red);
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: -webkit-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-  pointer-events: none;
 }
 @media screen and (width < 1376px) {
   .radio-group__label {

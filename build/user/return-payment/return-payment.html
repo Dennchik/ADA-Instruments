@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="loaded">
 
 <head>
 	<meta charset="UTF-8">
@@ -41,7 +41,8 @@
 	<script defer src="../../js/script-load.js"></script>
 </head>
 
-<body class="requests">
+
+<body class="exchange">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
@@ -210,8 +211,12 @@
 					<li class="tab-button">
 						<a href="../../personal-account-return-repair.html">Возврат и ремонт</a>
 					</li>
+					<li class="tab-button">
+						<a href="../return-exchange/return-exchange.html">Возврат и обмен</a>
+					</li>
+
 					<li class="tab-button active">
-						<span class="">Другие обращения</span>
+						<span class="">Возврат денежных средств</span>
 					</li>
 				</ol>
 			</div>
@@ -262,147 +267,215 @@
 				</div>
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
+					<!-- ! -------- [ TAB - Return-payment-page ] ----------------------- -->
 					<div class="acccount-section__tabs personal-data">
-						<!-- ! ---------- [ TAB - Requests-page ] -------------------------- -->
-						<div class="acccount-section__tab-content inner-content repair-user">
-							<div class="acccount-content__body">
-								<!-- * content__row- 1 -->
-								<div class="acccount-content__row">
-									<div class="acccount-content__header">
-										<!-- * [ BUTTONS ] -->
-										<div class="acccount-section__buttons">
-											<div class="acccount-section__open-menu _open-menu">
-												<div class="vertical-dots" id="verticalDots">
-													<span></span>
-													<span></span>
-													<span></span>
-												</div>
+						<div class="acccount-content__body">
+							<!-- * content__row - 1 (Заголовок) ----------------------------- -->
+							<div class="acccount-content__row">
+								<div class="acccount-content__header">
+									<!-- * [ BUTTONS ] -->
+									<div class="acccount-section__buttons">
+										<div class="acccount-section__open-menu _open-menu">
+											<div class="vertical-dots" id="verticalDots">
+												<span></span>
+												<span></span>
+												<span></span>
 											</div>
-										</div>
-										<div class="acccount-content__title">
-											<h2 class="font_clamp_50">Другие обращения</h2>
 										</div>
 									</div>
-									<a href="../../personal-account-return-repair.html" class="acccount-content__return-button">
-										<i class="icofont-long-arrow-left icon"></i>
-										<span>назад</span>
-									</a>
+									<div class="acccount-content__title">
+										<h2 class="font_clamp_50">Возврат и обмен</h2>
+									</div>
 								</div>
-								<!-- * content__row - 2 -->
-								<div class="acccount-content__row">
-									<div class="manual-repair">
-										<div class="manual-repair__body">
-											<!-- * -->
-											<div class="manual-repair__header">
-												<div class="manual-repair__title font_clamp_30">
-													Оставте обращение
-												</div>
-												<span>Здесь вы можете оставить обращение по&nbsp;любому вопросу. Отвечаем в&nbsp;течение
-													1&nbsp;часа</span>
+								<a href="../../personal-account-return-repair.html" class="acccount-content__return-button">
+									<i class="icofont-long-arrow-left icon"></i>
+									<span>назад</span>
+								</a>
+							</div>
+							<!-- * content__row - 2 (Блок поиска заказа) -------------------- -->
+							<div class="acccount-content__row">
+								<div class="manual-repair">
+									<div class="manual-repair__body">
+										<!-- * -->
+										<div class="manual-repair__header">
+											<div class="manual-repair__title font_clamp_30">
+												Возврат денежных средств
 											</div>
-											<!-- * -->
-											<div class="requests-block manual-repair__requests">
-												<div class="requests-block__title">
-													<span>Какой вопрос вы хотите решить?</span>
+										</div>
+										<!-- * Форма поиска заказа -->
+										<form class="repair-status__search-order" action="#" method="#">
+											<label class="repair-status__label" for="number-order">
+												Здесь вы можете оформить возврат денежных средств по оплаченным заказам. Обычно заявка
+												рассматривается два рабочих дня. Возврат осуществляется в течение десяти дней.
+											</label>
+											<div class="repair-status__wrapper">
+												<input class="repair-status__input" type="text" id="number-order" placeholder="LH-GH-123456">
+												<div class="repair-status__info-block">
+													<span class="icon-info">
+														<i>i</i>
+													</span>
+													<span class="repair-status__info-text">
+														Номер заказа найдите в разделе <a class="repair-status__info-link"
+															href="../../personal-account-user-order.html">«Мои заказы»</a>
+													</span>
 												</div>
-												<div class="requests-block__form">
-													<form class="modal-rejection__form" id="requestsForm">
-														<div class="modal-rejection__form-line">
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason"
-																	value="Неполная комплектация товара">
-																<span class="modal-rejection__radio-text">Неполная комплектация товара</span>
-															</label>
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason"
-																	value="Не хватает товара в заказе">
-																<span class="modal-rejection__radio-text">Не хватает товара в заказе</span>
-															</label>
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason"
-																	value="Получить гарантийный талон или инструкцию">
-																<span class="modal-rejection__radio-text">Получить гарантийный талон или
-																	инструкцию</span>
-															</label>
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason"
-																	value="Другой вопрос">
-																<span class="modal-rejection__radio-text">Другой вопрос</span>
-															</label>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<!-- * content__row - 3 (Найденный заказ) ----------------------- -->
+							<div class="acccount-content__row">
+								<div class="order-product">
+									<div class="order-product__body">
+										<!-- * product-status - 1 -->
+										<div class="product-status">
+											<div class="product-status__search-result">
+												По вашему запросу ничего не найдено.
+											</div>
+											<div class="product-status__body">
+												<!-- * order-product column-1 -->
+												<div class="product-status__column">
+													<div class="product-status__type font_clamp_30">Заказ №2509 - 704 - 301</div>
+													<div class="product-status__text">От 21 сентября 2025 г в 13:00</div>
+												</div>
+												<!-- * order-product column-2 -->
+												<div class="product-status__column">
+													<div class="product-status__type">Покупатель</div>
+													<div class="product-status__text">Иван И.</div>
+												</div>
+												<!-- * order-product column-3 -->
+												<div class="product-status__column">
+													<div class="product-status__type">Оплачен</div>
+													<div class="product-status__text">11 250 руб</div>
+												</div>
+												<!-- * order-product column-4 -->
+												<div class="product-status__column">
+													<div class="product-status__type">Доставлен</div>
+													<div class="product-status__text"> </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- * content__row - 4 (Содержание найденного заказа) ---------- -->
+							<div class="acccount-content__row">
+								<!-- * Товар в заказе -->
+								<form action="" method="#" class="ready-order">
+									<div class="ready-order__body">
+										<!-- * Tovar - 1 -->
+										<div class="ready-order__row product-order">
+											<!-- * Tovar-column - 1 -->
+											<div class="ready-order__product">
+												<div class="ready-order__header">
+													<span>Выберите товары</span>
+												</div>
+												<div class="ready-order__content">
+													<div class="product-cart__item">
+														<div class="cart-section__icon">
+															<div class="check-box">
+																<label class="check-box__label">
+																	<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+																	<span class="check-box__icon icon-gray">
+																		<i class="icofont-check"></i>
+																	</span>
+																</label>
+															</div>
 														</div>
-														<div class="modal-rejection__form-line">
-															<div class="repair-status__search">
-
-																<div class="repair-status__wrapper">
-																	<input class="repair-status__input" type="text" id="number-order"
-																		placeholder="Введите номер заказа *">
-																	<div class="repair-status__info-block">
-																		<span class="icon-info">
-																			<i>i</i>
-																		</span>
-																		<span class="repair-status__info-text">
-																			Номер заказа найдите в разделе <a class="repair-status__info-link"
-																				href="../../personal-account-user-order.html">«Мои заказы»</a>
-																		</span>
+														<div class="product-cart__image">
+															<img src="../../img/cart_img/product-1.png" alt="картинка">
+														</div>
+														<div class="product-cart__info">
+															<div class="product-cart__title">
+																<div class="product-cart__article">Арт 000541</div>
+																<span class="product-cart__title-wrap">
+																	<span>Лазерный дальномер</span>
+																	<span>ADA COSMO MICRO 25</span>
+																</span>
+															</div>
+															<div class="product-cart__description">
+																Диапазон работы 30 м, точность ± 3,0 мм
+															</div>
+														</div>
+														<div class="product-cart__counter">
+															<div class="counter-wrapper">
+																<div class="product-cart__price">
+																	<div class="product-cart__new-price">3 750 руб</div>
+																</div>
+																<div class="quantity product-cart__quantity" style="display: flex;">
+																	<div class="quantity__button quantity-remove">
+																		<i class="icofont-minus"></i>
+																	</div>
+																	<div class="quantity__input">
+																		<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																			autocomplete="off">
+																	</div>
+																	<div class="quantity__button quantity-add">
+																		<i class="icofont-plus"></i>
 																	</div>
 																</div>
-
-															</div>
-
-															<div class="modal-rejection__field">
-																<textarea class="modal-rejection__textarea" id="otherReason" rows="2"
-																	placeholder="Текст обращения *..."></textarea>
 															</div>
 														</div>
-														<div class="modal-rejection__form-line">
-															<div class="requests-block__title">
-																<span>Какой вопрос вы хотите решить?</span>
-															</div>
-															<div class="requests-block__radio-group">
-																<label class="modal-rejection__radio">
-																	<input class="modal-rejection__radio-input" type="radio" name="reason"
-																		value="Неполная комплектация товара">
-																	<span class="modal-rejection__radio-text">По телефону</span>
-																</label>
-																<label class="modal-rejection__radio">
-																	<input class="modal-rejection__radio-input" type="radio" name="reason"
-																		value="Не хватает товара в заказе">
-																	<span class="modal-rejection__radio-text">По email</span>
-																</label>
-															</div>
-															<div class="requests-block__field">
-
-																<input class="requests-input-phone form-user__input text-right mask-phone" type="tel"
-																	id="phone" name="phone" autocomplete="tel" placeholder="+7 (999) 123-45-67" value=""
-																	required>
-
-																<input class="requests-input-email form-user__input" type="email" id="email"
-																	name="email" autocomplete="email" placeholder="example@mail.ru" value="" required>
-
-															</div>
-															<div class="requests-block__button">
-																<div class="send-button">
-																	<button class="send-button__button red_button" type="submit">
-																		<span>отправить обращение</span>
-																	</button>
-																</div>
-															</div>
-														</div>
+													</div>
+												</div>
+											</div>
+											<!-- * Tovar-column - 2 -->
+											<div class="ready-order__info">
+												<div class="ready-order__header">
+													<span>Выберите тип заявки и укажите причину</span>
+												</div>
+												<div class="ready-order__choice-block">
+													<form class="choice-block">
+														<label class="choice-block__option">
+															<input type="checkbox" class="choice-block__native-input" name="operation" value="return">
+															<span
+																class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
+														</label>
+														<label class="choice-block__option">
+															<input type="checkbox" class="choice-block__native-input" name="operation"
+																value="exchange">
+															<span
+																class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
+														</label>
 													</form>
 												</div>
-
+												<div class="ready-order__text">
+													<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
+												</div>
 											</div>
-											<!-- * -->
+										</div>
+										<!-- * Tovar - 2 -->
+
+										<!-- * Tovar - 3 -->
+
+									</div>
+									<!-- * Submit - Button -->
+									<div class="ready-order__button">
+										<div class="send-button">
+											<button class="send-button__button red_button" type="submit">
+												<span>отправить заявку</span>
+											</button>
 										</div>
 									</div>
+							</div>
+							<!-- * -->
+						</div>
+						<!-- * content__row - 5 -->
+						<div class="acccount-content__row">
+							<div class="manual-repair__header">
+								<div class="manual-repair__title font_clamp_30">
+									Способ возврата денежных средств:
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			</div>
 		</section>
 	</main>
+
 	<!-- * ---------------------- [ Section form ] ----------------------------- -->
 	<section class="section_form container">
 		<div class="section_form_body">
@@ -444,7 +517,7 @@
 								<div class="send-button">
 									<button class="send-button__button red_button" type="submit">отправить</button>
 								</div>
-							</div><!-- /suport_feedback_form_box -->
+							</div>
 						</div>
 					</form>
 					<div class="succes_message bg_transparent" style="display: none;">
@@ -457,8 +530,6 @@
 			</div>
 		</div>
 	</section>
-	</div>
-
 	<!-- * --------------------------- [ Footer] --------------------------------- -->
 	<!--*  wow fadeInDown -->
 	<footer class="footer">
@@ -585,7 +656,6 @@
 						</div>
 						<!-- * -->
 					</div>
-					<!--/row-->
 					<div class="grafic_raboty light_grey_color font12">
 						09.00-18.00 Понедельник&#8209;Четверг / 09.00&#8209;17.00 Пятница
 						Суббота, воскресенье&#8209;выходной. Звонок по России бесплатный
@@ -617,11 +687,9 @@
 					<i class="icofont-close icon"></i>
 				</div>
 			</div>
-
 			<div class="modal-login__form">
 				<form action="#" method="get" class="form-login">
 					<!-- * -->
-
 					<fieldset class="form-login__form-group">
 						<label for="user-name" class="form-login__label fw700">Полное наименование / ФИО</label>
 						<input type="text" id="user-name" name="user-name" class="form-login__input" required>
@@ -644,7 +712,6 @@
 					<div class="modal-login__reg">
 						<span class="reg-button">Регистрация</span>
 					</div>
-
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -652,10 +719,7 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 		</div>
 	</div>
 
@@ -674,16 +738,11 @@
 			<div class="modal-registration__title">
 				Укажите вашу электронную почту и придумайте пароль
 			</div>
-
 			<div class="modal-registration__text">В пароле должно быть не меньше 6 симаволов. Можно использовать латинские
 				буквы( как прописные, так и строчные: A — Z, a — z) и цифры (0 — 9)
 			</div>
-
 			<div class="modal-registration__form">
 				<form action="#" method="get" class="form-login">
-					<!-- * -->
-
-
 					<!-- * -->
 					<fieldset class="form-login__form-group">
 						<label class="form-login__label fw700" for="email">Email</label>
@@ -702,7 +761,6 @@
 						<input type="password" id="user-password2" name="user-password2" class="form-login__input"
 							autocomplete="new-password" required>
 					</fieldset>
-
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -710,12 +768,10 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 		</div>
 	</div>
+
 </body>
 
 </html>

@@ -18,21 +18,18 @@
   }
 }
 
+.repaire {
+  .repair-status__input {
+    max-width: 295px;
+    height: 55px;
+  }
+}
+
 .requests {
   .modal-rejection__textarea {
     max-width: 780px;
   }
   .repair-status__wrapper {
-    margin-bottom: 4rem;
-    gap: 8rem;
-
-    @include screen-1376 {
-      gap: 4rem;
-    }
-
-    @include screen-490 {
-      gap: 2rem;
-    }
   }
 }
 

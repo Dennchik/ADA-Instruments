@@ -48,7 +48,34 @@
   }
 }
 //* ----------------------------------------------------------------------------
+.repair-status {
+  // .repair-status__wrapper
 
+  &__wrapper {
+  }
+
+  // .repair-status__info-block
+
+  &__info-block {
+  }
+
+  // .repair-status__info-text
+
+  &__info-text {
+  }
+
+  // .repair-status__info-link
+
+  &__info-link {
+  }
+
+  // .repair-status__search-result
+
+  &__search-result {
+  }
+}
+
+//* ----------------------------------------------------------------------------
 .active_button:hover,
 .active_button:focus {
   background-color: #fff;

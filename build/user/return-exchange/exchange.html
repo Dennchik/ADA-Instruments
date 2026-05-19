@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru" class="loaded">
 
 <head>
@@ -262,9 +263,10 @@
 				</div>
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
+					<!-- ! ----------- [ TAB - Exchange-page ] --------------------------- -->
 					<div class="acccount-section__tabs personal-data">
 						<div class="acccount-content__body">
-							<!-- * content__row- 1 -->
+							<!-- * content__row - 1 (Заголовок) ------------------------------ -->
 							<div class="acccount-content__row">
 								<div class="acccount-content__header">
 									<!-- * [ BUTTONS ] -->
@@ -286,7 +288,7 @@
 									<span>назад</span>
 								</a>
 							</div>
-							<!-- * content__row - 2 -->
+							<!-- * content__row - 2 (Блок поиска заказа) --------------------- -->
 							<div class="acccount-content__row">
 								<div class="manual-repair">
 									<div class="manual-repair__body">
@@ -296,7 +298,7 @@
 												Обменять или вернуть товар
 											</div>
 										</div>
-										<!-- * -->
+										<!-- * Форма поиска заказа -->
 										<form class="repair-status__form" action="#" method="#">
 											<label class="repair-status__label" for="number-order">Введите номер заказа, чтобы найти товар
 												среди ваших покупок и составить заявку на возврат
@@ -313,306 +315,304 @@
 													</span>
 												</div>
 											</div>
-											<div class="repair-status__search-result">
-												По вашему запросу ничего не найдено.
-											</div>
 										</form>
 									</div>
 									<!-- * --------------- [ order-product ] -------------------- -->
 								</div>
 							</div>
-							<!-- * content__row - 3 -->
+							<!-- * content__row - 3 (Найденный заказ) ------------------------ -->
 							<div class="acccount-content__row">
 								<div class="order-product">
 									<div class="order-product__body">
 										<!-- * product-status - 1 -->
 										<div class="product-status">
-											<!-- * order-product column-1 -->
-											<div class="product-status__column">
-												<div class="product-status__type font_clamp_30">Заказ №2509 - 704 - 301</div>
-												<div class="product-status__text">От 21 сентября 2025 г в 13:00</div>
+											<div class="product-status__search-result">
+												По вашему запросу ничего не найдено.
 											</div>
-											<!-- * order-product column-2 -->
-											<div class="product-status__column">
-												<div class="product-status__type">Покупатель</div>
-												<div class="product-status__text">Иван И.</div>
-											</div>
-											<!-- * order-product column-3 -->
-											<div class="product-status__column">
-												<div class="product-status__type">Оплачен</div>
-												<div class="product-status__text">11 250 руб</div>
-											</div>
-											<!-- * order-product column-4 -->
-											<div class="product-status__column">
-												<div class="product-status__type">Доставлен</div>
-												<div class="product-status__text"> </div>
+											<div class="product-status__body">
+												<!-- * order-product column-1 -->
+												<div class="product-status__column">
+													<div class="product-status__type font_clamp_30">Заказ №2509 - 704 - 301</div>
+													<div class="product-status__text">От 21 сентября 2025 г в 13:00</div>
+												</div>
+												<!-- * order-product column-2 -->
+												<div class="product-status__column">
+													<div class="product-status__type">Покупатель</div>
+													<div class="product-status__text">Иван И.</div>
+												</div>
+												<!-- * order-product column-3 -->
+												<div class="product-status__column">
+													<div class="product-status__type">Оплачен</div>
+													<div class="product-status__text">11 250 руб</div>
+												</div>
+												<!-- * order-product column-4 -->
+												<div class="product-status__column">
+													<div class="product-status__type">Доставлен</div>
+													<div class="product-status__text"> </div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<!-- * content__row - 4 -->
-								<div class="acccount-content__row">
-									<!-- * -->
-									<div class="ready-order">
-										<div class="ready-order__body">
-											<!-- * Tovar - 1 -->
-											<div class="ready-order__row product-order">
-												<div class="ready-order__product">
-													<div class="ready-order__header">
-														<span>Выберите товары</span>
-													</div>
-													<div class="ready-order__content">
-														<div class="product-cart__item">
-															<div class="cart-section__icon">
-																<div class="check-box">
-																	<label class="check-box__label">
-																		<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
-																		<span class="check-box__icon icon-gray">
-																			<i class="icofont-check"></i>
-																		</span>
-																	</label>
-																</div>
-															</div>
-															<div class="product-cart__image">
-																<img src="../../img/cart_img/product-1.png" alt="картинка">
-															</div>
-															<div class="product-cart__info">
-																<div class="product-cart__title">
-																	<div class="product-cart__article">Арт 000541</div>
-																	<span class="product-cart__title-wrap">
-																		<span>Лазерный дальномер</span>
-																		<span>ADA COSMO MICRO 25</span>
+							</div>
+							<!-- * content__row - 4 (Содержание найденного заказа) ----------- -->
+							<div class="acccount-content__row">
+								<!-- * Товар в заказе -->
+								<form action="" method="#" class="ready-order">
+									<div class="ready-order__body">
+										<!-- * Tovar - 1 -->
+										<div class="ready-order__row product-order">
+											<!-- * Tovar-column - 1 -->
+											<div class="ready-order__product">
+												<div class="ready-order__header">
+													<span>Выберите товары</span>
+												</div>
+												<div class="ready-order__content">
+													<div class="product-cart__item">
+														<div class="cart-section__icon">
+															<div class="check-box">
+																<label class="check-box__label">
+																	<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+																	<span class="check-box__icon icon-gray">
+																		<i class="icofont-check"></i>
 																	</span>
-																</div>
-																<div class="product-cart__description">
-																	Диапазон работы 30 м, точность ± 3,0 мм
-																</div>
+																</label>
 															</div>
-															<div class="product-cart__counter">
-																<div class="counter-wrapper">
-																	<div class="product-cart__price">
-																		<div class="product-cart__new-price">3 750 руб</div>
+														</div>
+														<div class="product-cart__image">
+															<img src="../../img/cart_img/product-1.png" alt="картинка">
+														</div>
+														<div class="product-cart__info">
+															<div class="product-cart__title">
+																<div class="product-cart__article">Арт 000541</div>
+																<span class="product-cart__title-wrap">
+																	<span>Лазерный дальномер</span>
+																	<span>ADA COSMO MICRO 25</span>
+																</span>
+															</div>
+															<div class="product-cart__description">
+																Диапазон работы 30 м, точность ± 3,0 мм
+															</div>
+														</div>
+														<div class="product-cart__counter">
+															<div class="counter-wrapper">
+																<div class="product-cart__price">
+																	<div class="product-cart__new-price">3 750 руб</div>
+																</div>
+																<div class="quantity product-cart__quantity" style="display: flex;">
+																	<div class="quantity__button quantity-remove">
+																		<i class="icofont-minus"></i>
 																	</div>
-																	<div class="quantity product-cart__quantity" style="display: flex;">
-																		<div class="quantity__button quantity-remove">
-																			<i class="icofont-minus"></i>
-																		</div>
-																		<div class="quantity__input">
-																			<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-																				autocomplete="off">
-																		</div>
-																		<div class="quantity__button quantity-add">
-																			<i class="icofont-plus"></i>
-																		</div>
+																	<div class="quantity__input">
+																		<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																			autocomplete="off">
+																	</div>
+																	<div class="quantity__button quantity-add">
+																		<i class="icofont-plus"></i>
 																	</div>
 																</div>
 															</div>
 														</div>
-													</div>
-												</div>
-												<!-- * -->
-												<div class="ready-order__info">
-													<div class="ready-order__header">
-														<span>Выберите тип заявки и укажите причину</span>
-													</div>
-													<div class="ready-order__choice-block">
-														<form class="choice-block">
-															<label class="choice-block__option">
-																<input type="checkbox" class="choice-block__native-input" name="operation"
-																	value="return">
-																<span
-																	class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
-															</label>
-															<label class="choice-block__option">
-																<input type="checkbox" class="choice-block__native-input" name="operation"
-																	value="exchange">
-																<span
-																	class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
-															</label>
-														</form>
-													</div>
-													<div class="ready-order__text">
-														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
 													</div>
 												</div>
 											</div>
-											<!-- * Tovar - 2 -->
-											<div class="ready-order__row product-order">
-												<div class="ready-order__product">
-													<div class="ready-order__header">
-														<span>Выберите товары</span>
-													</div>
-													<div class="ready-order__content">
-														<div class="product-cart__item">
-															<div class="cart-section__icon">
-																<div class="check-box">
-																	<label class="check-box__label">
-																		<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
-																		<span class="check-box__icon icon-gray">
-																			<i class="icofont-check"></i>
-																		</span>
-																	</label>
-																</div>
-															</div>
-															<div class="product-cart__image">
-																<img src="../../img/cart_img/product-2.png" alt="картинка">
-															</div>
-															<div class="product-cart__info">
-
-																<div class="product-cart__title">
-																	<div class="product-cart__article">Арт 000541</div>
-																	<span class="product-cart__title-wrap">
-																		<span>Лазерный дальномер</span>
-																		<span>ADA COSMO MICRO 25</span>
-																	</span>
-																</div>
-																<div class="product-cart__description">
-																	Диапазон работы 30 м, точность ± 3,0 мм
-																</div>
-															</div>
-															<div class="product-cart__counter">
-																<div class="counter-wrapper">
-																	<div class="product-cart__price">
-																		<div class="product-cart__new-price">3 750 руб</div>
-																	</div>
-																	<div class="quantity product-cart__quantity" style="display: flex;">
-																		<div class="quantity__button quantity-remove">
-																			<i class="icofont-minus"></i>
-																		</div>
-																		<div class="quantity__input">
-																			<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-																				autocomplete="off">
-																		</div>
-																		<div class="quantity__button quantity-add">
-																			<i class="icofont-plus"></i>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
+											<!-- * Tovar-column - 2 -->
+											<div class="ready-order__info">
+												<div class="ready-order__header">
+													<span>Выберите тип заявки и укажите причину</span>
+												</div>
+												<div class="ready-order__choice-block">
+													<div class="choice-block">
+														<label class="choice-block__option">
+															<input type="checkbox" class="choice-block__native-input" name="operation" value="return">
+															<span
+																class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
+														</label>
+														<label class="choice-block__option">
+															<input type="checkbox" class="choice-block__native-input" name="operation"
+																value="exchange">
+															<span
+																class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
+														</label>
 													</div>
 												</div>
-												<!-- * -->
-												<div class="ready-order__info">
-													<div class="ready-order__header">
-														<span>Выберите тип заявки и укажите причину</span>
-													</div>
-													<div class="ready-order__choice-block">
-														<form class="choice-block">
-															<label class="choice-block__option">
-																<input type="checkbox" class="choice-block__native-input" name="operation"
-																	value="return">
-																<span
-																	class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
-															</label>
-															<label class="choice-block__option">
-																<input type="checkbox" class="choice-block__native-input" name="operation"
-																	value="exchange">
-																<span
-																	class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
-															</label>
-														</form>
-													</div>
-													<div class="ready-order__text">
-														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
-													</div>
-												</div>
-											</div>
-											<!-- * Tovar - 3 -->
-											<div class="ready-order__row product-order">
-												<div class="ready-order__product">
-													<div class="ready-order__header">
-														<span>Выберите товары</span>
-													</div>
-													<div class="ready-order__content">
-														<div class="product-cart__item">
-															<div class="cart-section__icon">
-																<div class="check-box">
-																	<label class="check-box__label">
-																		<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
-																		<span class="check-box__icon icon-gray">
-																			<i class="icofont-check"></i>
-																		</span>
-																	</label>
-																</div>
-															</div>
-															<div class="product-cart__image">
-																<img src="../../img/cart_img/product-3.png" alt="картинка">
-															</div>
-															<div class="product-cart__info">
-																<div class="product-cart__title">
-																	<div class="product-cart__article">Арт 000541</div>
-																	<span class="product-cart__title-wrap">
-																		<span>Лазерный дальномер</span>
-																		<span>ADA COSMO MICRO 25</span>
-																	</span>
-																</div>
-																<div class="product-cart__description">
-																	Диапазон работы 30 м, точность ± 3,0 мм
-																</div>
-															</div>
-															<div class="product-cart__counter">
-																<div class="counter-wrapper">
-																	<div class="product-cart__price">
-																		<div class="product-cart__new-price">3 750 руб</div>
-																	</div>
-																	<div class="quantity product-cart__quantity" style="display: flex;">
-																		<div class="quantity__button quantity-remove">
-																			<i class="icofont-minus"></i>
-																		</div>
-																		<div class="quantity__input">
-																			<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
-																				autocomplete="off">
-																		</div>
-																		<div class="quantity__button quantity-add">
-																			<i class="icofont-plus"></i>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<!-- * -->
-												<div class="ready-order__info">
-													<div class="ready-order__header">
-														<span>Выберите тип заявки и укажите причину</span>
-													</div>
-													<div class="ready-order__choice-block">
-														<form class="choice-block">
-															<label class="choice-block__option">
-																<input type="checkbox" class="choice-block__native-input" name="operation"
-																	value="return">
-																<span
-																	class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
-															</label>
-
-															<label class="choice-block__option">
-																<input type="checkbox" class="choice-block__native-input" name="operation"
-																	value="exchange">
-																<span
-																	class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
-															</label>
-														</form>
-													</div>
-
-													<div class="ready-order__text">
-														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
-													</div>
+												<div class="ready-order__text">
+													<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
 												</div>
 											</div>
 										</div>
-										<!-- * Submit - Button -->
-										<div class="ready-order__button">
-											<div class="send-button">
-												<button class="send-button__button red_button" type="submit">
-													<span>отправить заявку</span>
-												</button>
+										<!-- * Tovar - 2 -->
+										<div class="ready-order__row product-order">
+											<!-- * Tovar-column - 1 -->
+											<div class="ready-order__product">
+												<div class="ready-order__header">
+													<span>Выберите товары</span>
+												</div>
+												<div class="ready-order__content">
+													<div class="product-cart__item">
+														<div class="cart-section__icon">
+															<div class="check-box">
+																<label class="check-box__label">
+																	<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+																	<span class="check-box__icon icon-gray">
+																		<i class="icofont-check"></i>
+																	</span>
+																</label>
+															</div>
+														</div>
+														<div class="product-cart__image">
+															<img src="../../img/cart_img/product-2.png" alt="картинка">
+														</div>
+														<div class="product-cart__info">
+															<div class="product-cart__title">
+																<div class="product-cart__article">Арт 000541</div>
+																<span class="product-cart__title-wrap">
+																	<span>Лазерный дальномер</span>
+																	<span>ADA COSMO MICRO 25</span>
+																</span>
+															</div>
+															<div class="product-cart__description">
+																Диапазон работы 30 м, точность ± 3,0 мм
+															</div>
+														</div>
+														<div class="product-cart__counter">
+															<div class="counter-wrapper">
+																<div class="product-cart__price">
+																	<div class="product-cart__new-price">3 750 руб</div>
+																</div>
+																<div class="quantity product-cart__quantity" style="display: flex;">
+																	<div class="quantity__button quantity-remove">
+																		<i class="icofont-minus"></i>
+																	</div>
+																	<div class="quantity__input">
+																		<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																			autocomplete="off">
+																	</div>
+																	<div class="quantity__button quantity-add">
+																		<i class="icofont-plus"></i>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- * Tovar-column - 2 -->
+											<div class="ready-order__info">
+												<div class="ready-order__header">
+													<span>Выберите тип заявки и укажите причину</span>
+												</div>
+												<div class="ready-order__choice-block">
+													<div class="choice-block">
+														<label class="choice-block__option">
+															<input type="checkbox" class="choice-block__native-input" name="operation" value="return">
+															<span
+																class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
+														</label>
+														<label class="choice-block__option">
+															<input type="checkbox" class="choice-block__native-input" name="operation"
+																value="exchange">
+															<span
+																class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
+														</label>
+													</div>
+												</div>
+												<div class="ready-order__text">
+													<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
+												</div>
+											</div>
+										</div>
+										<!-- * Tovar - 3 -->
+										<div class="ready-order__row product-order">
+											<!-- * Tovar-column - 1 -->
+											<div class="ready-order__product">
+												<div class="ready-order__header">
+													<span>Выберите товары</span>
+												</div>
+												<div class="ready-order__content">
+													<div class="product-cart__item">
+														<div class="cart-section__icon">
+															<div class="check-box">
+																<label class="check-box__label">
+																	<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+																	<span class="check-box__icon icon-gray">
+																		<i class="icofont-check"></i>
+																	</span>
+																</label>
+															</div>
+														</div>
+														<div class="product-cart__image">
+															<img src="../../img/cart_img/product-3.png" alt="картинка">
+														</div>
+														<div class="product-cart__info">
+															<div class="product-cart__title">
+																<div class="product-cart__article">Арт 000541</div>
+																<span class="product-cart__title-wrap">
+																	<span>Лазерный дальномер</span>
+																	<span>ADA COSMO MICRO 25</span>
+																</span>
+															</div>
+															<div class="product-cart__description">
+																Диапазон работы 30 м, точность ± 3,0 мм
+															</div>
+														</div>
+														<div class="product-cart__counter">
+															<div class="counter-wrapper">
+																<div class="product-cart__price">
+																	<div class="product-cart__new-price">3 750 руб</div>
+																</div>
+																<div class="quantity product-cart__quantity" style="display: flex;">
+																	<div class="quantity__button quantity-remove">
+																		<i class="icofont-minus"></i>
+																	</div>
+																	<div class="quantity__input">
+																		<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																			autocomplete="off">
+																	</div>
+																	<div class="quantity__button quantity-add">
+																		<i class="icofont-plus"></i>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- * Tovar-column - 2 -->
+											<div class="ready-order__info">
+												<div class="ready-order__header">
+													<span>Выберите тип заявки и укажите причину</span>
+												</div>
+												<div class="ready-order__choice-block">
+													<div class="choice-block">
+														<label class="choice-block__option">
+															<input type="checkbox" class="choice-block__native-input" name="operation" value="return">
+															<span
+																class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
+														</label>
+														<label class="choice-block__option">
+															<input type="checkbox" class="choice-block__native-input" name="operation"
+																value="exchange">
+															<span
+																class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
+														</label>
+													</div>
+												</div>
+												<div class="ready-order__text">
+													<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
+												</div>
 											</div>
 										</div>
 									</div>
-									<!-- * -->
-								</div>
+									<!-- * Tovar - 3 (Submit Button) -->
+									<div class="ready-order__button">
+										<div class="send-button">
+											<button class="send-button__button red_button" type="submit">
+												<span>отправить заявку</span>
+											</button>
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -620,7 +620,6 @@
 			</div>
 		</section>
 	</main>
-
 	<!-- * ---------------------- [ Section form ] ----------------------------- -->
 	<section class="section_form container">
 		<div class="section_form_body">
@@ -818,6 +817,7 @@
 		</div>
 	</footer>
 	<!-- * --- / End --- -->
+	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 	<div id="toTop"><i class="icofont-rounded-up"></i></div>
 
 	<!-- * MODAL Login-->
