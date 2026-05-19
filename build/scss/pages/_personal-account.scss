@@ -522,6 +522,9 @@
 
       .categiries-servise__image {
         height: 100%;
+        img {
+          object-fit: cover;
+        }
       }
 
       @include screen-575 {
@@ -1445,7 +1448,7 @@
       white-space: nowrap;
 
       &:nth-child(1) {
-        @include screen-490 {
+        @include screen-1200 {
           display: none;
         }
       }
