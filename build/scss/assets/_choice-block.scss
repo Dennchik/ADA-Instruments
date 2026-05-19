@@ -20,7 +20,8 @@
       gap: 5rem;
     }
 
-    @include screen-860 {
+    @include screen-768 {
+      gap: 5rem 3rem;
     }
 
     @include screen-575 {
@@ -132,7 +133,7 @@
       }
 
       @include screen-960 {
-        grid-template-columns: 28px 1fr;
+        // grid-template-columns: 28px 1fr;
       }
 
       @include screen-768 {
@@ -141,6 +142,7 @@
 
       @include screen-575 {
         grid-template-columns: 28px min-content 1fr;
+        row-gap: 2rem;
       }
 
       @include screen-375 {
@@ -187,10 +189,6 @@
         grid-column: 2 / 4;
       }
 
-      @include screen-960 {
-        grid-column: 2 / 3;
-      }
-
       @include screen-575 {
         grid-column: 3 / 4;
         grid-row: 2 / 3;
@@ -212,11 +210,6 @@
       grid-row: 1 / 2;
       padding: 10px 0;
 
-      @include screen-960 {
-        grid-column: 2 / 3;
-        grid-row: 3 / 4;
-      }
-
       @include screen-840 {
         justify-self: end;
       }
@@ -224,6 +217,10 @@
       @include screen-575 {
         grid-column: 3 / 4;
         grid-row: 1 / 2;
+      }
+
+      @include screen-425 {
+        justify-self: start;
       }
 
       @include screen-375 {
@@ -237,10 +234,6 @@
         align-items: center;
         width: 100%;
         justify-content: space-between;
-
-        @include screen-840 {
-          width: 238px;
-        }
 
         @include screen-575 {
           justify-content: end;
@@ -319,10 +312,15 @@
 
   // .ready-order__info
   &__info {
+    display: flex;
+    flex-direction: column;
+
     .ready-order__header {
       text-align: right;
       margin-bottom: 2.8rem;
-
+      @include screen-768 {
+        white-space: nowrap;
+      }
       @include screen-425 {
         text-align: left;
         margin-left: 28px;
@@ -332,8 +330,9 @@
 
   // /ready-order__load-block
   &__load-block {
+    position: relative;
     height: auto;
-    max-height: 425px;
+    height: 100%;
     border: 1px solid #ddd;
 
     .ready-order__text {
@@ -344,8 +343,6 @@
     }
 
     .ready-order__text {
-      margin-bottom: 20px;
-
       @include screen-425 {
         margin-left: 0;
       }
@@ -358,6 +355,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    line-height: 100%;
 
     @include screen-425 {
       align-items: flex-start;
