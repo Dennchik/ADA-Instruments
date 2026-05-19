@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="loaded">
 
 <head>
 	<meta charset="UTF-8">
@@ -40,6 +39,7 @@
 	<script defer src="../../js/script-js.js"></script>
 	<script defer src="../../js/script-load.js"></script>
 </head>
+
 
 <body class="exchange">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
@@ -88,6 +88,7 @@
 	</div>
 	<!-- * ------------------------- [ Main block ] ------------------------------ -->
 	<main id="main">
+		<!-- * ------------------------- [ Header ] -------------------------------- -->
 		<header class="header">
 			<div class="header__body container h-100">
 				<!-- * -->
@@ -262,105 +263,97 @@
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
 					<div class="acccount-section__tabs personal-data">
-						<!-- ! ---------- [ TAB - Exchange-page ] -------------------------- -->
-						<div class="acccount-section__tab-content inner-content repair-user">
-							<div class="acccount-content__body">
-								<!-- * content__row- 1 -->
-								<div class="acccount-content__row">
-									<div class="acccount-content__header">
-										<!-- * [ BUTTONS ] -->
-										<div class="acccount-section__buttons">
-											<div class="acccount-section__open-menu _open-menu">
-												<div class="vertical-dots" id="verticalDots">
-													<span></span>
-													<span></span>
-													<span></span>
-												</div>
+						<div class="acccount-content__body">
+							<!-- * content__row- 1 -->
+							<div class="acccount-content__row">
+								<div class="acccount-content__header">
+									<!-- * [ BUTTONS ] -->
+									<div class="acccount-section__buttons">
+										<div class="acccount-section__open-menu _open-menu">
+											<div class="vertical-dots" id="verticalDots">
+												<span></span>
+												<span></span>
+												<span></span>
 											</div>
-										</div>
-										<div class="acccount-content__title">
-											<h2 class="font_clamp_50">Возврат и ремонт</h2>
 										</div>
 									</div>
-									<a href="../../personal-account-return-repair.html" class="acccount-content__return-button">
-										<i class="icofont-long-arrow-left icon"></i>
-										<span>назад</span>
-									</a>
-								</div>
-								<!-- * content__row - 2 -->
-								<div class="acccount-content__row">
-									<div class="manual-repair">
-										<div class="manual-repair__body">
-											<!-- * -->
-											<div class="manual-repair__header">
-												<div class="manual-repair__title font_clamp_30">
-													Обменять или вернуть товар
-												</div>
-											</div>
-											<!-- * -->
-											<form class="repair-status__form" action="#" method="#">
-												<label class="repair-status__label" for="number-order">Введите номер заказа, чтобы найти товар
-													среди ваших покупок и составить заявку на возврат
-													или обмен.</label>
-												<div class="repair-status__wrapp">
-													<div class="repair-status__block">
-														<input class="repair-status__input" type="text" id="number-order"
-															placeholder="LH-GH-123456">
-														<div class="repair-status__info-block">
-															<span class="icon-info">
-																<i>i</i>
-															</span>
-															<span class="repair-status__info-text">
-																Номер заказа найдите в разделе <a class="repair-status__info-link"
-																	href="../../personal-account-user-order.html">«Мои заказы»</a>
-															</span>
-														</div>
-													</div>
-													<div class="repair-status__search-result">
-														По вашему запросу ничего не найдено.
-													</div>
-												</div>
-											</form>
-										</div>
-										<!-- * --------------- [ order-product ] -------------------- -->
+									<div class="acccount-content__title">
+										<h2 class="font_clamp_50">Возврат и ремонт</h2>
 									</div>
 								</div>
-								<!-- * content__row - 3 -->
-								<div class="acccount-content__row">
-									<div class="order-product">
-										<div class="order-product__body">
-											<!-- * product-status - 1 -->
-											<div class="product-status">
-												<!-- * order-product column-1 -->
-												<div class="product-status__column">
-													<div class="product-status__type font_clamp_30">Заказ №2509 - 704 - 301</div>
-													<div class="product-status__text">От 21 сентября 2025 г в 13:00</div>
+								<a href="../../personal-account-return-repair.html" class="acccount-content__return-button">
+									<i class="icofont-long-arrow-left icon"></i>
+									<span>назад</span>
+								</a>
+							</div>
+							<!-- * content__row - 2 -->
+							<div class="acccount-content__row">
+								<div class="manual-repair">
+									<div class="manual-repair__body">
+										<!-- * -->
+										<div class="manual-repair__header">
+											<div class="manual-repair__title font_clamp_30">
+												Обменять или вернуть товар
+											</div>
+										</div>
+										<!-- * -->
+										<form class="repair-status__form" action="#" method="#">
+											<label class="repair-status__label" for="number-order">Введите номер заказа, чтобы найти товар
+												среди ваших покупок и составить заявку на возврат
+												или обмен.</label>
+											<div class="repair-status__wrapper">
+												<input class="repair-status__input" type="text" id="number-order" placeholder="LH-GH-123456">
+												<div class="repair-status__info-block">
+													<span class="icon-info">
+														<i>i</i>
+													</span>
+													<span class="repair-status__info-text">
+														Номер заказа найдите в разделе <a class="repair-status__info-link"
+															href="../../personal-account-user-order.html">«Мои заказы»</a>
+													</span>
 												</div>
-												<!-- * order-product column-2 -->
-												<div class="product-status__column">
-													<div class="product-status__type">Покупатель</div>
-													<div class="product-status__text">Иван И.</div>
-												</div>
-												<!-- * order-product column-3 -->
-												<div class="product-status__column">
-													<div class="product-status__type">Оплачен</div>
-													<div class="product-status__text">11 250 руб</div>
-												</div>
-												<!-- * order-product column-4 -->
-												<div class="product-status__column">
-													<div class="product-status__type">Доставлен</div>
-													<div class="product-status__text"> </div>
-												</div>
+											</div>
+											<div class="repair-status__search-result">
+												По вашему запросу ничего не найдено.
+											</div>
+										</form>
+									</div>
+									<!-- * --------------- [ order-product ] -------------------- -->
+								</div>
+							</div>
+							<!-- * content__row - 3 -->
+							<div class="acccount-content__row">
+								<div class="order-product">
+									<div class="order-product__body">
+										<!-- * product-status - 1 -->
+										<div class="product-status">
+											<!-- * order-product column-1 -->
+											<div class="product-status__column">
+												<div class="product-status__type font_clamp_30">Заказ №2509 - 704 - 301</div>
+												<div class="product-status__text">От 21 сентября 2025 г в 13:00</div>
+											</div>
+											<!-- * order-product column-2 -->
+											<div class="product-status__column">
+												<div class="product-status__type">Покупатель</div>
+												<div class="product-status__text">Иван И.</div>
+											</div>
+											<!-- * order-product column-3 -->
+											<div class="product-status__column">
+												<div class="product-status__type">Оплачен</div>
+												<div class="product-status__text">11 250 руб</div>
+											</div>
+											<!-- * order-product column-4 -->
+											<div class="product-status__column">
+												<div class="product-status__type">Доставлен</div>
+												<div class="product-status__text"> </div>
 											</div>
 										</div>
 									</div>
-									<!-- * -->
 								</div>
 								<!-- * content__row - 4 -->
 								<div class="acccount-content__row">
 									<!-- * -->
-
-									<form action="#" method="#" class="ready-order" id="ready-form">
+									<div class="ready-order">
 										<div class="ready-order__body">
 											<!-- * Tovar - 1 -->
 											<div class="ready-order__row product-order">
@@ -384,7 +377,6 @@
 																<img src="../../img/cart_img/product-1.png" alt="картинка">
 															</div>
 															<div class="product-cart__info">
-
 																<div class="product-cart__title">
 																	<div class="product-cart__article">Арт 000541</div>
 																	<span class="product-cart__title-wrap">
@@ -431,7 +423,6 @@
 																<span
 																	class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
 															</label>
-
 															<label class="choice-block__option">
 																<input type="checkbox" class="choice-block__native-input" name="operation"
 																	value="exchange">
@@ -440,13 +431,11 @@
 															</label>
 														</form>
 													</div>
-
 													<div class="ready-order__text">
 														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
 													</div>
 												</div>
 											</div>
-
 											<!-- * Tovar - 2 -->
 											<div class="ready-order__row product-order">
 												<div class="ready-order__product">
@@ -516,7 +505,6 @@
 																<span
 																	class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
 															</label>
-
 															<label class="choice-block__option">
 																<input type="checkbox" class="choice-block__native-input" name="operation"
 																	value="exchange">
@@ -525,13 +513,11 @@
 															</label>
 														</form>
 													</div>
-
 													<div class="ready-order__text">
 														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
 													</div>
 												</div>
 											</div>
-
 											<!-- * Tovar - 3 -->
 											<div class="ready-order__row product-order">
 												<div class="ready-order__product">
@@ -554,7 +540,6 @@
 																<img src="../../img/cart_img/product-3.png" alt="картинка">
 															</div>
 															<div class="product-cart__info">
-
 																<div class="product-cart__title">
 																	<div class="product-cart__article">Арт 000541</div>
 																	<span class="product-cart__title-wrap">
@@ -616,18 +601,16 @@
 													</div>
 												</div>
 											</div>
-											<!-- * Button submit -->
-											<div class="ready-order__button">
-												<div class="send-button">
-													<button class="send-button__button red_button" type="submit">
-														<span>отправить заявку</span>
-													</button>
-												</div>
+										</div>
+										<!-- * Submit - Button -->
+										<div class="ready-order__button">
+											<div class="send-button">
+												<button class="send-button__button red_button" type="submit">
+													<span>отправить заявку</span>
+												</button>
 											</div>
 										</div>
-
-									</form>
-
+									</div>
 									<!-- * -->
 								</div>
 							</div>
@@ -637,6 +620,7 @@
 			</div>
 		</section>
 	</main>
+
 	<!-- * ---------------------- [ Section form ] ----------------------------- -->
 	<section class="section_form container">
 		<div class="section_form_body">
@@ -678,7 +662,7 @@
 								<div class="send-button">
 									<button class="send-button__button red_button" type="submit">отправить</button>
 								</div>
-							</div><!-- /suport_feedback_form_box -->
+							</div>
 						</div>
 					</form>
 					<div class="succes_message bg_transparent" style="display: none;">
@@ -691,8 +675,6 @@
 			</div>
 		</div>
 	</section>
-	</div>
-
 	<!-- * --------------------------- [ Footer] --------------------------------- -->
 	<!--*  wow fadeInDown -->
 	<footer class="footer">
@@ -819,7 +801,6 @@
 						</div>
 						<!-- * -->
 					</div>
-					<!--/row-->
 					<div class="grafic_raboty light_grey_color font12">
 						09.00-18.00 Понедельник&#8209;Четверг / 09.00&#8209;17.00 Пятница
 						Суббота, воскресенье&#8209;выходной. Звонок по России бесплатный
@@ -851,11 +832,9 @@
 					<i class="icofont-close icon"></i>
 				</div>
 			</div>
-
 			<div class="modal-login__form">
 				<form action="#" method="get" class="form-login">
 					<!-- * -->
-
 					<fieldset class="form-login__form-group">
 						<label for="user-name" class="form-login__label fw700">Полное наименование / ФИО</label>
 						<input type="text" id="user-name" name="user-name" class="form-login__input" required>
@@ -878,7 +857,6 @@
 					<div class="modal-login__reg">
 						<span class="reg-button">Регистрация</span>
 					</div>
-
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -886,10 +864,7 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 		</div>
 	</div>
 
@@ -908,16 +883,11 @@
 			<div class="modal-registration__title">
 				Укажите вашу электронную почту и придумайте пароль
 			</div>
-
 			<div class="modal-registration__text">В пароле должно быть не меньше 6 симаволов. Можно использовать латинские
 				буквы( как прописные, так и строчные: A — Z, a — z) и цифры (0 — 9)
 			</div>
-
 			<div class="modal-registration__form">
 				<form action="#" method="get" class="form-login">
-					<!-- * -->
-
-
 					<!-- * -->
 					<fieldset class="form-login__form-group">
 						<label class="form-login__label fw700" for="email">Email</label>
@@ -936,7 +906,6 @@
 						<input type="password" id="user-password2" name="user-password2" class="form-login__input"
 							autocomplete="new-password" required>
 					</fieldset>
-
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -944,13 +913,9 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 		</div>
 	</div>
-
 
 </body>
 

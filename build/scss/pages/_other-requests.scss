@@ -1,0 +1,109 @@
+@use '../core/mixins' as *;
+//* ------------------------- [ other-requests ] -------------------------------
+.requests-block {
+  .form-user__input {
+    width: 100%;
+
+    &.requests-input-email {
+      max-width: 36rem;
+
+      @include screen-460 {
+        max-width: 100%;
+      }
+    }
+
+    &.requests-input-phone {
+      max-width: 25rem;
+
+      @include screen-460 {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .modal-rejection__radio-text {
+    font-size: 1.8rem;
+
+    @include screen-490 {
+      font-size: 14px;
+    }
+  }
+
+  .modal-rejection__form-line {
+    &:nth-child(1) {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      gap: 1rem 14rem;
+      justify-content: start;
+
+      @include screen-960 {
+        gap: 1rem 2rem;
+      }
+
+      @include screen-768 {
+        grid-template-columns: 100%;
+      }
+    }
+
+    .modal-rejection__radio-text {
+      white-space: wrap;
+      line-height: 110%;
+    }
+  }
+
+  // .requests-block__radio-group
+  &__radio-group {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3.4rem;
+  }
+
+  // .requests__button
+  &__button {
+    display: flex;
+    justify-self: end;
+    margin-top: 4.6rem;
+
+    @include screen-425 {
+      width: 100%;
+      .send-button__button {
+        width: 100%;
+      }
+    }
+  }
+
+  // .requests-block__field
+  &__field {
+    display: flex;
+    gap: 3rem;
+
+    @include screen-460 {
+      flex-direction: column;
+    }
+  }
+
+  // .requests-block__title
+  &__title {
+    line-height: 110%;
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 2.4rem;
+
+    @include screen-690 {
+      font-size: 16px;
+    }
+  }
+
+  // .requests-block__form
+  &__form {
+    .modal-rejection__form {
+      display: flex;
+      flex-direction: column;
+      gap: 4.5rem;
+    }
+
+    .repair-status__wrapper {
+      margin-bottom: 3.4rem;
+    }
+  }
+}

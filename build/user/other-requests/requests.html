@@ -41,7 +41,7 @@
 	<script defer src="../../js/script-load.js"></script>
 </head>
 
-<body class="personal-repair">
+<body class="requests">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
@@ -123,7 +123,7 @@
 											<li class="has_child">
 												<a href="../../productia.html"><span>Продукция</span></a>
 												<ul class="sub_menu">
-													<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a>
+													<li><a href="../../catalog/laser-distance-meter.html">Лазерные дальномеры</a>
 													</li>
 													<li><a href="../../catalog/automatic-levels/">Оптические нивелиры</a></li>
 													<li><a href="../../catalog/theodolites/">Теодолиты</a></li>
@@ -154,7 +154,7 @@
 						<div class="col-auto">
 							<div class="right_TP">
 								<div class="row  align-items-center  justify-content-end">
-									<!-- *=================== -->
+									<!-- * -->
 									<div class="col-auto d-none d-lg-block">
 										<form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
 											<div class="search_wrap">
@@ -164,10 +164,10 @@
 											</div>
 										</form>
 									</div>
-									<!--* =================== -->
+									<!-- * -->
 									<div class="col-auto">
 										<div class="col_icons">
-											<a href="./cart.html" class="col_cart icon_col cart-user">
+											<a href="../../cart.html" class="col_cart icon_col cart-user">
 												<div class="cart-user__quantity"></div>
 												<svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
 													viewBox="0 0 512 512">
@@ -206,8 +206,11 @@
 					<li class="tab-button">
 						<a href="../../personal-account.html" class="">Личный кабинет</a>
 					</li>
+					<li class="tab-button">
+						<a href="../../personal-account-return-repair.html">Возврат и ремонт</a>
+					</li>
 					<li class="tab-button active">
-						<span class="">Возврат и ремонт</span>
+						<span class="">Другие обращения</span>
 					</li>
 				</ol>
 			</div>
@@ -259,11 +262,11 @@
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
 					<div class="acccount-section__tabs personal-data">
-						<!-- ! ----------------------- [ TAB - Repair-user ] ------------------------------ -->
+						<!-- ! ---------- [ TAB - Requests-page ] -------------------------- -->
 						<div class="acccount-section__tab-content inner-content repair-user">
 							<div class="acccount-content__body">
-								<!-- * content__column - 1 -->
-								<div class="acccount-content__column">
+								<!-- * content__row- 1 -->
+								<div class="acccount-content__row">
 									<div class="acccount-content__header">
 										<!-- * [ BUTTONS ] -->
 										<div class="acccount-section__buttons">
@@ -276,157 +279,185 @@
 											</div>
 										</div>
 										<div class="acccount-content__title">
-											<h2 class="font_clamp_50">Возврат, ремонт</h2>
-											<span>и другие обращения</span>
+											<h2 class="font_clamp_50">Другие обращения</h2>
 										</div>
 									</div>
+									<a href="../../personal-account-return-repair.html" class="acccount-content__return-button">
+										<i class="icofont-long-arrow-left icon"></i>
+										<span>назад</span>
+									</a>
 								</div>
-								<!-- * content__column - 2 -->
-								<div class="acccount-content__column">
-									<div class="categiries-servise">
-										<div class="categiries-servise__body">
+								<!-- * content__row - 2 -->
+								<div class="acccount-content__row">
+									<div class="manual-repair">
+										<div class="manual-repair__body">
 											<!-- * -->
-											<div class="categiries-servise__column">
-												<a href="./repair.html" class="categiries-servise__image _img">
-													<img src="../../img/return-repair/repair_img.png" style="opacity: 0;" alt="image">
-												</a>
-												<div class="categiries-servise__content">
-													<div class="categiries-servise__text" style="opacity: 0;">
-														Ремонт
-													</div>
-													<div class="categiries-servise__info">
-														<div class="categiries-content" style="opacity: 1; transform: translateX(0)">
-															<div class="categiries-content__column">
-																<div class="categiries-content__title">Ремонт</div>
-																<div class="categiries-content__text">
-																	<a href="../repair/repair.html" class="categiries-content__link">
-																		Сдать товар</a>
-																	<a href="#" class="categiries-content__link">Отслеживание хода ремонта</a>
-																</div>
-															</div>
-															<div class="categiries-content__column">
-																<div class="categiries-content__info">
-																	<div class="categiries-content__info-btn">
-																		<span>Сроки работ</span>
-																		<span class="categiries-content__icon">
+											<div class="manual-repair__header">
+												<div class="manual-repair__title font_clamp_30">
+													Оставте обращение
+												</div>
+												<span>Здесь вы можете оставить обращение по&nbsp;любому вопросу. Отвечаем в&nbsp;течение
+													1&nbsp;часа</span>
+											</div>
+											<!-- * -->
+											<div class="requests-block manual-repair__requests">
+												<div class="requests-block__title">
+													<span>Какой вопрос вы хотите решить?</span>
+												</div>
+												<div class="requests-block__form">
+													<form class="modal-rejection__form" id="requestsForm">
+														<div class="modal-rejection__form-line">
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason"
+																	value="Неполная комплектация товара">
+																<span class="modal-rejection__radio-text">Неполная комплектация товара</span>
+															</label>
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason"
+																	value="Не хватает товара в заказе">
+																<span class="modal-rejection__radio-text">Не хватает товара в заказе</span>
+															</label>
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason"
+																	value="Получить гарантийный талон или инструкцию">
+																<span class="modal-rejection__radio-text">Получить гарантийный талон или
+																	инструкцию</span>
+															</label>
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason"
+																	value="Другой вопрос">
+																<span class="modal-rejection__radio-text">Другой вопрос</span>
+															</label>
+														</div>
+														<div class="modal-rejection__form-line">
+															<div class="repair-status__search">
+
+																<div class="repair-status__wrapper">
+																	<input class="repair-status__input" type="text" id="number-order"
+																		placeholder="Введите номер заказа *">
+																	<div class="repair-status__info-block">
+																		<span class="icon-info">
 																			<i>i</i>
 																		</span>
+																		<span class="repair-status__info-text">
+																			Номер заказа найдите в разделе <a class="repair-status__info-link"
+																				href="../../personal-account-user-order.html">«Мои заказы»</a>
+																		</span>
 																	</div>
-																	<!-- * ---------- [ Bсплывающее окно ] ------------- -->
-																	<div class="categiries-content__pop-up">
-																		<div class="categiries-content__button">
-																			<i class="icofont-close"></i>
-																		</div>
+																</div>
 
-																		<ul class="categiries-content__list">
-																			<li class="categiries-content__item">
-																				Возврат при оплате безналичным расчётом &#8209; от 3 до 10&nbsp;дней
-																			</li>
-																			<li class="categiries-content__item">
-																				Возврат при оплате наличными &#8209;1&nbsp;день
-																			</li>
-																			<li class="categiries-content__item">
-																				Диагностика инструмента &#8209;до 21 дня
-																			</li>
-																			<li class="categiries-content__item">
-																				Гарантийный ремонт &#8209;от 5 до 45&nbsp;дней
-																			</li>
-																			<li class="categiries-content__item">
-																				Обмен или возврат товара &#8209; 1&nbsp;день
-																			</li>
-																		</ul>
-																	</div>
+															</div>
+
+															<div class="modal-rejection__field">
+																<textarea class="modal-rejection__textarea" id="otherReason" rows="2"
+																	placeholder="Текст обращения *..."></textarea>
+															</div>
+														</div>
+														<div class="modal-rejection__form-line">
+															<div class="requests-block__title">
+																<span>Какой вопрос вы хотите решить?</span>
+															</div>
+															<div class="requests-block__radio-group">
+																<label class="modal-rejection__radio">
+																	<input class="modal-rejection__radio-input" type="radio" name="reason"
+																		value="Неполная комплектация товара">
+																	<span class="modal-rejection__radio-text">По телефону</span>
+																</label>
+																<label class="modal-rejection__radio">
+																	<input class="modal-rejection__radio-input" type="radio" name="reason"
+																		value="Не хватает товара в заказе">
+																	<span class="modal-rejection__radio-text">По email</span>
+																</label>
+															</div>
+															<div class="requests-block__field">
+																<input class="requests-input-phone form-user__input text-right mask-phone" type="tel"
+																	id="phone" name="phone" autocomplete="tel" placeholder="+7 (999) 123-45-67" value=""
+																	required>
+
+																<input class="requests-input-email form-user__input" type="email" id="email"
+																	name="email" autocomplete="email" placeholder="example@mail.ru"
+																	value="example@mail.ru" required>
+
+															</div>
+
+															<div class="requests-block__button">
+																<div class="send-button">
+																	<button class="send-button__button red_button" type="submit">
+																		<span>отправить обращение</span>
+																	</button>
 																</div>
 															</div>
 														</div>
-													</div>
+													</form>
 												</div>
+
 											</div>
 											<!-- * -->
-											<div class="categiries-servise__column">
-												<a href="../other-requests/other-requests.html" class="categiries-servise__image _img"></a>
-												<div class="categiries-servise__content">
-													<div class="categiries-servise__text">
-														Другие обращения
-													</div>
-												</div>
-											</div>
-											<!-- * -->
-											<div class="categiries-servise__column">
-												<a href="../../user/return-exchange/return-exchange.html"
-													class="categiries-servise__image _img">
-													<img src="../../img/return-repair/exchange_img.png" alt="image">
-												</a>
-												<div class="categiries-servise__content">
-													<div class="categiries-servise__text">
-														Обмен и возврат
-													</div>
-												</div>
-											</div>
+
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- * ---------------------- [ Section form ] ----------------------------- -->
-		<section class="section_form container">
-			<div class="section_form_body">
-				<div class="section_form_content container">
-					<div class="section_form_title">
-						<span>Возникли вопросы?</span>
-						<span>Напишите нам!</span>
-					</div>
-					<div class="form_feedback_body">
-						<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
-							<div class="section_form_line">
-								<div class="suport_feedback_form_box">
-									<div class="mb-3">
-										<label for="suportName" class="sr-only">Ваше имя</label>
-										<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
-									</div>
+	</div>
+	</section>
+	<!-- * ---------------------- [ Section form ] ----------------------------- -->
+	<section class="section_form container">
+		<div class="section_form_body">
+			<div class="section_form_content container">
+				<div class="section_form_title">
+					<span>Возникли вопросы?</span>
+					<span>Напишите нам!</span>
+				</div>
+				<div class="form_feedback_body">
+					<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportName" class="sr-only">Ваше имя</label>
+									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
 								</div>
 							</div>
-							<div class="section_form_line">
-								<div class="suport_feedback_form_box">
-									<div class="mb-3">
-										<label for="suportEmail" class="sr-only">Ваш e-mail</label>
-										<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
-											autocomplete="off">
-									</div>
-								</div>
-							</div>
-							<div class="section_form_line">
-								<div class="suport_feedback_form_box">
-									<div class="mb-4">
-										<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
-										<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
-											rows="1"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="section_form_line">
-								<div class="suport_feedback_form_box">
-									<div class="send-button">
-										<button class="send-button__button red_button" type="submit">отправить</button>
-									</div>
-								</div><!-- /suport_feedback_form_box -->
-							</div>
-						</form>
-						<div class="succes_message bg_transparent" style="display: none;">
-							<div class="succes_message_caption">
-								Спасибо за обращение ! <br>
-								мы ответим Вам в ближайшее время!
-							</div><!-- /succes_message_caption -->
 						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
+									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
+										autocomplete="off">
+								</div>
+							</div>
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-4">
+									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
+									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
+										rows="1"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="send-button">
+									<button class="send-button__button red_button" type="submit">отправить</button>
+								</div>
+							</div><!-- /suport_feedback_form_box -->
+						</div>
+					</form>
+					<div class="succes_message bg_transparent" style="display: none;">
+						<div class="succes_message_caption">
+							Спасибо за обращение ! <br>
+							мы ответим Вам в ближайшее время!
+						</div><!-- /succes_message_caption -->
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	</div>
 
 	<!-- * --------------------------- [ Footer] --------------------------------- -->
@@ -436,7 +467,7 @@
 			<div class="footer__header ">
 				<!-- * -->
 				<div class="footer__col-auto">
-					<a href="./productia.html" class="grey_button">в каталог</a>
+					<a href="../../productia.html" class="grey_button">в каталог</a>
 				</div>
 				<!-- * -->
 				<div class="footer__col-auto">
@@ -458,18 +489,18 @@
 							<a class="footer__menu-list" href="#">ПОДДЕРЖКА</a>
 						</li>
 						<li>
-							<a class="footer__menu-list" href="./about.html">о компании</a>
+							<a class="footer__menu-list" href="../../about.html">о компании</a>
 						</li>
 						<li>
-							<a class="footer__menu-list" href="./contact.html">контакты</a>
+							<a class="footer__menu-list" href="../../contact.html">контакты</a>
 						</li>
 						<li class="footer__has-child has_child">
-							<a class="footer__menu-list" href="./productia.html">продукция</a>
+							<a class="footer__menu-list" href="../../productia.html">продукция</a>
 							<div class="row flex-nowrap pt-3 desk-menu">
 								<!-- * -->
 								<div class="col-4">
 									<ul>
-										<li><a href="#">Лазерные дальномеры</a></li>
+										<li><a href="../../catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 										<li><a href="#">Лазерные уровни</a></li>
 										<li><a href="#">Ротационные нивелиры</a></li>
 										<li><a href="#">Оптические нивелиры</a></li>
@@ -507,7 +538,7 @@
 							<a href="#"><span>поддержка</span></a>
 						</li>
 						<li>
-							<a href="./about.html"><span>о компании</span></a>
+							<a href="../../../about.html"><span>о компании</span></a>
 						</li>
 						<li class="footer__has-child">
 							<a class="footer__open-child-list" id="open__child-list">
@@ -516,13 +547,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="./contact.html"><span>контакты</span></a>
+							<a href="../../../contact.html"><span>контакты</span></a>
 						</li>
 					</ul>
 					<div class="footer__sub-menu footer_menu_mob_submenu'">
 						<div class="footer_menu_mob_list flex-nowrap pt-3">
 							<ul class="fmb_list">
-								<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
+								<li><a href="../../../catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 								<li><a href="#">Лазерные уровни</a></li>
 								<li><a href="#">Ротационные нивелиры</a></li>
 								<li><a href="#">Оптические нивелиры</a></li>
@@ -686,6 +717,7 @@
 
 		</div>
 	</div>
+
 
 </body>
 

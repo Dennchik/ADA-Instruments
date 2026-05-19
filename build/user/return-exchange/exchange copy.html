@@ -41,7 +41,7 @@
 	<script defer src="../../js/script-load.js"></script>
 </head>
 
-<body class="personal-repair">
+<body class="exchange">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
@@ -87,7 +87,7 @@
 		</div>
 	</div>
 	<!-- * ------------------------- [ Main block ] ------------------------------ -->
-	<div id="main">
+	<main id="main">
 		<header class="header">
 			<div class="header__body container h-100">
 				<!-- * -->
@@ -123,7 +123,7 @@
 											<li class="has_child">
 												<a href="../../productia.html"><span>Продукция</span></a>
 												<ul class="sub_menu">
-													<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a>
+													<li><a href="../../catalog/laser-distance-meter.html">Лазерные дальномеры</a>
 													</li>
 													<li><a href="../../catalog/automatic-levels/">Оптические нивелиры</a></li>
 													<li><a href="../../catalog/theodolites/">Теодолиты</a></li>
@@ -154,7 +154,7 @@
 						<div class="col-auto">
 							<div class="right_TP">
 								<div class="row  align-items-center  justify-content-end">
-									<!-- *=================== -->
+									<!-- * -->
 									<div class="col-auto d-none d-lg-block">
 										<form class="search_flexbox" action="#" id="searchForm2" action="#" method="get">
 											<div class="search_wrap">
@@ -164,10 +164,10 @@
 											</div>
 										</form>
 									</div>
-									<!--* =================== -->
+									<!-- * -->
 									<div class="col-auto">
 										<div class="col_icons">
-											<a href="./cart.html" class="col_cart icon_col cart-user">
+											<a href="../../cart.html" class="col_cart icon_col cart-user">
 												<div class="cart-user__quantity"></div>
 												<svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
 													viewBox="0 0 512 512">
@@ -206,8 +206,11 @@
 					<li class="tab-button">
 						<a href="../../personal-account.html" class="">Личный кабинет</a>
 					</li>
+					<li class="tab-button">
+						<a href="../../personal-account-return-repair.html">Возврат и ремонт</a>
+					</li>
 					<li class="tab-button active">
-						<span class="">Возврат и ремонт</span>
+						<span class="">Возврат и обмен</span>
 					</li>
 				</ol>
 			</div>
@@ -259,11 +262,11 @@
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
 					<div class="acccount-section__tabs personal-data">
-						<!-- ! ----------------------- [ TAB - Repair-user ] ------------------------------ -->
+						<!-- ! ---------- [ TAB - Exchange-page ] -------------------------- -->
 						<div class="acccount-section__tab-content inner-content repair-user">
 							<div class="acccount-content__body">
-								<!-- * content__column - 1 -->
-								<div class="acccount-content__column">
+								<!-- * content__row- 1 -->
+								<div class="acccount-content__row">
 									<div class="acccount-content__header">
 										<!-- * [ BUTTONS ] -->
 										<div class="acccount-section__buttons">
@@ -276,159 +279,405 @@
 											</div>
 										</div>
 										<div class="acccount-content__title">
-											<h2 class="font_clamp_50">Возврат, ремонт</h2>
-											<span>и другие обращения</span>
+											<h2 class="font_clamp_50">Возврат и ремонт</h2>
 										</div>
 									</div>
+									<a href="../../personal-account-return-repair.html" class="acccount-content__return-button">
+										<i class="icofont-long-arrow-left icon"></i>
+										<span>назад</span>
+									</a>
 								</div>
-								<!-- * content__column - 2 -->
-								<div class="acccount-content__column">
-									<div class="categiries-servise">
-										<div class="categiries-servise__body">
+								<!-- * content__row - 2 -->
+								<div class="acccount-content__row">
+									<div class="manual-repair">
+										<div class="manual-repair__body">
 											<!-- * -->
-											<div class="categiries-servise__column">
-												<a href="./repair.html" class="categiries-servise__image _img">
-													<img src="../../img/return-repair/repair_img.png" style="opacity: 0;" alt="image">
-												</a>
-												<div class="categiries-servise__content">
-													<div class="categiries-servise__text" style="opacity: 0;">
-														Ремонт
+											<div class="manual-repair__header">
+												<div class="manual-repair__title font_clamp_30">
+													Обменять или вернуть товар
+												</div>
+											</div>
+											<!-- * -->
+											<form class="repair-status__form" action="#" method="#">
+												<label class="repair-status__label" for="number-order">Введите номер заказа, чтобы найти товар
+													среди ваших покупок и составить заявку на возврат
+													или обмен.</label>
+												<div class="repair-status__wrapper">
+													<input class="repair-status__input" type="text" id="number-order" placeholder="LH-GH-123456">
+													<div class="repair-status__info-block">
+														<span class="icon-info">
+															<i>i</i>
+														</span>
+														<span class="repair-status__info-text">
+															Номер заказа найдите в разделе <a class="repair-status__info-link"
+																href="../../personal-account-user-order.html">«Мои заказы»</a>
+														</span>
 													</div>
-													<div class="categiries-servise__info">
-														<div class="categiries-content" style="opacity: 1; transform: translateX(0)">
-															<div class="categiries-content__column">
-																<div class="categiries-content__title">Ремонт</div>
-																<div class="categiries-content__text">
-																	<a href="../repair/repair.html" class="categiries-content__link">
-																		Сдать товар</a>
-																	<a href="#" class="categiries-content__link">Отслеживание хода ремонта</a>
+												</div>
+												<div class="repair-status__search-result">
+													По вашему запросу ничего не найдено.
+												</div>
+											</form>
+										</div>
+										<!-- * --------------- [ order-product ] -------------------- -->
+									</div>
+								</div>
+								<!-- * content__row - 3 -->
+								<div class="acccount-content__row">
+									<div class="order-product">
+										<div class="order-product__body">
+											<!-- * product-status - 1 -->
+											<div class="product-status">
+												<!-- * order-product column-1 -->
+												<div class="product-status__column">
+													<div class="product-status__type font_clamp_30">Заказ №2509 - 704 - 301</div>
+													<div class="product-status__text">От 21 сентября 2025 г в 13:00</div>
+												</div>
+												<!-- * order-product column-2 -->
+												<div class="product-status__column">
+													<div class="product-status__type">Покупатель</div>
+													<div class="product-status__text">Иван И.</div>
+												</div>
+												<!-- * order-product column-3 -->
+												<div class="product-status__column">
+													<div class="product-status__type">Оплачен</div>
+													<div class="product-status__text">11 250 руб</div>
+												</div>
+												<!-- * order-product column-4 -->
+												<div class="product-status__column">
+													<div class="product-status__type">Доставлен</div>
+													<div class="product-status__text"> </div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- * -->
+								</div>
+								<!-- * content__row - 4 -->
+								<div class="acccount-content__row">
+									<!-- * -->
+									<div class="ready-order">
+										<div class="ready-order__body">
+											<!-- * Tovar - 1 -->
+											<div class="ready-order__row product-order">
+												<div class="ready-order__product">
+													<div class="ready-order__header">
+														<span>Выберите товары</span>
+													</div>
+													<div class="ready-order__content">
+														<div class="product-cart__item">
+															<div class="cart-section__icon">
+																<div class="check-box">
+																	<label class="check-box__label">
+																		<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+																		<span class="check-box__icon icon-gray">
+																			<i class="icofont-check"></i>
+																		</span>
+																	</label>
 																</div>
 															</div>
-															<div class="categiries-content__column">
-																<div class="categiries-content__info">
-																	<div class="categiries-content__info-btn">
-																		<span>Сроки работ</span>
-																		<span class="categiries-content__icon">
-																			<i>i</i>
-																		</span>
+															<div class="product-cart__image">
+																<img src="../../img/cart_img/product-1.png" alt="картинка">
+															</div>
+															<div class="product-cart__info">
+																<div class="product-cart__title">
+																	<div class="product-cart__article">Арт 000541</div>
+																	<span class="product-cart__title-wrap">
+																		<span>Лазерный дальномер</span>
+																		<span>ADA COSMO MICRO 25</span>
+																	</span>
+																</div>
+																<div class="product-cart__description">
+																	Диапазон работы 30 м, точность ± 3,0 мм
+																</div>
+															</div>
+															<div class="product-cart__counter">
+																<div class="counter-wrapper">
+																	<div class="product-cart__price">
+																		<div class="product-cart__new-price">3 750 руб</div>
 																	</div>
-																	<!-- * ---------- [ Bсплывающее окно ] ------------- -->
-																	<div class="categiries-content__pop-up">
-																		<div class="categiries-content__button">
-																			<i class="icofont-close"></i>
+																	<div class="quantity product-cart__quantity" style="display: flex;">
+																		<div class="quantity__button quantity-remove">
+																			<i class="icofont-minus"></i>
 																		</div>
-
-																		<ul class="categiries-content__list">
-																			<li class="categiries-content__item">
-																				Возврат при оплате безналичным расчётом &#8209; от 3 до 10&nbsp;дней
-																			</li>
-																			<li class="categiries-content__item">
-																				Возврат при оплате наличными &#8209;1&nbsp;день
-																			</li>
-																			<li class="categiries-content__item">
-																				Диагностика инструмента &#8209;до 21 дня
-																			</li>
-																			<li class="categiries-content__item">
-																				Гарантийный ремонт &#8209;от 5 до 45&nbsp;дней
-																			</li>
-																			<li class="categiries-content__item">
-																				Обмен или возврат товара &#8209; 1&nbsp;день
-																			</li>
-																		</ul>
+																		<div class="quantity__input">
+																			<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																				autocomplete="off">
+																		</div>
+																		<div class="quantity__button quantity-add">
+																			<i class="icofont-plus"></i>
+																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-											<!-- * -->
-											<div class="categiries-servise__column">
-												<a href="../other-requests/other-requests.html" class="categiries-servise__image _img"></a>
-												<div class="categiries-servise__content">
-													<div class="categiries-servise__text">
-														Другие обращения
+												<!-- * -->
+												<div class="ready-order__info">
+													<div class="ready-order__header">
+														<span>Выберите тип заявки и укажите причину</span>
+													</div>
+													<div class="ready-order__choice-block">
+														<form class="choice-block">
+															<label class="choice-block__option">
+																<input type="checkbox" class="choice-block__native-input" name="operation"
+																	value="return">
+																<span
+																	class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
+															</label>
+															<label class="choice-block__option">
+																<input type="checkbox" class="choice-block__native-input" name="operation"
+																	value="exchange">
+																<span
+																	class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
+															</label>
+														</form>
+													</div>
+													<div class="ready-order__text">
+														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
 													</div>
 												</div>
 											</div>
-											<!-- * -->
-											<div class="categiries-servise__column">
-												<a href="../../user/return-exchange/return-exchange.html"
-													class="categiries-servise__image _img">
-													<img src="../../img/return-repair/exchange_img.png" alt="image">
-												</a>
-												<div class="categiries-servise__content">
-													<div class="categiries-servise__text">
-														Обмен и возврат
+											<!-- * Tovar - 2 -->
+											<div class="ready-order__row product-order">
+												<div class="ready-order__product">
+													<div class="ready-order__header">
+														<span>Выберите товары</span>
+													</div>
+													<div class="ready-order__content">
+														<div class="product-cart__item">
+															<div class="cart-section__icon">
+																<div class="check-box">
+																	<label class="check-box__label">
+																		<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+																		<span class="check-box__icon icon-gray">
+																			<i class="icofont-check"></i>
+																		</span>
+																	</label>
+																</div>
+															</div>
+															<div class="product-cart__image">
+																<img src="../../img/cart_img/product-2.png" alt="картинка">
+															</div>
+															<div class="product-cart__info">
+
+																<div class="product-cart__title">
+																	<div class="product-cart__article">Арт 000541</div>
+																	<span class="product-cart__title-wrap">
+																		<span>Лазерный дальномер</span>
+																		<span>ADA COSMO MICRO 25</span>
+																	</span>
+																</div>
+																<div class="product-cart__description">
+																	Диапазон работы 30 м, точность ± 3,0 мм
+																</div>
+															</div>
+															<div class="product-cart__counter">
+																<div class="counter-wrapper">
+																	<div class="product-cart__price">
+																		<div class="product-cart__new-price">3 750 руб</div>
+																	</div>
+																	<div class="quantity product-cart__quantity" style="display: flex;">
+																		<div class="quantity__button quantity-remove">
+																			<i class="icofont-minus"></i>
+																		</div>
+																		<div class="quantity__input">
+																			<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																				autocomplete="off">
+																		</div>
+																		<div class="quantity__button quantity-add">
+																			<i class="icofont-plus"></i>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- * -->
+												<div class="ready-order__info">
+													<div class="ready-order__header">
+														<span>Выберите тип заявки и укажите причину</span>
+													</div>
+													<div class="ready-order__choice-block">
+														<form class="choice-block">
+															<label class="choice-block__option">
+																<input type="checkbox" class="choice-block__native-input" name="operation"
+																	value="return">
+																<span
+																	class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
+															</label>
+															<label class="choice-block__option">
+																<input type="checkbox" class="choice-block__native-input" name="operation"
+																	value="exchange">
+																<span
+																	class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
+															</label>
+														</form>
+													</div>
+													<div class="ready-order__text">
+														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
+													</div>
+												</div>
+											</div>
+											<!-- * Tovar - 3 -->
+											<div class="ready-order__row product-order">
+												<div class="ready-order__product">
+													<div class="ready-order__header">
+														<span>Выберите товары</span>
+													</div>
+													<div class="ready-order__content">
+														<div class="product-cart__item">
+															<div class="cart-section__icon">
+																<div class="check-box">
+																	<label class="check-box__label">
+																		<input class="check-box__input" type="checkbox" name="policy" id="agreement-1">
+																		<span class="check-box__icon icon-gray">
+																			<i class="icofont-check"></i>
+																		</span>
+																	</label>
+																</div>
+															</div>
+															<div class="product-cart__image">
+																<img src="../../img/cart_img/product-3.png" alt="картинка">
+															</div>
+															<div class="product-cart__info">
+																<div class="product-cart__title">
+																	<div class="product-cart__article">Арт 000541</div>
+																	<span class="product-cart__title-wrap">
+																		<span>Лазерный дальномер</span>
+																		<span>ADA COSMO MICRO 25</span>
+																	</span>
+																</div>
+																<div class="product-cart__description">
+																	Диапазон работы 30 м, точность ± 3,0 мм
+																</div>
+															</div>
+															<div class="product-cart__counter">
+																<div class="counter-wrapper">
+																	<div class="product-cart__price">
+																		<div class="product-cart__new-price">3 750 руб</div>
+																	</div>
+																	<div class="quantity product-cart__quantity" style="display: flex;">
+																		<div class="quantity__button quantity-remove">
+																			<i class="icofont-minus"></i>
+																		</div>
+																		<div class="quantity__input">
+																			<input class="input" type="text" name="form[]" value="1" placeholder="&lt;+&gt;"
+																				autocomplete="off">
+																		</div>
+																		<div class="quantity__button quantity-add">
+																			<i class="icofont-plus"></i>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- * -->
+												<div class="ready-order__info">
+													<div class="ready-order__header">
+														<span>Выберите тип заявки и укажите причину</span>
+													</div>
+													<div class="ready-order__choice-block">
+														<form class="choice-block">
+															<label class="choice-block__option">
+																<input type="checkbox" class="choice-block__native-input" name="operation"
+																	value="return">
+																<span
+																	class="choice-block__custom-button choice-block__custom-button--return">Возврат</span>
+															</label>
+
+															<label class="choice-block__option">
+																<input type="checkbox" class="choice-block__native-input" name="operation"
+																	value="exchange">
+																<span
+																	class="choice-block__custom-button choice-block__custom-button--exchange">Обмен</span>
+															</label>
+														</form>
+													</div>
+
+													<div class="ready-order__text">
+														<span>Товар не соответствующий описанию. Заявленные характеристики отсутствуют</span>
 													</div>
 												</div>
 											</div>
 										</div>
+										<!-- * Submit - Button -->
+										<div class="ready-order__button">
+											<div class="send-button">
+												<button class="send-button__button red_button" type="submit">
+													<span>отправить заявку</span>
+												</button>
+											</div>
+										</div>
 									</div>
+									<!-- * -->
 								</div>
 							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- * ---------------------- [ Section form ] ----------------------------- -->
-		<section class="section_form container">
-			<div class="section_form_body">
-				<div class="section_form_content container">
-					<div class="section_form_title">
-						<span>Возникли вопросы?</span>
-						<span>Напишите нам!</span>
-					</div>
-					<div class="form_feedback_body">
-						<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
-							<div class="section_form_line">
-								<div class="suport_feedback_form_box">
-									<div class="mb-3">
-										<label for="suportName" class="sr-only">Ваше имя</label>
-										<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
-									</div>
-								</div>
-							</div>
-							<div class="section_form_line">
-								<div class="suport_feedback_form_box">
-									<div class="mb-3">
-										<label for="suportEmail" class="sr-only">Ваш e-mail</label>
-										<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
-											autocomplete="off">
-									</div>
-								</div>
-							</div>
-							<div class="section_form_line">
-								<div class="suport_feedback_form_box">
-									<div class="mb-4">
-										<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
-										<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
-											rows="1"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="section_form_line">
-								<div class="suport_feedback_form_box">
-									<div class="send-button">
-										<button class="send-button__button red_button" type="submit">отправить</button>
-									</div>
-								</div><!-- /suport_feedback_form_box -->
-							</div>
-						</form>
-						<div class="succes_message bg_transparent" style="display: none;">
-							<div class="succes_message_caption">
-								Спасибо за обращение ! <br>
-								мы ответим Вам в ближайшее время!
-							</div><!-- /succes_message_caption -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-	</div>
+	</main>
 
+	<!-- * ---------------------- [ Section form ] ----------------------------- -->
+	<section class="section_form container">
+		<div class="section_form_body">
+			<div class="section_form_content container">
+				<div class="section_form_title">
+					<span>Возникли вопросы?</span>
+					<span>Напишите нам!</span>
+				</div>
+				<div class="form_feedback_body">
+					<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportName" class="sr-only">Ваше имя</label>
+									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
+								</div>
+							</div>
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-3">
+									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
+									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
+										autocomplete="off">
+								</div>
+							</div>
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="mb-4">
+									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
+									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
+										rows="1"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="section_form_line">
+							<div class="suport_feedback_form_box">
+								<div class="send-button">
+									<button class="send-button__button red_button" type="submit">отправить</button>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="succes_message bg_transparent" style="display: none;">
+						<div class="succes_message_caption">
+							Спасибо за обращение ! <br>
+							мы ответим Вам в ближайшее время!
+						</div><!-- /succes_message_caption -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!-- * --------------------------- [ Footer] --------------------------------- -->
 	<!--*  wow fadeInDown -->
 	<footer class="footer">
@@ -436,7 +685,7 @@
 			<div class="footer__header ">
 				<!-- * -->
 				<div class="footer__col-auto">
-					<a href="./productia.html" class="grey_button">в каталог</a>
+					<a href="../../productia.html" class="grey_button">в каталог</a>
 				</div>
 				<!-- * -->
 				<div class="footer__col-auto">
@@ -458,18 +707,18 @@
 							<a class="footer__menu-list" href="#">ПОДДЕРЖКА</a>
 						</li>
 						<li>
-							<a class="footer__menu-list" href="./about.html">о компании</a>
+							<a class="footer__menu-list" href="../../about.html">о компании</a>
 						</li>
 						<li>
-							<a class="footer__menu-list" href="./contact.html">контакты</a>
+							<a class="footer__menu-list" href="../../contact.html">контакты</a>
 						</li>
 						<li class="footer__has-child has_child">
-							<a class="footer__menu-list" href="./productia.html">продукция</a>
+							<a class="footer__menu-list" href="../../productia.html">продукция</a>
 							<div class="row flex-nowrap pt-3 desk-menu">
 								<!-- * -->
 								<div class="col-4">
 									<ul>
-										<li><a href="#">Лазерные дальномеры</a></li>
+										<li><a href="../../catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 										<li><a href="#">Лазерные уровни</a></li>
 										<li><a href="#">Ротационные нивелиры</a></li>
 										<li><a href="#">Оптические нивелиры</a></li>
@@ -507,7 +756,7 @@
 							<a href="#"><span>поддержка</span></a>
 						</li>
 						<li>
-							<a href="./about.html"><span>о компании</span></a>
+							<a href="../../../about.html"><span>о компании</span></a>
 						</li>
 						<li class="footer__has-child">
 							<a class="footer__open-child-list" id="open__child-list">
@@ -516,13 +765,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="./contact.html"><span>контакты</span></a>
+							<a href="../../../contact.html"><span>контакты</span></a>
 						</li>
 					</ul>
 					<div class="footer__sub-menu footer_menu_mob_submenu'">
 						<div class="footer_menu_mob_list flex-nowrap pt-3">
 							<ul class="fmb_list">
-								<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
+								<li><a href="../../../catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 								<li><a href="#">Лазерные уровни</a></li>
 								<li><a href="#">Ротационные нивелиры</a></li>
 								<li><a href="#">Оптические нивелиры</a></li>
@@ -555,7 +804,6 @@
 						</div>
 						<!-- * -->
 					</div>
-					<!--/row-->
 					<div class="grafic_raboty light_grey_color font12">
 						09.00-18.00 Понедельник&#8209;Четверг / 09.00&#8209;17.00 Пятница
 						Суббота, воскресенье&#8209;выходной. Звонок по России бесплатный
@@ -587,11 +835,9 @@
 					<i class="icofont-close icon"></i>
 				</div>
 			</div>
-
 			<div class="modal-login__form">
 				<form action="#" method="get" class="form-login">
 					<!-- * -->
-
 					<fieldset class="form-login__form-group">
 						<label for="user-name" class="form-login__label fw700">Полное наименование / ФИО</label>
 						<input type="text" id="user-name" name="user-name" class="form-login__input" required>
@@ -614,7 +860,6 @@
 					<div class="modal-login__reg">
 						<span class="reg-button">Регистрация</span>
 					</div>
-
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -622,10 +867,7 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 		</div>
 	</div>
 
@@ -644,16 +886,11 @@
 			<div class="modal-registration__title">
 				Укажите вашу электронную почту и придумайте пароль
 			</div>
-
 			<div class="modal-registration__text">В пароле должно быть не меньше 6 симаволов. Можно использовать латинские
 				буквы( как прописные, так и строчные: A — Z, a — z) и цифры (0 — 9)
 			</div>
-
 			<div class="modal-registration__form">
 				<form action="#" method="get" class="form-login">
-					<!-- * -->
-
-
 					<!-- * -->
 					<fieldset class="form-login__form-group">
 						<label class="form-login__label fw700" for="email">Email</label>
@@ -672,7 +909,6 @@
 						<input type="password" id="user-password2" name="user-password2" class="form-login__input"
 							autocomplete="new-password" required>
 					</fieldset>
-
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -680,10 +916,7 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 		</div>
 	</div>
 
