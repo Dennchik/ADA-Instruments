@@ -48,18 +48,20 @@
   &__icon {
     width: 20px;
     height: 20px;
+    font-size: 28px;
 
     .icofont-check,
     .icofont-close {
       cursor: pointer;
       color: #5c5c5c;
+      font-size: inherit;
+
       &::before {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 20px;
         height: 20px;
-        font-size: 18px;
       }
     }
   }
@@ -111,7 +113,8 @@
     height: 100%;
     width: 100%;
     img {
-      width: 117px;
+      max-width: 120px;
+      max-height: 120px;
       max-width: none;
       object-fit: contain;
 
@@ -131,7 +134,7 @@
     font-size: 13px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
     max-width: 340px;
 
     .cart-section__icon {
@@ -143,6 +146,7 @@
       top: 0px;
       right: 0px;
       padding: 5px;
+
       .icofont-close {
         transition: all 0.4s ease 0s;
 

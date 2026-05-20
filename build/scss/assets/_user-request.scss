@@ -1,0 +1,45 @@
+@use '../core/mixins' as *;
+//* ----------------------------------------------------------------------------
+.user-request {
+  // .user-request__body
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .user-request__line
+  &__line {
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  // .user-request__wrapper
+  &__wrapper {
+    cursor: pointer;
+    display: flex;
+    gap: 2rem;
+
+    &._active-collapse {
+      .icofont-thin-down {
+        color: var(--danger);
+        transform: scale(-1);
+      }
+    }
+
+    .icofont-thin-down {
+      transition:
+        transform 0.4s,
+        color 0.4s ease-in-out;
+      color: #a4a4a4;
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  // .user-request__order
+  &__order {
+    font-size: 1.8rem;
+  }
+}

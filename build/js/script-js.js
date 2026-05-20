@@ -996,16 +996,16 @@ function collapseBlock() {
 //* ----------------------------------------------------------------------------
 
 function repairStatus() {
-  const statusBlocks = document.querySelectorAll('.repair-status');
+  const statusBlocks = document.querySelectorAll('.toggle-box');
 
   if (statusBlocks.length) {
     statusBlocks.forEach((statusBlock) => {
-      const button = statusBlock.querySelector('.repair-status__title');
+      const button = statusBlock.querySelector('.collapse-button');
       if (button) {
         button.addEventListener('click', (event) => {
           const currentButton = event.currentTarget;
           const collapseElement = currentButton
-            .closest('.repair-status')
+            .closest('.toggle-box')
             .querySelector('._collapse');
 
           if (collapseElement) {

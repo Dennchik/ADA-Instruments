@@ -346,6 +346,26 @@
     }
   }
 
+  // .product-card__image
+  &__image {
+    padding-top: 4rem;
+    display: flex;
+  }
+
+  // .product-card__img-item
+  &__img-item {
+    flex: 0 1 16.6%;
+
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+
+    img {
+      max-width: 100%;
+      object-fit: none !important;
+    }
+  }
+
   //.product-card__text
   &__text {
     line-height: 130%;

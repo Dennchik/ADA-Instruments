@@ -6,7 +6,7 @@
 .delivery__item > ._collapse:not(._show) {
   display: none;
 }
-.repair-status > ._collapse:not(._show) {
+.toggle-box > ._collapse:not(._show) {
   display: none;
 }
 //* ----------------------------[ BUTTON ]--------------------------------------
@@ -262,14 +262,14 @@
 
 .red_button {
   cursor: pointer;
-  background-color: rgb(255, 51, 51);
+  background-color: var(--danger);
   font-size: 12px;
   text-transform: uppercase;
   color: #fff;
   text-align: center;
   height: 55px;
   line-height: 100%;
-  border: 1px solid rgb(255, 51, 51);
+  border: 1px solid var(--danger);
   outline: none;
   text-decoration: none;
   white-space: nowrap;
