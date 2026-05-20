@@ -233,7 +233,12 @@ h2 {
 h3 {
   font-size: 20px;
 }
-
+textarea::placeholder {
+  transition: color 0.4s ease-in-out;
+}
+textarea:focus::placeholder {
+  color: transparent;
+}
 //* ----------------------------------------------------------------------------
 /// * Изменить стиль полосы прокрутки (scrollbar)
 ::-webkit-scrollbar {

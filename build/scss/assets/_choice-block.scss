@@ -14,7 +14,7 @@
     grid-template-columns: 1fr minmax(200px, 425px);
     gap: 10rem;
     border-bottom: 1px solid #a5a5a5;
-    padding: 2rem 0;
+    padding-block: 2rem 4rem;
 
     @include screen-1376 {
       gap: 5rem;
@@ -26,6 +26,30 @@
 
     @include screen-575 {
       grid-template-columns: 1fr;
+    }
+  }
+
+  // .ready-order__tab
+  &__tab {
+    padding: 10px;
+    height: 100%;
+  }
+
+  // .ready-order__textarea
+  &__textarea {
+    width: 100%;
+    height: 100%;
+    line-height: 110%;
+    font-size: 1.4rem;
+
+    &::-webkit-scrollbar {
+      width: 0.3rem;
+      padding: 0.031em;
+      position: fixed;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--danger);
     }
   }
 
@@ -102,7 +126,7 @@
   // .ready-order__header
   &__header {
     margin-bottom: 4rem;
-    line-height: 130%;
+    line-height: 110%;
 
     span {
       display: block;
@@ -330,8 +354,9 @@
 
   // /ready-order__load-block
   &__load-block {
+    display: flex;
+    flex-direction: column;
     position: relative;
-    height: auto;
     height: 100%;
     border: 1px solid #ddd;
 
@@ -395,7 +420,8 @@
 
   // .ready-order__choice-block
   &__choice-block {
-    margin-block: 0 4rem;
+    height: 100%;
+    // margin-block: 0 4rem;
     padding: 0;
 
     @include screen-690 {
@@ -425,14 +451,42 @@
 
 //* ------------------------- [ choice-block ] ---------------------------------
 .choice-block {
+  height: 100%;
   display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  flex-direction: column;
 
-  @include screen-425 {
-    justify-content: flex-start;
-    margin-left: 28px;
+  // .choice-block__checked
+  &__checked {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+
+    @include screen-425 {
+      justify-content: flex-start;
+      margin-left: 28px;
+    }
+  }
+
+  // .choice-block__tabs
+  &__tabs {
+    border: 1px solid #a5a5a5;
+    height: 100%;
+  }
+
+  // .choice-block__tab
+  &__tab {
+    font-size: 1.4rem;
+    line-height: 110%;
+    padding: 10px;
+    height: 100%;
+  }
+
+  // .choice-block__textarea
+  &__textarea {
+    width: 100%;
+    height: 100%;
   }
 
   &__option {
@@ -480,7 +534,7 @@
 .product-order {
   pointer-events: none;
   filter: grayscale(1);
-  opacity: 0.5;
+  opacity: 0.7;
   transition:
     filter 0.3s,
     opacity 0.3s ease-in-out;

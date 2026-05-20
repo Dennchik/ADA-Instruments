@@ -1020,36 +1020,14 @@ function repairStatus() {
 }
 document.addEventListener('DOMContentLoaded', repairStatus);
 //todo ------------ [Choice Block (стр. Возврат обмен)] ------------------------
-function choiceBlock() {
-  //* Находим все блоки choice-block на странице
-  const blocks = document.querySelectorAll('.choice-block');
 
-  blocks.forEach((block) => {
-    //* Внутри каждого блока ищем ТОЛЬКО свои чекбоксы
-    const checkboxes = block.querySelectorAll('.choice-block__native-input');
-
-    checkboxes.forEach((checkbox) => {
-      checkbox.addEventListener('change', function () {
-        if (this.checked) {
-          checkboxes.forEach((other) => {
-            if (other !== this) other.checked = false;
-          });
-        }
-      });
-    });
-  });
-}
-
-document.addEventListener('DOMContentLoaded', choiceBlock);
-//todo -------------- [Check Box (стр. Возврат обмен)] -------------------------
 function checkBoxVisible() {
   const orderBlocks = document.querySelectorAll('.product-order');
   orderBlocks.forEach((orderBlock) => {
     if (orderBlock) {
       const checkBox = orderBlock.querySelector('.check-box__input');
-      console.log('Начальное состояние:', checkBox.checked); // false
+      console.log('Начальное состояние:', checkBox.checked);
 
-      // Слушаем изменения
       checkBox.addEventListener('change', function () {
         if (checkBox.checked) {
           orderBlock.classList.add('_checked');
@@ -1062,6 +1040,70 @@ function checkBoxVisible() {
 }
 
 document.addEventListener('DOMContentLoaded', checkBoxVisible);
+//todo -------------- [Check Box (стр. Возврат обмен)] -------------------------
+function choiceBlock() {
+  const choiceBlocks = document.querySelectorAll('.choice-block');
+
+  choiceBlocks.forEach((choiceBlock) => {
+    const returnCheckbox = choiceBlock.querySelector('input[value="return"]');
+    const exchangeCheckbox = choiceBlock.querySelector(
+      'input[value="exchange"]'
+    );
+    const defaultTab = choiceBlock.querySelector('.choice-block__tab--default');
+    const refundTab = choiceBlock.querySelector('.choice-block__tab--refund');
+    const exchangeTab = choiceBlock.querySelector(
+      '.choice-block__tab--exchange'
+    );
+
+    function hideAllTabs() {
+      if (defaultTab) defaultTab.style.display = 'none';
+      if (refundTab) refundTab.style.display = 'none';
+      if (exchangeTab) exchangeTab.style.display = 'none';
+    }
+
+    function showDefaultTab() {
+      hideAllTabs();
+      if (defaultTab) defaultTab.style.display = 'block';
+    }
+
+    function showRefundTab() {
+      hideAllTabs();
+      if (refundTab) refundTab.style.display = 'block';
+    }
+
+    function showExchangeTab() {
+      hideAllTabs();
+      if (exchangeTab) exchangeTab.style.display = 'block';
+    }
+
+    // По умолчанию показываем текст
+    showDefaultTab();
+
+    if (returnCheckbox) {
+      returnCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+          if (exchangeCheckbox) exchangeCheckbox.checked = false;
+          showRefundTab();
+        } else {
+          showDefaultTab();
+        }
+      });
+    }
+
+    if (exchangeCheckbox) {
+      exchangeCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+          if (returnCheckbox) returnCheckbox.checked = false;
+          showExchangeTab();
+        } else {
+          showDefaultTab();
+        }
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', choiceBlock);
 
 //* ----------------------------------------------------------------------------
 //todo Реализация drag-and-drop загрузку фото (.load-block ) с возможностью выбора до 5 фото, превью и кнопкой удаления
