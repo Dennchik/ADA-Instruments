@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="loaded">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
@@ -24,7 +24,6 @@
 
 	<script defer src="../../js/dynamic-adaptive.js"></script>
 	<script defer src="../../js/collapse.js"></script>
-	<script defer src="../../js/itsSelect.js"></script>
 	<script defer src="../../js/jquery.min.js"></script>
 	<script defer src="../../js/jquery.maskedinput.min.js"></script>
 	<script defer src="../../js/jquery.scrollTo.js"></script>
@@ -39,10 +38,10 @@
 	<script defer src="../../js/script.js"></script>
 	<script defer src="../../js/script-js.js"></script>
 	<script defer src="../../js/script-load.js"></script>
+	<script defer src="../../js/widget-calendar.js"></script>
 </head>
 
-
-<body class="all-request">
+<body class="load-doc">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
@@ -88,8 +87,7 @@
 		</div>
 	</div>
 	<!-- * ------------------------- [ Main block ] ------------------------------ -->
-	<main id="main">
-		<!-- * ------------------------- [ Header ] -------------------------------- -->
+	<div id="main">
 		<header class="header">
 			<div class="header__body container h-100">
 				<!-- * -->
@@ -209,13 +207,13 @@
 						<a href="../../personal-account.html" class="">Личный кабинет</a>
 					</li>
 					<li class="tab-button">
-						<a href="../../personal-account-return-repair.html">Возврат и ремонт</a>
+						<a href="../../personal-account-return-repair.html">Мои организации</a>
 					</li>
 					<li class="tab-button">
-						<a href="../../personal-account-return-repair.html">Возврат и обмен</a>
+						<a href="../../personal-account-return-repair.html">OOO ККИИТТ</a>
 					</li>
 					<li class="tab-button active">
-						<span>Мои заявки</span>
+						<span>Отгрузочные документы</span>
 					</li>
 				</ol>
 			</div>
@@ -249,11 +247,11 @@
 								<a href="../../personal-account-user-profile.html" class="side-menu__tab-link">Профиль</a>
 							</li>
 							<li class="side-menu__item">
-								<a href="../../personal-account-user-organizations.html" class="side-menu__tab-link">
+								<a href="../../personal-account-user-organizations.html" class="side-menu__tab-link active-link">
 									Мои организации</a>
 							</li>
 							<li class="side-menu__item">
-								<a href="../../personal-account-return-repair.html" class="side-menu__tab-link active-link">
+								<a href="../../personal-account-return-repair.html" class="side-menu__tab-link">
 									Возврат и ремонт</a>
 							</li>
 							<li class="side-menu__item">
@@ -266,192 +264,239 @@
 				</div>
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
-					<!-- ! ----------- [ TAB - Exchange-page ] --------------------------- -->
-					<div class="acccount-section__tabs personal-data">
-						<div class="acccount-content__body">
-							<!-- * content__row - 1 (Заголовок) ------------------------------ -->
-							<div class="acccount-content__row">
-								<div class="acccount-content__header">
-									<!-- * [ BUTTONS ] -->
-									<div class="acccount-section__buttons">
-										<div class="acccount-section__open-menu _open-menu">
-											<div class="vertical-dots" id="verticalDots">
-												<span></span>
-												<span></span>
-												<span></span>
+					<div class="acccount-section__tabs">
+						<!-- ! -------------------[ TAB - Бланки ] ------------------------- -->
+						<div class="acccount-section__tab-content user-account">
+							<!-- * -->
+							<div class="acccount-content">
+								<div class="acccount-content__body">
+									<!-- * content__row - 1 (Заголовок) -------------------------- -->
+									<div class="acccount-content__row">
+										<div class="acccount-content__header">
+											<!-- * [ BUTTONS ] -->
+											<div class="acccount-section__buttons">
+												<div class="acccount-section__open-menu _open-menu">
+													<div class="vertical-dots" id="verticalDots">
+														<span></span>
+														<span></span>
+														<span></span>
+													</div>
+												</div>
+											</div>
+											<div class="acccount-content__title">
+												<h2 class="font_clamp_50">Мои организации</h2>
+											</div>
+										</div>
+										<a href="../return-exchange/return-exchange.html" class="acccount-content__return-button">
+											<i class="icofont-long-arrow-left icon"></i>
+											<span>назад</span>
+										</a>
+									</div>
+									<div class="acccount-content__row bp-8"></div>
+									<!-- * -->
+									<div class="acccount-content__row">
+										<div class="blanck-doc">
+											<div class="blanck-doc__title font_clamp_30">
+												Акты сверки взаиморасчётов
+											</div>
+											<form class="blanck-doc__form" action="#" method="#">
+												<div class="blanck-doc__wrapper">
+													<input class="blanck-doc__input" type="text" id="number-doc"
+														placeholder="Введите номер заказа">
+													<button type="submit" class="">
+														<i class="icofont-search-1"></i>
+													</button>
+												</div>
+											</form>
+										</div>
+									</div>
+									<!-- * -->
+									<div class="acccount-content__row">
+										<div class="document-type">
+											<div class="document-type__body">
+												<!-- * Col-1 -->
+												<div class="document-type__column">
+													<div class="document-type__title">
+														<span>Тип документа</span>
+														<i class="icofont-thin-down"></i>
+													</div>
+
+
+													<div class="document-type__collapse">
+														<form class="modal-rejection__form" id="rejectForm">
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason" value="Все">
+																<span class="modal-rejection__radio-text">Все</span>
+															</label>
+
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason"
+																	value="Акт оказания услуг">
+																<span class="modal-rejection__radio-text">Акт оказания услуг</span>
+															</label>
+
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason"
+																	value="Счёт — фактура">
+																<span class="modal-rejection__radio-text">Счёт — фактура</span>
+															</label>
+
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason"
+																	value="Счёт на оплату">
+																<span class="modal-rejection__radio-text">Счёт на оплату</span>
+															</label>
+
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason"
+																	value="Накладная">
+																<span class="modal-rejection__radio-text">Накладная</span>
+															</label>
+
+															<label class="modal-rejection__radio">
+																<input class="modal-rejection__radio-input" type="radio" name="reason"
+																	value="Универсальный передаточный документ">
+																<span class="modal-rejection__radio-text">Универсальный передаточный документ</span>
+															</label>
+														</form>
+													</div>
+												</div>
+												<!-- * Col-2 -->
+												<div class="document-type__column">
+													<div class="document-type__title">
+														<span>Период</span>
+														<i class="icofont-thin-down"></i>
+													</div>
+													<div class="document-type__collapse">
+														<div class="document-type__wrapper">
+															<div class="widget-calendar">
+																<div class="widget-header">
+																	<button class="widget-prev">
+																		<i class="icofont-thin-left icon"></i>
+																	</button>
+																	<span class="widget-month-year"></span>
+																	<button class="widget-next">
+																		<i class="icofont-thin-right icon"></i>
+																	</button>
+																</div>
+																<div class="widget-weekdays">
+																	<span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+																</div>
+																<div class="widget-days"></div>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
-									<div class="acccount-content__title">
-										<h2 class="font_clamp_50">Возврат и обмен</h2>
+
+
+									<div class="acccount-content__row">
+										<div class="blanck-doc__title font_clamp_30">
+											Документы не найдены
+										</div>
+										<div class="blanck-doc__text">
+											Не найдены документы, подходящие под выбранные фильтры.
+											Попробуйте поменять или сбросить фильтры.
+										</div>
 									</div>
 								</div>
-								<a href="../return-exchange/return-exchange.html" class="acccount-content__return-button">
-									<i class="icofont-long-arrow-left icon"></i>
-									<span>назад</span>
-								</a>
 							</div>
-							<!-- * content__row - 2 (Блок поиска заказа) --------------------- -->
-							<div class="acccount-content__row">
-								<div class="manual-repair">
-									<div class="manual-repair__body">
+							<!-- * -->
+							<div class="aside-menu-right transparent-right" data-da="bp-8" data-da-position="0"
+								data-da-resolution="991">
+								<div class="profile">
+									<div class="profile__body">
 										<!-- * -->
-										<div class="manual-repair__header">
-											<div class="manual-repair__title font_clamp_30">
-												Мои заявки
-											</div>
-
+										<div class="profile__line">
+											<a href="./load-doc.html" class="profile__link active-link">
+												<div class="profile__item">Отгрузочные документы</div>
+											</a>
+										</div>
+										<!-- * -->
+										<div class="profile__line">
+											<a href="./reports.html" class="profile__link">
+												<div class="profile__item">Акты сверок</div>
+											</a>
+										</div>
+										<!-- * -->
+										<div class="profile__line">
+											<a href="./documents-forms.html" class="profile__link">
+												<div class="profile__item">Уставные документы и бланки</div>
+											</a>
+										</div>
+										<!-- * -->
+										<div class="profile__line">
+											<a href="" class="profile__link">
+												<div class="profile__item">Оригинальные документы</div>
+											</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="acccount-content__row">
-								<!-- * Форма поиска заказа -->
-								<div class="user-request">
-									<div class="user-request__body">
-										<div class="user-request__line toggle-box">
-											<div class="user-request__wrapper collapse-button">
-												<span class="user-request__order">
-													<strong>№ 151-03-26 от 21.03.2026 г. 14:12 </strong> по возврату денежных средств. Номер
-													заказа 2509-704-301
-												</span>
-												<i class="icofont-thin-down"></i>
-											</div>
-											<div class="user-request__drop-box _collapse">
-												<div class="progress-bar">
-													<div class="progress-bar__header">
-														<span class="progress-bar__label">21 / 05 / 26</span>
-														<span class="progress-bar__label active">17/ 06 / 26</span>
-														<span class="progress-bar__label">100%</span>
-													</div>
-													<div class="progress-bar__track">
-														<div class="progress-bar__fill" style="width: 70%;"></div>
-													</div>
-													<div class="progress-bar__stages">
-														<span class="progress-bar__stage">Принято</span>
-														<span class="progress-bar__stage">На рассмотрении</span>
-														<span class="progress-bar__stage">Исполнено</span>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="user-request__line toggle-box">
-											<div class="user-request__wrapper collapse-button">
-												<span class="user-request__order">
-													<strong>№ 151-03-26 от 21.03.2026 г. 14:12 </strong> по возврату денежных средств. Номер
-													заказа 2509-704-301
-												</span>
-												<i class="icofont-thin-down"></i>
-											</div>
-											<div class="user-request__drop-box _collapse">
-												<div class="progress-bar">
-													<div class="progress-bar__header">
-														<span class="progress-bar__label">21 / 05 / 26</span>
-														<span class="progress-bar__label active">17/ 06 / 26</span>
-														<span class="progress-bar__label">100%</span>
-													</div>
-													<div class="progress-bar__track">
-														<div class="progress-bar__fill" style="width: 70%;"></div>
-													</div>
-													<div class="progress-bar__stages">
-														<span class="progress-bar__stage">Принято</span>
-														<span class="progress-bar__stage">На рассмотрении</span>
-														<span class="progress-bar__stage">Исполнено</span>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="user-request__line toggle-box">
-											<div class="user-request__wrapper collapse-button">
-												<span class="user-request__order">
-													<strong>№ 151-03-26 от 21.03.2026 г. 14:12 </strong> по возврату денежных средств. Номер
-													заказа 2509-704-301
-												</span>
-												<i class="icofont-thin-down"></i>
-											</div>
-											<div class="user-request__drop-box _collapse">
-												<div class="progress-bar">
-													<div class="progress-bar__header">
-														<span class="progress-bar__label">21 / 05 / 26</span>
-														<span class="progress-bar__label active">17/ 06 / 26</span>
-														<span class="progress-bar__label">100%</span>
-													</div>
-													<div class="progress-bar__track">
-														<div class="progress-bar__fill" style="width: 70%;"></div>
-													</div>
-													<div class="progress-bar__stages">
-														<span class="progress-bar__stage">Принято</span>
-														<span class="progress-bar__stage">На рассмотрении</span>
-														<span class="progress-bar__stage">Исполнено</span>
-													</div>
-												</div>
-											</div>
-										</div>
+							<!-- * -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- * ---------------------- [ Section form ] ----------------------------- -->
+		<section class="section_form container">
+			<div class="section_form_body">
+				<div class="section_form_content container">
+					<div class="section_form_title">
+						<span>Возникли вопросы?</span>
+						<span>Напишите нам!</span>
+					</div>
+					<div class="form_feedback_body">
+						<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="mb-3">
+										<label for="suportName" class="sr-only">Ваше имя</label>
+										<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
+									</div>
+								</div><!-- /suport_feedback_form_box -->
+							</div>
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="mb-3">
+										<label for="suportEmail" class="sr-only">Ваш e-mail</label>
+										<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
+											autocomplete="off">
 									</div>
 								</div>
+							</div>
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="mb-4">
+										<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
+										<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
+											rows="1"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="section_form_line">
+								<div class="suport_feedback_form_box">
+									<div class="send-button">
+										<button class="send-button__button red_button" type="submit">отправить</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="succes_message bg_transparent" style="display: none;">
+							<div class="succes_message_caption">
+								Спасибо за обращение ! <br>
+								мы ответим Вам в ближайшее время!
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-	</main>
-	<!-- * ---------------------- [ Section form ] ----------------------------- -->
-	<section class="section_form container">
-		<div class="section_form_body">
-			<div class="section_form_content container">
-				<div class="section_form_title">
-					<span>Возникли вопросы?</span>
-					<span>Напишите нам!</span>
-				</div>
-				<div class="form_feedback_body">
-					<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-3">
-									<label for="suportName" class="sr-only">Ваше имя</label>
-									<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
-								</div>
-							</div>
-						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-3">
-									<label for="suportEmail" class="sr-only">Ваш e-mail</label>
-									<input type="email" id="suportEmail" name="suport_email" placeholder="Ваш e-mail" required=""
-										autocomplete="off">
-								</div>
-							</div>
-						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="mb-4">
-									<label for="suportQuestion" class="sr-only">Ваш вопрос</label>
-									<textarea id="suportQuestion" name="suport_question" placeholder="Ваш вопрос" required=""
-										rows="1"></textarea>
-								</div>
-							</div>
-						</div>
-						<div class="section_form_line">
-							<div class="suport_feedback_form_box">
-								<div class="send-button">
-									<button class="send-button__button red_button" type="submit">отправить</button>
-								</div>
-							</div>
-						</div>
-					</form>
-					<div class="succes_message bg_transparent" style="display: none;">
-						<div class="succes_message_caption">
-							Спасибо за обращение ! <br>
-							мы ответим Вам в ближайшее время!
-						</div><!-- /succes_message_caption -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	</div>
+
 	<!-- * --------------------------- [ Footer] --------------------------------- -->
 	<!--*  wow fadeInDown -->
 	<footer class="footer">
@@ -609,9 +654,11 @@
 					<i class="icofont-close icon"></i>
 				</div>
 			</div>
+
 			<div class="modal-login__form">
 				<form action="#" method="get" class="form-login">
 					<!-- * -->
+
 					<fieldset class="form-login__form-group">
 						<label for="user-name" class="form-login__label fw700">Полное наименование / ФИО</label>
 						<input type="text" id="user-name" name="user-name" class="form-login__input" required>
@@ -634,6 +681,7 @@
 					<div class="modal-login__reg">
 						<span class="reg-button">Регистрация</span>
 					</div>
+
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -641,7 +689,10 @@
 						</div>
 					</div>
 				</form>
+
 			</div>
+
+
 		</div>
 	</div>
 
@@ -660,11 +711,16 @@
 			<div class="modal-registration__title">
 				Укажите вашу электронную почту и придумайте пароль
 			</div>
+
 			<div class="modal-registration__text">В пароле должно быть не меньше 6 симаволов. Можно использовать латинские
 				буквы( как прописные, так и строчные: A — Z, a — z) и цифры (0 — 9)
 			</div>
+
 			<div class="modal-registration__form">
 				<form action="#" method="get" class="form-login">
+					<!-- * -->
+
+
 					<!-- * -->
 					<fieldset class="form-login__form-group">
 						<label class="form-login__label fw700" for="email">Email</label>
@@ -683,6 +739,7 @@
 						<input type="password" id="user-password2" name="user-password2" class="form-login__input"
 							autocomplete="new-password" required>
 					</fieldset>
+
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -690,6 +747,64 @@
 						</div>
 					</div>
 				</form>
+
+			</div>
+
+
+		</div>
+	</div>
+
+	<!-- * MODAL: Причина отказа  -->
+	<div class="modal-rejection" id="rejectModal">
+		<div class="modal-rejection__body">
+			<div class="modal-rejection__header">
+				<h3 class="modal-rejection__title">Причина отмены заказа</h3>
+				<span class="modal-rejection__close" id="closeModalBtn" type="button">
+					<i class="icofont-close"></i>
+				</span>
+			</div>
+			<div class="modal-rejection__content">
+				<form class="modal-rejection__form" id="rejectForm">
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Меняю адрес доставки">
+						<span class="modal-rejection__radio-text">Меняю адрес доставки</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Убираю/добавляю позиции">
+						<span class="modal-rejection__radio-text">Убираю/добавляю позиции</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Проблема с оплатой">
+						<span class="modal-rejection__radio-text">Проблема с оплатой</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="В другом магазине дешевле">
+						<span class="modal-rejection__radio-text">В другом магазине дешевле</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason"
+							value="В другом магазине доставка быстрее">
+						<span class="modal-rejection__radio-text">В другом магазине доставка быстрее</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Заказ больше не актуален">
+						<span class="modal-rejection__radio-text">Заказ больше не актуален</span>
+					</label>
+					<label class="modal-rejection__radio">
+						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Другая причина">
+						<span class="modal-rejection__radio-text">Другая причина</span>
+					</label>
+
+					<div class="modal-rejection__field">
+						<textarea class="modal-rejection__textarea" id="otherReason" rows="2"
+							placeholder="Укажите причину отмены заказа..."></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-rejection__footer">
+				<button class="modal-rejection__btn red_button" id="submitBtn" type="button" form="rejectForm">
+					<span>Отменить заказ</span>
+				</button>
 			</div>
 		</div>
 	</div>

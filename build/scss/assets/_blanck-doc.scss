@@ -1,0 +1,176 @@
+@use '../core/mixins' as *;
+//* ----------------------------------------------------------------------------
+.blanck-doc {
+  // .blanck-doc__title
+  &__title {
+    font-weight: 700;
+    margin-block: 4rem 2rem;
+  }
+
+  // .blanck-doc__list
+  &__list {
+    // margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+
+    @include screen-690 {
+      margin-top: 0;
+    }
+  }
+
+  // .blanck-doc__item
+  &__item {
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &:hover {
+      color: var(--danger);
+      span {
+        &:nth-child(1) {
+          text-shadow: 0 0 1px var(--danger);
+        }
+      }
+    }
+
+    span {
+      font-weight: 500;
+      &:nth-child(1) {
+        transition: text-shadow 0.4s ease-in-out;
+
+        @include screen-690 {
+          font-size: 14px;
+        }
+      }
+      &:nth-child(2) {
+        flex: 0 0 50px;
+        padding: 3px;
+        background-color: rgb(238, 239, 241);
+        display: inline-flex;
+        justify-content: center;
+        border-radius: 1px;
+        width: 50px;
+      }
+
+      .icofont-download {
+        font-size: 20px;
+        color: inherit;
+      }
+    }
+  }
+
+  // .blanck-doc__link
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  // .blanck-doc__wrapper
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    .icofont-search-1 {
+      font-size: 24px;
+      color: #a5a5a5b9;
+    }
+
+    button {
+      margin-left: -30px;
+    }
+  }
+
+  // .repair-status__input
+  &__input {
+    display: block;
+    width: 100%;
+    border: 1px solid #a5a5a5;
+    font-size: 14px;
+    padding: 10px;
+    height: 40px;
+    max-width: 483px;
+  }
+}
+//* ----------------------------------------------------------------------------
+.documents-forms,
+.load-doc,
+.reports {
+  .profile__item {
+    white-space: wrap;
+  }
+
+  .profile__body {
+    @include screen-425 {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
+//* ----------------------------------------------------------------------------
+.document-type {
+  .modal-rejection__radio {
+    gap: 2rem;
+    &:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .modal-rejection__radio-text {
+    font-size: 16px;
+    white-space: wrap;
+    transition: all 0.4s ease-in-out;
+    @include screen-690 {
+      font-size: 14px;
+    }
+  }
+
+  // .document-type__body
+  &__body {
+    display: flex;
+  }
+
+  // .document-type__column
+  &__column {
+    &:nth-child(1) {
+      flex: 0 1 60%;
+      max-width: 60%;
+      margin-right: 1rem;
+    }
+
+    &:nth-child(2) {
+      margin-left: 1rem;
+      flex: 0 1 40%;
+      max-width: 40%;
+    }
+  }
+
+  // .document-type__title
+  &__title {
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    color: #b4b4b4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .icofont-thin-down {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--danger);
+    }
+  }
+
+  // .document-type__collapse
+  &__collapse {
+  }
+
+  .modal-rejection__radio-input:checked + .modal-rejection__radio-text {
+    text-shadow: 0 0 1px #000;
+    color: black;
+  }
+}

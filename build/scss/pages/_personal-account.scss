@@ -263,10 +263,6 @@
       font-size: 12px;
     }
   }
-
-  // .content-info__footer
-  &__footer {
-  }
 }
 
 //* ------------------------- [ progress-bar ] ---------------------------------
@@ -1771,7 +1767,7 @@
       }
 
       .profile__item {
-        color: var(--red);
+        color: var(--danger);
       }
     }
   }
