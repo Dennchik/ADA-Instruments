@@ -1,0 +1,98 @@
+<div class="org-form__header">
+	<button type="button" class="org-form__back-btn" onclick="window.backToSearch()">
+		<i class="icofont-long-arrow-left"></i>
+		<span>Вернуться к поиску</span>
+		<i class="icofont-close"></i>
+	</button>
+</div>
+
+<div class="org-form__body">
+	<div class="org-form__column">
+		<div class="org-form__content">
+			<div class="org-form__field">
+				<div class="org-form__label">Наименование организации</div>
+				<div class="org-form__name">
+					<div class="org-form__name-value">{{org.name}}</div>
+					<div class="org-form__button-edit">
+						<div class="vertical-dots">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+					<!-- * [ pop-up ] -->
+					<div class="pop-up">
+						<div class="pop-up__body">
+							<div class="pop-up__list">
+								<div class="pop-up__item">
+									<i class="icofont-trash"></i>
+									<span>Редактировать реквизиты</span>
+
+								</div>
+								<div class="pop-up__item">
+									<i class="icofont-pen-alt-4"></i>
+									<span>Удалить организацию</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="org-form__line">
+				<div class="org-form__field">
+					<div class="org-form__label">ИНН</div>
+					<div class="org-form__inn-value">{{org.inn}}</div>
+				</div>
+
+				<div class="org-form__field">
+					<div class="org-form__label">КПП</div>
+					<div class="org-form__kpp-value">{{org.kpp}}</div>
+				</div>
+			</div>
+
+			<div class="org-form__field">
+				<div class="org-form__label">Фактический адрес</div>
+				<div class="org-form__address-value">{{org.address}}</div>
+			</div>
+		</div>
+
+		<div class="org-form__bank-requisites">
+			<div class="org-form__reg-button">
+				<span>Указать банковские реквизиты</span>
+				<i class="icofont-thin-down"></i>
+			</div>
+
+			<div class="org-form__collapse">
+				<div class="org-form__wrapper">
+					<fieldset class="org-form__fieldset">
+						<label class="org-form__label" for="paymentAccount">Расчетный счет</label>
+						<input id="paymentAccount" class="org-form__input" autocomplete="off" type="text" name="paymentAccount"
+							value="">
+					</fieldset>
+
+					<fieldset class="org-form__fieldset">
+						<label class="org-form__label" for="bik">Бик банка</label>
+						<input id="bik" class="org-form__input" autocomplete="off" type="text" name="bik" value="">
+					</fieldset>
+
+					<fieldset class="org-form__fieldset">
+						<label class="org-form__label" for="nameBank">Наименование банка</label>
+						<input id="nameBank" class="org-form__input" autocomplete="off" type="text" name="nameBank" value="">
+					</fieldset>
+
+					<fieldset class="org-form__fieldset">
+						<label class="org-form__label" for="correspondentAccount">Корреспондентский счет</label>
+						<input id="correspondentAccount" class="org-form__input" autocomplete="off" type="text"
+							name="correspondentAccount" value="">
+					</fieldset>
+				</div>
+			</div>
+		</div>
+
+		<div class="org-form__actions">
+			<button type="button" class="org-form__submit-btn red_button" id="addOrganizationBtn">Добавить
+				организацию</button>
+		</div>
+	</div>
+</div>
