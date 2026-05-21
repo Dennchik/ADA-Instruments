@@ -665,7 +665,7 @@
 }
 
 .red_bg {
-  background-color: #ff2f2f;
+  background-color: var(--danger);
 }
 
 .sc_mp_caption {
@@ -1446,7 +1446,7 @@
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 2px;
-    background-color: var(--red);
+    background-color: var(--danger);
   }
 }
 
@@ -2416,7 +2416,7 @@
 .tabs-buttons {
   display: flex;
   gap: 40px;
-  border-bottom: 4px solid var(--red);
+  border-bottom: 4px solid var(--danger);
   margin-bottom: 20px;
   padding: 20px 0;
   // .tabs-button__item
@@ -2428,7 +2428,7 @@
     text-transform: uppercase;
     transition: color 0.3s ease 0s;
     &.active {
-      color: var(--red);
+      color: var(--danger);
     }
   }
 }

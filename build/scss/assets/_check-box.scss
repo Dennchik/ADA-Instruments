@@ -13,7 +13,7 @@
 
     &:checked + .check-box__icon .icofont-check {
       opacity: 1;
-      color: var(--red);
+      color: var(--danger);
     }
     &:checked + .icon-gray .icofont-check {
       opacity: 1;
@@ -51,16 +51,12 @@
       position: relative;
       top: 0;
       left: 0;
-      // height: 22px;
-      // width: 22px;
     }
   }
 
   // .checkbox__icon
   &__icon {
     position: absolute;
-    height: 20px;
-    width: 20px;
 
     .icofont-check {
       transition: opacity 0.3s ease-in-out;

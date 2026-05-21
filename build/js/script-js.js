@@ -914,7 +914,7 @@ function initInnSearch() {
   input.addEventListener('input', handleInput);
   document.addEventListener('click', handleClickOutside);
 }
-
+initInnSearch();
 //* 👇 Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', initInnSearch);
 //* ----------------------------------------------------------------------------
@@ -939,10 +939,7 @@ function maskPhone() {
     $('.mask-phone').mask('+7 (999) 999-99-99');
   }
 }
-
-$(document).ready(function () {
-  maskPhone();
-});
+document.addEventListener('DOMContentLoaded', maskPhone);
 
 //* ------------------- [ ИНН С МАСКОЙ И ПОИСКОМ ] -----------------------------
 function maskInn() {
@@ -979,7 +976,7 @@ function maskInn() {
     });
   });
 }
-
+document.addEventListener('DOMContentLoaded', maskInn);
 function collapseBlock() {
   const formCollapseBlocks = document.querySelectorAll(
     '.org-form__bank-requisites'
@@ -993,6 +990,8 @@ function collapseBlock() {
     });
   });
 }
+
+document.addEventListener('DOMContentLoaded', collapseBlock);
 //* ----------------------------------------------------------------------------
 
 function repairStatus() {
