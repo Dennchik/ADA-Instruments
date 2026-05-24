@@ -14,27 +14,27 @@
   padding: 0 15px;
   display: flex;
   justify-content: center;
-  /* backdrop-filter: blur(4px); */
-  /*  background-color: #4747478c; */
 
-  transform: scale(0);
+  background-color: #4747478c;
+
   opacity: 0;
-  transition:
-    opacity 0.4s,
-    transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 
   @include screen-375 {
     padding: 0 5px;
   }
 
   &.open-modal {
-    transform: scale(1);
     opacity: 1;
-    pointer-events: all;
+    .modal-login__body {
+      transform: scale(1);
+      pointer-events: all;
+    }
   }
 
   // .modal-login__body
   &__body {
+    transform: scale(0);
     position: relative;
     padding: 55px;
     background-color: white;
@@ -46,6 +46,7 @@
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 0 12px rgba(105, 105, 105, 0.596);
+    transition: transform 0.4s ease-in-out;
 
     @include screen-992 {
       margin-block: 100px;
@@ -211,9 +212,8 @@
   padding: 0 15px;
   display: flex;
   justify-content: center;
-  /*   backdrop-filter: blur(48px); */
-  /*  background-color: #4747478c; */
-  transform: scale(0);
+  background-color: #4747478c;
+
   opacity: 0;
   transition:
     opacity 0.4s,
@@ -224,13 +224,17 @@
   }
 
   &.open-modal {
-    transform: scale(1);
     opacity: 1;
-    pointer-events: all;
+    .modal-registration__body {
+      transform: scale(1);
+
+      pointer-events: all;
+    }
   }
 
   // .modal-registration__body
   &__body {
+    transform: scale(0);
     position: relative;
     padding: 55px;
     background-color: white;
@@ -242,6 +246,7 @@
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 0 12px rgba(105, 105, 105, 0.596);
+    transition: transform 0.4s ease-in-out;
 
     @include screen-992 {
       margin-block: 100px;

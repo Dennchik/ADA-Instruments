@@ -811,8 +811,6 @@
 
       //*.profile
       .profile {
-        margin-top: -60px;
-
         @include screen-840 {
           margin-top: 0;
         }
@@ -833,10 +831,10 @@
         &__body {
           display: grid;
           grid-template-columns: minmax(390px, 1fr) minmax(240px, 313px);
-          gap: 2rem 7rem;
+          gap: 5rem;
 
           @include screen-1376 {
-            gap: 50px 20px;
+            gap: 20px;
           }
 
           @include screen-992 {
@@ -1211,10 +1209,6 @@
         }
       }
     }
-
-    //* .repair-user
-    .repair-user {
-    }
   }
 
   // .acccount-section__tab-content
@@ -1226,7 +1220,7 @@
     width: 100%;
 
     @include screen-1376 {
-      gap: 20px;
+      gap: 35px;
     }
 
     &:nth-child(1),

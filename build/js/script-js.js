@@ -338,46 +338,41 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //todo Функция автоматической подстройки высоты
-//todo 👇 (Для Виктора)
-function autoResizeTextarea(textarea) {
-  textarea.style.height = 'auto'; // Сбрасываем высоту
-  textarea.style.height = textarea.scrollHeight + 'px'; // Устанавливаем по содержимому
-}
+
+// function autoResizeTextarea(textarea) {
+//   textarea.style.height = 'auto'; // Сбрасываем высоту
+//   textarea.style.height = textarea.scrollHeight + 'px'; // Устанавливаем по содержимому
+// }
 
 //todo Применяем ко всем textarea с классом select__input
-//todo 👇 (Для Виктора)
+
 function autoResizeText() {
-  document.addEventListener('DOMContentLoaded', () => {
-    // Функция автоматической подстройки высоты
-    function autoResizeTextarea(textarea) {
-      textarea.style.height = 'auto';
-      textarea.style.height = textarea.scrollHeight + 'px';
-    }
+  // Функция автоматической подстройки высоты
+  function autoResizeTextarea(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+  }
 
-    // Применяем ко всем textarea с классом select__input
-    document.querySelectorAll('.select__input').forEach((textarea) => {
-      //* Инициализация
+  // Применяем ко всем textarea с классом select__input
+  document.querySelectorAll('.select__input').forEach((textarea) => {
+    autoResizeTextarea(textarea);
+
+    textarea.addEventListener('input', function () {
+      autoResizeTextarea(this);
+    });
+
+    const observer = new MutationObserver(function () {
       autoResizeTextarea(textarea);
-
-      // При вводе текста
-      textarea.addEventListener('input', function () {
-        autoResizeTextarea(this);
-      });
-
-      //* При изменении значения программно (например, через выбор из списка)
-      const observer = new MutationObserver(function () {
-        autoResizeTextarea(textarea);
-      });
-      observer.observe(textarea, {
-        attributes: true,
-        attributeFilter: ['value'],
-      });
+    });
+    observer.observe(textarea, {
+      attributes: true,
+      attributeFilter: ['value'],
     });
   });
 }
-document.addEventListener('DOMContentLoaded', function () {
-  autoResizeText();
-});
+
+// Запускаем один раз после загрузки DOM
+document.addEventListener('DOMContentLoaded', autoResizeText);
 
 //todo ------- выпадающий список в личный кабинет (плкупатель -> ) -------------
 //todo 👇 (Для Виктора)
@@ -1203,3 +1198,17 @@ function dragAndDrop() {
 }
 
 document.addEventListener('DOMContentLoaded', dragAndDrop);
+// todo  ---------------- [MODAL: Ваша заявка принята] -------------------------
+
+function modalAccepted() {
+  const button = document.querySelector('.order-doc');
+
+  button.addEventListener('click', () => {
+    const modal = document.querySelector('.modal-accepted');
+    modal.classList.add('open-modal');
+    setTimeout(() => {
+      modal.classList.remove('open-modal');
+    }, 2000);
+  });
+}
+document.addEventListener('DOMContentLoaded', modalAccepted);

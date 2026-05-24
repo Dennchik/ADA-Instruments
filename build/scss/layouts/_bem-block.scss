@@ -48,38 +48,12 @@
   }
 }
 //* ----------------------------------------------------------------------------
-.repair-status {
-  // .repair-status__wrapper
-
-  &__wrapper {
-  }
-
-  // .repair-status__info-block
-
-  &__info-block {
-  }
-
-  // .repair-status__info-text
-
-  &__info-text {
-  }
-
-  // .repair-status__info-link
-
-  &__info-link {
-  }
-
-  // .repair-status__search-result
-
-  &__search-result {
-  }
-}
 
 //* ----------------------------------------------------------------------------
 .active_button:hover,
 .active_button:focus {
   background-color: #fff;
-  color: #ff2d2d;
+  color: var(--danger);
   text-decoration: none;
 }
 
@@ -279,13 +253,12 @@
   &:active {
     background-color: transparent;
     outline: none;
-    color: #252525;
-    color: var(--red);
-    border: 1px solid var(--red);
+    color: var(--danger);
+    border: 1px solid var(--danger);
 
     @include screen-1024 {
       background-color: transparent;
-      color: rgb(255, 51, 51);
+      color: var(--danger);
       outline: none;
       text-decoration: none;
     }
@@ -346,7 +319,7 @@
   line-height: 1;
 }
 .red_bg {
-  background-color: #ff2f2f;
+  background-color: var(--danger);
 }
 .white_color {
   color: white;
@@ -358,10 +331,10 @@
   background-color: rgb(241, 241, 241);
 }
 .red_color {
-  color: rgb(255, 51, 51);
+  color: var(--danger);
 }
 .red {
-  outline: 1px solid var(--red);
+  outline: 1px solid var(--danger);
 }
 .grey_backing {
   display: inline-block;
