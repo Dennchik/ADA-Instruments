@@ -1,14 +1,40 @@
 @use '../core/mixins' as *;
 
-//* ----------------------------------------------------------------------------
+//* ------------------------ [ Profile-section ]--------------------------------
 .profile {
   height: 100%;
-
   // .profile__body
   &__body {
+    background-color: var(--background-fon);
+    padding: 60px 4rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+
     @include screen-1376 {
+      padding-left: 20px;
+      padding-right: 20px;
       border: none;
-      gap: 10px;
+    }
+
+    @include screen-992 {
+      border: none;
+    }
+
+    @include screen-375 {
+      gap: 20px;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        &::before {
+          width: 11px;
+          height: 11px;
+          display: flex;
+          align-items: center;
+          font-size: 13px !important;
+        }
+      }
     }
   }
 
@@ -35,6 +61,115 @@
     @include screen-375 {
       font-size: 12px;
       line-height: 133.333333%; /* 16px/12 */
+    }
+  }
+
+  // .profile__add-org
+  &__add-org {
+    margin-top: 40px;
+    @include screen-992 {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+
+    .send-button {
+      // .send-button__button
+      &__button {
+        width: 100%;
+
+        @include screen-992 {
+          max-width: 250px;
+        }
+
+        @include screen-425 {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  // .profile__line
+  &__line {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  // .profile__wrapp
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .profile__link
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 5px;
+
+    &.add-phone {
+      .icofont-close {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:hover {
+      .profile__icon {
+        .icon {
+          &::before {
+            color: var(--danger) !important;
+          }
+        }
+      }
+
+      .profile__item {
+        color: var(--danger);
+      }
+    }
+  }
+
+  // .profile__item
+  &__item {
+    font-size: 16px;
+    font-weight: 600;
+    user-select: none;
+    width: 100%;
+    line-height: 100%;
+    transition: color 0.4s ease 0s;
+
+    @include screen-992 {
+      font-weight: 500;
+    }
+
+    @include screen-840 {
+      font-size: 14px;
+    }
+
+    @include screen-490 {
+      font-size: 12px;
+    }
+  }
+
+  // .profile__icon
+  &__icon {
+    .rotate-icon {
+      &::before {
+        transform: rotate(-45deg) !important;
+      }
+    }
+
+    .icon {
+      cursor: pointer;
+
+      &::before {
+        color: #b1b1b1;
+        font-size: 22px;
+        font-weight: bolder;
+        display: block;
+        transition: all 0.4s ease 0s;
+      }
     }
   }
 }

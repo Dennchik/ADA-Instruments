@@ -67,7 +67,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   // .blanck-doc__wrapper
@@ -86,7 +86,7 @@
     }
   }
 
-  // .repair-status__input
+  // .blanck-doc__input
   &__input {
     display: block;
     width: 100%;
@@ -95,6 +95,10 @@
     padding: 10px;
     height: 40px;
     max-width: 483px;
+
+    @include screen-992 {
+      // max-width: 100%;
+    }
   }
 }
 //* ----------------------------------------------------------------------------
@@ -132,6 +136,10 @@
   // .document-type__body
   &__body {
     display: flex;
+    @include screen-520 {
+      flex-wrap: wrap-reverse;
+      gap: 3rem;
+    }
   }
 
   // .document-type__column
@@ -157,6 +165,10 @@
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @include screen-490 {
+      margin-bottom: 1rem;
+    }
 
     .icofont-thin-down {
       font-size: 24px;

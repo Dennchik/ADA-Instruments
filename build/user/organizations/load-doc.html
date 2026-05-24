@@ -287,7 +287,7 @@
 												<h2 class="font_clamp_50">Мои организации</h2>
 											</div>
 										</div>
-										<a href="../return-exchange/return-exchange.html" class="acccount-content__return-button">
+										<a href="./organization.html" class="acccount-content__return-button">
 											<i class="icofont-long-arrow-left icon"></i>
 											<span>назад</span>
 										</a>
@@ -318,9 +318,7 @@
 												<div class="document-type__column">
 													<div class="document-type__title">
 														<span>Тип документа</span>
-														<i class="icofont-thin-down"></i>
 													</div>
-
 
 													<div class="document-type__collapse">
 														<form class="modal-rejection__form" id="rejectForm">
@@ -365,24 +363,18 @@
 												<div class="document-type__column">
 													<div class="document-type__title">
 														<span>Период</span>
-														<i class="icofont-thin-down"></i>
 													</div>
 													<div class="document-type__collapse">
 														<div class="document-type__wrapper">
-															<div class="widget-calendar">
-																<div class="widget-header">
-																	<button class="widget-prev">
-																		<i class="icofont-thin-left icon"></i>
-																	</button>
-																	<span class="widget-month-year"></span>
-																	<button class="widget-next">
-																		<i class="icofont-thin-right icon"></i>
-																	</button>
+															<div class="date-period">
+																<div class="date-period__input">
+																	<label class="date-period__label" for="start-date">от:</label>
+																	<input type="date" id="start-date" name="start-date">
 																</div>
-																<div class="widget-weekdays">
-																	<span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+																<div class="date-period__input">
+																	<label class="date-period__label" for="end-date">до:</label>
+																	<input type="date" id="end-date" name="end-date">
 																</div>
-																<div class="widget-days"></div>
 															</div>
 														</div>
 													</div>
@@ -390,7 +382,6 @@
 											</div>
 										</div>
 									</div>
-
 
 									<div class="acccount-content__row">
 										<div class="blanck-doc__title font_clamp_30">

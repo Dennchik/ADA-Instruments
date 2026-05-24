@@ -22,6 +22,7 @@
     animation: preloader-5-spin 4s linear infinite;
   }
 }
+
 .preloader-5:before {
   content: '';
   position: absolute;
@@ -34,6 +35,7 @@
   border-top-color: rgb(255, 30, 30);
   animation: preloader-5-spin 3s linear infinite;
 }
+
 .preloader-5:after {
   content: '';
   position: absolute;
