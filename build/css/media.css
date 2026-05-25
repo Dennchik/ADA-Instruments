@@ -987,11 +987,6 @@
     position: relative;
   }
 
-  .items_greed_list li {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
   .full_heigh {
     height: 300px;
   }
@@ -1440,7 +1435,6 @@
   .container-sm,
   .container-xl {
     max-width: 1376px;
-    /* box-sizing: content-box; */
   }
 }
 

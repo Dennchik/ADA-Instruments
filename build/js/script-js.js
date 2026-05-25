@@ -339,11 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //todo Функция автоматической подстройки высоты
 
-// function autoResizeTextarea(textarea) {
-//   textarea.style.height = 'auto'; // Сбрасываем высоту
-//   textarea.style.height = textarea.scrollHeight + 'px'; // Устанавливаем по содержимому
-// }
-
 //todo Применяем ко всем textarea с классом select__input
 
 function autoResizeText() {
@@ -928,7 +923,7 @@ function handleSubmit(event) {
   }
 }
 
-//* ---------------------- [ МАСКА И ТЕЛЕФОНА ] --------------------------------
+//* ---------------------- [ МАСКА ТЕЛЕФОНА ] --------------------------------
 function maskPhone() {
   if ($('.mask-phone').length) {
     $('.mask-phone').mask('+7 (999) 999-99-99');
@@ -1013,8 +1008,8 @@ function repairStatus() {
   }
 }
 document.addEventListener('DOMContentLoaded', repairStatus);
-//todo ------------ [Choice Block (стр. Возврат обмен)] ------------------------
 
+//todo ------------ [Choice Block (стр. Возврат обмен)] ------------------------
 function checkBoxVisible() {
   const orderBlocks = document.querySelectorAll('.product-order');
   orderBlocks.forEach((orderBlock) => {
@@ -1202,13 +1197,36 @@ document.addEventListener('DOMContentLoaded', dragAndDrop);
 
 function modalAccepted() {
   const button = document.querySelector('.order-doc');
-
-  button.addEventListener('click', () => {
-    const modal = document.querySelector('.modal-accepted');
-    modal.classList.add('open-modal');
-    setTimeout(() => {
-      modal.classList.remove('open-modal');
-    }, 2000);
-  });
+  if (button) {
+    button.addEventListener('click', () => {
+      const modal = document.querySelector('.modal-accepted');
+      modal.classList.add('open-modal');
+      setTimeout(() => {
+        modal.classList.remove('open-modal');
+      }, 2000);
+    });
+  }
 }
+
 document.addEventListener('DOMContentLoaded', modalAccepted);
+
+// todo  ------------------ [MODAL: Обратная связь] ----------------------------
+function modalFeedback() {
+  const modal = document.querySelector('.modal-feedback');
+
+  if (modal) {
+    const buttons = document.querySelectorAll('.feedback-button');
+    const closebutton = modal.querySelector('.close-button');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        modal.classList.add('open-modal');
+      });
+    });
+
+    closebutton.addEventListener('click', () => {
+      modal.classList.remove('open-modal');
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', modalFeedback);

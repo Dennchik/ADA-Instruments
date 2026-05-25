@@ -48,6 +48,11 @@
     color: #000;
     font-weight: 500;
     font-size: 14px;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--danger);
+    }
   }
 
   // .side-menu__tab-link

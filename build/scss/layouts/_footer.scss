@@ -18,9 +18,27 @@
   }
 }
 
+.feedback-button {
+  span {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: none;
+    text-underline-offset: 2px;
+    color: #252525;
+    text-transform: uppercase;
+    transition: all 0.4s ease-out;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
 //* ----------------------------------------------------------------------------
 .footer {
   background-color: #fff;
+
   // .footer__secttion
   &__section {
     display: grid;
@@ -258,6 +276,24 @@
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
+
+    .feedback-button {
+      span {
+        cursor: pointer;
+        position: relative;
+        padding: 5px 0;
+        font-size: 12px;
+        font-weight: 300;
+        text-transform: none;
+        text-underline-offset: 2px;
+        color: #a4a4a4;
+        text-transform: uppercase;
+        transition: all 0.4s ease-out;
+        display: inline-block;
+        white-space: nowrap;
+        text-decoration: underline;
+      }
+    }
 
     li {
       display: flex;

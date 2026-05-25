@@ -350,19 +350,15 @@
   &__image {
     padding-top: 4rem;
     display: flex;
+    gap: 1rem;
   }
 
   // .product-card__img-item
   &__img-item {
     flex: 0 1 16.6%;
 
-    &:not(:last-child) {
-      margin-right: 5rem;
-    }
-
     img {
       max-width: 100%;
-      object-fit: none !important;
     }
   }
 

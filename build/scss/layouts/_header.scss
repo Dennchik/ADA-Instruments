@@ -43,6 +43,7 @@ header {
     a {
       display: flex;
       align-items: center;
+      font-weight: 500;
     }
   }
 }
@@ -58,7 +59,7 @@ header .container-fluid {
   }
 }
 .home_page .sub_menu a {
-  color: #a5a5a5;
+  color: rgb(255, 255, 255);
 }
 header.smaller {
   height: 70px;
@@ -101,15 +102,13 @@ header.smaller {
 
 .search_wrap > div:after {
   content: '';
-  background: #a5a5a5;
-  width: 3px;
-  height: 6px;
+  background: rgb(255, 255, 255);
+  width: 4px;
+  height: 5px;
   position: absolute;
-  top: 40px;
-  right: 2px;
+  right: -1px;
   transform: rotate(135deg);
   top: 0;
-  right: 0;
   margin-top: 25px;
   margin-right: 3px;
 }
@@ -174,7 +173,7 @@ header.smaller {
   width: 30px;
   height: 30px;
   padding: 10px;
-  border: solid 2px #ffffff;
+  border: solid 4px #ffffff;
   outline: none;
   border-radius: 35px;
   transition: width 0.5s;
@@ -183,7 +182,7 @@ header.smaller {
 
 .home_page .search_wrap > div > input {
   color: white;
-  border: solid 2px white;
+  border: solid 4px white;
 }
 
 .search_wrap > div > input::-webkit-input-placeholder {
@@ -289,9 +288,6 @@ header.smaller {
 
 .logo {
   transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
   text-align: left;
   white-space: nowrap;
   display: block;
@@ -308,10 +304,15 @@ header.smaller {
     background: url('../img/logo_white.png') no-repeat;
   }
 }
-
-.img_cont {
+.items_greed_box .img_cont {
   display: block;
-  text-align: center;
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 234px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
 }
 .img_cont img {
   width: 100%;
@@ -341,14 +342,10 @@ header.smaller {
   width: 50px;
   height: 50px;
   border-radius: 500px;
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
-  background-color: #ff2d2d;
+  background-color: var(--danger);
   color: #fff !important;
   font-size: 25px;
   line-height: 51px;
-  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   text-decoration: none;
@@ -357,21 +354,12 @@ header.smaller {
   transition:
     background-color 0.1s linear,
     color 0.1s 0.1s ease-in-out;
-  -moz-transition:
-    background-color 0.1s linear,
-    color 0.1s 0.1s ease-in-out;
-  -webkit-transition:
-    background-color 0.1s linear,
-    color 0.1s 0.1s ease-in-out;
-  -o-transition:
-    background-color 0.1s linear,
-    color 0.1s 0.1s ease-in-out;
   z-index: 10;
 }
 
 .phone_mobile:hover,
 .phone_mobile:focus {
-  color: #ff2d2d !important;
+  color: var(--danger) !important;
   text-decoration: none;
   background-color: #fff;
 }
@@ -385,29 +373,16 @@ header.smaller {
   width: 50px;
   height: 50px;
   border-radius: 500px;
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
-  background-color: #ff2d2d;
+  background-color: var(--danger);
   color: #fff !important;
   font-size: 25px;
   line-height: 51px;
-  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   text-decoration: none;
   outline: none;
   text-align: center;
   transition:
-    background-color 0.1s linear,
-    color 0.1s 0.1s ease-in-out;
-  -moz-transition:
-    background-color 0.1s linear,
-    color 0.1s 0.1s ease-in-out;
-  -webkit-transition:
-    background-color 0.1s linear,
-    color 0.1s 0.1s ease-in-out;
-  -o-transition:
     background-color 0.1s linear,
     color 0.1s 0.1s ease-in-out;
   z-index: 10;
@@ -517,7 +492,6 @@ header .top_menu > li > a {
   z-index: 1008;
   height: 100%;
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.95);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -604,22 +578,16 @@ header .top_menu > li > a {
   color: inherit;
   padding: 12px 20px;
   transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -moz-transition: all 0.3s;
   position: relative;
 }
 
 .sub_menu a:hover,
 .sub_menu a:focus {
   text-decoration: none;
-  color: rgb(255, 51, 51);
+  color: var(--danger);
 
   margin-left: 15px;
   transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -moz-transition: all 0.3s;
 }
 
 .menu_close {
@@ -633,28 +601,18 @@ header .top_menu > li > a {
   color: #fff;
   font-size: 26px;
   transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  -moz-transition: 0.5s;
   cursor: pointer;
 }
 
 .menu_close i {
   transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  -moz-transition: 0.5s;
   display: inline-block;
   vertical-align: middle;
 }
 
 .menu_close i:hover {
-  color: rgb(255, 51, 51);
+  color: var(--danger);
   transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
   -sand-transform: rotate(360deg);
 }
 
@@ -665,13 +623,13 @@ header .top_menu > li > a {
 }
 
 .mobile_menu .active a {
-  color: rgb(255, 51, 51);
+  color: var(--danger);
 }
 
 .mobile_menu a:hover,
 .mobile_menu a:focus {
   text-decoration: none;
-  color: rgb(255, 51, 51);
+  color: var(--danger);
 }
 @media only screen and (width <= 375px) {
   .mobile_menu_wrapp {
@@ -743,7 +701,6 @@ header .top_menu > li > a {
   width: 100%;
   height: 100%;
   background: url(../img/video.jpg) no-repeat center;
-  -webkit-background-size: cover;
   background-size: cover;
   cursor: pointer;
   z-index: 1;
@@ -805,13 +762,10 @@ header .top_menu > li > a {
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 500px;
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
   overflow: hidden;
   background-color: #fff;
 }

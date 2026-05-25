@@ -110,7 +110,7 @@
       top: 0;
       left: 0;
       margin: 0;
-      background-image: url(../img/logo_red.png);
+      background: url(../img/logo_red.png) no-repeat center / contain;
 
       @include screen-490 {
         width: 60px;
@@ -135,8 +135,6 @@
     }
 
     .icofont-close {
-      // position: absolute;
-
       &::before {
         transition: all 0.4s ease 0s;
         display: block;
@@ -197,6 +195,223 @@
 #show-btn {
   display: none;
 }
+//* ----------------------------------------------------------------------------
+.modal-feedback {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 13;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+
+  background-color: #4747478c;
+
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+
+  @include screen-375 {
+    padding: 0 5px;
+  }
+
+  &.open-modal {
+    opacity: 1;
+    .modal-feedback__body {
+      transform: scale(1);
+      pointer-events: all;
+    }
+  }
+
+  // .modal-feedback__body
+  &__body {
+    transform: scale(0);
+    position: relative;
+    padding: 55px;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    max-width: 533px;
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 12px rgba(105, 105, 105, 0.596);
+    transition: transform 0.4s ease-in-out;
+
+    @include screen-992 {
+      margin-block: 100px;
+    }
+
+    @include screen-640 {
+      max-width: 473px;
+      padding: 35px;
+    }
+
+    @include screen-490 {
+      padding: 30px;
+    }
+
+    @include screen-375 {
+      padding: 20px;
+    }
+  }
+
+  // .modal-feedback__header
+  &__header {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    margin-bottom: 45px;
+    gap: 10px;
+
+    @include screen-375 {
+      gap: 15px;
+    }
+
+    span {
+      white-space: nowrap;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #000000;
+      line-height: 100%;
+      align-self: self-end;
+
+      @include screen-490 {
+        font-size: 16px;
+      }
+    }
+  }
+
+  // .modal-feedback__logo
+  &__logo {
+    margin-right: 40px;
+
+    @include screen-992 {
+      margin-right: 10px;
+    }
+
+    @include screen-490 {
+      margin-right: 0;
+    }
+
+    .logo {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: 0;
+
+      background: url(../img/logo_red.png) no-repeat center / contain;
+
+      @include screen-490 {
+        width: 60px;
+        height: 28px;
+      }
+    }
+  }
+
+  // .modal-feedback__close-button
+  &__close-button {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      .icofont-close {
+        &::before {
+          color: var(--danger);
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    .icofont-close {
+      &::before {
+        transition: all 0.4s ease 0s;
+        display: block;
+        color: #a5a5a5;
+        font-size: 20px;
+      }
+    }
+  }
+
+  // .modal-feedback__text
+  &__text {
+    font-size: 1.4rem;
+    line-height: 110%;
+    margin-bottom: 3rem;
+  }
+
+  // .modal-feedback__form
+  &__form {
+    border: 1px solid #00000000;
+  }
+
+  .feedback-form input::placeholder,
+  .feedback-form textarea::placeholder {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+  }
+
+  .feedback-form input:focus::placeholder,
+  .feedback-form textarea:focus::placeholder {
+    opacity: 0;
+  }
+}
+
+.feedback-form {
+  margin-bottom: 3rem;
+
+  // .feedback-form__title
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.8rem;
+  }
+  // .feedback-form__textarea"
+  &__textarea {
+    padding: 10px;
+    min-height: 15rem;
+    border: 1px solid #a5a5a57c;
+    width: 100%;
+    margin-bottom: 3rem;
+    font-size: 14px;
+  }
+
+  // .feedback-form__politic
+  &__politic {
+    margin-bottom: 2.4rem;
+    font-size: 12px;
+  }
+
+  // .feedback-form__form-group
+  &__form-group {
+    width: 100%;
+    input {
+      border: 1px solid #a5a5a57c;
+      width: 100%;
+      padding: 5px 10px;
+      margin-bottom: 1rem;
+      line-height: 100%;
+      font-size: 14px;
+    }
+  }
+
+  // feedback-form__label
+  &__label {
+    width: 100%;
+  }
+
+  // .feedback-form__input
+  &__input {
+    font-size: 14px;
+  }
+}
+
 //* ----------------------------------------------------------------------------
 .modal-registration {
   position: fixed;
@@ -310,7 +525,7 @@
       top: 0;
       left: 0;
       margin: 0;
-      background-image: url(../img/logo_red.png);
+      background: url(../img/logo_red.png) no-repeat center / contain;
 
       @include screen-490 {
         width: 60px;
