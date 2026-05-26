@@ -105,10 +105,6 @@
 .documents-forms,
 .load-doc,
 .reports {
-  .profile__item {
-    white-space: wrap;
-  }
-
   .profile__body {
     @include screen-425 {
       grid-template-columns: 1fr !important;

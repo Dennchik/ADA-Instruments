@@ -31,6 +31,7 @@ html {
 }
 
 body {
+  scrollbar-width: none;
   font-size: 16px;
   color: #252525;
   min-width: 290px;
@@ -56,6 +57,8 @@ body.home_page {
 
 textarea {
   resize: none;
+  scrollbar-width: none;
+  height: auto;
 }
 
 button,

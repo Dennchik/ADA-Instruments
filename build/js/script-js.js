@@ -340,35 +340,23 @@ document.addEventListener('DOMContentLoaded', () => {
 //todo Функция автоматической подстройки высоты
 
 //todo Применяем ко всем textarea с классом select__input
+function autoResizeTextarea(textarea) {
+  textarea.style.height = 'auto';
+  textarea.style.height = textarea.scrollHeight + 'px';
+}
 
-function autoResizeText() {
-  // Функция автоматической подстройки высоты
-  function autoResizeTextarea(textarea) {
-    textarea.style.height = 'auto';
-    textarea.style.height = textarea.scrollHeight + 'px';
-  }
-
-  // Применяем ко всем textarea с классом select__input
+function initAutoResize() {
   document.querySelectorAll('.select__input').forEach((textarea) => {
     autoResizeTextarea(textarea);
+    textarea.addEventListener('input', () => autoResizeTextarea(textarea));
 
-    textarea.addEventListener('input', function () {
-      autoResizeTextarea(this);
-    });
-
-    const observer = new MutationObserver(function () {
-      autoResizeTextarea(textarea);
-    });
-    observer.observe(textarea, {
-      attributes: true,
-      attributeFilter: ['value'],
-    });
+    new MutationObserver(() => {
+      setTimeout(() => autoResizeTextarea(textarea), 0);
+    }).observe(textarea, { attributes: true, attributeFilter: ['value'] });
   });
 }
 
-// Запускаем один раз после загрузки DOM
-document.addEventListener('DOMContentLoaded', autoResizeText);
-
+document.addEventListener('DOMContentLoaded', initAutoResize);
 //todo ------- выпадающий список в личный кабинет (плкупатель -> ) -------------
 //todo 👇 (Для Виктора)
 function selectDropByer() {

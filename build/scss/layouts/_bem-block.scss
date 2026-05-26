@@ -222,19 +222,18 @@
 // ----- Icon info -----
 .icon-info {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  border: 2px solid var(--red);
+  border: 2px solid var(--danger);
   display: flex;
   align-items: center;
   justify-content: center;
 
   i {
-    line-height: 100%;
-    color: var(--red);
+    // line-height: 100%;
+    color: var(--danger);
     font-size: 14px;
-    font-weight: 600;
     font-style: normal;
   }
 }

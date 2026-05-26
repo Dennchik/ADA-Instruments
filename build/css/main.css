@@ -25,6 +25,7 @@ html {
 }
 
 body {
+  scrollbar-width: none;
   font-size: 16px;
   color: #252525;
   min-width: 290px;
@@ -50,6 +51,8 @@ body.home_page {
 
 textarea {
   resize: none;
+  scrollbar-width: none;
+  height: auto;
 }
 
 button,
@@ -612,10 +615,10 @@ textarea:focus::placeholder {
 
 .icon-info {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  border: 2px solid var(--red);
+  border: 2px solid var(--danger);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -627,10 +630,8 @@ textarea:focus::placeholder {
           justify-content: center;
 }
 .icon-info i {
-  line-height: 100%;
-  color: var(--red);
+  color: var(--danger);
   font-size: 14px;
-  font-weight: 600;
   font-style: normal;
 }
 
@@ -5911,11 +5912,6 @@ header .top_menu > li > a {
   height: 40px;
   max-width: 483px;
 }
-.documents-forms .profile__item,
-.load-doc .profile__item,
-.reports .profile__item {
-  white-space: wrap;
-}
 @media screen and (width < 425px) {
   .documents-forms .profile__body,
   .load-doc .profile__body,
@@ -7752,8 +7748,8 @@ textarea:focus::placeholder {
 }
 .repair-status__info-block .icon-info {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 20px;
-          flex: 0 0 20px;
+      -ms-flex: 0 0 22px;
+          flex: 0 0 22px;
 }
 .repair-status__info-text {
   line-height: 110%;
@@ -10899,6 +10895,7 @@ textarea:focus::placeholder {
       -ms-user-select: none;
           user-select: none;
   width: 100%;
+  white-space: wrap;
   line-height: 100%;
   -webkit-transition: color 0.4s ease 0s;
   transition: color 0.4s ease 0s;
