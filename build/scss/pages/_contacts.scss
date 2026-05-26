@@ -115,11 +115,6 @@
 
 .open .open_contacts_list:after {
   transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -sand-transform: rotate(180deg);
 }
 
 .contacts_list_wpapper {
@@ -134,6 +129,7 @@
   }
 }
 .show_more_contacts_list_box {
+  margin-top: 10px;
   cursor: pointer;
 }
 
