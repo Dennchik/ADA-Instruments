@@ -53,6 +53,11 @@
         display: grid;
         grid-template-columns: repeat(2, auto);
         gap: 10px 20px;
+
+        @include screen-375 {
+          margin: 0 -15px;
+          grid-template-columns: 1fr;
+        }
       }
       .profile__line {
         flex: 1 1 100%;
@@ -121,6 +126,10 @@
       font-size: 14px;
       border: none;
       margin-bottom: 3rem;
+
+      @include screen-690 {
+        font-size: 12px;
+      }
     }
 
     // .choice-block__footer
@@ -172,7 +181,7 @@
 
   // .organization-info__title
   &__title {
-    margin-top: 3rem;
+    margin-top: 4rem;
     font-weight: 700;
     line-height: 110%;
   }
