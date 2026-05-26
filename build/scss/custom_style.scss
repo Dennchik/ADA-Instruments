@@ -1,7 +1,19 @@
 //* -----------------------------[ reset ]------------------------------------*/
+
 @use './core/mixins' as *;
+
+.wh_txt:hover .thin_white_button,
+.wh_txt:focus .thin_white_button {
+  outline: none;
+  text-decoration: none;
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+}
 .fade {
   transition: opacity 0.15s linear;
+}
+
+.product_price {
+  font-weight: bold;
 }
 .search-result {
   .container {
@@ -112,8 +124,6 @@
 
 .dm-overlay:target {
   display: block;
-  -webkit-animation: fade 0.6s;
-  -moz-animation: fade 0.6s;
   animation: fade 0.6s;
 }
 
@@ -170,9 +180,6 @@
   line-height: 24px;
   color: #000;
   transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  -moz-transition: 0.5s;
   cursor: pointer;
 }
 
@@ -210,21 +217,12 @@
 }
 
 .popup input[type='submit'] {
-  background-color: #e74237;
+  background-color: var(--danger);
   color: #fff;
   text-align: center;
   height: 50px;
-  border: 2px solid #e74237;
+  border: 2px solid var(--danger);
   transition:
-    background-color 0.1s linear,
-    color 0.1s 0.1s ease-in-out;
-  -moz-transition:
-    background-color 0.1s linear,
-    color 0.1s 0.1s ease-in-out;
-  -webkit-transition:
-    background-color 0.1s linear,
-    color 0.1s 0.1s ease-in-out;
-  -o-transition:
     background-color 0.1s linear,
     color 0.1s 0.1s ease-in-out;
   outline: none;
@@ -237,7 +235,7 @@
 .popup input[type='submit']:hover,
 .popup input[type='submit']:focus {
   background-color: #fff;
-  color: #e74237;
+  color: var(--danger);
   text-decoration: none;
   outline: none;
 }
@@ -289,7 +287,7 @@
   margin-right: auto;
   text-align: center;
   line-height: 45px;
-  color: #e74237;
+  color: var(--danger);
   font-size: 50px;
   margin-top: 20px;
 }
@@ -369,14 +367,6 @@
   display: none;
   /*hide original SELECT element: */
 }
-
-// .select-selected {
-//   /*background-color: rgba(255, 255, 255, 0.9);*/
-// }
-
-// .home_page .select-selected {
-//   /*background-color: rgba(0, 0, 0, 0.9);*/
-// }
 
 /* Style the arrow inside the select element: */
 .select-selected:after {
@@ -481,9 +471,6 @@
   width: 0%;
   left: 0;
   margin-top: 5px;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
@@ -529,35 +516,9 @@
   margin-left: 0;
 }
 
-// .open_search:after {
-//   content: '\ed11';
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   font-size: 24px;
-//   top: 0;
-//   left: 0;
-//   font-family: IcoFont !important;
-//   speak: none;
-//   font-style: normal;
-//   font-weight: 400;
-//   font-variant: normal;
-//   text-transform: none;
-//   white-space: nowrap;
-//   word-wrap: normal;
-//   direction: ltr;
-//   line-height: 1;
-//   font-feature-settings: 'liga';
-//   -webkit-font-feature-settings: 'liga';
-//   -webkit-font-smoothing: antialiased;
-// }
-
 .home_page .mbm_sel_lang_wrapper .select-items {
   background-color: transparent;
 }
-
-// .block_header {
-// }
 
 .font10 {
   font-size: 14px;
@@ -575,9 +536,6 @@
   font-size: 18px;
   color: inherit;
   font-weight: 300;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   text-align: center;
   display: block;
@@ -589,14 +547,9 @@
 
 .product_slider_box:hover,
 .product_slider_box:focus {
-  color: #ff3333;
+  color: var(--danger);
   text-decoration: none;
   outline: none;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
@@ -607,9 +560,6 @@
   background-position: center center;
   height: 260px;
   margin-bottom: 15px;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
@@ -658,6 +608,7 @@
   display: block;
   padding-left: 15px;
   padding-right: 15px;
+  font-weight: 500;
 }
 
 /*========================*/
@@ -823,14 +774,6 @@
 .cat_mp_slider_wrapper .catalog_mp_box {
   margin-bottom: 0;
 }
-
-// .support_section_body_toleft .img_cont {
-//   display: block;
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   background-position: 0 0;
-//   height: 367px;
-// }
 
 .support_section_header {
   font-size: 40px;
@@ -1037,7 +980,6 @@
   width: 100%;
   height: 100%;
   background: url(../img/video.jpg) no-repeat center;
-  -webkit-background-size: cover;
   background-size: cover;
   cursor: pointer;
   z-index: 1;
@@ -1099,13 +1041,10 @@
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 500px;
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
   overflow: hidden;
   background-color: #fff;
 }
@@ -1114,8 +1053,6 @@
   width: 100%;
   height: auto;
   border-radius: 500px;
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
 }
 
 .poster:after {
@@ -1297,7 +1234,7 @@
 }
 
 .productia_wrapp {
-  overflow: hidden;
+  // overflow: hidden;
   max-width: 1376px;
   margin-left: auto;
   margin-right: auto;
@@ -1380,13 +1317,13 @@
 }
 
 .irs--flat .irs-bar {
-  background-color: rgb(255, 51, 51);
+  background-color: var(--danger);
 }
 
 .irs--flat .irs-from,
 .irs--flat .irs-to,
 .irs--flat .irs-single {
-  background-color: rgb(255, 51, 51);
+  background-color: var(--danger);
 }
 
 .input_fields_list {
@@ -1554,16 +1491,16 @@
   vertical-align: middle;
   color: #fff;
   text-transform: uppercase;
-  background-color: rgb(255, 51, 51);
+  background-color: var(--danger);
   width: 60px;
-  border: 1px solid rgb(255, 51, 51);
+  border: 1px solid var(--danger);
   font-size: 9px;
   padding: 3px;
 }
 
 .pdf_cub:hover,
 .pdf_cub:focus {
-  color: rgb(255, 51, 51);
+  color: var(--danger);
   text-decoration: none;
   outline: none;
   background-color: #fff;
@@ -1613,6 +1550,7 @@
 }
 
 .button_play_video_2 {
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0px;
@@ -1622,7 +1560,6 @@
   height: 100%;
   background: url(../img/video.jpg) no-repeat center;
   background-size: cover;
-  cursor: pointer;
   z-index: 1;
   text-align: center;
   display: flex;
@@ -1710,9 +1647,6 @@
   padding-right: 15px;
   padding-top: 20px;
   padding-bottom: 20px;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
@@ -2075,11 +2009,6 @@
 
 .opened .open_item:after {
   transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -sand-transform: rotate(180deg);
 }
 
 .open_more_par {

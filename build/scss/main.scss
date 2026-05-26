@@ -46,7 +46,6 @@
 }
 
 #main {
-  overflow: hidden;
   position: relative;
   z-index: 10;
 }
@@ -59,69 +58,6 @@
   margin: 0 auto;
 }
 
-[class*='_container'] {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: $maxWidthContainer;
-  margin: 0 auto;
-  padding: 0 2rem;
-
-  @include screen-490 {
-    padding: 0 10px;
-  }
-}
-[class*='icon-'] {
-  pointer-events: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-[class*=' _img'] {
-  display: block;
-  width: auto;
-  height: auto;
-
-  img {
-    width: 100%;
-    height: 100%;
-    vertical-align: middle;
-    object-fit: contain;
-  }
-}
-
-[class*='_ibg'] {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100vh;
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    object-fit: cover;
-    object-position: center bottom;
-  }
-
-  svg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-  }
-}
 //* ----------------------------------------------------------------------------
 .page {
   .page__section {

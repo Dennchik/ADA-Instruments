@@ -15,7 +15,6 @@
 html {
   counter-reset: heading;
   -webkit-tap-highlight-color: transparent;
-  height: 100%;
   font-size: 62.5%;
   font-style: normal;
 }
@@ -36,7 +35,6 @@ body {
   font-weight: 400;
   font-style: normal;
   padding-top: 110px;
-  height: 100%;
   color: #212529;
   text-align: left;
   background-color: #fff;
@@ -319,7 +317,7 @@ textarea:focus::placeholder {
   --warning: #ffc107;
   --danger: rgb(255, 4, 0);
   --light: #f8f9fa;
-  --dark: #343a40;
+  --dark: rgb(68 68 68);
   --background-fon: rgba(239, 239, 239, 0.6);
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -335,6 +333,7 @@ textarea:focus::placeholder {
     monospace;
 }
 
+/* Только для брейкпоинта, где появляются точки */
 .mb-75 {
   margin-bottom: 75px;
 }
@@ -1183,20 +1182,6 @@ textarea:focus::placeholder {
     height: 100vh !important;
   }
 }
-.main-slide {
-  position: relative;
-}
-.main-slide__fon {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .cat_mp_slider_wrapper .slick-dots {
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -1248,7 +1233,7 @@ textarea:focus::placeholder {
   }
 }
 .ms-capton__title {
-  margin-bottom: 3rem;
+  margin-bottom: 40px;
 }
 @media (width < 768px) {
   .ms-capton__title {
@@ -6597,6 +6582,13 @@ textarea:focus::placeholder {
     font-size: 12px;
   }
 }
+.cart-page .product-cart__quantity.red_button {
+  background-color: transparent !important;
+  color: var(--dark);
+  font-weight: 500;
+  border: 1px solid var(--dark);
+}
+
 .cart-section__content {
   display: grid;
   grid-template-columns: 1fr minmax(270px, 313px);
@@ -6839,10 +6831,16 @@ textarea:focus::placeholder {
 }
 .product-cart__quantity.red_button {
   background-color: transparent !important;
-  color: var(--red);
+  color: var(--danger);
   font-weight: 500;
 }
 .product-cart__quantity .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -7498,8 +7496,19 @@ textarea:focus::placeholder {
     width: 160px;
   }
 }
-.categories .breadcrumb_wrapper .container {
-  max-width: 720px;
+.categories .side-menu {
+  position: sticky;
+  top: 60px;
+}
+@media screen and (width < 992px) {
+  .categories .items-greed__title {
+    margin-top: 10px;
+  }
+}
+@media screen and (width < 992px) {
+  .categories .breadcrumb_wrapper .container {
+    max-width: 720px;
+  }
 }
 @media screen and (width < 992px) {
   .categories .header__body.container {
@@ -9820,11 +9829,11 @@ textarea:focus::placeholder {
   }
 }
 .product-card__info {
-  padding: 30px 40px 30px 30px;
+  padding: 6rem;
 }
 @media screen and (width < 960px) {
   .product-card__info {
-    padding: 20px;
+    padding: 4rem;
   }
 }
 @media (width < 768px) {
@@ -9900,7 +9909,7 @@ textarea:focus::placeholder {
 @media (width < 768px) {
   .product-card__price {
     margin: 0 -15px;
-    padding: 30px 20px;
+    padding: 10px 20px 30px 20px;
     background-color: var(--background-fon);
   }
 }
@@ -9912,11 +9921,17 @@ textarea:focus::placeholder {
   color: red;
 }
 .product-card__image {
-  padding-top: 4rem;
+  padding-top: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
+}
+@media screen and (width < 490px) {
+  .product-card__image {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 .product-card__img-item {
   -webkit-box-flex: 0;
@@ -9925,6 +9940,14 @@ textarea:focus::placeholder {
 }
 .product-card__img-item img {
   max-width: 100%;
+}
+@media screen and (width < 490px) {
+  .product-card__img-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 31.333%;
+            flex: 0 1 31.333%;
+    height: 60px;
+  }
 }
 .product-card__text {
   line-height: 130%;
@@ -9970,20 +9993,31 @@ textarea:focus::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 35px;
+  gap: 3.4rem;
   grid-template-columns: 1fr -webkit-max-content 190px;
   grid-template-columns: 1fr max-content 190px;
 }
 @media screen and (width < 960px) {
   .card-price {
-    grid-template-columns: 1fr -webkit-max-content 130px;
-    grid-template-columns: 1fr max-content 130px;
+    grid-template-columns: 1fr -webkit-max-content 190px;
+    grid-template-columns: 1fr max-content 190px;
+  }
+}
+@media (width < 768px) {
+  .card-price {
+    gap: 12rem;
+  }
+}
+@media (width < 640px) {
+  .card-price {
+    gap: 5rem;
   }
 }
 @media screen and (width < 480px) {
   .card-price {
     grid-template-columns: 1fr -webkit-max-content;
     grid-template-columns: 1fr max-content;
+    gap: 1rem;
   }
 }
 .card-price__col {
@@ -12069,7 +12103,6 @@ textarea:focus::placeholder {
 }
 
 #main {
-  overflow: hidden;
   position: relative;
   z-index: 10;
 }
@@ -12085,75 +12118,6 @@ textarea:focus::placeholder {
   height: 100%;
   min-height: 100vh;
   margin: 0 auto;
-}
-
-[class*=_container] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-@media screen and (width < 490px) {
-  [class*=_container] {
-    padding: 0 10px;
-  }
-}
-
-[class*=icon-] {
-  pointer-events: none;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-[class*=" _img"] {
-  display: block;
-  width: auto;
-  height: auto;
-}
-[class*=" _img"] img {
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-[class*=_ibg] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-}
-[class*=_ibg] img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center bottom;
-     object-position: center bottom;
-}
-[class*=_ibg] svg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .page .page__section {

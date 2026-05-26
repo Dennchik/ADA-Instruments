@@ -1,8 +1,20 @@
 @charset "UTF-8";
 /* stylelint-disable at-rule-descriptor-value-no-unknown */
+.wh_txt:hover .thin_white_button,
+.wh_txt:focus .thin_white_button {
+  outline: none;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+          box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4);
+}
+
 .fade {
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
+}
+
+.product_price {
+  font-weight: bold;
 }
 
 @media screen and (width < 992px) {
@@ -111,7 +123,7 @@
 .dm-overlay:target {
   display: block;
   -webkit-animation: fade 0.6s;
-  animation: fade 0.6s;
+          animation: fade 0.6s;
 }
 
 /* блочная таблица */
@@ -164,10 +176,8 @@
   text-align: center;
   line-height: 24px;
   color: #000;
-  transition: 0.5s;
   -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  -moz-transition: 0.5s;
+  transition: 0.5s;
   cursor: pointer;
 }
 
@@ -205,15 +215,13 @@
 }
 
 .popup input[type=submit] {
-  background-color: #e74237;
+  background-color: var(--danger);
   color: #fff;
   text-align: center;
   height: 50px;
-  border: 2px solid #e74237;
-  transition: background-color 0.1s linear, color 0.1s 0.1s ease-in-out;
-  -moz-transition: background-color 0.1s linear, color 0.1s 0.1s ease-in-out;
+  border: 2px solid var(--danger);
   -webkit-transition: background-color 0.1s linear, color 0.1s 0.1s ease-in-out;
-  -o-transition: background-color 0.1s linear, color 0.1s 0.1s ease-in-out;
+  transition: background-color 0.1s linear, color 0.1s 0.1s ease-in-out;
   outline: none;
   display: inline-block;
   width: 100%;
@@ -224,7 +232,7 @@
 .popup input[type=submit]:hover,
 .popup input[type=submit]:focus {
   background-color: #fff;
-  color: #e74237;
+  color: var(--danger);
   text-decoration: none;
   outline: none;
 }
@@ -276,7 +284,7 @@
   margin-right: auto;
   text-align: center;
   line-height: 45px;
-  color: #e74237;
+  color: var(--danger);
   font-size: 50px;
   margin-top: 20px;
 }
@@ -530,11 +538,9 @@
 
 .product_slider_box:hover,
 .product_slider_box:focus {
-  color: #ff3333;
+  color: var(--danger);
   text-decoration: none;
   outline: none;
-  font-weight: 600;
-  letter-spacing: -0.5px;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
@@ -596,6 +602,7 @@
   display: block;
   padding-left: 15px;
   padding-right: 15px;
+  font-weight: 500;
 }
 
 /*========================*/
@@ -1120,8 +1127,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 500px;
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
   overflow: hidden;
   background-color: #fff;
 }
@@ -1130,8 +1135,6 @@
   width: 100%;
   height: auto;
   border-radius: 500px;
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
 }
 
 .poster:after {
@@ -1334,7 +1337,6 @@
 }
 
 .productia_wrapp {
-  overflow: hidden;
   max-width: 1376px;
   margin-left: auto;
   margin-right: auto;
@@ -1428,13 +1430,13 @@
 }
 
 .irs--flat .irs-bar {
-  background-color: rgb(255, 51, 51);
+  background-color: var(--danger);
 }
 
 .irs--flat .irs-from,
 .irs--flat .irs-to,
 .irs--flat .irs-single {
-  background-color: rgb(255, 51, 51);
+  background-color: var(--danger);
 }
 
 .input_fields_list {
@@ -1636,16 +1638,16 @@
   vertical-align: middle;
   color: #fff;
   text-transform: uppercase;
-  background-color: rgb(255, 51, 51);
+  background-color: var(--danger);
   width: 60px;
-  border: 1px solid rgb(255, 51, 51);
+  border: 1px solid var(--danger);
   font-size: 9px;
   padding: 3px;
 }
 
 .pdf_cub:hover,
 .pdf_cub:focus {
-  color: rgb(255, 51, 51);
+  color: var(--danger);
   text-decoration: none;
   outline: none;
   background-color: #fff;
@@ -1696,6 +1698,7 @@
 }
 
 .button_play_video_2 {
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0px;
@@ -1705,7 +1708,6 @@
   height: 100%;
   background: url(../img/video.jpg) no-repeat center;
   background-size: cover;
-  cursor: pointer;
   z-index: 1;
   text-align: center;
   display: -webkit-box;
@@ -2228,12 +2230,8 @@
 }
 
 .opened .open_item:after {
-  transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -sand-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .open_more_par {

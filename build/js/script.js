@@ -1,18 +1,4 @@
 jQuery('document').ready(function () {
-  // function footerToBottom() {
-  //   var browserHeight = jQuery(window).height(),
-  //     footerOuterHeight = jQuery('footer').outerHeight(true),
-  //     mainHeightMarginPaddingBorder =
-  //       jQuery('#main').outerHeight(true) - jQuery('#main').height();
-  //   jQuery('#main').css({
-  //     'min-height':
-  //       browserHeight - footerOuterHeight - mainHeightMarginPaddingBorder - 120,
-  //   });
-  // }
-  // footerToBottom();
-  // jQuery(window).resize(function () {
-  //   footerToBottom();
-  // });
   //* --------------------------------------------------------------------------
   jQuery('.navbar-nav li a.nav-link').click(function () {
     var selected = jQuery(this).attr('href');
@@ -83,8 +69,6 @@ jQuery('document').ready(function () {
     });
   }
   window.onload = init();
-  //* --------------------------------------------------------------------------
-  //jQuery('.item_title').matchHeight();
   //* --------------------------------------------------------------------------
   jQuery(window).scroll(function () {
     if (jQuery(this).scrollTop() != 0) {
@@ -331,15 +315,7 @@ jQuery('document').ready(function () {
       $submenu.slideToggle('slow');
     });
   });
-  //* --------------------------------------------------------------------------
-  // jQuery('.open_menu_child').click(function () {
-  //   jQuery(this)
-  //     .parents('li')
-  //     .find('.sub_menu')
-  //     .slideToggle('slow', function () {
-  //       // Animation complete.
-  //     });
-  // });
+
   //* --------------------------------------------------------------------------
   jQuery('.open_contacts_list').click(function () {
     jQuery(this)
@@ -526,7 +502,7 @@ jQuery('document').ready(function () {
         settings: {
           touchThreshold: 100,
           slidesToShow: 3,
-          dots: true,
+          dots: false,
           touchThreshold: 100,
           arrows: false,
           swipeToSlide: true,

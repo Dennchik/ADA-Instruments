@@ -1,5 +1,6 @@
 @use '../core/mixins' as *;
 //* ---------------------------- Categories ------------------------------------
+
 .items-greed {
   flex: 0 1 100%;
 
@@ -194,9 +195,22 @@
     }
   }
 
+  .side-menu {
+    position: sticky;
+    top: 60px;
+  }
+
+  .items-greed__title {
+    @include screen-992 {
+      margin-top: 10px;
+    }
+  }
+
   .breadcrumb_wrapper {
     .container {
-      max-width: 720px;
+      @include screen-992 {
+        max-width: 720px;
+      }
     }
   }
 

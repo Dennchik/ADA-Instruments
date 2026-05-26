@@ -249,10 +249,10 @@
 
   // .product-card__info
   &__info {
-    padding: 30px 40px 30px 30px;
+    padding: 6rem;
 
     @include screen-960 {
-      padding: 20px;
+      padding: 4rem;
     }
 
     @include screen-768 {
@@ -330,7 +330,7 @@
 
     @include screen-768 {
       margin: 0 -15px;
-      padding: 30px 20px;
+      padding: 10px 20px 30px 20px;
       background-color: var(--background-fon);
     }
   }
@@ -348,9 +348,13 @@
 
   // .product-card__image
   &__image {
-    padding-top: 4rem;
+    padding-top: 45px;
     display: flex;
     gap: 1rem;
+
+    @include screen-490 {
+      flex-wrap: wrap;
+    }
   }
 
   // .product-card__img-item
@@ -359,6 +363,11 @@
 
     img {
       max-width: 100%;
+    }
+
+    @include screen-490 {
+      flex: 0 1 31.333%;
+      height: 60px;
     }
   }
 
@@ -400,15 +409,23 @@
   display: grid;
   justify-content: space-between;
   align-items: center;
-  gap: 35px;
+  gap: 3.4rem;
   grid-template-columns: 1fr max-content 190px;
 
   @include screen-960 {
-    grid-template-columns: 1fr max-content 130px;
+    grid-template-columns: 1fr max-content 190px;
   }
 
+  @include screen-768 {
+    gap: 12rem;
+  }
+
+  @include screen-640 {
+    gap: 5rem;
+  }
   @include screen-480 {
     grid-template-columns: 1fr max-content;
+    gap: 1rem;
   }
 
   // .card-price__col

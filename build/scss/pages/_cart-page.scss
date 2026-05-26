@@ -1,6 +1,16 @@
 @use '../core/mixins' as *;
 
 //* ----------------------------------------------------------------------------
+
+.cart-page {
+  .product-cart__quantity.red_button {
+    background-color: transparent !important;
+    color: var(--dark);
+    font-weight: 500;
+    border: 1px solid var(--dark);
+  }
+}
+//* ----------------------------------------------------------------------------
 .cart-section {
   // .cart-section__content
   &__content {
@@ -244,11 +254,13 @@
 
     &.red_button {
       background-color: transparent !important;
-      color: var(--red);
+      color: var(--danger);
       font-weight: 500;
     }
 
     .icon {
+      display: flex;
+      align-items: center;
       user-select: none;
       text-align: center;
       font-style: normal;
