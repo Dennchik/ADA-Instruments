@@ -1285,12 +1285,6 @@
   display: none;
 }
 
-.narrow {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /*=-=-=-=-=-=-=-=-=-=-=-=*/
 .back_image_page > * {
   position: relative;

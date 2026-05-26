@@ -712,17 +712,17 @@
   .product-card__quantity {
     padding: 0 26px;
   }
-  .breadcrumb > li {
+  /* .breadcrumb > li {
     display: none;
-  }
+  } */
 
-  .breadcrumb > li:nth-last-child(2) {
+  /* .breadcrumb > li:nth-last-child(2) {
     display: block;
     padding-left: 20px;
     position: relative;
-  }
+  } */
 
-  .breadcrumb > li:before {
+  /* .breadcrumb > li:before {
     position: absolute;
     padding: 0 !important;
     left: 0;
@@ -744,7 +744,7 @@
     -webkit-font-smoothing: antialiased;
     color: #a4a4a4;
     transform: translateY(1px);
-  }
+  } */
 
   .home_page .breadcrumb > li:before {
     color: #000;
@@ -1315,10 +1315,6 @@
 @media only screen and (width >= 400px) {
   .show_more_contacts_list_box {
     display: none !important;
-  }
-
-  .au_bootom_txt .logo_150 {
-    margin-left: 15px;
   }
 }
 

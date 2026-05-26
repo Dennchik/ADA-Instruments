@@ -459,7 +459,11 @@
 }
 
 //! ----------------------------------------------------------------------------
-
+.return-repair {
+  .acccount-content__body {
+    padding-bottom: 0;
+  }
+}
 //* -----------------------[ categiries-servise ]-------------------------------
 .categiries-servise {
   // .categiries-servise__body

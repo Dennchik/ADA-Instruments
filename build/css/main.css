@@ -359,8 +359,6 @@ textarea:focus::placeholder {
 
 .narrow {
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .w_66 {
@@ -888,19 +886,34 @@ textarea:focus::placeholder {
   background-color: white;
 }
 
+.breadcrumb-wrapper {
+  overflow-y: hidden;
+}
+
 .breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+  padding: 1.6rem 0;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   list-style: none;
-  background-color: transparent;
-  border-radius: 0px;
   font-size: 13px;
-  text-transform: uppercase;
   font-weight: 500;
-  margin-bottom: 0;
   color: rgb(33, 37, 41);
+  text-transform: uppercase;
+  border-radius: 0px;
+  background-color: transparent;
+  overflow-y: hidden;
+}
+.breadcrumb::-webkit-scrollbar {
+  height: 0.3rem;
+}
+.breadcrumb::-webkit-scrollbar-thumb {
+  background-color: var(--danger);
 }
 .breadcrumb a {
   -webkit-transition: color 0.3s ease-in-out;
@@ -910,9 +923,17 @@ textarea:focus::placeholder {
 .breadcrumb a:hover {
   color: var(--danger);
 }
+.breadcrumb li {
+  white-space: nowrap;
+}
+@media screen and (width < 490px) {
+  .breadcrumb li {
+    font-size: 11px;
+  }
+}
 .breadcrumb > li + li:before {
   content: "\ef9a";
-  padding: 0 1px;
+  padding: 0 10px;
   color: #a5a5a5;
   font-family: IcoFont !important;
   speak: none;
@@ -5812,9 +5833,38 @@ header .top_menu > li > a {
   font-size: 1.8rem;
 }
 
+.search-result {
+  padding-block: 4rem 2rem;
+}
+.search-result__title {
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+@media (width < 690px) {
+  .search-result__text {
+    font-size: 14px;
+  }
+}
+.result-search__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.result-search__item .icofont-close,
+.result-search__item .icofont-download {
+  font-size: 24px;
+  color: #a4a4aa;
+}
+
 .blanck-doc__title {
   font-weight: 700;
-  margin-block: 4rem 2rem;
+  padding-block: 4rem 2rem;
+}
+.blanck-doc__search-result {
+  padding-block: 4rem 2rem;
 }
 .blanck-doc__list {
   display: -webkit-box;
@@ -6606,7 +6656,7 @@ textarea:focus::placeholder {
 }
 
 .button_groupe {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 .button_groupe .send-button__button {
   min-width: 200px;
@@ -8067,6 +8117,10 @@ textarea:focus::placeholder {
   font-size: 14px;
 }
 
+.return-repair .acccount-content__body {
+  padding-bottom: 0;
+}
+
 .categiries-servise__body {
   display: grid;
   grid-template-columns: 650px 346px;
@@ -9501,13 +9555,18 @@ textarea:focus::placeholder {
           transform: scale(1);
 }
 
+@media screen and (width < 992px) {
+  .contacts-page .container {
+    max-width: 720px;
+  }
+}
+
 .contact_page_body_title {
   font-size: 16px;
   padding: 10px 0;
   line-height: 1;
   font-weight: 700;
   color: #a4a4a4;
-  border-bottom: 1px solid #e8e8e8;
   text-transform: uppercase;
 }
 
@@ -9531,7 +9590,7 @@ textarea:focus::placeholder {
       align-content: stretch;
   margin-left: -15px;
   margin-right: -15px;
-  padding-top: 30px;
+  padding-top: 35px;
 }
 
 .contacts_list > li {
@@ -9548,21 +9607,21 @@ textarea:focus::placeholder {
 }
 .contacts_list_box ul li {
   line-height: 150%;
-  font-size: 14px;
+  font-size: 16px;
 }
 @media (width < 690px) {
   .contacts_list_box ul li {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media screen and (width < 490px) {
   .contacts_list_box ul li {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
 .contacts_list_box_title {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   color: #ff3333;
   min-height: 20px;
@@ -9643,6 +9702,7 @@ textarea:focus::placeholder {
 .show_more_contacts_list_box {
   margin-top: 10px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .contact_page_body {
