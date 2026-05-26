@@ -5475,16 +5475,49 @@ header .top_menu > li > a {
   margin-top: 3rem;
 }
 .ready-order__button {
-  margin-top: 4rem;
+  margin-top: 6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 .ready-order__button .send-button {
   width: auto;
+}
+@media screen and (width < 375px) {
+  .ready-order__button .send-button {
+    width: 100%;
+  }
+}
+.ready-order__button .send-button__button {
+  width: 250px;
+}
+@media screen and (width < 375px) {
+  .ready-order__button .send-button__button {
+    width: 100%;
+  }
+}
+.ready-order__price {
+  margin-bottom: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  font-weight: 700;
+}
+@media (width < 690px) {
+  .ready-order__price-text {
+    font-size: 14px;
+  }
 }
 
 .choice-block {
