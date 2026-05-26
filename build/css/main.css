@@ -2918,6 +2918,16 @@ header .top_menu > li > a {
   padding-right: 15px;
 }
 
+.hp-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.productia-page #main {
+  overflow: hidden;
+}
+
 .other-requests .categiries-servise__content {
   -webkit-box-align: start !important;
       -ms-flex-align: start !important;
@@ -10552,6 +10562,7 @@ textarea:focus::placeholder {
 @media (width < 575px) {
   .mp-feedback__title {
     font-size: 20px;
+    margin-bottom: 0;
   }
 }
 @media screen and (width < 375px) {
