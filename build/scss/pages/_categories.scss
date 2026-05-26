@@ -20,6 +20,30 @@
     align-items: stretch;
     align-content: stretch;
 
+    @include screen-1200 {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 45px;
+    }
+
+    @include screen-992 {
+      gap: 20px;
+    }
+
+    @include screen-690 {
+      gap: 15px;
+    }
+
+    @include screen-490 {
+      justify-items: center;
+      gap: 5px;
+
+      .send-button {
+        &__button {
+          width: 100%;
+        }
+      }
+    }
+
     li {
       display: flex;
       flex-direction: column;
@@ -27,6 +51,35 @@
       padding: 20px 37px;
       height: 100%;
       border: 1px solid #eee;
+
+      .items-greed__wrapper {
+        margin-top: 2.4rem;
+
+        @include screen-690 {
+          width: 100%;
+          .send-button__button {
+            width: 100%;
+          }
+
+          .product-cart__quantity {
+            width: 100%;
+            height: 45px;
+          }
+        }
+
+        @include screen-490 {
+          margin-top: 10px;
+
+          .send-button__button {
+            height: 36px;
+          }
+
+          .product-cart__quantity {
+            width: 100%;
+            height: 36px;
+          }
+        }
+      }
 
       .red_button {
         font-size: 12px !important;
@@ -39,53 +92,17 @@
 
       @include screen-490 {
         max-width: 290px;
-        padding: 20px 35px;
-      }
-    }
-
-    @include screen-1200 {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 45px;
-    }
-
-    @include screen-992 {
-      gap: 20px;
-    }
-
-    @include screen-690 {
-      gap: 15px;
-      .items-greed__wrapper {
-        width: 100%;
-        .send-button__button {
-          width: 100%;
-        }
-        .product-cart__quantity {
-          width: 100%;
-          height: 45px;
-        }
-      }
-    }
-
-    @include screen-490 {
-      grid-template-columns: 1fr;
-
-      justify-items: center;
-
-      .send-button {
-        &__button {
-          width: 100%;
-        }
+        padding: 10px 10px;
       }
     }
   }
 
-  // .items-greed__box-
+  // .items-greed__box
   &__box {
     display: flex;
     flex-direction: column;
     text-decoration: none;
     outline: none;
-    padding-bottom: 25px;
     text-align: center;
     height: 100%;
 
@@ -102,7 +119,7 @@
       }
 
       @include screen-490 {
-        height: 250px;
+        height: 90px;
       }
 
       img {
@@ -116,6 +133,7 @@
 
   // .items-greed__box-title
   &__box-title {
+    flex: 1 1 auto;
     display: block;
     font-size: 18px;
     font-weight: 600;
@@ -126,16 +144,38 @@
     @include screen-690 {
       font-size: 16px;
     }
+
+    @include screen-490 {
+      font-size: 14px;
+    }
+  }
+
+  // .items-greed__sp-wrapp
+  &__sp-wrapp {
+    height: 100%;
+    height: 37px;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
   }
 
   // .items-greed__box-price
   &__box-price {
+    display: block;
     font-weight: 700;
     text-align: left;
   }
 
   // .items-greed__box_old-price
   &__box-old-price {
+    display: block;
     text-decoration: line-through;
     color: var(--red);
     font-weight: 700;
@@ -150,6 +190,11 @@
     margin-bottom: 15px;
     line-height: 100%;
     text-align: left;
+
+    @include screen-490 {
+      font-size: 10px;
+      margin-bottom: 10px;
+    }
   }
 
   // .items_greed_wrapper
@@ -157,16 +202,6 @@
     position: relative;
     align-self: start;
     width: 100%;
-  }
-
-  // .items-greed__sp-wrapp
-  &__sp-wrapp {
-    height: 37px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    gap: 5px;
   }
 }
 

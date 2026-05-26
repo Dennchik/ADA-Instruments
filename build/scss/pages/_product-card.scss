@@ -330,7 +330,7 @@
 
     @include screen-768 {
       margin: 0 -15px;
-      padding: 10px 20px 30px 20px;
+      padding: 0 20px 30px 20px;
       background-color: var(--background-fon);
     }
   }
@@ -409,11 +409,12 @@
   display: grid;
   justify-content: space-between;
   align-items: center;
-  gap: 3.4rem;
+  gap: 6rem;
   grid-template-columns: 1fr max-content 190px;
 
   @include screen-960 {
     grid-template-columns: 1fr max-content 190px;
+    gap: 3rem;
   }
 
   @include screen-768 {

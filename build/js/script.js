@@ -404,13 +404,6 @@ jQuery('document').ready(function () {
     $(this).fadeOut();
   });
   //* --------------------------------------------------------------------------
-  jQuery('.open_instr').click(function () {
-    jQuery('.mob_instruction_wrapper').hide();
-    jQuery(this)
-      .parents('li')
-      .find('.mob_instruction_wrapper')
-      .slideToggle('400', function () {});
-  });
 
   jQuery('.open_instr').click(function () {
     jQuery(this)

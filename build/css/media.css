@@ -708,9 +708,7 @@
   .suport_feedback_form > .section_form_line {
     width: 100%;
   }
-  .quantity {
-    gap: 20px;
-  }
+
   .product-card__quantity {
     padding: 0 26px;
   }
