@@ -174,7 +174,6 @@
 
   // .repair-status__input
   &__input {
-    flex: 0 1 50%;
     display: block;
     width: 100%;
     border: 1px solid #a5a5a5;
@@ -1269,38 +1268,9 @@
 
     &:nth-child(1) {
       z-index: 9;
-      .side-menu {
-        .logo {
-          display: none;
-        }
-      }
-
-      // .side-menu__close-menu
-      .side-menu__close-menu {
-        position: sticky;
-        top: 42.5px;
-        width: 30px;
-        height: 30px;
-        transform: translate(248px, -90px);
-
-        .icofont-close-squared {
-          pointer-events: none;
-
-          &::before {
-            color: #ffffff;
-            font-size: 30px;
-            font-weight: 500;
-            display: block;
-            transition: all 0.4s ease 0s;
-          }
-        }
-      }
     }
 
     &:nth-child(2) {
-      // display: grid;
-      // grid-template-columns: 1fr minmax(240px, 313px);
-      // gap: 7rem;
       z-index: 1;
       width: 100%;
     }
@@ -1632,7 +1602,6 @@
   &__return-button {
     cursor: pointer;
     display: inline-flex;
-    margin-bottom: 2rem;
     gap: 10px;
     font-size: 1.6rem;
     font-weight: 600;
@@ -1641,6 +1610,10 @@
     transition: color 0.4s ease-in-out;
     display: flex;
     align-items: center;
+
+    @include screen-840 {
+      margin-bottom: 0;
+    }
 
     .icofont-long-arrow-left {
       font-size: 24px;
@@ -1854,48 +1827,6 @@
 //* ------------ [ Small & Medium Devices, Wide Screens ] ----------------------
 
 @include screen-840 {
-  .side-menu {
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(5px);
-    height: 100%;
-    overflow-x: hidden;
-
-    &::-webkit-scrollbar {
-      width: 0.2rem;
-      padding: 0.031em;
-      position: fixed;
-    }
-
-    &__tab-link {
-      color: #ffffff;
-      font-weight: 500;
-    }
-
-    .logo-wrapper {
-      overflow: hidden;
-      left: 0;
-      display: block;
-      position: sticky;
-      width: 121%;
-      top: 5px;
-      transform: translate(-25px, -57px);
-      height: 42px;
-    }
-
-    .active-link {
-      filter: contrast(170%);
-    }
-
-    .logo {
-      display: block !important;
-      width: 80px;
-      left: 15px;
-      top: 24px;
-      height: 38px;
-      background: #4b4b4b url(../img/logo_white.png) no-repeat;
-    }
-  }
-
   .aside-menu-l {
     height: calc(100vh - 70px);
   }

@@ -22,7 +22,7 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/media.css">
 
-  <script defer src="./js/lenis.min.js"></script>
+  <script defer src="./js/collapse.js"></script>
   <script defer src="./js/jquery.min.js"></script>
   <script defer src="./js/jquery.maskedinput.min.js"></script>
   <script defer src="./js/jquery.scrollTo.js"></script>
@@ -50,11 +50,15 @@
       <div class="mobile_menu_image">
         <img src="./img/logo_white.png" alt="logo">
       </div>
-      <div class="row h-100 no-gutters">
+      <div class="row h-100 no-gutters bp-2">
         <div class="col">
           <ul>
-            <li><a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
-              <ul class="sub_menu">
+            <li class="slideToggle">
+              <div class="open_menu_wrapper">
+                <a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
+                <i class="icofont-caret-down _toggle-button"></i>
+              </div>
+              <ul class="sub_menu _collapse">
                 <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
                 <li><a href="./catalog/automatic-levels.html">Оптические нивелиры</a></li>
                 <li><a href="./catalog/theodolites.html">Теодолиты</a></li>
@@ -174,10 +178,23 @@
                       <button type="button" class="col_login icon_col" id="login-btn">
                         <svg class="icon-user" id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 247.01 243.42">
-                          <path class="cls-1"
-                            d="M120.03,36.86c17.28,0,31.29,14.01,31.29,31.29s-14.01,31.29-31.29,31.29-31.29-14.01-31.29-31.29,14.01-31.29,31.29-31.29ZM120.03,0c37.64,0,68.16,30.51,68.16,68.16s-30.51,68.16-68.16,68.16-68.16-30.51-68.16-68.16S82.39,0,120.03,0Z" />
-                          <path class="cls-1"
-                            d="M95.79,187.24c-30.8-.23-55.75,24.91-55.3,55.92l-40.5-.77c.19-48.97,38.45-88.73,85.65-90.68,25.59.23,50.14.49,75.7.26,47.2,1.95,85.47,41.71,85.65,90.68l-39.04.77c-.51-30.88-26.27-55.89-58.02-55.53-19.37-.73-34.89-1.1-54.15-.66Z" />
+                          <defs>
+                            <filter id="thin">
+                              <feMorphology operator="erode" radius="1.2" />
+                            </filter>
+                            <style>
+                              .cls-1 {
+                                fill: #fefefe;
+                                fill-rule: evenodd;
+                              }
+                            </style>
+                          </defs>
+                          <g filter="url(#thin)">
+                            <path class="cls-1"
+                              d="M120.03,36.86c17.28,0,31.29,14.01,31.29,31.29s-14.01,31.29-31.29,31.29-31.29-14.01-31.29-31.29,14.01-31.29,31.29-31.29ZM120.03,0c37.64,0,68.16,30.51,68.16,68.16s-30.51,68.16-68.16,68.16-68.16-30.51-68.16-68.16S82.39,0,120.03,0Z" />
+                            <path class="cls-1"
+                              d="M95.79,187.24c-30.8-.23-55.75,24.91-55.3,55.92l-40.5-.77c.19-48.97,38.45-88.73,85.65-90.68,25.59.23,50.14.49,75.7.26,47.2,1.95,85.47,41.71,85.65,90.68l-39.04.77c-.51-30.88-26.27-55.89-58.02-55.53-19.37-.73-34.89-1.1-54.15-.66Z" />
+                          </g>
                         </svg>
                       </button>
                       <!-- * MODAL login (Когда пользователь авторизирован - открывается при добавлениии класса  "open-modal") -->
@@ -268,7 +285,7 @@
         </div>
       </div>
     </header>
-    <!-- * -------------------- [ Breadcrumb ] -------------------------- -->
+    <!-- * ----------------------- [ Breadcrumb ] ------------------------------ -->
     <div id="services_page" class="back_image_page">
       <div class="breadcrumb_wrapper mb-2 white_color d-none d-lg-block">
         <div class="container">
@@ -397,7 +414,7 @@
         </div>
       </div>
     </div>
-    <!-- * ------------------ [ Instructions ] -------------------------- -->
+    <!-- * ---------------------- [ Instructions ] ----------------------------- -->
     <div class="instructions_block_wrapper">
       <div class="ib_header mb-4  wow fadeInDown">
         <div class="container">
@@ -1860,7 +1877,7 @@
         </div>
       </div>
     </div>
-    <!--*  ======================= desk ========================= -->
+    <!-- * -------------------------- [ Desk ] --------------------------------- -->
     <div class="serv_serv_list_wrapp d-none d-lg-block wow fadeInDown">
       <div class="serv_serv_list_image">
         <img src="img/serv.jpg" alt="image">
@@ -1915,11 +1932,8 @@
           </ul>
         </div>
       </div>
-
-
     </div>
-
-    <!--*  ======================= mob ========================= -->
+    <!-- * -------------------------- [ Mob ] ---------------------------------- -->
     <div class="serv_serv_mob_wrap d-lg-none d-block">
       <div class="container p-0">
         <div class="serv_serv_mob">
@@ -1978,7 +1992,7 @@
         </div>
       </div>
     </div>
-    <!--*  ======================= / mob ========================= -->
+    <!-- * -------------------------- [ Mob ] ---------------------------------- -->
     <div class="serv_obslujivanie">
       <div class="container">
         <div class="serv_obslujivanie_body wow fadeInDown">
@@ -1987,13 +2001,13 @@
             <div class="col-xl-2 col-lg-3 d-none d-lg-block">
               <div class="font14 text-uppercase light_grey_color text-center fw700">БРЕНДЫ </div>
             </div>
-            <!--* ===========-->
+            <!-- * -->
             <div class="col-xl-4 col-lg-4">
               <div class="font42 mb-3 lh12">
                 Сервисное обслуживание
               </div>
             </div>
-            <!--* ===========-->
+            <!-- * -->
             <div class="col-xl-5 col-lg-5">
               <div class="font11 fw300">
                 Сервисные центры компании «GEOTOTAL» выполняют техническое обслуживание, настройку и&nbsp;ремонт
@@ -2002,11 +2016,11 @@
                 и&nbsp;ремонт лазерных уровней и&nbsp;оптического оборудования других производителей.
               </div>
             </div>
-            <!--* ===========-->
+            <!-- * -->
           </div>
           <div class="pt-5">
             <div class="row">
-              <!--* ===========-->
+              <!-- * -->
               <div class="col-xl-9 col-lg-8 ml-auto">
                 <ul class="brands_list">
                   <li>
@@ -2042,7 +2056,7 @@
                 </ul>
               </div>
               <div class="col-xl-1"></div>
-              <!--* ===========-->
+              <!-- * -->
             </div>
           </div>
         </div>

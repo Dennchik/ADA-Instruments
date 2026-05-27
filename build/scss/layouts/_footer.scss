@@ -159,9 +159,6 @@
 
   // .footer__search
   &__search {
-    // display: flex;
-    // align-items: center;
-
     .icon-search-1 {
       font-size: 20px;
     }
@@ -483,6 +480,11 @@
   color: #a4a4a4;
   background: transparent;
   font-weight: 700;
+
+  .icofont-search-1 {
+    position: relative;
+    top: -4px;
+  }
 }
 
 .footer_search form {

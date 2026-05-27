@@ -267,6 +267,7 @@ jQuery('document').ready(function () {
   //* --------------------------------------------------------------------------
   jQuery('.cat_mp_slider').slick({
     nextArrow: '<div class="next"><i class="icofont-thin-right"></i></div>',
+    prevArrow: '<div class="prev"><i class="icofont-thin-left"></i></div>',
     dots: true,
     infinite: true,
     arrows: true,

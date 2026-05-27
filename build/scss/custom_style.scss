@@ -16,11 +16,6 @@
   font-weight: bold;
 }
 .search-result {
-  .container {
-    @include screen-992 {
-      max-width: 720px;
-    }
-  }
   .items_greed {
     overflow: hidden;
   }

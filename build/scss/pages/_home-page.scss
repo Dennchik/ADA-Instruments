@@ -75,6 +75,20 @@
   }
 }
 
+.sc_mp_title {
+  display: inline-block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 100%;
+
+  @include screen-768 {
+    margin-left: -15px;
+    padding-left: 15px;
+    font-weight: normal;
+    color: #00000000;
+  }
+}
+
 //* ----------------------------------------------------------------------------
 .support-block {
   margin: 0 auto;

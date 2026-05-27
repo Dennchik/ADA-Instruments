@@ -210,11 +210,18 @@
 
 // ===================== COMPONENTS =====================
 
-// ----- Collapse -----
+//* ----- Collapse -----
 .select > ._collapse:not(._show),
 .delivery__item > ._collapse:not(._show),
-.toggle-box > ._collapse:not(._show) {
+.toggle-box > ._collapse:not(._show),
+.slideToggle > ._collapse:not(._show) {
   display: none;
+}
+
+.slideToggle:has(> .sub_menu._collapse._show) {
+  .open_menu_wrapper .icofont-caret-down {
+    transform: scale(-1);
+  }
 }
 
 // ----- Icon info -----
@@ -503,7 +510,7 @@
 }
 .breadcrumb {
   display: flex;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   padding: 1.6rem 0;
   user-select: none;
   list-style: none;
@@ -514,6 +521,11 @@
   border-radius: 0px;
   background-color: transparent;
   overflow-y: hidden;
+
+  @include screen-840 {
+    margin-bottom: 30px;
+  }
+
   &::-webkit-scrollbar {
     height: 0.3rem;
   }
@@ -521,6 +533,7 @@
   &::-webkit-scrollbar-thumb {
     background-color: var(--danger);
   }
+
   a {
     transition: color 0.3s ease-in-out;
     font-weight: 600;
@@ -528,6 +541,7 @@
       color: var(--danger);
     }
   }
+
   li {
     white-space: nowrap;
 

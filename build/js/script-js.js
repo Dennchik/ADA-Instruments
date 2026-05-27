@@ -114,94 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-//todo -------------------------------------------------------------------------
-//todo 👇 (Для Виктора) - скрытие панелей в "Личном кабинете"
-function leftMenuOpenClose() {
-  // Ждем полной загрузки DOM
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
 
-  function init() {
-    const openButtonLeft = document.querySelector('._open-menu');
-    const closeButtonLeft = document.querySelector('.side-menu__close-menu');
-    const asideMenuLeft = document.querySelector('.aside-menu-l');
-    const tabButtons = document.querySelectorAll('.tab-button');
-
-    if (!openButtonLeft) {
-      return;
-    }
-
-    if (!asideMenuLeft) {
-      return;
-    }
-
-    // Снимаем все старые обработчики, делаем клон и заменяем
-    const newButton = openButtonLeft.cloneNode(true);
-    openButtonLeft.parentNode.replaceChild(newButton, openButtonLeft);
-
-    // Обновляем переменную
-    const newOpenButton = document.querySelector('._open-menu');
-
-    function closePanel() {
-      asideMenuLeft.classList.remove('open');
-      newOpenButton.classList.remove('active');
-    }
-
-    tabButtons.forEach((tabButton) => {
-      tabButton.addEventListener('click', () => {
-        asideMenuLeft.classList.remove('open');
-      });
-    });
-    function openPanel() {
-      asideMenuLeft.classList.add('open');
-      newOpenButton.classList.add('active');
-    }
-
-    function togglePanel() {
-      if (asideMenuLeft.classList.contains('open')) {
-        closePanel();
-      } else {
-        openPanel();
-      }
-    }
-
-    // Новый обработчик
-    newOpenButton.addEventListener('click', function (event) {
-      event.stopPropagation();
-      event.preventDefault();
-      togglePanel();
-    });
-
-    // Крестик
-    if (closeButtonLeft) {
-      const newClose = closeButtonLeft.cloneNode(true);
-      closeButtonLeft.parentNode.replaceChild(newClose, closeButtonLeft);
-      newClose.addEventListener('click', function (event) {
-        event.stopPropagation();
-        closePanel();
-      });
-    }
-
-    // Закрытие при клике вне панели
-    document.addEventListener('click', function (event) {
-      // Проверяем существование элементов
-      if (!asideMenuLeft) return;
-
-      const isClickOnPanel = asideMenuLeft.contains(event.target);
-
-      // Проверяем, что клик не по панели и панель открыта
-      if (!isClickOnPanel && asideMenuLeft.classList.contains('open')) {
-        closePanel();
-      }
-    });
-  }
-}
-document.addEventListener('DOMContentLoaded', function () {
-  leftMenuOpenClose();
-});
 //todo -------------------- [ Открытие модалок ]--------------------------------
 //todo 👇 (Для Виктора)
 document.addEventListener('DOMContentLoaded', () => {
@@ -1218,3 +1131,30 @@ function modalFeedback() {
 }
 
 document.addEventListener('DOMContentLoaded', modalFeedback);
+//* ----------------------------------------------------------------------------
+function toggleMenu() {
+  const items = document.querySelectorAll('.slideToggle');
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('._toggle-button');
+    trigger.addEventListener('click', () => {
+      const opened_item = document.querySelector('._open');
+      _toggleItem(item);
+      if (opened_item && opened_item !== item) {
+        _toggleItem(opened_item);
+      }
+    });
+  });
+
+  const _toggleItem = (item) => {
+    const collapse = new ItcCollapse(item.querySelector('._collapse'));
+    if (item.classList.contains('_open')) {
+      item.classList.remove('_open');
+      collapse.toggle();
+    } else {
+      item.classList.add('_open');
+      collapse.toggle();
+    }
+  };
+}
+document.addEventListener('DOMContentLoaded', toggleMenu);

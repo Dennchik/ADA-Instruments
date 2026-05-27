@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/main.css">
 	<link rel="stylesheet" type="text/css" href="../../css/media.css">
 
-
+	<script defer src="../../js/collapse.js"></script>
 	<script defer src="../../js/dynamic-adaptive.js"></script>
 	<script defer src="../../js/jquery.min.js"></script>
 	<script defer src="../../js/jquery.maskedinput.min.js"></script>
@@ -55,8 +55,12 @@
 			<div class="row h-100 no-gutters">
 				<div class="col">
 					<ul>
-						<li><a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
-							<ul class="sub_menu">
+						<li class="slideToggle">
+							<div class="open_menu_wrapper">
+								<a href="../../productia.html" class="open_menu_child"><span>Продукция</span></a>
+								<i class="icofont-caret-down _toggle-button"></i>
+							</div>
+							<ul class="sub_menu _collapse">
 								<li><a href="../../catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 								<li><a href="../../catalog/automatic-levels.html">Оптические нивелиры</a></li>
 								<li><a href="../../catalog/theodolites.html">Теодолиты</a></li>
@@ -77,9 +81,9 @@
 						<li><a href="../../services.html"><span>Сервис</span></a></li>
 						<li><a href="../../about.html"><span>О компании</span></a></li>
 						<li><a href="../../contact.html"><span>Контакты</span></a></li>
-					</ul> <!-- /mbm_sel_lang_wrapper -->
-				</div><!-- /col -->
-			</div><!-- /row -->
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- * ------------------------- [ Main block ] ------------------------------ -->
@@ -176,10 +180,23 @@
 											<button type="button" class="col_login icon_col" id="login-btn">
 												<svg class="icon-user" id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg"
 													viewBox="0 0 247.01 243.42">
-													<path class="cls-1"
-														d="M120.03,36.86c17.28,0,31.29,14.01,31.29,31.29s-14.01,31.29-31.29,31.29-31.29-14.01-31.29-31.29,14.01-31.29,31.29-31.29ZM120.03,0c37.64,0,68.16,30.51,68.16,68.16s-30.51,68.16-68.16,68.16-68.16-30.51-68.16-68.16S82.39,0,120.03,0Z" />
-													<path class="cls-1"
-														d="M95.79,187.24c-30.8-.23-55.75,24.91-55.3,55.92l-40.5-.77c.19-48.97,38.45-88.73,85.65-90.68,25.59.23,50.14.49,75.7.26,47.2,1.95,85.47,41.71,85.65,90.68l-39.04.77c-.51-30.88-26.27-55.89-58.02-55.53-19.37-.73-34.89-1.1-54.15-.66Z" />
+													<defs>
+														<filter id="thin">
+															<feMorphology operator="erode" radius="1.2" />
+														</filter>
+														<style>
+															.cls-1 {
+																fill: #fefefe;
+																fill-rule: evenodd;
+															}
+														</style>
+													</defs>
+													<g filter="url(#thin)">
+														<path class="cls-1"
+															d="M120.03,36.86c17.28,0,31.29,14.01,31.29,31.29s-14.01,31.29-31.29,31.29-31.29-14.01-31.29-31.29,14.01-31.29,31.29-31.29ZM120.03,0c37.64,0,68.16,30.51,68.16,68.16s-30.51,68.16-68.16,68.16-68.16-30.51-68.16-68.16S82.39,0,120.03,0Z" />
+														<path class="cls-1"
+															d="M95.79,187.24c-30.8-.23-55.75,24.91-55.3,55.92l-40.5-.77c.19-48.97,38.45-88.73,85.65-90.68,25.59.23,50.14.49,75.7.26,47.2,1.95,85.47,41.71,85.65,90.68l-39.04.77c-.51-30.88-26.27-55.89-58.02-55.53-19.37-.73-34.89-1.1-54.15-.66Z" />
+													</g>
 												</svg>
 											</button>
 											<!-- * MODAL login (Когда пользователь авторизирован - открывается при добавлениии класса  "open-modal") -->
@@ -1133,7 +1150,7 @@
 			<div class="footer__header ">
 				<!-- * -->
 				<div class="footer__col-auto">
-					<a href="./productia.html" class="grey_button">в каталог</a>
+					<a href="../../productia.html" class="grey_button">в каталог</a>
 				</div>
 				<!-- * -->
 				<div class="footer__col-auto">
@@ -1166,7 +1183,7 @@
 								<!-- * -->
 								<div class="col-4">
 									<ul>
-										<li><a href="../laser-distance-meter.html">Лазерные дальномеры</a></li>
+										<li><a href="../../laser-distance-meter.html">Лазерные дальномеры</a></li>
 										<li><a href="#">Лазерные уровни</a></li>
 										<li><a href="#">Ротационные нивелиры</a></li>
 										<li><a href="#">Оптические нивелиры</a></li>
@@ -1219,7 +1236,7 @@
 					<div class="footer__sub-menu footer_menu_mob_submenu'">
 						<div class="footer_menu_mob_list flex-nowrap pt-3">
 							<ul class="fmb_list">
-								<li><a href="../laser-distance-meter.html">Лазерные дальномеры</a></li>
+								<li><a href="../../laser-distance-meter.html">Лазерные дальномеры</a></li>
 								<li><a href="#">Лазерные уровни</a></li>
 								<li><a href="#">Ротационные нивелиры</a></li>
 								<li><a href="#">Оптические нивелиры</a></li>

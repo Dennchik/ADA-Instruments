@@ -12,13 +12,13 @@ window.updateTotalCartQuantity = function () {
   const cartQuantity = document.querySelector('.cart-user__quantity');
   if (cartQuantity) {
     cartQuantity.textContent = totalQuantity;
-    cartQuantity.style.display = totalQuantity > 0 ? 'flex' : 'none';
+    cartQuantity.style.display = totalQuantity > 0 ? 'block' : 'none';
   }
 
   const sideMenuTovara = document.querySelector('.side-menu__col-tovara');
   if (sideMenuTovara) {
     sideMenuTovara.textContent = totalQuantity;
-    sideMenuTovara.style.display = totalQuantity > 0 ? 'flex' : 'none';
+    sideMenuTovara.style.display = totalQuantity > 0 ? 'block' : 'none';
   }
 };
 

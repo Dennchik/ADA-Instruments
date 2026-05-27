@@ -1,4 +1,15 @@
 @use '../core/mixins' as *;
+//* ----------------------------------------------------------------------------
+
+.search-result,
+.work-page {
+  .container {
+    @include screen-992 {
+      max-width: 720px;
+    }
+  }
+}
+
 .services {
   .suport_feedback_form_box {
   }
@@ -12,13 +23,28 @@
   }
 }
 
+.verification-act {
+  .acccount-section__tab-content {
+    row-gap: 2rem;
+  }
+}
+
 .hp-title {
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 3rem;
 }
 
-.productia-page {
+.work-page {
+  // font-size: 1.6rem;
+
+  @include screen-690 {
+    font-size: 14px;
+  }
+}
+.personal-account,
+.productia-page,
+.work-page {
   #main {
     overflow: hidden;
   }
@@ -33,6 +59,13 @@
   .repair-status__input {
     max-width: 295px;
     height: 55px;
+
+    @include screen-690 {
+      max-height: 40px;
+    }
+    @include screen-460 {
+      max-width: 100%;
+    }
   }
 }
 

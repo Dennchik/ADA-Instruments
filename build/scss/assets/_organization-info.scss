@@ -63,6 +63,12 @@
         flex: 1 1 100%;
       }
     }
+
+    @include screen-575 {
+      .profile__body {
+        margin: 0 -15px;
+      }
+    }
   }
 
   .acccount-section__footer {

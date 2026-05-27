@@ -1,5 +1,21 @@
 @use '../core/mixins' as *;
 //* ---------------------------- side-menu -------------------------------------
+.open_menu_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2px;
+
+  .icofont-caret-down {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: var(--danger);
+    margin-right: -12px;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
 .side-menu {
   position: relative;
   height: 100%;
@@ -11,27 +27,37 @@
     padding-right: 25px;
   }
 
+  @include screen-840 {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    padding: 20px 0 0;
+    background: transparent;
+    border-top: 1px solid rgba(165, 165, 165, 0.4);
+
+    .side-menu__tab-link {
+      font-weight: 400;
+      display: block;
+      flex-direction: row-reverse;
+    }
+  }
+
   // .side-menu__list
   &__list {
     display: flex;
     flex-direction: column;
     gap: 20px 0;
 
+    @include screen-840 {
+      gap: 0;
+    }
+
     li {
       line-height: 100%;
+    }
 
-      .side-menu__col-tovara {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--danger);
-        width: 25px;
-        height: 25px;
-        padding: 5px;
-        font-size: 10px;
-        color: #fff;
-        border-radius: 50%;
-      }
+    @include screen-840 {
+      align-items: flex-end;
     }
   }
 
@@ -41,6 +67,13 @@
     justify-content: space-between;
     align-items: center;
     height: 25px;
+
+    @include screen-840 {
+      height: auto;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: 3rem;
+    }
   }
 
   // .side-menu__link
@@ -55,6 +88,20 @@
     }
   }
 
+  // .side-menu__col-tovara
+  &__col-tovara {
+    display: none;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--danger);
+  }
+
   // .side-menu__tab-link
   &__tab-link {
     cursor: pointer;
@@ -63,10 +110,10 @@
     transition: all 0.4s ease 0s;
     font-size: 16px;
     font-weight: 600;
+    // filter: contrast(0);
 
     &:hover {
       color: var(--danger);
-      filter: contrast(170%);
     }
   }
 
@@ -84,7 +131,6 @@
 
 .active-link {
   color: var(--danger);
-  filter: contrast(170%);
 }
 //* --------------------------- [ menu_button ] --------------------------------
 .menu_button {

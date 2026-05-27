@@ -48,7 +48,7 @@
     &.del-button {
       &:hover {
         .icofont-close {
-          color: var(--red);
+          color: var(--danger);
         }
       }
     }
@@ -96,12 +96,11 @@
       min-width: 131px;
     }
     &:hover {
-      color: var(--red);
+      color: var(--danger);
     }
   }
 
   // .cart-section__product
-
   &__product {
     display: flex;
     flex-direction: column;
@@ -170,7 +169,7 @@
           &::before {
             transform: rotate(-90deg);
           }
-          color: var(--red);
+          color: var(--danger);
         }
       }
     }
@@ -234,7 +233,7 @@
     font-size: 21px;
     font-weight: 600;
     text-decoration: line-through;
-    color: var(--red);
+    color: var(--danger);
     line-height: 100%;
   }
 
@@ -279,7 +278,7 @@
   // .product-price__wrapper
   &__wrapper {
     .old-price {
-      color: red;
+      color: var(--danger);
       margin-bottom: 5px;
     }
   }
@@ -332,14 +331,14 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 1px solid var(--red);
+    border: 1px solid var(--danger);
     display: flex;
     align-items: center;
     justify-content: center;
 
     span {
       line-height: 100%;
-      color: var(--red);
+      color: var(--danger);
       font-size: 14px;
     }
   }
@@ -475,7 +474,7 @@
 
     font-weight: 600;
     span {
-      color: var(--red);
+      color: var(--danger);
     }
   }
 
@@ -511,7 +510,7 @@
 
     &._selected {
       background-color: rgba(109, 109, 109, 0.18);
-      color: var(--red);
+      color: var(--danger);
     }
 
     &:hover {
@@ -527,7 +526,7 @@
 
   // .select__button
   &__button {
-    color: var(--red);
+    color: var(--danger);
     font-size: 13px;
     font-weight: 500;
     text-transform: lowercase;
@@ -576,26 +575,28 @@
 
   // .cart-user__quantity
   &__quantity {
-    display: none;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top: 0;
     left: 7px;
-    width: 20px;
-    height: 20px;
-    transform: translate(10px, -5px);
+
+    background-color: var(--danger);
+    display: none;
+    width: 25px;
+    height: 25px;
     padding: 5px;
-    background-color: var(--red);
-    border-radius: 50%;
+    font-size: 14px;
     color: white;
-    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 50%;
+    transform: translate(10px, -5px);
   }
 }
+
 //* ----------------------------------------------------------------------------
 .quantity {
   user-select: none;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.6rem;

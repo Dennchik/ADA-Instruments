@@ -55,11 +55,15 @@
 				<div class="mobile_menu_image">
 					<img src="../../img/logo_white.png" alt="logo">
 				</div>
-				<div class="row h-100 no-gutters">
+				<div class="row h-100 no-gutters bp-2">
 					<div class="col">
 						<ul>
-							<li><a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
-								<ul class="sub_menu">
+							<li class="slideToggle">
+								<div class="open_menu_wrapper">
+									<a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
+									<i class="icofont-caret-down _toggle-button"></i>
+								</div>
+								<ul class="sub_menu _collapse">
 									<li><a href="../../catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
 									<li><a href="../../catalog/automatic-levels.html">Оптические нивелиры</a></li>
 									<li><a href="../../catalog/theodolites.html">Теодолиты</a></li>
@@ -180,10 +184,23 @@
 											<button type="button" class="col_login icon_col" id="login-btn">
 												<svg class="icon-user" id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg"
 													viewBox="0 0 247.01 243.42">
-													<path class="cls-1"
-														d="M120.03,36.86c17.28,0,31.29,14.01,31.29,31.29s-14.01,31.29-31.29,31.29-31.29-14.01-31.29-31.29,14.01-31.29,31.29-31.29ZM120.03,0c37.64,0,68.16,30.51,68.16,68.16s-30.51,68.16-68.16,68.16-68.16-30.51-68.16-68.16S82.39,0,120.03,0Z" />
-													<path class="cls-1"
-														d="M95.79,187.24c-30.8-.23-55.75,24.91-55.3,55.92l-40.5-.77c.19-48.97,38.45-88.73,85.65-90.68,25.59.23,50.14.49,75.7.26,47.2,1.95,85.47,41.71,85.65,90.68l-39.04.77c-.51-30.88-26.27-55.89-58.02-55.53-19.37-.73-34.89-1.1-54.15-.66Z" />
+													<defs>
+														<filter id="thin">
+															<feMorphology operator="erode" radius="1.2" />
+														</filter>
+														<style>
+															.cls-1 {
+																fill: #fefefe;
+																fill-rule: evenodd;
+															}
+														</style>
+													</defs>
+													<g filter="url(#thin)">
+														<path class="cls-1"
+															d="M120.03,36.86c17.28,0,31.29,14.01,31.29,31.29s-14.01,31.29-31.29,31.29-31.29-14.01-31.29-31.29,14.01-31.29,31.29-31.29ZM120.03,0c37.64,0,68.16,30.51,68.16,68.16s-30.51,68.16-68.16,68.16-68.16-30.51-68.16-68.16S82.39,0,120.03,0Z" />
+														<path class="cls-1"
+															d="M95.79,187.24c-30.8-.23-55.75,24.91-55.3,55.92l-40.5-.77c.19-48.97,38.45-88.73,85.65-90.68,25.59.23,50.14.49,75.7.26,47.2,1.95,85.47,41.71,85.65,90.68l-39.04.77c-.51-30.88-26.27-55.89-58.02-55.53-19.37-.73-34.89-1.1-54.15-.66Z" />
+													</g>
 												</svg>
 											</button>
 											<!-- * MODAL login (Когда пользователь авторизирован - открывается при добавлениии класса  "open-modal") -->
@@ -276,7 +293,7 @@
 			</div>
 		</header>
 		<!-- * ----------------------- [ Breadcrumb ] ------------------------------ -->
-		<div class="breadcrumb_wrapper mb-2">
+		<section class="breadcrumb_wrapper mb-2">
 			<div class="container">
 				<ol class="breadcrumb">
 					<li><a href="../../index.html">главная</a></li>
@@ -288,19 +305,13 @@
 					</li>
 				</ol>
 			</div>
-		</div>
+		</section>
 		<!-- * -------------------- [ Acccount-section ] --------------------------- -->
 		<section class="acccount-section container wow fadeInDown">
 			<div class="acccount-section__body">
 				<!-- * Column-1 ---------- [ Side Menu ] ------------------------------- -->
 				<div class="acccount-section__column aside-menu-l">
-					<div class="side-menu">
-						<div class="logo-wrapper">
-							<div class="logo"></div>
-						</div>
-						<div class="side-menu__close-menu">
-							<i class="icofont-close-squared icon"></i>
-						</div>
+					<div class="side-menu" data-da="bp-2" data-da-position="last" data-da-resolution="839">
 						<!-- * [ MENU -LEFT ] -->
 						<ul class="side-menu__list">
 							<li class="side-menu__item">
@@ -342,16 +353,6 @@
 								<!-- * content__column - 1 -->
 								<div class="acccount-content__column">
 									<div class="acccount-content__header">
-										<!-- * [ BUTTONS ] -->
-										<div class="acccount-section__buttons">
-											<div class="acccount-section__open-menu _open-menu">
-												<div class="vertical-dots" id="verticalDots">
-													<span></span>
-													<span></span>
-													<span></span>
-												</div>
-											</div>
-										</div>
 										<div class="acccount-content__title">
 											<h2 class="font_clamp_50">Возврат, ремонт</h2>
 											<span>и другие обращения</span>
