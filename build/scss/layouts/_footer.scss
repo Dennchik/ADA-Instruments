@@ -173,8 +173,15 @@
         transform: translateX(0);
       }
     }
+
+    @include screen-690 {
+      text-align: right;
+      font-size: 14px;
+    }
+
     @include screen-425 {
       text-align: right;
+      font-size: 12px;
     }
 
     input {

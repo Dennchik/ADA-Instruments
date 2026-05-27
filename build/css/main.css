@@ -1535,9 +1535,16 @@ textarea:focus::placeholder {
             transform: translateX(0);
   }
 }
+@media (width < 690px) {
+  .footer__search {
+    text-align: right;
+    font-size: 14px;
+  }
+}
 @media screen and (width < 425px) {
   .footer__search {
     text-align: right;
+    font-size: 12px;
   }
 }
 .footer__search input {
@@ -9577,6 +9584,16 @@ textarea:focus::placeholder {
   color: #a4a4a4;
   text-transform: uppercase;
 }
+@media (width < 690px) {
+  .contact_page_body_title {
+    font-size: 14px;
+  }
+}
+@media screen and (width < 490px) {
+  .contact_page_body_title {
+    font-size: 12px;
+  }
+}
 
 .contacts_list {
   display: -webkit-box;
@@ -9598,16 +9615,15 @@ textarea:focus::placeholder {
       align-content: stretch;
   margin-left: -15px;
   margin-right: -15px;
-  padding-top: 35px;
+  padding-top: 6rem;
+  padding: 6rem 3.5rem 7.5rem;
 }
-
 .contacts_list > li {
   width: 33.33%;
-  margin-bottom: 30px;
 }
 
 .contacts_list_box {
-  margin-left: 35px;
+  height: 100%;
   margin-right: 15px;
   padding-left: 35px;
   font-size: 9px;
@@ -9631,7 +9647,7 @@ textarea:focus::placeholder {
 .contacts_list_box_title {
   font-size: 16px;
   font-weight: 700;
-  color: #ff3333;
+  color: var(--danger);
   min-height: 20px;
   padding-top: 10px;
 }
@@ -9658,7 +9674,7 @@ textarea:focus::placeholder {
   font-feature-settings: "liga";
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
-  color: #ff3333;
+  color: var(--danger);
 }
 
 .open_contacts_list {
@@ -9688,10 +9704,8 @@ textarea:focus::placeholder {
   font-feature-settings: "liga";
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
-  transition: all 0.4s;
   -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .open .open_contacts_list:after {
@@ -9699,27 +9713,22 @@ textarea:focus::placeholder {
           transform: rotate(180deg);
 }
 
-.contacts_list_wpapper {
-  padding-bottom: 20px;
+.contact_page_body_box {
+  margin-bottom: 6rem;
 }
-
-.contact_page_body_box:last-child .contacts_list_wpapper {
-  padding-bottom: 0;
+@media screen and (width < 992px) {
+  .contact_page_body_box {
+    margin-bottom: 0px;
+  }
+  .contact_page_body_box:last-child {
+    margin-bottom: 40px;
+  }
 }
 
 .show_more_contacts_list_box {
   margin-top: 10px;
   cursor: pointer;
   font-size: 14px;
-}
-
-.contact_page_body {
-  padding-bottom: 75px;
-}
-@media screen and (width < 490px) {
-  .contact_page_body {
-    padding-bottom: 45px;
-  }
 }
 
 .nav-link span {
