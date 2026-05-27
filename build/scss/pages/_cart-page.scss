@@ -18,6 +18,10 @@
     grid-template-columns: 1fr minmax(270px, 313px);
     gap: 8.5%;
     justify-content: space-between;
+
+    @include screen-860 {
+      grid-template-columns: 100%;
+    }
   }
 
   // .cart-section__delivery
@@ -39,9 +43,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 5px;
 
     .icofont-close {
+      font-size: 2.8rem;
       transition: all 0.4s ease 0s;
     }
 
@@ -63,8 +68,7 @@
     .icofont-check,
     .icofont-close {
       cursor: pointer;
-      color: #5c5c5c;
-      font-size: inherit;
+      color: #a5a5a5;
 
       &::before {
         display: flex;
@@ -157,6 +161,7 @@
       padding: 5px;
 
       .icofont-close {
+        font-size: 2.8rem;
         transition: all 0.4s ease 0s;
 
         &::before {

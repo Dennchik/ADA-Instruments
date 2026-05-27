@@ -617,6 +617,11 @@ textarea:focus::placeholder {
           transform: scale(-1);
 }
 
+@media (width >= 840px) {
+  .dsl-md-none {
+    display: none !important;
+  }
+}
 .icon-info {
   cursor: pointer;
   width: 22px;
@@ -3023,8 +3028,14 @@ header .top_menu > li > a {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.cart-page .select button {
-  color: var(--red);
+.cart-page .select .select__button {
+  color: inherit;
+  font-weight: 600;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+.cart-page .select .select__button:hover {
+  color: var(--danger);
 }
 .cart-page .select__button {
   color: inherit;
@@ -3784,9 +3795,10 @@ header .top_menu > li > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
 }
 
 .slick-dots li {
@@ -6773,6 +6785,11 @@ textarea:focus::placeholder {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media screen and (width < 860px) {
+  .cart-section__content {
+    grid-template-columns: 100%;
+  }
+}
 .cart-section__delivery {
   background-color: var(--background-fon);
 }
@@ -6799,9 +6816,10 @@ textarea:focus::placeholder {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  gap: 10px;
+  gap: 5px;
 }
 .cart-section__header-col .icofont-close {
+  font-size: 2.8rem;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
@@ -6816,8 +6834,7 @@ textarea:focus::placeholder {
 .cart-section__icon .icofont-check,
 .cart-section__icon .icofont-close {
   cursor: pointer;
-  color: #5c5c5c;
-  font-size: inherit;
+  color: #a5a5a5;
 }
 .cart-section__icon .icofont-check::before,
 .cart-section__icon .icofont-close::before {
@@ -6923,6 +6940,7 @@ textarea:focus::placeholder {
   padding: 5px;
 }
 .product-cart__info .cart-section__icon .icofont-close {
+  font-size: 2.8rem;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
@@ -10071,12 +10089,12 @@ textarea:focus::placeholder {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 30px;
+  gap: 3rem;
 }
 @media (width < 768px) {
   .product-card__price {
     margin: 0 -15px;
-    padding: 0 20px 30px 20px;
+    padding: 0 2rem 3rem 2rem;
     background-color: var(--background-fon);
   }
 }
@@ -10117,6 +10135,8 @@ textarea:focus::placeholder {
   }
 }
 .product-card__text {
+  -webkit-padding-before: 2rem;
+          padding-block-start: 2rem;
   line-height: 130%;
   font-size: 16px;
   margin-bottom: 0;

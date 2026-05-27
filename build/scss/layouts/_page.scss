@@ -165,8 +165,14 @@
       flex-direction: column;
     }
 
-    button {
-      color: var(--red);
+    .select__button {
+      color: inherit;
+      font-weight: 600;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--danger);
+      }
     }
 
     // .select__button

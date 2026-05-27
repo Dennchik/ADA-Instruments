@@ -474,37 +474,135 @@ jQuery('document').ready(function () {
   });
 
   //* --------------------------------------------------------------------------
-  $('.tovar_slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.tovar_slider_nav',
-  });
 
-  $('.tovar_slider_nav').slick({
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    asNavFor: '.tovar_slider',
-    dots: false,
-    prevArrow: '<div class="prev"><i class="icofont-thin-left"></i></div>',
-    nextArrow: '<div class="next"><i class="icofont-thin-right"></i></div>',
-    focusOnSelect: true,
-    responsive: [
-      {
-        breakpoint: 1376,
-        settings: {
-          touchThreshold: 100,
-          slidesToShow: 3,
-          dots: false,
-          touchThreshold: 100,
-          arrows: false,
-          swipeToSlide: true,
+  // $(document).ready(function () {
+  //   $('.tovar_slider').slick({
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //     arrows: false,
+  //     fade: false,
+  //     asNavFor: '.tovar_slider_nav',
+  //   });
+
+  //   $('.tovar_slider_nav').slick({
+  //     slidesToShow: 4,
+  //     slidesToScroll: 1,
+  //     asNavFor: '.tovar_slider',
+  //     dots: true,
+  //     prevArrow: '<div class="prev"><i class="icofont-thin-left"></i></div>',
+  //     nextArrow: '<div class="next"><i class="icofont-thin-right"></i></div>',
+  //     focusOnSelect: true,
+  //     responsive: [
+  //       {
+  //         breakpoint: 1376,
+  //         settings: {
+  //           touchThreshold: 100,
+  //           slidesToShow: 3,
+  //           dots: true,
+  //           touchThreshold: 100,
+  //           arrows: false,
+  //           swipeToSlide: true,
+  //         },
+  //       },
+  //     ],
+  //   });
+  // });
+  //* --------------------------------------------------------------------------
+  $(document).ready(function () {
+    // 1. Инициализация слайдеров (ваши настройки)
+    $('.tovar_slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: false,
+      asNavFor: '.tovar_slider_nav',
+    });
+
+    $('.tovar_slider_nav').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      asNavFor: '.tovar_slider',
+      dots: false, // включаем стандартные точки (потом переделаем)
+      prevArrow: '<div class="prev"><i class="icofont-thin-left"></i></div>',
+      nextArrow: '<div class="next"><i class="icofont-thin-right"></i></div>',
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 1376,
+          settings: {
+            slidesToShow: 3,
+            dots: true,
+            // loop: true,
+            arrows: false,
+            swipeToSlide: true,
+            touchThreshold: 100,
+          },
         },
-      },
-    ],
-  });
+      ],
+    });
 
+    // 2. Функция, которая оставляет видимыми ТОЛЬКО 5 точек (активная + 2 слева + 2 справа)
+    function showOnlyFiveDots($nav) {
+      var $dots = $nav.find('.slick-dots li');
+      var total = $dots.length;
+      if (total <= 5) {
+        // если слайдов 5 или меньше – показываем все точки
+        $dots.show();
+        return;
+      }
+
+      var activeIndex = $dots.filter('.slick-active').index();
+      if (activeIndex === -1) activeIndex = 0;
+
+      // Определяем, какие индексы показывать
+      var start = activeIndex - 1;
+      var end = activeIndex + 1;
+
+      // Корректируем, чтобы не выходить за границы
+      if (start < 0) {
+        start = 0;
+        end = Math.min(2, total - 1);
+      }
+      if (end >= total) {
+        end = total - 1;
+        start = Math.max(0, total - 3);
+      }
+
+      // Скрываем все точки, потом показываем нужный диапазон
+      $dots.hide();
+      $dots.slice(start, end + 1).show();
+    }
+
+    // 3. Применяем ограничение после инициализации и после каждого изменения слайда
+    $('.tovar_slider_nav').on('init afterChange', function () {
+      showOnlyFiveDots($(this));
+    });
+
+    // 4. Также при клике на точку (переключение слайда) – пересчитываем
+    $('.tovar_slider_nav').on('click', '.slick-dots li', function () {
+      setTimeout(function () {
+        $('.tovar_slider_nav').each(function () {
+          showOnlyFiveDots($(this));
+        });
+      }, 10);
+    });
+
+    // 5. При ресайзе окна (смена брейкпоинта) – тоже пересчитываем
+    $(window).on('resize', function () {
+      $('.tovar_slider_nav').each(function () {
+        if ($(this).hasClass('slick-initialized')) {
+          showOnlyFiveDots($(this));
+        }
+      });
+    });
+
+    // 6. Если слайдер уже был инициализирован до запуска этого скрипта – запускаем вручную
+    if ($('.tovar_slider_nav').hasClass('slick-initialized')) {
+      $('.tovar_slider_nav').each(function () {
+        showOnlyFiveDots($(this));
+      });
+    }
+  });
   //* --------------------------------------------------------------------------
   jQuery('.open_item').click(function () {
     jQuery(this)

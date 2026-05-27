@@ -505,6 +505,7 @@
   .tovar_parameters_mobile .tovar_parameters {
     height: auto;
     font-size: 11px;
+    padding: 0 20px;
   }
 
   .tovar_parameters_mobile .tovar_parameters_list > li > div {
@@ -585,9 +586,6 @@
     grid-row: 2/ 3;
   }
 
-  .cart-section__content {
-    grid-template-columns: 1fr;
-  }
   .delivery {
     grid-column: 1 / 2;
     margin: 0 -15px;

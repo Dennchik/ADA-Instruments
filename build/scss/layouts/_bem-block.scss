@@ -223,6 +223,11 @@
     transform: scale(-1);
   }
 }
+@include min-840 {
+  .dsl-md-none {
+    display: none !important;
+  }
+}
 
 // ----- Icon info -----
 .icon-info {
