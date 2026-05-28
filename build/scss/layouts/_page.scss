@@ -80,9 +80,6 @@
 .requests,
 .exchange {
   .repair-status__input {
-    height: 40px;
-    max-width: 365px;
-
     @include screen-490 {
       max-width: 100%;
     }
@@ -115,7 +112,9 @@
     gap: 8rem;
 
     @include screen-1376 {
-      gap: 4rem;
+      gap: 2rem;
+      flex-direction: column;
+      align-items: start;
     }
 
     @include screen-490 {

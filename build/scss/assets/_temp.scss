@@ -6,7 +6,7 @@
   // .acccount-content__body
   &__body {
     display: grid;
-    grid-template-columns: 1fr minmax(240px, 313px);
+    grid-template-columns: minmax(430px, 1fr) minmax(220px, 313px);
     gap: 6rem;
 
     @include screen-1376 {

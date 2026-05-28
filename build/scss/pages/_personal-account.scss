@@ -174,7 +174,8 @@
 
   // .repair-status__input
   &__input {
-    display: block;
+    // flex: 0 1 50%;
+    display: inline;
     width: 100%;
     border: 1px solid #a5a5a5;
     font-size: 14px;
@@ -458,10 +459,10 @@
 }
 
 //! ----------------------------------------------------------------------------
+.personal-data,
 .repair-user {
   .acccount-content__body {
-    grid-template-columns: 1fr;
-    gap: 0;
+    display: block;
   }
 }
 //* -----------------------[ categiries-servise ]-------------------------------

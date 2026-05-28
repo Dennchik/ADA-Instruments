@@ -2957,11 +2957,6 @@ header .top_menu > li > a {
 .requests .modal-rejection__textarea {
   max-width: 780px;
 }
-.requests .repair-status__input,
-.exchange .repair-status__input {
-  height: 40px;
-  max-width: 365px;
-}
 @media screen and (width < 490px) {
   .requests .repair-status__input,
   .exchange .repair-status__input {
@@ -2995,7 +2990,14 @@ header .top_menu > li > a {
 }
 @media screen and (width < 1376px) {
   .exchange .repair-status__wrapper {
-    gap: 4rem;
+    gap: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
 }
 @media screen and (width < 490px) {
@@ -6691,7 +6693,7 @@ header .top_menu > li > a {
 
 .acccount-content__body {
   display: grid;
-  grid-template-columns: 1fr minmax(240px, 313px);
+  grid-template-columns: minmax(430px, 1fr) minmax(220px, 313px);
   gap: 6rem;
 }
 @media screen and (width < 1376px) {
@@ -8066,7 +8068,7 @@ header .top_menu > li > a {
           transform-origin: center;
 }
 .repair-status__input {
-  display: block;
+  display: inline;
   width: 100%;
   border: 1px solid #a5a5a5;
   font-size: 14px;
@@ -8337,9 +8339,9 @@ header .top_menu > li > a {
   font-size: 14px;
 }
 
+.personal-data .acccount-content__body,
 .repair-user .acccount-content__body {
-  grid-template-columns: 1fr;
-  gap: 0;
+  display: block;
 }
 
 .categiries-servise__body {
@@ -11144,11 +11146,16 @@ header .top_menu > li > a {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 25px;
-  padding: 3rem 15px;
+  padding: 3rem 0;
 }
 @media screen and (width < 1376px) {
   .order-status__body {
     grid-template-columns: 1fr;
+  }
+}
+@media screen and (width < 992px) {
+  .order-status__body {
+    padding: 3rem 15px;
   }
 }
 .order-status__content {

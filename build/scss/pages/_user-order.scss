@@ -187,13 +187,14 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 25px;
-    padding: 3rem 15px;
+    padding: 3rem 0;
 
     @include screen-1376 {
       grid-template-columns: 1fr;
     }
 
-    @include screen-840 {
+    @include screen-992 {
+      padding: 3rem 15px;
     }
   }
 
