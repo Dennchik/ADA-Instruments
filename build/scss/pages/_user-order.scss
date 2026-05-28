@@ -177,14 +177,17 @@
 
 //* ----------------------------------------------------------------------------
 .order-status {
+  &:not(:last-child) {
+    border-bottom: 1px solid #a5a5a5;
+  }
+
   //* .order-status__body - Grid-cont-1
   &__body {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #a5a5a5;
+    padding: 3rem 15px;
 
     @include screen-1376 {
       grid-template-columns: 1fr;

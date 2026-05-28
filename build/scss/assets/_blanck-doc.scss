@@ -22,7 +22,6 @@
   }
 
   // .search-result__result
-
   &__result {
   }
 }
@@ -47,11 +46,11 @@
   // .blanck-doc__title
   &__title {
     font-weight: 700;
-    padding-block: 4rem 2rem;
+    padding-block: 2rem;
   }
 
   &__search-result {
-    padding-block: 4rem 2rem;
+    padding-block: 4rem;
   }
 
   // .blanck-doc__list
@@ -121,7 +120,6 @@
   &__wrapper {
     display: flex;
     align-items: center;
-    margin-bottom: 4rem;
 
     .icofont-search-1 {
       font-size: 24px;
@@ -194,7 +192,6 @@
     }
 
     &:nth-child(2) {
-      margin-left: 1rem;
       flex: 0 1 40%;
       max-width: 40%;
     }

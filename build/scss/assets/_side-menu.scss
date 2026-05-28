@@ -20,11 +20,18 @@
   position: relative;
   height: 100%;
   background-color: var(--background-fon);
-  padding: 60px 40px;
+  padding-block: 60px 40px;
+  padding-left: 4rem;
+  padding-right: 4rem;
 
   @include screen-1376 {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include screen-960 {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   @include screen-840 {
@@ -46,7 +53,7 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 20px 0;
+    gap: 2rem;
 
     @include screen-840 {
       gap: 0;
@@ -66,7 +73,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 25px;
+    // height: 25px;
 
     @include screen-840 {
       height: auto;
@@ -110,7 +117,10 @@
     transition: all 0.4s ease 0s;
     font-size: 16px;
     font-weight: 600;
-    // filter: contrast(0);
+
+    @include screen-960 {
+      font-size: 14px;
+    }
 
     &:hover {
       color: var(--danger);

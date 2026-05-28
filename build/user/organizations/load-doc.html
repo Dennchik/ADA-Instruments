@@ -354,104 +354,141 @@
 				<div class="acccount-section__column">
 					<div class="acccount-section__tabs">
 						<!-- ! -------------------[ TAB - Бланки ] ------------------------- -->
-						<div class="acccount-section__tab-content user-account">
+						<div class="acccount-section__tab-content order-user">
 							<!-- * -->
 							<div class="acccount-content">
 								<div class="acccount-content__body">
-									<!-- * content__row - 1 (Заголовок) -------------------------- -->
-									<div class="acccount-content__row">
-										<div class="acccount-content__header">
-											<div class="acccount-content__title">
-												<h2 class="font_clamp_50">Мои организации</h2>
+									<!-- * Content-column - 1 -->
+									<div class="acccount-content__column">
+										<!-- * content__row - 1 (Заголовок) -------------------------- -->
+										<div class="acccount-content__row">
+											<div class="acccount-content__header">
+												<div class="acccount-content__title">
+													<h2 class="font_clamp_50">Мои организации</h2>
+												</div>
+											</div>
+											<a href="./organization.html" class="acccount-content__return-button">
+												<i class="icofont-long-arrow-left icon"></i>
+												<span>назад</span>
+											</a>
+										</div>
+										<!-- * content__row - 1 (Поиск Doc) -------------------------- -->
+										<div class="acccount-content__row">
+											<div class="blanck-doc">
+												<div class="blanck-doc__title font_clamp_30">
+													Отгрузочные документы
+												</div>
+												<form class="blanck-doc__form" action="#" method="#">
+													<div class="blanck-doc__wrapper">
+														<input class="blanck-doc__input" type="text" id="number-doc"
+															placeholder="Введите номер заказа">
+														<button type="submit" class="">
+															<i class="icofont-search-1"></i>
+														</button>
+													</div>
+												</form>
 											</div>
 										</div>
-										<a href="./organization.html" class="acccount-content__return-button">
-											<i class="icofont-long-arrow-left icon"></i>
-											<span>назад</span>
-										</a>
 									</div>
-									<div class="acccount-content__row bp-8"></div>
-									<!-- * -->
-									<div class="acccount-content__row">
-										<div class="blanck-doc">
-											<div class="blanck-doc__title font_clamp_30">
-												Акты сверки взаиморасчётов
-											</div>
-											<form class="blanck-doc__form" action="#" method="#">
-												<div class="blanck-doc__wrapper">
-													<input class="blanck-doc__input" type="text" id="number-doc"
-														placeholder="Введите номер заказа">
-													<button type="submit" class="">
-														<i class="icofont-search-1"></i>
-													</button>
+									<!-- * Content-column - 2 -->
+									<div class="acccount-content__column">
+										<div class="aside-menu-right transparent-right">
+											<div class="profile">
+												<div class="profile__body">
+													<!-- * -->
+													<div class="profile__line">
+														<a href="./load-doc.html" class="profile__link active-link">
+															<div class="profile__item">Отгрузочные документы</div>
+														</a>
+													</div>
+													<!-- * -->
+													<div class="profile__line">
+														<a href="./reports.html" class="profile__link">
+															<div class="profile__item">Акты сверок</div>
+														</a>
+													</div>
+													<!-- * -->
+													<div class="profile__line">
+														<a href="./documents-forms.html" class="profile__link">
+															<div class="profile__item">Уставные документы и бланки</div>
+														</a>
+													</div>
+													<!-- * -->
+													<div class="profile__line">
+														<a href="" class="profile__link">
+															<div class="profile__item">Оригинальные документы</div>
+														</a>
+													</div>
 												</div>
-											</form>
+											</div>
 										</div>
 									</div>
-									<!-- * -->
-									<div class="acccount-content__row">
-										<div class="document-type">
-											<div class="document-type__body">
-												<!-- * Col-1 -->
-												<div class="document-type__column">
-													<div class="document-type__title">
-														<span>Тип документа</span>
+									<!-- * Content-column - 3 -->
+									<div class="acccount-content__column">
+										<div class="acccount-content__row">
+											<div class="document-type">
+												<div class="document-type__body">
+													<!-- * Col-1 -->
+													<div class="document-type__column">
+														<div class="document-type__title">
+															<span>Тип документа</span>
+														</div>
+
+														<div class="document-type__collapse">
+															<form class="modal-rejection__form" id="rejectForm">
+																<label class="modal-rejection__radio">
+																	<input class="modal-rejection__radio-input" type="radio" name="reason" value="Все">
+																	<span class="modal-rejection__radio-text">Все</span>
+																</label>
+
+																<label class="modal-rejection__radio">
+																	<input class="modal-rejection__radio-input" type="radio" name="reason"
+																		value="Акт оказания услуг">
+																	<span class="modal-rejection__radio-text">Акт оказания услуг</span>
+																</label>
+
+																<label class="modal-rejection__radio">
+																	<input class="modal-rejection__radio-input" type="radio" name="reason"
+																		value="Счёт — фактура">
+																	<span class="modal-rejection__radio-text">Счёт — фактура</span>
+																</label>
+
+																<label class="modal-rejection__radio">
+																	<input class="modal-rejection__radio-input" type="radio" name="reason"
+																		value="Счёт на оплату">
+																	<span class="modal-rejection__radio-text">Счёт на оплату</span>
+																</label>
+
+																<label class="modal-rejection__radio">
+																	<input class="modal-rejection__radio-input" type="radio" name="reason"
+																		value="Накладная">
+																	<span class="modal-rejection__radio-text">Накладная</span>
+																</label>
+
+																<label class="modal-rejection__radio">
+																	<input class="modal-rejection__radio-input" type="radio" name="reason"
+																		value="Универсальный передаточный документ">
+																	<span class="modal-rejection__radio-text">Универсальный передаточный документ</span>
+																</label>
+															</form>
+														</div>
 													</div>
-
-													<div class="document-type__collapse">
-														<form class="modal-rejection__form" id="rejectForm">
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason" value="Все">
-																<span class="modal-rejection__radio-text">Все</span>
-															</label>
-
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason"
-																	value="Акт оказания услуг">
-																<span class="modal-rejection__radio-text">Акт оказания услуг</span>
-															</label>
-
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason"
-																	value="Счёт — фактура">
-																<span class="modal-rejection__radio-text">Счёт — фактура</span>
-															</label>
-
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason"
-																	value="Счёт на оплату">
-																<span class="modal-rejection__radio-text">Счёт на оплату</span>
-															</label>
-
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason"
-																	value="Накладная">
-																<span class="modal-rejection__radio-text">Накладная</span>
-															</label>
-
-															<label class="modal-rejection__radio">
-																<input class="modal-rejection__radio-input" type="radio" name="reason"
-																	value="Универсальный передаточный документ">
-																<span class="modal-rejection__radio-text">Универсальный передаточный документ</span>
-															</label>
-														</form>
-													</div>
-												</div>
-												<!-- * Col-2 -->
-												<div class="document-type__column">
-													<div class="document-type__title">
-														<span>Период</span>
-													</div>
-													<div class="document-type__collapse">
-														<div class="document-type__wrapper">
-															<div class="date-period">
-																<div class="date-period__input">
-																	<label class="date-period__label" for="start-date">от:</label>
-																	<input type="date" id="start-date" name="start-date">
-																</div>
-																<div class="date-period__input">
-																	<label class="date-period__label" for="end-date">до:</label>
-																	<input type="date" id="end-date" name="end-date">
+													<!-- * Col-2 -->
+													<div class="document-type__column">
+														<div class="document-type__title">
+															<span>Период</span>
+														</div>
+														<div class="document-type__collapse">
+															<div class="document-type__wrapper">
+																<div class="date-period">
+																	<div class="date-period__input">
+																		<label class="date-period__label" for="start-date">от:</label>
+																		<input type="date" id="start-date" name="start-date">
+																	</div>
+																	<div class="date-period__input">
+																		<label class="date-period__label" for="end-date">до:</label>
+																		<input type="date" id="end-date" name="end-date">
+																	</div>
 																</div>
 															</div>
 														</div>
@@ -460,75 +497,44 @@
 											</div>
 										</div>
 									</div>
-									<!-- * -->
-									<div class="acccount-content__row">
-										<div class="search-result">
-											<div class="search-result__not-search">
-												<div class="search-result__title font_clamp_30">
-													Документы не найдены
+									<!-- * Content-column - 4 -->
+									<div class="acccount-content__column">
+										<div class="acccount-content__row">
+											<div class="search-result">
+												<div class="search-result__not-search">
+													<div class="search-result__title font_clamp_30">
+														Документы не найдены
+													</div>
+													<div class="search-result__text">
+														Не найдены документы, подходящие под выбранные фильтры.
+														Попробуйте поменять или сбросить фильтры.
+													</div>
 												</div>
-												<div class="search-result__text">
-													Не найдены документы, подходящие под выбранные фильтры.
-													Попробуйте поменять или сбросить фильтры.
+												<div class="search-result__result">
+													<div class="result-search">
+														<div class="result-search__item">
+															<i class="icofont-download"></i>
+															<span>Акт №12/2-05 от 12.05.2026</span>
+															<i class="icofont-close"></i>
+														</div>
+														<div class="result-search__item">
+															<i class="icofont-download"></i>
+															<span>Акт №12/2-05 от 12.05.2026</span>
+															<i class="icofont-close"></i>
+														</div>
+														<div class="result-search__item">
+															<i class="icofont-download"></i>
+															<span>Акт №12/2-05 от 12.05.2026</span>
+															<i class="icofont-close"></i>
+														</div>
+														<div class="result-search__item">
+															<i class="icofont-download"></i>
+															<span>Акт №12/2-05 от 12.05.2026</span>
+															<i class="icofont-close"></i>
+														</div>
+													</div>
 												</div>
 											</div>
-											<div class="search-result__result">
-												<div class="result-search">
-													<div class="result-search__item">
-														<i class="icofont-download"></i>
-														<span>Акт №12/2-05 от 12.05.2026</span>
-														<i class="icofont-close"></i>
-													</div>
-													<div class="result-search__item">
-														<i class="icofont-download"></i>
-														<span>Акт №12/2-05 от 12.05.2026</span>
-														<i class="icofont-close"></i>
-													</div>
-													<div class="result-search__item">
-														<i class="icofont-download"></i>
-														<span>Акт №12/2-05 от 12.05.2026</span>
-														<i class="icofont-close"></i>
-													</div>
-													<div class="result-search__item">
-														<i class="icofont-download"></i>
-														<span>Акт №12/2-05 от 12.05.2026</span>
-														<i class="icofont-close"></i>
-													</div>
-
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- * -->
-							<div class="aside-menu-right transparent-right" data-da="bp-8" data-da-position="0"
-								data-da-resolution="991">
-								<div class="profile">
-									<div class="profile__body">
-										<!-- * -->
-										<div class="profile__line">
-											<a href="./load-doc.html" class="profile__link active-link">
-												<div class="profile__item">Отгрузочные документы</div>
-											</a>
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<a href="./reports.html" class="profile__link">
-												<div class="profile__item">Акты сверок</div>
-											</a>
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<a href="./documents-forms.html" class="profile__link">
-												<div class="profile__item">Уставные документы и бланки</div>
-											</a>
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<a href="" class="profile__link">
-												<div class="profile__item">Оригинальные документы</div>
-											</a>
 										</div>
 									</div>
 								</div>
