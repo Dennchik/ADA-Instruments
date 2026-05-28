@@ -1,9 +1,18 @@
 @use '../core/mixins' as *;
 //* ----------------------------------------------------------------------------
 .search-result {
-  // .search-result__not-search
+  // .search-result__body
+  &__body {
+    @include screen-992 {
+      padding: 24px 15px;
 
+      background-color: var(--background-fon);
+    }
+  }
+
+  // .search-result__not-search
   &__not-search {
+    display: none;
   }
 
   // .search-result__title
@@ -14,7 +23,6 @@
   }
 
   // .search-result__text
-
   &__text {
     @include screen-690 {
       font-size: 14px;
@@ -23,20 +31,48 @@
 
   // .search-result__result
   &__result {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
   }
 }
 
 .result-search {
   // .result-search__item
-
   &__item {
     display: flex;
     align-items: center;
+    align-items: center;
+    line-height: 100%;
+    transition: color 0.3s ease;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--danger);
+
+      .icofont-close,
+      .icofont-download {
+        color: var(--danger);
+      }
+    }
+
+    @include screen-690 {
+      font-size: 14px;
+    }
 
     .icofont-close,
     .icofont-download {
-      font-size: 24px;
+      font-size: 18px;
       color: #a4a4aa;
+      transition: color 0.3s ease;
+    }
+
+    .icofont-download {
+      margin-right: 2rem;
+    }
+
+    .icofont-close {
+      margin-left: 6rem;
     }
   }
 }
@@ -177,6 +213,10 @@
   // .document-type__body
   &__body {
     display: flex;
+
+    @include screen-992 {
+      padding: 24px 15px;
+    }
     @include screen-520 {
       flex-wrap: wrap-reverse;
       gap: 3rem;

@@ -458,9 +458,10 @@
 }
 
 //! ----------------------------------------------------------------------------
-.return-repair {
+.repair-user {
   .acccount-content__body {
-    padding-bottom: 0;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 //* -----------------------[ categiries-servise ]-------------------------------
@@ -824,7 +825,7 @@
           position: relative;
 
           @include screen-992 {
-            padding: 15px;
+            padding: 24px 15px;
           }
         }
       }
