@@ -2973,6 +2973,51 @@ header .top_menu > li > a {
   }
 }
 
+@media screen and (width < 992px) {
+  .user-order .profile__line {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    gap: 3rem;
+  }
+}
+
+.personal-account .select__input {
+  text-overflow: ellipsis;
+  width: 100%;
+  font-size: 12px;
+  line-height: 110%;
+  white-space: wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  max-width: 320px;
+}
+@media screen and (width < 992px) {
+  .personal-account .profile__body {
+    margin-bottom: 4rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    justify-items: start;
+  }
+}
+@media screen and (width < 490px) {
+  .personal-account .profile__body {
+    -webkit-column-gap: 30px;
+       -moz-column-gap: 30px;
+            column-gap: 30px;
+    margin: 0 -15px 4rem;
+  }
+}
+@media screen and (width < 992px) {
+  .personal-account .profile__line {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
+
 @media screen and (width < 490px) {
   .exchange .repair-status__info-block {
     width: 100%;
@@ -3529,9 +3574,7 @@ header .top_menu > li > a {
   position: relative;
   height: 100%;
   background-color: var(--background-fon);
-  padding-block: 60px 40px;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding: 6rem 4rem;
 }
 @media screen and (width < 1376px) {
   .side-menu {
@@ -6693,7 +6736,7 @@ header .top_menu > li > a {
 
 .acccount-content__body {
   display: grid;
-  grid-template-columns: minmax(430px, 1fr) minmax(220px, 313px);
+  grid-template-columns: minmax(410px, 1fr) minmax(240px, 313px);
   gap: 6rem;
 }
 @media screen and (width < 1376px) {
@@ -8684,19 +8727,6 @@ header .top_menu > li > a {
   /* Разрываем ИНН при необходимости */
   line-height: 120%; /* Увеличиваем межстрочный интервал */
 }
-@media screen and (width < 840px) {
-  .acccount-section__tabs .order-user .profile {
-    margin-top: 0;
-  }
-}
-.acccount-section__tabs .order-user .profile__body {
-  position: relative;
-}
-@media screen and (width < 992px) {
-  .acccount-section__tabs .order-user .profile__body {
-    padding: 24px 15px;
-  }
-}
 .acccount-section__tabs .profile-user {
   grid-template-columns: 1fr minmax(240px, 300px);
 }
@@ -8779,9 +8809,6 @@ header .top_menu > li > a {
   /* Разрываем ИНН при необходимости */
   line-height: 100%; /* Увеличиваем межстрочный интервал */
 }
-.acccount-section__tabs .history-user .profile {
-  margin-top: -60px;
-}
 @media screen and (width < 840px) {
   .acccount-section__tabs .history-user .profile {
     margin-top: 0;
@@ -8796,7 +8823,6 @@ header .top_menu > li > a {
   }
 }
 .acccount-section__tabs .history-user .profile__btn-home {
-  margin-top: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9095,34 +9121,6 @@ header .top_menu > li > a {
 .acccount-section__open-menu.active {
   -webkit-transform: translateX(0);
           transform: translateX(0);
-}
-
-.personal-account .select__input {
-  text-overflow: ellipsis;
-  width: 100%;
-  font-size: 12px;
-  line-height: 110%;
-  white-space: wrap;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: keep-all;
-  max-width: 320px;
-}
-@media screen and (width < 992px) {
-  .personal-account .profile__body {
-    padding: 0 0 20px 0;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    justify-items: start;
-  }
-}
-@media screen and (width < 490px) {
-  .personal-account .profile__body {
-    -webkit-column-gap: 30px;
-       -moz-column-gap: 30px;
-            column-gap: 30px;
-  }
 }
 
 .categiries-content {
@@ -9450,7 +9448,12 @@ header .top_menu > li > a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 50px;
+  gap: 5rem;
+}
+@media screen and (width < 992px) {
+  .form-user__wrapp-group {
+    gap: 0;
+  }
 }
 @media screen and (width < 840px) {
   .form-user__wrapp-group {
@@ -9469,7 +9472,7 @@ header .top_menu > li > a {
 }
 @media screen and (width < 992px) {
   .form-user__line {
-    padding: 15px;
+    padding: 24px 15px;
     background-color: var(--background-fon);
   }
 }
@@ -10957,7 +10960,7 @@ header .top_menu > li > a {
 }
 .profile__body {
   background-color: var(--background-fon);
-  padding: 60px 4rem;
+  padding: 6rem 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10977,30 +10980,17 @@ header .top_menu > li > a {
 @media screen and (width < 992px) {
   .profile__body {
     border: none;
+    padding: 24px 15px;
+  }
+}
+@media screen and (width < 840px) {
+  .profile__body {
+    margin-top: 0;
   }
 }
 @media screen and (width < 375px) {
   .profile__body {
     gap: 20px;
-  }
-  .profile__body .icon {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .profile__body .icon::before {
-    width: 11px;
-    height: 11px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-size: 13px !important;
   }
 }
 .profile__title {
@@ -11084,6 +11074,13 @@ header .top_menu > li > a {
   text-align: left;
   gap: 5px;
 }
+@media screen and (width < 992px) {
+  .profile__link {
+    display: grid;
+    grid-template-columns: minmax(190px, 250px) auto;
+    gap: 3rem;
+  }
+}
 .profile__link.add-phone .icofont-close {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -11117,27 +11114,27 @@ header .top_menu > li > a {
     font-size: 14px;
   }
 }
-@media screen and (width < 490px) {
-  .profile__item {
-    font-size: 12px;
-  }
-}
 .profile__icon .rotate-icon::before {
   -webkit-transform: rotate(-45deg) !important;
           transform: rotate(-45deg) !important;
 }
 .profile__icon .icon {
   cursor: pointer;
+  font-size: 2.2rem;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .profile__icon .icon::before {
   color: #b1b1b1;
-  font-size: 22px;
   font-weight: bolder;
   display: block;
-  -webkit-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s;
 }
-
 .order-status:not(:last-child) {
   border-bottom: 1px solid #a5a5a5;
 }

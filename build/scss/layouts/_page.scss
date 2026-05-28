@@ -92,7 +92,54 @@
     }
   }
 }
+//*  -------------------------- [ user-order ] ---------------------------------
+.user-order {
+  @include screen-992 {
+    .profile__line {
+      justify-content: start;
+      gap: 3rem;
+    }
+  }
+}
 
+//*  ---------------------- [ personal-account ] -------------------------------
+.personal-account {
+  .select {
+    &__input {
+      text-overflow: ellipsis;
+      width: 100%;
+      font-size: 12px;
+      line-height: 110%;
+      white-space: wrap;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: keep-all;
+      max-width: 320px;
+    }
+  }
+
+  // .profile__body
+  .profile__body {
+    @include screen-992 {
+      margin-bottom: 4rem;
+      justify-content: start;
+      justify-items: start;
+    }
+
+    @include screen-490 {
+      column-gap: 30px;
+      margin: 0 -15px 4rem;
+    }
+  }
+
+  .profile__line {
+    @include screen-992 {
+      align-items: start;
+    }
+  }
+}
+
+//*  ----------------------- [ exchange-page ] ---------------------------------
 .exchange {
   .repair-status__info-block {
     @include screen-490 {

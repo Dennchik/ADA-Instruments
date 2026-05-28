@@ -341,192 +341,196 @@
 				<div class="acccount-section__column">
 					<div class="acccount-section__tabs">
 						<!-- ! --------------------------[ TAB - Личный кабинет ] -------------------------- -->
-						<div class="acccount-section__tab-content inner-content user-account">
-							<!-- * -->
+						<div class="acccount-section__tab-content inner-content">
 							<div class="acccount-content">
 								<div class="acccount-content__body">
-									<div class="acccount-content__header">
-										<div class="acccount-content__title">
-											<h2 class="font_clamp_50">Личный кабинет</h2>
+									<!-- * content__column - 1 -->
+									<div class="acccount-content__column bp-1">
+										<div class="acccount-content__header">
+											<div class="acccount-content__title">
+												<h2 class="font_clamp_50">Личный кабинет</h2>
+											</div>
 										</div>
-									</div>
-									<form class="form-user" id="orderForm">
-										<div class="form-user__wrapp-group bp-1">
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!--* ФИО -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="fullname">ФИО</label>
-													<input class="form-user__input" type="text" id="fullname" name="fullname"
-														placeholder="Иванов Иван Иванович" value="">
-												</div>
-												<!--* Дата рождения -->
-												<div class="form-user__group">
-													<label class="form-user__label text-right" for="birthdate">Дата рождения</label>
-													<input class="form-user__input text-right" type="date" id="birthdate" name="birthdate">
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<!-- * [ FORM ] -->
-											<div class="form-user__line">
-												<!--* Пол (радиокнопки) -->
-												<div class="form-user__group">
-													<span class="form-user__label">Пол</span>
-													<div class="radio-group">
-														<label class="radio-group__item">
-															<input class="radio-group__input" type="radio" name="gender" value="male" required>
-															<span class="radio-group__label">Мужской</span>
-														</label>
-														<label class="radio-group__item">
-															<input class="radio-group__input" type="radio" name="gender" value="female" required>
-															<span class="radio-group__label">Женский</span>
-														</label>
-													</div>
-												</div>
-
-												<!--* Город -->
-												<div class="form-user__group">
-													<label class="form-user__label text-right" for="city">Город *</label>
-													<input class="form-user__input text-right" type="text" id="city" name="city"
-														placeholder="Москва" required>
-												</div>
-											</div>
-											<!-- * [ / FORM ] -->
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Email -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="email">Email</label>
-													<input class="form-user__input" type="email" id="email" name="email" autocomplete="email"
-														placeholder="example@mail.ru" required>
-												</div>
-												<!--* Телефон -->
-												<div class="form-user__group">
-
-													<label class="form-user__label text-right" for="phone">Телефон</label>
+										<form class="form-user" id="orderForm">
+											<div class="form-user__wrapp-group">
+												<!--* ------------------ Line ------------------------- -->
+												<div class="form-user__line">
+													<!--* ФИО -->
 													<div class="form-user__group">
-														<input class="form-user__input text-right mask-phone" type="tel" id="phone" name="phone"
-															autocomplete="tel" placeholder="+7 (999) 123-45-67" required="">
+														<label class="form-user__label" for="fullname">ФИО</label>
+														<input class="form-user__input" type="text" id="fullname" name="fullname"
+															placeholder="Иванов Иван Иванович" value="">
+													</div>
+													<!--* Дата рождения -->
+													<div class="form-user__group">
+														<label class="form-user__label text-right" for="birthdate">Дата рождения</label>
+														<input class="form-user__input text-right" type="date" id="birthdate" name="birthdate">
 													</div>
 												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Адрес доставки -->
-												<div class="form-user__group">
-													<label class="form-user__label" for="address">Адрес доставки *</label>
-													<input class="form-user__input" type="text" id="address" name="address" autocomplete="address"
-														placeholder="ул. Пушкина, д. 10, кв. 5" required>
-												</div>
-											</div>
-											<!--* ------------------ Line ------------------------- -->
-											<div class="form-user__line">
-												<!-- Способ доставки (радиокнопки) -->
-												<div class="form-user__group _delivery">
-													<span class="form-user__label">Способ доставки</span>
-													<div class="radio-group">
-														<div class="radio-group__line">
+												<!--* ------------------ Line ------------------------- -->
+												<!-- * [ FORM ] -->
+												<div class="form-user__line">
+													<!--* Пол (радиокнопки) -->
+													<div class="form-user__group">
+														<span class="form-user__label">Пол</span>
+														<div class="radio-group">
 															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="cdek" required>
-																<span class="radio-group__label">СДЭК</span>
+																<input class="radio-group__input" type="radio" name="gender" value="male" required>
+																<span class="radio-group__label">Мужской</span>
 															</label>
 															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pvz" required>
-																<span class="radio-group__label">ПВЗ</span>
-															</label>
-														</div>
-
-														<div class="radio-group__line">
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="yandex" required>
-																<span class="radio-group__label">Яндекс Доставка</span>
-															</label>
-															<label class="radio-group__item">
-																<input class="radio-group__input" type="radio" name="delivery" value="pochta" required>
-																<span class="radio-group__label">Почта России</span>
+																<input class="radio-group__input" type="radio" name="gender" value="female" required>
+																<span class="radio-group__label">Женский</span>
 															</label>
 														</div>
 													</div>
+
+													<!--* Город -->
+													<div class="form-user__group">
+														<label class="form-user__label text-right" for="city">Город *</label>
+														<input class="form-user__input text-right" type="text" id="city" name="city"
+															placeholder="Москва" required>
+													</div>
 												</div>
-												<!--* Кнопка Сохранить -->
-												<div class="form-user__group">
-													<button class="form-user__button dark_button" type="submit">Сохранить</button>
+												<!-- * [ / FORM ] -->
+												<!--* ------------------ Line ------------------------- -->
+												<div class="form-user__line">
+													<!-- Email -->
+													<div class="form-user__group">
+														<label class="form-user__label" for="email">Email</label>
+														<input class="form-user__input" type="email" id="email" name="email" autocomplete="email"
+															placeholder="example@mail.ru" required>
+													</div>
+													<!--* Телефон -->
+													<div class="form-user__group">
+
+														<label class="form-user__label text-right" for="phone">Телефон</label>
+														<div class="form-user__group">
+															<input class="form-user__input text-right mask-phone" type="tel" id="phone" name="phone"
+																autocomplete="tel" placeholder="+7 (999) 123-45-67" required="">
+														</div>
+													</div>
 												</div>
+												<!--* ------------------ Line ------------------------- -->
+												<div class="form-user__line">
+													<!-- Адрес доставки -->
+													<div class="form-user__group">
+														<label class="form-user__label" for="address">Адрес доставки *</label>
+														<input class="form-user__input" type="text" id="address" name="address"
+															autocomplete="address" placeholder="ул. Пушкина, д. 10, кв. 5" required>
+													</div>
+												</div>
+												<!--* ------------------ Line ------------------------- -->
+												<div class="form-user__line">
+													<!-- Способ доставки (радиокнопки) -->
+													<div class="form-user__group _delivery">
+														<span class="form-user__label">Способ доставки</span>
+														<div class="radio-group">
+															<div class="radio-group__line">
+																<label class="radio-group__item">
+																	<input class="radio-group__input" type="radio" name="delivery" value="cdek" required>
+																	<span class="radio-group__label">СДЭК</span>
+																</label>
+																<label class="radio-group__item">
+																	<input class="radio-group__input" type="radio" name="delivery" value="pvz" required>
+																	<span class="radio-group__label">ПВЗ</span>
+																</label>
+															</div>
+
+															<div class="radio-group__line">
+																<label class="radio-group__item">
+																	<input class="radio-group__input" type="radio" name="delivery" value="yandex"
+																		required>
+																	<span class="radio-group__label">Яндекс Доставка</span>
+																</label>
+																<label class="radio-group__item">
+																	<input class="radio-group__input" type="radio" name="delivery" value="pochta"
+																		required>
+																	<span class="radio-group__label">Почта России</span>
+																</label>
+															</div>
+														</div>
+													</div>
+													<!--* Кнопка Сохранить -->
+													<div class="form-user__group">
+														<button class="form-user__button dark_button" type="submit">Сохранить</button>
+													</div>
 
 
+												</div>
 											</div>
-										</div>
-									</form>
-									<!-- * -->
-								</div>
-							</div>
-							<!-- * -->
-							<div class="aside-menu-right transparent-right" data-da="bp-1" data-da-position="0"
-								data-da-resolution="991">
-								<div class="profile">
-									<div class="profile__body">
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link add-phone">
-												<div class="profile__item">Добавить телефон</div>
-												<div class="profile__icon">
-													<i class="icofont-close icon"></i>
-												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a href="#" class="profile__link add-phone">
+										</form>
+									</div>
+									<!-- * content__column - 2 -->
+									<div class="acccount-content__column">
+										<div class="aside-menu-right transparent-right" data-da="bp-1" data-da-position="1"
+											data-da-resolution="991">
+											<div class="profile">
+												<div class="profile__body">
+													<!-- * -->
+													<div class="profile__line">
+														<button type="button" class="profile__link add-phone">
+															<div class="profile__item">Добавить телефон</div>
+															<div class="profile__icon">
+																<i class="icofont-close icon"></i>
+															</div>
+														</button>
+														<!-- todo (ссылка) -->
+														<!-- <a href="#" class="profile__link add-phone">
 																					<div class="profile__item">Добавить телефон</div>
 																					<div class="profile__icon" id="add-tel">
 																						<i class="icofont-close icon" id="add-button"></i>
 																					</div>
 																				</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link">
-												<div class="profile__item">Изменить пароль</div>
-												<div class="profile__icon">
-													<i class="icofont-unlock icon" id="edit button"></i>
-												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a href="#" class="profile__link">
+													</div>
+													<!-- * -->
+													<div class="profile__line">
+														<button type="button" class="profile__link">
+															<div class="profile__item">Изменить пароль</div>
+															<div class="profile__icon">
+																<i class="icofont-unlock icon" id="edit button"></i>
+															</div>
+														</button>
+														<!-- todo (ссылка) -->
+														<!-- <a href="#" class="profile__link">
 																					<div class="profile__item">Изменить пароль</div>
 																					<div class="profile__icon">
 																						<i class="icofont-unlock icon" id="edit button"></i>
 																					</div>
 																				</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<button type="button" class="profile__link">
-												<div class="profile__item">Удалить аккаунт</div>
-												<div class="profile__icon delete-button">
-													<i class="icofont-close icon"></i>
-												</div>
-											</button>
-											<!-- todo (ссылка) -->
-											<!-- <a class="profile__link">
+													</div>
+													<!-- * -->
+													<div class="profile__line">
+														<button type="button" class="profile__link">
+															<div class="profile__item">Удалить аккаунт</div>
+															<div class="profile__icon delete-button">
+																<i class="icofont-close icon"></i>
+															</div>
+														</button>
+														<!-- todo (ссылка) -->
+														<!-- <a class="profile__link">
 												<div class="profile__item">Удалить аккаунт</div>
 												<div class="profile__icon delete-button">
 													<i class="icofont-close icon"></i>
 												</div>
 											</a> -->
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<!-- todo (только-ссылка) -->
-											<a href="#" class="profile__link">
-												<div class="profile__item">Выход</div>
-												<div class="profile__icon">
-													<i class="icofont-long-arrow-right icon"></i>
+													</div>
+													<!-- * -->
+													<div class="profile__line">
+														<!-- todo (только-ссылка) -->
+														<a href="#" class="profile__link">
+															<div class="profile__item">Выход</div>
+															<div class="profile__icon">
+																<i class="icofont-long-arrow-right icon"></i>
+															</div>
+														</a>
+													</div>
 												</div>
-											</a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- * -->
 						</div>
 					</div>
 				</div>

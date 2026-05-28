@@ -6,7 +6,7 @@
   // .acccount-content__body
   &__body {
     display: grid;
-    grid-template-columns: minmax(430px, 1fr) minmax(220px, 313px);
+    grid-template-columns: minmax(410px, 1fr) minmax(240px, 313px);
     gap: 6rem;
 
     @include screen-1376 {
@@ -30,6 +30,7 @@
         grid-column: 1 / 2;
       }
     }
+
     &:nth-child(2) {
       @include screen-992 {
         grid-column: 1 / 2;

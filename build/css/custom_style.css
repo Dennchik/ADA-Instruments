@@ -2613,7 +2613,7 @@
 }
 
 .section_form_body {
-  padding: 75px 40px;
+  padding: 7.5rem 4rem;
   background: transparent url("../img/fon_form.png") center center/cover no-repeat;
   -o-object-fit: cover;
      object-fit: cover;

@@ -3,10 +3,11 @@
 //* ------------------------ [ Profile-section ]--------------------------------
 .profile {
   height: 100%;
+
   // .profile__body
   &__body {
     background-color: var(--background-fon);
-    padding: 60px 4rem;
+    padding: 6rem 4rem;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
@@ -19,22 +20,15 @@
 
     @include screen-992 {
       border: none;
+      padding: 24px 15px;
+    }
+
+    @include screen-840 {
+      margin-top: 0;
     }
 
     @include screen-375 {
       gap: 20px;
-
-      .icon {
-        display: flex;
-        align-items: center;
-        &::before {
-          width: 11px;
-          height: 11px;
-          display: flex;
-          align-items: center;
-          font-size: 13px !important;
-        }
-      }
     }
   }
 
@@ -109,6 +103,12 @@
     text-align: left;
     gap: 5px;
 
+    @include screen-992 {
+      display: grid;
+      grid-template-columns: minmax(190px, 250px) auto;
+      gap: 3rem;
+    }
+
     &.add-phone {
       .icofont-close {
         transform: rotate(-45deg);
@@ -147,10 +147,6 @@
     @include screen-840 {
       font-size: 14px;
     }
-
-    @include screen-490 {
-      font-size: 12px;
-    }
   }
 
   // .profile__icon
@@ -163,13 +159,18 @@
 
     .icon {
       cursor: pointer;
+      font-size: 2.2rem;
+      transition: all 0.4s ease 0s;
+      display: flex;
+      align-items: center;
 
       &::before {
         color: #b1b1b1;
-        font-size: 22px;
         font-weight: bolder;
         display: block;
-        transition: all 0.4s ease 0s;
+      }
+
+      @include screen-690 {
       }
     }
   }

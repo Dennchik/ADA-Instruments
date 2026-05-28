@@ -465,6 +465,7 @@
     display: block;
   }
 }
+
 //* -----------------------[ categiries-servise ]-------------------------------
 .categiries-servise {
   // .categiries-servise__body
@@ -814,22 +815,6 @@
           line-height: 120%; /* Увеличиваем межстрочный интервал */
         }
       }
-
-      //*.profile
-      .profile {
-        @include screen-840 {
-          margin-top: 0;
-        }
-
-        // .profile__body
-        &__body {
-          position: relative;
-
-          @include screen-992 {
-            padding: 24px 15px;
-          }
-        }
-      }
     }
 
     //* .profile-user
@@ -928,8 +913,6 @@
 
       //*.profile
       .profile {
-        margin-top: -60px;
-
         @include screen-840 {
           margin-top: 0;
         }
@@ -945,7 +928,6 @@
 
         // .profile__btn-home
         &__btn-home {
-          margin-top: 90px;
           display: flex;
           justify-content: flex-end;
 
@@ -1253,35 +1235,6 @@
   }
 }
 
-//*  ---------------------- [ personal-account ]--------------------------------
-.personal-account {
-  .select {
-    &__input {
-      text-overflow: ellipsis;
-      width: 100%;
-      font-size: 12px;
-      line-height: 110%;
-      white-space: wrap;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      word-break: keep-all;
-      max-width: 320px;
-    }
-  }
-  // .profile__body
-  .profile__body {
-    @include screen-992 {
-      padding: 0 0 20px 0;
-      justify-content: start;
-      justify-items: start;
-    }
-
-    @include screen-490 {
-      column-gap: 30px;
-    }
-  }
-}
-
 //* -----------------------[ categiries-content ]-------------------------------
 .categiries-content {
   display: grid;
@@ -1581,7 +1534,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 50px;
+    gap: 5rem;
+
+    @include screen-992 {
+      gap: 0;
+    }
 
     @include screen-840 {
       gap: 0 15px;
@@ -1599,7 +1556,7 @@
     gap: 10px;
 
     @include screen-992 {
-      padding: 15px;
+      padding: 24px 15px;
       background-color: var(--background-fon);
     }
 
