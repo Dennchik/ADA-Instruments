@@ -392,8 +392,8 @@
         <!-- * --------------- [ footer_menu_desk ] -------------------------- -->
         <div class="d-none d-lg-block">
           <ul class="footer__menu-desk">
-            <li>
-              <a class="footer__menu-list" href="#">ПОДДЕРЖКА</a>
+            <li class="feedback-button">
+              <span class="footer__menu-list">ПОДДЕРЖКА</span>
             </li>
             <li>
               <a class="footer__menu-list" href="./about.html">о компании</a>
@@ -407,7 +407,7 @@
                 <!-- * -->
                 <div class="col-4">
                   <ul>
-                    <li><a href="#">Лазерные дальномеры</a></li>
+                    <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
                     <li><a href="#">Лазерные уровни</a></li>
                     <li><a href="#">Ротационные нивелиры</a></li>
                     <li><a href="#">Оптические нивелиры</a></li>
@@ -441,24 +441,24 @@
         <!-- * --------------- [ footer_menu_mob ] --------------------------- -->
         <div class="d-block d-lg-none">
           <ul class="footer__menu-mob">
-            <li>
-              <a href="#"><span>поддержка</span></a>
+            <li class="feedback-button">
+              <span>поддержка</span>
             </li>
             <li>
               <a href="./about.html"><span>о компании</span></a>
             </li>
             <li class="footer__has-child">
-              <div class="footer__open-child-list" id="open__child-list">
+              <a class="footer__open-child-list" id="open__child-list">
                 <span>продукция</span>
                 <i class="icofont-thin-down"></i>
-              </div>
+              </a>
             </li>
             <li>
               <a href="./contact.html"><span>контакты</span></a>
             </li>
           </ul>
           <div class="footer__sub-menu footer_menu_mob_submenu'">
-            <a class="footer_menu_mob_list flex-nowrap pt-3">
+            <div class="footer_menu_mob_list flex-nowrap pt-3">
               <ul class="fmb_list">
                 <li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
                 <li><a href="#">Лазерные уровни</a></li>
@@ -478,7 +478,7 @@
                 <li><a href="#">Мотобуры</a></li>
               </ul>
               <!-- * -->
-            </a>
+            </div>
           </div>
         </div>
         <div class="footer__contact">
@@ -616,6 +616,72 @@
     </div>
   </div>
 
+  <!-- * MODAL Форма обратной связи -->
+  <div class="modal-feedback">
+    <div class="modal-feedback__body">
+      <!-- * -->
+      <div class="modal-feedback__header">
+        <div class="modal-feedback__logo">
+          <div class="logo"></div>
+        </div>
+        <span>Обратная связь</span>
+        <div class="modal-feedback__close-button close-button">
+          <i class="icofont-close icon"></i>
+        </div>
+
+
+      </div>
+      <!-- * -->
+      <div class="modal-feedback__text">
+        В данном обращении вы можете оставить свои пожелания и предложения по улучшению нашего сайта.
+      </div>
+      <!-- * -->
+      <div class="modal-feedback__form">
+        <form action="#" method="post" class="feedback-form" id="feedback-form">
+          <fieldset class="feedback-form__form-group">
+            <textarea class="feedback-form__textarea" name="text_guest" placeholder="Текст сообщения..."></textarea>
+          </fieldset>
+
+          <fieldset class="feedback-form__form-group">
+            <label class="feedback-form__label">
+              <input type="text" name="name_guest" placeholder="ФИО" required autocomplete="phone">
+            </label>
+          </fieldset>
+          <!-- * -->
+          <fieldset class="feedback-form__form-group">
+            <label class="feedback-form__label">
+              <input type="phone" name="phone" placeholder="Телефон" required autocomplete="phone" class="mask-phone">
+            </label>
+          </fieldset>
+          <!-- * -->
+          <fieldset class="feedback-form__form-group">
+            <label class="feedback-form__label">
+              <input class="feedback-form__input" type="email" name="email" autocomplete="email"
+                placeholder="example@mail.ru" required>
+            </label>
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="feedback-form__title">
+        Помогите нам стать лучше!
+      </div>
+
+      <div class="feedback-form__politic">
+        Нажимая на кнопку "Отправить", я соглашаюсь с условиями <a href="#">политики конфиденциальности</a> и <a
+          href="#">пользовательского соглашения</a>.
+      </div>
+
+      <div class="feedback-form__button">
+        <div class="send-button">
+          <button form="feedback-form" class="send-button__button red_button mt-4 w-400"
+            type="submit">ОТПРАВИТЬ</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </body>
 
 </html>

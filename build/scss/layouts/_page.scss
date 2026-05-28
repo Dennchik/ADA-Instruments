@@ -123,7 +123,25 @@
     }
   }
 }
+//* ----------------------------------------------------------------------------
+.page {
+  &__section-wow {
+    padding-bottom: 7.5rem;
 
+    @include screen-490 {
+      padding-bottom: 45px;
+    }
+  }
+}
+
+.page {
+  .page__section {
+    padding-block: 6rem 7.5rem;
+    @include screen-490 {
+      padding-block: 35px 45px;
+    }
+  }
+}
 //* ----------------------------------------------------------------------------
 .return-exchange {
   .categiries-servise__column {

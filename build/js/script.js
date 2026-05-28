@@ -522,7 +522,7 @@ jQuery('document').ready(function () {
       slidesToShow: 4,
       slidesToScroll: 1,
       asNavFor: '.tovar_slider',
-      dots: false, // включаем стандартные точки (потом переделаем)
+      dots: false,
       prevArrow: '<div class="prev"><i class="icofont-thin-left"></i></div>',
       nextArrow: '<div class="next"><i class="icofont-thin-right"></i></div>',
       focusOnSelect: true,
