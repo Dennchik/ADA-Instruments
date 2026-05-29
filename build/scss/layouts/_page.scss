@@ -95,16 +95,13 @@
 }
 //*  ------------------------ [ documents-forms ] ------------------------------
 .inner-content {
-  @include screen-840 {
+  @include screen-992 {
     .acccount-content__column {
       &:nth-child(2) {
         display: none;
       }
     }
-  }
-}
-.documents-forms {
-  @include screen-840 {
+
     .aside-menu-right {
       margin-bottom: 3rem;
     }
@@ -124,6 +121,7 @@
     }
   }
 }
+
 //*  -------------------------- [ user-order ] ---------------------------------
 .user-order {
   @include screen-992 {

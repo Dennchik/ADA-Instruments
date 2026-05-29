@@ -2969,26 +2969,23 @@ header .top_menu > li > a {
   }
 }
 
-@media screen and (width < 840px) {
+@media screen and (width < 992px) {
   .inner-content .acccount-content__column:nth-child(2) {
     display: none;
   }
-}
-
-@media screen and (width < 840px) {
-  .documents-forms .aside-menu-right {
+  .inner-content .aside-menu-right {
     margin-bottom: 3rem;
   }
-  .documents-forms .blanck-doc {
+  .inner-content .blanck-doc {
     background: var(--background-fon);
     padding: 24px;
   }
 }
 @media screen and (width < 490px) {
-  .documents-forms .profile {
+  .inner-content .profile {
     margin: 0 -15px;
   }
-  .documents-forms .blanck-doc {
+  .inner-content .blanck-doc {
     margin: 0 -15px;
     padding: 24px 15px;
   }
@@ -6085,7 +6082,7 @@ header .top_menu > li > a {
   font-weight: 700;
   padding-block: 4rem 2rem;
 }
-@media screen and (width < 840px) {
+@media screen and (width < 992px) {
   .blanck-doc__title {
     -webkit-padding-before: 0;
             padding-block-start: 0;
@@ -6162,7 +6159,7 @@ header .top_menu > li > a {
   width: 50px;
 }
 .blanck-doc__link span .icofont-download {
-  font-size: 20px;
+  font-size: 2rem;
   color: inherit;
 }
 .blanck-doc__wrapper {

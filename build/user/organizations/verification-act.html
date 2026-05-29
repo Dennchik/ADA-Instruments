@@ -315,8 +315,8 @@
 		<!-- * -------------------- [ Acccount-section ] --------------------------- -->
 		<section class="acccount-section container wow fadeInDown">
 			<div class="acccount-section__body">
-				<!-- * Column-1 ---------- [ Side Menu ] ------------------------------- -->
-				<div class="acccount-section__column aside-menu-l">
+				<!-- * Column-1 ------- [ Aside Menu Left ] ---------------------------- -->
+				<aside class="acccount-section__column aside-menu-l">
 					<div class="side-menu" data-da="bp-2" data-da-position="last" data-da-resolution="839">
 						<!-- * [ MENU -LEFT ] -->
 						<ul class="side-menu__list">
@@ -349,117 +349,111 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</aside>
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
 					<form action="#" method="#" class="acccount-section__tabs">
-						<!-- ! -------------------[ TAB - Организация ] ------------------------- -->
-						<div class="acccount-section__tab-content">
-							<!-- * -->
+						<!-- ! ----[ TAB - Акты сверок Взаиморасчетов ] -------------------- -->
+						<div class="acccount-section__tab-content inner-content">
 							<div class="acccount-content">
 								<div class="acccount-content__body">
-									<!-- * content__row - 1 (Заголовок) ----------------------------- -->
-									<div class="acccount-content__row">
-										<div class="acccount-content__header">
-											<div class="acccount-content__title">
-												<h2 class="font_clamp_50">Мои организации</h2>
+									<!-- * Content-column - 1 -->
+									<div class="acccount-content__column bp-1">
+										<!-- * content__row - 1 (Заголовок) ----------------------------- -->
+										<div class="acccount-content__row">
+											<div class="acccount-content__header">
+												<div class="acccount-content__title">
+													<h2 class="font_clamp_50">Мои организации</h2>
+												</div>
+												<a href="./reports.html" class="acccount-content__return-button">
+													<i class="icofont-long-arrow-left icon"></i>
+													<span>назад</span>
+												</a>
 											</div>
 										</div>
-										<a href="./reports.html" class="acccount-content__return-button">
-											<i class="icofont-long-arrow-left icon"></i>
-											<span>назад</span>
-										</a>
-									</div>
-									<div class="acccount-content__row bp-8"></div>
-									<!-- * -->
-									<div class="acccount-content__row">
-										<div class="organization-info">
-											<div class="organization-info__item">
-												<div class="organization-info__title font_clamp_30">
-													Акты сверки взаиморасчётов
-												</div>
-
-												<div class="organization-info__line">
-													<div class="profile">
-														<div class="select-group" data-select>
-															<div class="select-group__dropdown">
-																<div class="select">
-
-																	<div class="profile__title select__button">
-																		<span>Покупатель</span>
-																		<i class="icofont-rounded-right"></i>
-																	</div>
-
-																	<textarea type="text" class="select__input" id="deliveryMethod1"
-																		name="delivery_method" value="Иванов Иван Иванович" readonly> </textarea>
-
-																	<div class="select__drop-down _collapse">
-																		<div class="select__d-title">
-																			<span>Все</span>
-																			<div class="close-button">
-																				<i class="icofont-close"></i>
-																			</div>
+										<!-- * Акты сверок Взаиморасчетов -->
+										<div class="acccount-content__row">
+											<div class="organization-info">
+												<div class="organization-info__item">
+													<div class="organization-info__title font_clamp_30">
+														Акты сверки взаиморасчётов
+													</div>
+													<div class="organization-info__line">
+														<div class="profile">
+															<div class="select-group" data-select>
+																<div class="select-group__dropdown">
+																	<div class="select">
+																		<div class="profile__title select__button">
+																			<span>Покупатель</span>
+																			<i class="icofont-rounded-right"></i>
 																		</div>
-																		<ul class="select__list">
-																			<li class="select__list-item _selected" value="Иванов Иван Иванович">Иванов Иван
-																				Иванович
-																			</li>
-																			<li class="select__list-item" value="">Индивидуальны предприниматель
-																				Степанов&nbsp;Степан&nbsp;Степанович ИНН&nbsp;402705559022
-																			</li>
-																			<li class="select__list-item" value="">Индивидуальны предприниматель
-																				Степанов&nbsp;Степан&nbsp;Степанович ИНН&nbsp;402705559022
-																			</li>
-																		</ul>
+																		<textarea type="text" class="select__input" id="deliveryMethod1"
+																			name="delivery_method" value="Иванов Иван Иванович" readonly> </textarea>
+																		<div class="select__drop-down _collapse">
+																			<div class="select__d-title">
+																				<span>Все</span>
+																				<div class="close-button">
+																					<i class="icofont-close"></i>
+																				</div>
+																			</div>
+																			<ul class="select__list">
+																				<li class="select__list-item _selected" value="Иванов Иван Иванович">Иванов Иван
+																					Иванович
+																				</li>
+																				<li class="select__list-item" value="">Индивидуальны предприниматель
+																					Степанов&nbsp;Степан&nbsp;Степанович ИНН&nbsp;402705559022
+																				</li>
+																				<li class="select__list-item" value="">Индивидуальны предприниматель
+																					Степанов&nbsp;Степан&nbsp;Степанович ИНН&nbsp;402705559022
+																				</li>
+																			</ul>
+																		</div>
 																	</div>
 																</div>
-															</div><!-- * -->
-
+															</div>
 														</div>
 													</div>
 												</div>
-
 											</div>
 										</div>
-
 									</div>
-									<!-- * -->
-
+									<!-- * Content-column - 2 (Aside menu right) -->
+									<div class="acccount-content__column">
+										<div class="aside-menu-right transparent-right" data-da="bp-8" data-da-position="0"
+											data-da-resolution="991">
+											<div class="profile">
+												<div class="profile__body">
+													<!-- * -->
+													<div class="profile__line">
+														<a href="./load-doc.html" class="profile__link">
+															<div class="profile__item">Отгрузочные документы</div>
+														</a>
+													</div>
+													<!-- * -->
+													<div class="profile__line">
+														<a href="./reports.html" class="profile__link active-link">
+															<div class="profile__item">Акты сверок</div>
+														</a>
+													</div>
+													<!-- * -->
+													<div class="profile__line">
+														<a href="./documents-forms.html" class="profile__link">
+															<div class="profile__item">Уставные документы и бланки</div>
+														</a>
+													</div>
+													<!-- * -->
+													<div class="profile__line">
+														<a href="" class="profile__link">
+															<div class="profile__item">Оригинальные документы</div>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
-
 							<!-- * -->
-							<div class="aside-menu-right transparent-right" data-da="bp-8" data-da-position="0"
-								data-da-resolution="991">
-								<div class="profile">
-									<div class="profile__body">
-										<!-- * -->
-										<div class="profile__line">
-											<a href="./load-doc.html" class="profile__link">
-												<div class="profile__item">Отгрузочные документы</div>
-											</a>
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<a href="./reports.html" class="profile__link active-link">
-												<div class="profile__item">Акты сверок</div>
-											</a>
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<a href="./documents-forms.html" class="profile__link">
-												<div class="profile__item">Уставные документы и бланки</div>
-											</a>
-										</div>
-										<!-- * -->
-										<div class="profile__line">
-											<a href="" class="profile__link">
-												<div class="profile__item">Оригинальные документы</div>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
 							<div class="acccount-section__footer">
 								<div class="choice-block">
 									<div class="choice-block__checked">
@@ -512,8 +506,6 @@
 
 
 							</div>
-
-							<!-- * -->
 						</div>
 					</form>
 				</div>
@@ -829,61 +821,6 @@
 			</div>
 
 
-		</div>
-	</div>
-
-	<!-- * MODAL: Причина отказа  -->
-	<div class="modal-rejection" id="rejectModal">
-		<div class="modal-rejection__body">
-			<div class="modal-rejection__header">
-				<h3 class="modal-rejection__title">Причина отмены заказа</h3>
-				<span class="modal-rejection__close" id="closeModalBtn" type="button">
-					<i class="icofont-close"></i>
-				</span>
-			</div>
-			<div class="modal-rejection__content">
-				<form class="modal-rejection__form" id="rejectForm">
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Меняю адрес доставки">
-						<span class="modal-rejection__radio-text">Меняю адрес доставки</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Убираю/добавляю позиции">
-						<span class="modal-rejection__radio-text">Убираю/добавляю позиции</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Проблема с оплатой">
-						<span class="modal-rejection__radio-text">Проблема с оплатой</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="В другом магазине дешевле">
-						<span class="modal-rejection__radio-text">В другом магазине дешевле</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason"
-							value="В другом магазине доставка быстрее">
-						<span class="modal-rejection__radio-text">В другом магазине доставка быстрее</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Заказ больше не актуален">
-						<span class="modal-rejection__radio-text">Заказ больше не актуален</span>
-					</label>
-					<label class="modal-rejection__radio">
-						<input class="modal-rejection__radio-input" type="radio" name="reason" value="Другая причина">
-						<span class="modal-rejection__radio-text">Другая причина</span>
-					</label>
-
-					<div class="modal-rejection__field">
-						<textarea class="modal-rejection__textarea" id="otherReason" rows="3"
-							placeholder="Укажите причину отмены заказа..."></textarea>
-					</div>
-				</form>
-			</div>
-			<div class="modal-rejection__footer">
-				<button class="modal-rejection__btn red_button" id="submitBtn" type="button" form="rejectForm">
-					<span>Отменить заказ</span>
-				</button>
-			</div>
 		</div>
 	</div>
 

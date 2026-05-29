@@ -84,7 +84,7 @@
     font-weight: 700;
     padding-block: 4rem 2rem;
 
-    @include screen-840 {
+    @include screen-992 {
       padding-block-start: 0;
     }
   }
@@ -149,7 +149,7 @@
       }
 
       .icofont-download {
-        font-size: 20px;
+        font-size: 2rem;
         color: inherit;
       }
     }
