@@ -82,3 +82,136 @@
     }
   }
 }
+//* ----------------------------------------------------------------------------
+.footer-content {
+  // .footer-content__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4rem;
+  }
+  // .footer-content__line
+  &__line {
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(3) {
+      align-items: flex-start;
+      gap: 5rem;
+      flex-direction: row;
+
+      @include screen-520 {
+        gap: 2.4rem;
+      }
+
+      @include screen-490 {
+        flex-direction: column;
+      }
+    }
+
+    &:nth-child(4) {
+      align-items: flex-end;
+
+      @include screen-490 {
+        align-items: start;
+      }
+    }
+  }
+
+  // .footer-content__title
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+
+    @include screen-690 {
+      font-size: 16px;
+    }
+  }
+
+  // .footer-content__text
+  &__text {
+    @include screen-690 {
+      font-size: 14px;
+    }
+
+    @include screen-490 {
+      font-size: 12px;
+    }
+  }
+
+  // footer-content__input
+  &__input {
+    width: 100%;
+    max-width: 320px;
+    height: 35px;
+    border: 1px solid #a5a5a5;
+    font-size: 14px;
+    padding: 5px 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+
+  // .footer-content__add-order
+  &__add-order {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 450;
+
+    .icofont-plus {
+      transition: color 0.3s ease-in-out;
+      font-size: 2rem;
+      color: #a5a5a5;
+    }
+
+    span {
+      display: block;
+      transition: color 0.3s ease-in-out;
+      line-height: 110%;
+      white-space: nowrap;
+
+      @include screen-1376 {
+        font-size: 14px;
+      }
+    }
+
+    &:hover {
+      color: var(--danger);
+      .icofont-plus {
+        color: var(--danger);
+      }
+    }
+  }
+
+  // .footer-content__cheked
+  &__cheked {
+    display: flex;
+    align-items: center;
+  }
+
+  // .footer-content__button
+  &__button {
+    display: inline-block;
+    width: auto;
+
+    @include screen-425 {
+      width: 100%;
+
+      .send-button__button {
+        width: 100%;
+      }
+    }
+  }
+}

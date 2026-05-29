@@ -23,6 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/media.css">
 
 	<script defer src="../../js/dynamic-adaptive.js"></script>
+	<script defer src="../../js/itsSelect.js"></script>
 	<script defer src="../../js/collapse.js"></script>
 	<script defer src="../../js/jquery.min.js"></script>
 	<script defer src="../../js/jquery.maskedinput.min.js"></script>
@@ -303,10 +304,10 @@
 						<a href="../../personal-account-return-repair.html">Мои организации</a>
 					</li>
 					<li class="tab-button">
-						<a href="../../personal-account-return-repair.html">OOO ККИИТТ</a>
+						<a href="./organization.html">OOO ККИИТТ</a>
 					</li>
 					<li class="tab-button active">
-						<span>Отгрузочные документы</span>
+						<span>Оригинальные документы</span>
 					</li>
 				</ol>
 			</div>
@@ -353,7 +354,7 @@
 				<div class="acccount-section__column">
 					<div class="acccount-section__tabs">
 						<!-- ! -------[ TAB - Отгрузочные документы ] ---------------------- -->
-						<div class="acccount-section__tab-content inner-content">
+						<form action="" method="post" class="acccount-section__tab-content inner-content">
 							<div class="acccount-content">
 								<div class="acccount-content__body">
 									<!-- * Content-column - 1 -->
@@ -370,10 +371,55 @@
 												</a>
 											</div>
 										</div>
+										<div class="acccount-content__row">
+											<div class="organization-info">
+												<div class="organization-info__item">
+													<div class="organization-info__title font_clamp_30">
+														Оригинальные документы
+													</div>
+													<div class="organization-info__line">
+														<div class="profile">
+															<div class="select-group" data-select>
+																<div class="select-group__dropdown">
+																	<div class="select">
+																		<div class="profile__title select__button">
+																			<span>Покупатель</span>
+																			<i class="icofont-rounded-right"></i>
+																		</div>
+																		<textarea type="text" class="select__input" id="deliveryMethod1"
+																			name="delivery_method" value="Иванов Иван Иванович" readonly> </textarea>
+																		<div class="select__drop-down _collapse">
+																			<div class="select__d-title">
+																				<span>Все</span>
+																				<div class="close-button">
+																					<i class="icofont-close"></i>
+																				</div>
+																			</div>
+																			<ul class="select__list">
+																				<li class="select__list-item _selected" value="Иванов Иван Иванович">Иванов Иван
+																					Иванович
+																				</li>
+																				<li class="select__list-item" value="">Индивидуальны предприниматель
+																					Степанов&nbsp;Степан&nbsp;Степанович ИНН&nbsp;402705559022
+																				</li>
+																				<li class="select__list-item" value="">Индивидуальны предприниматель
+																					Степанов&nbsp;Степан&nbsp;Степанович ИНН&nbsp;402705559022
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 									<!-- * Content-column - 2 (Aside menu right) -->
 									<div class="acccount-content__column">
-										<div class="aside-menu-right transparent-right">
+										<div class="aside-menu-right transparent-right" data-da="bp-1" data-da-position="1"
+											data-da-resolution="991">
 											<div class="profile">
 												<div class="profile__body">
 													<!-- * -->
@@ -404,14 +450,50 @@
 											</div>
 										</div>
 									</div>
-									<!-- * Content-column - 3 -->
-									<div class="acccount-content__column">
-										<div class="acccount-content__row">
+								</div>
+							</div>
+							<div class="acccount-section__footer">
+								<div class="footer-content">
+									<div class="footer-content__body">
+										<div class="footer-content__line">
+											<div class="footer-content__title">Заказать документ</div>
+											<div class="footer-content__text">
+												Документ будет отправлен в&nbsp;теччении двух рабочих дней на&nbsp;указанный Emailю Если&nbsp;вы
+												оплачивали несколько заказов по&nbsp;одному счеёту, достаточно ввести номер одного заказа
+												для&nbsp;получения дубля документов.
+											</div>
+										</div>
+										<div class="footer-content__line">
+											<input class="footer-content__input" type="email" id="email" name="email" autocomplete="email"
+												placeholder="Email *" value="" required>
+
+											<input class="footer-content__input" type="text" id="number-doc" placeholder="Номер заказа *">
+										</div>
+										<div class="footer-content__line">
+
+											<div class="footer-content__add-order">
+												<i class="icofont-plus"></i>
+												<span>Добавить номер заказа</span>
+											</div>
+											<div class="footer-content__cheked">
+												<label class="footer-content__item">
+													<input class="radio-group__input" type="checkbox" name="delivery" value="cdek" required="">
+													<span class="radio-group__label">нужен бумажный документ</span>
+												</label>
+											</div>
+
+										</div>
+										<div class="footer-content__line">
+											<div class="footer-content__button order-doc">
+												<div class="send-button">
+													<button class="send-button__button red_button" type="submit">Заказать документ</button>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>

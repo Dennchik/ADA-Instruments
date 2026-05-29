@@ -3142,6 +3142,11 @@ header .top_menu > li > a {
   max-width: 320px;
 }
 @media screen and (width < 992px) {
+  .personal-account .acccount-content__column:nth-child(2) {
+    display: none;
+  }
+}
+@media screen and (width < 992px) {
   .personal-account .profile__body {
     margin-bottom: 4rem;
     -webkit-box-pack: start;
@@ -6838,6 +6843,157 @@ header .top_menu > li > a {
   }
 }
 
+.footer-content__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4rem;
+}
+.footer-content__line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.footer-content__line:nth-child(3) {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 5rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+@media (width < 520px) {
+  .footer-content__line:nth-child(3) {
+    gap: 2.4rem;
+  }
+}
+@media screen and (width < 490px) {
+  .footer-content__line:nth-child(3) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.footer-content__line:nth-child(4) {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+@media screen and (width < 490px) {
+  .footer-content__line:nth-child(4) {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
+.footer-content__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+@media (width < 690px) {
+  .footer-content__title {
+    font-size: 16px;
+  }
+}
+@media (width < 690px) {
+  .footer-content__text {
+    font-size: 14px;
+  }
+}
+@media screen and (width < 490px) {
+  .footer-content__text {
+    font-size: 12px;
+  }
+}
+.footer-content__input {
+  width: 100%;
+  max-width: 320px;
+  height: 35px;
+  border: 1px solid #a5a5a5;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+.footer-content__input:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.footer-content__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.footer-content__add-order {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  font-weight: 450;
+}
+.footer-content__add-order .icofont-plus {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  font-size: 2rem;
+  color: #a5a5a5;
+}
+.footer-content__add-order span {
+  display: block;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  line-height: 110%;
+  white-space: nowrap;
+}
+@media screen and (width < 1376px) {
+  .footer-content__add-order span {
+    font-size: 14px;
+  }
+}
+.footer-content__add-order:hover {
+  color: var(--danger);
+}
+.footer-content__add-order:hover .icofont-plus {
+  color: var(--danger);
+}
+.footer-content__cheked {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer-content__button {
+  display: inline-block;
+  width: auto;
+}
+@media screen and (width < 425px) {
+  .footer-content__button {
+    width: 100%;
+  }
+  .footer-content__button .send-button__button {
+    width: 100%;
+  }
+}
+
 .about-page {
   padding-bottom: 75px;
   margin-bottom: 75px;
@@ -9601,7 +9757,6 @@ header .top_menu > li > a {
   text-align: left;
   color: rgb(0, 0, 0);
   line-height: 100%; /* 17/16 */
-  height: 17px;
 }
 @media screen and (width < 1376px) {
   .radio-group__label {
