@@ -2,6 +2,7 @@
 //* ----------------------------------------------------------------------------
 
 .search-result,
+.documents-forms,
 .work-page {
   .container {
     @include screen-992 {
@@ -89,6 +90,37 @@
     @include screen-490 {
       width: 100%;
       flex: 0 1 100%;
+    }
+  }
+}
+//*  ------------------------ [ documents-forms ] ------------------------------
+.inner-content {
+  @include screen-840 {
+    .acccount-content__column {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}
+.documents-forms {
+  @include screen-840 {
+    .aside-menu-right {
+      margin-bottom: 3rem;
+    }
+    .blanck-doc {
+      background: var(--background-fon);
+      padding: 24px;
+    }
+  }
+
+  @include screen-490 {
+    .profile {
+      margin: 0 -15px;
+    }
+    .blanck-doc {
+      margin: 0 -15px;
+      padding: 24px 15px;
     }
   }
 }

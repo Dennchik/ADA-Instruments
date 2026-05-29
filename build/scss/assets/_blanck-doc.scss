@@ -82,7 +82,11 @@
   // .blanck-doc__title
   &__title {
     font-weight: 700;
-    padding-block: 2rem;
+    padding-block: 4rem 2rem;
+
+    @include screen-840 {
+      padding-block-start: 0;
+    }
   }
 
   &__search-result {
@@ -91,7 +95,6 @@
 
   // .blanck-doc__list
   &__list {
-    // margin-top: -20px;
     display: flex;
     flex-direction: column;
 
@@ -117,6 +120,14 @@
         }
       }
     }
+  }
+
+  // .blanck-doc__link
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 
     span {
       font-weight: 500;
@@ -142,14 +153,6 @@
         color: inherit;
       }
     }
-  }
-
-  // .blanck-doc__link
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
   }
 
   // .blanck-doc__wrapper

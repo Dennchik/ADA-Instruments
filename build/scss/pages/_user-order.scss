@@ -20,15 +20,15 @@
 
     @include screen-992 {
       border: none;
-      padding: 24px 15px;
+      padding: 24px;
     }
 
     @include screen-840 {
       margin-top: 0;
     }
 
-    @include screen-375 {
-      gap: 20px;
+    @include screen-490 {
+      padding: 24px 15px;
     }
   }
 

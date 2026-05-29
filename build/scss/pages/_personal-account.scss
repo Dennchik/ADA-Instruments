@@ -707,9 +707,9 @@
       }
     }
 
-    @include screen-768 {
-      max-width: 540px;
-    }
+    // @include screen-768 {
+    //   max-width: 540px;
+    // }
   }
 
   // .acccount-section__tabs-content
@@ -1430,7 +1430,8 @@
   &__header {
     padding-block-start: 6rem;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     text-transform: uppercase;
     white-space: nowrap;
     margin-bottom: 3rem;
