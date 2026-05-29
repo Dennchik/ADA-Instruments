@@ -24,6 +24,7 @@
 
 	<script defer src="../../js/dynamic-adaptive.js"></script>
 	<script defer src="../../js/collapse.js"></script>
+	<script defer src="../../js/itsSelect.js"></script>
 	<script defer src="../../js/jquery.min.js"></script>
 	<script defer src="../../js/jquery.maskedinput.min.js"></script>
 	<script defer src="../../js/jquery.scrollTo.js"></script>
@@ -40,7 +41,7 @@
 	<script defer src="../../js/script-load.js"></script>
 </head>
 
-<body class="documents-forms">
+<body class="user-order-status">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
@@ -48,49 +49,46 @@
 	<!-- * ------------------------ [ * mobile_menu ] ---------------------------- -->
 	<div class="mobile_menu_wrapp">
 		<div class="menu_close"><i class="icofont-close"></i></div>
-		<div class="mobile_menu_wrapp">
-			<div class="menu_close"><i class="icofont-close"></i></div>
-			<div class="mobile_menu">
-				<div class="mobile_menu_image">
-					<img src="../../img/logo_white.png" alt="logo">
-				</div>
-				<div class="row h-100 no-gutters bp-2">
-					<div class="col">
-						<ul>
-							<li class="slideToggle">
-								<div class="open_menu_wrapper">
-									<a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
-									<i class="icofont-caret-down _toggle-button"></i>
-								</div>
-								<ul class="sub_menu _collapse">
-									<li><a href="../../catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
-									<li><a href="../../catalog/automatic-levels.html">Оптические нивелиры</a></li>
-									<li><a href="../../catalog/theodolites.html">Теодолиты</a></li>
-									<li><a href="../../catalog/pyrometers.html">Пирометры и тепловизоры</a></li>
-									<li><a href="../../catalog/detectors.html">Детекторы </a></li>
-									<li><a href="../../catalog/angle-meters-levels.html">Угломеры и уровни</a></li>
-									<li><a href="../../catalog/measuring-tapes.html">Рулетки</a></li>
-									<li><a href="../../catalog/accessories.html">Аксессуары</a></li>
-									<li><a href="../../catalog/tripods.html">Штативы</a></li>
-									<li><a href="../../catalog/staffs-poles.html">Рейки</a></li>
-									<li><a href="../../catalog/measuring-wheels.html">Измерительные колеса</a></li>
-									<li><a href="../../catalog/line-lasers.html">Лазерные уровни</a></li>
-									<li><a href="../../catalog/rotary-lasers.html">Ротационные нивелиры</a></li>
-									<li><a href="../../catalog/earth-augers.html">Мотобуры</a></li>
-									<li><a href="../../catalog/earth-augers-accessories.html">Аксессуары для мотобуров</a></li>
-								</ul>
-							</li>
-							<li><a href="../../services.html"><span>Сервис</span></a></li>
-							<li><a href="../../about.html"><span>О компании</span></a></li>
-							<li><a href="../../contact.html"><span>Контакты</span></a></li>
-						</ul>
-					</div>
-				</div>
+		<div class="mobile_menu">
+			<div class="mobile_menu_image">
+				<img src="../../img/logo_white.png" alt="logo">
 			</div>
+			<div class="row h-100 no-gutters bp-2">
+				<div class="col">
+					<ul>
+						<li class="slideToggle">
+							<div class="open_menu_wrapper">
+								<a href="./productia.html" class="open_menu_child"><span>Продукция</span></a>
+								<i class="icofont-caret-down _toggle-button"></i>
+							</div>
+							<ul class="sub_menu _collapse">
+								<li><a href="./catalog/laser-distance-meter.html">Лазерные дальномеры</a></li>
+								<li><a href="./catalog/automatic-levels.html">Оптические нивелиры</a></li>
+								<li><a href="./catalog/theodolites.html">Теодолиты</a></li>
+								<li><a href="./catalog/pyrometers.html">Пирометры и тепловизоры</a></li>
+								<li><a href="./catalog/detectors.html">Детекторы </a></li>
+								<li><a href="./catalog/angle-meters-levels.html">Угломеры и уровни</a></li>
+								<li><a href="./catalog/measuring-tapes.html">Рулетки</a></li>
+								<li><a href="./catalog/accessories.html">Аксессуары</a></li>
+								<li><a href="./catalog/tripods.html">Штативы</a></li>
+								<li><a href="./catalog/staffs-poles.html">Рейки</a></li>
+								<li><a href="./catalog/measuring-wheels.html">Измерительные колеса</a></li>
+								<li><a href="./catalog/line-lasers.html">Лазерные уровни</a></li>
+								<li><a href="./catalog/rotary-lasers.html">Ротационные нивелиры</a></li>
+								<li><a href="./catalog/earth-augers.html">Мотобуры</a></li>
+								<li><a href="./catalog/earth-augers-accessories.html">Аксессуары для мотобуров</a></li>
+							</ul>
+						</li>
+						<li><a href="./services.html"><span>Сервис</span></a></li>
+						<li><a href="./about.html"><span>О компании</span></a></li>
+						<li><a href="./contact.html"><span>Контакты</span></a></li>
+					</ul> <!-- /mbm_sel_lang_wrapper -->
+				</div><!-- /col -->
+			</div><!-- /row -->
 		</div>
 	</div>
 	<!-- * ------------------------- [ Main block ] ------------------------------ -->
-	<div id="main">
+	<main id="main">
 		<header class="header">
 			<div class="header__body container h-100">
 				<!-- * -->
@@ -293,13 +291,10 @@
 						<a href="../../personal-account.html" class="">Личный кабинет</a>
 					</li>
 					<li class="tab-button">
-						<a href="../../personal-account-return-repair.html">Мои организации</a>
-					</li>
-					<li class="tab-button">
-						<a href="../../personal-account-return-repair.html">OOO ККИИТТ</a>
+						<a href="../../personal-account-user-order.html" class="">Мои заказы</a>
 					</li>
 					<li class="tab-button active">
-						<span>Уставные документы и бланки</span>
+						<span class="">Подробнее</span>
 					</li>
 				</ol>
 			</div>
@@ -317,7 +312,7 @@
 									Личный кабинет</a>
 							</li>
 							<li class="side-menu__item">
-								<a href="../../personal-account-user-order.html" class="side-menu__tab-link">Мои заказы</a>
+								<a href="../../personal-account-user-order.html" class="side-menu__tab-link active-link">Мои заказы</a>
 							</li>
 							<li class="side-menu__item">
 								<a href="../../personal-account-user-history.html" class="side-menu__tab-link">
@@ -327,7 +322,7 @@
 								<a href="../../personal-account-user-profile.html" class="side-menu__tab-link">Профиль</a>
 							</li>
 							<li class="side-menu__item">
-								<a href="../../personal-account-user-organizations.html" class="side-menu__tab-link active-link">
+								<a href="../../personal-account-user-organizations.html" class="side-menu__tab-link">
 									Мои организации</a>
 							</li>
 							<li class="side-menu__item">
@@ -345,140 +340,229 @@
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
 					<div class="acccount-section__tabs">
-						<!-- ! -------------------[ TAB - Бланки ] ------------------------- -->
-						<div class="acccount-section__tab-content inner-content">
+						<!-- ! ------------- [ TAB - User-order ] ----------------------------- -->
+						<div class="acccount-section__tab-content order-user">
 							<div class="acccount-content">
 								<div class="acccount-content__body">
-									<!-- * Content-column - 1 -->
-									<div class="acccount-content__column bp-1">
-										<!-- * content__row - 1 (Заголовок) ----------------------------- -->
-										<div class="acccount-content__row">
-											<div class="acccount-content__header">
-												<div class="acccount-content__title">
-													<h2 class="font_clamp_50">Мои организации</h2>
-												</div>
-												<a href="../return-exchange/return-exchange.html" class="acccount-content__return-button">
-													<i class="icofont-long-arrow-left icon"></i>
-													<span>назад</span>
-												</a>
+									<!-- * content__column - 1 -->
+									<div class="acccount-content__column">
+										<div class="acccount-content__header">
+											<div class="acccount-content__title">
+												<h2 class="font_clamp_50">Мои заказы</h2>
 											</div>
+											<a href="../../personal-account-user-order.html" class="acccount-content__return-button">
+												<i class="icofont-long-arrow-left icon"></i>
+												<span>назад к списку заказов</span>
+											</a>
 										</div>
 										<div class="acccount-content__row">
-											<div class="blanck-doc">
-												<div class="blanck-doc__title font_clamp_30">
-													Бланки
+											<div class="user-order">
+												<div class="user-order__line">
+													<div class="user-order__name">
+														<div class="user-order__title font_clamp_30">Заказ №2509 - 704 - 301</div>
+														<div class="user-order__data">От 21 сентября 2025 г в 13:00</div>
+													</div>
+													<div class="user-order__tipe-status">
+														Оплачен
+													</div>
 												</div>
-												<ul class="blanck-doc__list">
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>Возврат денежных средств</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-													</li>
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>Доверенность на осуществление наличных платежей от юридического лица</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-
-													</li>
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>Доверенность на получение заказа</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-
-
-													</li>
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>ДС Долгосрочная доверенность</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-
-													</li>
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>Оплата третьим лицом</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-
-													</li>
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>Соглашение о долгосрочной доверенности</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="acccount-content__row">
-											<div class="blanck-doc">
-												<div class="blanck-doc__title font_clamp_30">
-													Уставные документы
+												<div class="user-order__line">
+													<div class="user-order__type">
+														<div class="user-order__type-title">
+															Самовывоз из магазина:
+														</div>
+														<div class="user-order__addres">ул.&nbsp;Калужская, д.&nbsp;20Ф, ТЦ&nbsp;«Рим», 1&nbsp;этаж
+														</div>
+														<div class="user-order__time">Пн — вс: с 9:00 до 20:00</div>
+													</div>
+													<div class="user-order__type">
+														<div class="user-order__type-title">
+															Получатель
+														</div>
+														<div class="user-order__recipient">
+															<div class="user-order__recipient-name">
+																Иван Иванов
+															</div>
+															<div class="user-order__recipient-phone">+7 (900) 500-20-20</div>
+														</div>
+													</div>
 												</div>
-												<ul class="blanck-doc__list">
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>Изменения в устав</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-													</li>
-
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>Св-во о внесении записи в ЕГРЮЛ</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-													</li>
-
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>Уведомление о постановке на учет в кач-ве крупнейшего налогопла</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-													</li>
-
-													<li class="blanck-doc__item">
-														<a class="blanck-doc__link" href="" target="_blank">
-															<span>Устав ADA Instruments</span>
-															<span><i class="icofont-download"></i></span>
-														</a>
-													</li>
-												</ul>
 											</div>
 										</div>
 									</div>
-									<!-- * Content-column - 2 (Aside menu right) -->
+									<!-- * content__column - 2 -->
 									<div class="acccount-content__column">
-										<div class="aside-menu-right transparent-right" data-da="bp-1" data-da-position="1"
-											data-da-resolution="991">
-											<div class="profile">
-												<div class="profile__body">
-													<!-- * -->
-													<div class="profile__line">
-														<a href="./load-doc.html" class="profile__link">
-															<div class="profile__item">Отгрузочные документы</div>
-														</a>
+										<div class="profile">
+											<div class="profile__body">
+												<div class="status-order">
+													<div class="status-order__body">
+														<div class="status-order__line">
+															<div class="status-order__item">Статус заказа</div>
+															<div class="status-order__item-status status-delivery">Доставлен</div>
+														</div>
+														<div class="status-order__line">
+															<div class="status-order__item">Статус оплаты</div>
+															<div class="status-order__item-status status-payment">Оплачен</div>
+														</div>
+														<div class="status-order__line">
+															<div class="status-order__sum">
+																<span>10 560</span>
+																<span>руб</span>
+															</div>
+														</div>
 													</div>
-													<!-- * -->
-													<div class="profile__line">
-														<a href="./reports.html" class="profile__link">
-															<div class="profile__item">Акты сверок</div>
-														</a>
+												</div>
+											</div>
+											<div class="button-repeat">
+												<div class="send-button">
+													<button class="send-button__button dark_button" type="submit">
+														<span>повторить</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- * content__column - 3 -->
+									<div class="acccount-content__column">
+										<form action="#" method="#" class="form-search">
+											<fieldset class="form-search__group">
+												<div class="form-search__input">
+													<input type="text" id="search-product" placeholder="" name="search-product">
+													<label class="form-search__label" for="search-product">
+														<span>Быстрый поиск: введите наименование или код товара</span>
+													</label>
+												</div>
+												<button class="form-search__button" type="submit">
+													<i class="icofont-search-2" value="Submit"></i>
+												</button>
+											</fieldset>
+										</form>
+										<div class="history-orders">
+											<!--* Товар 1 -->
+											<div class="product-cart__item">
+												<div class="product-cart__image">
+													<img src="../../img/cart_img/product-1.png" alt="картинка">
+												</div>
+												<div class="product-cart__info">
+													<div class="product-cart__article">Артикул 000541</div>
+													<div class="product-cart__title">
+														<span>Лазерный дальномер</span>
+														<span>ADA COSMO MICRO 25</span>
 													</div>
-													<!-- * -->
-													<div class="profile__line">
-														<a href="./documents-forms.html" class="profile__link active-link">
-															<div class="profile__item">Уставные документы и бланки</div>
-														</a>
+													<div class="product-cart__description">
+														Диапазон работы 30 м, точность ± 3,0 мм
 													</div>
-													<!-- * -->
-													<div class="profile__line">
-														<a href="./original-documents.html" class="profile__link">
-															<div class="profile__item">Оригинальные документы</div>
-														</a>
+												</div>
+												<div class="product-cart__counter">
+													<div class="counter-wrapper">
+														<div class="product-cart__price">
+															<div class="product-cart__old-price">4 334 руб</div>
+															<div class="product-cart__new-price">3 750 руб</div>
+														</div>
+														<div class="items-greed__wrapper">
+															<div class="send-button">
+																<button class="send-button__button add-to-cart red_button"><span>в
+																		корзину</span></button>
+															</div>
+															<div class="quantity product-cart__quantity red_button" style="display: flex;">
+																<div class="quantity__button quantity-remove">
+																	<i class="icon-minus icon">&minus;</i>
+																</div>
+																<div class="quantity__input">
+																	<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+																		autocomplete="off">
+																</div>
+																<div class="quantity__button quantity-add">
+																	<i class="icon-plus icon">+</i>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!--* Товар 2 -->
+											<div class="product-cart__item">
+												<div class="product-cart__image">
+													<img src="../../img/cart_img/product-2.png" alt="картинка">
+												</div>
+												<div class="product-cart__info">
+													<div class="product-cart__article">Артикул 000541</div>
+													<div class="product-cart__title">
+														<span>Лазерный дальномер</span>
+														<span>ADA COSMO MICRO 25</span>
+													</div>
+													<div class="product-cart__description">
+														Диапазон работы 30 м, точность ± 3,0 мм
+													</div>
+												</div>
+												<div class="product-cart__counter">
+													<div class="counter-wrapper">
+														<div class="product-cart__price">
+															<div class="product-cart__old-price"></div>
+															<div class="product-cart__new-price">4 334 руб</div>
+														</div>
+														<div class="items-greed__wrapper">
+															<div class="send-button">
+																<button class="send-button__button add-to-cart red_button"><span>в
+																		корзину</span></button>
+															</div>
+															<div class="quantity product-cart__quantity red_button" style="display: flex;">
+																<div class="quantity__button quantity-remove">
+																	<i class="icon-minus icon">&minus;</i>
+																</div>
+																<div class="quantity__input">
+																	<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+																		autocomplete="off">
+																</div>
+																<div class="quantity__button quantity-add">
+																	<i class="icon-plus icon">+</i>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!--* Товар 3 -->
+											<div class="product-cart__item">
+												<div class="product-cart__image">
+													<img src="../../img/cart_img/product-3.png" alt="картинка">
+												</div>
+												<div class="product-cart__info">
+													<div class="product-cart__article">Артикул 000541</div>
+													<div class="product-cart__title">
+														<span>Лазерный дальномер</span>
+														<span>ADA COSMO MICRO 25</span>
+													</div>
+													<div class="product-cart__description">
+														Диапазон работы 30 м, точность ± 3,0 мм
+													</div>
+												</div>
+
+												<div class="product-cart__counter">
+													<div class="counter-wrapper">
+														<div class="product-cart__price">
+															<div class="product-cart__old-price">4 334 руб</div>
+															<div class="product-cart__new-price">3 750 руб</div>
+														</div>
+
+														<div class="items-greed__wrapper">
+															<div class="send-button">
+																<button class="send-button__button add-to-cart red_button"><span>в
+																		корзину</span></button>
+															</div>
+															<div class="quantity product-cart__quantity red_button" style="display: flex;">
+																<div class="quantity__button quantity-remove">
+																	<i class="icon-minus icon">&minus;</i>
+																</div>
+																<div class="quantity__input">
+																	<input class="input" type="text" name="form[]" value="0" placeholder="&lt;+&gt;"
+																		autocomplete="off">
+																</div>
+																<div class="quantity__button quantity-add">
+																	<i class="icon-plus icon">+</i>
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -500,14 +584,14 @@
 						<span>Напишите нам!</span>
 					</div>
 					<div class="form_feedback_body">
-						<form action="#" method="POST" class="suport_feedback_form feedback_form" style="">
+						<form action="#" method="POST" class="suport_feedback_form feedback_form">
 							<div class="section_form_line">
 								<div class="suport_feedback_form_box">
 									<div class="mb-3">
 										<label for="suportName" class="sr-only">Ваше имя</label>
 										<input type="text" id="suportName" name="suport_name" placeholder="Ваше имя" required="">
 									</div>
-								</div><!-- /suport_feedback_form_box -->
+								</div>
 							</div>
 							<div class="section_form_line">
 								<div class="suport_feedback_form_box">
@@ -532,26 +616,26 @@
 									<div class="send-button">
 										<button class="send-button__button red_button" type="submit">отправить</button>
 									</div>
-								</div>
+								</div><!-- /suport_feedback_form_box -->
 							</div>
 						</form>
 						<div class="succes_message bg_transparent" style="display: none;">
 							<div class="succes_message_caption">
 								Спасибо за обращение ! <br>
 								мы ответим Вам в ближайшее время!
-							</div>
+							</div><!-- /succes_message_caption -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-	</div>
+	</main>
 
 	<!-- * --------------------------- [ Footer] --------------------------------- -->
 	<!--*  wow fadeInDown -->
 	<footer class="footer">
 		<div class="footer__section container">
-			<div class="footer__header ">
+			<div class="footer__header">
 				<div class="footer__col-auto">
 					<a href="../../productia.html" class="grey_button">в каталог</a>
 				</div>
@@ -722,6 +806,7 @@
 			</div>
 		</div>
 	</div>
+
 	<!-- * MODAL Registration -->
 	<div class="modal-registration" id="modal-registration">
 		<div class="modal-registration__body">
@@ -770,7 +855,6 @@
 	<!-- * MODAL Форма обратной связи -->
 	<div class="modal-feedback">
 		<div class="modal-feedback__body">
-			<!-- * -->
 			<div class="modal-feedback__header">
 				<div class="modal-feedback__logo">
 					<div class="logo"></div>

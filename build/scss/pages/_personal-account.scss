@@ -769,6 +769,7 @@
 
       .select-group__dropdown {
         margin: 0;
+        max-width: 320px;
       }
 
       //* select
@@ -794,8 +795,12 @@
         &__drop-down {
           @include screen-992 {
             max-width: 290px;
-            left: 7px;
-            top: 40px;
+            left: 25px;
+            top: 50px;
+          }
+
+          @include screen-490 {
+            left: 20px;
           }
         }
 
@@ -942,184 +947,6 @@
               height: 45px;
               font-size: 12px;
             }
-          }
-        }
-      }
-
-      //* .acccount-content
-      .acccount-content {
-        // .acccount-content__column
-        &__column {
-          &:nth-child(2) {
-            @include screen-490 {
-              margin: 0 -15px;
-            }
-          }
-
-          &:nth-child(3) {
-            display: flex;
-            flex-direction: column;
-            background: none;
-
-            @include screen-490 {
-              margin: 0;
-            }
-          }
-        }
-
-        // .acccount-content__body
-        &__body {
-          @include screen-1376 {
-          }
-
-          @include screen-992 {
-          }
-
-          @include screen-490 {
-          }
-        }
-
-        // .acccount-content__emty-cart
-        &__emty-cart {
-          margin-bottom: 30px;
-          span {
-            display: block;
-            &:nth-child(1) {
-              font-size: 31px;
-              font-weight: 700;
-
-              @include minmax-320-1920 {
-                font-size: calc(
-                  18px + (31 - 18) * ((100vw - 320px) / (1920 - 320))
-                );
-              }
-
-              @include screen-320 {
-                font-size: 18px;
-              }
-            }
-
-            &:nth-child(2) {
-              font-size: 16px;
-
-              @include minmax-320-1920 {
-                font-size: calc(
-                  12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))
-                );
-              }
-              @include screen-320 {
-                font-size: 12px;
-              }
-            }
-          }
-        }
-      }
-
-      //* .product-cart
-      .product-cart {
-        &__item {
-          display: inline-grid;
-          grid-template-columns: min-content max-content auto;
-          justify-items: center;
-
-          @include screen-960 {
-            grid-template-columns: max-content auto;
-            width: 100%;
-          }
-
-          @include screen-690 {
-            grid-template-columns: 1fr auto;
-          }
-
-          @include screen-375 {
-            grid-template-columns: auto;
-            row-gap: 20px;
-          }
-        }
-
-        // .product-cart__image
-        &__image {
-          display: flex;
-          align-items: center;
-
-          @include screen-960 {
-            grid-column: 1 / 2;
-            grid-row: 1 / 3;
-            align-self: center;
-
-            img {
-              max-width: 100%;
-              width: 90%;
-              max-height: 100%;
-              object-fit: contain;
-            }
-          }
-
-          @include screen-490 {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
-            max-width: 100%;
-          }
-
-          @include screen-375 {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
-            max-width: 60%;
-          }
-        }
-
-        // .product-cart__info
-        &__info {
-          @include screen-960 {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-            justify-self: end;
-          }
-
-          @include screen-490 {
-            grid-column: 1 / 3;
-            grid-row: 2 / 3;
-            max-width: 90%;
-            justify-self: end;
-          }
-
-          @include screen-375 {
-            grid-column: 1 / 2;
-            grid-row: 2 / 3;
-            justify-self: end;
-          }
-        }
-
-        // .product-cart__counter
-        &__counter {
-          padding-left: 180px;
-
-          @include minmax-960-1920 {
-            padding-left: calc(
-              0px + (180 - 0) * ((100vw - 960px) / (1920 - 960))
-            );
-          }
-          @include screen-960 {
-            padding-left: 0;
-            grid-column: 2/ 3;
-            grid-row: 1 / 2;
-            justify-self: end;
-
-            .items-greed__wrapper {
-              width: auto;
-            }
-          }
-
-          @include screen-490 {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            justify-self: center;
-          }
-
-          @include screen-375 {
-            grid-column: 1 / 2;
-            grid-row: 3 / 4;
-            justify-self: center;
           }
         }
       }
