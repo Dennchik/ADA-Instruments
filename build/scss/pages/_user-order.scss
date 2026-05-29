@@ -28,7 +28,7 @@
     }
 
     @include screen-490 {
-      padding: 24px 15px;
+      padding: 24px 20px;
     }
   }
 
@@ -86,7 +86,7 @@
   &__line {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 2rem;
   }
 
   // .profile__wrapp

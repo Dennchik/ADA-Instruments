@@ -189,11 +189,11 @@
 .documents-forms,
 .load-doc,
 .reports {
-  .profile__body {
-    @include screen-425 {
-      grid-template-columns: 1fr !important;
-    }
-  }
+  // .profile__body {
+  //   @include screen-425 {
+  //     grid-template-columns: 1fr !important;
+  //   }
+  // }
 }
 //* ----------------------------------------------------------------------------
 .document-type {
@@ -218,7 +218,7 @@
     display: flex;
 
     @include screen-992 {
-      padding: 24px 15px;
+      padding: 24px 20px;
     }
     @include screen-520 {
       flex-wrap: wrap-reverse;
