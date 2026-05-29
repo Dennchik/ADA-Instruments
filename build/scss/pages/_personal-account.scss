@@ -540,7 +540,9 @@
 
       .categiries-servise__image {
         height: 100%;
+
         img {
+          width: 100%;
           object-fit: cover;
         }
       }
@@ -552,11 +554,11 @@
       }
 
       @include minmax-320-490 {
-        height: calc(90px + (170 - 90) * ((100vw - 320px) / (575 - 320)));
+        height: calc(110px + (170 - 110) * ((100vw - 320px) / (575 - 320)));
       }
 
       @include screen-320 {
-        height: 90px;
+        height: 110px;
       }
     }
 
@@ -621,7 +623,7 @@
     }
 
     @include screen-375 {
-      padding: 15px;
+      padding: 24px 15px;
     }
   }
 

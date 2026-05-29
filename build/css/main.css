@@ -8488,6 +8488,7 @@ header .top_menu > li > a {
   height: 100%;
 }
 .categiries-servise__column:nth-child(2) .categiries-servise__image img {
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -8500,12 +8501,12 @@ header .top_menu > li > a {
 }
 @media (width >= 320px) and (width <= 490px) {
   .categiries-servise__column:nth-child(2) {
-    height: calc(90px + 80 * (100vw - 320px) / 255);
+    height: calc(110px + 60 * (100vw - 320px) / 255);
   }
 }
 @media screen and (width <= 320px) {
   .categiries-servise__column:nth-child(2) {
-    height: 90px;
+    height: 110px;
   }
 }
 .categiries-servise__column:nth-child(3) {
@@ -8568,7 +8569,7 @@ header .top_menu > li > a {
 }
 @media screen and (width < 375px) {
   .categiries-servise__content {
-    padding: 15px;
+    padding: 24px 15px;
   }
 }
 .categiries-servise__text {
