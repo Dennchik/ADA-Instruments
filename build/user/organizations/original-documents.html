@@ -41,7 +41,7 @@
 	<script defer src="../../js/widget-calendar.js"></script>
 </head>
 
-<body class="load-doc">
+<body class="original-documents">
 	<!-- * ------------------------ [ * Preloader ] ------------------------------ -->
 	<div class="preloader">
 		<div class="preloader-5"></div>
@@ -90,7 +90,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- * ------------------------- [ Main block ] ------------------------------ -->
 	<div id="main">
 		<header class="header">
 			<div class="header__body container h-100">
@@ -371,23 +370,6 @@
 												<span>назад</span>
 											</a>
 										</div>
-										<!-- * content__row - 1 (Поиск Doc) -------------------------- -->
-										<div class="acccount-content__row">
-											<div class="blanck-doc">
-												<div class="blanck-doc__title font_clamp_30">
-													Отгрузочные документы
-												</div>
-												<form class="blanck-doc__form" action="#" method="#">
-													<div class="blanck-doc__wrapper">
-														<input class="blanck-doc__input" type="text" id="number-doc"
-															placeholder="Введите номер заказа">
-														<button type="submit" class="">
-															<i class="icofont-search-1"></i>
-														</button>
-													</div>
-												</form>
-											</div>
-										</div>
 									</div>
 									<!-- * Content-column - 2 (Aside menu right) -->
 									<div class="acccount-content__column">
@@ -396,7 +378,7 @@
 												<div class="profile__body">
 													<!-- * -->
 													<div class="profile__line">
-														<a href="./load-doc.html" class="profile__link active-link">
+														<a href="./load-doc.html" class="profile__link">
 															<div class="profile__item">Отгрузочные документы</div>
 														</a>
 													</div>
@@ -414,7 +396,7 @@
 													</div>
 													<!-- * -->
 													<div class="profile__line">
-														<a href="./original-documents.html" class="profile__link">
+														<a href="./original-documents.html" class="profile__link active-link">
 															<div class="profile__item">Оригинальные документы</div>
 														</a>
 													</div>
@@ -425,115 +407,6 @@
 									<!-- * Content-column - 3 -->
 									<div class="acccount-content__column">
 										<div class="acccount-content__row">
-											<div class="document-type">
-												<div class="document-type__body">
-													<!-- * Col-1 -->
-													<div class="document-type__column">
-														<div class="document-type__title">
-															<span>Тип документа</span>
-														</div>
-
-														<div class="document-type__collapse">
-															<form class="modal-rejection__form" id="rejectForm">
-																<label class="modal-rejection__radio">
-																	<input class="modal-rejection__radio-input" type="radio" name="reason" value="Все">
-																	<span class="modal-rejection__radio-text">Все</span>
-																</label>
-
-																<label class="modal-rejection__radio">
-																	<input class="modal-rejection__radio-input" type="radio" name="reason"
-																		value="Акт оказания услуг">
-																	<span class="modal-rejection__radio-text">Акт оказания услуг</span>
-																</label>
-
-																<label class="modal-rejection__radio">
-																	<input class="modal-rejection__radio-input" type="radio" name="reason"
-																		value="Счёт — фактура">
-																	<span class="modal-rejection__radio-text">Счёт — фактура</span>
-																</label>
-
-																<label class="modal-rejection__radio">
-																	<input class="modal-rejection__radio-input" type="radio" name="reason"
-																		value="Счёт на оплату">
-																	<span class="modal-rejection__radio-text">Счёт на оплату</span>
-																</label>
-
-																<label class="modal-rejection__radio">
-																	<input class="modal-rejection__radio-input" type="radio" name="reason"
-																		value="Накладная">
-																	<span class="modal-rejection__radio-text">Накладная</span>
-																</label>
-
-																<label class="modal-rejection__radio">
-																	<input class="modal-rejection__radio-input" type="radio" name="reason"
-																		value="Универсальный передаточный документ">
-																	<span class="modal-rejection__radio-text">Универсальный передаточный документ</span>
-																</label>
-															</form>
-														</div>
-													</div>
-													<!-- * Col-2 -->
-													<div class="document-type__column">
-														<div class="document-type__title">
-															<span>Период</span>
-														</div>
-														<div class="document-type__collapse">
-															<div class="document-type__wrapper">
-																<div class="date-period">
-																	<div class="date-period__input">
-																		<label class="date-period__label" for="start-date">от:</label>
-																		<input type="date" id="start-date" name="start-date">
-																	</div>
-																	<div class="date-period__input">
-																		<label class="date-period__label" for="end-date">до:</label>
-																		<input type="date" id="end-date" name="end-date">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- * Content-column - 4 -->
-									<div class="acccount-content__column">
-										<div class="acccount-content__row">
-											<div class="search-result">
-												<div class="search-result__body">
-													<div class="not-search search-result__not-search">
-														<div class="search-result__title font_clamp_30">
-															Документы не найдены
-														</div>
-														<div class="search-result__text">
-															Не найдены документы, подходящие под выбранные фильтры.
-															Попробуйте поменять или сбросить фильтры.
-														</div>
-													</div>
-													<div class="result-search search-result__result">
-														<a href="#" class="result-search__item">
-															<i class="icofont-download"></i>
-															<span>Акт №12/2-05 от 12.05.2026</span>
-															<i class="icofont-close"></i>
-														</a>
-														<a href="#" class="result-search__item">
-															<i class="icofont-download"></i>
-															<span>Акт №12/2-05 от 12.05.2026</span>
-															<i class="icofont-close"></i>
-														</a>
-														<a href="#" class="result-search__item">
-															<i class="icofont-download"></i>
-															<span>Акт №12/2-05 от 12.05.2026</span>
-															<i class="icofont-close"></i>
-														</a>
-														<a href="#" class="result-search__item">
-															<i class="icofont-download"></i>
-															<span>Акт №12/2-05 от 12.05.2026</span>
-															<i class="icofont-close"></i>
-														</a>
-													</div>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
@@ -697,13 +570,11 @@
 								<li><a href="#">Ротационные нивелиры</a></li>
 								<li><a href="#">Оптические нивелиры</a></li>
 								<li><a href="#">Теодолиты</a></li>
-
 								<li><a href="#">Пирометры и&nbsp;тепловизоры</a></li>
 								<li><a href="#">Детекторы</a></li>
 								<li><a href="#">Угломеры и&nbsp;уровни</a></li>
 								<li><a href="#">Рулетки</a></li>
 								<li><a href="#">Аксессуары</a></li>
-
 								<li><a href="#">Штативы</a></li>
 								<li><a href="#">Рейки</a></li>
 								<li><a href="#">Измерительные колеса</a></li>
@@ -756,11 +627,9 @@
 					<i class="icofont-close icon"></i>
 				</div>
 			</div>
-
 			<div class="modal-login__form">
 				<form action="#" method="get" class="form-login">
 					<!-- * -->
-
 					<fieldset class="form-login__form-group">
 						<label for="user-name" class="form-login__label fw700">Полное наименование / ФИО</label>
 						<input type="text" id="user-name" name="user-name" class="form-login__input" required>
@@ -783,7 +652,6 @@
 					<div class="modal-login__reg">
 						<span class="reg-button">Регистрация</span>
 					</div>
-
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -791,10 +659,7 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 		</div>
 	</div>
 
@@ -813,16 +678,12 @@
 			<div class="modal-registration__title">
 				Укажите вашу электронную почту и придумайте пароль
 			</div>
-
 			<div class="modal-registration__text">В пароле должно быть не меньше 6 симаволов. Можно использовать латинские
 				буквы( как прописные, так и строчные: A — Z, a — z) и цифры (0 — 9)
 			</div>
-
 			<div class="modal-registration__form">
 				<form action="#" method="get" class="form-login">
 					<!-- * -->
-
-
 					<!-- * -->
 					<fieldset class="form-login__form-group">
 						<label class="form-login__label fw700" for="email">Email</label>
@@ -841,7 +702,6 @@
 						<input type="password" id="user-password2" name="user-password2" class="form-login__input"
 							autocomplete="new-password" required>
 					</fieldset>
-
 					<div class="form-login__sibmit-buttons">
 						<div class="send-button">
 							<button type="submit" class="send-button__button dark_button"><span>отменить</span></button>
@@ -849,10 +709,7 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 		</div>
 	</div>
 
@@ -868,8 +725,6 @@
 				<div class="modal-feedback__close-button close-button">
 					<i class="icofont-close icon"></i>
 				</div>
-
-
 			</div>
 			<!-- * -->
 			<div class="modal-feedback__text">
@@ -881,7 +736,6 @@
 					<fieldset class="feedback-form__form-group">
 						<textarea class="feedback-form__textarea" name="text_guest" placeholder="Текст сообщения..."></textarea>
 					</fieldset>
-
 					<fieldset class="feedback-form__form-group">
 						<label class="feedback-form__label">
 							<input type="text" name="name_guest" placeholder="ФИО" required autocomplete="phone">
@@ -902,25 +756,20 @@
 					</fieldset>
 				</form>
 			</div>
-
 			<div class="feedback-form__title">
 				Помогите нам стать лучше!
 			</div>
-
 			<div class="feedback-form__politic">
 				Нажимая на кнопку "Отправить", я соглашаюсь с условиями <a href="#">политики конфиденциальности</a> и <a
 					href="#">пользовательского соглашения</a>.
 			</div>
-
 			<div class="feedback-form__button">
 				<div class="send-button">
 					<button form="feedback-form" class="send-button__button red_button mt-4 w-400"
 						type="submit">ОТПРАВИТЬ</button>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
 </body>
 
