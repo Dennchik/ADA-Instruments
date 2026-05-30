@@ -289,7 +289,7 @@
 			</div>
 		</header>
 		<!-- * ----------------------- [ Breadcrumb ] ------------------------------ -->
-		<div class="breadcrumb_wrapper mb-2">
+		<section class="breadcrumb_wrapper mb-2">
 			<div class="container">
 				<ol class="breadcrumb">
 					<li><a href="./index.html">главная</a></li>
@@ -301,12 +301,12 @@
 					</li>
 				</ol>
 			</div>
-		</div>
+		</section>
 		<!-- * -------------------- [ Acccount-section ] --------------------------- -->
 		<section class="acccount-section container wow fadeInDown">
 			<div class="acccount-section__body">
 				<!-- * Column-1 ---------- [ Side Menu ] ------------------------------- -->
-				<div class="acccount-section__column aside-menu-l">
+				<aside class="acccount-section__column aside-menu-l">
 					<div class="side-menu" data-da="bp-2" data-da-position="last" data-da-resolution="839">
 						<!-- * [ MENU -LEFT ] -->
 						<ul class="side-menu__list">
@@ -339,7 +339,7 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</aside>
 				<!-- * Column-2 -->
 				<div class="acccount-section__column">
 					<div class="acccount-section__tabs">
@@ -347,7 +347,6 @@
 						<div class="acccount-section__tab-content order-user">
 							<div class="acccount-content">
 								<div class="acccount-content__body">
-									<!-- * content__column - 1 -->
 									<div class="acccount-content__column">
 										<div class="acccount-content__header">
 											<div class="acccount-content__title">
@@ -368,7 +367,6 @@
 											</fieldset>
 										</form>
 									</div>
-									<!-- * content__column - 2 -->
 									<div class="acccount-content__column">
 										<div class="profile">
 											<div class="select-group profile__body" data-select>
@@ -405,22 +403,34 @@
 											</div>
 										</div>
 									</div>
-									<!-- * content__column - 3 -->
 									<div class="acccount-content__column">
 										<div class="order-status">
-											<!-- * Grid-cont-1 -->
 											<div class="order-status__body">
 												<div class="order-status__content">
-													<!-- * column-1 order-status -->
 													<div class="order-status__column">
-														<div class="order-status__type">
+														<div class="order-status__type slideToggle">
 															<div class="order-status__oplata">
 																<span>Не оплачен</span>
 																<i class="icofont-rounded-right"></i>
 															</div>
-															<div class="order-status__dostavka">
+															<div class="order-status__dostavka _toggle-button">
 																<span>В пути</span>
 																<i class="icofont-rounded-right"></i>
+															</div>
+															<!-- todo (Выпадающий блок - Статус доставки ) -->
+															<div class="dropdown-block _collapse">
+																<div class="dropdown-block__body">
+																	<div class="dropdown-block__title">
+																		<span>Ориентировочная дата доставки</span>
+																		<div class="dropdown-block__close-button">
+																			<i class="icofont-close"></i>
+																		</div>
+																	</div>
+																	<div class="dropdown-block__text">
+																		<div class="dropdown-block__item dropdown-block--data">21 марта 2026 г.</div>
+																		<div class="dropdown-block__item dropdown-block--time">после 14:00</div>
+																	</div>
+																</div>
 															</div>
 														</div>
 														<div class="order-status__type">
@@ -429,7 +439,6 @@
 															</a>
 														</div>
 													</div>
-													<!-- * column-2 order-status -->
 													<div class="order-status__price">
 														<span id="order-price">3 950 р</span>
 													</div>
@@ -448,23 +457,34 @@
 												</div>
 											</div>
 										</div>
-
 										<div class="order-status">
-											<!-- * Grid-cont-1 -->
 											<div class="order-status__body">
 												<div class="order-status__content">
-													<!-- * column-1 order-status -->
 													<div class="order-status__column">
-														<div class="order-status__type">
+														<div class="order-status__type slideToggle">
 															<div class="order-status__oplata">
 																<span>Оплачен</span>
 																<i class="icofont-rounded-right"></i>
 															</div>
-															<div class="order-status__dostavka">
+															<div class="order-status__dostavka _toggle-button">
 																<span>Доставлен</span>
 																<i class="icofont-rounded-right"></i>
 															</div>
-
+															<!-- todo (Выпадающий блок - Статус доставки ) -->
+															<div class="dropdown-block _collapse">
+																<div class="dropdown-block__body">
+																	<div class="dropdown-block__title">
+																		<span>Доставлено</span>
+																		<div class="dropdown-block__close-button">
+																			<i class="icofont-close"></i>
+																		</div>
+																	</div>
+																	<div class="dropdown-block__text">
+																		<div class="dropdown-block__item dropdown-block--data">21 марта 2026 г.</div>
+																		<div class="dropdown-block__item dropdown-block--time"></div>
+																	</div>
+																</div>
+															</div>
 														</div>
 														<div class="order-status__type">
 															<a href="./user/order-user/order-user-status.html" class="order-status__info">
@@ -472,7 +492,6 @@
 															</a>
 														</div>
 													</div>
-													<!-- * column-2 order-status -->
 													<div class="order-status__price">
 														<span id="order-price">3 950 р</span>
 													</div>
@@ -483,7 +502,6 @@
 															<span>повторить</span>
 														</button>
 													</div>
-
 													<div class="send-button">
 														<button class="cancel-order send-button__button dark_button" type="submit">
 															<span>отменить</span>
@@ -492,7 +510,6 @@
 												</div>
 											</div>
 										</div>
-
 									</div>
 								</div>
 							</div>

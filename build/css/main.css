@@ -617,6 +617,11 @@ textarea:focus::placeholder {
           transform: scale(-1);
 }
 
+.slideToggle:has(> .dropdown-block._collapse._show) .order-status__dostavka .icofont-rounded-right {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
 .icon-info {
   cursor: pointer;
   width: 22px;
@@ -7485,6 +7490,58 @@ header .top_menu > li > a {
   }
 }
 
+.dropdown-block {
+  position: absolute;
+  max-width: 230px;
+  -webkit-box-shadow: 0 0 12px #a4a4a4;
+          box-shadow: 0 0 12px #a4a4a4;
+  z-index: 99;
+  top: 25px;
+  right: 0;
+}
+.dropdown-block__body {
+  padding: 24px;
+  background-color: #fff;
+}
+.dropdown-block__title {
+  white-space: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  font-size: 14px;
+}
+.dropdown-block__title span {
+  line-height: 110%;
+}
+.dropdown-block__title .icofont-close {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  font-size: 2rem;
+  color: #a5a5a5;
+}
+.dropdown-block__title .icofont-close:hover {
+  color: var(--danger);
+}
+.dropdown-block__text {
+  font-size: 14px;
+  color: var(--danger);
+}
+.dropdown-block__item:not(:last-child) {
+  margin-bottom: 3px;
+}
+.dropdown-block__close-button {
+  cursor: pointer;
+}
+
 .about-page {
   padding-bottom: 75px;
   margin-bottom: 75px;
@@ -11615,6 +11672,7 @@ header .top_menu > li > a {
   }
 }
 .order-status__column {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11709,6 +11767,7 @@ header .top_menu > li > a {
           transform: translateY(1px);
 }
 .order-status__dostavka {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11718,6 +11777,10 @@ header .top_menu > li > a {
   gap: 10px;
 }
 .order-status__dostavka .icofont-rounded-right {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   color: var(--red);
   -webkit-transform: translateY(1px);
           transform: translateY(1px);

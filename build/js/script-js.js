@@ -1135,17 +1135,6 @@ document.addEventListener('DOMContentLoaded', modalFeedback);
 function toggleMenu() {
   const items = document.querySelectorAll('.slideToggle');
 
-  items.forEach((item) => {
-    const trigger = item.querySelector('._toggle-button');
-    trigger.addEventListener('click', () => {
-      const opened_item = document.querySelector('._open');
-      _toggleItem(item);
-      if (opened_item && opened_item !== item) {
-        _toggleItem(opened_item);
-      }
-    });
-  });
-
   const _toggleItem = (item) => {
     const collapse = new ItcCollapse(item.querySelector('._collapse'));
     if (item.classList.contains('_open')) {
@@ -1156,5 +1145,25 @@ function toggleMenu() {
       collapse.toggle();
     }
   };
+
+  items.forEach((item) => {
+    const closeButtonDrop = item.querySelector('.dropdown-block__close-button');
+
+    const trigger = item.querySelector('._toggle-button');
+
+    trigger.addEventListener('click', () => {
+      const opened_item = document.querySelector('._open');
+      _toggleItem(item);
+      if (opened_item && opened_item !== item) {
+        _toggleItem(opened_item);
+      }
+    });
+    if (closeButtonDrop) {
+      console.log(closeButtonDrop);
+      closeButtonDrop.addEventListener('click', () => {
+        _toggleItem(item);
+      });
+    }
+  });
 }
 document.addEventListener('DOMContentLoaded', toggleMenu);

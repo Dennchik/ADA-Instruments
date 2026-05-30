@@ -223,7 +223,11 @@
     transform: scale(-1);
   }
 }
-
+.slideToggle:has(> .dropdown-block._collapse._show) {
+  .order-status__dostavka .icofont-rounded-right {
+    transform: rotate(90deg);
+  }
+}
 // ----- Icon info -----
 .icon-info {
   cursor: pointer;

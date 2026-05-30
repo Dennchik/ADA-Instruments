@@ -213,6 +213,7 @@
 
   // .order-status__column
   &__column {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -288,10 +289,13 @@
 
   // .order-status__dostavka
   &__dostavka {
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 10px;
+
     .icofont-rounded-right {
+      transition: transform 0.3s ease-in-out;
       color: var(--red);
       transform: translateY(1px);
     }
