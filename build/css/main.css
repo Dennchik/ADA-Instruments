@@ -439,7 +439,7 @@ textarea:focus::placeholder {
   display: inline-block;
   padding: 3px 6px;
   line-height: 1;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .white_color {
@@ -11263,7 +11263,6 @@ header .top_menu > li > a {
     margin-left: -15px;
     padding-left: 15px;
     font-weight: normal;
-    color: rgba(0, 0, 0, 0);
   }
 }
 
