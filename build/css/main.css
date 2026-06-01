@@ -5424,7 +5424,7 @@ header .top_menu > li > a {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  max-width: 210px;
+  width: 210px;
   height: 55px;
   font-weight: 600;
 }
