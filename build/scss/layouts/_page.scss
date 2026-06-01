@@ -875,6 +875,17 @@
         font-size: 16px;
       }
     }
+
+    // .product-cart__quantity
+    &__quantity {
+      @include screen-690 {
+        height: 45px;
+      }
+
+      @include screen-480 {
+        width: 160px;
+      }
+    }
   }
 }
 

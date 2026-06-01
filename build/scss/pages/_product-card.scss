@@ -252,7 +252,7 @@
     padding: 6rem;
 
     @include screen-960 {
-      padding: 4rem;
+      padding: 2rem;
     }
 
     @include screen-768 {
@@ -416,6 +416,10 @@
   @include screen-960 {
     grid-template-columns: 1fr max-content 190px;
     gap: 3rem;
+  }
+
+  @include screen-820 {
+    gap: 2rem;
   }
 
   @include screen-768 {
