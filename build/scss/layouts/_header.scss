@@ -55,7 +55,7 @@ header .container-fluid {
 .home_page header {
   background-color: transparent;
   &.smaller {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(68, 68, 68, 0.95);
   }
 }
 .home_page .sub_menu a {
@@ -173,7 +173,7 @@ header.smaller {
   width: 30px;
   height: 30px;
   padding: 10px;
-  border: solid 4px #ffffff;
+  border: solid 2px #ffffff;
   outline: none;
   border-radius: 35px;
   transition: width 0.5s;
@@ -182,7 +182,7 @@ header.smaller {
 
 .home_page .search_wrap > div > input {
   color: white;
-  border: solid 4px white;
+  border: solid 2px white;
 }
 
 .search_wrap > div > input::-webkit-input-placeholder {
