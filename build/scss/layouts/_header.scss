@@ -293,7 +293,7 @@ header.smaller {
   display: block;
   width: 100px;
   height: 47px;
-  background: url(../img/logo_white.png) no-repeat;
+  background: url(../img/logo_white.svg) no-repeat;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -301,7 +301,7 @@ header.smaller {
 
 .home_page {
   .logo {
-    background: url('../img/logo_white.png') no-repeat;
+    background: url('../img/logo_white.svg') no-repeat;
   }
 }
 .items_greed_box .img_cont {
@@ -313,15 +313,6 @@ header.smaller {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
-}
-.img_cont img {
-  width: 100%;
-  height: auto;
-}
-.img_cont {
-  display: block;
-  // height: 250px;
-  text-align: center;
 }
 
 .logo img {
@@ -539,6 +530,8 @@ header .top_menu > li > a {
     left: 11px;
 
     img {
+      width: 80px;
+
       display: none;
       @include screen-375 {
         display: block;

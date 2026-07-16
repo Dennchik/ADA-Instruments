@@ -110,7 +110,7 @@
       top: 0;
       left: 0;
       margin: 0;
-      background: url(../img/logo_red.png) no-repeat center / contain;
+      background: url(../img/logo_red.svg) no-repeat center / contain;
 
       @include screen-490 {
         width: 60px;
@@ -268,6 +268,7 @@
     grid-template-columns: min-content 1fr min-content;
     margin-bottom: 45px;
     gap: 10px;
+    align-items: center;
 
     @include screen-375 {
       gap: 15px;
@@ -279,7 +280,6 @@
       font-weight: 700;
       color: #000000;
       line-height: 100%;
-      align-self: self-end;
 
       @include screen-490 {
         font-size: 16px;
@@ -305,7 +305,7 @@
       left: 0;
       margin: 0;
 
-      background: url(../img/logo_red.png) no-repeat center / contain;
+      background: url(../img/logo_red.svg) no-repeat center / contain;
 
       @include screen-490 {
         width: 60px;
@@ -525,7 +525,7 @@
       top: 0;
       left: 0;
       margin: 0;
-      background: url(../img/logo_red.png) no-repeat center / contain;
+      background: url(../img/logo_red.svg) no-repeat center / contain;
 
       @include screen-490 {
         width: 60px;

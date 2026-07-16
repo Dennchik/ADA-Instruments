@@ -135,7 +135,7 @@ button:active {
 
 .img_cont img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .align_center {
@@ -2389,14 +2389,14 @@ header.smaller {
   display: block;
   width: 100px;
   height: 47px;
-  background: url(../img/logo_white.png) no-repeat;
+  background: url(../img/logo_white.svg) no-repeat;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 0 0;
 }
 
 .home_page .logo {
-  background: url("../img/logo_white.png") no-repeat;
+  background: url("../img/logo_white.svg") no-repeat;
 }
 
 .items_greed_box .img_cont {
@@ -2408,16 +2408,6 @@ header.smaller {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
-}
-
-.img_cont img {
-  width: 100%;
-  height: auto;
-}
-
-.img_cont {
-  display: block;
-  text-align: center;
 }
 
 .logo img {
@@ -2640,6 +2630,7 @@ header .top_menu > li > a {
   left: 11px;
 }
 .mobile_menu .mobile_menu_image img {
+  width: 80px;
   display: none;
 }
 @media screen and (width < 375px) {
@@ -4625,7 +4616,7 @@ header .top_menu > li > a {
   top: 0;
   left: 0;
   margin: 0;
-  background: url(../img/logo_red.png) no-repeat center/contain;
+  background: url(../img/logo_red.svg) no-repeat center/contain;
 }
 @media screen and (width < 490px) {
   .modal-login__logo .logo {
@@ -4788,6 +4779,9 @@ header .top_menu > li > a {
   grid-template-columns: min-content 1fr min-content;
   margin-bottom: 45px;
   gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media screen and (width < 375px) {
   .modal-feedback__header {
@@ -4800,8 +4794,6 @@ header .top_menu > li > a {
   font-weight: 700;
   color: #000000;
   line-height: 100%;
-  -ms-flex-item-align: self-end;
-      align-self: self-end;
 }
 @media screen and (width < 490px) {
   .modal-feedback__header span {
@@ -4826,7 +4818,7 @@ header .top_menu > li > a {
   top: 0;
   left: 0;
   margin: 0;
-  background: url(../img/logo_red.png) no-repeat center/contain;
+  background: url(../img/logo_red.svg) no-repeat center/contain;
 }
 @media screen and (width < 490px) {
   .modal-feedback__logo .logo {
@@ -5079,7 +5071,7 @@ header .top_menu > li > a {
   top: 0;
   left: 0;
   margin: 0;
-  background: url(../img/logo_red.png) no-repeat center/contain;
+  background: url(../img/logo_red.svg) no-repeat center/contain;
 }
 @media screen and (width < 490px) {
   .modal-registration__logo .logo {
