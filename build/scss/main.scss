@@ -100,3 +100,54 @@
     }
   }
 }
+
+.page-none {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  // .page-none__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  // .page-none__title
+  &__title {
+    font-size: 64px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  // .page-none__content
+  &__content {
+    margin-bottom: 5rem;
+  }
+  // .page-none__text
+  &__text {
+    font-weight: 24px;
+    font-weight: 500;
+  }
+}
+
+.send-button {
+  // .send-button__button
+  &__button {
+  }
+}
+
+.red_button {
+}
+
+.mt-4 {
+}
+
+.w-400 {
+}

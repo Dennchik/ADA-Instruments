@@ -10826,7 +10826,7 @@ header .top_menu > li > a {
 }
 
 .tovar-slide {
-  padding: 30px 40px 30px 30px;
+  padding: 0 40px 30px 30px;
 }
 @media (width < 768px) {
   .tovar-slide {
@@ -10835,16 +10835,11 @@ header .top_menu > li > a {
 }
 
 .tovar_slider_item {
-  margin: 45px 0;
-}
-@media screen and (width < 490px) {
-  .tovar_slider_item {
-    margin: 20px 0;
-  }
+  margin: 0;
 }
 
 .tovar_slider_nav_wrapper {
-  margin-bottom: 60px;
+  margin: 30px 0 60px;
 }
 
 .card-price {
@@ -11049,7 +11044,7 @@ header .top_menu > li > a {
 }
 
 .tovar_slider_item_box {
-  margin-bottom: 20px;
+  margin: 0 20px;
 }
 
 .tovar_sliders {
@@ -13071,4 +13066,49 @@ header .top_menu > li > a {
 }
 .fmb_list li a {
   white-space: nowrap;
+}
+
+.page-none {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.page-none__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page-none__title {
+  font-size: 64px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.page-none__content {
+  margin-bottom: 5rem;
+}
+.page-none__text {
+  font-weight: 24px;
+  font-weight: 500;
 }/*# sourceMappingURL=main.css.map */
