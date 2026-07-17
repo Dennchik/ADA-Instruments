@@ -205,11 +205,12 @@
   &__body {
     display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+
     margin-bottom: 75px;
 
     @include screen-768 {
       margin-bottom: 0;
+      flex-wrap: wrap;
     }
   }
 
@@ -373,10 +374,11 @@
 
   //.product-card__text
   &__text {
-    padding-block-start: 2rem;
+    padding-block: 1rem 4rem;
     line-height: 130%;
     font-size: 16px;
     margin-bottom: 0;
+
     strong {
       text-transform: uppercase;
     }

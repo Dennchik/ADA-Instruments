@@ -7173,9 +7173,6 @@ header .top_menu > li > a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 @media screen and (width < 992px) {
   .acccount-content__column:nth-child(1) {
@@ -7634,6 +7631,46 @@ header .top_menu > li > a {
   cursor: pointer;
 }
 
+.user-name-autorized {
+  display: none;
+}
+.user-name-autorized__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 100vw;
+  padding: 2px;
+  background-color: var(--danger);
+}
+
+.open_item_parent .icofont-thin-down {
+  -webkit-transition: color 0.3s, -webkit-transform 0.3s ease-in-out;
+  transition: color 0.3s, -webkit-transform 0.3s ease-in-out;
+  transition: color 0.3s, transform 0.3s ease-in-out;
+  transition: color 0.3s, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.open_item_parent.opened .icofont-thin-down {
+  -webkit-transform: scale(-1);
+          transform: scale(-1);
+  color: var(--danger);
+}
+
+.tovar_bock_mini_icon .product-card__image {
+  padding: 3rem 0;
+}
+
 .about-page {
   padding-bottom: 75px;
   margin-bottom: 75px;
@@ -7697,7 +7734,7 @@ header .top_menu > li > a {
           flex-direction: column;
 }
 .about-section__text {
-  margin-bottom: 6rem;
+  margin-block: 8rem;
 }
 @media (width < 690px) {
   .about-section__text {
@@ -7717,7 +7754,7 @@ header .top_menu > li > a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding-top: 150px;
+  padding-top: 110px;
   position: relative;
 }
 
@@ -7748,11 +7785,11 @@ header .top_menu > li > a {
   margin-bottom: 4rem;
 }
 .button_groupe .send-button__button {
-  min-width: 200px;
+  min-width: 320px;
 }
 @media screen and (width < 375px) {
   .button_groupe .send-button__button {
-    min-width: 160px;
+    min-width: 200px;
   }
 }
 
@@ -10309,10 +10346,13 @@ header .top_menu > li > a {
   margin-left: -15px;
   margin-right: -15px;
   padding-top: 6rem;
-  padding: 6rem 3.5rem 7.5rem;
+  padding: 2rem 3.5rem 7.5rem;
 }
 .contacts_list > li {
   width: 33.33%;
+}
+.contacts_list.bg-accent {
+  padding: 6rem 3.5rem 7.5rem;
 }
 
 .contacts_list_box {
@@ -10415,6 +10455,9 @@ header .top_menu > li > a {
   }
   .contact_page_body_box:last-child {
     margin-bottom: 40px;
+  }
+  .contact_page_body_box.open .open_contacts_list:after {
+    color: var(--danger);
   }
 }
 
@@ -10638,13 +10681,13 @@ header .top_menu > li > a {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   margin-bottom: 75px;
 }
 @media (width < 768px) {
   .product-card__body {
     margin-bottom: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 .product-card__column {
@@ -10810,8 +10853,7 @@ header .top_menu > li > a {
   }
 }
 .product-card__text {
-  -webkit-padding-before: 2rem;
-          padding-block-start: 2rem;
+  padding-block: 1rem 4rem;
   line-height: 130%;
   font-size: 16px;
   margin-bottom: 0;
@@ -11911,6 +11953,7 @@ header .top_menu > li > a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  margin-bottom: 3rem;
 }
 .form-search__input {
   position: relative;
@@ -11986,7 +12029,6 @@ header .top_menu > li > a {
 
 @media screen and (width < 840px) {
   .breadcrumb_wrapper {
-    margin: 0 auto;
     max-width: 750px;
   }
 }

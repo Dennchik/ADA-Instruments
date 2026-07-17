@@ -48,7 +48,7 @@
 
   // .about-section__text
   &__text {
-    margin-bottom: 6rem;
+    margin-block: 8rem;
 
     @include screen-690 {
       margin-bottom: 5rem;
@@ -71,7 +71,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding-top: 150px;
+  padding-top: 110px;
   position: relative;
 }
 
@@ -98,10 +98,10 @@
 .button_groupe {
   margin-bottom: 4rem;
   .send-button__button {
-    min-width: 200px;
+    min-width: 320px;
 
     @include screen-375 {
-      min-width: 160px;
+      min-width: 200px;
     }
   }
 }

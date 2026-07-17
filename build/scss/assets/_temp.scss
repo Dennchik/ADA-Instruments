@@ -23,7 +23,6 @@
   &__column {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     &:nth-child(1) {
       @include screen-992 {
@@ -456,5 +455,44 @@
   // .dropdown-block__close-button
   &__close-button {
     cursor: pointer;
+  }
+}
+.user-name-autorized {
+  display: none;
+
+  // user-name-autorized__body
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 100vw;
+    padding: 2px;
+    background-color: var(--danger);
+  }
+}
+
+.open_item_parent {
+  .icofont-thin-down {
+    transition:
+      color 0.3s,
+      transform 0.3s ease-in-out;
+  }
+  &.opened {
+    .icofont-thin-down {
+      transform: scale(-1);
+      color: var(--danger);
+    }
+  }
+}
+
+.tovar_bock_mini_icon {
+  .product-card__image {
+    padding: 3rem 0;
   }
 }
