@@ -427,7 +427,7 @@
   text-transform: uppercase;
 }
 
-// ----- Menu button (burger) -----
+//* --------------------------- [ menu_button ] --------------------------------
 .menu_button {
   height: 39px;
   width: 43px;
@@ -461,7 +461,7 @@
       position: absolute;
       transform-origin: 50% 50%;
       width: 68%;
-      height: 4px;
+      height: 2px;
       left: 0;
       right: 0;
       margin: auto;
@@ -471,13 +471,15 @@
         opacity 0.1s ease 0.1s;
 
       &:nth-child(1) {
-        top: 15%;
+        top: 18%;
       }
+
       &:nth-child(2) {
-        top: 31%;
+        top: 34%;
       }
+
       &:nth-child(3) {
-        top: 47%;
+        top: 50%;
       }
     }
   }
@@ -488,10 +490,12 @@
       top: 16%;
       left: 21px;
     }
+
     &:nth-child(2) {
       transform: translateX(-100px);
       opacity: 0;
     }
+
     &:nth-child(3) {
       transform: rotate(45deg) translate(-50%, -50%);
       top: 54%;

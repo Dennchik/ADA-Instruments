@@ -458,22 +458,30 @@
   }
 }
 .user-name-autorized {
-  display: none;
+  // display: none;
+  position: absolute;
+  top: -2px;
+  left: 0px;
 
   // user-name-autorized__body
   &__body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    font-size: 24px;
+    width: 30px;
+    height: 30px;
+
     text-transform: uppercase;
     font-weight: 600;
     color: #fff;
     border-radius: 100vw;
     padding: 2px;
     background-color: var(--danger);
+
+    span {
+      font-size: 20px;
+      line-height: 100%;
+    }
   }
 }
 
