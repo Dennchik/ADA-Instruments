@@ -233,23 +233,6 @@
     display: block !important;
   }
 
-  /* icofont-search */
-  .col_icons {
-    position: absolute;
-    right: 75px;
-    top: -15px;
-    gap: 15px;
-  }
-
-  .col_icons .icon-cart {
-    width: 27px;
-    height: 27px;
-  }
-
-  .col_icons .icon-user {
-    width: 23px;
-    height: 23px;
-  }
   .home_page header {
     height: 70px;
   }

@@ -1172,33 +1172,6 @@
   margin-top: 0px;
 }
 
-.top_search_body {
-  background-color: rgba(0, 0, 0, 0.95);
-  color: #fff;
-  padding: 25px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  display: none;
-}
-
-.top_search_body input[type=text],
-.top_search_body input[type=email],
-.top_search_body input[type=tel] {
-  border: 0px;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  margin-bottom: 0px;
-  color: #fff;
-  background: transparent;
-  height: 40px;
-  width: 100%;
-  padding: 0px 15px;
-  padding-right: 50px;
-  padding-left: 0;
-}
-
 .whith_button {
   position: absolute;
   right: 0px;
@@ -1264,23 +1237,6 @@
 }
 
 /*===================*/
-.col_icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-self: start;
-  gap: 40px;
-}
-.col_icons .icofont-cart {
-  font-size: 32px;
-  color: #fff;
-  display: none;
-}
-
-/*=-=-=-=-=-=-=-=-=-=-=-=*/
 .back_image_page > * {
   position: relative;
   z-index: 1;
