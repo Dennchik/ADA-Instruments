@@ -898,15 +898,65 @@ if (document.querySelector('.preloader')) {
   loaded('.preloader');
 }
 //* ----------------------------------------------------------------------------
-// function maskInn() {
-//   if ($('.mask-inn-organization').length) {
-//     // Для ИНН организации (10 цифр)
-//     $('.mask-inn-organization').mask('999 999 9999', {
-//       clearIfNotMatch: true,
-//     });
-//   }
-// }
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('feedback-form');
+  const modal = document.querySelector('.sending-success');
+  const title = modal.querySelector('.sending-success__title');
+  const textSpan = modal.querySelector('.sending-success__text span');
+  const icon = modal.querySelector('.sending-success__text i');
 
-// $(document).ready(function () {
-//   maskInn();
-// });
+  function showModal(isSuccess) {
+    if (isSuccess) {
+      title.textContent = 'Спасибо!';
+      textSpan.textContent = 'Ваше обращение отправлено';
+      icon.className = 'icofont-check-alt';
+    } else {
+      title.textContent = 'Ошибка!';
+      textSpan.textContent = 'Повторите попытку позже';
+      icon.className = 'icofont-check-alt';
+    }
+
+    modal.classList.add('open-modal');
+
+    setTimeout(() => {
+      modal.classList.remove('open-modal');
+    }, 3000);
+  }
+
+  //* Отправка данных
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // const formData = new FormData(form);
+
+    // try {
+    //   const response = await fetch('/your-server-endpoint', {
+    //     method: 'POST',
+    //     body: formData,
+    //   });
+
+    //   if (response.ok) {
+    //     showModal(true);
+    //     form.reset();
+    //   } else {
+    //     showModal(false);
+    //   }
+    // } catch (error) {
+    //   showModal(false);
+    // }
+
+    // Имитация отправки (50% успех, 50% ошибка для теста)
+    const isSuccess = Math.random() < 0.5;
+
+    setTimeout(() => {
+      if (isSuccess) {
+        // закрываем форму
+        showModal(true);
+        form.reset();
+        form.classList.remove('open-modal');
+      } else {
+        showModal(false);
+      }
+    }, 1000);
+  });
+});
