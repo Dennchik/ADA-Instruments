@@ -1096,7 +1096,6 @@ function dragAndDrop() {
 
 document.addEventListener('DOMContentLoaded', dragAndDrop);
 // todo  ---------------- [MODAL: Ваша заявка принята] -------------------------
-
 function modalAccepted() {
   const button = document.querySelector('.order-doc');
   if (button) {
@@ -1109,29 +1108,155 @@ function modalAccepted() {
     });
   }
 }
-
 document.addEventListener('DOMContentLoaded', modalAccepted);
 
 // todo  ------------------ [MODAL: Обратная связь] ----------------------------
-function modalFeedback() {
-  const modal = document.querySelector('.modal-feedback');
+//todo ↓↓↓ (Для Виктора) Модуль управления модальным окном обратной связи в 'footer' - ПОДДЕРЖКА
 
-  if (modal) {
-    const buttons = document.querySelectorAll('.feedback-button');
-    const closebutton = modal.querySelector('.close-button');
-    buttons.forEach((button) => {
+const FeedbackModal = {
+  selectors: {
+    modalForm: '.modal-feedback',
+    form: '#feedback-form',
+    successModal: '.sending-success',
+    openButtons: '.feedback-button',
+    closeButton: '.close-button',
+    title: '.sending-success__title',
+    text: '.sending-success__text span',
+    icon: '.sending-success__text i',
+  },
+
+  //* Классы состояний
+  states: {
+    open: 'open-modal',
+  },
+
+  //* DOM элементы
+  elements: {},
+
+  //* Инициализация
+  init() {
+    this.cacheElements();
+    if (!this.elements.modalForm) return;
+
+    this.bindEvents();
+  },
+
+  //* Кеширование DOM элементов
+  cacheElements() {
+    const { selectors } = this;
+
+    this.elements = {
+      modalForm: document.querySelector(selectors.modalForm),
+      form: document.getElementById('feedback-form'),
+      successModal: document.querySelector(selectors.successModal),
+      title: document.querySelector(selectors.title),
+      text: document.querySelector(selectors.text),
+      icon: document.querySelector(selectors.icon),
+      buttons: document.querySelectorAll(selectors.openButtons),
+      closeButton: document.querySelector(selectors.closeButton),
+    };
+  },
+
+  //* Навешивание обработчиков событий
+  bindEvents() {
+    const { elements, states } = this;
+
+    // Открытие модалки по кнопкам
+    elements.buttons.forEach((button) => {
       button.addEventListener('click', () => {
-        modal.classList.add('open-modal');
+        elements.modalForm.classList.add(states.open);
       });
     });
 
-    closebutton.addEventListener('click', () => {
-      modal.classList.remove('open-modal');
+    // Закрытие модалки по крестику
+    elements.closeButton?.addEventListener('click', () => {
+      elements.modalForm.classList.remove(states.open);
+    });
+
+    // Отправка формы
+    elements.form.addEventListener('submit', (e) => {
+      this.handleSubmit(e);
+    });
+  },
+
+  //* Показ всплывающего сообщения
+  showModal(isSuccess) {
+    const { elements, states } = this;
+
+    if (isSuccess) {
+      elements.title.textContent = 'Спасибо!';
+      elements.text.textContent = 'Ваше обращение отправлено';
+      elements.icon.className = 'icofont-check-alt';
+    } else {
+      elements.title.textContent = 'Ошибка!';
+      elements.text.textContent = 'Повторите попытку позже';
+      elements.icon.className = 'icofont-check-alt';
+    }
+
+    elements.successModal.classList.add(states.open);
+
+    setTimeout(() => {
+      elements.successModal.classList.remove(states.open);
+    }, 3000);
+  },
+
+  //* Обработка отправки формы
+  async handleSubmit(e) {
+    e.preventDefault();
+
+    const { elements } = this;
+    const formData = new FormData(elements.form);
+
+    //todo - Для Виктора: /your-server-endpoint "походу надо заменить на реальный адрес сервера"
+    try {
+      const response = await fetch('/your-server-endpoint', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        this.showModal(true);
+        elements.form.reset();
+        elements.modalForm.classList.remove(this.states.open);
+      } else {
+        this.showModal(false);
+      }
+    } catch (error) {
+      this.showModal(false);
+    }
+  },
+};
+
+document.addEventListener('DOMContentLoaded', FeedbackModal.init());
+
+//todo ----------------------[ Preloader ]--------------------------------------
+//todo ↓↓↓ (Для Виктора)
+function loaded(item) {
+  let done = false;
+
+  function removePreloader() {
+    if (done) return;
+    done = true;
+    document.querySelector(item).classList.add('preloader-remove');
+    document.documentElement.classList.add('loaded');
+    document.body.style.scrollbarWidth = 'thin';
+  }
+
+  // Если DOM уже загружен (даже если видео ещё нет)
+  if (document.readyState !== 'loading') {
+    setTimeout(removePreloader, 550);
+  } else {
+    // Ждём только DOMContentLoaded, не load
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(removePreloader, 150);
     });
   }
 }
 
-document.addEventListener('DOMContentLoaded', modalFeedback);
+if (document.querySelector('.preloader')) {
+  loaded('.preloader');
+}
+
 //* ----------------------------------------------------------------------------
 function toggleMenu() {
   const items = document.querySelectorAll('.slideToggle');
@@ -1168,3 +1293,17 @@ function toggleMenu() {
   });
 }
 document.addEventListener('DOMContentLoaded', toggleMenu);
+//* ----------------------------------------------------------------------------
+// Привязываем fancybox ко всем элементам с data-fancybox
+// и передаем объект с настройками
+if (document.querySelector('[data-fancybox]')) {
+  Fancybox.bind('[data-fancybox]', {
+    animated: true,
+    showClass: 'f-zoomIn',
+    hideClass: 'f-zoomOut',
+    loop: false,
+    Carousel: {
+      infinite: false,
+    },
+  });
+}

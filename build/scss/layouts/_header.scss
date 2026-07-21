@@ -52,12 +52,12 @@ header .container-fluid {
   position: relative;
 }
 
-.home_page header {
-  background-color: transparent;
-  &.smaller {
-    background-color: rgba(68, 68, 68, 0.95);
-  }
-}
+// .home_page header {
+//   background-color: transparent;
+//   &.smaller {
+//     background-color: rgba(68, 68, 68, 0.95);
+//   }
+// }
 .home_page .sub_menu a {
   color: rgb(255, 255, 255);
 }
@@ -89,7 +89,7 @@ header.smaller {
   }
 
   .user-name-autorized {
-    // display: none;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;

@@ -835,14 +835,21 @@
         align-self: center;
       }
 
-      @include screen-860 {
-        margin-right: 20px;
-      }
-
       @include screen-490 {
         grid-row: 3 / 4;
-        grid-column: 2 / 3;
+        grid-column: 1 / 3;
         justify-self: end;
+        width: 100%;
+
+        .product-cart__price {
+          flex: 0 1 auto;
+        }
+
+        .counter-wrapper {
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+        }
       }
     }
 
@@ -880,6 +887,7 @@
     &__quantity {
       @include screen-690 {
         height: 45px;
+        max-width: 210px;
       }
 
       @include screen-480 {

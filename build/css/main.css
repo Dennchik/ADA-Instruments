@@ -2094,13 +2094,6 @@ header .container-fluid {
   position: relative;
 }
 
-.home_page header {
-  background-color: transparent;
-}
-.home_page header.smaller {
-  background-color: rgba(68, 68, 68, 0.95);
-}
-
 .home_page .sub_menu a {
   color: rgb(255, 255, 255);
 }
@@ -2135,6 +2128,7 @@ header.smaller {
   fill: #ffffff;
 }
 .col_icons .user-name-autorized {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -3720,16 +3714,27 @@ header .top_menu > li > a {
     align-self: center;
   }
 }
-@media screen and (width < 860px) {
-  .cart-page .product-cart__counter {
-    margin-right: 20px;
-  }
-}
 @media screen and (width < 490px) {
   .cart-page .product-cart__counter {
     grid-row: 3/4;
-    grid-column: 2/3;
+    grid-column: 1/3;
     justify-self: end;
+    width: 100%;
+  }
+  .cart-page .product-cart__counter .product-cart__price {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+  .cart-page .product-cart__counter .counter-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 .cart-page .product-cart__item {
@@ -3766,6 +3771,7 @@ header .top_menu > li > a {
 @media (width < 690px) {
   .cart-page .product-cart__quantity {
     height: 45px;
+    max-width: 210px;
   }
 }
 @media screen and (width < 480px) {
@@ -4291,7 +4297,7 @@ header .top_menu > li > a {
 .slick-slide img {
   display: inline-block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .slick-dots li.slick-active button:before,
@@ -7706,6 +7712,12 @@ header .top_menu > li > a {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .about-section__footer {
   min-height: 100%;
@@ -11047,7 +11059,7 @@ header .top_menu > li > a {
 }
 
 .tovar_slider_item_box {
-  margin: 0 20px;
+  margin: 0 5px;
 }
 
 .tovar_sliders {
